@@ -1,0 +1,25 @@
+[package]
+name = "project1"
+version = "1.0.0"
+authors = []
+
+[addresses]
+dapp = "0x565ad6fa0269098555ec0af28e643c727e650781b3f7ac84c227e9152b72986e"
+admin1="0x1"
+admin2="0x2"
+
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dependencies.AptosTokenObjects]
+git = "https://github.com/aptos-labs/aptos-core.git"
+#git = "https://gitee.com/WGB5445/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-token-objects"
+
+[dev-dependencies]
