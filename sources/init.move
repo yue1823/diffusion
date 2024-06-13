@@ -2,6 +2,7 @@ module dapp::init_module{
 
     use std::option;
     use std::signer;
+    use std::signer::address_of;
     use std::string;
     use std::string::{String,utf8};
     use std::vector;
@@ -28,6 +29,8 @@ module dapp::init_module{
     const Name_nft:vector<u8> = b"";
     const Url_nft:vector<u8> = b"";
 
+    const Cylinder_already_exist : u64  = 3;
+
     struct ResourceCap has key{
         cap:SignerCapability
     }
@@ -47,7 +50,7 @@ module dapp::init_module{
         Bullet:Cylinder_coin
     }
     public(friend) fun create_Cylinder(caller:&signer,resource_signer:&signer){
-
+        assert!(!exists<Cylinder>(address_of(resource_signer)),Cylinder_already_exist );
         let a=create_resource_address(&@dapp,Seed);
         let  cylinder_object_ConstructorRef = create_named_object(resource_signer,Seed);
         let  cylinder_object_signer = generate_signer(&cylinder_object_ConstructorRef);
@@ -62,22 +65,22 @@ module dapp::init_module{
 
     }
 
-    public fun init(caller : &signer){
-        let (resource_signer, resource_cap) = account::create_resource_account(
-            caller,
-            Seed
-        );
-
-        move_to(
-            &resource_signer,
-            ResourceCap {
-                cap: resource_cap
-            }
-        );
-        // register_coin(caller);
-        // nft_collection_init(caller,&resource_signer);
-        // create_Cylinder(caller,&resource_signer);
-    }
+    //  fun init_module(caller : &signer){
+    //     let (resource_signer, resource_cap) = account::create_resource_account(
+    //         caller,
+    //         Seed
+    //     );
+    //
+    //     move_to(
+    //         &resource_signer,
+    //         ResourceCap {
+    //             cap: resource_cap
+    //         }
+    //     );
+    //     // register_coin(caller);
+    //     nft_collection_init(caller,&resource_signer);
+    //     create_Cylinder(caller,&resource_signer);
+    // }
 
     //not work on local test ,but should work on tesnet
     fun register_coin(caller:&signer){

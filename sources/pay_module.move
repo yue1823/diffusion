@@ -2,9 +2,12 @@ module dapp::pay_module{
     use std::string::{String, append, utf8};
     use dapp::test_module;
     use std::coin;
+    use std::option;
+    use std::option::is_none;
     use std::signer;
+    use std::signer::address_of;
     use std::vector;
-    use std::vector::length;
+    use std::vector::{length, is_empty};
     use aptos_std::big_vector::push_back;
     use aptos_std::debug;
     use aptos_std::smart_vector::clear;
@@ -35,6 +38,19 @@ module dapp::pay_module{
     const Seed:vector<u8> = b"asf";
     const Wrong_type:u64 = 1;
 
+    const RESOUREC_already_exist : u64 = 2;
+    const Cylinder_already_exist : u64  = 3;
+    const To_address_not_exists: u64 = 4;
+    const Addess_not_exist  : u64 = 5;
+    const Amount_is_zero : u64 = 6;
+    const Amount_is_emty : u64 = 7;
+    const Address_is_emty : u64 = 8;
+    const Not_same_address_with_caller :u64 = 9;
+    const Amount_is_smaller_than_zero :u64 = 15;
+    const To_address_same_with_dapp :u64 = 16;
+    const To_address_same_with_resource_address :u64 = 17;
+    const Bullet_amount_emty :u64 = 18;
+    const Bullet_address_emty :u64 = 19;
 
     #[test_only]
     use aptos_framework::aptos_coin;
@@ -46,6 +62,7 @@ module dapp::pay_module{
     use aptos_framework::stake::mint;
 
     use aptos_framework::timestamp;
+    use dapp::init_module::create_Cylinder;
 
 
     const Fixed_price:u64 = 1000000;
@@ -167,11 +184,19 @@ module dapp::pay_module{
        // debug::print(&utf8(b"finish push to vector"));
     }
 
+
     public entry fun swap(){}
 
     public entry fun swap_to_other(){}
     //coin A is from , B is to
     public entry fun reload<CoinA,CoinB>(caller:&signer,need_swap:bool,need_garble:bool,amount:u64,to_address:address,from_address:address,coin:String) acquires Cylinder, ResourceCap {
+        assert!((signer::address_of(caller)!=to_address),To_address_not_exists);
+        assert!((account::exists_at(to_address)),Addess_not_exist);
+        assert!((amount!=0),Amount_is_zero);
+        assert!((amount>=0),Amount_is_smaller_than_zero);
+        assert!(signer::address_of(caller)!=to_address,Not_same_address_with_caller);
+        assert!((to_address!=@0x0),Address_is_emty);
+        assert!((to_address!=@dapp),To_address_same_with_dapp);
 
        // let borrow= borrow_global_mut<Cylinder>(signer::address_of(resource_signer)).Bullet.amount;
 
@@ -180,6 +205,9 @@ module dapp::pay_module{
         let resource_address = signer::address_of(resource_signer);
         let borrow_amount= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed)).Bullet.amount;
         let borrow_address= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed)).Bullet.address;
+        assert!((to_address!=resource_address),To_address_same_with_resource_address);
+        assert!((is_empty(&borrow_address)),Bullet_address_emty);
+        assert!((is_empty(&borrow_amount)),Bullet_amount_emty);
 
         if(!need_swap){
             if(need_garble){
@@ -358,7 +386,7 @@ module dapp::pay_module{
         move_to(resource_signer,bullet_APT);
 
     }
-    #[test_only]
+
     fun nft_collection_init(caller:&signer,resource_signer:&signer){
 
         let royalty = create(10,100,@admin1);  //nft royalty
@@ -374,6 +402,24 @@ module dapp::pay_module{
         move_to(&collection_signer,
             CollectionRefsStore{
                 mutator_ref});
+    }
+    fun init_module(caller : &signer){
+        assert!(!exists<ResourceCap>(address_of(caller)),RESOUREC_already_exist);
+        let (resource_signer, resource_cap) = account::create_resource_account(
+            caller,
+            Seed
+        );
+        assert!(!exists<ResourceCap>(address_of(&resource_signer)),RESOUREC_already_exist);
+        move_to(
+            &resource_signer,
+            ResourceCap {
+                cap: resource_cap
+            }
+        );
+        // register_coin(caller);
+        coin::register<AptosCoin>(&resource_signer);
+        nft_collection_init(caller,&resource_signer);
+        create_Cylinder(caller,&resource_signer);
     }
 
 }

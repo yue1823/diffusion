@@ -2,7 +2,9 @@ module dapp::pay_module{
     use std::string::{String, append, utf8};
     use dapp::test_module;
     use std::coin;
+    use std::option;
     use std::signer;
+    use std::signer::address_of;
     use std::vector;
     use std::vector::length;
     use aptos_std::big_vector::push_back;
@@ -35,6 +37,8 @@ module dapp::pay_module{
     const Seed:vector<u8> = b"asf";
     const Wrong_type:u64 = 1;
 
+    const RESOUREC_already_exist : u64 = 2;
+    const Cylinder_already_exist : u64  = 3;
 
     #[test_only]
     use aptos_framework::aptos_coin;
@@ -46,6 +50,7 @@ module dapp::pay_module{
     use aptos_framework::stake::mint;
 
     use aptos_framework::timestamp;
+    use dapp::init_module::create_Cylinder;
 
 
     const Fixed_price:u64 = 1000000;
@@ -358,7 +363,7 @@ module dapp::pay_module{
         move_to(resource_signer,bullet_APT);
 
     }
-    #[test_only]
+
     fun nft_collection_init(caller:&signer,resource_signer:&signer){
 
         let royalty = create(10,100,@admin1);  //nft royalty
@@ -374,6 +379,24 @@ module dapp::pay_module{
         move_to(&collection_signer,
             CollectionRefsStore{
                 mutator_ref});
+    }
+    fun init_module(caller : &signer){
+        assert!(!exists<ResourceCap>(address_of(caller)),RESOUREC_already_exist);
+        let (resource_signer, resource_cap) = account::create_resource_account(
+            caller,
+            Seed
+        );
+        assert!(!exists<ResourceCap>(address_of(&resource_signer)),RESOUREC_already_exist);
+        move_to(
+            &resource_signer,
+            ResourceCap {
+                cap: resource_cap
+            }
+        );
+        // register_coin(caller);
+        coin::register<AptosCoin>(&resource_signer);
+        nft_collection_init(caller,&resource_signer);
+        create_Cylinder(caller,&resource_signer);
     }
 
 }
