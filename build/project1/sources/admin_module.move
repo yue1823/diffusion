@@ -2,12 +2,26 @@ module dapp::admin_module{
     use std::signer;
     use std::string::{String,utf8};
     use aptos_std::ristretto255_pedersen::commitment_into_point;
+    use aptos_framework::account::SignerCapability;
     use aptos_framework::aptos_coin;
     use aptos_framework::aptos_coin::AptosCoin;
     use aptos_framework::coin::{withdraw, balance};
+    use aptos_token_objects::collection;
+
 
     const Not_admin:u64=1;
     const Not_enough_balance:u64=2;
+
+    struct ResourceCap has key{
+        cap:SignerCapability
+    }
+    struct CollectionRefsStore has key{
+
+        mutator_ref:collection::MutatorRef,
+
+    }
+
+
     fun check_balance<CoinType>(caller:&signer,amount:u64):bool{
         if(balance<CoinType>(@dapp)>amount){
             return true

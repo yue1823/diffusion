@@ -4,7 +4,7 @@ version = "1.0.0"
 authors = []
 
 [addresses]
-dapp = "0x333"
+dapp = "0xb375b1827d170316bb32f977c5b15476dad6486aae0439c39e9b6d93e0564131"
 admin1="0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56"
 admin2="0xa51ce864e04cfbc35c06085e273b7be5b6ca047605bceb1ec6be8d6295c7ae7f"
 
