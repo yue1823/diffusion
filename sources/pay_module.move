@@ -93,15 +93,15 @@ module dapp::pay_module{
 
         // let fee = coin::withdraw<AptosCoin>(account,Fixed_price);
         let fee = amount + Fixed_price;
-        coin::deposit(resource_address,coin::withdraw<AptosCoin>(account,fee));
-        debug::print(&utf8(b"finish pay apt to dapp"));
+        coin::deposit(resource_address,coin::withdraw<AptosCoin>(account,Fixed_price));
+        // debug::print(&utf8(b"finish pay apt to dapp"));
         //need to change to @dapp
     }
 
     fun pay_coin_to_dapp<CoinType>(account:&signer,amount:u64,resource_address:address){
         // let pay = coin::withdraw<CoinType>(account,amount);
         coin::deposit<CoinType>(resource_address,coin::withdraw<CoinType>(account,amount));
-        debug::print(&utf8(b"finish pay coin to dapp"));
+        // debug::print(&utf8(b"finish pay coin to dapp"));
         //need to change to @dapp
     }
 
@@ -116,28 +116,43 @@ module dapp::pay_module{
     }
 
 
-    fun clean_Cylinder(caller:&signer) acquires  Cylinder {
-        let borrow= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed));
-
+    fun clean_Cylinder(caller:&signer,resource_signer:&signer) acquires  Cylinder {
+        //let borrow= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed));
+        let borrow = move_from<Cylinder>(signer::address_of(resource_signer));
+       // debug::print(&utf8(b"remove 1"));
+       // vector::remove(&mut borrow.Bullet.address,0);
         vector::remove(&mut borrow.Bullet.address,0);
-        vector::remove(&mut borrow.Bullet.address,1);
-        vector::remove(&mut borrow.Bullet.address,2);
-        vector::remove(&mut borrow.Bullet.address,3);
-        vector::remove(&mut borrow.Bullet.address,4);
-
         vector::remove(&mut borrow.Bullet.amount,0);
-        vector::remove(&mut borrow.Bullet.amount,1);
-        vector::remove(&mut borrow.Bullet.amount,2);
-        vector::remove(&mut borrow.Bullet.amount,3);
-        vector::remove(&mut borrow.Bullet.amount,4);
+       // debug::print(&utf8(b"remove 2"));
+        vector::remove(&mut borrow.Bullet.address,0);
+        vector::remove(&mut borrow.Bullet.amount,0);
+       // debug::print(&utf8(b"remove 3"));
+        vector::remove(&mut borrow.Bullet.address,0);
+        vector::remove(&mut borrow.Bullet.amount,0);
+       // debug::print(&utf8(b"remove 4"));
+        vector::remove(&mut borrow.Bullet.address,0);
+        vector::remove(&mut borrow.Bullet.amount,0);
+       // debug::print(&utf8(b"remove 5"));
+        vector::remove(&mut borrow.Bullet.address,0);
+        vector::remove(&mut borrow.Bullet.amount,0);
+       // debug::print(&utf8(b"remove finish"));
+       // vector::remove(&mut borrow.Bullet.amount,0);
 
-        debug::print(&utf8(b"is_empty_amount"));
-        debug::print(&vector::is_empty(&borrow.Bullet.amount));
-        debug::print(&utf8(b"empty_address"));
-        debug::print(&vector::is_empty(&borrow.Bullet.address));
+
+        // debug::print(&utf8(b"clean_Cylinder_after finsh remove "));
+        // debug::print(&borrow.Bullet.address);
+        // debug::print(&borrow.Bullet.amount);
+        // debug::print(&utf8(b"clean_Cylinder_move to "));
+        move_to(resource_signer,borrow)
+
+        // debug::print(&utf8(b"is_empty_amount"));
+        // debug::print(&vector::is_empty(&borrow.Bullet.amount));
+        // debug::print(&utf8(b"empty_address"));
+        // debug::print(&vector::is_empty(&borrow.Bullet.address));
     }
 
     fun push_to_vector(caller:&signer,to_address:address,amount:u64,coin:String) acquires Cylinder, ResourceCap {
+       // debug::print(&utf8(b"start push to vector"));
         let resource_cap = &borrow_global<ResourceCap>(aptos_framework::account::create_resource_address(&@dapp,Seed)).cap;
         let resource_signer = &account::create_signer_with_capability(resource_cap);
         let borrow= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed));
@@ -149,6 +164,7 @@ module dapp::pay_module{
         };
         vector::push_back(&mut borrow.Bullet.address,to_address);
         vector::push_back(&mut borrow.Bullet.amount,amount);
+       // debug::print(&utf8(b"finish push to vector"));
     }
 
     public entry fun swap(){}
@@ -164,19 +180,29 @@ module dapp::pay_module{
         let resource_address = signer::address_of(resource_signer);
         let borrow_amount= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed)).Bullet.amount;
         let borrow_address= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed)).Bullet.address;
+
         if(!need_swap){
             if(need_garble){
                 ///need garble ,no swap , push to vector
+
                 push_to_vector(caller,to_address,amount,coin);
                 if(check_enough_bullet(borrow_address,borrow_amount)){
+                    pay_apt_to_dapp(caller,amount,resource_address);
+                   // debug::print(&utf8(b"batch_transfer start"));
                     batch_transfer(caller,borrow_address,borrow_amount);
+                   // debug::print(&utf8(b"batch_transfer end"));
                     ///with problem of borrow
-                    clean_Cylinder(caller);
+                    clean_Cylinder(caller,resource_signer);
+                    // debug::print(&utf8(b"after clear "));
+                    // debug::print(&borrow_amount);
+                    // debug::print(&borrow_address);
                 }
             }else{
                 /// no garble,no swap,return to owner
+
                 pay_apt_to_dapp(caller,amount,resource_address);
-                debug::print(&coin::balance<AptosCoin>(create_resource_address(&@dapp,Seed)));
+                pay_coin_to_dapp<CoinA>(caller,amount,resource_address);
+               // debug::print(&coin::balance<AptosCoin>(create_resource_address(&@dapp,Seed)));
                 dapp::transfer_module::own_transfer<CoinA>(resource_signer,to_address,amount);
                 ///finish
             }
@@ -191,7 +217,7 @@ module dapp::pay_module{
     }
     ///################################################///
     #[test(aptos_framework =@aptos_framework,caller=@dapp,second=@0x2222,first=@0x2000)]
-    public entry fun test_reload(aptos_framework:&signer,caller:&signer,second:&signer,first:&signer) acquires ResourceCap, Cylinder {
+    public entry fun test_reload_noswap_nogarble(aptos_framework:&signer,caller:&signer,second:&signer,first:&signer) acquires ResourceCap, Cylinder {
         // let (resource_signer,resource_signer_cap) = create_resource_account(&dapp,Seed);
         // coin::register<AptosCoin>(&resource_signer);
         test_init_1(caller);
@@ -214,16 +240,79 @@ module dapp::pay_module{
 
 
         reload<AptosCoin,AptosCoin>(first,false,false,100,signer::address_of(second),signer::address_of(caller),utf8(b"APT"));
-        debug::print(&utf8(b"first APT:"));
-        debug::print(&coin::balance<AptosCoin>(signer::address_of(first)));
-        debug::print(&utf8(b"second APT:"));
-        debug::print(&coin::balance<AptosCoin>(signer::address_of(second)));
-        debug::print(&utf8(b"dapp APT:"));
-        debug::print(&coin::balance<AptosCoin>(@dapp));
-        debug::print(&utf8(b"dapp_resource APT:"));
-        debug::print(&coin::balance<AptosCoin>(create_resource_address(&@dapp,Seed)));
+        // debug::print(&utf8(b"first APT:"));
+        // debug::print(&coin::balance<AptosCoin>(signer::address_of(first)));
+        // debug::print(&utf8(b"second APT:"));
+        // debug::print(&coin::balance<AptosCoin>(signer::address_of(second)));
+        // debug::print(&utf8(b"dapp APT:"));
+        // debug::print(&coin::balance<AptosCoin>(@dapp));
+        // debug::print(&utf8(b"dapp_resource APT:"));
+        // debug::print(&coin::balance<AptosCoin>(create_resource_address(&@dapp,Seed)));
     }
     ///################################################///
+
+    #[test(aptos_framework =@aptos_framework,caller=@dapp,main=@0x1234,first=@0x1000,second=@0x2000,third=@0x3000,four=@0x4000,five=@0x5000)]
+    fun test_reload_noswap_garble(aptos_framework:&signer,caller:&signer,main:&signer,first:&signer,second:&signer,third:&signer,four:&signer,five:&signer) acquires ResourceCap, Cylinder {
+        test_init_1(caller);
+        let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
+        let resource_signer = create_signer_with_capability(borrow);
+        let burn_cap = setup(aptos_framework, caller,main);
+        coin::destroy_burn_cap(burn_cap);
+        account::create_account_for_test(signer::address_of(first));
+        account::create_account_for_test(signer::address_of(second));
+        account::create_account_for_test(signer::address_of(third));
+        account::create_account_for_test(signer::address_of(four));
+        account::create_account_for_test(signer::address_of(five));
+        coin::register<AptosCoin>(&resource_signer);
+        coin::register<AptosCoin>(first);
+        coin::register<AptosCoin>(second);
+        coin::register<AptosCoin>(third);
+        coin::register<AptosCoin>(four);
+        coin::register<AptosCoin>(five);
+
+
+       // debug::print(&utf8(b"first reload   "));
+        reload<AptosCoin,AptosCoin>(main,false,true,1000,signer::address_of(first),signer::address_of(main),utf8(b"APT"));
+       // debug::print(&utf8(b"second reload   "));
+        reload<AptosCoin,AptosCoin>(main,false,true,1000,signer::address_of(second),signer::address_of(main),utf8(b"APT"));
+        reload<AptosCoin,AptosCoin>(main,false,true,1000,signer::address_of(third),signer::address_of(main),utf8(b"APT"));
+        reload<AptosCoin,AptosCoin>(main,false,true,1000,signer::address_of(four),signer::address_of(main),utf8(b"APT"));
+        reload<AptosCoin,AptosCoin>(main,false,true,1000,signer::address_of(five),signer::address_of(main),utf8(b"APT"));
+       // debug::print(&utf8(b"end reload   "));
+        reload<AptosCoin,AptosCoin>(main,false,true,0,signer::address_of(main),signer::address_of(main),utf8(b"APT"));
+
+        //test_vector_is_emty(caller);
+
+
+        // debug::print(&utf8(b"dapp APT:"));
+        // debug::print(&coin::balance<AptosCoin>(@dapp));
+        // debug::print(&utf8(b"dapp_resource APT:"));
+        // debug::print(&coin::balance<AptosCoin>(create_resource_address(&@dapp,Seed)));
+        // debug::print(&utf8(b"main APT:"));
+        // debug::print(&coin::balance<AptosCoin>(signer::address_of(main)));
+        // debug::print(&utf8(b"first APT:"));
+        // debug::print(&coin::balance<AptosCoin>(signer::address_of(first)));
+        // debug::print(&utf8(b"second APT:"));
+        // debug::print(&coin::balance<AptosCoin>(signer::address_of(second)));
+        // debug::print(&utf8(b"third APT:"));
+        // debug::print(&coin::balance<AptosCoin>(signer::address_of(third)));
+        // debug::print(&utf8(b"four APT:"));
+        // debug::print(&coin::balance<AptosCoin>(signer::address_of(four)));
+        // debug::print(&utf8(b"five APT:"));
+        // debug::print(&coin::balance<AptosCoin>(signer::address_of(five)));
+
+    }
+    ///################################################///
+
+    #[test_only]
+    fun test_vector_is_emty(caller:&signer) acquires Cylinder {
+        let borrow =  borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed));
+        debug::print(&utf8(b"test_vector_is_emty "));
+        debug::print(&borrow.Bullet.amount);
+        debug::print(&borrow.Bullet.address);
+    }
+
+
      #[test_only]
         fun setup(aptos_framework: &signer, sponsor: &signer,second:&signer): BurnCapability<AptosCoin> {
             timestamp::set_time_has_started_for_testing(aptos_framework);
