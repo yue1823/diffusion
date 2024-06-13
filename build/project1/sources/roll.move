@@ -1,4 +1,4 @@
-module 0x6::roll {
+module dapp::roll {
     use std::signer;
     use aptos_framework::randomness;
 

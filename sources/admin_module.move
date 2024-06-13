@@ -1,4 +1,4 @@
-module 0x66::admin_module{
+module dapp::admin_module{
     use std::signer;
     use std::string::{String,utf8};
     use aptos_std::ristretto255_pedersen::commitment_into_point;

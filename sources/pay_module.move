@@ -1,30 +1,37 @@
-module 0x6::pay_module{
+module dapp::pay_module{
     use std::string::{String, append, utf8};
-    use 0x6::test_module;
+    use dapp::test_module;
     use std::coin;
     use std::signer;
     use std::vector;
     use std::vector::length;
     use aptos_std::big_vector::push_back;
     use aptos_std::debug;
+    use aptos_std::smart_vector::clear;
     use aptos_std::table_with_length::empty;
     use aptos_framework::account;
-    use aptos_framework::account::create_resource_address;
+    use aptos_framework::account::{create_resource_address, SignerCapability};
     use aptos_framework::aptos_account;
-    use aptos_framework::aptos_account::transfer_coins;
+    use aptos_framework::aptos_account::{transfer_coins, batch_transfer};
     use aptos_framework::aptos_coin::AptosCoin;
-    use aptos_framework::coin::transfer;
+    use aptos_framework::coin::{transfer, is_account_registered};
     use aptos_framework::object;
     use aptos_framework::object::{create_object_from_account, generate_signer, create_named_object};
+    use aptos_token_objects::collection;
+    #[test_only]
+    use std::option;
     #[test_only]
     use std::string;
-
+    use aptos_token_objects::royalty::{create, Royalty};
     #[test_only]
-    use aptos_framework::account::create_resource_account;
-
-    friend 0x6::init_module;
+    use aptos_framework::account::{create_resource_account, create_signer_with_capability};
 
 
+
+    const Collection_name:vector<u8> = b"";
+    const Description_nft:vector<u8> = b"Fist collection of our dapp (I won't sell it lower than 1 APT ^_^) ";
+    const Name_nft:vector<u8> = b"";
+    const Url_nft:vector<u8> = b"";
     const Seed:vector<u8> = b"asf";
     const Wrong_type:u64 = 1;
 
@@ -37,8 +44,9 @@ module 0x6::pay_module{
     use aptos_framework::coin::{balance, BurnCapability};
     #[test_only]
     use aptos_framework::stake::mint;
-    #[test_only]
+
     use aptos_framework::timestamp;
+
 
     const Fixed_price:u64 = 1000000;
 
@@ -48,15 +56,23 @@ module 0x6::pay_module{
     struct Amount_list has drop,store{
         list:u64
     }
+    struct ResourceCap has key{
+        cap:SignerCapability
+    }
     struct Cylinder_coin has key,store{
         Coin:String,
-        address:vector<Address_list>,
-        amount:vector<Amount_list>
+        address:vector<address>,
+        amount:vector<u64>
     }
-
+    #[event]
     struct Cylinder has key,store{
         id:u8,
         Bullet:Cylinder_coin
+    }
+    struct CollectionRefsStore has key{
+
+        mutator_ref:collection::MutatorRef,
+
     }
 
     fun create_address_list(address:address):Address_list{
@@ -65,18 +81,28 @@ module 0x6::pay_module{
     fun create_amount_list(amount:u64):Amount_list{
         Amount_list{list:amount}
     }
+    fun check_dapp_isnt_registered<CoinA>(caller:&signer){
+        if(is_account_registered<CoinA>(@dapp)){}else{coin::register<CoinA>(caller)}
+    }
+    fun check_enough_bullet(v:vector<address>,v1:vector<u64>):bool {
+        if(length(&v)==5 && length(&v1)==5){
+            true
+        }else{false}
+    }
+    fun pay_apt_to_dapp(account:&signer,amount:u64,resource_address:address){
 
-
-    fun pay_apt_to_dapp(account:&signer,to_address:&signer){
-
-        let pay = coin::withdraw<AptosCoin>(account,Fixed_price);
-        coin::deposit(signer::address_of(to_address),pay);
+        // let fee = coin::withdraw<AptosCoin>(account,Fixed_price);
+        let fee = amount + Fixed_price;
+        coin::deposit(resource_address,coin::withdraw<AptosCoin>(account,fee));
+        debug::print(&utf8(b"finish pay apt to dapp"));
+        //need to change to @dapp
     }
 
-    fun pay_coin_to_dapp<CoinType>(account:&signer,amount:u64,to_address:&signer){
-
-        let pay = coin::withdraw<CoinType>(account,amount);
-        coin::deposit<CoinType>(signer::address_of(to_address),pay);
+    fun pay_coin_to_dapp<CoinType>(account:&signer,amount:u64,resource_address:address){
+        // let pay = coin::withdraw<CoinType>(account,amount);
+        coin::deposit<CoinType>(resource_address,coin::withdraw<CoinType>(account,amount));
+        debug::print(&utf8(b"finish pay coin to dapp"));
+        //need to change to @dapp
     }
 
     fun pay_apt_back_to_user(account:&signer,user:address,amount:u64){
@@ -89,51 +115,70 @@ module 0x6::pay_module{
         coin::deposit<CoinType>(user,pay);
     }
 
-    public(friend) fun create_Cylinder(caller:&signer){
 
-        let a=create_resource_address(&@dapp,Seed);
-        let  cylinder_object_ConstructorRef = create_named_object(caller,Seed);
-        let  cylinder_object_signer = generate_signer(&cylinder_object_ConstructorRef);
-        let bullet_APT = Cylinder{id:0,
-            Bullet:Cylinder_coin{Coin:utf8(b"APT"), address:vector::empty(), amount:vector::empty()}};
-        move_to(caller,bullet_APT);
+    fun clean_Cylinder(caller:&signer) acquires  Cylinder {
+        let borrow= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed));
+
+        vector::remove(&mut borrow.Bullet.address,0);
+        vector::remove(&mut borrow.Bullet.address,1);
+        vector::remove(&mut borrow.Bullet.address,2);
+        vector::remove(&mut borrow.Bullet.address,3);
+        vector::remove(&mut borrow.Bullet.address,4);
+
+        vector::remove(&mut borrow.Bullet.amount,0);
+        vector::remove(&mut borrow.Bullet.amount,1);
+        vector::remove(&mut borrow.Bullet.amount,2);
+        vector::remove(&mut borrow.Bullet.amount,3);
+        vector::remove(&mut borrow.Bullet.amount,4);
+
+        debug::print(&utf8(b"is_empty_amount"));
+        debug::print(&vector::is_empty(&borrow.Bullet.amount));
+        debug::print(&utf8(b"empty_address"));
+        debug::print(&vector::is_empty(&borrow.Bullet.address));
     }
 
-    fun push_to_vector(caller:&signer,to_address:address,amount:u64,coin:String)acquires  Cylinder{
-
+    fun push_to_vector(caller:&signer,to_address:address,amount:u64,coin:String) acquires Cylinder, ResourceCap {
+        let resource_cap = &borrow_global<ResourceCap>(aptos_framework::account::create_resource_address(&@dapp,Seed)).cap;
+        let resource_signer = &account::create_signer_with_capability(resource_cap);
         let borrow= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed));
         if (coin == utf8(b"APT")){
-
         }else if((coin == utf8(b"USDC"))){
 
         }else if((coin != utf8(b"USDC")) && (coin != utf8(b"APT"))){
             assert!(coin == utf8(b""),Wrong_type);
-
         };
-        let a = create_address_list(to_address);
-        let b = create_amount_list(amount);
-        vector::push_back(&mut borrow.Bullet.address,a);
-        vector::push_back(&mut borrow.Bullet.amount,b);
+        vector::push_back(&mut borrow.Bullet.address,to_address);
+        vector::push_back(&mut borrow.Bullet.amount,amount);
+    }
 
-    }
-    fun check_enough_bullet(){
-        // length(&Bullet_1.Bullet.address);
-    }
     public entry fun swap(){}
 
     public entry fun swap_to_other(){}
     //coin A is from , B is to
-    public entry fun reload<CoinA,CoinB>(caller:&signer,need_swap:bool,need_garble:bool,amount:u64,to_address:&signer,from_address:address,coin:String) acquires Cylinder {
+    public entry fun reload<CoinA,CoinB>(caller:&signer,need_swap:bool,need_garble:bool,amount:u64,to_address:address,from_address:address,coin:String) acquires Cylinder, ResourceCap {
+
+       // let borrow= borrow_global_mut<Cylinder>(signer::address_of(resource_signer)).Bullet.amount;
+
+        let resource_cap = &borrow_global<ResourceCap>(aptos_framework::account::create_resource_address(&@dapp,Seed)).cap;
+        let resource_signer = &account::create_signer_with_capability(resource_cap);
+        let resource_address = signer::address_of(resource_signer);
+        let borrow_amount= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed)).Bullet.amount;
+        let borrow_address= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed)).Bullet.address;
         if(!need_swap){
             if(need_garble){
                 ///need garble ,no swap , push to vector
-                push_to_vector(caller,signer::address_of(to_address),amount,coin);
+                push_to_vector(caller,to_address,amount,coin);
+                if(check_enough_bullet(borrow_address,borrow_amount)){
+                    batch_transfer(caller,borrow_address,borrow_amount);
+                    ///with problem of borrow
+                    clean_Cylinder(caller);
+                }
             }else{
                 /// no garble,no swap,return to owner
-
-                pay_apt_to_dapp(caller,to_address);
-                0x6::transfer_module::own_transfer<CoinA>(caller,signer::address_of(to_address),amount);
-
+                pay_apt_to_dapp(caller,amount,resource_address);
+                debug::print(&coin::balance<AptosCoin>(create_resource_address(&@dapp,Seed)));
+                dapp::transfer_module::own_transfer<CoinA>(resource_signer,to_address,amount);
+                ///finish
             }
         }else{
             if(need_garble){
@@ -145,58 +190,101 @@ module 0x6::pay_module{
 
     }
     ///################################################///
+    #[test(aptos_framework =@aptos_framework,caller=@dapp,second=@0x2222,first=@0x2000)]
+    public entry fun test_reload(aptos_framework:&signer,caller:&signer,second:&signer,first:&signer) acquires ResourceCap, Cylinder {
+        // let (resource_signer,resource_signer_cap) = create_resource_account(&dapp,Seed);
+        // coin::register<AptosCoin>(&resource_signer);
+        test_init_1(caller);
 
-    #[test_only]
-    fun setup(aptos_framework: &signer, sponsor: &signer,second:&signer): BurnCapability<AptosCoin> {
-        timestamp::set_time_has_started_for_testing(aptos_framework);
+        let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
+        let resource_signer = create_signer_with_capability(borrow);
 
-        let (burn_cap, freeze_cap, mint_cap) = coin::initialize<AptosCoin>(
-            aptos_framework,
-            string::utf8(b"TC"),
-            string::utf8(b"TC"),
-            8,
-            false,
-        );
-        account::create_account_for_test(signer::address_of(sponsor));
-        coin::register<AptosCoin>(sponsor);
-        account::create_account_for_test(signer::address_of(second));
-        coin::register<AptosCoin>(second);
-        let coins = coin::mint<AptosCoin>(200000000, &mint_cap);
-        coin::deposit(signer::address_of(sponsor), coins);
-        let coins_1 = coin::mint<AptosCoin>(200000000, &mint_cap);
-        coin::deposit(signer::address_of(second), coins_1);
-        coin::destroy_mint_cap(mint_cap);
-        coin::destroy_freeze_cap(freeze_cap);
-        burn_cap
-    }
-
-    struct CoinA has store, key {}
-    struct CoinB has store, key {}
-
-    #[test(aptos_framework = @0x1,caller=@0x123,second=@0x2222,dapp=@0x333)]
-    public entry fun test_reload(aptos_framework:signer,caller:signer,second:signer,dapp:signer) acquires Cylinder {
-        let burn_cap = setup(&aptos_framework, &caller,&second);
+        let burn_cap = setup(aptos_framework, caller,second);
         coin::destroy_burn_cap(burn_cap);
-        account::create_account_for_test(signer::address_of(&dapp));
-        coin::register<AptosCoin>(&dapp);
-        let a=create_resource_address(&@dapp,Seed);
-        let (resource_signer,resource_signer_cap) = create_resource_account(&dapp,Seed);
+        // account::create_account_for_test(signer::address_of(dapp));
+
+        account::create_account_for_test(signer::address_of(first));
+        coin::register<AptosCoin>(first);                   //create account for bob
+
+        transfer_coins<AptosCoin>(caller,signer::address_of(first),200000000);
+
         coin::register<AptosCoin>(&resource_signer);
 
-        reload<AptosCoin,CoinB>(&caller,false,false,100,&second,signer::address_of(&caller),utf8(b"APT"));
-        debug::print(&coin::balance<AptosCoin>(signer::address_of(&caller)));
-        debug::print(&coin::balance<AptosCoin>(signer::address_of(&second)));
+        let a=create_resource_address(&@dapp,Seed);
+
+
+        reload<AptosCoin,AptosCoin>(first,false,false,100,signer::address_of(second),signer::address_of(caller),utf8(b"APT"));
+        debug::print(&utf8(b"first APT:"));
+        debug::print(&coin::balance<AptosCoin>(signer::address_of(first)));
+        debug::print(&utf8(b"second APT:"));
+        debug::print(&coin::balance<AptosCoin>(signer::address_of(second)));
+        debug::print(&utf8(b"dapp APT:"));
+        debug::print(&coin::balance<AptosCoin>(@dapp));
+        debug::print(&utf8(b"dapp_resource APT:"));
+        debug::print(&coin::balance<AptosCoin>(create_resource_address(&@dapp,Seed)));
+    }
+    ///################################################///
+     #[test_only]
+        fun setup(aptos_framework: &signer, sponsor: &signer,second:&signer): BurnCapability<AptosCoin> {
+            timestamp::set_time_has_started_for_testing(aptos_framework);
+            let (burn_cap, freeze_cap, mint_cap) = coin::initialize<AptosCoin>(
+                aptos_framework,
+                string::utf8(b"TC"),
+                string::utf8(b"TC"),
+                8,
+                false,
+            );
+            account::create_account_for_test(signer::address_of(sponsor));
+            coin::register<AptosCoin>(sponsor);
+            account::create_account_for_test(signer::address_of(second));
+            coin::register<AptosCoin>(second);
+            let coins = coin::mint<AptosCoin>(200000000, &mint_cap);
+            coin::deposit(signer::address_of(sponsor), coins);
+            let coins_1 = coin::mint<AptosCoin>(200000000, &mint_cap);
+            coin::deposit(signer::address_of(second), coins_1);
+            coin::destroy_mint_cap(mint_cap);
+            coin::destroy_freeze_cap(freeze_cap);
+            burn_cap
+        }
+    #[test_only]
+    fun test_init_borrow(caller:&signer)  {
+        let (resource_signer, resource_cap) = account::create_resource_account(
+            caller,
+            Seed
+        );
+        move_to(&resource_signer,ResourceCap{cap:resource_cap});
+        nft_collection_init(caller,&resource_signer);
+        create_Cylinder(caller,&resource_signer);
+    }
+    #[test_only]
+    fun test_init_1(caller:&signer){
+        test_init_borrow(caller);
+    }
+    #[test_only]
+    fun create_Cylinder(caller:&signer,resource_signer:&signer){
+
+        let bullet_APT = Cylinder{id:0,
+            Bullet:Cylinder_coin{Coin:utf8(b"APT"), address:vector::empty(), amount:vector::empty()}};
+        // debug::print(&bullet_APT);
+        move_to(resource_signer,bullet_APT);
+
+    }
+    #[test_only]
+    fun nft_collection_init(caller:&signer,resource_signer:&signer){
+
+        let royalty = create(10,100,@admin1);  //nft royalty
+        let collection=collection::create_unlimited_collection(             //create collection
+            resource_signer,
+            utf8(Description_nft),
+            utf8(Name_nft),
+            option::some(royalty),
+            utf8( Url_nft)
+        );
+        let collection_signer =  object::generate_signer(&collection);
+        let mutator_ref = aptos_token_objects::collection::generate_mutator_ref(&collection);
+        move_to(&collection_signer,
+            CollectionRefsStore{
+                mutator_ref});
     }
 
-    /// #[test(admin=@0x123)]
-    /// public entry fun account_test_1(admin:signer){
-    ///     let address=account::create_account_for_test(signer::address_of(&admin));
-    ///     let (apt_burn,apt_mint)=initialize_for_test(&address);
-    ///     move_to(&address,apt_mint);
-    ///     aptos_coin::mint(&address,signer::address_of(&address),100000);
-    ///     balance<AptosCoin>(signer::address_of(&address));
-    ///     pay_apt_to_dapp(&admin);
-    ///     balance<AptosCoin>(signer::address_of(&address));
-    ///
-    /// }
 }
