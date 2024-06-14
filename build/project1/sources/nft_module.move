@@ -1,4 +1,4 @@
-module 0x6::nft_module{
+module dapp::nft_module{
     use std::string;
     use std::option;
     use aptos_framework::keyless_account;
