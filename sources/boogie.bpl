@@ -8111,31 +8111,31 @@ axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid
 axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$4_collection_UnlimitedSupply'(b1), $1_from_bcs_deserializable'$4_collection_UnlimitedSupply'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:18:9+124, instance <admin_module::ResourceCap>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'(b1), $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'(b1), $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:18:9+124, instance <init_module::CollectionRefsStore>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'(b1), $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'(b1), $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:18:9+124, instance <pay_module::CollectionRefsStore>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'(b1), $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'(b1), $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:18:9+124, instance <pay_module::ResourceCap>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'(b1), $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'(b1), $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:18:9+124, instance <pay_module::Cylinder>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'(b1), $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'(b1), $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:18:9+124, instance <pay_module::Cylinder_coin>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(b1), $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(b1), $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:18:9+124, instance <pay_module::Address_list>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'(b1), $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'(b1), $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:18:9+124, instance <pay_module::Amount_list>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'(b1), $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'(b1), $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:18:9+124, instance <roll::WinningNum>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'(b1), $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'(b1), $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:18:9+124, instance <#0>
 axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'bool'($1_from_bcs_deserializable'#0'(b1), $1_from_bcs_deserializable'#0'(b2)))));
@@ -8369,31 +8369,31 @@ axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid
 axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$4_collection_UnlimitedSupply'($1_from_bcs_deserialize'$4_collection_UnlimitedSupply'(b1), $1_from_bcs_deserialize'$4_collection_UnlimitedSupply'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:21:9+118, instance <admin_module::ResourceCap>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'($1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'(b1), $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'($1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'(b1), $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:21:9+118, instance <init_module::CollectionRefsStore>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'($1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'(b1), $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'($1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'(b1), $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:21:9+118, instance <pay_module::CollectionRefsStore>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'($1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'(b1), $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'($1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'(b1), $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:21:9+118, instance <pay_module::ResourceCap>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'($1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'(b1), $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'($1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'(b1), $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:21:9+118, instance <pay_module::Cylinder>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'($1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'(b1), $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'($1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'(b1), $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:21:9+118, instance <pay_module::Cylinder_coin>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'($1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(b1), $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'($1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(b1), $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:21:9+118, instance <pay_module::Address_list>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'($1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'(b1), $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'($1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'(b1), $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:21:9+118, instance <pay_module::Amount_list>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'($1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'(b1), $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'($1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'(b1), $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:21:9+118, instance <roll::WinningNum>
-axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'($1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'(b1), $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'(b2)))));
+axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'($1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'(b1), $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'(b2)))));
 
 // axiom at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:21:9+118, instance <#0>
 axiom (forall b1: Vec (int), b2: Vec (int) :: $IsValid'vec'u8''(b1) ==> $IsValid'vec'u8''(b2) ==> (($IsEqual'vec'u8''(b1, b2) ==> $IsEqual'#0'($1_from_bcs_deserialize'#0'(b1), $1_from_bcs_deserialize'#0'(b2)))));
@@ -9940,58 +9940,58 @@ axiom (forall bytes: Vec (int) ::
 $IsValid'$4_collection_UnlimitedSupply'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:7:9+41
-function  $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'(bytes: Vec (int)): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap;
+function  $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'(bytes: Vec (int)): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'(bytes);
-$IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'($$res)));
+(var $$res := $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'(bytes);
+$IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:7:9+41
-function  $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'(bytes: Vec (int)): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore;
+function  $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'(bytes: Vec (int)): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'(bytes);
-$IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'($$res)));
+(var $$res := $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'(bytes);
+$IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:7:9+41
-function  $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'(bytes: Vec (int)): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore;
+function  $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'(bytes: Vec (int)): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'(bytes);
-$IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'($$res)));
+(var $$res := $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'(bytes);
+$IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:7:9+41
-function  $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'(bytes: Vec (int)): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap;
+function  $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'(bytes: Vec (int)): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'(bytes);
-$IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'($$res)));
+(var $$res := $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'(bytes);
+$IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:7:9+41
-function  $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'(bytes: Vec (int)): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+function  $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'(bytes: Vec (int)): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'(bytes);
-$IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'($$res)));
+(var $$res := $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'(bytes);
+$IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:7:9+41
-function  $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(bytes: Vec (int)): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
+function  $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(bytes: Vec (int)): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(bytes);
-$IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'($$res)));
+(var $$res := $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(bytes);
+$IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:7:9+41
-function  $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'(bytes: Vec (int)): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list;
+function  $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'(bytes: Vec (int)): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'(bytes);
-$IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'($$res)));
+(var $$res := $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'(bytes);
+$IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:7:9+41
-function  $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'(bytes: Vec (int)): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list;
+function  $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'(bytes: Vec (int)): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'(bytes);
-$IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'($$res)));
+(var $$res := $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'(bytes);
+$IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:7:9+41
-function  $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'(bytes: Vec (int)): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum;
+function  $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'(bytes: Vec (int)): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserialize'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'(bytes);
-$IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'($$res)));
+(var $$res := $1_from_bcs_deserialize'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'(bytes);
+$IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:7:9+41
 function  $1_from_bcs_deserialize'#0'(bytes: Vec (int)): #0;
@@ -10456,57 +10456,57 @@ axiom (forall bytes: Vec (int) ::
 $IsValid'bool'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:11:9+47
-function  $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'(bytes: Vec (int)): bool;
+function  $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'(bytes: Vec (int)): bool;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'(bytes);
+(var $$res := $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'(bytes);
 $IsValid'bool'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:11:9+47
-function  $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'(bytes: Vec (int)): bool;
+function  $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'(bytes: Vec (int)): bool;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'(bytes);
+(var $$res := $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'(bytes);
 $IsValid'bool'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:11:9+47
-function  $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'(bytes: Vec (int)): bool;
+function  $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'(bytes: Vec (int)): bool;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'(bytes);
+(var $$res := $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'(bytes);
 $IsValid'bool'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:11:9+47
-function  $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'(bytes: Vec (int)): bool;
+function  $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'(bytes: Vec (int)): bool;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'(bytes);
+(var $$res := $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'(bytes);
 $IsValid'bool'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:11:9+47
-function  $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'(bytes: Vec (int)): bool;
+function  $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'(bytes: Vec (int)): bool;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'(bytes);
+(var $$res := $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'(bytes);
 $IsValid'bool'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:11:9+47
-function  $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(bytes: Vec (int)): bool;
+function  $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(bytes: Vec (int)): bool;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(bytes);
+(var $$res := $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(bytes);
 $IsValid'bool'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:11:9+47
-function  $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'(bytes: Vec (int)): bool;
+function  $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'(bytes: Vec (int)): bool;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'(bytes);
+(var $$res := $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'(bytes);
 $IsValid'bool'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:11:9+47
-function  $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'(bytes: Vec (int)): bool;
+function  $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'(bytes: Vec (int)): bool;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'(bytes);
+(var $$res := $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'(bytes);
 $IsValid'bool'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:11:9+47
-function  $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'(bytes: Vec (int)): bool;
+function  $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'(bytes: Vec (int)): bool;
 axiom (forall bytes: Vec (int) ::
-(var $$res := $1_from_bcs_deserializable'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'(bytes);
+(var $$res := $1_from_bcs_deserializable'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'(bytes);
 $IsValid'bool'($$res)));
 
 // spec fun at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/../aptos-stdlib/sources/from_bcs.spec.move:11:9+47
@@ -22144,22 +22144,22 @@ L50:
 }
 
 // struct admin_module::ResourceCap at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:20:5+62
-datatype $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap($cap: $1_account_SignerCapability)
+datatype $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap($cap: $1_account_SignerCapability)
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'_cap(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap, x: $1_account_SignerCapability): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap(x)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'_cap(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap, x: $1_account_SignerCapability): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap(x)
 }
-function $IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap): bool {
+function $IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap): bool {
     $IsValid'$1_account_SignerCapability'(s->$cap)
 }
-function {:inline} $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'(s1: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap, s2: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap): bool {
+function {:inline} $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'(s1: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap, s2: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap): bool {
     s1 == s2
 }
-var $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap_$memory: $Memory $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap;
+var $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap_$memory: $Memory $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap;
 
 // fun admin_module::admin_withdraw [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:49:5+726
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_admin_withdraw$verify(_$t0: $signer, _$t1: int) returns ()
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_admin_withdraw$verify(_$t0: $signer, _$t1: int) returns ()
 {
     // declare local variables
     var $t2: int;
@@ -22173,7 +22173,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     var $t10: int;
     var $t11: Vec (int);
     var $t12: int;
-    var $t13: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap;
+    var $t13: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap;
     var $t14: $1_account_SignerCapability;
     var $t15: int;
     var $t16: $signer;
@@ -22265,8 +22265,8 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     ($IsValid'$1_aptos_account_DirectTransferConfig'($rsc))));
 
     // assume forall $rsc: admin_module::ResourceCap: ResourceDomain<admin_module::ResourceCap>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:49:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'($rsc))));
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'($rsc))));
 
     // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:49:5+1
     assume {:print "$track_local(82,0,0):", $t0} $t0 == $t0;
@@ -22276,7 +22276,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
 
     // $t5 := admin_module::check_admin($t0) on_abort goto L13 with $t6 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:50:17+19
     assume {:print "$at(2,1825,1844)"} true;
-    call $t5 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_admin($t0);
+    call $t5 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_admin($t0);
     if ($abort_flag) {
         assume {:print "$at(2,1825,1844)"} true;
         $t6 := $abort_code;
@@ -22318,7 +22318,7 @@ L2:
 
     // $t8 := admin_module::check_balance<#0>($t0, $t1) on_abort goto L13 with $t6 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:51:17+38
     assume {:print "$at(2,1873,1911)"} true;
-    call $t8 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_balance'#0'($t0, $t1);
+    call $t8 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_balance'#0'($t0, $t1);
     if ($abort_flag) {
         assume {:print "$at(2,1873,1911)"} true;
         $t6 := $abort_code;
@@ -22358,9 +22358,9 @@ L3:
     assume {:print "$at(2,2043,2048)"} true;
 L5:
 
-    // $t10 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:53:75+5
+    // $t10 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:53:75+5
     assume {:print "$at(2,2043,2048)"} true;
-    $t10 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    $t10 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t10);
 
     // $t11 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:53:81+4
@@ -22378,10 +22378,10 @@ L5:
     // $t12 := opaque end: account::create_resource_address($t10, $t11) at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:53:50+36
 
     // $t13 := get_global<admin_module::ResourceCap>($t12) on_abort goto L13 with $t6 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:53:23+13
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap_$memory, $t12)) {
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap_$memory, $t12)) {
         call $ExecFailureAbort();
     } else {
-        $t13 := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap_$memory, $t12);
+        $t13 := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap_$memory, $t12);
     }
     if ($abort_flag) {
         assume {:print "$at(2,1991,2004)"} true;
@@ -22412,7 +22412,7 @@ L5:
 
     // $t17 := admin_module::check_balance<#0>($t0, $t1) on_abort goto L13 with $t6 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:55:12+38
     assume {:print "$at(2,2171,2209)"} true;
-    call $t17 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_balance'#0'($t0, $t1);
+    call $t17 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_balance'#0'($t0, $t1);
     if ($abort_flag) {
         assume {:print "$at(2,2171,2209)"} true;
         $t6 := $abort_code;
@@ -22573,7 +22573,7 @@ L13:
 }
 
 // fun admin_module::admin_withdraw<aptos_coin::AptosCoin> [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:49:5+726
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_admin_withdraw'$1_aptos_coin_AptosCoin'$verify(_$t0: $signer, _$t1: int) returns ()
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_admin_withdraw'$1_aptos_coin_AptosCoin'$verify(_$t0: $signer, _$t1: int) returns ()
 {
     // declare local variables
     var $t2: int;
@@ -22587,7 +22587,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     var $t10: int;
     var $t11: Vec (int);
     var $t12: int;
-    var $t13: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap;
+    var $t13: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap;
     var $t14: $1_account_SignerCapability;
     var $t15: int;
     var $t16: $signer;
@@ -22679,8 +22679,8 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     ($IsValid'$1_aptos_account_DirectTransferConfig'($rsc))));
 
     // assume forall $rsc: admin_module::ResourceCap: ResourceDomain<admin_module::ResourceCap>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:49:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap'($rsc))));
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap'($rsc))));
 
     // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:49:5+1
     assume {:print "$track_local(82,0,0):", $t0} $t0 == $t0;
@@ -22690,7 +22690,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
 
     // $t5 := admin_module::check_admin($t0) on_abort goto L13 with $t6 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:50:17+19
     assume {:print "$at(2,1825,1844)"} true;
-    call $t5 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_admin($t0);
+    call $t5 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_admin($t0);
     if ($abort_flag) {
         assume {:print "$at(2,1825,1844)"} true;
         $t6 := $abort_code;
@@ -22732,7 +22732,7 @@ L2:
 
     // $t8 := admin_module::check_balance<#0>($t0, $t1) on_abort goto L13 with $t6 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:51:17+38
     assume {:print "$at(2,1873,1911)"} true;
-    call $t8 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_balance'$1_aptos_coin_AptosCoin'($t0, $t1);
+    call $t8 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_balance'$1_aptos_coin_AptosCoin'($t0, $t1);
     if ($abort_flag) {
         assume {:print "$at(2,1873,1911)"} true;
         $t6 := $abort_code;
@@ -22772,9 +22772,9 @@ L3:
     assume {:print "$at(2,2043,2048)"} true;
 L5:
 
-    // $t10 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:53:75+5
+    // $t10 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:53:75+5
     assume {:print "$at(2,2043,2048)"} true;
-    $t10 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    $t10 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t10);
 
     // $t11 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:53:81+4
@@ -22792,10 +22792,10 @@ L5:
     // $t12 := opaque end: account::create_resource_address($t10, $t11) at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:53:50+36
 
     // $t13 := get_global<admin_module::ResourceCap>($t12) on_abort goto L13 with $t6 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:53:23+13
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap_$memory, $t12)) {
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap_$memory, $t12)) {
         call $ExecFailureAbort();
     } else {
-        $t13 := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_ResourceCap_$memory, $t12);
+        $t13 := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_ResourceCap_$memory, $t12);
     }
     if ($abort_flag) {
         assume {:print "$at(2,1991,2004)"} true;
@@ -22826,7 +22826,7 @@ L5:
 
     // $t17 := admin_module::check_balance<#0>($t0, $t1) on_abort goto L13 with $t6 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:55:12+38
     assume {:print "$at(2,2171,2209)"} true;
-    call $t17 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_balance'$1_aptos_coin_AptosCoin'($t0, $t1);
+    call $t17 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_balance'$1_aptos_coin_AptosCoin'($t0, $t1);
     if ($abort_flag) {
         assume {:print "$at(2,2171,2209)"} true;
         $t6 := $abort_code;
@@ -22987,7 +22987,7 @@ L13:
 }
 
 // fun admin_module::check_admin [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:35:5+181
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_admin(_$t0: $signer) returns ($ret0: bool)
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_admin(_$t0: $signer) returns ($ret0: bool)
 {
     // declare local variables
     var $t1: bool;
@@ -23126,7 +23126,7 @@ L6:
 }
 
 // fun admin_module::check_admin [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:35:5+181
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_admin$verify(_$t0: $signer) returns ($ret0: bool)
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_admin$verify(_$t0: $signer) returns ($ret0: bool)
 {
     // declare local variables
     var $t1: bool;
@@ -23271,7 +23271,7 @@ L6:
 }
 
 // fun admin_module::check_admin_ability [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:40:5+127
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_admin_ability$verify() returns ()
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_admin_ability$verify() returns ()
 {
     // declare local variables
 
@@ -23290,7 +23290,7 @@ L1:
 }
 
 // fun admin_module::check_balance<aptos_coin::AptosCoin> [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:30:5+163
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_balance'$1_aptos_coin_AptosCoin'(_$t0: $signer, _$t1: int) returns ($ret0: bool)
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_balance'$1_aptos_coin_AptosCoin'(_$t0: $signer, _$t1: int) returns ($ret0: bool)
 {
     // declare local variables
     var $t2: int;
@@ -23317,9 +23317,9 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:30:5+1
     assume {:print "$track_local(82,3,1):", $t1} $t1 == $t1;
 
-    // $t2 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:31:30+5
+    // $t2 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:31:30+5
     assume {:print "$at(2,1061,1066)"} true;
-    $t2 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    $t2 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t2);
 
     // assume Identical($t3, select coin::CoinInfo.supply<coin::CoinInfo<#0>>(global<coin::CoinInfo<#0>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<#0>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
@@ -23396,7 +23396,7 @@ L3:
 }
 
 // fun admin_module::check_balance<#0> [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:30:5+163
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_balance'#0'(_$t0: $signer, _$t1: int) returns ($ret0: bool)
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_balance'#0'(_$t0: $signer, _$t1: int) returns ($ret0: bool)
 {
     // declare local variables
     var $t2: int;
@@ -23423,9 +23423,9 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:30:5+1
     assume {:print "$track_local(82,3,1):", $t1} $t1 == $t1;
 
-    // $t2 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:31:30+5
+    // $t2 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:31:30+5
     assume {:print "$at(2,1061,1066)"} true;
-    $t2 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    $t2 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t2);
 
     // assume Identical($t3, select coin::CoinInfo.supply<coin::CoinInfo<#0>>(global<coin::CoinInfo<#0>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<#0>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
@@ -23502,7 +23502,7 @@ L3:
 }
 
 // fun admin_module::check_balance [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:30:5+163
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_check_balance$verify(_$t0: $signer, _$t1: int) returns ($ret0: bool)
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_check_balance$verify(_$t0: $signer, _$t1: int) returns ($ret0: bool)
 {
     // declare local variables
     var $t2: int;
@@ -23561,9 +23561,9 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:30:5+1
     assume {:print "$track_local(82,3,1):", $t1} $t1 == $t1;
 
-    // $t2 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:31:30+5
+    // $t2 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:31:30+5
     assume {:print "$at(2,1061,1066)"} true;
-    $t2 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    $t2 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t2);
 
     // assume Identical($t3, select coin::CoinInfo.supply<coin::CoinInfo<#0>>(global<coin::CoinInfo<#0>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<#0>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
@@ -23640,7 +23640,7 @@ L3:
 }
 
 // fun admin_module::set_aprove_admin [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/admin_module.move:43:5+254
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_admin_module_set_aprove_admin$verify(_$t0: $signer) returns ()
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_admin_module_set_aprove_admin$verify(_$t0: $signer) returns ()
 {
     // declare local variables
     var $t0: $signer;
@@ -23669,22 +23669,22 @@ L1:
 }
 
 // struct init_module::CollectionRefsStore at /Users/dylan/Documents/GitHub/diffusion/sources/init.move:37:5+87
-datatype $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore($mutator_ref: $4_collection_MutatorRef)
+datatype $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore($mutator_ref: $4_collection_MutatorRef)
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'_mutator_ref(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore, x: $4_collection_MutatorRef): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore(x)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'_mutator_ref(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore, x: $4_collection_MutatorRef): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore(x)
 }
-function $IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore): bool {
+function $IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore): bool {
     $IsValid'$4_collection_MutatorRef'(s->$mutator_ref)
 }
-function {:inline} $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'(s1: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore, s2: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore): bool {
+function {:inline} $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'(s1: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore, s2: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore): bool {
     s1 == s2
 }
-var $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore_$memory: $Memory $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore;
+var $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore_$memory: $Memory $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore;
 
 // fun init_module::register_coin [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/init.move:86:5+526
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_register_coin$verify(_$t0: $signer) returns ()
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_register_coin$verify(_$t0: $signer) returns ()
 {
     // declare local variables
     var $t0: $signer;
@@ -23713,7 +23713,7 @@ L1:
 }
 
 // fun init_module::nft_collection_init [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/init.move:94:5+658
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_nft_collection_init$verify(_$t0: $signer, _$t1: $signer) returns ()
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_nft_collection_init$verify(_$t0: $signer, _$t1: $signer) returns ()
 {
     // declare local variables
     var $t2: $1_object_ConstructorRef;
@@ -23735,7 +23735,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     var $t18: $1_object_ConstructorRef;
     var $t19: $signer;
     var $t20: $4_collection_MutatorRef;
-    var $t21: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore;
+    var $t21: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore;
     var $t0: $signer;
     var $t1: $signer;
     var $temp_0'$1_object_ConstructorRef': $1_object_ConstructorRef;
@@ -23781,8 +23781,8 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     ($IsValid'$4_collection_UnlimitedSupply'($rsc))));
 
     // assume forall $rsc: init_module::CollectionRefsStore: ResourceDomain<init_module::CollectionRefsStore>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/init.move:94:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore'($rsc))));
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore'($rsc))));
 
     // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/init.move:94:5+1
     assume {:print "$track_local(83,0,0):", $t0} $t0 == $t0;
@@ -23909,14 +23909,14 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
 
     // $t21 := pack init_module::CollectionRefsStore($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/init.move:107:13+49
     assume {:print "$at(3,4122,4171)"} true;
-    $t21 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore($t20);
+    $t21 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore($t20);
 
     // move_to<init_module::CollectionRefsStore>($t21, $t19) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/init.move:106:9+7
     assume {:print "$at(3,4082,4089)"} true;
-    if ($ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore_$memory, $t19->$addr)) {
+    if ($ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore_$memory, $t19->$addr)) {
         call $ExecFailureAbort();
     } else {
-        $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore_$memory := $ResourceUpdate($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_init_module_CollectionRefsStore_$memory, $t19->$addr, $t21);
+        $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore_$memory := $ResourceUpdate($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_init_module_CollectionRefsStore_$memory, $t19->$addr, $t21);
     }
     if ($abort_flag) {
         assume {:print "$at(3,4082,4089)"} true;
@@ -23944,8 +23944,8 @@ L2:
 
 }
 
-// fun transfer_module::check_account_exist [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:13:5+237
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_check_account_exist(_$t0: $signer, _$t1: int) returns ()
+// fun transfer_module::check_account_exist [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:13:5+252
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_check_account_exist(_$t0: $signer, _$t1: int) returns ()
 {
     // declare local variables
     var $t2: int;
@@ -23979,10 +23979,10 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     assume {:print "$track_local(85,0,1):", $t1} $t1 == $t1;
 
     // $t2 := signer::address_of($t0) on_abort goto L7 with $t3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:17+26
-    assume {:print "$at(8,457,483)"} true;
+    assume {:print "$at(8,472,498)"} true;
     call $t2 := $1_signer_address_of($t0);
     if ($abort_flag) {
-        assume {:print "$at(8,457,483)"} true;
+        assume {:print "$at(8,472,498)"} true;
         $t3 := $abort_code;
         assume {:print "$track_abort(85,0):", $t3} $t3 == $t3;
         goto L7;
@@ -23998,19 +23998,19 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
 L1:
 
     // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:9+90
-    assume {:print "$at(8,449,539)"} true;
+    assume {:print "$at(8,464,554)"} true;
     goto L2;
 
     // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:9+90
 L0:
 
     // $t5 := 21 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:53+44
-    assume {:print "$at(8,493,537)"} true;
+    assume {:print "$at(8,508,552)"} true;
     $t5 := 21;
     assume $IsValid'u64'($t5);
 
     // trace_abort($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:9+90
-    assume {:print "$at(8,449,539)"} true;
+    assume {:print "$at(8,464,554)"} true;
     assume {:print "$track_abort(85,0):", $t5} $t5 == $t5;
 
     // $t3 := move($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:9+90
@@ -24020,14 +24020,14 @@ L0:
     goto L7;
 
     // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:31+7
-    assume {:print "$at(8,571,578)"} true;
+    assume {:print "$at(8,586,593)"} true;
 L2:
 
     // $t6 := account::exists_at($t1) on_abort goto L7 with $t3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:12+27
-    assume {:print "$at(8,552,579)"} true;
+    assume {:print "$at(8,567,594)"} true;
     call $t6 := $1_account_exists_at($t1);
     if ($abort_flag) {
-        assume {:print "$at(8,552,579)"} true;
+        assume {:print "$at(8,567,594)"} true;
         $t3 := $abort_code;
         assume {:print "$track_abort(85,0):", $t3} $t3 == $t3;
         goto L7;
@@ -24040,14 +24040,14 @@ L2:
 L4:
 
     // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:9+66
-    assume {:print "$at(8,549,615)"} true;
+    assume {:print "$at(8,564,630)"} true;
     goto L5;
 
     // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:56+6
 L3:
 
     // $t7 := 1 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:71+1
-    assume {:print "$at(8,611,612)"} true;
+    assume {:print "$at(8,626,627)"} true;
     $t7 := 1;
     assume $IsValid'u64'($t7);
 
@@ -24088,10 +24088,10 @@ L3:
     assume ($t16 == $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $t8));
 
     // aptos_account::transfer($t0, $t1, $t7) on_abort goto L7 with $t3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:47+26
-    assume {:print "$at(8,587,613)"} true;
+    assume {:print "$at(8,602,628)"} true;
     call $1_aptos_account_transfer($t0, $t1, $t7);
     if ($abort_flag) {
-        assume {:print "$at(8,587,613)"} true;
+        assume {:print "$at(8,602,628)"} true;
         $t3 := $abort_code;
         assume {:print "$track_abort(85,0):", $t3} $t3 == $t3;
         goto L7;
@@ -24101,26 +24101,26 @@ L3:
 L5:
 
     // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:16:5+1
-    assume {:print "$at(8,620,621)"} true;
+    assume {:print "$at(8,635,636)"} true;
 L6:
 
     // return () at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:16:5+1
-    assume {:print "$at(8,620,621)"} true;
+    assume {:print "$at(8,635,636)"} true;
     return;
 
     // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:16:5+1
 L7:
 
     // abort($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:16:5+1
-    assume {:print "$at(8,620,621)"} true;
+    assume {:print "$at(8,635,636)"} true;
     $abort_code := $t3;
     $abort_flag := true;
     return;
 
 }
 
-// fun transfer_module::check_account_exist [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:13:5+237
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_check_account_exist$verify(_$t0: $signer, _$t1: int) returns ()
+// fun transfer_module::check_account_exist [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:13:5+252
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_check_account_exist$verify(_$t0: $signer, _$t1: int) returns ()
 {
     // declare local variables
     var $t2: int;
@@ -24190,10 +24190,10 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     assume {:print "$track_local(85,0,1):", $t1} $t1 == $t1;
 
     // $t2 := signer::address_of($t0) on_abort goto L7 with $t3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:17+26
-    assume {:print "$at(8,457,483)"} true;
+    assume {:print "$at(8,472,498)"} true;
     call $t2 := $1_signer_address_of($t0);
     if ($abort_flag) {
-        assume {:print "$at(8,457,483)"} true;
+        assume {:print "$at(8,472,498)"} true;
         $t3 := $abort_code;
         assume {:print "$track_abort(85,0):", $t3} $t3 == $t3;
         goto L7;
@@ -24209,19 +24209,19 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
 L1:
 
     // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:9+90
-    assume {:print "$at(8,449,539)"} true;
+    assume {:print "$at(8,464,554)"} true;
     goto L2;
 
     // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:9+90
 L0:
 
     // $t5 := 21 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:53+44
-    assume {:print "$at(8,493,537)"} true;
+    assume {:print "$at(8,508,552)"} true;
     $t5 := 21;
     assume $IsValid'u64'($t5);
 
     // trace_abort($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:9+90
-    assume {:print "$at(8,449,539)"} true;
+    assume {:print "$at(8,464,554)"} true;
     assume {:print "$track_abort(85,0):", $t5} $t5 == $t5;
 
     // $t3 := move($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:14:9+90
@@ -24231,14 +24231,14 @@ L0:
     goto L7;
 
     // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:31+7
-    assume {:print "$at(8,571,578)"} true;
+    assume {:print "$at(8,586,593)"} true;
 L2:
 
     // $t6 := account::exists_at($t1) on_abort goto L7 with $t3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:12+27
-    assume {:print "$at(8,552,579)"} true;
+    assume {:print "$at(8,567,594)"} true;
     call $t6 := $1_account_exists_at($t1);
     if ($abort_flag) {
-        assume {:print "$at(8,552,579)"} true;
+        assume {:print "$at(8,567,594)"} true;
         $t3 := $abort_code;
         assume {:print "$track_abort(85,0):", $t3} $t3 == $t3;
         goto L7;
@@ -24251,14 +24251,14 @@ L2:
 L4:
 
     // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:9+66
-    assume {:print "$at(8,549,615)"} true;
+    assume {:print "$at(8,564,630)"} true;
     goto L5;
 
     // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:56+6
 L3:
 
     // $t7 := 1 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:71+1
-    assume {:print "$at(8,611,612)"} true;
+    assume {:print "$at(8,626,627)"} true;
     $t7 := 1;
     assume $IsValid'u64'($t7);
 
@@ -24304,10 +24304,10 @@ L3:
       !$IsEqual'address'($t8, $t1);
 
     // aptos_account::transfer($t0, $t1, $t7) on_abort goto L7 with $t3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:15:47+26
-    assume {:print "$at(8,587,613)"} true;
+    assume {:print "$at(8,602,628)"} true;
     call $1_aptos_account_transfer($t0, $t1, $t7);
     if ($abort_flag) {
-        assume {:print "$at(8,587,613)"} true;
+        assume {:print "$at(8,602,628)"} true;
         $t3 := $abort_code;
         assume {:print "$track_abort(85,0):", $t3} $t3 == $t3;
         goto L7;
@@ -24317,18 +24317,18 @@ L3:
 L5:
 
     // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:16:5+1
-    assume {:print "$at(8,620,621)"} true;
+    assume {:print "$at(8,635,636)"} true;
 L6:
 
     // return () at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:16:5+1
-    assume {:print "$at(8,620,621)"} true;
+    assume {:print "$at(8,635,636)"} true;
     return;
 
     // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:16:5+1
 L7:
 
     // abort($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:16:5+1
-    assume {:print "$at(8,620,621)"} true;
+    assume {:print "$at(8,635,636)"} true;
     $abort_code := $t3;
     $abort_flag := true;
     return;
@@ -24336,7 +24336,7 @@ L7:
 }
 
 // fun transfer_module::own_transfer<aptos_coin::AptosCoin> [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+266
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_own_transfer'$1_aptos_coin_AptosCoin'(_$t0: $signer, _$t1: int, _$t2: int) returns ()
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_own_transfer'$1_aptos_coin_AptosCoin'(_$t0: $signer, _$t1: int, _$t2: int) returns ()
 {
     // declare local variables
     var $t3: int;
@@ -24364,7 +24364,7 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
 
     // bytecode translation starts here
     // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+1
-    assume {:print "$at(8,626,627)"} true;
+    assume {:print "$at(8,641,642)"} true;
     assume {:print "$track_local(85,1,0):", $t0} $t0 == $t0;
 
     // trace_local[address]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+1
@@ -24374,10 +24374,10 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     assume {:print "$track_local(85,1,2):", $t2} $t2 == $t2;
 
     // $t3 := signer::address_of($t0) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:17+26
-    assume {:print "$at(8,725,751)"} true;
+    assume {:print "$at(8,740,766)"} true;
     call $t3 := $1_signer_address_of($t0);
     if ($abort_flag) {
-        assume {:print "$at(8,725,751)"} true;
+        assume {:print "$at(8,740,766)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
@@ -24393,19 +24393,19 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
 L1:
 
     // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
-    assume {:print "$at(8,717,786)"} true;
+    assume {:print "$at(8,732,801)"} true;
     goto L2;
 
     // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
 L0:
 
     // $t6 := 20 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:53+24
-    assume {:print "$at(8,761,785)"} true;
+    assume {:print "$at(8,776,800)"} true;
     $t6 := 20;
     assume $IsValid'u64'($t6);
 
     // trace_abort($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
-    assume {:print "$at(8,717,786)"} true;
+    assume {:print "$at(8,732,801)"} true;
     assume {:print "$track_abort(85,1):", $t6} $t6 == $t6;
 
     // $t4 := move($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
@@ -24415,14 +24415,14 @@ L0:
     goto L4;
 
     // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:19:29+6
-    assume {:print "$at(8,816,822)"} true;
+    assume {:print "$at(8,831,837)"} true;
 L2:
 
     // transfer_module::check_account_exist($t0, $t1) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:19:9+35
-    assume {:print "$at(8,796,831)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_check_account_exist($t0, $t1);
+    assume {:print "$at(8,811,846)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_check_account_exist($t0, $t1);
     if ($abort_flag) {
-        assume {:print "$at(8,796,831)"} true;
+        assume {:print "$at(8,811,846)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
@@ -24465,28 +24465,28 @@ L2:
     assume ($t15 == $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $t7));
 
     // aptos_account::transfer_coins<#0>($t0, $t1, $t2) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:20:9+44
-    assume {:print "$at(8,841,885)"} true;
+    assume {:print "$at(8,856,900)"} true;
     call $1_aptos_account_transfer_coins'$1_aptos_coin_AptosCoin'($t0, $t1, $t2);
     if ($abort_flag) {
-        assume {:print "$at(8,841,885)"} true;
+        assume {:print "$at(8,856,900)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
     }
 
     // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
 L3:
 
     // return () at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
     return;
 
     // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
 L4:
 
     // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
     $abort_code := $t4;
     $abort_flag := true;
     return;
@@ -24494,7 +24494,7 @@ L4:
 }
 
 // fun transfer_module::own_transfer<#0> [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+266
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_own_transfer'#0'(_$t0: $signer, _$t1: int, _$t2: int) returns ()
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_own_transfer'#0'(_$t0: $signer, _$t1: int, _$t2: int) returns ()
 {
     // declare local variables
     var $t3: int;
@@ -24522,7 +24522,7 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
 
     // bytecode translation starts here
     // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+1
-    assume {:print "$at(8,626,627)"} true;
+    assume {:print "$at(8,641,642)"} true;
     assume {:print "$track_local(85,1,0):", $t0} $t0 == $t0;
 
     // trace_local[address]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+1
@@ -24532,10 +24532,10 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     assume {:print "$track_local(85,1,2):", $t2} $t2 == $t2;
 
     // $t3 := signer::address_of($t0) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:17+26
-    assume {:print "$at(8,725,751)"} true;
+    assume {:print "$at(8,740,766)"} true;
     call $t3 := $1_signer_address_of($t0);
     if ($abort_flag) {
-        assume {:print "$at(8,725,751)"} true;
+        assume {:print "$at(8,740,766)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
@@ -24551,19 +24551,19 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
 L1:
 
     // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
-    assume {:print "$at(8,717,786)"} true;
+    assume {:print "$at(8,732,801)"} true;
     goto L2;
 
     // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
 L0:
 
     // $t6 := 20 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:53+24
-    assume {:print "$at(8,761,785)"} true;
+    assume {:print "$at(8,776,800)"} true;
     $t6 := 20;
     assume $IsValid'u64'($t6);
 
     // trace_abort($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
-    assume {:print "$at(8,717,786)"} true;
+    assume {:print "$at(8,732,801)"} true;
     assume {:print "$track_abort(85,1):", $t6} $t6 == $t6;
 
     // $t4 := move($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
@@ -24573,14 +24573,14 @@ L0:
     goto L4;
 
     // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:19:29+6
-    assume {:print "$at(8,816,822)"} true;
+    assume {:print "$at(8,831,837)"} true;
 L2:
 
     // transfer_module::check_account_exist($t0, $t1) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:19:9+35
-    assume {:print "$at(8,796,831)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_check_account_exist($t0, $t1);
+    assume {:print "$at(8,811,846)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_check_account_exist($t0, $t1);
     if ($abort_flag) {
-        assume {:print "$at(8,796,831)"} true;
+        assume {:print "$at(8,811,846)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
@@ -24623,28 +24623,28 @@ L2:
     assume ($t15 == $ResourceValue($1_coin_CoinStore'#0'_$memory, $t7));
 
     // aptos_account::transfer_coins<#0>($t0, $t1, $t2) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:20:9+44
-    assume {:print "$at(8,841,885)"} true;
+    assume {:print "$at(8,856,900)"} true;
     call $1_aptos_account_transfer_coins'#0'($t0, $t1, $t2);
     if ($abort_flag) {
-        assume {:print "$at(8,841,885)"} true;
+        assume {:print "$at(8,856,900)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
     }
 
     // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
 L3:
 
     // return () at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
     return;
 
     // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
 L4:
 
     // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
     $abort_code := $t4;
     $abort_flag := true;
     return;
@@ -24652,7 +24652,7 @@ L4:
 }
 
 // fun transfer_module::own_transfer [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+266
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_own_transfer$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_own_transfer$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
 {
     // declare local variables
     var $t3: int;
@@ -24683,7 +24683,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
 
     // bytecode translation starts here
     // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+1
-    assume {:print "$at(8,626,627)"} true;
+    assume {:print "$at(8,641,642)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
     // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+1
@@ -24756,10 +24756,10 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     assume {:print "$track_local(85,1,2):", $t2} $t2 == $t2;
 
     // $t3 := signer::address_of($t0) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:17+26
-    assume {:print "$at(8,725,751)"} true;
+    assume {:print "$at(8,740,766)"} true;
     call $t3 := $1_signer_address_of($t0);
     if ($abort_flag) {
-        assume {:print "$at(8,725,751)"} true;
+        assume {:print "$at(8,740,766)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
@@ -24775,19 +24775,19 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
 L1:
 
     // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
-    assume {:print "$at(8,717,786)"} true;
+    assume {:print "$at(8,732,801)"} true;
     goto L2;
 
     // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
 L0:
 
     // $t6 := 20 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:53+24
-    assume {:print "$at(8,761,785)"} true;
+    assume {:print "$at(8,776,800)"} true;
     $t6 := 20;
     assume $IsValid'u64'($t6);
 
     // trace_abort($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
-    assume {:print "$at(8,717,786)"} true;
+    assume {:print "$at(8,732,801)"} true;
     assume {:print "$track_abort(85,1):", $t6} $t6 == $t6;
 
     // $t4 := move($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
@@ -24797,14 +24797,14 @@ L0:
     goto L4;
 
     // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:19:29+6
-    assume {:print "$at(8,816,822)"} true;
+    assume {:print "$at(8,831,837)"} true;
 L2:
 
     // transfer_module::check_account_exist($t0, $t1) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:19:9+35
-    assume {:print "$at(8,796,831)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_check_account_exist($t0, $t1);
+    assume {:print "$at(8,811,846)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_check_account_exist($t0, $t1);
     if ($abort_flag) {
-        assume {:print "$at(8,796,831)"} true;
+        assume {:print "$at(8,811,846)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
@@ -24852,28 +24852,28 @@ L2:
       !$IsEqual'address'($t7, $t1);
 
     // aptos_account::transfer_coins<#0>($t0, $t1, $t2) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:20:9+44
-    assume {:print "$at(8,841,885)"} true;
+    assume {:print "$at(8,856,900)"} true;
     call $1_aptos_account_transfer_coins'#0'($t0, $t1, $t2);
     if ($abort_flag) {
-        assume {:print "$at(8,841,885)"} true;
+        assume {:print "$at(8,856,900)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
     }
 
     // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
 L3:
 
     // return () at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
     return;
 
     // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
 L4:
 
     // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
     $abort_code := $t4;
     $abort_flag := true;
     return;
@@ -24881,7 +24881,7 @@ L4:
 }
 
 // fun transfer_module::own_transfer<aptos_coin::AptosCoin> [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+266
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_own_transfer'$1_aptos_coin_AptosCoin'$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_own_transfer'$1_aptos_coin_AptosCoin'$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
 {
     // declare local variables
     var $t3: int;
@@ -24912,7 +24912,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
 
     // bytecode translation starts here
     // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+1
-    assume {:print "$at(8,626,627)"} true;
+    assume {:print "$at(8,641,642)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
     // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:17:5+1
@@ -24985,10 +24985,10 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     assume {:print "$track_local(85,1,2):", $t2} $t2 == $t2;
 
     // $t3 := signer::address_of($t0) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:17+26
-    assume {:print "$at(8,725,751)"} true;
+    assume {:print "$at(8,740,766)"} true;
     call $t3 := $1_signer_address_of($t0);
     if ($abort_flag) {
-        assume {:print "$at(8,725,751)"} true;
+        assume {:print "$at(8,740,766)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
@@ -25004,19 +25004,19 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
 L1:
 
     // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
-    assume {:print "$at(8,717,786)"} true;
+    assume {:print "$at(8,732,801)"} true;
     goto L2;
 
     // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
 L0:
 
     // $t6 := 20 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:53+24
-    assume {:print "$at(8,761,785)"} true;
+    assume {:print "$at(8,776,800)"} true;
     $t6 := 20;
     assume $IsValid'u64'($t6);
 
     // trace_abort($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
-    assume {:print "$at(8,717,786)"} true;
+    assume {:print "$at(8,732,801)"} true;
     assume {:print "$track_abort(85,1):", $t6} $t6 == $t6;
 
     // $t4 := move($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:18:9+69
@@ -25026,14 +25026,14 @@ L0:
     goto L4;
 
     // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:19:29+6
-    assume {:print "$at(8,816,822)"} true;
+    assume {:print "$at(8,831,837)"} true;
 L2:
 
     // transfer_module::check_account_exist($t0, $t1) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:19:9+35
-    assume {:print "$at(8,796,831)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_check_account_exist($t0, $t1);
+    assume {:print "$at(8,811,846)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_check_account_exist($t0, $t1);
     if ($abort_flag) {
-        assume {:print "$at(8,796,831)"} true;
+        assume {:print "$at(8,811,846)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
@@ -25081,137 +25081,137 @@ L2:
       !$IsEqual'address'($t7, $t1);
 
     // aptos_account::transfer_coins<#0>($t0, $t1, $t2) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:20:9+44
-    assume {:print "$at(8,841,885)"} true;
+    assume {:print "$at(8,856,900)"} true;
     call $1_aptos_account_transfer_coins'$1_aptos_coin_AptosCoin'($t0, $t1, $t2);
     if ($abort_flag) {
-        assume {:print "$at(8,841,885)"} true;
+        assume {:print "$at(8,856,900)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(85,1):", $t4} $t4 == $t4;
         goto L4;
     }
 
     // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
 L3:
 
     // return () at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
     return;
 
     // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
 L4:
 
     // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/transfer_module.move:21:5+1
-    assume {:print "$at(8,891,892)"} true;
+    assume {:print "$at(8,906,907)"} true;
     $abort_code := $t4;
     $abort_flag := true;
     return;
 
 }
 
-// struct pay_module::CollectionRefsStore at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:100:5+87
-datatype $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore($mutator_ref: $4_collection_MutatorRef)
+// struct pay_module::CollectionRefsStore at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:101:5+87
+datatype $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore($mutator_ref: $4_collection_MutatorRef)
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'_mutator_ref(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore, x: $4_collection_MutatorRef): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore(x)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'_mutator_ref(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore, x: $4_collection_MutatorRef): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore(x)
 }
-function $IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore): bool {
+function $IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore): bool {
     $IsValid'$4_collection_MutatorRef'(s->$mutator_ref)
 }
-function {:inline} $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'(s1: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore, s2: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore): bool {
+function {:inline} $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'(s1: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore, s2: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore): bool {
     s1 == s2
 }
-var $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore_$memory: $Memory $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore;
+var $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore_$memory: $Memory $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore;
 
-// struct pay_module::ResourceCap at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:87:5+62
-datatype $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap($cap: $1_account_SignerCapability)
+// struct pay_module::ResourceCap at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:88:5+62
+datatype $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap($cap: $1_account_SignerCapability)
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'_cap(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap, x: $1_account_SignerCapability): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap(x)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'_cap(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap, x: $1_account_SignerCapability): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap(x)
 }
-function $IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap): bool {
+function $IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap): bool {
     $IsValid'$1_account_SignerCapability'(s->$cap)
 }
-function {:inline} $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'(s1: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap, s2: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap): bool {
+function {:inline} $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'(s1: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap, s2: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap): bool {
     s1 == s2
 }
-var $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory: $Memory $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap;
+var $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory: $Memory $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap;
 
-// struct pay_module::Cylinder at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:96:5+80
-datatype $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder($id: int, $Bullet: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin)
+// struct pay_module::Cylinder at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:97:5+80
+datatype $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder($id: int, $Bullet: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin)
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_id(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder, x: int): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder(x, s->$Bullet)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_id(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder, x: int): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder(x, s->$Bullet)
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder, x: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder(s->$id, x)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder, x: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder(s->$id, x)
 }
-function $IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder): bool {
+function $IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder): bool {
     $IsValid'u8'(s->$id)
-      && $IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(s->$Bullet)
+      && $IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(s->$Bullet)
 }
-function {:inline} $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'(s1: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder, s2: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder): bool {
+function {:inline} $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'(s1: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder, s2: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder): bool {
     $IsEqual'u8'(s1->$id, s2->$id)
-    && $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(s1->$Bullet, s2->$Bullet)}
-var $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory: $Memory $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    && $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(s1->$Bullet, s2->$Bullet)}
+var $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory: $Memory $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
 
-// struct pay_module::Cylinder_coin at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:90:5+122
-datatype $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin($Coin: $1_string_String, $address: Vec (int), $amount: Vec (int))
+// struct pay_module::Cylinder_coin at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:91:5+122
+datatype $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin($Coin: $1_string_String, $address: Vec (int), $amount: Vec (int))
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_Coin(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin, x: $1_string_String): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin(x, s->$address, s->$amount)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_Coin(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin, x: $1_string_String): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin(x, s->$address, s->$amount)
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin, x: Vec (int)): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin(s->$Coin, x, s->$amount)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin, x: Vec (int)): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin(s->$Coin, x, s->$amount)
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin, x: Vec (int)): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin(s->$Coin, s->$address, x)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin, x: Vec (int)): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin(s->$Coin, s->$address, x)
 }
-function $IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin): bool {
+function $IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin): bool {
     $IsValid'$1_string_String'(s->$Coin)
       && $IsValid'vec'address''(s->$address)
       && $IsValid'vec'u64''(s->$amount)
 }
-function {:inline} $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'(s1: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin, s2: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin): bool {
+function {:inline} $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'(s1: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin, s2: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin): bool {
     $IsEqual'$1_string_String'(s1->$Coin, s2->$Coin)
     && $IsEqual'vec'address''(s1->$address, s2->$address)
     && $IsEqual'vec'u64''(s1->$amount, s2->$amount)}
-var $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin_$memory: $Memory $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
+var $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin_$memory: $Memory $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
 
-// struct pay_module::Address_list at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:81:5+62
-datatype $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list($list: int)
+// struct pay_module::Address_list at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:82:5+62
+datatype $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list($list: int)
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'_list(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list, x: int): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list(x)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'_list(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list, x: int): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list(x)
 }
-function $IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list): bool {
+function $IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list): bool {
     $IsValid'address'(s->$list)
 }
-function {:inline} $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list'(s1: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list, s2: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list): bool {
+function {:inline} $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list'(s1: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list, s2: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list): bool {
     s1 == s2
 }
 
-// struct pay_module::Amount_list at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:84:5+57
-datatype $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list($list: int)
+// struct pay_module::Amount_list at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:85:5+57
+datatype $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list($list: int)
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'_list(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list, x: int): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list(x)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'_list(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list, x: int): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list(x)
 }
-function $IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list): bool {
+function $IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list): bool {
     $IsValid'u64'(s->$list)
 }
-function {:inline} $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list'(s1: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list, s2: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list): bool {
+function {:inline} $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list'(s1: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list, s2: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list): bool {
     s1 == s2
 }
 
-// fun pay_module::swap [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:237:5+25
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_swap$verify() returns ()
+// fun pay_module::swap [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:238:5+25
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_swap$verify() returns ()
 {
     // declare local variables
 
@@ -25219,18 +25219,18 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:237:29+1
-    assume {:print "$at(5,9430,9431)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:238:29+1
+    assume {:print "$at(5,9461,9462)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:237:29+1
-    assume {:print "$at(5,9430,9431)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:238:29+1
+    assume {:print "$at(5,9461,9462)"} true;
     return;
 
 }
 
-// fun pay_module::init_module [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+665
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_init_module$verify(_$t0: $signer) returns ()
+// fun pay_module::init_module [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+665
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_init_module$verify(_$t0: $signer) returns ()
 {
     // declare local variables
     var $t1: $1_account_SignerCapability;
@@ -25251,7 +25251,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     var $t16: bool;
     var $t17: bool;
     var $t18: int;
-    var $t19: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap;
+    var $t19: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap;
     var $t20: $1_option_Option'$1_optional_aggregator_OptionalAggregator';
     var $t21: int;
     var $t22: $1_account_Account;
@@ -25264,126 +25264,126 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
-    assume {:print "$at(5,23068,23069)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
+    assume {:print "$at(5,23171,23172)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume forall $rsc: features::Features: ResourceDomain<features::Features>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume forall $rsc: features::Features: ResourceDomain<features::Features>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_features_Features_$memory, $a_0)}(var $rsc := $ResourceValue($1_features_Features_$memory, $a_0);
     ($IsValid'$1_features_Features'($rsc))));
 
-    // assume forall $rsc: account::Account: ResourceDomain<account::Account>(): And(WellFormed($rsc), And(Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.rotation_capability_offer($rsc)))), 1), Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.signer_capability_offer($rsc)))), 1))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume forall $rsc: account::Account: ResourceDomain<account::Account>(): And(WellFormed($rsc), And(Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.rotation_capability_offer($rsc)))), 1), Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.signer_capability_offer($rsc)))), 1))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_account_Account_$memory, $a_0)}(var $rsc := $ResourceValue($1_account_Account_$memory, $a_0);
     (($IsValid'$1_account_Account'($rsc) && ((LenVec($rsc->$rotation_capability_offer->$for->$vec) <= 1) && (LenVec($rsc->$signer_capability_offer->$for->$vec) <= 1))))));
 
-    // assume forall $rsc: coin::CoinInfo<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinInfo<aptos_coin::AptosCoin>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume forall $rsc: coin::CoinInfo<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinInfo<aptos_coin::AptosCoin>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     (($IsValid'$1_coin_CoinInfo'$1_aptos_coin_AptosCoin''($rsc) && ((LenVec($rsc->$supply->$vec) <= 1) && (var $range_1 := $rsc->$supply->$vec; (forall $i_2: int :: InRangeVec($range_1, $i_2) ==> (var $elem := ReadVec($range_1, $i_2);
     ((((((($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) <==> $1_option_$is_none'$1_optional_aggregator_Integer'($elem->$integer)) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) <==> $1_option_$is_none'$1_aggregator_Aggregator'($elem->$aggregator))) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) ==> ($1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$value <= $1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$limit))) && ($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) ==> ($1_aggregator_spec_aggregator_get_val($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator)) <= $1_aggregator_spec_get_limit($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator))))) && (LenVec($elem->$aggregator->$vec) <= 1)) && (LenVec($elem->$integer->$vec) <= 1)))))))))));
 
-    // assume forall $rsc: coin::CoinStore<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinStore<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume forall $rsc: coin::CoinStore<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinStore<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_CoinStore'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume forall $rsc: coin::Ghost$supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume forall $rsc: coin::Ghost$supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume exists<coin::Ghost$supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume $ResourceExists($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // assume forall $rsc: coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume forall $rsc: coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume exists<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume $ResourceExists($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // assume forall $rsc: object::ObjectCore: ResourceDomain<object::ObjectCore>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume forall $rsc: object::ObjectCore: ResourceDomain<object::ObjectCore>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_object_ObjectCore_$memory, $a_0)}(var $rsc := $ResourceValue($1_object_ObjectCore_$memory, $a_0);
     ($IsValid'$1_object_ObjectCore'($rsc))));
 
-    // assume forall $rsc: royalty::Royalty: ResourceDomain<royalty::Royalty>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume forall $rsc: royalty::Royalty: ResourceDomain<royalty::Royalty>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume (forall $a_0: int :: {$ResourceValue($4_royalty_Royalty_$memory, $a_0)}(var $rsc := $ResourceValue($4_royalty_Royalty_$memory, $a_0);
     ($IsValid'$4_royalty_Royalty'($rsc))));
 
-    // assume forall $rsc: collection::ConcurrentSupply: ResourceDomain<collection::ConcurrentSupply>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume forall $rsc: collection::ConcurrentSupply: ResourceDomain<collection::ConcurrentSupply>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume (forall $a_0: int :: {$ResourceValue($4_collection_ConcurrentSupply_$memory, $a_0)}(var $rsc := $ResourceValue($4_collection_ConcurrentSupply_$memory, $a_0);
     ($IsValid'$4_collection_ConcurrentSupply'($rsc))));
 
-    // assume forall $rsc: collection::Collection: ResourceDomain<collection::Collection>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume forall $rsc: collection::Collection: ResourceDomain<collection::Collection>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume (forall $a_0: int :: {$ResourceValue($4_collection_Collection_$memory, $a_0)}(var $rsc := $ResourceValue($4_collection_Collection_$memory, $a_0);
     ($IsValid'$4_collection_Collection'($rsc))));
 
-    // assume forall $rsc: collection::UnlimitedSupply: ResourceDomain<collection::UnlimitedSupply>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // assume forall $rsc: collection::UnlimitedSupply: ResourceDomain<collection::UnlimitedSupply>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume (forall $a_0: int :: {$ResourceValue($4_collection_UnlimitedSupply_$memory, $a_0)}(var $rsc := $ResourceValue($4_collection_UnlimitedSupply_$memory, $a_0);
     ($IsValid'$4_collection_UnlimitedSupply'($rsc))));
 
-    // assume forall $rsc: pay_module::CollectionRefsStore: ResourceDomain<pay_module::CollectionRefsStore>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'($rsc))));
+    // assume forall $rsc: pay_module::CollectionRefsStore: ResourceDomain<pay_module::CollectionRefsStore>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'($rsc))));
 
-    // assume forall $rsc: pay_module::ResourceCap: ResourceDomain<pay_module::ResourceCap>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'($rsc))));
+    // assume forall $rsc: pay_module::ResourceCap: ResourceDomain<pay_module::ResourceCap>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'($rsc))));
 
-    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'($rsc))));
+    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'($rsc))));
 
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:5+1
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:5+1
     assume {:print "$track_local(86,7,0):", $t0} $t0 == $t0;
 
-    // $t3 := signer::address_of($t0) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:510:38+18
-    assume {:print "$at(5,23140,23158)"} true;
+    // $t3 := signer::address_of($t0) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:38+18
+    assume {:print "$at(5,23243,23261)"} true;
     call $t3 := $1_signer_address_of($t0);
     if ($abort_flag) {
-        assume {:print "$at(5,23140,23158)"} true;
+        assume {:print "$at(5,23243,23261)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,7):", $t4} $t4 == $t4;
         goto L7;
     }
 
-    // $t5 := exists<pay_module::ResourceCap>($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:510:18+6
-    $t5 := $ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t3);
+    // $t5 := exists<pay_module::ResourceCap>($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:18+6
+    $t5 := $ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t3);
 
-    // $t6 := !($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:510:17+1
+    // $t6 := !($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:17+1
     call $t6 := $Not($t5);
 
-    // if ($t6) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:510:9+72
+    // if ($t6) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:9+72
     if ($t6) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:510:9+72
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:9+72
 L1:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:510:9+72
-    assume {:print "$at(5,23111,23183)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:9+72
+    assume {:print "$at(5,23214,23286)"} true;
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:510:9+72
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:9+72
 L0:
 
-    // $t7 := 2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:510:58+22
-    assume {:print "$at(5,23160,23182)"} true;
+    // $t7 := 2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:58+22
+    assume {:print "$at(5,23263,23285)"} true;
     $t7 := 2;
     assume $IsValid'u64'($t7);
 
-    // trace_abort($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:510:9+72
-    assume {:print "$at(5,23111,23183)"} true;
+    // trace_abort($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:9+72
+    assume {:print "$at(5,23214,23286)"} true;
     assume {:print "$track_abort(86,7):", $t7} $t7 == $t7;
 
-    // $t4 := move($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:510:9+72
+    // $t4 := move($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:9+72
     $t4 := $t7;
 
-    // goto L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:510:9+72
+    // goto L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:9+72
     goto L7;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:512:13+6
-    assume {:print "$at(5,23277,23283)"} true;
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:13+6
+    assume {:print "$at(5,23380,23386)"} true;
 L2:
 
-    // $t8 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:513:13+4
-    assume {:print "$at(5,23297,23301)"} true;
+    // $t8 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:516:13+4
+    assume {:print "$at(5,23400,23404)"} true;
     $t8 := MakeVec3(97, 115, 102);
     assume $IsValid'vec'u8''($t8);
 
@@ -25403,83 +25403,83 @@ L2:
     assume {:print "$at(88,8713,8758)"} true;
     assume ($t12 == $1_bcs_$to_bytes'address'($t10));
 
-    // ($t13, $t14) := account::create_resource_account($t0, $t8) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:511:47+80
-    assume {:print "$at(5,23231,23311)"} true;
+    // ($t13, $t14) := account::create_resource_account($t0, $t8) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:514:47+80
+    assume {:print "$at(5,23334,23414)"} true;
     call $t13,$t14 := $1_account_create_resource_account($t0, $t8);
     if ($abort_flag) {
-        assume {:print "$at(5,23231,23311)"} true;
+        assume {:print "$at(5,23334,23414)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,7):", $t4} $t4 == $t4;
         goto L7;
     }
 
-    // trace_local[resource_cap]($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:511:31+12
+    // trace_local[resource_cap]($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:514:31+12
     assume {:print "$track_local(86,7,1):", $t14} $t14 == $t14;
 
-    // trace_local[resource_signer]($t13) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:511:14+15
+    // trace_local[resource_signer]($t13) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:514:14+15
     assume {:print "$track_local(86,7,2):", $t13} $t13 == $t13;
 
-    // $t15 := signer::address_of($t13) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:38+28
-    assume {:print "$at(5,23350,23378)"} true;
+    // $t15 := signer::address_of($t13) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:38+28
+    assume {:print "$at(5,23453,23481)"} true;
     call $t15 := $1_signer_address_of($t13);
     if ($abort_flag) {
-        assume {:print "$at(5,23350,23378)"} true;
+        assume {:print "$at(5,23453,23481)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,7):", $t4} $t4 == $t4;
         goto L7;
     }
 
-    // $t16 := exists<pay_module::ResourceCap>($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:18+6
-    $t16 := $ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t15);
+    // $t16 := exists<pay_module::ResourceCap>($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:18+6
+    $t16 := $ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t15);
 
-    // $t17 := !($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:17+1
+    // $t17 := !($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:17+1
     call $t17 := $Not($t16);
 
-    // if ($t17) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:9+82
+    // if ($t17) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:9+82
     if ($t17) { goto L4; } else { goto L3; }
 
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:9+82
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:9+82
 L4:
 
-    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:9+82
-    assume {:print "$at(5,23321,23403)"} true;
+    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:9+82
+    assume {:print "$at(5,23424,23506)"} true;
     goto L5;
 
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:9+82
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:9+82
 L3:
 
-    // $t18 := 2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:68+22
-    assume {:print "$at(5,23380,23402)"} true;
+    // $t18 := 2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:68+22
+    assume {:print "$at(5,23483,23505)"} true;
     $t18 := 2;
     assume $IsValid'u64'($t18);
 
-    // trace_abort($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:9+82
-    assume {:print "$at(5,23321,23403)"} true;
+    // trace_abort($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:9+82
+    assume {:print "$at(5,23424,23506)"} true;
     assume {:print "$track_abort(86,7):", $t18} $t18 == $t18;
 
-    // $t4 := move($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:9+82
+    // $t4 := move($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:9+82
     $t4 := $t18;
 
-    // goto L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:515:9+82
+    // goto L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:9+82
     goto L7;
 
-    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:517:13+16
-    assume {:print "$at(5,23434,23450)"} true;
+    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:520:13+16
+    assume {:print "$at(5,23537,23553)"} true;
 L5:
 
-    // $t19 := pack pay_module::ResourceCap($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:518:13+61
-    assume {:print "$at(5,23464,23525)"} true;
-    $t19 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap($t14);
+    // $t19 := pack pay_module::ResourceCap($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:521:13+61
+    assume {:print "$at(5,23567,23628)"} true;
+    $t19 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap($t14);
 
-    // move_to<pay_module::ResourceCap>($t19, $t13) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:516:9+7
-    assume {:print "$at(5,23413,23420)"} true;
-    if ($ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t13->$addr)) {
+    // move_to<pay_module::ResourceCap>($t19, $t13) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:519:9+7
+    assume {:print "$at(5,23516,23523)"} true;
+    if ($ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t13->$addr)) {
         call $ExecFailureAbort();
     } else {
-        $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory := $ResourceUpdate($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t13->$addr, $t19);
+        $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory := $ResourceUpdate($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t13->$addr, $t19);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,23413,23420)"} true;
+        assume {:print "$at(5,23516,23523)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,7):", $t4} $t4 == $t4;
         goto L7;
@@ -25497,57 +25497,57 @@ L5:
     assume {:print "$at(112,19882,19931)"} true;
     assume ($t22 == $ResourceValue($1_account_Account_$memory, $t21));
 
-    // coin::register<aptos_coin::AptosCoin>($t13) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:523:9+43
-    assume {:print "$at(5,23579,23622)"} true;
+    // coin::register<aptos_coin::AptosCoin>($t13) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:526:9+43
+    assume {:print "$at(5,23682,23725)"} true;
     call $1_coin_register'$1_aptos_coin_AptosCoin'($t13);
     if ($abort_flag) {
-        assume {:print "$at(5,23579,23622)"} true;
+        assume {:print "$at(5,23682,23725)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,7):", $t4} $t4 == $t4;
         goto L7;
     }
 
-    // pay_module::nft_collection_init($t0, $t13) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:524:9+44
-    assume {:print "$at(5,23632,23676)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_nft_collection_init($t0, $t13);
+    // pay_module::nft_collection_init($t0, $t13) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:527:9+44
+    assume {:print "$at(5,23735,23779)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_nft_collection_init($t0, $t13);
     if ($abort_flag) {
-        assume {:print "$at(5,23632,23676)"} true;
+        assume {:print "$at(5,23735,23779)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,7):", $t4} $t4 == $t4;
         goto L7;
     }
 
-    // pay_module::create_Cylinder($t0, $t13) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:525:9+40
-    assume {:print "$at(5,23686,23726)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_create_Cylinder($t0, $t13);
+    // pay_module::create_Cylinder($t0, $t13) on_abort goto L7 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:528:9+40
+    assume {:print "$at(5,23789,23829)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_create_Cylinder($t0, $t13);
     if ($abort_flag) {
-        assume {:print "$at(5,23686,23726)"} true;
+        assume {:print "$at(5,23789,23829)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,7):", $t4} $t4 == $t4;
         goto L7;
     }
 
-    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:526:5+1
-    assume {:print "$at(5,23732,23733)"} true;
+    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:529:5+1
+    assume {:print "$at(5,23835,23836)"} true;
 L6:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:526:5+1
-    assume {:print "$at(5,23732,23733)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:529:5+1
+    assume {:print "$at(5,23835,23836)"} true;
     return;
 
-    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:526:5+1
+    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:529:5+1
 L7:
 
-    // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:526:5+1
-    assume {:print "$at(5,23732,23733)"} true;
+    // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:529:5+1
+    assume {:print "$at(5,23835,23836)"} true;
     $abort_code := $t4;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::nft_collection_init [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+658
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_nft_collection_init(_$t0: $signer, _$t1: $signer) returns ()
+// fun pay_module::nft_collection_init [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+658
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_nft_collection_init(_$t0: $signer, _$t1: $signer) returns ()
 {
     // declare local variables
     var $t2: $1_object_ConstructorRef;
@@ -25569,7 +25569,7 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     var $t18: $1_object_ConstructorRef;
     var $t19: $signer;
     var $t20: $4_collection_MutatorRef;
-    var $t21: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore;
+    var $t21: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore;
     var $t0: $signer;
     var $t1: $signer;
     var $temp_0'$1_object_ConstructorRef': $1_object_ConstructorRef;
@@ -25580,169 +25580,169 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     $t1 := _$t1;
 
     // bytecode translation starts here
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
-    assume {:print "$at(5,22405,22406)"} true;
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
+    assume {:print "$at(5,22508,22509)"} true;
     assume {:print "$track_local(86,9,0):", $t0} $t0 == $t0;
 
-    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
+    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
     assume {:print "$track_local(86,9,1):", $t1} $t1 == $t1;
 
-    // $t6 := 10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:495:30+2
-    assume {:print "$at(5,22500,22502)"} true;
+    // $t6 := 10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:30+2
+    assume {:print "$at(5,22603,22605)"} true;
     $t6 := 10;
     assume $IsValid'u64'($t6);
 
-    // $t7 := 100 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:495:33+3
+    // $t7 := 100 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:33+3
     $t7 := 100;
     assume $IsValid'u64'($t7);
 
-    // $t8 := 0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:495:37+7
+    // $t8 := 0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:37+7
     $t8 := 108065678617823638164322216849059365281423231628866440170487689899570454732118;
     assume $IsValid'address'($t8);
 
-    // $t9 := royalty::create($t6, $t7, $t8) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:495:23+22
+    // $t9 := royalty::create($t6, $t7, $t8) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:23+22
     call $t9 := $4_royalty_create($t6, $t7, $t8);
     if ($abort_flag) {
-        assume {:print "$at(5,22493,22515)"} true;
+        assume {:print "$at(5,22596,22618)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // trace_local[royalty]($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:495:13+7
+    // trace_local[royalty]($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:13+7
     assume {:print "$track_local(86,9,5):", $t9} $t9 == $t9;
 
-    // $t11 := [70, 105, 115, 116, 32, 99, 111, 108, 108, 101, 99, 116, 105, 111, 110, 32, 111, 102, 32, 111, 117, 114, 32, 100, 97, 112, 112, 32, 40, 73, 32, 119, 111, 110, 39, 116, 32, 115, 101, 108, 108, 32, 105, 116, 32, 108, 111, 119, 101, 114, 32, 116, 104, 97, 110, 32, 49, 32, 65, 80, 84, 32, 94, 95, 94, 41, 32] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:18+15
-    assume {:print "$at(5,22674,22689)"} true;
+    // $t11 := [70, 105, 115, 116, 32, 99, 111, 108, 108, 101, 99, 116, 105, 111, 110, 32, 111, 102, 32, 111, 117, 114, 32, 100, 97, 112, 112, 32, 40, 73, 32, 119, 111, 110, 39, 116, 32, 115, 101, 108, 108, 32, 105, 116, 32, 108, 111, 119, 101, 114, 32, 116, 104, 97, 110, 32, 49, 32, 65, 80, 84, 32, 94, 95, 94, 41, 32] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:501:18+15
+    assume {:print "$at(5,22777,22792)"} true;
     $t11 := ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(MakeVec4(70, 105, 115, 116), MakeVec4(32, 99, 111, 108)), MakeVec4(108, 101, 99, 116)), MakeVec4(105, 111, 110, 32)), MakeVec4(111, 102, 32, 111)), MakeVec4(117, 114, 32, 100)), MakeVec4(97, 112, 112, 32)), MakeVec4(40, 73, 32, 119)), MakeVec4(111, 110, 39, 116)), MakeVec4(32, 115, 101, 108)), MakeVec4(108, 32, 105, 116)), MakeVec4(32, 108, 111, 119)), MakeVec4(101, 114, 32, 116)), MakeVec4(104, 97, 110, 32)), MakeVec4(49, 32, 65, 80)), MakeVec4(84, 32, 94, 95)), MakeVec3(94, 41, 32));
     assume $IsValid'vec'u8''($t11);
 
-    // $t12 := string::utf8($t11) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:13+21
+    // $t12 := string::utf8($t11) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:501:13+21
     call $t12 := $1_string_utf8($t11);
     if ($abort_flag) {
-        assume {:print "$at(5,22669,22690)"} true;
+        assume {:print "$at(5,22772,22793)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // $t13 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:499:18+8
-    assume {:print "$at(5,22709,22717)"} true;
+    // $t13 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:502:18+8
+    assume {:print "$at(5,22812,22820)"} true;
     $t13 := $EmptyVec'u8'();
     assume $IsValid'vec'u8''($t13);
 
-    // $t14 := string::utf8($t13) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:499:13+14
+    // $t14 := string::utf8($t13) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:502:13+14
     call $t14 := $1_string_utf8($t13);
     if ($abort_flag) {
-        assume {:print "$at(5,22704,22718)"} true;
+        assume {:print "$at(5,22807,22821)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // $t15 := opaque begin: option::some<royalty::Royalty>($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:500:13+21
-    assume {:print "$at(5,22732,22753)"} true;
+    // $t15 := opaque begin: option::some<royalty::Royalty>($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:13+21
+    assume {:print "$at(5,22835,22856)"} true;
 
-    // assume And(WellFormed($t15), Le(Len<royalty::Royalty>(select option::Option.vec($t15)), 1)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:500:13+21
+    // assume And(WellFormed($t15), Le(Len<royalty::Royalty>(select option::Option.vec($t15)), 1)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:13+21
     assume ($IsValid'$1_option_Option'$4_royalty_Royalty''($t15) && (LenVec($t15->$vec) <= 1));
 
-    // assume Eq<option::Option<royalty::Royalty>>($t15, option::spec_some<royalty::Royalty>($t9)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:500:13+21
+    // assume Eq<option::Option<royalty::Royalty>>($t15, option::spec_some<royalty::Royalty>($t9)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:13+21
     assume $IsEqual'$1_option_Option'$4_royalty_Royalty''($t15, $1_option_spec_some'$4_royalty_Royalty'($t9));
 
-    // $t15 := opaque end: option::some<royalty::Royalty>($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:500:13+21
+    // $t15 := opaque end: option::some<royalty::Royalty>($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:13+21
 
-    // $t16 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:501:19+7
-    assume {:print "$at(5,22773,22780)"} true;
+    // $t16 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:504:19+7
+    assume {:print "$at(5,22876,22883)"} true;
     $t16 := $EmptyVec'u8'();
     assume $IsValid'vec'u8''($t16);
 
-    // $t17 := string::utf8($t16) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:501:13+14
+    // $t17 := string::utf8($t16) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:504:13+14
     call $t17 := $1_string_utf8($t16);
     if ($abort_flag) {
-        assume {:print "$at(5,22767,22781)"} true;
+        assume {:print "$at(5,22870,22884)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // $t18 := collection::create_unlimited_collection($t1, $t12, $t14, $t15, $t17) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:24+236
-    assume {:print "$at(5,22555,22791)"} true;
+    // $t18 := collection::create_unlimited_collection($t1, $t12, $t14, $t15, $t17) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:499:24+236
+    assume {:print "$at(5,22658,22894)"} true;
     call $t18 := $4_collection_create_unlimited_collection($t1, $t12, $t14, $t15, $t17);
     if ($abort_flag) {
-        assume {:print "$at(5,22555,22791)"} true;
+        assume {:print "$at(5,22658,22894)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // trace_local[collection]($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:13+10
+    // trace_local[collection]($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:499:13+10
     assume {:print "$track_local(86,9,2):", $t18} $t18 == $t18;
 
-    // $t19 := object::generate_signer($t18) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:34+36
-    assume {:print "$at(5,22826,22862)"} true;
+    // $t19 := object::generate_signer($t18) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:506:34+36
+    assume {:print "$at(5,22929,22965)"} true;
     call $t19 := $1_object_generate_signer($t18);
     if ($abort_flag) {
-        assume {:print "$at(5,22826,22862)"} true;
+        assume {:print "$at(5,22929,22965)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // trace_local[collection_signer]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:13+17
+    // trace_local[collection_signer]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:506:13+17
     assume {:print "$track_local(86,9,3):", $t19} $t19 == $t19;
 
-    // $t20 := collection::generate_mutator_ref($t18) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:504:27+66
-    assume {:print "$at(5,22890,22956)"} true;
+    // $t20 := collection::generate_mutator_ref($t18) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:507:27+66
+    assume {:print "$at(5,22993,23059)"} true;
     call $t20 := $4_collection_generate_mutator_ref($t18);
     if ($abort_flag) {
-        assume {:print "$at(5,22890,22956)"} true;
+        assume {:print "$at(5,22993,23059)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // trace_local[mutator_ref]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:504:13+11
+    // trace_local[mutator_ref]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:507:13+11
     assume {:print "$track_local(86,9,4):", $t20} $t20 == $t20;
 
-    // $t21 := pack pay_module::CollectionRefsStore($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:506:13+49
-    assume {:print "$at(5,23006,23055)"} true;
-    $t21 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore($t20);
+    // $t21 := pack pay_module::CollectionRefsStore($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:13+49
+    assume {:print "$at(5,23109,23158)"} true;
+    $t21 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore($t20);
 
-    // move_to<pay_module::CollectionRefsStore>($t21, $t19) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:505:9+7
-    assume {:print "$at(5,22966,22973)"} true;
-    if ($ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore_$memory, $t19->$addr)) {
+    // move_to<pay_module::CollectionRefsStore>($t21, $t19) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:508:9+7
+    assume {:print "$at(5,23069,23076)"} true;
+    if ($ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore_$memory, $t19->$addr)) {
         call $ExecFailureAbort();
     } else {
-        $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore_$memory := $ResourceUpdate($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore_$memory, $t19->$addr, $t21);
+        $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore_$memory := $ResourceUpdate($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore_$memory, $t19->$addr, $t21);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,22966,22973)"} true;
+        assume {:print "$at(5,23069,23076)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:508:5+1
-    assume {:print "$at(5,23062,23063)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:511:5+1
+    assume {:print "$at(5,23165,23166)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:508:5+1
-    assume {:print "$at(5,23062,23063)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:511:5+1
+    assume {:print "$at(5,23165,23166)"} true;
     return;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:508:5+1
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:511:5+1
 L2:
 
-    // abort($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:508:5+1
-    assume {:print "$at(5,23062,23063)"} true;
+    // abort($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:511:5+1
+    assume {:print "$at(5,23165,23166)"} true;
     $abort_code := $t10;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::nft_collection_init [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+658
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_nft_collection_init$verify(_$t0: $signer, _$t1: $signer) returns ()
+// fun pay_module::nft_collection_init [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+658
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_nft_collection_init$verify(_$t0: $signer, _$t1: $signer) returns ()
 {
     // declare local variables
     var $t2: $1_object_ConstructorRef;
@@ -25764,7 +25764,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     var $t18: $1_object_ConstructorRef;
     var $t19: $signer;
     var $t20: $4_collection_MutatorRef;
-    var $t21: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore;
+    var $t21: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore;
     var $t0: $signer;
     var $t1: $signer;
     var $temp_0'$1_object_ConstructorRef': $1_object_ConstructorRef;
@@ -25778,203 +25778,203 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
-    assume {:print "$at(5,22405,22406)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
+    assume {:print "$at(5,22508,22509)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
     assume $IsValid'signer'($t1) && $1_signer_is_txn_signer($t1) && $1_signer_is_txn_signer_addr($t1->$addr);
 
-    // assume forall $rsc: features::Features: ResourceDomain<features::Features>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
+    // assume forall $rsc: features::Features: ResourceDomain<features::Features>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_features_Features_$memory, $a_0)}(var $rsc := $ResourceValue($1_features_Features_$memory, $a_0);
     ($IsValid'$1_features_Features'($rsc))));
 
-    // assume forall $rsc: object::ObjectCore: ResourceDomain<object::ObjectCore>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
+    // assume forall $rsc: object::ObjectCore: ResourceDomain<object::ObjectCore>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_object_ObjectCore_$memory, $a_0)}(var $rsc := $ResourceValue($1_object_ObjectCore_$memory, $a_0);
     ($IsValid'$1_object_ObjectCore'($rsc))));
 
-    // assume forall $rsc: royalty::Royalty: ResourceDomain<royalty::Royalty>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
+    // assume forall $rsc: royalty::Royalty: ResourceDomain<royalty::Royalty>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
     assume (forall $a_0: int :: {$ResourceValue($4_royalty_Royalty_$memory, $a_0)}(var $rsc := $ResourceValue($4_royalty_Royalty_$memory, $a_0);
     ($IsValid'$4_royalty_Royalty'($rsc))));
 
-    // assume forall $rsc: collection::ConcurrentSupply: ResourceDomain<collection::ConcurrentSupply>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
+    // assume forall $rsc: collection::ConcurrentSupply: ResourceDomain<collection::ConcurrentSupply>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
     assume (forall $a_0: int :: {$ResourceValue($4_collection_ConcurrentSupply_$memory, $a_0)}(var $rsc := $ResourceValue($4_collection_ConcurrentSupply_$memory, $a_0);
     ($IsValid'$4_collection_ConcurrentSupply'($rsc))));
 
-    // assume forall $rsc: collection::Collection: ResourceDomain<collection::Collection>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
+    // assume forall $rsc: collection::Collection: ResourceDomain<collection::Collection>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
     assume (forall $a_0: int :: {$ResourceValue($4_collection_Collection_$memory, $a_0)}(var $rsc := $ResourceValue($4_collection_Collection_$memory, $a_0);
     ($IsValid'$4_collection_Collection'($rsc))));
 
-    // assume forall $rsc: collection::UnlimitedSupply: ResourceDomain<collection::UnlimitedSupply>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
+    // assume forall $rsc: collection::UnlimitedSupply: ResourceDomain<collection::UnlimitedSupply>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
     assume (forall $a_0: int :: {$ResourceValue($4_collection_UnlimitedSupply_$memory, $a_0)}(var $rsc := $ResourceValue($4_collection_UnlimitedSupply_$memory, $a_0);
     ($IsValid'$4_collection_UnlimitedSupply'($rsc))));
 
-    // assume forall $rsc: pay_module::CollectionRefsStore: ResourceDomain<pay_module::CollectionRefsStore>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore'($rsc))));
+    // assume forall $rsc: pay_module::CollectionRefsStore: ResourceDomain<pay_module::CollectionRefsStore>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore'($rsc))));
 
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
     assume {:print "$track_local(86,9,0):", $t0} $t0 == $t0;
 
-    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:493:5+1
+    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:5+1
     assume {:print "$track_local(86,9,1):", $t1} $t1 == $t1;
 
-    // $t6 := 10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:495:30+2
-    assume {:print "$at(5,22500,22502)"} true;
+    // $t6 := 10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:30+2
+    assume {:print "$at(5,22603,22605)"} true;
     $t6 := 10;
     assume $IsValid'u64'($t6);
 
-    // $t7 := 100 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:495:33+3
+    // $t7 := 100 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:33+3
     $t7 := 100;
     assume $IsValid'u64'($t7);
 
-    // $t8 := 0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:495:37+7
+    // $t8 := 0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:37+7
     $t8 := 108065678617823638164322216849059365281423231628866440170487689899570454732118;
     assume $IsValid'address'($t8);
 
-    // $t9 := royalty::create($t6, $t7, $t8) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:495:23+22
+    // $t9 := royalty::create($t6, $t7, $t8) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:23+22
     call $t9 := $4_royalty_create($t6, $t7, $t8);
     if ($abort_flag) {
-        assume {:print "$at(5,22493,22515)"} true;
+        assume {:print "$at(5,22596,22618)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // trace_local[royalty]($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:495:13+7
+    // trace_local[royalty]($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:13+7
     assume {:print "$track_local(86,9,5):", $t9} $t9 == $t9;
 
-    // $t11 := [70, 105, 115, 116, 32, 99, 111, 108, 108, 101, 99, 116, 105, 111, 110, 32, 111, 102, 32, 111, 117, 114, 32, 100, 97, 112, 112, 32, 40, 73, 32, 119, 111, 110, 39, 116, 32, 115, 101, 108, 108, 32, 105, 116, 32, 108, 111, 119, 101, 114, 32, 116, 104, 97, 110, 32, 49, 32, 65, 80, 84, 32, 94, 95, 94, 41, 32] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:18+15
-    assume {:print "$at(5,22674,22689)"} true;
+    // $t11 := [70, 105, 115, 116, 32, 99, 111, 108, 108, 101, 99, 116, 105, 111, 110, 32, 111, 102, 32, 111, 117, 114, 32, 100, 97, 112, 112, 32, 40, 73, 32, 119, 111, 110, 39, 116, 32, 115, 101, 108, 108, 32, 105, 116, 32, 108, 111, 119, 101, 114, 32, 116, 104, 97, 110, 32, 49, 32, 65, 80, 84, 32, 94, 95, 94, 41, 32] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:501:18+15
+    assume {:print "$at(5,22777,22792)"} true;
     $t11 := ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(MakeVec4(70, 105, 115, 116), MakeVec4(32, 99, 111, 108)), MakeVec4(108, 101, 99, 116)), MakeVec4(105, 111, 110, 32)), MakeVec4(111, 102, 32, 111)), MakeVec4(117, 114, 32, 100)), MakeVec4(97, 112, 112, 32)), MakeVec4(40, 73, 32, 119)), MakeVec4(111, 110, 39, 116)), MakeVec4(32, 115, 101, 108)), MakeVec4(108, 32, 105, 116)), MakeVec4(32, 108, 111, 119)), MakeVec4(101, 114, 32, 116)), MakeVec4(104, 97, 110, 32)), MakeVec4(49, 32, 65, 80)), MakeVec4(84, 32, 94, 95)), MakeVec3(94, 41, 32));
     assume $IsValid'vec'u8''($t11);
 
-    // $t12 := string::utf8($t11) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:498:13+21
+    // $t12 := string::utf8($t11) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:501:13+21
     call $t12 := $1_string_utf8($t11);
     if ($abort_flag) {
-        assume {:print "$at(5,22669,22690)"} true;
+        assume {:print "$at(5,22772,22793)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // $t13 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:499:18+8
-    assume {:print "$at(5,22709,22717)"} true;
+    // $t13 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:502:18+8
+    assume {:print "$at(5,22812,22820)"} true;
     $t13 := $EmptyVec'u8'();
     assume $IsValid'vec'u8''($t13);
 
-    // $t14 := string::utf8($t13) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:499:13+14
+    // $t14 := string::utf8($t13) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:502:13+14
     call $t14 := $1_string_utf8($t13);
     if ($abort_flag) {
-        assume {:print "$at(5,22704,22718)"} true;
+        assume {:print "$at(5,22807,22821)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // $t15 := opaque begin: option::some<royalty::Royalty>($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:500:13+21
-    assume {:print "$at(5,22732,22753)"} true;
+    // $t15 := opaque begin: option::some<royalty::Royalty>($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:13+21
+    assume {:print "$at(5,22835,22856)"} true;
 
-    // assume And(WellFormed($t15), Le(Len<royalty::Royalty>(select option::Option.vec($t15)), 1)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:500:13+21
+    // assume And(WellFormed($t15), Le(Len<royalty::Royalty>(select option::Option.vec($t15)), 1)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:13+21
     assume ($IsValid'$1_option_Option'$4_royalty_Royalty''($t15) && (LenVec($t15->$vec) <= 1));
 
-    // assume Eq<option::Option<royalty::Royalty>>($t15, option::spec_some<royalty::Royalty>($t9)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:500:13+21
+    // assume Eq<option::Option<royalty::Royalty>>($t15, option::spec_some<royalty::Royalty>($t9)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:13+21
     assume $IsEqual'$1_option_Option'$4_royalty_Royalty''($t15, $1_option_spec_some'$4_royalty_Royalty'($t9));
 
-    // $t15 := opaque end: option::some<royalty::Royalty>($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:500:13+21
+    // $t15 := opaque end: option::some<royalty::Royalty>($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:13+21
 
-    // $t16 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:501:19+7
-    assume {:print "$at(5,22773,22780)"} true;
+    // $t16 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:504:19+7
+    assume {:print "$at(5,22876,22883)"} true;
     $t16 := $EmptyVec'u8'();
     assume $IsValid'vec'u8''($t16);
 
-    // $t17 := string::utf8($t16) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:501:13+14
+    // $t17 := string::utf8($t16) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:504:13+14
     call $t17 := $1_string_utf8($t16);
     if ($abort_flag) {
-        assume {:print "$at(5,22767,22781)"} true;
+        assume {:print "$at(5,22870,22884)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // $t18 := collection::create_unlimited_collection($t1, $t12, $t14, $t15, $t17) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:24+236
-    assume {:print "$at(5,22555,22791)"} true;
+    // $t18 := collection::create_unlimited_collection($t1, $t12, $t14, $t15, $t17) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:499:24+236
+    assume {:print "$at(5,22658,22894)"} true;
     call $t18 := $4_collection_create_unlimited_collection($t1, $t12, $t14, $t15, $t17);
     if ($abort_flag) {
-        assume {:print "$at(5,22555,22791)"} true;
+        assume {:print "$at(5,22658,22894)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // trace_local[collection]($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:496:13+10
+    // trace_local[collection]($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:499:13+10
     assume {:print "$track_local(86,9,2):", $t18} $t18 == $t18;
 
-    // $t19 := object::generate_signer($t18) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:34+36
-    assume {:print "$at(5,22826,22862)"} true;
+    // $t19 := object::generate_signer($t18) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:506:34+36
+    assume {:print "$at(5,22929,22965)"} true;
     call $t19 := $1_object_generate_signer($t18);
     if ($abort_flag) {
-        assume {:print "$at(5,22826,22862)"} true;
+        assume {:print "$at(5,22929,22965)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // trace_local[collection_signer]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:503:13+17
+    // trace_local[collection_signer]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:506:13+17
     assume {:print "$track_local(86,9,3):", $t19} $t19 == $t19;
 
-    // $t20 := collection::generate_mutator_ref($t18) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:504:27+66
-    assume {:print "$at(5,22890,22956)"} true;
+    // $t20 := collection::generate_mutator_ref($t18) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:507:27+66
+    assume {:print "$at(5,22993,23059)"} true;
     call $t20 := $4_collection_generate_mutator_ref($t18);
     if ($abort_flag) {
-        assume {:print "$at(5,22890,22956)"} true;
+        assume {:print "$at(5,22993,23059)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // trace_local[mutator_ref]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:504:13+11
+    // trace_local[mutator_ref]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:507:13+11
     assume {:print "$track_local(86,9,4):", $t20} $t20 == $t20;
 
-    // $t21 := pack pay_module::CollectionRefsStore($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:506:13+49
-    assume {:print "$at(5,23006,23055)"} true;
-    $t21 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore($t20);
+    // $t21 := pack pay_module::CollectionRefsStore($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:509:13+49
+    assume {:print "$at(5,23109,23158)"} true;
+    $t21 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore($t20);
 
-    // move_to<pay_module::CollectionRefsStore>($t21, $t19) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:505:9+7
-    assume {:print "$at(5,22966,22973)"} true;
-    if ($ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore_$memory, $t19->$addr)) {
+    // move_to<pay_module::CollectionRefsStore>($t21, $t19) on_abort goto L2 with $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:508:9+7
+    assume {:print "$at(5,23069,23076)"} true;
+    if ($ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore_$memory, $t19->$addr)) {
         call $ExecFailureAbort();
     } else {
-        $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore_$memory := $ResourceUpdate($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_CollectionRefsStore_$memory, $t19->$addr, $t21);
+        $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore_$memory := $ResourceUpdate($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_CollectionRefsStore_$memory, $t19->$addr, $t21);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,22966,22973)"} true;
+        assume {:print "$at(5,23069,23076)"} true;
         $t10 := $abort_code;
         assume {:print "$track_abort(86,9):", $t10} $t10 == $t10;
         goto L2;
     }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:508:5+1
-    assume {:print "$at(5,23062,23063)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:511:5+1
+    assume {:print "$at(5,23165,23166)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:508:5+1
-    assume {:print "$at(5,23062,23063)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:511:5+1
+    assume {:print "$at(5,23165,23166)"} true;
     return;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:508:5+1
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:511:5+1
 L2:
 
-    // abort($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:508:5+1
-    assume {:print "$at(5,23062,23063)"} true;
+    // abort($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:511:5+1
+    assume {:print "$at(5,23165,23166)"} true;
     $abort_code := $t10;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::check_dapp_isnt_registered [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+145
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_check_dapp_isnt_registered$verify(_$t0: $signer) returns ()
+// fun pay_module::check_dapp_isnt_registered [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:5+145
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_check_dapp_isnt_registered$verify(_$t0: $signer) returns ()
 {
     // declare local variables
     var $t1: int;
@@ -25992,70 +25992,70 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+1
-    assume {:print "$at(5,3715,3716)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:5+1
+    assume {:print "$at(5,3746,3747)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume forall $rsc: account::Account: ResourceDomain<account::Account>(): And(WellFormed($rsc), And(Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.rotation_capability_offer($rsc)))), 1), Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.signer_capability_offer($rsc)))), 1))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+1
+    // assume forall $rsc: account::Account: ResourceDomain<account::Account>(): And(WellFormed($rsc), And(Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.rotation_capability_offer($rsc)))), 1), Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.signer_capability_offer($rsc)))), 1))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_account_Account_$memory, $a_0)}(var $rsc := $ResourceValue($1_account_Account_$memory, $a_0);
     (($IsValid'$1_account_Account'($rsc) && ((LenVec($rsc->$rotation_capability_offer->$for->$vec) <= 1) && (LenVec($rsc->$signer_capability_offer->$for->$vec) <= 1))))));
 
-    // assume forall $rsc: coin::CoinInfo<#0>: ResourceDomain<coin::CoinInfo<#0>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+1
+    // assume forall $rsc: coin::CoinInfo<#0>: ResourceDomain<coin::CoinInfo<#0>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinInfo'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinInfo'#0'_$memory, $a_0);
     (($IsValid'$1_coin_CoinInfo'#0''($rsc) && ((LenVec($rsc->$supply->$vec) <= 1) && (var $range_1 := $rsc->$supply->$vec; (forall $i_2: int :: InRangeVec($range_1, $i_2) ==> (var $elem := ReadVec($range_1, $i_2);
     ((((((($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) <==> $1_option_$is_none'$1_optional_aggregator_Integer'($elem->$integer)) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) <==> $1_option_$is_none'$1_aggregator_Aggregator'($elem->$aggregator))) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) ==> ($1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$value <= $1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$limit))) && ($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) ==> ($1_aggregator_spec_aggregator_get_val($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator)) <= $1_aggregator_spec_get_limit($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator))))) && (LenVec($elem->$aggregator->$vec) <= 1)) && (LenVec($elem->$integer->$vec) <= 1)))))))))));
 
-    // assume forall $rsc: coin::CoinStore<#0>: ResourceDomain<coin::CoinStore<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+1
+    // assume forall $rsc: coin::CoinStore<#0>: ResourceDomain<coin::CoinStore<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinStore'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinStore'#0'_$memory, $a_0);
     ($IsValid'$1_coin_CoinStore'#0''($rsc))));
 
-    // assume forall $rsc: coin::Ghost$supply<#0>: ResourceDomain<coin::Ghost$supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+1
+    // assume forall $rsc: coin::Ghost$supply<#0>: ResourceDomain<coin::Ghost$supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$supply'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$supply'#0'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$supply'#0''($rsc))));
 
-    // assume exists<coin::Ghost$supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+1
+    // assume exists<coin::Ghost$supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:5+1
     assume $ResourceExists($1_coin_Ghost$supply'#0'_$memory, 0);
 
-    // assume forall $rsc: coin::Ghost$aggregate_supply<#0>: ResourceDomain<coin::Ghost$aggregate_supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+1
+    // assume forall $rsc: coin::Ghost$aggregate_supply<#0>: ResourceDomain<coin::Ghost$aggregate_supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$aggregate_supply'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$aggregate_supply'#0'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$aggregate_supply'#0''($rsc))));
 
-    // assume exists<coin::Ghost$aggregate_supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+1
+    // assume exists<coin::Ghost$aggregate_supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:5+1
     assume $ResourceExists($1_coin_Ghost$aggregate_supply'#0'_$memory, 0);
 
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+1
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:5+1
     assume {:print "$track_local(86,0,0):", $t0} $t0 == $t0;
 
-    // $t1 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:41+5
-    assume {:print "$at(5,3810,3815)"} true;
-    $t1 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t1 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:41+5
+    assume {:print "$at(5,3841,3846)"} true;
+    $t1 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t1);
 
     // assume Identical($t2, select coin::CoinInfo.supply<coin::CoinInfo<#0>>(global<coin::CoinInfo<#0>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<#0>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
     assume {:print "$at(112,5516,5615)"} true;
     assume ($t2 == $ResourceValue($1_coin_CoinInfo'#0'_$memory, $1_type_info_TypeInfo(#0_info->a, #0_info->m, #0_info->s)->$account_address)->$supply);
 
-    // $t3 := coin::is_account_registered<#0>($t1) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:12+35
-    assume {:print "$at(5,3781,3816)"} true;
+    // $t3 := coin::is_account_registered<#0>($t1) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:12+35
+    assume {:print "$at(5,3812,3847)"} true;
     call $t3 := $1_coin_is_account_registered'#0'($t1);
     if ($abort_flag) {
-        assume {:print "$at(5,3781,3816)"} true;
+        assume {:print "$at(5,3812,3847)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,0):", $t4} $t4 == $t4;
         goto L4;
     }
 
-    // if ($t3) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:9+76
+    // if ($t3) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:9+76
     if ($t3) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:9+76
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:9+76
 L1:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:9+76
-    assume {:print "$at(5,3778,3854)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:9+76
+    assume {:print "$at(5,3809,3885)"} true;
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:77+6
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:77+6
 L0:
 
     // assume Identical($t5, select coin::CoinInfo.supply<coin::CoinInfo<#0>>(global<coin::CoinInfo<#0>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<#0>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
@@ -26070,40 +26070,40 @@ L0:
     assume {:print "$at(112,19882,19931)"} true;
     assume ($t7 == $ResourceValue($1_account_Account_$memory, $t6));
 
-    // coin::register<#0>($t0) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:55+29
-    assume {:print "$at(5,3824,3853)"} true;
+    // coin::register<#0>($t0) on_abort goto L4 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:55+29
+    assume {:print "$at(5,3855,3884)"} true;
     call $1_coin_register'#0'($t0);
     if ($abort_flag) {
-        assume {:print "$at(5,3824,3853)"} true;
+        assume {:print "$at(5,3855,3884)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,0):", $t4} $t4 == $t4;
         goto L4;
     }
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:113:9+76
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:9+76
 L2:
 
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:5+1
-    assume {:print "$at(5,3859,3860)"} true;
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+1
+    assume {:print "$at(5,3890,3891)"} true;
 L3:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:5+1
-    assume {:print "$at(5,3859,3860)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+1
+    assume {:print "$at(5,3890,3891)"} true;
     return;
 
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:5+1
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+1
 L4:
 
-    // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:114:5+1
-    assume {:print "$at(5,3859,3860)"} true;
+    // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+1
+    assume {:print "$at(5,3890,3891)"} true;
     $abort_code := $t4;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::check_each_vector_not_zero [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1596
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_check_each_vector_not_zero(_$t0: $signer, _$t1: Vec (int), _$t2: Vec (int), _$t3: int) returns ()
+// fun pay_module::check_each_vector_not_zero [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1596
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_check_each_vector_not_zero(_$t0: $signer, _$t1: Vec (int), _$t2: Vec (int), _$t3: int) returns ()
 {
     // declare local variables
     var $t4: int;
@@ -26187,830 +26187,830 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     $t3 := _$t3;
 
     // bytecode translation starts here
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
-    assume {:print "$at(5,7804,7805)"} true;
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
+    assume {:print "$at(5,7835,7836)"} true;
     assume {:print "$track_local(86,1,0):", $t0} $t0 == $t0;
 
-    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // trace_local[resource_address]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    // trace_local[resource_address]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
     assume {:print "$track_local(86,1,3):", $t3} $t3 == $t3;
 
-    // $t14 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:34+11
-    assume {:print "$at(5,7953,7964)"} true;
+    // $t14 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:34+11
+    assume {:print "$at(5,7984,7995)"} true;
     $t14 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // $t15 := vector::pop_back<u64>($t14) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:17+29
+    // $t15 := vector::pop_back<u64>($t14) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:17+29
     call $t15,$t14 := $1_vector_pop_back'u64'($t14);
     if ($abort_flag) {
-        assume {:print "$at(5,7936,7965)"} true;
+        assume {:print "$at(5,7967,7996)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:17+29
+    // write_back[LocalRoot($t1)@]($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:17+29
     $t1 := $Dereference($t14);
-
-    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:17+29
-    assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
-
-    // trace_local[a1]($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:13+2
-    assume {:print "$track_local(86,1,4):", $t15} $t15 == $t15;
-
-    // $t17 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:34+11
-    assume {:print "$at(5,8000,8011)"} true;
-    $t17 := $Mutation($Local(1), EmptyVec(), $t1);
-
-    // $t18 := vector::pop_back<u64>($t17) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:17+29
-    call $t18,$t17 := $1_vector_pop_back'u64'($t17);
-    if ($abort_flag) {
-        assume {:print "$at(5,7983,8012)"} true;
-        $t16 := $abort_code;
-        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
-        goto L31;
-    }
-
-    // write_back[LocalRoot($t1)@]($t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:17+29
-    $t1 := $Dereference($t17);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:17+29
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // trace_local[a2]($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:13+2
-    assume {:print "$track_local(86,1,5):", $t18} $t18 == $t18;
+    // trace_local[a1]($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:13+2
+    assume {:print "$track_local(86,1,4):", $t15} $t15 == $t15;
 
-    // $t19 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:34+11
-    assume {:print "$at(5,8047,8058)"} true;
-    $t19 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t17 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:34+11
+    assume {:print "$at(5,8031,8042)"} true;
+    $t17 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // $t20 := vector::pop_back<u64>($t19) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:17+29
-    call $t20,$t19 := $1_vector_pop_back'u64'($t19);
+    // $t18 := vector::pop_back<u64>($t17) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:17+29
+    call $t18,$t17 := $1_vector_pop_back'u64'($t17);
     if ($abort_flag) {
-        assume {:print "$at(5,8030,8059)"} true;
+        assume {:print "$at(5,8014,8043)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:17+29
-    $t1 := $Dereference($t19);
+    // write_back[LocalRoot($t1)@]($t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:17+29
+    $t1 := $Dereference($t17);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:17+29
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // trace_local[a3]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:13+2
-    assume {:print "$track_local(86,1,6):", $t20} $t20 == $t20;
+    // trace_local[a2]($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:13+2
+    assume {:print "$track_local(86,1,5):", $t18} $t18 == $t18;
 
-    // $t21 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:34+11
-    assume {:print "$at(5,8094,8105)"} true;
-    $t21 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t19 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:34+11
+    assume {:print "$at(5,8078,8089)"} true;
+    $t19 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // $t22 := vector::pop_back<u64>($t21) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:17+29
-    call $t22,$t21 := $1_vector_pop_back'u64'($t21);
+    // $t20 := vector::pop_back<u64>($t19) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:17+29
+    call $t20,$t19 := $1_vector_pop_back'u64'($t19);
     if ($abort_flag) {
-        assume {:print "$at(5,8077,8106)"} true;
+        assume {:print "$at(5,8061,8090)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:17+29
-    $t1 := $Dereference($t21);
+    // write_back[LocalRoot($t1)@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:17+29
+    $t1 := $Dereference($t19);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:17+29
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // trace_local[a4]($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:13+2
-    assume {:print "$track_local(86,1,7):", $t22} $t22 == $t22;
+    // trace_local[a3]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:13+2
+    assume {:print "$track_local(86,1,6):", $t20} $t20 == $t20;
 
-    // $t23 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:34+11
-    assume {:print "$at(5,8141,8152)"} true;
-    $t23 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t21 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:34+11
+    assume {:print "$at(5,8125,8136)"} true;
+    $t21 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // $t24 := vector::pop_back<u64>($t23) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:17+29
-    call $t24,$t23 := $1_vector_pop_back'u64'($t23);
+    // $t22 := vector::pop_back<u64>($t21) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:17+29
+    call $t22,$t21 := $1_vector_pop_back'u64'($t21);
     if ($abort_flag) {
-        assume {:print "$at(5,8124,8153)"} true;
+        assume {:print "$at(5,8108,8137)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:17+29
-    $t1 := $Dereference($t23);
+    // write_back[LocalRoot($t1)@]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:17+29
+    $t1 := $Dereference($t21);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:17+29
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // trace_local[a5]($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:13+2
+    // trace_local[a4]($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:13+2
+    assume {:print "$track_local(86,1,7):", $t22} $t22 == $t22;
+
+    // $t23 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:34+11
+    assume {:print "$at(5,8172,8183)"} true;
+    $t23 := $Mutation($Local(1), EmptyVec(), $t1);
+
+    // $t24 := vector::pop_back<u64>($t23) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:17+29
+    call $t24,$t23 := $1_vector_pop_back'u64'($t23);
+    if ($abort_flag) {
+        assume {:print "$at(5,8155,8184)"} true;
+        $t16 := $abort_code;
+        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
+        goto L31;
+    }
+
+    // write_back[LocalRoot($t1)@]($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:17+29
+    $t1 := $Dereference($t23);
+
+    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:17+29
+    assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
+
+    // trace_local[a5]($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:13+2
     assume {:print "$track_local(86,1,8):", $t24} $t24 == $t24;
 
-    // $t25 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:21+1
-    assume {:print "$at(5,8175,8176)"} true;
+    // $t25 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:21+1
+    assume {:print "$at(5,8206,8207)"} true;
     $t25 := 0;
     assume $IsValid'u64'($t25);
 
-    // $t26 := !=($t15, $t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:19+2
+    // $t26 := !=($t15, $t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:19+2
     $t26 := !$IsEqual'u64'($t15, $t25);
 
-    // if ($t26) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
+    // if ($t26) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
     if ($t26) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
 L1:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
-    assume {:print "$at(5,8163,8194)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
+    assume {:print "$at(5,8194,8225)"} true;
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:23+16
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:23+16
 L0:
 
-    // $t27 := 99 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:23+16
-    assume {:print "$at(5,8177,8193)"} true;
+    // $t27 := 99 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:23+16
+    assume {:print "$at(5,8208,8224)"} true;
     $t27 := 99;
     assume $IsValid'u64'($t27);
 
-    // trace_abort($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
-    assume {:print "$at(5,8163,8194)"} true;
+    // trace_abort($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
+    assume {:print "$at(5,8194,8225)"} true;
     assume {:print "$track_abort(86,1):", $t27} $t27 == $t27;
 
-    // $t16 := move($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
+    // $t16 := move($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
     $t16 := $t27;
-
-    // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
-    goto L31;
-
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:17+2
-    assume {:print "$at(5,8212,8214)"} true;
-L2:
-
-    // $t28 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:21+1
-    assume {:print "$at(5,8216,8217)"} true;
-    $t28 := 0;
-    assume $IsValid'u64'($t28);
-
-    // $t29 := !=($t18, $t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:19+2
-    $t29 := !$IsEqual'u64'($t18, $t28);
-
-    // if ($t29) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
-    if ($t29) { goto L4; } else { goto L3; }
-
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
-L4:
-
-    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
-    assume {:print "$at(5,8204,8235)"} true;
-    goto L5;
-
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:23+16
-L3:
-
-    // $t30 := 98 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:23+16
-    assume {:print "$at(5,8218,8234)"} true;
-    $t30 := 98;
-    assume $IsValid'u64'($t30);
-
-    // trace_abort($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
-    assume {:print "$at(5,8204,8235)"} true;
-    assume {:print "$track_abort(86,1):", $t30} $t30 == $t30;
-
-    // $t16 := move($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
-    $t16 := $t30;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
     goto L31;
 
-    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:17+2
-    assume {:print "$at(5,8253,8255)"} true;
-L5:
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:17+2
+    assume {:print "$at(5,8243,8245)"} true;
+L2:
 
-    // $t31 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:21+1
-    assume {:print "$at(5,8257,8258)"} true;
-    $t31 := 0;
-    assume $IsValid'u64'($t31);
+    // $t28 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:21+1
+    assume {:print "$at(5,8247,8248)"} true;
+    $t28 := 0;
+    assume $IsValid'u64'($t28);
 
-    // $t32 := !=($t20, $t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:19+2
-    $t32 := !$IsEqual'u64'($t20, $t31);
+    // $t29 := !=($t18, $t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:19+2
+    $t29 := !$IsEqual'u64'($t18, $t28);
 
-    // if ($t32) goto L7 else goto L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
-    if ($t32) { goto L7; } else { goto L6; }
+    // if ($t29) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
+    if ($t29) { goto L4; } else { goto L3; }
 
-    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
-L7:
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
+L4:
 
-    // goto L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
-    assume {:print "$at(5,8245,8276)"} true;
-    goto L8;
+    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
+    assume {:print "$at(5,8235,8266)"} true;
+    goto L5;
 
-    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:23+16
-L6:
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:23+16
+L3:
 
-    // $t33 := 97 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:23+16
-    assume {:print "$at(5,8259,8275)"} true;
-    $t33 := 97;
-    assume $IsValid'u64'($t33);
+    // $t30 := 98 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:23+16
+    assume {:print "$at(5,8249,8265)"} true;
+    $t30 := 98;
+    assume $IsValid'u64'($t30);
 
-    // trace_abort($t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
-    assume {:print "$at(5,8245,8276)"} true;
-    assume {:print "$track_abort(86,1):", $t33} $t33 == $t33;
+    // trace_abort($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
+    assume {:print "$at(5,8235,8266)"} true;
+    assume {:print "$track_abort(86,1):", $t30} $t30 == $t30;
 
-    // $t16 := move($t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
-    $t16 := $t33;
+    // $t16 := move($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
+    $t16 := $t30;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
     goto L31;
 
-    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:17+2
-    assume {:print "$at(5,8294,8296)"} true;
-L8:
+    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:17+2
+    assume {:print "$at(5,8284,8286)"} true;
+L5:
 
-    // $t34 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:21+1
-    assume {:print "$at(5,8298,8299)"} true;
-    $t34 := 0;
-    assume $IsValid'u64'($t34);
+    // $t31 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:21+1
+    assume {:print "$at(5,8288,8289)"} true;
+    $t31 := 0;
+    assume $IsValid'u64'($t31);
 
-    // $t35 := !=($t22, $t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:19+2
-    $t35 := !$IsEqual'u64'($t22, $t34);
+    // $t32 := !=($t20, $t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:19+2
+    $t32 := !$IsEqual'u64'($t20, $t31);
 
-    // if ($t35) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
-    if ($t35) { goto L10; } else { goto L9; }
+    // if ($t32) goto L7 else goto L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
+    if ($t32) { goto L7; } else { goto L6; }
 
-    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
-L10:
+    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
+L7:
 
-    // goto L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
-    assume {:print "$at(5,8286,8317)"} true;
-    goto L11;
+    // goto L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
+    assume {:print "$at(5,8276,8307)"} true;
+    goto L8;
 
-    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:23+16
-L9:
+    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:23+16
+L6:
 
-    // $t36 := 96 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:23+16
-    assume {:print "$at(5,8300,8316)"} true;
-    $t36 := 96;
-    assume $IsValid'u64'($t36);
+    // $t33 := 97 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:23+16
+    assume {:print "$at(5,8290,8306)"} true;
+    $t33 := 97;
+    assume $IsValid'u64'($t33);
 
-    // trace_abort($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
-    assume {:print "$at(5,8286,8317)"} true;
-    assume {:print "$track_abort(86,1):", $t36} $t36 == $t36;
+    // trace_abort($t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
+    assume {:print "$at(5,8276,8307)"} true;
+    assume {:print "$track_abort(86,1):", $t33} $t33 == $t33;
 
-    // $t16 := move($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
-    $t16 := $t36;
+    // $t16 := move($t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
+    $t16 := $t33;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
     goto L31;
 
-    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:17+2
-    assume {:print "$at(5,8335,8337)"} true;
-L11:
+    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:17+2
+    assume {:print "$at(5,8325,8327)"} true;
+L8:
 
-    // $t37 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:21+1
-    assume {:print "$at(5,8339,8340)"} true;
-    $t37 := 0;
-    assume $IsValid'u64'($t37);
+    // $t34 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:21+1
+    assume {:print "$at(5,8329,8330)"} true;
+    $t34 := 0;
+    assume $IsValid'u64'($t34);
 
-    // $t38 := !=($t24, $t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:19+2
-    $t38 := !$IsEqual'u64'($t24, $t37);
+    // $t35 := !=($t22, $t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:19+2
+    $t35 := !$IsEqual'u64'($t22, $t34);
 
-    // if ($t38) goto L13 else goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
-    if ($t38) { goto L13; } else { goto L12; }
+    // if ($t35) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
+    if ($t35) { goto L10; } else { goto L9; }
 
-    // label L13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
-L13:
+    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
+L10:
 
-    // goto L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
-    assume {:print "$at(5,8327,8358)"} true;
-    goto L14;
+    // goto L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
+    assume {:print "$at(5,8317,8348)"} true;
+    goto L11;
 
-    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:23+16
-L12:
+    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:23+16
+L9:
 
-    // $t39 := 95 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:23+16
-    assume {:print "$at(5,8341,8357)"} true;
-    $t39 := 95;
-    assume $IsValid'u64'($t39);
+    // $t36 := 96 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:23+16
+    assume {:print "$at(5,8331,8347)"} true;
+    $t36 := 96;
+    assume $IsValid'u64'($t36);
 
-    // trace_abort($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
-    assume {:print "$at(5,8327,8358)"} true;
-    assume {:print "$track_abort(86,1):", $t39} $t39 == $t39;
+    // trace_abort($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
+    assume {:print "$at(5,8317,8348)"} true;
+    assume {:print "$track_abort(86,1):", $t36} $t36 == $t36;
 
-    // $t16 := move($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
-    $t16 := $t39;
+    // $t16 := move($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
+    $t16 := $t36;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
     goto L31;
 
-    // label L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:27+11
-    assume {:print "$at(5,8386,8397)"} true;
+    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:17+2
+    assume {:print "$at(5,8366,8368)"} true;
+L11:
+
+    // $t37 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:21+1
+    assume {:print "$at(5,8370,8371)"} true;
+    $t37 := 0;
+    assume $IsValid'u64'($t37);
+
+    // $t38 := !=($t24, $t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:19+2
+    $t38 := !$IsEqual'u64'($t24, $t37);
+
+    // if ($t38) goto L13 else goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+    if ($t38) { goto L13; } else { goto L12; }
+
+    // label L13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+L13:
+
+    // goto L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+    assume {:print "$at(5,8358,8389)"} true;
+    goto L14;
+
+    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:23+16
+L12:
+
+    // $t39 := 95 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:23+16
+    assume {:print "$at(5,8372,8388)"} true;
+    $t39 := 95;
+    assume $IsValid'u64'($t39);
+
+    // trace_abort($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+    assume {:print "$at(5,8358,8389)"} true;
+    assume {:print "$track_abort(86,1):", $t39} $t39 == $t39;
+
+    // $t16 := move($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+    $t16 := $t39;
+
+    // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+    goto L31;
+
+    // label L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:27+11
+    assume {:print "$at(5,8417,8428)"} true;
 L14:
 
-    // $t40 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:27+11
-    assume {:print "$at(5,8386,8397)"} true;
+    // $t40 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:27+11
+    assume {:print "$at(5,8417,8428)"} true;
     $t40 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // vector::push_back<u64>($t40, $t24) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+33
+    // vector::push_back<u64>($t40, $t24) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:9+33
     call $t40 := $1_vector_push_back'u64'($t40, $t24);
     if ($abort_flag) {
-        assume {:print "$at(5,8368,8401)"} true;
+        assume {:print "$at(5,8399,8432)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+33
+    // write_back[LocalRoot($t1)@]($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:9+33
     $t1 := $Dereference($t40);
-
-    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+33
-    assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
-
-    // $t41 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:27+11
-    assume {:print "$at(5,8429,8440)"} true;
-    $t41 := $Mutation($Local(1), EmptyVec(), $t1);
-
-    // vector::push_back<u64>($t41, $t22) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:9+33
-    call $t41 := $1_vector_push_back'u64'($t41, $t22);
-    if ($abort_flag) {
-        assume {:print "$at(5,8411,8444)"} true;
-        $t16 := $abort_code;
-        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
-        goto L31;
-    }
-
-    // write_back[LocalRoot($t1)@]($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:9+33
-    $t1 := $Dereference($t41);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:9+33
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // $t42 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:27+11
-    assume {:print "$at(5,8472,8483)"} true;
-    $t42 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t41 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:27+11
+    assume {:print "$at(5,8460,8471)"} true;
+    $t41 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // vector::push_back<u64>($t42, $t20) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:9+33
-    call $t42 := $1_vector_push_back'u64'($t42, $t20);
+    // vector::push_back<u64>($t41, $t22) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:9+33
+    call $t41 := $1_vector_push_back'u64'($t41, $t22);
     if ($abort_flag) {
-        assume {:print "$at(5,8454,8487)"} true;
+        assume {:print "$at(5,8442,8475)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:9+33
-    $t1 := $Dereference($t42);
+    // write_back[LocalRoot($t1)@]($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:9+33
+    $t1 := $Dereference($t41);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:9+33
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // $t43 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:27+11
-    assume {:print "$at(5,8515,8526)"} true;
-    $t43 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t42 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:27+11
+    assume {:print "$at(5,8503,8514)"} true;
+    $t42 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // vector::push_back<u64>($t43, $t18) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:9+33
-    call $t43 := $1_vector_push_back'u64'($t43, $t18);
+    // vector::push_back<u64>($t42, $t20) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:9+33
+    call $t42 := $1_vector_push_back'u64'($t42, $t20);
     if ($abort_flag) {
-        assume {:print "$at(5,8497,8530)"} true;
+        assume {:print "$at(5,8485,8518)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t43) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:9+33
-    $t1 := $Dereference($t43);
+    // write_back[LocalRoot($t1)@]($t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:9+33
+    $t1 := $Dereference($t42);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:9+33
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // $t44 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:27+11
-    assume {:print "$at(5,8558,8569)"} true;
-    $t44 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t43 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:27+11
+    assume {:print "$at(5,8546,8557)"} true;
+    $t43 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // vector::push_back<u64>($t44, $t15) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:9+33
-    call $t44 := $1_vector_push_back'u64'($t44, $t15);
+    // vector::push_back<u64>($t43, $t18) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:9+33
+    call $t43 := $1_vector_push_back'u64'($t43, $t18);
     if ($abort_flag) {
-        assume {:print "$at(5,8540,8573)"} true;
+        assume {:print "$at(5,8528,8561)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:9+33
-    $t1 := $Dereference($t44);
+    // write_back[LocalRoot($t1)@]($t43) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:9+33
+    $t1 := $Dereference($t43);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:9+33
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // $t45 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:34+12
-    assume {:print "$at(5,8608,8620)"} true;
+    // $t44 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:27+11
+    assume {:print "$at(5,8589,8600)"} true;
+    $t44 := $Mutation($Local(1), EmptyVec(), $t1);
+
+    // vector::push_back<u64>($t44, $t15) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:9+33
+    call $t44 := $1_vector_push_back'u64'($t44, $t15);
+    if ($abort_flag) {
+        assume {:print "$at(5,8571,8604)"} true;
+        $t16 := $abort_code;
+        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
+        goto L31;
+    }
+
+    // write_back[LocalRoot($t1)@]($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:9+33
+    $t1 := $Dereference($t44);
+
+    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:9+33
+    assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
+
+    // $t45 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:34+12
+    assume {:print "$at(5,8639,8651)"} true;
     $t45 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t46 := vector::pop_back<address>($t45) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:17+30
+    // $t46 := vector::pop_back<address>($t45) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:17+30
     call $t46,$t45 := $1_vector_pop_back'address'($t45);
     if ($abort_flag) {
-        assume {:print "$at(5,8591,8621)"} true;
+        assume {:print "$at(5,8622,8652)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:17+30
+    // write_back[LocalRoot($t2)@]($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:17+30
     $t2 := $Dereference($t45);
-
-    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:17+30
-    assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
-
-    // trace_local[b1]($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:13+2
-    assume {:print "$track_local(86,1,9):", $t46} $t46 == $t46;
-
-    // $t47 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:34+12
-    assume {:print "$at(5,8656,8668)"} true;
-    $t47 := $Mutation($Local(2), EmptyVec(), $t2);
-
-    // $t48 := vector::pop_back<address>($t47) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:17+30
-    call $t48,$t47 := $1_vector_pop_back'address'($t47);
-    if ($abort_flag) {
-        assume {:print "$at(5,8639,8669)"} true;
-        $t16 := $abort_code;
-        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
-        goto L31;
-    }
-
-    // write_back[LocalRoot($t2)@]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:17+30
-    $t2 := $Dereference($t47);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:17+30
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // trace_local[b2]($t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:13+2
-    assume {:print "$track_local(86,1,10):", $t48} $t48 == $t48;
+    // trace_local[b1]($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:13+2
+    assume {:print "$track_local(86,1,9):", $t46} $t46 == $t46;
 
-    // $t49 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:34+12
-    assume {:print "$at(5,8704,8716)"} true;
-    $t49 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t47 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:34+12
+    assume {:print "$at(5,8687,8699)"} true;
+    $t47 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t50 := vector::pop_back<address>($t49) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:17+30
-    call $t50,$t49 := $1_vector_pop_back'address'($t49);
+    // $t48 := vector::pop_back<address>($t47) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:17+30
+    call $t48,$t47 := $1_vector_pop_back'address'($t47);
     if ($abort_flag) {
-        assume {:print "$at(5,8687,8717)"} true;
+        assume {:print "$at(5,8670,8700)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t49) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:17+30
-    $t2 := $Dereference($t49);
+    // write_back[LocalRoot($t2)@]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:17+30
+    $t2 := $Dereference($t47);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:17+30
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // trace_local[b3]($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:13+2
-    assume {:print "$track_local(86,1,11):", $t50} $t50 == $t50;
+    // trace_local[b2]($t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:13+2
+    assume {:print "$track_local(86,1,10):", $t48} $t48 == $t48;
 
-    // $t51 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:34+12
-    assume {:print "$at(5,8752,8764)"} true;
-    $t51 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t49 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:34+12
+    assume {:print "$at(5,8735,8747)"} true;
+    $t49 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t52 := vector::pop_back<address>($t51) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:17+30
-    call $t52,$t51 := $1_vector_pop_back'address'($t51);
+    // $t50 := vector::pop_back<address>($t49) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:17+30
+    call $t50,$t49 := $1_vector_pop_back'address'($t49);
     if ($abort_flag) {
-        assume {:print "$at(5,8735,8765)"} true;
+        assume {:print "$at(5,8718,8748)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:17+30
-    $t2 := $Dereference($t51);
+    // write_back[LocalRoot($t2)@]($t49) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:17+30
+    $t2 := $Dereference($t49);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:17+30
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // trace_local[b4]($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:13+2
-    assume {:print "$track_local(86,1,12):", $t52} $t52 == $t52;
+    // trace_local[b3]($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:13+2
+    assume {:print "$track_local(86,1,11):", $t50} $t50 == $t50;
 
-    // $t53 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:34+12
-    assume {:print "$at(5,8800,8812)"} true;
-    $t53 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t51 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:34+12
+    assume {:print "$at(5,8783,8795)"} true;
+    $t51 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t54 := vector::pop_back<address>($t53) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:17+30
-    call $t54,$t53 := $1_vector_pop_back'address'($t53);
+    // $t52 := vector::pop_back<address>($t51) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:17+30
+    call $t52,$t51 := $1_vector_pop_back'address'($t51);
     if ($abort_flag) {
-        assume {:print "$at(5,8783,8813)"} true;
+        assume {:print "$at(5,8766,8796)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t53) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:17+30
-    $t2 := $Dereference($t53);
+    // write_back[LocalRoot($t2)@]($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:17+30
+    $t2 := $Dereference($t51);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:17+30
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // trace_local[b5]($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:13+2
+    // trace_local[b4]($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:13+2
+    assume {:print "$track_local(86,1,12):", $t52} $t52 == $t52;
+
+    // $t53 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:34+12
+    assume {:print "$at(5,8831,8843)"} true;
+    $t53 := $Mutation($Local(2), EmptyVec(), $t2);
+
+    // $t54 := vector::pop_back<address>($t53) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:17+30
+    call $t54,$t53 := $1_vector_pop_back'address'($t53);
+    if ($abort_flag) {
+        assume {:print "$at(5,8814,8844)"} true;
+        $t16 := $abort_code;
+        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
+        goto L31;
+    }
+
+    // write_back[LocalRoot($t2)@]($t53) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:17+30
+    $t2 := $Dereference($t53);
+
+    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:17+30
+    assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
+
+    // trace_local[b5]($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:13+2
     assume {:print "$track_local(86,1,13):", $t54} $t54 == $t54;
 
-    // $t55 := !=($t46, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:19+2
-    assume {:print "$at(5,8833,8835)"} true;
+    // $t55 := !=($t46, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:19+2
+    assume {:print "$at(5,8864,8866)"} true;
     $t55 := !$IsEqual'address'($t46, $t3);
 
-    // if ($t55) goto L16 else goto L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
+    // if ($t55) goto L16 else goto L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
     if ($t55) { goto L16; } else { goto L15; }
 
-    // label L16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
+    // label L16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
 L16:
 
-    // goto L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
-    assume {:print "$at(5,8823,8885)"} true;
+    // goto L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
+    assume {:print "$at(5,8854,8916)"} true;
     goto L17;
 
-    // label L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:38+32
+    // label L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:38+32
 L15:
 
-    // $t56 := 94 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:38+32
-    assume {:print "$at(5,8852,8884)"} true;
+    // $t56 := 94 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:38+32
+    assume {:print "$at(5,8883,8915)"} true;
     $t56 := 94;
     assume $IsValid'u64'($t56);
 
-    // trace_abort($t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
-    assume {:print "$at(5,8823,8885)"} true;
+    // trace_abort($t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
+    assume {:print "$at(5,8854,8916)"} true;
     assume {:print "$track_abort(86,1):", $t56} $t56 == $t56;
 
-    // $t16 := move($t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
+    // $t16 := move($t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
     $t16 := $t56;
-
-    // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
-    goto L31;
-
-    // label L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:17+2
-    assume {:print "$at(5,8903,8905)"} true;
-L17:
-
-    // $t57 := !=($t48, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:19+2
-    assume {:print "$at(5,8905,8907)"} true;
-    $t57 := !$IsEqual'address'($t48, $t3);
-
-    // if ($t57) goto L19 else goto L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
-    if ($t57) { goto L19; } else { goto L18; }
-
-    // label L19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
-L19:
-
-    // goto L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
-    assume {:print "$at(5,8895,8957)"} true;
-    goto L20;
-
-    // label L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:38+32
-L18:
-
-    // $t58 := 93 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:38+32
-    assume {:print "$at(5,8924,8956)"} true;
-    $t58 := 93;
-    assume $IsValid'u64'($t58);
-
-    // trace_abort($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
-    assume {:print "$at(5,8895,8957)"} true;
-    assume {:print "$track_abort(86,1):", $t58} $t58 == $t58;
-
-    // $t16 := move($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
-    $t16 := $t58;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
     goto L31;
 
-    // label L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:17+2
-    assume {:print "$at(5,8975,8977)"} true;
-L20:
+    // label L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:17+2
+    assume {:print "$at(5,8934,8936)"} true;
+L17:
 
-    // $t59 := !=($t50, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:19+2
-    assume {:print "$at(5,8977,8979)"} true;
-    $t59 := !$IsEqual'address'($t50, $t3);
+    // $t57 := !=($t48, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:19+2
+    assume {:print "$at(5,8936,8938)"} true;
+    $t57 := !$IsEqual'address'($t48, $t3);
 
-    // if ($t59) goto L22 else goto L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
-    if ($t59) { goto L22; } else { goto L21; }
+    // if ($t57) goto L19 else goto L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
+    if ($t57) { goto L19; } else { goto L18; }
 
-    // label L22 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
-L22:
+    // label L19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
+L19:
 
-    // goto L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
-    assume {:print "$at(5,8967,9029)"} true;
-    goto L23;
+    // goto L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
+    assume {:print "$at(5,8926,8988)"} true;
+    goto L20;
 
-    // label L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:38+32
-L21:
+    // label L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:38+32
+L18:
 
-    // $t60 := 92 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:38+32
-    assume {:print "$at(5,8996,9028)"} true;
-    $t60 := 92;
-    assume $IsValid'u64'($t60);
+    // $t58 := 93 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:38+32
+    assume {:print "$at(5,8955,8987)"} true;
+    $t58 := 93;
+    assume $IsValid'u64'($t58);
 
-    // trace_abort($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
-    assume {:print "$at(5,8967,9029)"} true;
-    assume {:print "$track_abort(86,1):", $t60} $t60 == $t60;
+    // trace_abort($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
+    assume {:print "$at(5,8926,8988)"} true;
+    assume {:print "$track_abort(86,1):", $t58} $t58 == $t58;
 
-    // $t16 := move($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
-    $t16 := $t60;
+    // $t16 := move($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
+    $t16 := $t58;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
     goto L31;
 
-    // label L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:17+2
-    assume {:print "$at(5,9047,9049)"} true;
-L23:
+    // label L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:17+2
+    assume {:print "$at(5,9006,9008)"} true;
+L20:
 
-    // $t61 := !=($t52, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:19+2
-    assume {:print "$at(5,9049,9051)"} true;
-    $t61 := !$IsEqual'address'($t52, $t3);
+    // $t59 := !=($t50, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:19+2
+    assume {:print "$at(5,9008,9010)"} true;
+    $t59 := !$IsEqual'address'($t50, $t3);
 
-    // if ($t61) goto L25 else goto L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
-    if ($t61) { goto L25; } else { goto L24; }
+    // if ($t59) goto L22 else goto L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
+    if ($t59) { goto L22; } else { goto L21; }
 
-    // label L25 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
-L25:
+    // label L22 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
+L22:
 
-    // goto L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
-    assume {:print "$at(5,9039,9101)"} true;
-    goto L26;
+    // goto L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
+    assume {:print "$at(5,8998,9060)"} true;
+    goto L23;
 
-    // label L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:38+32
-L24:
+    // label L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:38+32
+L21:
 
-    // $t62 := 91 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:38+32
-    assume {:print "$at(5,9068,9100)"} true;
-    $t62 := 91;
-    assume $IsValid'u64'($t62);
+    // $t60 := 92 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:38+32
+    assume {:print "$at(5,9027,9059)"} true;
+    $t60 := 92;
+    assume $IsValid'u64'($t60);
 
-    // trace_abort($t62) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
-    assume {:print "$at(5,9039,9101)"} true;
-    assume {:print "$track_abort(86,1):", $t62} $t62 == $t62;
+    // trace_abort($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
+    assume {:print "$at(5,8998,9060)"} true;
+    assume {:print "$track_abort(86,1):", $t60} $t60 == $t60;
 
-    // $t16 := move($t62) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
-    $t16 := $t62;
+    // $t16 := move($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
+    $t16 := $t60;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
     goto L31;
 
-    // label L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:17+2
-    assume {:print "$at(5,9119,9121)"} true;
-L26:
+    // label L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:17+2
+    assume {:print "$at(5,9078,9080)"} true;
+L23:
 
-    // $t63 := !=($t54, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:19+2
-    assume {:print "$at(5,9121,9123)"} true;
-    $t63 := !$IsEqual'address'($t54, $t3);
+    // $t61 := !=($t52, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:19+2
+    assume {:print "$at(5,9080,9082)"} true;
+    $t61 := !$IsEqual'address'($t52, $t3);
 
-    // if ($t63) goto L28 else goto L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
-    if ($t63) { goto L28; } else { goto L27; }
+    // if ($t61) goto L25 else goto L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
+    if ($t61) { goto L25; } else { goto L24; }
 
-    // label L28 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
-L28:
+    // label L25 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
+L25:
 
-    // goto L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
-    assume {:print "$at(5,9111,9173)"} true;
-    goto L29;
+    // goto L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
+    assume {:print "$at(5,9070,9132)"} true;
+    goto L26;
 
-    // label L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:38+32
-L27:
+    // label L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:38+32
+L24:
 
-    // $t64 := 90 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:38+32
-    assume {:print "$at(5,9140,9172)"} true;
-    $t64 := 90;
-    assume $IsValid'u64'($t64);
+    // $t62 := 91 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:38+32
+    assume {:print "$at(5,9099,9131)"} true;
+    $t62 := 91;
+    assume $IsValid'u64'($t62);
 
-    // trace_abort($t64) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
-    assume {:print "$at(5,9111,9173)"} true;
-    assume {:print "$track_abort(86,1):", $t64} $t64 == $t64;
+    // trace_abort($t62) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
+    assume {:print "$at(5,9070,9132)"} true;
+    assume {:print "$track_abort(86,1):", $t62} $t62 == $t62;
 
-    // $t16 := move($t64) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
-    $t16 := $t64;
+    // $t16 := move($t62) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
+    $t16 := $t62;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
     goto L31;
 
-    // label L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:27+12
-    assume {:print "$at(5,9201,9213)"} true;
+    // label L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:17+2
+    assume {:print "$at(5,9150,9152)"} true;
+L26:
+
+    // $t63 := !=($t54, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:19+2
+    assume {:print "$at(5,9152,9154)"} true;
+    $t63 := !$IsEqual'address'($t54, $t3);
+
+    // if ($t63) goto L28 else goto L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+    if ($t63) { goto L28; } else { goto L27; }
+
+    // label L28 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+L28:
+
+    // goto L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+    assume {:print "$at(5,9142,9204)"} true;
+    goto L29;
+
+    // label L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:38+32
+L27:
+
+    // $t64 := 90 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:38+32
+    assume {:print "$at(5,9171,9203)"} true;
+    $t64 := 90;
+    assume $IsValid'u64'($t64);
+
+    // trace_abort($t64) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+    assume {:print "$at(5,9142,9204)"} true;
+    assume {:print "$track_abort(86,1):", $t64} $t64 == $t64;
+
+    // $t16 := move($t64) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+    $t16 := $t64;
+
+    // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+    goto L31;
+
+    // label L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:27+12
+    assume {:print "$at(5,9232,9244)"} true;
 L29:
 
-    // $t65 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:27+12
-    assume {:print "$at(5,9201,9213)"} true;
+    // $t65 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:27+12
+    assume {:print "$at(5,9232,9244)"} true;
     $t65 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // vector::push_back<address>($t65, $t54) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+34
+    // vector::push_back<address>($t65, $t54) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:9+34
     call $t65 := $1_vector_push_back'address'($t65, $t54);
     if ($abort_flag) {
-        assume {:print "$at(5,9183,9217)"} true;
+        assume {:print "$at(5,9214,9248)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t65) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+34
+    // write_back[LocalRoot($t2)@]($t65) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:9+34
     $t2 := $Dereference($t65);
-
-    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+34
-    assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
-
-    // $t66 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:27+12
-    assume {:print "$at(5,9245,9257)"} true;
-    $t66 := $Mutation($Local(2), EmptyVec(), $t2);
-
-    // vector::push_back<address>($t66, $t52) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:9+34
-    call $t66 := $1_vector_push_back'address'($t66, $t52);
-    if ($abort_flag) {
-        assume {:print "$at(5,9227,9261)"} true;
-        $t16 := $abort_code;
-        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
-        goto L31;
-    }
-
-    // write_back[LocalRoot($t2)@]($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:9+34
-    $t2 := $Dereference($t66);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:9+34
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // $t67 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:27+12
-    assume {:print "$at(5,9289,9301)"} true;
-    $t67 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t66 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:27+12
+    assume {:print "$at(5,9276,9288)"} true;
+    $t66 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // vector::push_back<address>($t67, $t50) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:9+34
-    call $t67 := $1_vector_push_back'address'($t67, $t50);
+    // vector::push_back<address>($t66, $t52) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:9+34
+    call $t66 := $1_vector_push_back'address'($t66, $t52);
     if ($abort_flag) {
-        assume {:print "$at(5,9271,9305)"} true;
+        assume {:print "$at(5,9258,9292)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t67) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:9+34
-    $t2 := $Dereference($t67);
+    // write_back[LocalRoot($t2)@]($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:9+34
+    $t2 := $Dereference($t66);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:9+34
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // $t68 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:27+12
-    assume {:print "$at(5,9333,9345)"} true;
-    $t68 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t67 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:27+12
+    assume {:print "$at(5,9320,9332)"} true;
+    $t67 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // vector::push_back<address>($t68, $t48) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:9+34
-    call $t68 := $1_vector_push_back'address'($t68, $t48);
+    // vector::push_back<address>($t67, $t50) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:9+34
+    call $t67 := $1_vector_push_back'address'($t67, $t50);
     if ($abort_flag) {
-        assume {:print "$at(5,9315,9349)"} true;
+        assume {:print "$at(5,9302,9336)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t68) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:9+34
-    $t2 := $Dereference($t68);
+    // write_back[LocalRoot($t2)@]($t67) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:9+34
+    $t2 := $Dereference($t67);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:9+34
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // $t69 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:27+12
-    assume {:print "$at(5,9377,9389)"} true;
-    $t69 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t68 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:27+12
+    assume {:print "$at(5,9364,9376)"} true;
+    $t68 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // vector::push_back<address>($t69, $t46) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:9+34
-    call $t69 := $1_vector_push_back'address'($t69, $t46);
+    // vector::push_back<address>($t68, $t48) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:9+34
+    call $t68 := $1_vector_push_back'address'($t68, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,9359,9393)"} true;
+        assume {:print "$at(5,9346,9380)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:9+34
-    $t2 := $Dereference($t69);
+    // write_back[LocalRoot($t2)@]($t68) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:9+34
+    $t2 := $Dereference($t68);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:9+34
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // label L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:5+1
-    assume {:print "$at(5,9399,9400)"} true;
+    // $t69 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:27+12
+    assume {:print "$at(5,9408,9420)"} true;
+    $t69 := $Mutation($Local(2), EmptyVec(), $t2);
+
+    // vector::push_back<address>($t69, $t46) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:9+34
+    call $t69 := $1_vector_push_back'address'($t69, $t46);
+    if ($abort_flag) {
+        assume {:print "$at(5,9390,9424)"} true;
+        $t16 := $abort_code;
+        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
+        goto L31;
+    }
+
+    // write_back[LocalRoot($t2)@]($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:9+34
+    $t2 := $Dereference($t69);
+
+    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:9+34
+    assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
+
+    // label L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:236:5+1
+    assume {:print "$at(5,9430,9431)"} true;
 L30:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:5+1
-    assume {:print "$at(5,9399,9400)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:236:5+1
+    assume {:print "$at(5,9430,9431)"} true;
     return;
 
-    // label L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:5+1
+    // label L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:236:5+1
 L31:
 
-    // abort($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:5+1
-    assume {:print "$at(5,9399,9400)"} true;
+    // abort($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:236:5+1
+    assume {:print "$at(5,9430,9431)"} true;
     $abort_code := $t16;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::check_each_vector_not_zero [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1596
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_check_each_vector_not_zero$verify(_$t0: $signer, _$t1: Vec (int), _$t2: Vec (int), _$t3: int) returns ()
+// fun pay_module::check_each_vector_not_zero [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1596
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_check_each_vector_not_zero$verify(_$t0: $signer, _$t1: Vec (int), _$t2: Vec (int), _$t3: int) returns ()
 {
     // declare local variables
     var $t4: int;
@@ -27097,842 +27097,842 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
-    assume {:print "$at(5,7804,7805)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
+    assume {:print "$at(5,7835,7836)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
     assume $IsValid'vec'u64''($t1);
 
-    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
     assume $IsValid'vec'address''($t2);
 
-    // assume WellFormed($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    // assume WellFormed($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
     assume $IsValid'address'($t3);
 
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
     assume {:print "$track_local(86,1,0):", $t0} $t0 == $t0;
 
-    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // trace_local[resource_address]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    // trace_local[resource_address]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:5+1
     assume {:print "$track_local(86,1,3):", $t3} $t3 == $t3;
 
-    // $t14 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:34+11
-    assume {:print "$at(5,7953,7964)"} true;
+    // $t14 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:34+11
+    assume {:print "$at(5,7984,7995)"} true;
     $t14 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // $t15 := vector::pop_back<u64>($t14) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:17+29
+    // $t15 := vector::pop_back<u64>($t14) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:17+29
     call $t15,$t14 := $1_vector_pop_back'u64'($t14);
     if ($abort_flag) {
-        assume {:print "$at(5,7936,7965)"} true;
+        assume {:print "$at(5,7967,7996)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:17+29
+    // write_back[LocalRoot($t1)@]($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:17+29
     $t1 := $Dereference($t14);
-
-    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:17+29
-    assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
-
-    // trace_local[a1]($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:205:13+2
-    assume {:print "$track_local(86,1,4):", $t15} $t15 == $t15;
-
-    // $t17 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:34+11
-    assume {:print "$at(5,8000,8011)"} true;
-    $t17 := $Mutation($Local(1), EmptyVec(), $t1);
-
-    // $t18 := vector::pop_back<u64>($t17) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:17+29
-    call $t18,$t17 := $1_vector_pop_back'u64'($t17);
-    if ($abort_flag) {
-        assume {:print "$at(5,7983,8012)"} true;
-        $t16 := $abort_code;
-        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
-        goto L31;
-    }
-
-    // write_back[LocalRoot($t1)@]($t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:17+29
-    $t1 := $Dereference($t17);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:17+29
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // trace_local[a2]($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:13+2
-    assume {:print "$track_local(86,1,5):", $t18} $t18 == $t18;
+    // trace_local[a1]($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:206:13+2
+    assume {:print "$track_local(86,1,4):", $t15} $t15 == $t15;
 
-    // $t19 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:34+11
-    assume {:print "$at(5,8047,8058)"} true;
-    $t19 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t17 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:34+11
+    assume {:print "$at(5,8031,8042)"} true;
+    $t17 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // $t20 := vector::pop_back<u64>($t19) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:17+29
-    call $t20,$t19 := $1_vector_pop_back'u64'($t19);
+    // $t18 := vector::pop_back<u64>($t17) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:17+29
+    call $t18,$t17 := $1_vector_pop_back'u64'($t17);
     if ($abort_flag) {
-        assume {:print "$at(5,8030,8059)"} true;
+        assume {:print "$at(5,8014,8043)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:17+29
-    $t1 := $Dereference($t19);
+    // write_back[LocalRoot($t1)@]($t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:17+29
+    $t1 := $Dereference($t17);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:17+29
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // trace_local[a3]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:13+2
-    assume {:print "$track_local(86,1,6):", $t20} $t20 == $t20;
+    // trace_local[a2]($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:207:13+2
+    assume {:print "$track_local(86,1,5):", $t18} $t18 == $t18;
 
-    // $t21 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:34+11
-    assume {:print "$at(5,8094,8105)"} true;
-    $t21 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t19 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:34+11
+    assume {:print "$at(5,8078,8089)"} true;
+    $t19 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // $t22 := vector::pop_back<u64>($t21) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:17+29
-    call $t22,$t21 := $1_vector_pop_back'u64'($t21);
+    // $t20 := vector::pop_back<u64>($t19) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:17+29
+    call $t20,$t19 := $1_vector_pop_back'u64'($t19);
     if ($abort_flag) {
-        assume {:print "$at(5,8077,8106)"} true;
+        assume {:print "$at(5,8061,8090)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:17+29
-    $t1 := $Dereference($t21);
+    // write_back[LocalRoot($t1)@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:17+29
+    $t1 := $Dereference($t19);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:17+29
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // trace_local[a4]($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:13+2
-    assume {:print "$track_local(86,1,7):", $t22} $t22 == $t22;
+    // trace_local[a3]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:208:13+2
+    assume {:print "$track_local(86,1,6):", $t20} $t20 == $t20;
 
-    // $t23 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:34+11
-    assume {:print "$at(5,8141,8152)"} true;
-    $t23 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t21 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:34+11
+    assume {:print "$at(5,8125,8136)"} true;
+    $t21 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // $t24 := vector::pop_back<u64>($t23) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:17+29
-    call $t24,$t23 := $1_vector_pop_back'u64'($t23);
+    // $t22 := vector::pop_back<u64>($t21) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:17+29
+    call $t22,$t21 := $1_vector_pop_back'u64'($t21);
     if ($abort_flag) {
-        assume {:print "$at(5,8124,8153)"} true;
+        assume {:print "$at(5,8108,8137)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:17+29
-    $t1 := $Dereference($t23);
+    // write_back[LocalRoot($t1)@]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:17+29
+    $t1 := $Dereference($t21);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:17+29
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // trace_local[a5]($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:13+2
+    // trace_local[a4]($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:209:13+2
+    assume {:print "$track_local(86,1,7):", $t22} $t22 == $t22;
+
+    // $t23 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:34+11
+    assume {:print "$at(5,8172,8183)"} true;
+    $t23 := $Mutation($Local(1), EmptyVec(), $t1);
+
+    // $t24 := vector::pop_back<u64>($t23) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:17+29
+    call $t24,$t23 := $1_vector_pop_back'u64'($t23);
+    if ($abort_flag) {
+        assume {:print "$at(5,8155,8184)"} true;
+        $t16 := $abort_code;
+        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
+        goto L31;
+    }
+
+    // write_back[LocalRoot($t1)@]($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:17+29
+    $t1 := $Dereference($t23);
+
+    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:17+29
+    assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
+
+    // trace_local[a5]($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:13+2
     assume {:print "$track_local(86,1,8):", $t24} $t24 == $t24;
 
-    // $t25 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:21+1
-    assume {:print "$at(5,8175,8176)"} true;
+    // $t25 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:21+1
+    assume {:print "$at(5,8206,8207)"} true;
     $t25 := 0;
     assume $IsValid'u64'($t25);
 
-    // $t26 := !=($t15, $t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:19+2
+    // $t26 := !=($t15, $t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:19+2
     $t26 := !$IsEqual'u64'($t15, $t25);
 
-    // if ($t26) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
+    // if ($t26) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
     if ($t26) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
 L1:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
-    assume {:print "$at(5,8163,8194)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
+    assume {:print "$at(5,8194,8225)"} true;
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:23+16
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:23+16
 L0:
 
-    // $t27 := 99 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:23+16
-    assume {:print "$at(5,8177,8193)"} true;
+    // $t27 := 99 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:23+16
+    assume {:print "$at(5,8208,8224)"} true;
     $t27 := 99;
     assume $IsValid'u64'($t27);
 
-    // trace_abort($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
-    assume {:print "$at(5,8163,8194)"} true;
+    // trace_abort($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
+    assume {:print "$at(5,8194,8225)"} true;
     assume {:print "$track_abort(86,1):", $t27} $t27 == $t27;
 
-    // $t16 := move($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
+    // $t16 := move($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
     $t16 := $t27;
-
-    // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:210:9+31
-    goto L31;
-
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:17+2
-    assume {:print "$at(5,8212,8214)"} true;
-L2:
-
-    // $t28 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:21+1
-    assume {:print "$at(5,8216,8217)"} true;
-    $t28 := 0;
-    assume $IsValid'u64'($t28);
-
-    // $t29 := !=($t18, $t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:19+2
-    $t29 := !$IsEqual'u64'($t18, $t28);
-
-    // if ($t29) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
-    if ($t29) { goto L4; } else { goto L3; }
-
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
-L4:
-
-    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
-    assume {:print "$at(5,8204,8235)"} true;
-    goto L5;
-
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:23+16
-L3:
-
-    // $t30 := 98 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:23+16
-    assume {:print "$at(5,8218,8234)"} true;
-    $t30 := 98;
-    assume $IsValid'u64'($t30);
-
-    // trace_abort($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
-    assume {:print "$at(5,8204,8235)"} true;
-    assume {:print "$track_abort(86,1):", $t30} $t30 == $t30;
-
-    // $t16 := move($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
-    $t16 := $t30;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:211:9+31
     goto L31;
 
-    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:17+2
-    assume {:print "$at(5,8253,8255)"} true;
-L5:
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:17+2
+    assume {:print "$at(5,8243,8245)"} true;
+L2:
 
-    // $t31 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:21+1
-    assume {:print "$at(5,8257,8258)"} true;
-    $t31 := 0;
-    assume $IsValid'u64'($t31);
+    // $t28 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:21+1
+    assume {:print "$at(5,8247,8248)"} true;
+    $t28 := 0;
+    assume $IsValid'u64'($t28);
 
-    // $t32 := !=($t20, $t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:19+2
-    $t32 := !$IsEqual'u64'($t20, $t31);
+    // $t29 := !=($t18, $t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:19+2
+    $t29 := !$IsEqual'u64'($t18, $t28);
 
-    // if ($t32) goto L7 else goto L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
-    if ($t32) { goto L7; } else { goto L6; }
+    // if ($t29) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
+    if ($t29) { goto L4; } else { goto L3; }
 
-    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
-L7:
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
+L4:
 
-    // goto L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
-    assume {:print "$at(5,8245,8276)"} true;
-    goto L8;
+    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
+    assume {:print "$at(5,8235,8266)"} true;
+    goto L5;
 
-    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:23+16
-L6:
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:23+16
+L3:
 
-    // $t33 := 97 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:23+16
-    assume {:print "$at(5,8259,8275)"} true;
-    $t33 := 97;
-    assume $IsValid'u64'($t33);
+    // $t30 := 98 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:23+16
+    assume {:print "$at(5,8249,8265)"} true;
+    $t30 := 98;
+    assume $IsValid'u64'($t30);
 
-    // trace_abort($t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
-    assume {:print "$at(5,8245,8276)"} true;
-    assume {:print "$track_abort(86,1):", $t33} $t33 == $t33;
+    // trace_abort($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
+    assume {:print "$at(5,8235,8266)"} true;
+    assume {:print "$track_abort(86,1):", $t30} $t30 == $t30;
 
-    // $t16 := move($t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
-    $t16 := $t33;
+    // $t16 := move($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
+    $t16 := $t30;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:212:9+31
     goto L31;
 
-    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:17+2
-    assume {:print "$at(5,8294,8296)"} true;
-L8:
+    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:17+2
+    assume {:print "$at(5,8284,8286)"} true;
+L5:
 
-    // $t34 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:21+1
-    assume {:print "$at(5,8298,8299)"} true;
-    $t34 := 0;
-    assume $IsValid'u64'($t34);
+    // $t31 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:21+1
+    assume {:print "$at(5,8288,8289)"} true;
+    $t31 := 0;
+    assume $IsValid'u64'($t31);
 
-    // $t35 := !=($t22, $t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:19+2
-    $t35 := !$IsEqual'u64'($t22, $t34);
+    // $t32 := !=($t20, $t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:19+2
+    $t32 := !$IsEqual'u64'($t20, $t31);
 
-    // if ($t35) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
-    if ($t35) { goto L10; } else { goto L9; }
+    // if ($t32) goto L7 else goto L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
+    if ($t32) { goto L7; } else { goto L6; }
 
-    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
-L10:
+    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
+L7:
 
-    // goto L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
-    assume {:print "$at(5,8286,8317)"} true;
-    goto L11;
+    // goto L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
+    assume {:print "$at(5,8276,8307)"} true;
+    goto L8;
 
-    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:23+16
-L9:
+    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:23+16
+L6:
 
-    // $t36 := 96 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:23+16
-    assume {:print "$at(5,8300,8316)"} true;
-    $t36 := 96;
-    assume $IsValid'u64'($t36);
+    // $t33 := 97 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:23+16
+    assume {:print "$at(5,8290,8306)"} true;
+    $t33 := 97;
+    assume $IsValid'u64'($t33);
 
-    // trace_abort($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
-    assume {:print "$at(5,8286,8317)"} true;
-    assume {:print "$track_abort(86,1):", $t36} $t36 == $t36;
+    // trace_abort($t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
+    assume {:print "$at(5,8276,8307)"} true;
+    assume {:print "$track_abort(86,1):", $t33} $t33 == $t33;
 
-    // $t16 := move($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
-    $t16 := $t36;
+    // $t16 := move($t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
+    $t16 := $t33;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:213:9+31
     goto L31;
 
-    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:17+2
-    assume {:print "$at(5,8335,8337)"} true;
-L11:
+    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:17+2
+    assume {:print "$at(5,8325,8327)"} true;
+L8:
 
-    // $t37 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:21+1
-    assume {:print "$at(5,8339,8340)"} true;
-    $t37 := 0;
-    assume $IsValid'u64'($t37);
+    // $t34 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:21+1
+    assume {:print "$at(5,8329,8330)"} true;
+    $t34 := 0;
+    assume $IsValid'u64'($t34);
 
-    // $t38 := !=($t24, $t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:19+2
-    $t38 := !$IsEqual'u64'($t24, $t37);
+    // $t35 := !=($t22, $t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:19+2
+    $t35 := !$IsEqual'u64'($t22, $t34);
 
-    // if ($t38) goto L13 else goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
-    if ($t38) { goto L13; } else { goto L12; }
+    // if ($t35) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
+    if ($t35) { goto L10; } else { goto L9; }
 
-    // label L13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
-L13:
+    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
+L10:
 
-    // goto L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
-    assume {:print "$at(5,8327,8358)"} true;
-    goto L14;
+    // goto L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
+    assume {:print "$at(5,8317,8348)"} true;
+    goto L11;
 
-    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:23+16
-L12:
+    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:23+16
+L9:
 
-    // $t39 := 95 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:23+16
-    assume {:print "$at(5,8341,8357)"} true;
-    $t39 := 95;
-    assume $IsValid'u64'($t39);
+    // $t36 := 96 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:23+16
+    assume {:print "$at(5,8331,8347)"} true;
+    $t36 := 96;
+    assume $IsValid'u64'($t36);
 
-    // trace_abort($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
-    assume {:print "$at(5,8327,8358)"} true;
-    assume {:print "$track_abort(86,1):", $t39} $t39 == $t39;
+    // trace_abort($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
+    assume {:print "$at(5,8317,8348)"} true;
+    assume {:print "$track_abort(86,1):", $t36} $t36 == $t36;
 
-    // $t16 := move($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
-    $t16 := $t39;
+    // $t16 := move($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
+    $t16 := $t36;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:214:9+31
     goto L31;
 
-    // label L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:27+11
-    assume {:print "$at(5,8386,8397)"} true;
+    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:17+2
+    assume {:print "$at(5,8366,8368)"} true;
+L11:
+
+    // $t37 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:21+1
+    assume {:print "$at(5,8370,8371)"} true;
+    $t37 := 0;
+    assume $IsValid'u64'($t37);
+
+    // $t38 := !=($t24, $t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:19+2
+    $t38 := !$IsEqual'u64'($t24, $t37);
+
+    // if ($t38) goto L13 else goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+    if ($t38) { goto L13; } else { goto L12; }
+
+    // label L13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+L13:
+
+    // goto L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+    assume {:print "$at(5,8358,8389)"} true;
+    goto L14;
+
+    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:23+16
+L12:
+
+    // $t39 := 95 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:23+16
+    assume {:print "$at(5,8372,8388)"} true;
+    $t39 := 95;
+    assume $IsValid'u64'($t39);
+
+    // trace_abort($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+    assume {:print "$at(5,8358,8389)"} true;
+    assume {:print "$track_abort(86,1):", $t39} $t39 == $t39;
+
+    // $t16 := move($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+    $t16 := $t39;
+
+    // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+31
+    goto L31;
+
+    // label L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:27+11
+    assume {:print "$at(5,8417,8428)"} true;
 L14:
 
-    // $t40 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:27+11
-    assume {:print "$at(5,8386,8397)"} true;
+    // $t40 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:27+11
+    assume {:print "$at(5,8417,8428)"} true;
     $t40 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // vector::push_back<u64>($t40, $t24) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+33
+    // vector::push_back<u64>($t40, $t24) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:9+33
     call $t40 := $1_vector_push_back'u64'($t40, $t24);
     if ($abort_flag) {
-        assume {:print "$at(5,8368,8401)"} true;
+        assume {:print "$at(5,8399,8432)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+33
+    // write_back[LocalRoot($t1)@]($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:9+33
     $t1 := $Dereference($t40);
-
-    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:215:9+33
-    assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
-
-    // $t41 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:27+11
-    assume {:print "$at(5,8429,8440)"} true;
-    $t41 := $Mutation($Local(1), EmptyVec(), $t1);
-
-    // vector::push_back<u64>($t41, $t22) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:9+33
-    call $t41 := $1_vector_push_back'u64'($t41, $t22);
-    if ($abort_flag) {
-        assume {:print "$at(5,8411,8444)"} true;
-        $t16 := $abort_code;
-        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
-        goto L31;
-    }
-
-    // write_back[LocalRoot($t1)@]($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:9+33
-    $t1 := $Dereference($t41);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:216:9+33
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // $t42 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:27+11
-    assume {:print "$at(5,8472,8483)"} true;
-    $t42 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t41 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:27+11
+    assume {:print "$at(5,8460,8471)"} true;
+    $t41 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // vector::push_back<u64>($t42, $t20) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:9+33
-    call $t42 := $1_vector_push_back'u64'($t42, $t20);
+    // vector::push_back<u64>($t41, $t22) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:9+33
+    call $t41 := $1_vector_push_back'u64'($t41, $t22);
     if ($abort_flag) {
-        assume {:print "$at(5,8454,8487)"} true;
+        assume {:print "$at(5,8442,8475)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:9+33
-    $t1 := $Dereference($t42);
+    // write_back[LocalRoot($t1)@]($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:9+33
+    $t1 := $Dereference($t41);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:217:9+33
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // $t43 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:27+11
-    assume {:print "$at(5,8515,8526)"} true;
-    $t43 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t42 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:27+11
+    assume {:print "$at(5,8503,8514)"} true;
+    $t42 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // vector::push_back<u64>($t43, $t18) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:9+33
-    call $t43 := $1_vector_push_back'u64'($t43, $t18);
+    // vector::push_back<u64>($t42, $t20) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:9+33
+    call $t42 := $1_vector_push_back'u64'($t42, $t20);
     if ($abort_flag) {
-        assume {:print "$at(5,8497,8530)"} true;
+        assume {:print "$at(5,8485,8518)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t43) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:9+33
-    $t1 := $Dereference($t43);
+    // write_back[LocalRoot($t1)@]($t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:9+33
+    $t1 := $Dereference($t42);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:218:9+33
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // $t44 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:27+11
-    assume {:print "$at(5,8558,8569)"} true;
-    $t44 := $Mutation($Local(1), EmptyVec(), $t1);
+    // $t43 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:27+11
+    assume {:print "$at(5,8546,8557)"} true;
+    $t43 := $Mutation($Local(1), EmptyVec(), $t1);
 
-    // vector::push_back<u64>($t44, $t15) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:9+33
-    call $t44 := $1_vector_push_back'u64'($t44, $t15);
+    // vector::push_back<u64>($t43, $t18) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:9+33
+    call $t43 := $1_vector_push_back'u64'($t43, $t18);
     if ($abort_flag) {
-        assume {:print "$at(5,8540,8573)"} true;
+        assume {:print "$at(5,8528,8561)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t1)@]($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:9+33
-    $t1 := $Dereference($t44);
+    // write_back[LocalRoot($t1)@]($t43) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:9+33
+    $t1 := $Dereference($t43);
 
     // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:219:9+33
     assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
 
-    // $t45 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:34+12
-    assume {:print "$at(5,8608,8620)"} true;
+    // $t44 := borrow_local($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:27+11
+    assume {:print "$at(5,8589,8600)"} true;
+    $t44 := $Mutation($Local(1), EmptyVec(), $t1);
+
+    // vector::push_back<u64>($t44, $t15) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:9+33
+    call $t44 := $1_vector_push_back'u64'($t44, $t15);
+    if ($abort_flag) {
+        assume {:print "$at(5,8571,8604)"} true;
+        $t16 := $abort_code;
+        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
+        goto L31;
+    }
+
+    // write_back[LocalRoot($t1)@]($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:9+33
+    $t1 := $Dereference($t44);
+
+    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:9+33
+    assume {:print "$track_local(86,1,1):", $t1} $t1 == $t1;
+
+    // $t45 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:34+12
+    assume {:print "$at(5,8639,8651)"} true;
     $t45 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t46 := vector::pop_back<address>($t45) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:17+30
+    // $t46 := vector::pop_back<address>($t45) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:17+30
     call $t46,$t45 := $1_vector_pop_back'address'($t45);
     if ($abort_flag) {
-        assume {:print "$at(5,8591,8621)"} true;
+        assume {:print "$at(5,8622,8652)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:17+30
+    // write_back[LocalRoot($t2)@]($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:17+30
     $t2 := $Dereference($t45);
-
-    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:17+30
-    assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
-
-    // trace_local[b1]($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:220:13+2
-    assume {:print "$track_local(86,1,9):", $t46} $t46 == $t46;
-
-    // $t47 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:34+12
-    assume {:print "$at(5,8656,8668)"} true;
-    $t47 := $Mutation($Local(2), EmptyVec(), $t2);
-
-    // $t48 := vector::pop_back<address>($t47) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:17+30
-    call $t48,$t47 := $1_vector_pop_back'address'($t47);
-    if ($abort_flag) {
-        assume {:print "$at(5,8639,8669)"} true;
-        $t16 := $abort_code;
-        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
-        goto L31;
-    }
-
-    // write_back[LocalRoot($t2)@]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:17+30
-    $t2 := $Dereference($t47);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:17+30
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // trace_local[b2]($t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:13+2
-    assume {:print "$track_local(86,1,10):", $t48} $t48 == $t48;
+    // trace_local[b1]($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:221:13+2
+    assume {:print "$track_local(86,1,9):", $t46} $t46 == $t46;
 
-    // $t49 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:34+12
-    assume {:print "$at(5,8704,8716)"} true;
-    $t49 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t47 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:34+12
+    assume {:print "$at(5,8687,8699)"} true;
+    $t47 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t50 := vector::pop_back<address>($t49) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:17+30
-    call $t50,$t49 := $1_vector_pop_back'address'($t49);
+    // $t48 := vector::pop_back<address>($t47) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:17+30
+    call $t48,$t47 := $1_vector_pop_back'address'($t47);
     if ($abort_flag) {
-        assume {:print "$at(5,8687,8717)"} true;
+        assume {:print "$at(5,8670,8700)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t49) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:17+30
-    $t2 := $Dereference($t49);
+    // write_back[LocalRoot($t2)@]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:17+30
+    $t2 := $Dereference($t47);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:17+30
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // trace_local[b3]($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:13+2
-    assume {:print "$track_local(86,1,11):", $t50} $t50 == $t50;
+    // trace_local[b2]($t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:222:13+2
+    assume {:print "$track_local(86,1,10):", $t48} $t48 == $t48;
 
-    // $t51 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:34+12
-    assume {:print "$at(5,8752,8764)"} true;
-    $t51 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t49 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:34+12
+    assume {:print "$at(5,8735,8747)"} true;
+    $t49 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t52 := vector::pop_back<address>($t51) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:17+30
-    call $t52,$t51 := $1_vector_pop_back'address'($t51);
+    // $t50 := vector::pop_back<address>($t49) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:17+30
+    call $t50,$t49 := $1_vector_pop_back'address'($t49);
     if ($abort_flag) {
-        assume {:print "$at(5,8735,8765)"} true;
+        assume {:print "$at(5,8718,8748)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:17+30
-    $t2 := $Dereference($t51);
+    // write_back[LocalRoot($t2)@]($t49) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:17+30
+    $t2 := $Dereference($t49);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:17+30
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // trace_local[b4]($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:13+2
-    assume {:print "$track_local(86,1,12):", $t52} $t52 == $t52;
+    // trace_local[b3]($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:223:13+2
+    assume {:print "$track_local(86,1,11):", $t50} $t50 == $t50;
 
-    // $t53 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:34+12
-    assume {:print "$at(5,8800,8812)"} true;
-    $t53 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t51 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:34+12
+    assume {:print "$at(5,8783,8795)"} true;
+    $t51 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t54 := vector::pop_back<address>($t53) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:17+30
-    call $t54,$t53 := $1_vector_pop_back'address'($t53);
+    // $t52 := vector::pop_back<address>($t51) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:17+30
+    call $t52,$t51 := $1_vector_pop_back'address'($t51);
     if ($abort_flag) {
-        assume {:print "$at(5,8783,8813)"} true;
+        assume {:print "$at(5,8766,8796)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t53) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:17+30
-    $t2 := $Dereference($t53);
+    // write_back[LocalRoot($t2)@]($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:17+30
+    $t2 := $Dereference($t51);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:17+30
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // trace_local[b5]($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:13+2
+    // trace_local[b4]($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:224:13+2
+    assume {:print "$track_local(86,1,12):", $t52} $t52 == $t52;
+
+    // $t53 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:34+12
+    assume {:print "$at(5,8831,8843)"} true;
+    $t53 := $Mutation($Local(2), EmptyVec(), $t2);
+
+    // $t54 := vector::pop_back<address>($t53) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:17+30
+    call $t54,$t53 := $1_vector_pop_back'address'($t53);
+    if ($abort_flag) {
+        assume {:print "$at(5,8814,8844)"} true;
+        $t16 := $abort_code;
+        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
+        goto L31;
+    }
+
+    // write_back[LocalRoot($t2)@]($t53) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:17+30
+    $t2 := $Dereference($t53);
+
+    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:17+30
+    assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
+
+    // trace_local[b5]($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:13+2
     assume {:print "$track_local(86,1,13):", $t54} $t54 == $t54;
 
-    // $t55 := !=($t46, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:19+2
-    assume {:print "$at(5,8833,8835)"} true;
+    // $t55 := !=($t46, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:19+2
+    assume {:print "$at(5,8864,8866)"} true;
     $t55 := !$IsEqual'address'($t46, $t3);
 
-    // if ($t55) goto L16 else goto L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
+    // if ($t55) goto L16 else goto L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
     if ($t55) { goto L16; } else { goto L15; }
 
-    // label L16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
+    // label L16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
 L16:
 
-    // goto L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
-    assume {:print "$at(5,8823,8885)"} true;
+    // goto L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
+    assume {:print "$at(5,8854,8916)"} true;
     goto L17;
 
-    // label L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:38+32
+    // label L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:38+32
 L15:
 
-    // $t56 := 94 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:38+32
-    assume {:print "$at(5,8852,8884)"} true;
+    // $t56 := 94 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:38+32
+    assume {:print "$at(5,8883,8915)"} true;
     $t56 := 94;
     assume $IsValid'u64'($t56);
 
-    // trace_abort($t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
-    assume {:print "$at(5,8823,8885)"} true;
+    // trace_abort($t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
+    assume {:print "$at(5,8854,8916)"} true;
     assume {:print "$track_abort(86,1):", $t56} $t56 == $t56;
 
-    // $t16 := move($t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
+    // $t16 := move($t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
     $t16 := $t56;
-
-    // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:225:9+62
-    goto L31;
-
-    // label L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:17+2
-    assume {:print "$at(5,8903,8905)"} true;
-L17:
-
-    // $t57 := !=($t48, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:19+2
-    assume {:print "$at(5,8905,8907)"} true;
-    $t57 := !$IsEqual'address'($t48, $t3);
-
-    // if ($t57) goto L19 else goto L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
-    if ($t57) { goto L19; } else { goto L18; }
-
-    // label L19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
-L19:
-
-    // goto L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
-    assume {:print "$at(5,8895,8957)"} true;
-    goto L20;
-
-    // label L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:38+32
-L18:
-
-    // $t58 := 93 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:38+32
-    assume {:print "$at(5,8924,8956)"} true;
-    $t58 := 93;
-    assume $IsValid'u64'($t58);
-
-    // trace_abort($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
-    assume {:print "$at(5,8895,8957)"} true;
-    assume {:print "$track_abort(86,1):", $t58} $t58 == $t58;
-
-    // $t16 := move($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
-    $t16 := $t58;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:226:9+62
     goto L31;
 
-    // label L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:17+2
-    assume {:print "$at(5,8975,8977)"} true;
-L20:
+    // label L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:17+2
+    assume {:print "$at(5,8934,8936)"} true;
+L17:
 
-    // $t59 := !=($t50, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:19+2
-    assume {:print "$at(5,8977,8979)"} true;
-    $t59 := !$IsEqual'address'($t50, $t3);
+    // $t57 := !=($t48, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:19+2
+    assume {:print "$at(5,8936,8938)"} true;
+    $t57 := !$IsEqual'address'($t48, $t3);
 
-    // if ($t59) goto L22 else goto L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
-    if ($t59) { goto L22; } else { goto L21; }
+    // if ($t57) goto L19 else goto L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
+    if ($t57) { goto L19; } else { goto L18; }
 
-    // label L22 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
-L22:
+    // label L19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
+L19:
 
-    // goto L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
-    assume {:print "$at(5,8967,9029)"} true;
-    goto L23;
+    // goto L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
+    assume {:print "$at(5,8926,8988)"} true;
+    goto L20;
 
-    // label L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:38+32
-L21:
+    // label L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:38+32
+L18:
 
-    // $t60 := 92 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:38+32
-    assume {:print "$at(5,8996,9028)"} true;
-    $t60 := 92;
-    assume $IsValid'u64'($t60);
+    // $t58 := 93 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:38+32
+    assume {:print "$at(5,8955,8987)"} true;
+    $t58 := 93;
+    assume $IsValid'u64'($t58);
 
-    // trace_abort($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
-    assume {:print "$at(5,8967,9029)"} true;
-    assume {:print "$track_abort(86,1):", $t60} $t60 == $t60;
+    // trace_abort($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
+    assume {:print "$at(5,8926,8988)"} true;
+    assume {:print "$track_abort(86,1):", $t58} $t58 == $t58;
 
-    // $t16 := move($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
-    $t16 := $t60;
+    // $t16 := move($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
+    $t16 := $t58;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:227:9+62
     goto L31;
 
-    // label L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:17+2
-    assume {:print "$at(5,9047,9049)"} true;
-L23:
+    // label L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:17+2
+    assume {:print "$at(5,9006,9008)"} true;
+L20:
 
-    // $t61 := !=($t52, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:19+2
-    assume {:print "$at(5,9049,9051)"} true;
-    $t61 := !$IsEqual'address'($t52, $t3);
+    // $t59 := !=($t50, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:19+2
+    assume {:print "$at(5,9008,9010)"} true;
+    $t59 := !$IsEqual'address'($t50, $t3);
 
-    // if ($t61) goto L25 else goto L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
-    if ($t61) { goto L25; } else { goto L24; }
+    // if ($t59) goto L22 else goto L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
+    if ($t59) { goto L22; } else { goto L21; }
 
-    // label L25 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
-L25:
+    // label L22 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
+L22:
 
-    // goto L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
-    assume {:print "$at(5,9039,9101)"} true;
-    goto L26;
+    // goto L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
+    assume {:print "$at(5,8998,9060)"} true;
+    goto L23;
 
-    // label L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:38+32
-L24:
+    // label L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:38+32
+L21:
 
-    // $t62 := 91 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:38+32
-    assume {:print "$at(5,9068,9100)"} true;
-    $t62 := 91;
-    assume $IsValid'u64'($t62);
+    // $t60 := 92 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:38+32
+    assume {:print "$at(5,9027,9059)"} true;
+    $t60 := 92;
+    assume $IsValid'u64'($t60);
 
-    // trace_abort($t62) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
-    assume {:print "$at(5,9039,9101)"} true;
-    assume {:print "$track_abort(86,1):", $t62} $t62 == $t62;
+    // trace_abort($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
+    assume {:print "$at(5,8998,9060)"} true;
+    assume {:print "$track_abort(86,1):", $t60} $t60 == $t60;
 
-    // $t16 := move($t62) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
-    $t16 := $t62;
+    // $t16 := move($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
+    $t16 := $t60;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:228:9+62
     goto L31;
 
-    // label L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:17+2
-    assume {:print "$at(5,9119,9121)"} true;
-L26:
+    // label L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:17+2
+    assume {:print "$at(5,9078,9080)"} true;
+L23:
 
-    // $t63 := !=($t54, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:19+2
-    assume {:print "$at(5,9121,9123)"} true;
-    $t63 := !$IsEqual'address'($t54, $t3);
+    // $t61 := !=($t52, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:19+2
+    assume {:print "$at(5,9080,9082)"} true;
+    $t61 := !$IsEqual'address'($t52, $t3);
 
-    // if ($t63) goto L28 else goto L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
-    if ($t63) { goto L28; } else { goto L27; }
+    // if ($t61) goto L25 else goto L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
+    if ($t61) { goto L25; } else { goto L24; }
 
-    // label L28 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
-L28:
+    // label L25 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
+L25:
 
-    // goto L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
-    assume {:print "$at(5,9111,9173)"} true;
-    goto L29;
+    // goto L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
+    assume {:print "$at(5,9070,9132)"} true;
+    goto L26;
 
-    // label L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:38+32
-L27:
+    // label L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:38+32
+L24:
 
-    // $t64 := 90 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:38+32
-    assume {:print "$at(5,9140,9172)"} true;
-    $t64 := 90;
-    assume $IsValid'u64'($t64);
+    // $t62 := 91 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:38+32
+    assume {:print "$at(5,9099,9131)"} true;
+    $t62 := 91;
+    assume $IsValid'u64'($t62);
 
-    // trace_abort($t64) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
-    assume {:print "$at(5,9111,9173)"} true;
-    assume {:print "$track_abort(86,1):", $t64} $t64 == $t64;
+    // trace_abort($t62) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
+    assume {:print "$at(5,9070,9132)"} true;
+    assume {:print "$track_abort(86,1):", $t62} $t62 == $t62;
 
-    // $t16 := move($t64) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
-    $t16 := $t64;
+    // $t16 := move($t62) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
+    $t16 := $t62;
 
     // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:229:9+62
     goto L31;
 
-    // label L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:27+12
-    assume {:print "$at(5,9201,9213)"} true;
+    // label L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:17+2
+    assume {:print "$at(5,9150,9152)"} true;
+L26:
+
+    // $t63 := !=($t54, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:19+2
+    assume {:print "$at(5,9152,9154)"} true;
+    $t63 := !$IsEqual'address'($t54, $t3);
+
+    // if ($t63) goto L28 else goto L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+    if ($t63) { goto L28; } else { goto L27; }
+
+    // label L28 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+L28:
+
+    // goto L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+    assume {:print "$at(5,9142,9204)"} true;
+    goto L29;
+
+    // label L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:38+32
+L27:
+
+    // $t64 := 90 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:38+32
+    assume {:print "$at(5,9171,9203)"} true;
+    $t64 := 90;
+    assume $IsValid'u64'($t64);
+
+    // trace_abort($t64) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+    assume {:print "$at(5,9142,9204)"} true;
+    assume {:print "$track_abort(86,1):", $t64} $t64 == $t64;
+
+    // $t16 := move($t64) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+    $t16 := $t64;
+
+    // goto L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+62
+    goto L31;
+
+    // label L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:27+12
+    assume {:print "$at(5,9232,9244)"} true;
 L29:
 
-    // $t65 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:27+12
-    assume {:print "$at(5,9201,9213)"} true;
+    // $t65 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:27+12
+    assume {:print "$at(5,9232,9244)"} true;
     $t65 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // vector::push_back<address>($t65, $t54) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+34
+    // vector::push_back<address>($t65, $t54) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:9+34
     call $t65 := $1_vector_push_back'address'($t65, $t54);
     if ($abort_flag) {
-        assume {:print "$at(5,9183,9217)"} true;
+        assume {:print "$at(5,9214,9248)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t65) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+34
+    // write_back[LocalRoot($t2)@]($t65) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:9+34
     $t2 := $Dereference($t65);
-
-    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:230:9+34
-    assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
-
-    // $t66 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:27+12
-    assume {:print "$at(5,9245,9257)"} true;
-    $t66 := $Mutation($Local(2), EmptyVec(), $t2);
-
-    // vector::push_back<address>($t66, $t52) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:9+34
-    call $t66 := $1_vector_push_back'address'($t66, $t52);
-    if ($abort_flag) {
-        assume {:print "$at(5,9227,9261)"} true;
-        $t16 := $abort_code;
-        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
-        goto L31;
-    }
-
-    // write_back[LocalRoot($t2)@]($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:9+34
-    $t2 := $Dereference($t66);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:231:9+34
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // $t67 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:27+12
-    assume {:print "$at(5,9289,9301)"} true;
-    $t67 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t66 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:27+12
+    assume {:print "$at(5,9276,9288)"} true;
+    $t66 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // vector::push_back<address>($t67, $t50) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:9+34
-    call $t67 := $1_vector_push_back'address'($t67, $t50);
+    // vector::push_back<address>($t66, $t52) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:9+34
+    call $t66 := $1_vector_push_back'address'($t66, $t52);
     if ($abort_flag) {
-        assume {:print "$at(5,9271,9305)"} true;
+        assume {:print "$at(5,9258,9292)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t67) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:9+34
-    $t2 := $Dereference($t67);
+    // write_back[LocalRoot($t2)@]($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:9+34
+    $t2 := $Dereference($t66);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:232:9+34
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // $t68 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:27+12
-    assume {:print "$at(5,9333,9345)"} true;
-    $t68 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t67 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:27+12
+    assume {:print "$at(5,9320,9332)"} true;
+    $t67 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // vector::push_back<address>($t68, $t48) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:9+34
-    call $t68 := $1_vector_push_back'address'($t68, $t48);
+    // vector::push_back<address>($t67, $t50) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:9+34
+    call $t67 := $1_vector_push_back'address'($t67, $t50);
     if ($abort_flag) {
-        assume {:print "$at(5,9315,9349)"} true;
+        assume {:print "$at(5,9302,9336)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t68) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:9+34
-    $t2 := $Dereference($t68);
+    // write_back[LocalRoot($t2)@]($t67) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:9+34
+    $t2 := $Dereference($t67);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:233:9+34
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // $t69 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:27+12
-    assume {:print "$at(5,9377,9389)"} true;
-    $t69 := $Mutation($Local(2), EmptyVec(), $t2);
+    // $t68 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:27+12
+    assume {:print "$at(5,9364,9376)"} true;
+    $t68 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // vector::push_back<address>($t69, $t46) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:9+34
-    call $t69 := $1_vector_push_back'address'($t69, $t46);
+    // vector::push_back<address>($t68, $t48) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:9+34
+    call $t68 := $1_vector_push_back'address'($t68, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,9359,9393)"} true;
+        assume {:print "$at(5,9346,9380)"} true;
         $t16 := $abort_code;
         assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
         goto L31;
     }
 
-    // write_back[LocalRoot($t2)@]($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:9+34
-    $t2 := $Dereference($t69);
+    // write_back[LocalRoot($t2)@]($t68) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:9+34
+    $t2 := $Dereference($t68);
 
     // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:234:9+34
     assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
 
-    // label L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:5+1
-    assume {:print "$at(5,9399,9400)"} true;
+    // $t69 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:27+12
+    assume {:print "$at(5,9408,9420)"} true;
+    $t69 := $Mutation($Local(2), EmptyVec(), $t2);
+
+    // vector::push_back<address>($t69, $t46) on_abort goto L31 with $t16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:9+34
+    call $t69 := $1_vector_push_back'address'($t69, $t46);
+    if ($abort_flag) {
+        assume {:print "$at(5,9390,9424)"} true;
+        $t16 := $abort_code;
+        assume {:print "$track_abort(86,1):", $t16} $t16 == $t16;
+        goto L31;
+    }
+
+    // write_back[LocalRoot($t2)@]($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:9+34
+    $t2 := $Dereference($t69);
+
+    // trace_local[address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:9+34
+    assume {:print "$track_local(86,1,2):", $t2} $t2 == $t2;
+
+    // label L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:236:5+1
+    assume {:print "$at(5,9430,9431)"} true;
 L30:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:5+1
-    assume {:print "$at(5,9399,9400)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:236:5+1
+    assume {:print "$at(5,9430,9431)"} true;
     return;
 
-    // label L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:5+1
+    // label L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:236:5+1
 L31:
 
-    // abort($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:235:5+1
-    assume {:print "$at(5,9399,9400)"} true;
+    // abort($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:236:5+1
+    assume {:print "$at(5,9430,9431)"} true;
     $abort_code := $t16;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::check_enough_bullet [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+153
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_check_enough_bullet(_$t0: Vec (int), _$t1: Vec (int)) returns ($ret0: bool)
+// fun pay_module::check_enough_bullet [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:5+153
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_check_enough_bullet(_$t0: Vec (int), _$t1: Vec (int)) returns ($ret0: bool)
 {
     // declare local variables
     var $t2: bool;
@@ -27955,132 +27955,132 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     $t1 := _$t1;
 
     // bytecode translation starts here
-    // trace_local[v]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+1
-    assume {:print "$at(5,3865,3866)"} true;
+    // trace_local[v]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:5+1
+    assume {:print "$at(5,3896,3897)"} true;
     assume {:print "$track_local(86,2,0):", $t0} $t0 == $t0;
 
-    // trace_local[v1]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+1
+    // trace_local[v1]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:5+1
     assume {:print "$track_local(86,2,1):", $t1} $t1 == $t1;
 
-    // $t4 := vector::length<address>($t0) on_abort goto L7 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+10
-    assume {:print "$at(5,3941,3951)"} true;
+    // $t4 := vector::length<address>($t0) on_abort goto L7 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+10
+    assume {:print "$at(5,3972,3982)"} true;
     call $t4 := $1_vector_length'address'($t0);
     if ($abort_flag) {
-        assume {:print "$at(5,3941,3951)"} true;
+        assume {:print "$at(5,3972,3982)"} true;
         $t5 := $abort_code;
         assume {:print "$track_abort(86,2):", $t5} $t5 == $t5;
         goto L7;
     }
 
-    // $t6 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:24+1
+    // $t6 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:24+1
     $t6 := 5;
     assume $IsValid'u64'($t6);
 
-    // $t7 := ==($t4, $t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:22+2
+    // $t7 := ==($t4, $t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:22+2
     $t7 := $IsEqual'u64'($t4, $t6);
 
-    // if ($t7) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
+    // if ($t7) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
     if ($t7) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:36+3
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:36+3
 L1:
 
-    // $t8 := vector::length<u64>($t1) on_abort goto L7 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:29+11
-    assume {:print "$at(5,3958,3969)"} true;
+    // $t8 := vector::length<u64>($t1) on_abort goto L7 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:29+11
+    assume {:print "$at(5,3989,4000)"} true;
     call $t8 := $1_vector_length'u64'($t1);
     if ($abort_flag) {
-        assume {:print "$at(5,3958,3969)"} true;
+        assume {:print "$at(5,3989,4000)"} true;
         $t5 := $abort_code;
         assume {:print "$track_abort(86,2):", $t5} $t5 == $t5;
         goto L7;
     }
 
-    // $t9 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:42+1
+    // $t9 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:42+1
     $t9 := 5;
     assume $IsValid'u64'($t9);
 
-    // $t2 := ==($t8, $t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:40+2
+    // $t2 := ==($t8, $t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:40+2
     $t2 := $IsEqual'u64'($t8, $t9);
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
 L0:
 
-    // $t10 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
-    assume {:print "$at(5,3941,3972)"} true;
+    // $t10 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
+    assume {:print "$at(5,3972,4003)"} true;
     $t10 := false;
     assume $IsValid'bool'($t10);
 
-    // $t2 := $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
+    // $t2 := $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
     $t2 := $t10;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
 L2:
 
-    // if ($t2) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
-    assume {:print "$at(5,3938,4012)"} true;
+    // if ($t2) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
+    assume {:print "$at(5,3969,4043)"} true;
     if ($t2) { goto L4; } else { goto L3; }
 
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:13+4
-    assume {:print "$at(5,3987,3991)"} true;
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:118:13+4
+    assume {:print "$at(5,4018,4022)"} true;
 L4:
 
-    // $t11 := true at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:13+4
-    assume {:print "$at(5,3987,3991)"} true;
+    // $t11 := true at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:118:13+4
+    assume {:print "$at(5,4018,4022)"} true;
     $t11 := true;
     assume $IsValid'bool'($t11);
 
-    // $t3 := $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
-    assume {:print "$at(5,3938,4012)"} true;
+    // $t3 := $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
+    assume {:print "$at(5,3969,4043)"} true;
     $t3 := $t11;
 
-    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
+    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
     goto L5;
 
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:118:15+5
-    assume {:print "$at(5,4006,4011)"} true;
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:15+5
+    assume {:print "$at(5,4037,4042)"} true;
 L3:
 
-    // $t12 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:118:15+5
-    assume {:print "$at(5,4006,4011)"} true;
+    // $t12 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:15+5
+    assume {:print "$at(5,4037,4042)"} true;
     $t12 := false;
     assume $IsValid'bool'($t12);
 
-    // $t3 := $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
-    assume {:print "$at(5,3938,4012)"} true;
+    // $t3 := $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
+    assume {:print "$at(5,3969,4043)"} true;
     $t3 := $t12;
 
-    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
+    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
 L5:
 
-    // trace_return[0]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
-    assume {:print "$at(5,3938,4012)"} true;
+    // trace_return[0]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
+    assume {:print "$at(5,3969,4043)"} true;
     assume {:print "$track_return(86,2,0):", $t3} $t3 == $t3;
 
-    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:5+1
-    assume {:print "$at(5,4017,4018)"} true;
+    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    assume {:print "$at(5,4048,4049)"} true;
 L6:
 
-    // return $t3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:5+1
-    assume {:print "$at(5,4017,4018)"} true;
+    // return $t3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    assume {:print "$at(5,4048,4049)"} true;
     $ret0 := $t3;
     return;
 
-    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:5+1
+    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
 L7:
 
-    // abort($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:5+1
-    assume {:print "$at(5,4017,4018)"} true;
+    // abort($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    assume {:print "$at(5,4048,4049)"} true;
     $abort_code := $t5;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::check_enough_bullet [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+153
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_check_enough_bullet$verify(_$t0: Vec (int), _$t1: Vec (int)) returns ($ret0: bool)
+// fun pay_module::check_enough_bullet [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:5+153
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_check_enough_bullet$verify(_$t0: Vec (int), _$t1: Vec (int)) returns ($ret0: bool)
 {
     // declare local variables
     var $t2: bool;
@@ -28106,703 +28106,703 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+1
-    assume {:print "$at(5,3865,3866)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:5+1
+    assume {:print "$at(5,3896,3897)"} true;
     assume $IsValid'vec'address''($t0);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:5+1
     assume $IsValid'vec'u64''($t1);
 
-    // trace_local[v]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+1
+    // trace_local[v]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:5+1
     assume {:print "$track_local(86,2,0):", $t0} $t0 == $t0;
 
-    // trace_local[v1]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:115:5+1
+    // trace_local[v1]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:5+1
     assume {:print "$track_local(86,2,1):", $t1} $t1 == $t1;
 
-    // $t4 := vector::length<address>($t0) on_abort goto L7 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+10
-    assume {:print "$at(5,3941,3951)"} true;
+    // $t4 := vector::length<address>($t0) on_abort goto L7 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+10
+    assume {:print "$at(5,3972,3982)"} true;
     call $t4 := $1_vector_length'address'($t0);
     if ($abort_flag) {
-        assume {:print "$at(5,3941,3951)"} true;
+        assume {:print "$at(5,3972,3982)"} true;
         $t5 := $abort_code;
         assume {:print "$track_abort(86,2):", $t5} $t5 == $t5;
         goto L7;
     }
 
-    // $t6 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:24+1
+    // $t6 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:24+1
     $t6 := 5;
     assume $IsValid'u64'($t6);
 
-    // $t7 := ==($t4, $t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:22+2
+    // $t7 := ==($t4, $t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:22+2
     $t7 := $IsEqual'u64'($t4, $t6);
 
-    // if ($t7) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
+    // if ($t7) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
     if ($t7) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:36+3
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:36+3
 L1:
 
-    // $t8 := vector::length<u64>($t1) on_abort goto L7 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:29+11
-    assume {:print "$at(5,3958,3969)"} true;
+    // $t8 := vector::length<u64>($t1) on_abort goto L7 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:29+11
+    assume {:print "$at(5,3989,4000)"} true;
     call $t8 := $1_vector_length'u64'($t1);
     if ($abort_flag) {
-        assume {:print "$at(5,3958,3969)"} true;
+        assume {:print "$at(5,3989,4000)"} true;
         $t5 := $abort_code;
         assume {:print "$track_abort(86,2):", $t5} $t5 == $t5;
         goto L7;
     }
 
-    // $t9 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:42+1
+    // $t9 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:42+1
     $t9 := 5;
     assume $IsValid'u64'($t9);
 
-    // $t2 := ==($t8, $t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:40+2
+    // $t2 := ==($t8, $t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:40+2
     $t2 := $IsEqual'u64'($t8, $t9);
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
 L0:
 
-    // $t10 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
-    assume {:print "$at(5,3941,3972)"} true;
+    // $t10 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
+    assume {:print "$at(5,3972,4003)"} true;
     $t10 := false;
     assume $IsValid'bool'($t10);
 
-    // $t2 := $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
+    // $t2 := $t10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
     $t2 := $t10;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:12+31
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:12+31
 L2:
 
-    // if ($t2) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
-    assume {:print "$at(5,3938,4012)"} true;
+    // if ($t2) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
+    assume {:print "$at(5,3969,4043)"} true;
     if ($t2) { goto L4; } else { goto L3; }
 
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:13+4
-    assume {:print "$at(5,3987,3991)"} true;
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:118:13+4
+    assume {:print "$at(5,4018,4022)"} true;
 L4:
 
-    // $t11 := true at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:13+4
-    assume {:print "$at(5,3987,3991)"} true;
+    // $t11 := true at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:118:13+4
+    assume {:print "$at(5,4018,4022)"} true;
     $t11 := true;
     assume $IsValid'bool'($t11);
 
-    // $t3 := $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
-    assume {:print "$at(5,3938,4012)"} true;
+    // $t3 := $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
+    assume {:print "$at(5,3969,4043)"} true;
     $t3 := $t11;
 
-    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
+    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
     goto L5;
 
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:118:15+5
-    assume {:print "$at(5,4006,4011)"} true;
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:15+5
+    assume {:print "$at(5,4037,4042)"} true;
 L3:
 
-    // $t12 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:118:15+5
-    assume {:print "$at(5,4006,4011)"} true;
+    // $t12 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:15+5
+    assume {:print "$at(5,4037,4042)"} true;
     $t12 := false;
     assume $IsValid'bool'($t12);
 
-    // $t3 := $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
-    assume {:print "$at(5,3938,4012)"} true;
+    // $t3 := $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
+    assume {:print "$at(5,3969,4043)"} true;
     $t3 := $t12;
 
-    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
+    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
 L5:
 
-    // trace_return[0]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:116:9+74
-    assume {:print "$at(5,3938,4012)"} true;
+    // trace_return[0]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:117:9+74
+    assume {:print "$at(5,3969,4043)"} true;
     assume {:print "$track_return(86,2,0):", $t3} $t3 == $t3;
 
-    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:5+1
-    assume {:print "$at(5,4017,4018)"} true;
+    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    assume {:print "$at(5,4048,4049)"} true;
 L6:
 
-    // return $t3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:5+1
-    assume {:print "$at(5,4017,4018)"} true;
+    // return $t3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    assume {:print "$at(5,4048,4049)"} true;
     $ret0 := $t3;
     return;
 
-    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:5+1
+    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
 L7:
 
-    // abort($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:119:5+1
-    assume {:print "$at(5,4017,4018)"} true;
+    // abort($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    assume {:print "$at(5,4048,4049)"} true;
     $abort_code := $t5;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::clean_Cylinder [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:148:5+1676
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_clean_Cylinder(_$t0: $signer, _$t1: $signer) returns ()
+// fun pay_module::clean_Cylinder [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:149:5+1676
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_clean_Cylinder(_$t0: $signer, _$t1: $signer) returns ()
 {
     // declare local variables
-    var $t2: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $t2: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $t3: int;
     var $t4: int;
-    var $t5: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t6: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t5: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t6: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t7: $Mutation (Vec (int));
     var $t8: int;
     var $t9: int;
-    var $t10: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t11: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t10: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t11: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t12: $Mutation (Vec (int));
     var $t13: int;
     var $t14: int;
-    var $t15: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t16: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t15: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t16: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t17: $Mutation (Vec (int));
     var $t18: int;
     var $t19: int;
-    var $t20: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t21: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t20: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t21: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t22: $Mutation (Vec (int));
     var $t23: int;
     var $t24: int;
-    var $t25: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t26: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t25: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t26: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t27: $Mutation (Vec (int));
     var $t28: int;
     var $t29: int;
-    var $t30: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t31: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t30: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t31: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t32: $Mutation (Vec (int));
     var $t33: int;
     var $t34: int;
-    var $t35: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t36: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t35: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t36: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t37: $Mutation (Vec (int));
     var $t38: int;
     var $t39: int;
-    var $t40: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t41: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t40: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t41: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t42: $Mutation (Vec (int));
     var $t43: int;
     var $t44: int;
-    var $t45: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t46: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t45: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t46: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t47: $Mutation (Vec (int));
     var $t48: int;
     var $t49: int;
-    var $t50: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t51: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t50: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t51: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t52: $Mutation (Vec (int));
     var $t53: int;
     var $t54: int;
-    var $t55: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $t55: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $t0: $signer;
     var $t1: $signer;
-    var $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder': $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder': $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $temp_0'signer': $signer;
     $t0 := _$t0;
     $t1 := _$t1;
 
     // bytecode translation starts here
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:148:5+1
-    assume {:print "$at(5,5110,5111)"} true;
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:149:5+1
+    assume {:print "$at(5,5141,5142)"} true;
     assume {:print "$track_local(86,3,0):", $t0} $t0 == $t0;
 
-    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:148:5+1
+    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:149:5+1
     assume {:print "$track_local(86,3,1):", $t1} $t1 == $t1;
 
-    // $t3 := signer::address_of($t1) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:150:42+35
-    assume {:print "$at(5,5320,5355)"} true;
+    // $t3 := signer::address_of($t1) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:151:42+35
+    assume {:print "$at(5,5351,5386)"} true;
     call $t3 := $1_signer_address_of($t1);
     if ($abort_flag) {
-        assume {:print "$at(5,5320,5355)"} true;
+        assume {:print "$at(5,5351,5386)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // $t2 := move_from<pay_module::Cylinder>($t3) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:150:22+9
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t3)) {
+    // $t2 := move_from<pay_module::Cylinder>($t3) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:151:22+9
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t3)) {
         call $ExecFailureAbort();
     } else {
-        $t2 := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t3);
-        $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory := $ResourceRemove($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t3);
+        $t2 := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t3);
+        $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory := $ResourceRemove($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t3);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,5300,5309)"} true;
+        assume {:print "$at(5,5331,5340)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:150:13+6
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:151:13+6
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // $t5 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:29+6
-    assume {:print "$at(5,5486,5492)"} true;
+    // $t5 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:29+6
+    assume {:print "$at(5,5517,5523)"} true;
     $t5 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t6 := borrow_field<pay_module::Cylinder>.Bullet($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:29+13
+    // $t6 := borrow_field<pay_module::Cylinder>.Bullet($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:29+13
     $t6 := $ChildMutation($t5, 1, $Dereference($t5)->$Bullet);
 
-    // $t7 := borrow_field<pay_module::Cylinder_coin>.address($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:24+26
+    // $t7 := borrow_field<pay_module::Cylinder_coin>.address($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:24+26
     $t7 := $ChildMutation($t6, 1, $Dereference($t6)->$address);
 
-    // $t8 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:51+1
+    // $t8 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:51+1
     $t8 := 0;
     assume $IsValid'u64'($t8);
 
-    // $t9 := vector::remove<address>($t7, $t8) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
+    // $t9 := vector::remove<address>($t7, $t8) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
     call $t9,$t7 := $1_vector_remove'address'($t7, $t8);
     if ($abort_flag) {
-        assume {:print "$at(5,5466,5510)"} true;
+        assume {:print "$at(5,5497,5541)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t6).address (vector<address>)]($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
-    $t6 := $UpdateMutation($t6, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t6), $Dereference($t7)));
+    // write_back[Reference($t6).address (vector<address>)]($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
+    $t6 := $UpdateMutation($t6, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t6), $Dereference($t7)));
 
-    // write_back[Reference($t5).Bullet (pay_module::Cylinder_coin)]($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
-    $t5 := $UpdateMutation($t5, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t5), $Dereference($t6)));
+    // write_back[Reference($t5).Bullet (pay_module::Cylinder_coin)]($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
+    $t5 := $UpdateMutation($t5, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t5), $Dereference($t6)));
 
-    // write_back[LocalRoot($t2)@]($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
+    // write_back[LocalRoot($t2)@]($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
     $t2 := $Dereference($t5);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
+    // drop($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
 
-    // $t10 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:29+6
-    assume {:print "$at(5,5540,5546)"} true;
+    // $t10 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:29+6
+    assume {:print "$at(5,5571,5577)"} true;
     $t10 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t11 := borrow_field<pay_module::Cylinder>.Bullet($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:29+13
+    // $t11 := borrow_field<pay_module::Cylinder>.Bullet($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:29+13
     $t11 := $ChildMutation($t10, 1, $Dereference($t10)->$Bullet);
 
-    // $t12 := borrow_field<pay_module::Cylinder_coin>.amount($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:24+25
+    // $t12 := borrow_field<pay_module::Cylinder_coin>.amount($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:24+25
     $t12 := $ChildMutation($t11, 2, $Dereference($t11)->$amount);
 
-    // $t13 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:50+1
+    // $t13 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:50+1
     $t13 := 0;
     assume $IsValid'u64'($t13);
 
-    // $t14 := vector::remove<u64>($t12, $t13) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
+    // $t14 := vector::remove<u64>($t12, $t13) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
     call $t14,$t12 := $1_vector_remove'u64'($t12, $t13);
     if ($abort_flag) {
-        assume {:print "$at(5,5520,5563)"} true;
+        assume {:print "$at(5,5551,5594)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t11).amount (vector<u64>)]($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
-    $t11 := $UpdateMutation($t11, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t11), $Dereference($t12)));
+    // write_back[Reference($t11).amount (vector<u64>)]($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
+    $t11 := $UpdateMutation($t11, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t11), $Dereference($t12)));
 
-    // write_back[Reference($t10).Bullet (pay_module::Cylinder_coin)]($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
-    $t10 := $UpdateMutation($t10, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t10), $Dereference($t11)));
+    // write_back[Reference($t10).Bullet (pay_module::Cylinder_coin)]($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
+    $t10 := $UpdateMutation($t10, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t10), $Dereference($t11)));
 
-    // write_back[LocalRoot($t2)@]($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
+    // write_back[LocalRoot($t2)@]($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
     $t2 := $Dereference($t10);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
+    // drop($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
 
-    // $t15 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:29+6
-    assume {:print "$at(5,5637,5643)"} true;
+    // $t15 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:29+6
+    assume {:print "$at(5,5668,5674)"} true;
     $t15 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t16 := borrow_field<pay_module::Cylinder>.Bullet($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:29+13
+    // $t16 := borrow_field<pay_module::Cylinder>.Bullet($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:29+13
     $t16 := $ChildMutation($t15, 1, $Dereference($t15)->$Bullet);
 
-    // $t17 := borrow_field<pay_module::Cylinder_coin>.address($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:24+26
+    // $t17 := borrow_field<pay_module::Cylinder_coin>.address($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:24+26
     $t17 := $ChildMutation($t16, 1, $Dereference($t16)->$address);
 
-    // $t18 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:51+1
+    // $t18 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:51+1
     $t18 := 0;
     assume $IsValid'u64'($t18);
 
-    // $t19 := vector::remove<address>($t17, $t18) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
+    // $t19 := vector::remove<address>($t17, $t18) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
     call $t19,$t17 := $1_vector_remove'address'($t17, $t18);
     if ($abort_flag) {
-        assume {:print "$at(5,5617,5661)"} true;
+        assume {:print "$at(5,5648,5692)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t16).address (vector<address>)]($t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
-    $t16 := $UpdateMutation($t16, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t16), $Dereference($t17)));
+    // write_back[Reference($t16).address (vector<address>)]($t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
+    $t16 := $UpdateMutation($t16, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t16), $Dereference($t17)));
 
-    // write_back[Reference($t15).Bullet (pay_module::Cylinder_coin)]($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
-    $t15 := $UpdateMutation($t15, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t15), $Dereference($t16)));
+    // write_back[Reference($t15).Bullet (pay_module::Cylinder_coin)]($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
+    $t15 := $UpdateMutation($t15, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t15), $Dereference($t16)));
 
-    // write_back[LocalRoot($t2)@]($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
+    // write_back[LocalRoot($t2)@]($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
     $t2 := $Dereference($t15);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
+    // drop($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
 
-    // $t20 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:29+6
-    assume {:print "$at(5,5691,5697)"} true;
+    // $t20 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:29+6
+    assume {:print "$at(5,5722,5728)"} true;
     $t20 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t21 := borrow_field<pay_module::Cylinder>.Bullet($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:29+13
+    // $t21 := borrow_field<pay_module::Cylinder>.Bullet($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:29+13
     $t21 := $ChildMutation($t20, 1, $Dereference($t20)->$Bullet);
 
-    // $t22 := borrow_field<pay_module::Cylinder_coin>.amount($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:24+25
+    // $t22 := borrow_field<pay_module::Cylinder_coin>.amount($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:24+25
     $t22 := $ChildMutation($t21, 2, $Dereference($t21)->$amount);
 
-    // $t23 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:50+1
+    // $t23 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:50+1
     $t23 := 0;
     assume $IsValid'u64'($t23);
 
-    // $t24 := vector::remove<u64>($t22, $t23) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
+    // $t24 := vector::remove<u64>($t22, $t23) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
     call $t24,$t22 := $1_vector_remove'u64'($t22, $t23);
     if ($abort_flag) {
-        assume {:print "$at(5,5671,5714)"} true;
+        assume {:print "$at(5,5702,5745)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t21).amount (vector<u64>)]($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
-    $t21 := $UpdateMutation($t21, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t21), $Dereference($t22)));
+    // write_back[Reference($t21).amount (vector<u64>)]($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
+    $t21 := $UpdateMutation($t21, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t21), $Dereference($t22)));
 
-    // write_back[Reference($t20).Bullet (pay_module::Cylinder_coin)]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
-    $t20 := $UpdateMutation($t20, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t20), $Dereference($t21)));
+    // write_back[Reference($t20).Bullet (pay_module::Cylinder_coin)]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
+    $t20 := $UpdateMutation($t20, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t20), $Dereference($t21)));
 
-    // write_back[LocalRoot($t2)@]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
+    // write_back[LocalRoot($t2)@]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
     $t2 := $Dereference($t20);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
+    // drop($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
 
-    // $t25 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:29+6
-    assume {:print "$at(5,5788,5794)"} true;
+    // $t25 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:29+6
+    assume {:print "$at(5,5819,5825)"} true;
     $t25 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t26 := borrow_field<pay_module::Cylinder>.Bullet($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:29+13
+    // $t26 := borrow_field<pay_module::Cylinder>.Bullet($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:29+13
     $t26 := $ChildMutation($t25, 1, $Dereference($t25)->$Bullet);
 
-    // $t27 := borrow_field<pay_module::Cylinder_coin>.address($t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:24+26
+    // $t27 := borrow_field<pay_module::Cylinder_coin>.address($t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:24+26
     $t27 := $ChildMutation($t26, 1, $Dereference($t26)->$address);
 
-    // $t28 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:51+1
+    // $t28 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:51+1
     $t28 := 0;
     assume $IsValid'u64'($t28);
 
-    // $t29 := vector::remove<address>($t27, $t28) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
+    // $t29 := vector::remove<address>($t27, $t28) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
     call $t29,$t27 := $1_vector_remove'address'($t27, $t28);
     if ($abort_flag) {
-        assume {:print "$at(5,5768,5812)"} true;
+        assume {:print "$at(5,5799,5843)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t26).address (vector<address>)]($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
-    $t26 := $UpdateMutation($t26, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t26), $Dereference($t27)));
+    // write_back[Reference($t26).address (vector<address>)]($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
+    $t26 := $UpdateMutation($t26, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t26), $Dereference($t27)));
 
-    // write_back[Reference($t25).Bullet (pay_module::Cylinder_coin)]($t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
-    $t25 := $UpdateMutation($t25, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t25), $Dereference($t26)));
+    // write_back[Reference($t25).Bullet (pay_module::Cylinder_coin)]($t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
+    $t25 := $UpdateMutation($t25, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t25), $Dereference($t26)));
 
-    // write_back[LocalRoot($t2)@]($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
+    // write_back[LocalRoot($t2)@]($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
     $t2 := $Dereference($t25);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t29) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
+    // drop($t29) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
 
-    // $t30 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:29+6
-    assume {:print "$at(5,5842,5848)"} true;
+    // $t30 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:29+6
+    assume {:print "$at(5,5873,5879)"} true;
     $t30 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t31 := borrow_field<pay_module::Cylinder>.Bullet($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:29+13
+    // $t31 := borrow_field<pay_module::Cylinder>.Bullet($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:29+13
     $t31 := $ChildMutation($t30, 1, $Dereference($t30)->$Bullet);
 
-    // $t32 := borrow_field<pay_module::Cylinder_coin>.amount($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:24+25
+    // $t32 := borrow_field<pay_module::Cylinder_coin>.amount($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:24+25
     $t32 := $ChildMutation($t31, 2, $Dereference($t31)->$amount);
 
-    // $t33 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:50+1
+    // $t33 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:50+1
     $t33 := 0;
     assume $IsValid'u64'($t33);
 
-    // $t34 := vector::remove<u64>($t32, $t33) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
+    // $t34 := vector::remove<u64>($t32, $t33) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
     call $t34,$t32 := $1_vector_remove'u64'($t32, $t33);
     if ($abort_flag) {
-        assume {:print "$at(5,5822,5865)"} true;
+        assume {:print "$at(5,5853,5896)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t31).amount (vector<u64>)]($t32) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
-    $t31 := $UpdateMutation($t31, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t31), $Dereference($t32)));
+    // write_back[Reference($t31).amount (vector<u64>)]($t32) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
+    $t31 := $UpdateMutation($t31, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t31), $Dereference($t32)));
 
-    // write_back[Reference($t30).Bullet (pay_module::Cylinder_coin)]($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
-    $t30 := $UpdateMutation($t30, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t30), $Dereference($t31)));
+    // write_back[Reference($t30).Bullet (pay_module::Cylinder_coin)]($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
+    $t30 := $UpdateMutation($t30, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t30), $Dereference($t31)));
 
-    // write_back[LocalRoot($t2)@]($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
+    // write_back[LocalRoot($t2)@]($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
     $t2 := $Dereference($t30);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
+    // drop($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
 
-    // $t35 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:29+6
-    assume {:print "$at(5,5939,5945)"} true;
+    // $t35 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:29+6
+    assume {:print "$at(5,5970,5976)"} true;
     $t35 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t36 := borrow_field<pay_module::Cylinder>.Bullet($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:29+13
+    // $t36 := borrow_field<pay_module::Cylinder>.Bullet($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:29+13
     $t36 := $ChildMutation($t35, 1, $Dereference($t35)->$Bullet);
 
-    // $t37 := borrow_field<pay_module::Cylinder_coin>.address($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:24+26
+    // $t37 := borrow_field<pay_module::Cylinder_coin>.address($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:24+26
     $t37 := $ChildMutation($t36, 1, $Dereference($t36)->$address);
 
-    // $t38 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:51+1
+    // $t38 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:51+1
     $t38 := 0;
     assume $IsValid'u64'($t38);
 
-    // $t39 := vector::remove<address>($t37, $t38) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
+    // $t39 := vector::remove<address>($t37, $t38) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
     call $t39,$t37 := $1_vector_remove'address'($t37, $t38);
     if ($abort_flag) {
-        assume {:print "$at(5,5919,5963)"} true;
+        assume {:print "$at(5,5950,5994)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t36).address (vector<address>)]($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
-    $t36 := $UpdateMutation($t36, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t36), $Dereference($t37)));
+    // write_back[Reference($t36).address (vector<address>)]($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
+    $t36 := $UpdateMutation($t36, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t36), $Dereference($t37)));
 
-    // write_back[Reference($t35).Bullet (pay_module::Cylinder_coin)]($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
-    $t35 := $UpdateMutation($t35, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t35), $Dereference($t36)));
+    // write_back[Reference($t35).Bullet (pay_module::Cylinder_coin)]($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
+    $t35 := $UpdateMutation($t35, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t35), $Dereference($t36)));
 
-    // write_back[LocalRoot($t2)@]($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
+    // write_back[LocalRoot($t2)@]($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
     $t2 := $Dereference($t35);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
+    // drop($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
 
-    // $t40 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:29+6
-    assume {:print "$at(5,5993,5999)"} true;
+    // $t40 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:29+6
+    assume {:print "$at(5,6024,6030)"} true;
     $t40 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t41 := borrow_field<pay_module::Cylinder>.Bullet($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:29+13
+    // $t41 := borrow_field<pay_module::Cylinder>.Bullet($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:29+13
     $t41 := $ChildMutation($t40, 1, $Dereference($t40)->$Bullet);
 
-    // $t42 := borrow_field<pay_module::Cylinder_coin>.amount($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:24+25
+    // $t42 := borrow_field<pay_module::Cylinder_coin>.amount($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:24+25
     $t42 := $ChildMutation($t41, 2, $Dereference($t41)->$amount);
 
-    // $t43 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:50+1
+    // $t43 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:50+1
     $t43 := 0;
     assume $IsValid'u64'($t43);
 
-    // $t44 := vector::remove<u64>($t42, $t43) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
+    // $t44 := vector::remove<u64>($t42, $t43) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
     call $t44,$t42 := $1_vector_remove'u64'($t42, $t43);
     if ($abort_flag) {
-        assume {:print "$at(5,5973,6016)"} true;
+        assume {:print "$at(5,6004,6047)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t41).amount (vector<u64>)]($t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
-    $t41 := $UpdateMutation($t41, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t41), $Dereference($t42)));
+    // write_back[Reference($t41).amount (vector<u64>)]($t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
+    $t41 := $UpdateMutation($t41, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t41), $Dereference($t42)));
 
-    // write_back[Reference($t40).Bullet (pay_module::Cylinder_coin)]($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
-    $t40 := $UpdateMutation($t40, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t40), $Dereference($t41)));
+    // write_back[Reference($t40).Bullet (pay_module::Cylinder_coin)]($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
+    $t40 := $UpdateMutation($t40, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t40), $Dereference($t41)));
 
-    // write_back[LocalRoot($t2)@]($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
+    // write_back[LocalRoot($t2)@]($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
     $t2 := $Dereference($t40);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
+    // drop($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
 
-    // $t45 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:29+6
-    assume {:print "$at(5,6090,6096)"} true;
+    // $t45 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:29+6
+    assume {:print "$at(5,6121,6127)"} true;
     $t45 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t46 := borrow_field<pay_module::Cylinder>.Bullet($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:29+13
+    // $t46 := borrow_field<pay_module::Cylinder>.Bullet($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:29+13
     $t46 := $ChildMutation($t45, 1, $Dereference($t45)->$Bullet);
 
-    // $t47 := borrow_field<pay_module::Cylinder_coin>.address($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:24+26
+    // $t47 := borrow_field<pay_module::Cylinder_coin>.address($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:24+26
     $t47 := $ChildMutation($t46, 1, $Dereference($t46)->$address);
 
-    // $t48 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:51+1
+    // $t48 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:51+1
     $t48 := 0;
     assume $IsValid'u64'($t48);
 
-    // $t49 := vector::remove<address>($t47, $t48) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
+    // $t49 := vector::remove<address>($t47, $t48) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
     call $t49,$t47 := $1_vector_remove'address'($t47, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,6070,6114)"} true;
+        assume {:print "$at(5,6101,6145)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t46).address (vector<address>)]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
-    $t46 := $UpdateMutation($t46, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t46), $Dereference($t47)));
+    // write_back[Reference($t46).address (vector<address>)]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
+    $t46 := $UpdateMutation($t46, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t46), $Dereference($t47)));
 
-    // write_back[Reference($t45).Bullet (pay_module::Cylinder_coin)]($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
-    $t45 := $UpdateMutation($t45, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t45), $Dereference($t46)));
+    // write_back[Reference($t45).Bullet (pay_module::Cylinder_coin)]($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
+    $t45 := $UpdateMutation($t45, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t45), $Dereference($t46)));
 
-    // write_back[LocalRoot($t2)@]($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
+    // write_back[LocalRoot($t2)@]($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
     $t2 := $Dereference($t45);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t49) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
+    // drop($t49) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
 
-    // $t50 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:29+6
-    assume {:print "$at(5,6144,6150)"} true;
+    // $t50 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:29+6
+    assume {:print "$at(5,6175,6181)"} true;
     $t50 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t51 := borrow_field<pay_module::Cylinder>.Bullet($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:29+13
+    // $t51 := borrow_field<pay_module::Cylinder>.Bullet($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:29+13
     $t51 := $ChildMutation($t50, 1, $Dereference($t50)->$Bullet);
 
-    // $t52 := borrow_field<pay_module::Cylinder_coin>.amount($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:24+25
+    // $t52 := borrow_field<pay_module::Cylinder_coin>.amount($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:24+25
     $t52 := $ChildMutation($t51, 2, $Dereference($t51)->$amount);
 
-    // $t53 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:50+1
+    // $t53 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:50+1
     $t53 := 0;
     assume $IsValid'u64'($t53);
 
-    // $t54 := vector::remove<u64>($t52, $t53) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
+    // $t54 := vector::remove<u64>($t52, $t53) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
     call $t54,$t52 := $1_vector_remove'u64'($t52, $t53);
     if ($abort_flag) {
-        assume {:print "$at(5,6124,6167)"} true;
+        assume {:print "$at(5,6155,6198)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t51).amount (vector<u64>)]($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
-    $t51 := $UpdateMutation($t51, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t51), $Dereference($t52)));
+    // write_back[Reference($t51).amount (vector<u64>)]($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
+    $t51 := $UpdateMutation($t51, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t51), $Dereference($t52)));
 
-    // write_back[Reference($t50).Bullet (pay_module::Cylinder_coin)]($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
-    $t50 := $UpdateMutation($t50, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t50), $Dereference($t51)));
+    // write_back[Reference($t50).Bullet (pay_module::Cylinder_coin)]($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
+    $t50 := $UpdateMutation($t50, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t50), $Dereference($t51)));
 
-    // write_back[LocalRoot($t2)@]($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
+    // write_back[LocalRoot($t2)@]($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
     $t2 := $Dereference($t50);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
+    // drop($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
 
-    // $t55 := move($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:175:33+6
-    assume {:print "$at(5,6535,6541)"} true;
+    // $t55 := move($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:176:33+6
+    assume {:print "$at(5,6566,6572)"} true;
     $t55 := $t2;
 
-    // move_to<pay_module::Cylinder>($t55, $t1) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:175:9+7
-    if ($ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t1->$addr)) {
+    // move_to<pay_module::Cylinder>($t55, $t1) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:176:9+7
+    if ($ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t1->$addr)) {
         call $ExecFailureAbort();
     } else {
-        $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory := $ResourceUpdate($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t1->$addr, $t55);
+        $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory := $ResourceUpdate($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t1->$addr, $t55);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,6511,6518)"} true;
+        assume {:print "$at(5,6542,6549)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:181:5+1
-    assume {:print "$at(5,6785,6786)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:182:5+1
+    assume {:print "$at(5,6816,6817)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:181:5+1
-    assume {:print "$at(5,6785,6786)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:182:5+1
+    assume {:print "$at(5,6816,6817)"} true;
     return;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:181:5+1
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:182:5+1
 L2:
 
-    // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:181:5+1
-    assume {:print "$at(5,6785,6786)"} true;
+    // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:182:5+1
+    assume {:print "$at(5,6816,6817)"} true;
     $abort_code := $t4;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::clean_Cylinder [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:148:5+1676
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_clean_Cylinder$verify(_$t0: $signer, _$t1: $signer) returns ()
+// fun pay_module::clean_Cylinder [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:149:5+1676
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_clean_Cylinder$verify(_$t0: $signer, _$t1: $signer) returns ()
 {
     // declare local variables
-    var $t2: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $t2: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $t3: int;
     var $t4: int;
-    var $t5: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t6: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t5: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t6: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t7: $Mutation (Vec (int));
     var $t8: int;
     var $t9: int;
-    var $t10: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t11: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t10: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t11: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t12: $Mutation (Vec (int));
     var $t13: int;
     var $t14: int;
-    var $t15: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t16: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t15: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t16: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t17: $Mutation (Vec (int));
     var $t18: int;
     var $t19: int;
-    var $t20: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t21: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t20: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t21: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t22: $Mutation (Vec (int));
     var $t23: int;
     var $t24: int;
-    var $t25: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t26: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t25: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t26: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t27: $Mutation (Vec (int));
     var $t28: int;
     var $t29: int;
-    var $t30: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t31: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t30: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t31: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t32: $Mutation (Vec (int));
     var $t33: int;
     var $t34: int;
-    var $t35: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t36: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t35: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t36: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t37: $Mutation (Vec (int));
     var $t38: int;
     var $t39: int;
-    var $t40: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t41: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t40: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t41: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t42: $Mutation (Vec (int));
     var $t43: int;
     var $t44: int;
-    var $t45: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t46: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t45: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t46: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t47: $Mutation (Vec (int));
     var $t48: int;
     var $t49: int;
-    var $t50: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t51: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t50: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t51: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t52: $Mutation (Vec (int));
     var $t53: int;
     var $t54: int;
-    var $t55: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $t55: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $t0: $signer;
     var $t1: $signer;
-    var $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder': $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder': $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $temp_0'signer': $signer;
     $t0 := _$t0;
     $t1 := _$t1;
@@ -28811,760 +28811,760 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:148:5+1
-    assume {:print "$at(5,5110,5111)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:149:5+1
+    assume {:print "$at(5,5141,5142)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:148:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:149:5+1
     assume $IsValid'signer'($t1) && $1_signer_is_txn_signer($t1) && $1_signer_is_txn_signer_addr($t1->$addr);
 
-    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:148:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'($rsc))));
+    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:149:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'($rsc))));
 
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:148:5+1
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:149:5+1
     assume {:print "$track_local(86,3,0):", $t0} $t0 == $t0;
 
-    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:148:5+1
+    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:149:5+1
     assume {:print "$track_local(86,3,1):", $t1} $t1 == $t1;
 
-    // $t3 := signer::address_of($t1) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:150:42+35
-    assume {:print "$at(5,5320,5355)"} true;
+    // $t3 := signer::address_of($t1) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:151:42+35
+    assume {:print "$at(5,5351,5386)"} true;
     call $t3 := $1_signer_address_of($t1);
     if ($abort_flag) {
-        assume {:print "$at(5,5320,5355)"} true;
+        assume {:print "$at(5,5351,5386)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // $t2 := move_from<pay_module::Cylinder>($t3) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:150:22+9
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t3)) {
+    // $t2 := move_from<pay_module::Cylinder>($t3) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:151:22+9
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t3)) {
         call $ExecFailureAbort();
     } else {
-        $t2 := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t3);
-        $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory := $ResourceRemove($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t3);
+        $t2 := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t3);
+        $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory := $ResourceRemove($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t3);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,5300,5309)"} true;
+        assume {:print "$at(5,5331,5340)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:150:13+6
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:151:13+6
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // $t5 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:29+6
-    assume {:print "$at(5,5486,5492)"} true;
+    // $t5 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:29+6
+    assume {:print "$at(5,5517,5523)"} true;
     $t5 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t6 := borrow_field<pay_module::Cylinder>.Bullet($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:29+13
+    // $t6 := borrow_field<pay_module::Cylinder>.Bullet($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:29+13
     $t6 := $ChildMutation($t5, 1, $Dereference($t5)->$Bullet);
 
-    // $t7 := borrow_field<pay_module::Cylinder_coin>.address($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:24+26
+    // $t7 := borrow_field<pay_module::Cylinder_coin>.address($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:24+26
     $t7 := $ChildMutation($t6, 1, $Dereference($t6)->$address);
 
-    // $t8 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:51+1
+    // $t8 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:51+1
     $t8 := 0;
     assume $IsValid'u64'($t8);
 
-    // $t9 := vector::remove<address>($t7, $t8) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
+    // $t9 := vector::remove<address>($t7, $t8) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
     call $t9,$t7 := $1_vector_remove'address'($t7, $t8);
     if ($abort_flag) {
-        assume {:print "$at(5,5466,5510)"} true;
+        assume {:print "$at(5,5497,5541)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t6).address (vector<address>)]($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
-    $t6 := $UpdateMutation($t6, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t6), $Dereference($t7)));
+    // write_back[Reference($t6).address (vector<address>)]($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
+    $t6 := $UpdateMutation($t6, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t6), $Dereference($t7)));
 
-    // write_back[Reference($t5).Bullet (pay_module::Cylinder_coin)]($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
-    $t5 := $UpdateMutation($t5, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t5), $Dereference($t6)));
+    // write_back[Reference($t5).Bullet (pay_module::Cylinder_coin)]($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
+    $t5 := $UpdateMutation($t5, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t5), $Dereference($t6)));
 
-    // write_back[LocalRoot($t2)@]($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
+    // write_back[LocalRoot($t2)@]($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
     $t2 := $Dereference($t5);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:153:9+44
+    // drop($t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+44
 
-    // $t10 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:29+6
-    assume {:print "$at(5,5540,5546)"} true;
+    // $t10 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:29+6
+    assume {:print "$at(5,5571,5577)"} true;
     $t10 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t11 := borrow_field<pay_module::Cylinder>.Bullet($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:29+13
+    // $t11 := borrow_field<pay_module::Cylinder>.Bullet($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:29+13
     $t11 := $ChildMutation($t10, 1, $Dereference($t10)->$Bullet);
 
-    // $t12 := borrow_field<pay_module::Cylinder_coin>.amount($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:24+25
+    // $t12 := borrow_field<pay_module::Cylinder_coin>.amount($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:24+25
     $t12 := $ChildMutation($t11, 2, $Dereference($t11)->$amount);
 
-    // $t13 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:50+1
+    // $t13 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:50+1
     $t13 := 0;
     assume $IsValid'u64'($t13);
 
-    // $t14 := vector::remove<u64>($t12, $t13) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
+    // $t14 := vector::remove<u64>($t12, $t13) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
     call $t14,$t12 := $1_vector_remove'u64'($t12, $t13);
     if ($abort_flag) {
-        assume {:print "$at(5,5520,5563)"} true;
+        assume {:print "$at(5,5551,5594)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t11).amount (vector<u64>)]($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
-    $t11 := $UpdateMutation($t11, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t11), $Dereference($t12)));
+    // write_back[Reference($t11).amount (vector<u64>)]($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
+    $t11 := $UpdateMutation($t11, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t11), $Dereference($t12)));
 
-    // write_back[Reference($t10).Bullet (pay_module::Cylinder_coin)]($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
-    $t10 := $UpdateMutation($t10, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t10), $Dereference($t11)));
+    // write_back[Reference($t10).Bullet (pay_module::Cylinder_coin)]($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
+    $t10 := $UpdateMutation($t10, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t10), $Dereference($t11)));
 
-    // write_back[LocalRoot($t2)@]($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
+    // write_back[LocalRoot($t2)@]($t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
     $t2 := $Dereference($t10);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:154:9+43
+    // drop($t14) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:155:9+43
 
-    // $t15 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:29+6
-    assume {:print "$at(5,5637,5643)"} true;
+    // $t15 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:29+6
+    assume {:print "$at(5,5668,5674)"} true;
     $t15 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t16 := borrow_field<pay_module::Cylinder>.Bullet($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:29+13
+    // $t16 := borrow_field<pay_module::Cylinder>.Bullet($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:29+13
     $t16 := $ChildMutation($t15, 1, $Dereference($t15)->$Bullet);
 
-    // $t17 := borrow_field<pay_module::Cylinder_coin>.address($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:24+26
+    // $t17 := borrow_field<pay_module::Cylinder_coin>.address($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:24+26
     $t17 := $ChildMutation($t16, 1, $Dereference($t16)->$address);
 
-    // $t18 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:51+1
+    // $t18 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:51+1
     $t18 := 0;
     assume $IsValid'u64'($t18);
 
-    // $t19 := vector::remove<address>($t17, $t18) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
+    // $t19 := vector::remove<address>($t17, $t18) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
     call $t19,$t17 := $1_vector_remove'address'($t17, $t18);
     if ($abort_flag) {
-        assume {:print "$at(5,5617,5661)"} true;
+        assume {:print "$at(5,5648,5692)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t16).address (vector<address>)]($t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
-    $t16 := $UpdateMutation($t16, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t16), $Dereference($t17)));
+    // write_back[Reference($t16).address (vector<address>)]($t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
+    $t16 := $UpdateMutation($t16, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t16), $Dereference($t17)));
 
-    // write_back[Reference($t15).Bullet (pay_module::Cylinder_coin)]($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
-    $t15 := $UpdateMutation($t15, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t15), $Dereference($t16)));
+    // write_back[Reference($t15).Bullet (pay_module::Cylinder_coin)]($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
+    $t15 := $UpdateMutation($t15, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t15), $Dereference($t16)));
 
-    // write_back[LocalRoot($t2)@]($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
+    // write_back[LocalRoot($t2)@]($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
     $t2 := $Dereference($t15);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:156:9+44
+    // drop($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+44
 
-    // $t20 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:29+6
-    assume {:print "$at(5,5691,5697)"} true;
+    // $t20 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:29+6
+    assume {:print "$at(5,5722,5728)"} true;
     $t20 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t21 := borrow_field<pay_module::Cylinder>.Bullet($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:29+13
+    // $t21 := borrow_field<pay_module::Cylinder>.Bullet($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:29+13
     $t21 := $ChildMutation($t20, 1, $Dereference($t20)->$Bullet);
 
-    // $t22 := borrow_field<pay_module::Cylinder_coin>.amount($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:24+25
+    // $t22 := borrow_field<pay_module::Cylinder_coin>.amount($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:24+25
     $t22 := $ChildMutation($t21, 2, $Dereference($t21)->$amount);
 
-    // $t23 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:50+1
+    // $t23 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:50+1
     $t23 := 0;
     assume $IsValid'u64'($t23);
 
-    // $t24 := vector::remove<u64>($t22, $t23) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
+    // $t24 := vector::remove<u64>($t22, $t23) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
     call $t24,$t22 := $1_vector_remove'u64'($t22, $t23);
     if ($abort_flag) {
-        assume {:print "$at(5,5671,5714)"} true;
+        assume {:print "$at(5,5702,5745)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t21).amount (vector<u64>)]($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
-    $t21 := $UpdateMutation($t21, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t21), $Dereference($t22)));
+    // write_back[Reference($t21).amount (vector<u64>)]($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
+    $t21 := $UpdateMutation($t21, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t21), $Dereference($t22)));
 
-    // write_back[Reference($t20).Bullet (pay_module::Cylinder_coin)]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
-    $t20 := $UpdateMutation($t20, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t20), $Dereference($t21)));
+    // write_back[Reference($t20).Bullet (pay_module::Cylinder_coin)]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
+    $t20 := $UpdateMutation($t20, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t20), $Dereference($t21)));
 
-    // write_back[LocalRoot($t2)@]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
+    // write_back[LocalRoot($t2)@]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
     $t2 := $Dereference($t20);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:157:9+43
+    // drop($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:158:9+43
 
-    // $t25 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:29+6
-    assume {:print "$at(5,5788,5794)"} true;
+    // $t25 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:29+6
+    assume {:print "$at(5,5819,5825)"} true;
     $t25 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t26 := borrow_field<pay_module::Cylinder>.Bullet($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:29+13
+    // $t26 := borrow_field<pay_module::Cylinder>.Bullet($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:29+13
     $t26 := $ChildMutation($t25, 1, $Dereference($t25)->$Bullet);
 
-    // $t27 := borrow_field<pay_module::Cylinder_coin>.address($t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:24+26
+    // $t27 := borrow_field<pay_module::Cylinder_coin>.address($t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:24+26
     $t27 := $ChildMutation($t26, 1, $Dereference($t26)->$address);
 
-    // $t28 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:51+1
+    // $t28 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:51+1
     $t28 := 0;
     assume $IsValid'u64'($t28);
 
-    // $t29 := vector::remove<address>($t27, $t28) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
+    // $t29 := vector::remove<address>($t27, $t28) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
     call $t29,$t27 := $1_vector_remove'address'($t27, $t28);
     if ($abort_flag) {
-        assume {:print "$at(5,5768,5812)"} true;
+        assume {:print "$at(5,5799,5843)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t26).address (vector<address>)]($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
-    $t26 := $UpdateMutation($t26, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t26), $Dereference($t27)));
+    // write_back[Reference($t26).address (vector<address>)]($t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
+    $t26 := $UpdateMutation($t26, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t26), $Dereference($t27)));
 
-    // write_back[Reference($t25).Bullet (pay_module::Cylinder_coin)]($t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
-    $t25 := $UpdateMutation($t25, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t25), $Dereference($t26)));
+    // write_back[Reference($t25).Bullet (pay_module::Cylinder_coin)]($t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
+    $t25 := $UpdateMutation($t25, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t25), $Dereference($t26)));
 
-    // write_back[LocalRoot($t2)@]($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
+    // write_back[LocalRoot($t2)@]($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
     $t2 := $Dereference($t25);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t29) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:159:9+44
+    // drop($t29) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+44
 
-    // $t30 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:29+6
-    assume {:print "$at(5,5842,5848)"} true;
+    // $t30 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:29+6
+    assume {:print "$at(5,5873,5879)"} true;
     $t30 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t31 := borrow_field<pay_module::Cylinder>.Bullet($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:29+13
+    // $t31 := borrow_field<pay_module::Cylinder>.Bullet($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:29+13
     $t31 := $ChildMutation($t30, 1, $Dereference($t30)->$Bullet);
 
-    // $t32 := borrow_field<pay_module::Cylinder_coin>.amount($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:24+25
+    // $t32 := borrow_field<pay_module::Cylinder_coin>.amount($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:24+25
     $t32 := $ChildMutation($t31, 2, $Dereference($t31)->$amount);
 
-    // $t33 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:50+1
+    // $t33 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:50+1
     $t33 := 0;
     assume $IsValid'u64'($t33);
 
-    // $t34 := vector::remove<u64>($t32, $t33) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
+    // $t34 := vector::remove<u64>($t32, $t33) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
     call $t34,$t32 := $1_vector_remove'u64'($t32, $t33);
     if ($abort_flag) {
-        assume {:print "$at(5,5822,5865)"} true;
+        assume {:print "$at(5,5853,5896)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t31).amount (vector<u64>)]($t32) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
-    $t31 := $UpdateMutation($t31, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t31), $Dereference($t32)));
+    // write_back[Reference($t31).amount (vector<u64>)]($t32) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
+    $t31 := $UpdateMutation($t31, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t31), $Dereference($t32)));
 
-    // write_back[Reference($t30).Bullet (pay_module::Cylinder_coin)]($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
-    $t30 := $UpdateMutation($t30, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t30), $Dereference($t31)));
+    // write_back[Reference($t30).Bullet (pay_module::Cylinder_coin)]($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
+    $t30 := $UpdateMutation($t30, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t30), $Dereference($t31)));
 
-    // write_back[LocalRoot($t2)@]($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
+    // write_back[LocalRoot($t2)@]($t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
     $t2 := $Dereference($t30);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:160:9+43
+    // drop($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:161:9+43
 
-    // $t35 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:29+6
-    assume {:print "$at(5,5939,5945)"} true;
+    // $t35 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:29+6
+    assume {:print "$at(5,5970,5976)"} true;
     $t35 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t36 := borrow_field<pay_module::Cylinder>.Bullet($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:29+13
+    // $t36 := borrow_field<pay_module::Cylinder>.Bullet($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:29+13
     $t36 := $ChildMutation($t35, 1, $Dereference($t35)->$Bullet);
 
-    // $t37 := borrow_field<pay_module::Cylinder_coin>.address($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:24+26
+    // $t37 := borrow_field<pay_module::Cylinder_coin>.address($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:24+26
     $t37 := $ChildMutation($t36, 1, $Dereference($t36)->$address);
 
-    // $t38 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:51+1
+    // $t38 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:51+1
     $t38 := 0;
     assume $IsValid'u64'($t38);
 
-    // $t39 := vector::remove<address>($t37, $t38) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
+    // $t39 := vector::remove<address>($t37, $t38) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
     call $t39,$t37 := $1_vector_remove'address'($t37, $t38);
     if ($abort_flag) {
-        assume {:print "$at(5,5919,5963)"} true;
+        assume {:print "$at(5,5950,5994)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t36).address (vector<address>)]($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
-    $t36 := $UpdateMutation($t36, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t36), $Dereference($t37)));
+    // write_back[Reference($t36).address (vector<address>)]($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
+    $t36 := $UpdateMutation($t36, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t36), $Dereference($t37)));
 
-    // write_back[Reference($t35).Bullet (pay_module::Cylinder_coin)]($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
-    $t35 := $UpdateMutation($t35, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t35), $Dereference($t36)));
+    // write_back[Reference($t35).Bullet (pay_module::Cylinder_coin)]($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
+    $t35 := $UpdateMutation($t35, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t35), $Dereference($t36)));
 
-    // write_back[LocalRoot($t2)@]($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
+    // write_back[LocalRoot($t2)@]($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
     $t2 := $Dereference($t35);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:162:9+44
+    // drop($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+44
 
-    // $t40 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:29+6
-    assume {:print "$at(5,5993,5999)"} true;
+    // $t40 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:29+6
+    assume {:print "$at(5,6024,6030)"} true;
     $t40 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t41 := borrow_field<pay_module::Cylinder>.Bullet($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:29+13
+    // $t41 := borrow_field<pay_module::Cylinder>.Bullet($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:29+13
     $t41 := $ChildMutation($t40, 1, $Dereference($t40)->$Bullet);
 
-    // $t42 := borrow_field<pay_module::Cylinder_coin>.amount($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:24+25
+    // $t42 := borrow_field<pay_module::Cylinder_coin>.amount($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:24+25
     $t42 := $ChildMutation($t41, 2, $Dereference($t41)->$amount);
 
-    // $t43 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:50+1
+    // $t43 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:50+1
     $t43 := 0;
     assume $IsValid'u64'($t43);
 
-    // $t44 := vector::remove<u64>($t42, $t43) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
+    // $t44 := vector::remove<u64>($t42, $t43) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
     call $t44,$t42 := $1_vector_remove'u64'($t42, $t43);
     if ($abort_flag) {
-        assume {:print "$at(5,5973,6016)"} true;
+        assume {:print "$at(5,6004,6047)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t41).amount (vector<u64>)]($t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
-    $t41 := $UpdateMutation($t41, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t41), $Dereference($t42)));
+    // write_back[Reference($t41).amount (vector<u64>)]($t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
+    $t41 := $UpdateMutation($t41, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t41), $Dereference($t42)));
 
-    // write_back[Reference($t40).Bullet (pay_module::Cylinder_coin)]($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
-    $t40 := $UpdateMutation($t40, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t40), $Dereference($t41)));
+    // write_back[Reference($t40).Bullet (pay_module::Cylinder_coin)]($t41) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
+    $t40 := $UpdateMutation($t40, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t40), $Dereference($t41)));
 
-    // write_back[LocalRoot($t2)@]($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
+    // write_back[LocalRoot($t2)@]($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
     $t2 := $Dereference($t40);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:163:9+43
+    // drop($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:164:9+43
 
-    // $t45 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:29+6
-    assume {:print "$at(5,6090,6096)"} true;
+    // $t45 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:29+6
+    assume {:print "$at(5,6121,6127)"} true;
     $t45 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t46 := borrow_field<pay_module::Cylinder>.Bullet($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:29+13
+    // $t46 := borrow_field<pay_module::Cylinder>.Bullet($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:29+13
     $t46 := $ChildMutation($t45, 1, $Dereference($t45)->$Bullet);
 
-    // $t47 := borrow_field<pay_module::Cylinder_coin>.address($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:24+26
+    // $t47 := borrow_field<pay_module::Cylinder_coin>.address($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:24+26
     $t47 := $ChildMutation($t46, 1, $Dereference($t46)->$address);
 
-    // $t48 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:51+1
+    // $t48 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:51+1
     $t48 := 0;
     assume $IsValid'u64'($t48);
 
-    // $t49 := vector::remove<address>($t47, $t48) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
+    // $t49 := vector::remove<address>($t47, $t48) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
     call $t49,$t47 := $1_vector_remove'address'($t47, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,6070,6114)"} true;
+        assume {:print "$at(5,6101,6145)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t46).address (vector<address>)]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
-    $t46 := $UpdateMutation($t46, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t46), $Dereference($t47)));
+    // write_back[Reference($t46).address (vector<address>)]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
+    $t46 := $UpdateMutation($t46, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t46), $Dereference($t47)));
 
-    // write_back[Reference($t45).Bullet (pay_module::Cylinder_coin)]($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
-    $t45 := $UpdateMutation($t45, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t45), $Dereference($t46)));
+    // write_back[Reference($t45).Bullet (pay_module::Cylinder_coin)]($t46) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
+    $t45 := $UpdateMutation($t45, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t45), $Dereference($t46)));
 
-    // write_back[LocalRoot($t2)@]($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
+    // write_back[LocalRoot($t2)@]($t45) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
     $t2 := $Dereference($t45);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t49) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:165:9+44
+    // drop($t49) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+44
 
-    // $t50 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:29+6
-    assume {:print "$at(5,6144,6150)"} true;
+    // $t50 := borrow_local($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:29+6
+    assume {:print "$at(5,6175,6181)"} true;
     $t50 := $Mutation($Local(2), EmptyVec(), $t2);
 
-    // $t51 := borrow_field<pay_module::Cylinder>.Bullet($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:29+13
+    // $t51 := borrow_field<pay_module::Cylinder>.Bullet($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:29+13
     $t51 := $ChildMutation($t50, 1, $Dereference($t50)->$Bullet);
 
-    // $t52 := borrow_field<pay_module::Cylinder_coin>.amount($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:24+25
+    // $t52 := borrow_field<pay_module::Cylinder_coin>.amount($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:24+25
     $t52 := $ChildMutation($t51, 2, $Dereference($t51)->$amount);
 
-    // $t53 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:50+1
+    // $t53 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:50+1
     $t53 := 0;
     assume $IsValid'u64'($t53);
 
-    // $t54 := vector::remove<u64>($t52, $t53) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
+    // $t54 := vector::remove<u64>($t52, $t53) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
     call $t54,$t52 := $1_vector_remove'u64'($t52, $t53);
     if ($abort_flag) {
-        assume {:print "$at(5,6124,6167)"} true;
+        assume {:print "$at(5,6155,6198)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // write_back[Reference($t51).amount (vector<u64>)]($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
-    $t51 := $UpdateMutation($t51, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t51), $Dereference($t52)));
+    // write_back[Reference($t51).amount (vector<u64>)]($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
+    $t51 := $UpdateMutation($t51, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t51), $Dereference($t52)));
 
-    // write_back[Reference($t50).Bullet (pay_module::Cylinder_coin)]($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
-    $t50 := $UpdateMutation($t50, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t50), $Dereference($t51)));
+    // write_back[Reference($t50).Bullet (pay_module::Cylinder_coin)]($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
+    $t50 := $UpdateMutation($t50, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t50), $Dereference($t51)));
 
-    // write_back[LocalRoot($t2)@]($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
+    // write_back[LocalRoot($t2)@]($t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
     $t2 := $Dereference($t50);
 
-    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
+    // trace_local[borrow]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
     assume {:print "$track_local(86,3,2):", $t2} $t2 == $t2;
 
-    // drop($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:166:9+43
+    // drop($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:167:9+43
 
-    // $t55 := move($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:175:33+6
-    assume {:print "$at(5,6535,6541)"} true;
+    // $t55 := move($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:176:33+6
+    assume {:print "$at(5,6566,6572)"} true;
     $t55 := $t2;
 
-    // move_to<pay_module::Cylinder>($t55, $t1) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:175:9+7
-    if ($ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t1->$addr)) {
+    // move_to<pay_module::Cylinder>($t55, $t1) on_abort goto L2 with $t4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:176:9+7
+    if ($ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t1->$addr)) {
         call $ExecFailureAbort();
     } else {
-        $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory := $ResourceUpdate($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t1->$addr, $t55);
+        $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory := $ResourceUpdate($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t1->$addr, $t55);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,6511,6518)"} true;
+        assume {:print "$at(5,6542,6549)"} true;
         $t4 := $abort_code;
         assume {:print "$track_abort(86,3):", $t4} $t4 == $t4;
         goto L2;
     }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:181:5+1
-    assume {:print "$at(5,6785,6786)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:182:5+1
+    assume {:print "$at(5,6816,6817)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:181:5+1
-    assume {:print "$at(5,6785,6786)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:182:5+1
+    assume {:print "$at(5,6816,6817)"} true;
     return;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:181:5+1
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:182:5+1
 L2:
 
-    // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:181:5+1
-    assume {:print "$at(5,6785,6786)"} true;
+    // abort($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:182:5+1
+    assume {:print "$at(5,6816,6817)"} true;
     $abort_code := $t4;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::create_Cylinder [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:480:5+527
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_create_Cylinder(_$t0: $signer, _$t1: $signer) returns ()
+// fun pay_module::create_Cylinder [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:5+527
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_create_Cylinder(_$t0: $signer, _$t1: $signer) returns ()
 {
     // declare local variables
     var $t2: bool;
-    var $t3: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $t3: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $t4: int;
     var $t5: Vec (int);
     var $t6: $1_string_String;
     var $t7: int;
     var $t8: Vec (int);
     var $t9: Vec (int);
-    var $t10: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
-    var $t11: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
-    var $t12: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
+    var $t10: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
+    var $t11: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
+    var $t12: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
     var $t13: Vec (int);
     var $t14: bool;
-    var $t15: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
-    var $t16: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
+    var $t15: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
+    var $t16: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
     var $t17: Vec (int);
     var $t18: bool;
-    var $t19: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t20: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t19: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t20: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t21: $Mutation (Vec (int));
     var $t22: int;
-    var $t23: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t24: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t23: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t24: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t25: $Mutation (Vec (int));
     var $t26: int;
-    var $t27: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $t27: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $t0: $signer;
     var $t1: $signer;
-    var $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder': $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder': $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $temp_0'signer': $signer;
     $t0 := _$t0;
     $t1 := _$t1;
 
     // bytecode translation starts here
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:480:5+1
-    assume {:print "$at(5,21872,21873)"} true;
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:5+1
+    assume {:print "$at(5,21975,21976)"} true;
     assume {:print "$track_local(86,4,0):", $t0} $t0 == $t0;
 
-    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:480:5+1
+    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:5+1
     assume {:print "$track_local(86,4,1):", $t1} $t1 == $t1;
 
-    // $t4 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:482:38+1
-    assume {:print "$at(5,21971,21972)"} true;
+    // $t4 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:38+1
+    assume {:print "$at(5,22074,22075)"} true;
     $t4 := 0;
     assume $IsValid'u8'($t4);
 
-    // $t5 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:44+6
-    assume {:print "$at(5,22017,22023)"} true;
+    // $t5 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:44+6
+    assume {:print "$at(5,22120,22126)"} true;
     $t5 := MakeVec3(65, 80, 84);
     assume $IsValid'vec'u8''($t5);
 
-    // $t6 := string::utf8($t5) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:39+12
+    // $t6 := string::utf8($t5) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:39+12
     call $t6 := $1_string_utf8($t5);
     if ($abort_flag) {
-        assume {:print "$at(5,22012,22024)"} true;
+        assume {:print "$at(5,22115,22127)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // $t8 := vector::empty<address>() on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:61+15
+    // $t8 := vector::empty<address>() on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:61+15
     call $t8 := $1_vector_empty'address'();
     if ($abort_flag) {
-        assume {:print "$at(5,22034,22049)"} true;
+        assume {:print "$at(5,22137,22152)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // $t9 := vector::empty<u64>() on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:85+15
+    // $t9 := vector::empty<u64>() on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:85+15
     call $t9 := $1_vector_empty'u64'();
     if ($abort_flag) {
-        assume {:print "$at(5,22058,22073)"} true;
+        assume {:print "$at(5,22161,22176)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // $t10 := pack pay_module::Cylinder_coin($t6, $t8, $t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:20+81
-    $t10 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin($t6, $t8, $t9);
+    // $t10 := pack pay_module::Cylinder_coin($t6, $t8, $t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:20+81
+    $t10 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin($t6, $t8, $t9);
 
-    // $t3 := pack pay_module::Cylinder($t4, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:482:26+116
-    assume {:print "$at(5,21959,22075)"} true;
-    $t3 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder($t4, $t10);
+    // $t3 := pack pay_module::Cylinder($t4, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:26+116
+    assume {:print "$at(5,22062,22178)"} true;
+    $t3 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder($t4, $t10);
 
-    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:482:13+10
+    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+10
     assume {:print "$track_local(86,4,3):", $t3} $t3 == $t3;
 
-    // $t11 := copy($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:22+10
-    assume {:print "$at(5,22098,22108)"} true;
+    // $t11 := copy($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:22+10
+    assume {:print "$at(5,22201,22211)"} true;
     $t11 := $t3;
 
-    // $t12 := get_field<pay_module::Cylinder>.Bullet($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:22+17
+    // $t12 := get_field<pay_module::Cylinder>.Bullet($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:22+17
     $t12 := $t11->$Bullet;
 
-    // $t13 := get_field<pay_module::Cylinder_coin>.amount($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:21+25
+    // $t13 := get_field<pay_module::Cylinder_coin>.amount($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:21+25
     $t13 := $t12->$amount;
 
-    // $t14 := vector::is_empty<u64>($t13) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+35
+    // $t14 := vector::is_empty<u64>($t13) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+35
     call $t14 := $1_vector_is_empty'u64'($t13);
     if ($abort_flag) {
-        assume {:print "$at(5,22088,22123)"} true;
+        assume {:print "$at(5,22191,22226)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // if ($t14) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
+    // if ($t14) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
     if ($t14) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:59+10
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:59+10
 L1:
 
-    // $t15 := copy($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:59+10
-    assume {:print "$at(5,22135,22145)"} true;
+    // $t15 := copy($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:59+10
+    assume {:print "$at(5,22238,22248)"} true;
     $t15 := $t3;
 
-    // $t16 := get_field<pay_module::Cylinder>.Bullet($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:59+17
+    // $t16 := get_field<pay_module::Cylinder>.Bullet($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:59+17
     $t16 := $t15->$Bullet;
 
-    // $t17 := get_field<pay_module::Cylinder_coin>.address($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:58+26
+    // $t17 := get_field<pay_module::Cylinder_coin>.address($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:58+26
     $t17 := $t16->$address;
 
-    // $t2 := vector::is_empty<address>($t17) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:49+36
+    // $t2 := vector::is_empty<address>($t17) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:49+36
     call $t2 := $1_vector_is_empty'address'($t17);
     if ($abort_flag) {
-        assume {:print "$at(5,22125,22161)"} true;
+        assume {:print "$at(5,22228,22264)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
 L0:
 
-    // $t18 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
-    assume {:print "$at(5,22088,22161)"} true;
+    // $t18 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
+    assume {:print "$at(5,22191,22264)"} true;
     $t18 := false;
     assume $IsValid'bool'($t18);
 
-    // $t2 := $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
+    // $t2 := $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
     $t2 := $t18;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
 L2:
 
-    // if ($t2) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:9+223
-    assume {:print "$at(5,22085,22308)"} true;
+    // if ($t2) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:9+223
+    assume {:print "$at(5,22188,22411)"} true;
     if ($t2) { goto L4; } else { goto L3; }
 
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:36+10
-    assume {:print "$at(5,22199,22209)"} true;
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:36+10
+    assume {:print "$at(5,22302,22312)"} true;
 L4:
 
-    // $t19 := borrow_local($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:36+10
-    assume {:print "$at(5,22199,22209)"} true;
+    // $t19 := borrow_local($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:36+10
+    assume {:print "$at(5,22302,22312)"} true;
     $t19 := $Mutation($Local(3), EmptyVec(), $t3);
 
-    // $t20 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:36+17
+    // $t20 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:36+17
     $t20 := $ChildMutation($t19, 1, $Dereference($t19)->$Bullet);
 
-    // $t21 := borrow_field<pay_module::Cylinder_coin>.address($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:31+30
+    // $t21 := borrow_field<pay_module::Cylinder_coin>.address($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:31+30
     $t21 := $ChildMutation($t20, 1, $Dereference($t20)->$address);
 
-    // $t22 := 0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:62+7
+    // $t22 := 0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:62+7
     $t22 := 108065678617823638164322216849059365281423231628866440170487689899570454732118;
     assume $IsValid'address'($t22);
 
-    // vector::push_back<address>($t21, $t22) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+57
+    // vector::push_back<address>($t21, $t22) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:13+57
     call $t21 := $1_vector_push_back'address'($t21, $t22);
     if ($abort_flag) {
-        assume {:print "$at(5,22176,22233)"} true;
+        assume {:print "$at(5,22279,22336)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // write_back[Reference($t20).address (vector<address>)]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+57
-    $t20 := $UpdateMutation($t20, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t20), $Dereference($t21)));
+    // write_back[Reference($t20).address (vector<address>)]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:13+57
+    $t20 := $UpdateMutation($t20, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t20), $Dereference($t21)));
 
-    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+57
-    $t19 := $UpdateMutation($t19, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t20)));
+    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:13+57
+    $t19 := $UpdateMutation($t19, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t20)));
 
-    // write_back[LocalRoot($t3)@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+57
+    // write_back[LocalRoot($t3)@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:13+57
     $t3 := $Dereference($t19);
 
-    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+57
+    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:13+57
     assume {:print "$track_local(86,4,3):", $t3} $t3 == $t3;
 
-    // $t23 := borrow_local($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:36+10
-    assume {:print "$at(5,22270,22280)"} true;
+    // $t23 := borrow_local($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:36+10
+    assume {:print "$at(5,22373,22383)"} true;
     $t23 := $Mutation($Local(3), EmptyVec(), $t3);
 
-    // $t24 := borrow_field<pay_module::Cylinder>.Bullet($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:36+17
+    // $t24 := borrow_field<pay_module::Cylinder>.Bullet($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:36+17
     $t24 := $ChildMutation($t23, 1, $Dereference($t23)->$Bullet);
 
-    // $t25 := borrow_field<pay_module::Cylinder_coin>.amount($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:31+29
+    // $t25 := borrow_field<pay_module::Cylinder_coin>.amount($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:31+29
     $t25 := $ChildMutation($t24, 2, $Dereference($t24)->$amount);
 
-    // $t26 := 1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:61+1
+    // $t26 := 1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:61+1
     $t26 := 1;
     assume $IsValid'u64'($t26);
 
-    // vector::push_back<u64>($t25, $t26) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:13+50
+    // vector::push_back<u64>($t25, $t26) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:13+50
     call $t25 := $1_vector_push_back'u64'($t25, $t26);
     if ($abort_flag) {
-        assume {:print "$at(5,22247,22297)"} true;
+        assume {:print "$at(5,22350,22400)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // write_back[Reference($t24).amount (vector<u64>)]($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:13+50
-    $t24 := $UpdateMutation($t24, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t24), $Dereference($t25)));
+    // write_back[Reference($t24).amount (vector<u64>)]($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:13+50
+    $t24 := $UpdateMutation($t24, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t24), $Dereference($t25)));
 
-    // write_back[Reference($t23).Bullet (pay_module::Cylinder_coin)]($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:13+50
-    $t23 := $UpdateMutation($t23, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t23), $Dereference($t24)));
+    // write_back[Reference($t23).Bullet (pay_module::Cylinder_coin)]($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:13+50
+    $t23 := $UpdateMutation($t23, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t23), $Dereference($t24)));
 
-    // write_back[LocalRoot($t3)@]($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:13+50
+    // write_back[LocalRoot($t3)@]($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:13+50
     $t3 := $Dereference($t23);
 
-    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:13+50
+    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:13+50
     assume {:print "$track_local(86,4,3):", $t3} $t3 == $t3;
 
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:17+15
-    assume {:print "$at(5,22364,22379)"} true;
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:492:17+15
+    assume {:print "$at(5,22467,22482)"} true;
 L3:
 
-    // $t27 := move($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:33+10
-    assume {:print "$at(5,22380,22390)"} true;
+    // $t27 := move($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:492:33+10
+    assume {:print "$at(5,22483,22493)"} true;
     $t27 := $t3;
 
-    // move_to<pay_module::Cylinder>($t27, $t1) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:9+7
-    if ($ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t1->$addr)) {
+    // move_to<pay_module::Cylinder>($t27, $t1) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:492:9+7
+    if ($ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t1->$addr)) {
         call $ExecFailureAbort();
     } else {
-        $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory := $ResourceUpdate($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t1->$addr, $t27);
+        $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory := $ResourceUpdate($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t1->$addr, $t27);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,22356,22363)"} true;
+        assume {:print "$at(5,22459,22466)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:491:5+1
-    assume {:print "$at(5,22398,22399)"} true;
+    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:494:5+1
+    assume {:print "$at(5,22501,22502)"} true;
 L5:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:491:5+1
-    assume {:print "$at(5,22398,22399)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:494:5+1
+    assume {:print "$at(5,22501,22502)"} true;
     return;
 
-    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:491:5+1
+    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:494:5+1
 L6:
 
-    // abort($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:491:5+1
-    assume {:print "$at(5,22398,22399)"} true;
+    // abort($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:494:5+1
+    assume {:print "$at(5,22501,22502)"} true;
     $abort_code := $t7;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::create_Cylinder [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:480:5+527
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_create_Cylinder$verify(_$t0: $signer, _$t1: $signer) returns ()
+// fun pay_module::create_Cylinder [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:5+527
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_create_Cylinder$verify(_$t0: $signer, _$t1: $signer) returns ()
 {
     // declare local variables
     var $t2: bool;
-    var $t3: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $t3: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $t4: int;
     var $t5: Vec (int);
     var $t6: $1_string_String;
     var $t7: int;
     var $t8: Vec (int);
     var $t9: Vec (int);
-    var $t10: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
-    var $t11: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
-    var $t12: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
+    var $t10: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
+    var $t11: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
+    var $t12: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
     var $t13: Vec (int);
     var $t14: bool;
-    var $t15: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
-    var $t16: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
+    var $t15: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
+    var $t16: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
     var $t17: Vec (int);
     var $t18: bool;
-    var $t19: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t20: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t19: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t20: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t21: $Mutation (Vec (int));
     var $t22: int;
-    var $t23: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t24: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t23: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t24: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t25: $Mutation (Vec (int));
     var $t26: int;
-    var $t27: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $t27: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $t0: $signer;
     var $t1: $signer;
-    var $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder': $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder': $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $temp_0'signer': $signer;
     $t0 := _$t0;
     $t1 := _$t1;
@@ -29573,256 +29573,256 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:480:5+1
-    assume {:print "$at(5,21872,21873)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:5+1
+    assume {:print "$at(5,21975,21976)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:480:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:5+1
     assume $IsValid'signer'($t1) && $1_signer_is_txn_signer($t1) && $1_signer_is_txn_signer_addr($t1->$addr);
 
-    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:480:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'($rsc))));
+    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'($rsc))));
 
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:480:5+1
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:5+1
     assume {:print "$track_local(86,4,0):", $t0} $t0 == $t0;
 
-    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:480:5+1
+    // trace_local[resource_signer]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:5+1
     assume {:print "$track_local(86,4,1):", $t1} $t1 == $t1;
 
-    // $t4 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:482:38+1
-    assume {:print "$at(5,21971,21972)"} true;
+    // $t4 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:38+1
+    assume {:print "$at(5,22074,22075)"} true;
     $t4 := 0;
     assume $IsValid'u8'($t4);
 
-    // $t5 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:44+6
-    assume {:print "$at(5,22017,22023)"} true;
+    // $t5 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:44+6
+    assume {:print "$at(5,22120,22126)"} true;
     $t5 := MakeVec3(65, 80, 84);
     assume $IsValid'vec'u8''($t5);
 
-    // $t6 := string::utf8($t5) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:39+12
+    // $t6 := string::utf8($t5) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:39+12
     call $t6 := $1_string_utf8($t5);
     if ($abort_flag) {
-        assume {:print "$at(5,22012,22024)"} true;
+        assume {:print "$at(5,22115,22127)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // $t8 := vector::empty<address>() on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:61+15
+    // $t8 := vector::empty<address>() on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:61+15
     call $t8 := $1_vector_empty'address'();
     if ($abort_flag) {
-        assume {:print "$at(5,22034,22049)"} true;
+        assume {:print "$at(5,22137,22152)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // $t9 := vector::empty<u64>() on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:85+15
+    // $t9 := vector::empty<u64>() on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:85+15
     call $t9 := $1_vector_empty'u64'();
     if ($abort_flag) {
-        assume {:print "$at(5,22058,22073)"} true;
+        assume {:print "$at(5,22161,22176)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // $t10 := pack pay_module::Cylinder_coin($t6, $t8, $t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:483:20+81
-    $t10 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin($t6, $t8, $t9);
+    // $t10 := pack pay_module::Cylinder_coin($t6, $t8, $t9) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:20+81
+    $t10 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin($t6, $t8, $t9);
 
-    // $t3 := pack pay_module::Cylinder($t4, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:482:26+116
-    assume {:print "$at(5,21959,22075)"} true;
-    $t3 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder($t4, $t10);
+    // $t3 := pack pay_module::Cylinder($t4, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:26+116
+    assume {:print "$at(5,22062,22178)"} true;
+    $t3 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder($t4, $t10);
 
-    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:482:13+10
+    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+10
     assume {:print "$track_local(86,4,3):", $t3} $t3 == $t3;
 
-    // $t11 := copy($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:22+10
-    assume {:print "$at(5,22098,22108)"} true;
+    // $t11 := copy($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:22+10
+    assume {:print "$at(5,22201,22211)"} true;
     $t11 := $t3;
 
-    // $t12 := get_field<pay_module::Cylinder>.Bullet($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:22+17
+    // $t12 := get_field<pay_module::Cylinder>.Bullet($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:22+17
     $t12 := $t11->$Bullet;
 
-    // $t13 := get_field<pay_module::Cylinder_coin>.amount($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:21+25
+    // $t13 := get_field<pay_module::Cylinder_coin>.amount($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:21+25
     $t13 := $t12->$amount;
 
-    // $t14 := vector::is_empty<u64>($t13) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+35
+    // $t14 := vector::is_empty<u64>($t13) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+35
     call $t14 := $1_vector_is_empty'u64'($t13);
     if ($abort_flag) {
-        assume {:print "$at(5,22088,22123)"} true;
+        assume {:print "$at(5,22191,22226)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // if ($t14) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
+    // if ($t14) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
     if ($t14) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:59+10
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:59+10
 L1:
 
-    // $t15 := copy($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:59+10
-    assume {:print "$at(5,22135,22145)"} true;
+    // $t15 := copy($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:59+10
+    assume {:print "$at(5,22238,22248)"} true;
     $t15 := $t3;
 
-    // $t16 := get_field<pay_module::Cylinder>.Bullet($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:59+17
+    // $t16 := get_field<pay_module::Cylinder>.Bullet($t15) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:59+17
     $t16 := $t15->$Bullet;
 
-    // $t17 := get_field<pay_module::Cylinder_coin>.address($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:58+26
+    // $t17 := get_field<pay_module::Cylinder_coin>.address($t16) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:58+26
     $t17 := $t16->$address;
 
-    // $t2 := vector::is_empty<address>($t17) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:49+36
+    // $t2 := vector::is_empty<address>($t17) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:49+36
     call $t2 := $1_vector_is_empty'address'($t17);
     if ($abort_flag) {
-        assume {:print "$at(5,22125,22161)"} true;
+        assume {:print "$at(5,22228,22264)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
 L0:
 
-    // $t18 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
-    assume {:print "$at(5,22088,22161)"} true;
+    // $t18 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
+    assume {:print "$at(5,22191,22264)"} true;
     $t18 := false;
     assume $IsValid'bool'($t18);
 
-    // $t2 := $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
+    // $t2 := $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
     $t2 := $t18;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:12+73
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:12+73
 L2:
 
-    // if ($t2) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:484:9+223
-    assume {:print "$at(5,22085,22308)"} true;
+    // if ($t2) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:487:9+223
+    assume {:print "$at(5,22188,22411)"} true;
     if ($t2) { goto L4; } else { goto L3; }
 
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:36+10
-    assume {:print "$at(5,22199,22209)"} true;
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:36+10
+    assume {:print "$at(5,22302,22312)"} true;
 L4:
 
-    // $t19 := borrow_local($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:36+10
-    assume {:print "$at(5,22199,22209)"} true;
+    // $t19 := borrow_local($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:36+10
+    assume {:print "$at(5,22302,22312)"} true;
     $t19 := $Mutation($Local(3), EmptyVec(), $t3);
 
-    // $t20 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:36+17
+    // $t20 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:36+17
     $t20 := $ChildMutation($t19, 1, $Dereference($t19)->$Bullet);
 
-    // $t21 := borrow_field<pay_module::Cylinder_coin>.address($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:31+30
+    // $t21 := borrow_field<pay_module::Cylinder_coin>.address($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:31+30
     $t21 := $ChildMutation($t20, 1, $Dereference($t20)->$address);
 
-    // $t22 := 0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:62+7
+    // $t22 := 0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:62+7
     $t22 := 108065678617823638164322216849059365281423231628866440170487689899570454732118;
     assume $IsValid'address'($t22);
 
-    // vector::push_back<address>($t21, $t22) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+57
+    // vector::push_back<address>($t21, $t22) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:13+57
     call $t21 := $1_vector_push_back'address'($t21, $t22);
     if ($abort_flag) {
-        assume {:print "$at(5,22176,22233)"} true;
+        assume {:print "$at(5,22279,22336)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // write_back[Reference($t20).address (vector<address>)]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+57
-    $t20 := $UpdateMutation($t20, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t20), $Dereference($t21)));
+    // write_back[Reference($t20).address (vector<address>)]($t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:13+57
+    $t20 := $UpdateMutation($t20, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t20), $Dereference($t21)));
 
-    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+57
-    $t19 := $UpdateMutation($t19, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t20)));
+    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:13+57
+    $t19 := $UpdateMutation($t19, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t20)));
 
-    // write_back[LocalRoot($t3)@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+57
+    // write_back[LocalRoot($t3)@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:13+57
     $t3 := $Dereference($t19);
 
-    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:485:13+57
+    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:488:13+57
     assume {:print "$track_local(86,4,3):", $t3} $t3 == $t3;
 
-    // $t23 := borrow_local($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:36+10
-    assume {:print "$at(5,22270,22280)"} true;
+    // $t23 := borrow_local($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:36+10
+    assume {:print "$at(5,22373,22383)"} true;
     $t23 := $Mutation($Local(3), EmptyVec(), $t3);
 
-    // $t24 := borrow_field<pay_module::Cylinder>.Bullet($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:36+17
+    // $t24 := borrow_field<pay_module::Cylinder>.Bullet($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:36+17
     $t24 := $ChildMutation($t23, 1, $Dereference($t23)->$Bullet);
 
-    // $t25 := borrow_field<pay_module::Cylinder_coin>.amount($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:31+29
+    // $t25 := borrow_field<pay_module::Cylinder_coin>.amount($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:31+29
     $t25 := $ChildMutation($t24, 2, $Dereference($t24)->$amount);
 
-    // $t26 := 1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:61+1
+    // $t26 := 1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:61+1
     $t26 := 1;
     assume $IsValid'u64'($t26);
 
-    // vector::push_back<u64>($t25, $t26) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:13+50
+    // vector::push_back<u64>($t25, $t26) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:13+50
     call $t25 := $1_vector_push_back'u64'($t25, $t26);
     if ($abort_flag) {
-        assume {:print "$at(5,22247,22297)"} true;
+        assume {:print "$at(5,22350,22400)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // write_back[Reference($t24).amount (vector<u64>)]($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:13+50
-    $t24 := $UpdateMutation($t24, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t24), $Dereference($t25)));
+    // write_back[Reference($t24).amount (vector<u64>)]($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:13+50
+    $t24 := $UpdateMutation($t24, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t24), $Dereference($t25)));
 
-    // write_back[Reference($t23).Bullet (pay_module::Cylinder_coin)]($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:13+50
-    $t23 := $UpdateMutation($t23, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t23), $Dereference($t24)));
+    // write_back[Reference($t23).Bullet (pay_module::Cylinder_coin)]($t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:13+50
+    $t23 := $UpdateMutation($t23, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t23), $Dereference($t24)));
 
-    // write_back[LocalRoot($t3)@]($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:13+50
+    // write_back[LocalRoot($t3)@]($t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:13+50
     $t3 := $Dereference($t23);
 
-    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:486:13+50
+    // trace_local[bullet_APT]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:13+50
     assume {:print "$track_local(86,4,3):", $t3} $t3 == $t3;
 
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:17+15
-    assume {:print "$at(5,22364,22379)"} true;
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:492:17+15
+    assume {:print "$at(5,22467,22482)"} true;
 L3:
 
-    // $t27 := move($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:33+10
-    assume {:print "$at(5,22380,22390)"} true;
+    // $t27 := move($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:492:33+10
+    assume {:print "$at(5,22483,22493)"} true;
     $t27 := $t3;
 
-    // move_to<pay_module::Cylinder>($t27, $t1) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:489:9+7
-    if ($ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t1->$addr)) {
+    // move_to<pay_module::Cylinder>($t27, $t1) on_abort goto L6 with $t7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:492:9+7
+    if ($ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t1->$addr)) {
         call $ExecFailureAbort();
     } else {
-        $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory := $ResourceUpdate($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t1->$addr, $t27);
+        $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory := $ResourceUpdate($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t1->$addr, $t27);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,22356,22363)"} true;
+        assume {:print "$at(5,22459,22466)"} true;
         $t7 := $abort_code;
         assume {:print "$track_abort(86,4):", $t7} $t7 == $t7;
         goto L6;
     }
 
-    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:491:5+1
-    assume {:print "$at(5,22398,22399)"} true;
+    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:494:5+1
+    assume {:print "$at(5,22501,22502)"} true;
 L5:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:491:5+1
-    assume {:print "$at(5,22398,22399)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:494:5+1
+    assume {:print "$at(5,22501,22502)"} true;
     return;
 
-    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:491:5+1
+    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:494:5+1
 L6:
 
-    // abort($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:491:5+1
-    assume {:print "$at(5,22398,22399)"} true;
+    // abort($t7) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:494:5+1
+    assume {:print "$at(5,22501,22502)"} true;
     $abort_code := $t7;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::create_address_list [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:106:5+95
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_create_address_list$verify(_$t0: int) returns ($ret0: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list)
+// fun pay_module::create_address_list [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:107:5+95
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_create_address_list$verify(_$t0: int) returns ($ret0: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list)
 {
     // declare local variables
-    var $t1: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list;
+    var $t1: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list;
     var $t0: int;
-    var $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list': $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list;
+    var $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list': $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list;
     var $temp_0'address': int;
     $t0 := _$t0;
 
@@ -29830,38 +29830,38 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:106:5+1
-    assume {:print "$at(5,3524,3525)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:107:5+1
+    assume {:print "$at(5,3555,3556)"} true;
     assume $IsValid'address'($t0);
 
-    // trace_local[address]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:106:5+1
+    // trace_local[address]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:107:5+1
     assume {:print "$track_local(86,5,0):", $t0} $t0 == $t0;
 
-    // $t1 := pack pay_module::Address_list($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:107:9+26
-    assume {:print "$at(5,3587,3613)"} true;
-    $t1 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Address_list($t0);
+    // $t1 := pack pay_module::Address_list($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:108:9+26
+    assume {:print "$at(5,3618,3644)"} true;
+    $t1 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Address_list($t0);
 
-    // trace_return[0]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:107:9+26
+    // trace_return[0]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:108:9+26
     assume {:print "$track_return(86,5,0):", $t1} $t1 == $t1;
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:108:5+1
-    assume {:print "$at(5,3618,3619)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:109:5+1
+    assume {:print "$at(5,3649,3650)"} true;
 L1:
 
-    // return $t1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:108:5+1
-    assume {:print "$at(5,3618,3619)"} true;
+    // return $t1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:109:5+1
+    assume {:print "$at(5,3649,3650)"} true;
     $ret0 := $t1;
     return;
 
 }
 
-// fun pay_module::create_amount_list [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:109:5+86
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_create_amount_list$verify(_$t0: int) returns ($ret0: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list)
+// fun pay_module::create_amount_list [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:110:5+86
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_create_amount_list$verify(_$t0: int) returns ($ret0: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list)
 {
     // declare local variables
-    var $t1: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list;
+    var $t1: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list;
     var $t0: int;
-    var $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list': $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list;
+    var $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list': $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list;
     var $temp_0'u64': int;
     $t0 := _$t0;
 
@@ -29869,33 +29869,33 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:109:5+1
-    assume {:print "$at(5,3624,3625)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:110:5+1
+    assume {:print "$at(5,3655,3656)"} true;
     assume $IsValid'u64'($t0);
 
-    // trace_local[amount]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:109:5+1
+    // trace_local[amount]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:110:5+1
     assume {:print "$track_local(86,6,0):", $t0} $t0 == $t0;
 
-    // $t1 := pack pay_module::Amount_list($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:110:9+24
-    assume {:print "$at(5,3680,3704)"} true;
-    $t1 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Amount_list($t0);
+    // $t1 := pack pay_module::Amount_list($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:111:9+24
+    assume {:print "$at(5,3711,3735)"} true;
+    $t1 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Amount_list($t0);
 
-    // trace_return[0]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:110:9+24
+    // trace_return[0]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:111:9+24
     assume {:print "$track_return(86,6,0):", $t1} $t1 == $t1;
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:111:5+1
-    assume {:print "$at(5,3709,3710)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+1
+    assume {:print "$at(5,3740,3741)"} true;
 L1:
 
-    // return $t1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:111:5+1
-    assume {:print "$at(5,3709,3710)"} true;
+    // return $t1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:112:5+1
+    assume {:print "$at(5,3740,3741)"} true;
     $ret0 := $t1;
     return;
 
 }
 
-// fun pay_module::is_non_zero [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:198:5+141
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_is_non_zero$verify(_$t0: int) returns ($ret0: bool)
+// fun pay_module::is_non_zero [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:199:5+141
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_is_non_zero$verify(_$t0: int) returns ($ret0: bool)
 {
     // declare local variables
     var $t1: bool;
@@ -29913,77 +29913,77 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:198:5+1
-    assume {:print "$at(5,7658,7659)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:199:5+1
+    assume {:print "$at(5,7689,7690)"} true;
     assume $IsValid'u64'($t0);
 
-    // trace_local[element]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:198:5+1
+    // trace_local[element]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:199:5+1
     assume {:print "$track_local(86,8,0):", $t0} $t0 == $t0;
 
-    // $t3 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:199:22+1
-    assume {:print "$at(5,7725,7726)"} true;
+    // $t3 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:200:22+1
+    assume {:print "$at(5,7756,7757)"} true;
     $t3 := 0;
     assume $IsValid'u64'($t3);
 
-    // trace_local[a]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:199:13+1
+    // trace_local[a]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:200:13+1
     assume {:print "$track_local(86,8,2):", $t3} $t3 == $t3;
 
-    // $t4 := ==($t0, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:200:20+2
-    assume {:print "$at(5,7747,7749)"} true;
+    // $t4 := ==($t0, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:201:20+2
+    assume {:print "$at(5,7778,7780)"} true;
     $t4 := $IsEqual'u64'($t0, $t3);
 
-    // if ($t4) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:200:9+57
+    // if ($t4) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:201:9+57
     if ($t4) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:201:13+4
-    assume {:print "$at(5,7767,7771)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:202:13+4
+    assume {:print "$at(5,7798,7802)"} true;
 L1:
 
-    // $t5 := true at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:201:13+4
-    assume {:print "$at(5,7767,7771)"} true;
+    // $t5 := true at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:202:13+4
+    assume {:print "$at(5,7798,7802)"} true;
     $t5 := true;
     assume $IsValid'bool'($t5);
 
-    // $t1 := $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:200:9+57
-    assume {:print "$at(5,7736,7793)"} true;
+    // $t1 := $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:201:9+57
+    assume {:print "$at(5,7767,7824)"} true;
     $t1 := $t5;
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:200:9+57
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:201:9+57
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:202:16+5
-    assume {:print "$at(5,7787,7792)"} true;
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:203:16+5
+    assume {:print "$at(5,7818,7823)"} true;
 L0:
 
-    // $t6 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:202:16+5
-    assume {:print "$at(5,7787,7792)"} true;
+    // $t6 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:203:16+5
+    assume {:print "$at(5,7818,7823)"} true;
     $t6 := false;
     assume $IsValid'bool'($t6);
 
-    // $t1 := $t6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:200:9+57
-    assume {:print "$at(5,7736,7793)"} true;
+    // $t1 := $t6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:201:9+57
+    assume {:print "$at(5,7767,7824)"} true;
     $t1 := $t6;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:200:9+57
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:201:9+57
 L2:
 
-    // trace_return[0]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:200:9+57
-    assume {:print "$at(5,7736,7793)"} true;
+    // trace_return[0]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:201:9+57
+    assume {:print "$at(5,7767,7824)"} true;
     assume {:print "$track_return(86,8,0):", $t1} $t1 == $t1;
 
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:203:5+1
-    assume {:print "$at(5,7798,7799)"} true;
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    assume {:print "$at(5,7829,7830)"} true;
 L3:
 
-    // return $t1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:203:5+1
-    assume {:print "$at(5,7798,7799)"} true;
+    // return $t1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:204:5+1
+    assume {:print "$at(5,7829,7830)"} true;
     $ret0 := $t1;
     return;
 
 }
 
-// fun pay_module::pay_apt_back_to_user [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+166
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_apt_back_to_user$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
+// fun pay_module::pay_apt_back_to_user [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+166
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_apt_back_to_user$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
 {
     // declare local variables
     var $t3: $1_coin_Coin'$1_aptos_coin_AptosCoin';
@@ -30013,46 +30013,46 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
-    assume {:print "$at(5,4744,4745)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
+    assume {:print "$at(5,4775,4776)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
     assume $IsValid'address'($t1);
 
-    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
+    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
     assume $IsValid'u64'($t2);
 
-    // assume forall $rsc: coin::CoinInfo<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinInfo<aptos_coin::AptosCoin>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
+    // assume forall $rsc: coin::CoinInfo<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinInfo<aptos_coin::AptosCoin>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     (($IsValid'$1_coin_CoinInfo'$1_aptos_coin_AptosCoin''($rsc) && ((LenVec($rsc->$supply->$vec) <= 1) && (var $range_1 := $rsc->$supply->$vec; (forall $i_2: int :: InRangeVec($range_1, $i_2) ==> (var $elem := ReadVec($range_1, $i_2);
     ((((((($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) <==> $1_option_$is_none'$1_optional_aggregator_Integer'($elem->$integer)) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) <==> $1_option_$is_none'$1_aggregator_Aggregator'($elem->$aggregator))) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) ==> ($1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$value <= $1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$limit))) && ($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) ==> ($1_aggregator_spec_aggregator_get_val($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator)) <= $1_aggregator_spec_get_limit($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator))))) && (LenVec($elem->$aggregator->$vec) <= 1)) && (LenVec($elem->$integer->$vec) <= 1)))))))))));
 
-    // assume forall $rsc: coin::CoinStore<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinStore<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
+    // assume forall $rsc: coin::CoinStore<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinStore<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_CoinStore'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume forall $rsc: coin::Ghost$supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
+    // assume forall $rsc: coin::Ghost$supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
+    // assume exists<coin::Ghost$supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
     assume $ResourceExists($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // assume forall $rsc: coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
+    // assume forall $rsc: coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
+    // assume exists<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
     assume $ResourceExists($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
+    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
     assume {:print "$track_local(86,10,0):", $t0} $t0 == $t0;
 
-    // trace_local[user]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
+    // trace_local[user]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
     assume {:print "$track_local(86,10,1):", $t1} $t1 == $t1;
 
-    // trace_local[amount]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:136:5+1
+    // trace_local[amount]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:5+1
     assume {:print "$track_local(86,10,2):", $t2} $t2 == $t2;
 
     // assume Identical($t4, select coin::CoinInfo.supply<coin::CoinInfo<aptos_coin::AptosCoin>>(global<coin::CoinInfo<aptos_coin::AptosCoin>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<aptos_coin::AptosCoin>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
@@ -30083,17 +30083,17 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     assume {:print "$at(112,22582,22618)"} true;
     assume ($t10 == $t9->$coin->$value);
 
-    // $t11 := coin::withdraw<aptos_coin::AptosCoin>($t0, $t2) on_abort goto L2 with $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:19+41
-    assume {:print "$at(5,4829,4870)"} true;
+    // $t11 := coin::withdraw<aptos_coin::AptosCoin>($t0, $t2) on_abort goto L2 with $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:138:19+41
+    assume {:print "$at(5,4860,4901)"} true;
     call $t11 := $1_coin_withdraw'$1_aptos_coin_AptosCoin'($t0, $t2);
     if ($abort_flag) {
-        assume {:print "$at(5,4829,4870)"} true;
+        assume {:print "$at(5,4860,4901)"} true;
         $t12 := $abort_code;
         assume {:print "$track_abort(86,10):", $t12} $t12 == $t12;
         goto L2;
     }
 
-    // trace_local[pay]($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:137:13+3
+    // trace_local[pay]($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:138:13+3
     assume {:print "$track_local(86,10,3):", $t11} $t11 == $t11;
 
     // assume Identical($t13, select coin::CoinInfo.supply<coin::CoinInfo<aptos_coin::AptosCoin>>(global<coin::CoinInfo<aptos_coin::AptosCoin>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<aptos_coin::AptosCoin>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
@@ -30104,37 +30104,37 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     assume {:print "$at(112,12654,12713)"} true;
     assume ($t14 == $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $t1));
 
-    // coin::deposit<aptos_coin::AptosCoin>($t1, $t11) on_abort goto L2 with $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:138:9+23
-    assume {:print "$at(5,4880,4903)"} true;
+    // coin::deposit<aptos_coin::AptosCoin>($t1, $t11) on_abort goto L2 with $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:139:9+23
+    assume {:print "$at(5,4911,4934)"} true;
     call $1_coin_deposit'$1_aptos_coin_AptosCoin'($t1, $t11);
     if ($abort_flag) {
-        assume {:print "$at(5,4880,4903)"} true;
+        assume {:print "$at(5,4911,4934)"} true;
         $t12 := $abort_code;
         assume {:print "$track_abort(86,10):", $t12} $t12 == $t12;
         goto L2;
     }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:139:5+1
-    assume {:print "$at(5,4909,4910)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:140:5+1
+    assume {:print "$at(5,4940,4941)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:139:5+1
-    assume {:print "$at(5,4909,4910)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:140:5+1
+    assume {:print "$at(5,4940,4941)"} true;
     return;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:139:5+1
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:140:5+1
 L2:
 
-    // abort($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:139:5+1
-    assume {:print "$at(5,4909,4910)"} true;
+    // abort($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:140:5+1
+    assume {:print "$at(5,4940,4941)"} true;
     $abort_code := $t12;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::pay_apt_to_dapp [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+370
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_apt_to_dapp(_$t0: $signer, _$t1: int, _$t2: int) returns ()
+// fun pay_module::pay_apt_to_dapp [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+370
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_apt_to_dapp(_$t0: $signer, _$t1: int, _$t2: int) returns ()
 {
     // declare local variables
     var $t3: int;
@@ -30162,34 +30162,34 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     $t2 := _$t2;
 
     // bytecode translation starts here
-    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
-    assume {:print "$at(5,4023,4024)"} true;
+    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
+    assume {:print "$at(5,4054,4055)"} true;
     assume {:print "$track_local(86,11,0):", $t0} $t0 == $t0;
 
-    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume {:print "$track_local(86,11,1):", $t1} $t1 == $t1;
 
-    // trace_local[resource_address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // trace_local[resource_address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume {:print "$track_local(86,11,2):", $t2} $t2 == $t2;
 
-    // $t3 := 1000000 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:123:28+11
-    assume {:print "$at(5,4194,4205)"} true;
+    // $t3 := 1000000 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:28+11
+    assume {:print "$at(5,4225,4236)"} true;
     $t3 := 1000000;
     assume $IsValid'u64'($t3);
 
-    // $t4 := +($t1, $t3) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:123:26+1
+    // $t4 := +($t1, $t3) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:26+1
     call $t4 := $AddU64($t1, $t3);
     if ($abort_flag) {
-        assume {:print "$at(5,4192,4193)"} true;
+        assume {:print "$at(5,4223,4224)"} true;
         $t5 := $abort_code;
         assume {:print "$track_abort(86,11):", $t5} $t5 == $t5;
         goto L2;
     }
 
-    // drop($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:123:13+3
+    // drop($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:13+3
 
-    // $t6 := 1000000 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:74+11
-    assume {:print "$at(5,4280,4291)"} true;
+    // $t6 := 1000000 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:125:74+11
+    assume {:print "$at(5,4311,4322)"} true;
     $t6 := 1000000;
     assume $IsValid'u64'($t6);
 
@@ -30221,11 +30221,11 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     assume {:print "$at(112,22582,22618)"} true;
     assume ($t13 == $t12->$coin->$value);
 
-    // $t14 := coin::withdraw<aptos_coin::AptosCoin>($t0, $t6) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:40+46
-    assume {:print "$at(5,4246,4292)"} true;
+    // $t14 := coin::withdraw<aptos_coin::AptosCoin>($t0, $t6) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:125:40+46
+    assume {:print "$at(5,4277,4323)"} true;
     call $t14 := $1_coin_withdraw'$1_aptos_coin_AptosCoin'($t0, $t6);
     if ($abort_flag) {
-        assume {:print "$at(5,4246,4292)"} true;
+        assume {:print "$at(5,4277,4323)"} true;
         $t5 := $abort_code;
         assume {:print "$track_abort(86,11):", $t5} $t5 == $t5;
         goto L2;
@@ -30239,37 +30239,37 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     assume {:print "$at(112,12654,12713)"} true;
     assume ($t16 == $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $t2));
 
-    // coin::deposit<aptos_coin::AptosCoin>($t2, $t14) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:9+78
-    assume {:print "$at(5,4215,4293)"} true;
+    // coin::deposit<aptos_coin::AptosCoin>($t2, $t14) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:125:9+78
+    assume {:print "$at(5,4246,4324)"} true;
     call $1_coin_deposit'$1_aptos_coin_AptosCoin'($t2, $t14);
     if ($abort_flag) {
-        assume {:print "$at(5,4215,4293)"} true;
+        assume {:print "$at(5,4246,4324)"} true;
         $t5 := $abort_code;
         assume {:print "$track_abort(86,11):", $t5} $t5 == $t5;
         goto L2;
     }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:127:5+1
-    assume {:print "$at(5,4392,4393)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:128:5+1
+    assume {:print "$at(5,4423,4424)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:127:5+1
-    assume {:print "$at(5,4392,4393)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:128:5+1
+    assume {:print "$at(5,4423,4424)"} true;
     return;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:127:5+1
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:128:5+1
 L2:
 
-    // abort($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:127:5+1
-    assume {:print "$at(5,4392,4393)"} true;
+    // abort($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:128:5+1
+    assume {:print "$at(5,4423,4424)"} true;
     $abort_code := $t5;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::pay_apt_to_dapp [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+370
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_apt_to_dapp$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
+// fun pay_module::pay_apt_to_dapp [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+370
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_apt_to_dapp$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
 {
     // declare local variables
     var $t3: int;
@@ -30300,66 +30300,66 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
-    assume {:print "$at(5,4023,4024)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
+    assume {:print "$at(5,4054,4055)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume $IsValid'u64'($t1);
 
-    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume $IsValid'address'($t2);
 
-    // assume forall $rsc: coin::CoinInfo<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinInfo<aptos_coin::AptosCoin>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // assume forall $rsc: coin::CoinInfo<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinInfo<aptos_coin::AptosCoin>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     (($IsValid'$1_coin_CoinInfo'$1_aptos_coin_AptosCoin''($rsc) && ((LenVec($rsc->$supply->$vec) <= 1) && (var $range_1 := $rsc->$supply->$vec; (forall $i_2: int :: InRangeVec($range_1, $i_2) ==> (var $elem := ReadVec($range_1, $i_2);
     ((((((($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) <==> $1_option_$is_none'$1_optional_aggregator_Integer'($elem->$integer)) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) <==> $1_option_$is_none'$1_aggregator_Aggregator'($elem->$aggregator))) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) ==> ($1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$value <= $1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$limit))) && ($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) ==> ($1_aggregator_spec_aggregator_get_val($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator)) <= $1_aggregator_spec_get_limit($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator))))) && (LenVec($elem->$aggregator->$vec) <= 1)) && (LenVec($elem->$integer->$vec) <= 1)))))))))));
 
-    // assume forall $rsc: coin::CoinStore<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinStore<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // assume forall $rsc: coin::CoinStore<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinStore<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_CoinStore'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume forall $rsc: coin::Ghost$supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // assume forall $rsc: coin::Ghost$supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // assume exists<coin::Ghost$supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume $ResourceExists($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // assume forall $rsc: coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // assume forall $rsc: coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // assume exists<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume $ResourceExists($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume {:print "$track_local(86,11,0):", $t0} $t0 == $t0;
 
-    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume {:print "$track_local(86,11,1):", $t1} $t1 == $t1;
 
-    // trace_local[resource_address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:120:5+1
+    // trace_local[resource_address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:121:5+1
     assume {:print "$track_local(86,11,2):", $t2} $t2 == $t2;
 
-    // $t3 := 1000000 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:123:28+11
-    assume {:print "$at(5,4194,4205)"} true;
+    // $t3 := 1000000 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:28+11
+    assume {:print "$at(5,4225,4236)"} true;
     $t3 := 1000000;
     assume $IsValid'u64'($t3);
 
-    // $t4 := +($t1, $t3) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:123:26+1
+    // $t4 := +($t1, $t3) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:26+1
     call $t4 := $AddU64($t1, $t3);
     if ($abort_flag) {
-        assume {:print "$at(5,4192,4193)"} true;
+        assume {:print "$at(5,4223,4224)"} true;
         $t5 := $abort_code;
         assume {:print "$track_abort(86,11):", $t5} $t5 == $t5;
         goto L2;
     }
 
-    // drop($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:123:13+3
+    // drop($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:13+3
 
-    // $t6 := 1000000 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:74+11
-    assume {:print "$at(5,4280,4291)"} true;
+    // $t6 := 1000000 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:125:74+11
+    assume {:print "$at(5,4311,4322)"} true;
     $t6 := 1000000;
     assume $IsValid'u64'($t6);
 
@@ -30391,11 +30391,11 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     assume {:print "$at(112,22582,22618)"} true;
     assume ($t13 == $t12->$coin->$value);
 
-    // $t14 := coin::withdraw<aptos_coin::AptosCoin>($t0, $t6) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:40+46
-    assume {:print "$at(5,4246,4292)"} true;
+    // $t14 := coin::withdraw<aptos_coin::AptosCoin>($t0, $t6) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:125:40+46
+    assume {:print "$at(5,4277,4323)"} true;
     call $t14 := $1_coin_withdraw'$1_aptos_coin_AptosCoin'($t0, $t6);
     if ($abort_flag) {
-        assume {:print "$at(5,4246,4292)"} true;
+        assume {:print "$at(5,4277,4323)"} true;
         $t5 := $abort_code;
         assume {:print "$track_abort(86,11):", $t5} $t5 == $t5;
         goto L2;
@@ -30409,37 +30409,37 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     assume {:print "$at(112,12654,12713)"} true;
     assume ($t16 == $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $t2));
 
-    // coin::deposit<aptos_coin::AptosCoin>($t2, $t14) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:124:9+78
-    assume {:print "$at(5,4215,4293)"} true;
+    // coin::deposit<aptos_coin::AptosCoin>($t2, $t14) on_abort goto L2 with $t5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:125:9+78
+    assume {:print "$at(5,4246,4324)"} true;
     call $1_coin_deposit'$1_aptos_coin_AptosCoin'($t2, $t14);
     if ($abort_flag) {
-        assume {:print "$at(5,4215,4293)"} true;
+        assume {:print "$at(5,4246,4324)"} true;
         $t5 := $abort_code;
         assume {:print "$track_abort(86,11):", $t5} $t5 == $t5;
         goto L2;
     }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:127:5+1
-    assume {:print "$at(5,4392,4393)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:128:5+1
+    assume {:print "$at(5,4423,4424)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:127:5+1
-    assume {:print "$at(5,4392,4393)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:128:5+1
+    assume {:print "$at(5,4423,4424)"} true;
     return;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:127:5+1
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:128:5+1
 L2:
 
-    // abort($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:127:5+1
-    assume {:print "$at(5,4392,4393)"} true;
+    // abort($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:128:5+1
+    assume {:print "$at(5,4423,4424)"} true;
     $abort_code := $t5;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::pay_coin_back_to_user [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+186
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_coin_back_to_user$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
+// fun pay_module::pay_coin_back_to_user [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+186
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_coin_back_to_user$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
 {
     // declare local variables
     var $t3: $1_coin_Coin'#0';
@@ -30469,46 +30469,46 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
-    assume {:print "$at(5,4916,4917)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
+    assume {:print "$at(5,4947,4948)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
     assume $IsValid'address'($t1);
 
-    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
+    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
     assume $IsValid'u64'($t2);
 
-    // assume forall $rsc: coin::CoinInfo<#0>: ResourceDomain<coin::CoinInfo<#0>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
+    // assume forall $rsc: coin::CoinInfo<#0>: ResourceDomain<coin::CoinInfo<#0>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinInfo'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinInfo'#0'_$memory, $a_0);
     (($IsValid'$1_coin_CoinInfo'#0''($rsc) && ((LenVec($rsc->$supply->$vec) <= 1) && (var $range_1 := $rsc->$supply->$vec; (forall $i_2: int :: InRangeVec($range_1, $i_2) ==> (var $elem := ReadVec($range_1, $i_2);
     ((((((($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) <==> $1_option_$is_none'$1_optional_aggregator_Integer'($elem->$integer)) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) <==> $1_option_$is_none'$1_aggregator_Aggregator'($elem->$aggregator))) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) ==> ($1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$value <= $1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$limit))) && ($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) ==> ($1_aggregator_spec_aggregator_get_val($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator)) <= $1_aggregator_spec_get_limit($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator))))) && (LenVec($elem->$aggregator->$vec) <= 1)) && (LenVec($elem->$integer->$vec) <= 1)))))))))));
 
-    // assume forall $rsc: coin::CoinStore<#0>: ResourceDomain<coin::CoinStore<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
+    // assume forall $rsc: coin::CoinStore<#0>: ResourceDomain<coin::CoinStore<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinStore'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinStore'#0'_$memory, $a_0);
     ($IsValid'$1_coin_CoinStore'#0''($rsc))));
 
-    // assume forall $rsc: coin::Ghost$supply<#0>: ResourceDomain<coin::Ghost$supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
+    // assume forall $rsc: coin::Ghost$supply<#0>: ResourceDomain<coin::Ghost$supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$supply'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$supply'#0'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$supply'#0''($rsc))));
 
-    // assume exists<coin::Ghost$supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
+    // assume exists<coin::Ghost$supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
     assume $ResourceExists($1_coin_Ghost$supply'#0'_$memory, 0);
 
-    // assume forall $rsc: coin::Ghost$aggregate_supply<#0>: ResourceDomain<coin::Ghost$aggregate_supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
+    // assume forall $rsc: coin::Ghost$aggregate_supply<#0>: ResourceDomain<coin::Ghost$aggregate_supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$aggregate_supply'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$aggregate_supply'#0'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$aggregate_supply'#0''($rsc))));
 
-    // assume exists<coin::Ghost$aggregate_supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
+    // assume exists<coin::Ghost$aggregate_supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
     assume $ResourceExists($1_coin_Ghost$aggregate_supply'#0'_$memory, 0);
 
-    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
+    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
     assume {:print "$track_local(86,12,0):", $t0} $t0 == $t0;
 
-    // trace_local[user]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
+    // trace_local[user]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
     assume {:print "$track_local(86,12,1):", $t1} $t1 == $t1;
 
-    // trace_local[amount]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:141:5+1
+    // trace_local[amount]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:5+1
     assume {:print "$track_local(86,12,2):", $t2} $t2 == $t2;
 
     // assume Identical($t4, select coin::CoinInfo.supply<coin::CoinInfo<#0>>(global<coin::CoinInfo<#0>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<#0>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
@@ -30539,17 +30539,17 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     assume {:print "$at(112,22582,22618)"} true;
     assume ($t10 == $t9->$coin->$value);
 
-    // $t11 := coin::withdraw<#0>($t0, $t2) on_abort goto L2 with $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:19+40
-    assume {:print "$at(5,5012,5052)"} true;
+    // $t11 := coin::withdraw<#0>($t0, $t2) on_abort goto L2 with $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:143:19+40
+    assume {:print "$at(5,5043,5083)"} true;
     call $t11 := $1_coin_withdraw'#0'($t0, $t2);
     if ($abort_flag) {
-        assume {:print "$at(5,5012,5052)"} true;
+        assume {:print "$at(5,5043,5083)"} true;
         $t12 := $abort_code;
         assume {:print "$track_abort(86,12):", $t12} $t12 == $t12;
         goto L2;
     }
 
-    // trace_local[pay]($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:142:13+3
+    // trace_local[pay]($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:143:13+3
     assume {:print "$track_local(86,12,3):", $t11} $t11 == $t11;
 
     // assume Identical($t13, select coin::CoinInfo.supply<coin::CoinInfo<#0>>(global<coin::CoinInfo<#0>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<#0>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
@@ -30560,37 +30560,37 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     assume {:print "$at(112,12654,12713)"} true;
     assume ($t14 == $ResourceValue($1_coin_CoinStore'#0'_$memory, $t1));
 
-    // coin::deposit<#0>($t1, $t11) on_abort goto L2 with $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:143:9+33
-    assume {:print "$at(5,5062,5095)"} true;
+    // coin::deposit<#0>($t1, $t11) on_abort goto L2 with $t12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:144:9+33
+    assume {:print "$at(5,5093,5126)"} true;
     call $1_coin_deposit'#0'($t1, $t11);
     if ($abort_flag) {
-        assume {:print "$at(5,5062,5095)"} true;
+        assume {:print "$at(5,5093,5126)"} true;
         $t12 := $abort_code;
         assume {:print "$track_abort(86,12):", $t12} $t12 == $t12;
         goto L2;
     }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:144:5+1
-    assume {:print "$at(5,5101,5102)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:145:5+1
+    assume {:print "$at(5,5132,5133)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:144:5+1
-    assume {:print "$at(5,5101,5102)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:145:5+1
+    assume {:print "$at(5,5132,5133)"} true;
     return;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:144:5+1
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:145:5+1
 L2:
 
-    // abort($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:144:5+1
-    assume {:print "$at(5,5101,5102)"} true;
+    // abort($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:145:5+1
+    assume {:print "$at(5,5132,5133)"} true;
     $abort_code := $t12;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::pay_coin_to_dapp<aptos_coin::AptosCoin> [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+339
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_coin_to_dapp'$1_aptos_coin_AptosCoin'(_$t0: $signer, _$t1: int, _$t2: int) returns ()
+// fun pay_module::pay_coin_to_dapp<aptos_coin::AptosCoin> [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+339
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_coin_to_dapp'$1_aptos_coin_AptosCoin'(_$t0: $signer, _$t1: int, _$t2: int) returns ()
 {
     // declare local variables
     var $t3: $1_option_Option'$1_optional_aggregator_OptionalAggregator';
@@ -30615,14 +30615,14 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     $t2 := _$t2;
 
     // bytecode translation starts here
-    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
-    assume {:print "$at(5,4399,4400)"} true;
+    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
+    assume {:print "$at(5,4430,4431)"} true;
     assume {:print "$track_local(86,13,0):", $t0} $t0 == $t0;
 
-    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume {:print "$track_local(86,13,1):", $t1} $t1 == $t1;
 
-    // trace_local[resource_address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // trace_local[resource_address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume {:print "$track_local(86,13,2):", $t2} $t2 == $t2;
 
     // assume Identical($t3, select coin::CoinInfo.supply<coin::CoinInfo<#0>>(global<coin::CoinInfo<#0>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<#0>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
@@ -30653,11 +30653,11 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     assume {:print "$at(112,22582,22618)"} true;
     assume ($t9 == $t8->$coin->$value);
 
-    // $t10 := coin::withdraw<#0>($t0, $t1) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:131:50+40
-    assume {:print "$at(5,4596,4636)"} true;
+    // $t10 := coin::withdraw<#0>($t0, $t1) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:132:50+40
+    assume {:print "$at(5,4627,4667)"} true;
     call $t10 := $1_coin_withdraw'$1_aptos_coin_AptosCoin'($t0, $t1);
     if ($abort_flag) {
-        assume {:print "$at(5,4596,4636)"} true;
+        assume {:print "$at(5,4627,4667)"} true;
         $t11 := $abort_code;
         assume {:print "$track_abort(86,13):", $t11} $t11 == $t11;
         goto L2;
@@ -30671,37 +30671,37 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     assume {:print "$at(112,12654,12713)"} true;
     assume ($t13 == $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $t2));
 
-    // coin::deposit<#0>($t2, $t10) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:131:9+82
-    assume {:print "$at(5,4555,4637)"} true;
+    // coin::deposit<#0>($t2, $t10) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:132:9+82
+    assume {:print "$at(5,4586,4668)"} true;
     call $1_coin_deposit'$1_aptos_coin_AptosCoin'($t2, $t10);
     if ($abort_flag) {
-        assume {:print "$at(5,4555,4637)"} true;
+        assume {:print "$at(5,4586,4668)"} true;
         $t11 := $abort_code;
         assume {:print "$track_abort(86,13):", $t11} $t11 == $t11;
         goto L2;
     }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
-    assume {:print "$at(5,4737,4738)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
+    assume {:print "$at(5,4768,4769)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
-    assume {:print "$at(5,4737,4738)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
+    assume {:print "$at(5,4768,4769)"} true;
     return;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
 L2:
 
-    // abort($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
-    assume {:print "$at(5,4737,4738)"} true;
+    // abort($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
+    assume {:print "$at(5,4768,4769)"} true;
     $abort_code := $t11;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::pay_coin_to_dapp<#0> [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+339
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_coin_to_dapp'#0'(_$t0: $signer, _$t1: int, _$t2: int) returns ()
+// fun pay_module::pay_coin_to_dapp<#0> [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+339
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_coin_to_dapp'#0'(_$t0: $signer, _$t1: int, _$t2: int) returns ()
 {
     // declare local variables
     var $t3: $1_option_Option'$1_optional_aggregator_OptionalAggregator';
@@ -30726,14 +30726,14 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     $t2 := _$t2;
 
     // bytecode translation starts here
-    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
-    assume {:print "$at(5,4399,4400)"} true;
+    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
+    assume {:print "$at(5,4430,4431)"} true;
     assume {:print "$track_local(86,13,0):", $t0} $t0 == $t0;
 
-    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume {:print "$track_local(86,13,1):", $t1} $t1 == $t1;
 
-    // trace_local[resource_address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // trace_local[resource_address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume {:print "$track_local(86,13,2):", $t2} $t2 == $t2;
 
     // assume Identical($t3, select coin::CoinInfo.supply<coin::CoinInfo<#0>>(global<coin::CoinInfo<#0>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<#0>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
@@ -30764,11 +30764,11 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     assume {:print "$at(112,22582,22618)"} true;
     assume ($t9 == $t8->$coin->$value);
 
-    // $t10 := coin::withdraw<#0>($t0, $t1) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:131:50+40
-    assume {:print "$at(5,4596,4636)"} true;
+    // $t10 := coin::withdraw<#0>($t0, $t1) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:132:50+40
+    assume {:print "$at(5,4627,4667)"} true;
     call $t10 := $1_coin_withdraw'#0'($t0, $t1);
     if ($abort_flag) {
-        assume {:print "$at(5,4596,4636)"} true;
+        assume {:print "$at(5,4627,4667)"} true;
         $t11 := $abort_code;
         assume {:print "$track_abort(86,13):", $t11} $t11 == $t11;
         goto L2;
@@ -30782,37 +30782,37 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     assume {:print "$at(112,12654,12713)"} true;
     assume ($t13 == $ResourceValue($1_coin_CoinStore'#0'_$memory, $t2));
 
-    // coin::deposit<#0>($t2, $t10) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:131:9+82
-    assume {:print "$at(5,4555,4637)"} true;
+    // coin::deposit<#0>($t2, $t10) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:132:9+82
+    assume {:print "$at(5,4586,4668)"} true;
     call $1_coin_deposit'#0'($t2, $t10);
     if ($abort_flag) {
-        assume {:print "$at(5,4555,4637)"} true;
+        assume {:print "$at(5,4586,4668)"} true;
         $t11 := $abort_code;
         assume {:print "$track_abort(86,13):", $t11} $t11 == $t11;
         goto L2;
     }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
-    assume {:print "$at(5,4737,4738)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
+    assume {:print "$at(5,4768,4769)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
-    assume {:print "$at(5,4737,4738)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
+    assume {:print "$at(5,4768,4769)"} true;
     return;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
 L2:
 
-    // abort($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
-    assume {:print "$at(5,4737,4738)"} true;
+    // abort($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
+    assume {:print "$at(5,4768,4769)"} true;
     $abort_code := $t11;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::pay_coin_to_dapp [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+339
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_coin_to_dapp$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
+// fun pay_module::pay_coin_to_dapp [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+339
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_coin_to_dapp$verify(_$t0: $signer, _$t1: int, _$t2: int) returns ()
 {
     // declare local variables
     var $t3: $1_option_Option'$1_optional_aggregator_OptionalAggregator';
@@ -30840,46 +30840,46 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
-    assume {:print "$at(5,4399,4400)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
+    assume {:print "$at(5,4430,4431)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume $IsValid'u64'($t1);
 
-    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume $IsValid'address'($t2);
 
-    // assume forall $rsc: coin::CoinInfo<#0>: ResourceDomain<coin::CoinInfo<#0>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // assume forall $rsc: coin::CoinInfo<#0>: ResourceDomain<coin::CoinInfo<#0>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinInfo'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinInfo'#0'_$memory, $a_0);
     (($IsValid'$1_coin_CoinInfo'#0''($rsc) && ((LenVec($rsc->$supply->$vec) <= 1) && (var $range_1 := $rsc->$supply->$vec; (forall $i_2: int :: InRangeVec($range_1, $i_2) ==> (var $elem := ReadVec($range_1, $i_2);
     ((((((($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) <==> $1_option_$is_none'$1_optional_aggregator_Integer'($elem->$integer)) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) <==> $1_option_$is_none'$1_aggregator_Aggregator'($elem->$aggregator))) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) ==> ($1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$value <= $1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$limit))) && ($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) ==> ($1_aggregator_spec_aggregator_get_val($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator)) <= $1_aggregator_spec_get_limit($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator))))) && (LenVec($elem->$aggregator->$vec) <= 1)) && (LenVec($elem->$integer->$vec) <= 1)))))))))));
 
-    // assume forall $rsc: coin::CoinStore<#0>: ResourceDomain<coin::CoinStore<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // assume forall $rsc: coin::CoinStore<#0>: ResourceDomain<coin::CoinStore<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinStore'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinStore'#0'_$memory, $a_0);
     ($IsValid'$1_coin_CoinStore'#0''($rsc))));
 
-    // assume forall $rsc: coin::Ghost$supply<#0>: ResourceDomain<coin::Ghost$supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // assume forall $rsc: coin::Ghost$supply<#0>: ResourceDomain<coin::Ghost$supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$supply'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$supply'#0'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$supply'#0''($rsc))));
 
-    // assume exists<coin::Ghost$supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // assume exists<coin::Ghost$supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume $ResourceExists($1_coin_Ghost$supply'#0'_$memory, 0);
 
-    // assume forall $rsc: coin::Ghost$aggregate_supply<#0>: ResourceDomain<coin::Ghost$aggregate_supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // assume forall $rsc: coin::Ghost$aggregate_supply<#0>: ResourceDomain<coin::Ghost$aggregate_supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$aggregate_supply'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$aggregate_supply'#0'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$aggregate_supply'#0''($rsc))));
 
-    // assume exists<coin::Ghost$aggregate_supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // assume exists<coin::Ghost$aggregate_supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume $ResourceExists($1_coin_Ghost$aggregate_supply'#0'_$memory, 0);
 
-    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // trace_local[account]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume {:print "$track_local(86,13,0):", $t0} $t0 == $t0;
 
-    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // trace_local[amount]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume {:print "$track_local(86,13,1):", $t1} $t1 == $t1;
 
-    // trace_local[resource_address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:129:5+1
+    // trace_local[resource_address]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:130:5+1
     assume {:print "$track_local(86,13,2):", $t2} $t2 == $t2;
 
     // assume Identical($t3, select coin::CoinInfo.supply<coin::CoinInfo<#0>>(global<coin::CoinInfo<#0>>(select type_info::TypeInfo.account_address<type_info::TypeInfo>(type_info::$type_of<#0>())))) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/coin.spec.move:93:9+99
@@ -30910,11 +30910,11 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     assume {:print "$at(112,22582,22618)"} true;
     assume ($t9 == $t8->$coin->$value);
 
-    // $t10 := coin::withdraw<#0>($t0, $t1) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:131:50+40
-    assume {:print "$at(5,4596,4636)"} true;
+    // $t10 := coin::withdraw<#0>($t0, $t1) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:132:50+40
+    assume {:print "$at(5,4627,4667)"} true;
     call $t10 := $1_coin_withdraw'#0'($t0, $t1);
     if ($abort_flag) {
-        assume {:print "$at(5,4596,4636)"} true;
+        assume {:print "$at(5,4627,4667)"} true;
         $t11 := $abort_code;
         assume {:print "$track_abort(86,13):", $t11} $t11 == $t11;
         goto L2;
@@ -30928,55 +30928,55 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     assume {:print "$at(112,12654,12713)"} true;
     assume ($t13 == $ResourceValue($1_coin_CoinStore'#0'_$memory, $t2));
 
-    // coin::deposit<#0>($t2, $t10) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:131:9+82
-    assume {:print "$at(5,4555,4637)"} true;
+    // coin::deposit<#0>($t2, $t10) on_abort goto L2 with $t11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:132:9+82
+    assume {:print "$at(5,4586,4668)"} true;
     call $1_coin_deposit'#0'($t2, $t10);
     if ($abort_flag) {
-        assume {:print "$at(5,4555,4637)"} true;
+        assume {:print "$at(5,4586,4668)"} true;
         $t11 := $abort_code;
         assume {:print "$track_abort(86,13):", $t11} $t11 == $t11;
         goto L2;
     }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
-    assume {:print "$at(5,4737,4738)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
+    assume {:print "$at(5,4768,4769)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
-    assume {:print "$at(5,4737,4738)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
+    assume {:print "$at(5,4768,4769)"} true;
     return;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
 L2:
 
-    // abort($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:134:5+1
-    assume {:print "$at(5,4737,4738)"} true;
+    // abort($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:135:5+1
+    assume {:print "$at(5,4768,4769)"} true;
     $abort_code := $t11;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::push_to_vector [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+861
-procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_push_to_vector(_$t0: $signer, _$t1: int, _$t2: int, _$t3: $1_string_String) returns ()
+// fun pay_module::push_to_vector [baseline] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+861
+procedure {:inline 1} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_push_to_vector(_$t0: $signer, _$t1: int, _$t2: int, _$t3: $1_string_String) returns ()
 {
     // declare local variables
     var $t4: int;
     var $t5: $signer;
     var $t6: int;
     var $t7: bool;
-    var $t8: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
+    var $t8: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
     var $t9: int;
     var $t10: Vec (int);
     var $t11: int;
-    var $t12: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap;
+    var $t12: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap;
     var $t13: int;
     var $t14: $1_account_SignerCapability;
     var $t15: int;
     var $t16: int;
     var $t17: Vec (int);
     var $t18: int;
-    var $t19: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
+    var $t19: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
     var $t20: Vec (int);
     var $t21: $1_string_String;
     var $t22: bool;
@@ -30993,16 +30993,16 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     var $t33: $1_string_String;
     var $t34: bool;
     var $t35: int;
-    var $t36: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t36: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t37: $Mutation (Vec (int));
-    var $t38: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t38: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t39: $Mutation (Vec (int));
     var $t0: $signer;
     var $t1: int;
     var $t2: int;
     var $t3: $1_string_String;
     var $temp_0'$1_string_String': $1_string_String;
-    var $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder': $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder': $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $temp_0'address': int;
     var $temp_0'signer': $signer;
     var $temp_0'u64': int;
@@ -31012,369 +31012,369 @@ procedure {:inline 1} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1
     $t3 := _$t3;
 
     // bytecode translation starts here
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
-    assume {:print "$at(5,6792,6793)"} true;
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
+    assume {:print "$at(5,6823,6824)"} true;
     assume {:print "$track_local(86,14,0):", $t0} $t0 == $t0;
 
-    // trace_local[to_address]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
+    // trace_local[to_address]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
     assume {:print "$track_local(86,14,1):", $t1} $t1 == $t1;
 
-    // trace_local[amount]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
+    // trace_local[amount]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
     assume {:print "$track_local(86,14,2):", $t2} $t2 == $t2;
 
-    // trace_local[coin]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
+    // trace_local[coin]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
     assume {:print "$track_local(86,14,3):", $t3} $t3 == $t3;
 
-    // $t9 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:107+5
-    assume {:print "$at(5,7064,7069)"} true;
-    $t9 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t9 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:107+5
+    assume {:print "$at(5,7095,7100)"} true;
+    $t9 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t9);
 
-    // $t10 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:113+4
+    // $t10 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:113+4
     $t10 := MakeVec3(97, 115, 102);
     assume $IsValid'vec'u8''($t10);
 
-    // $t11 := opaque begin: account::create_resource_address($t9, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:56+62
+    // $t11 := opaque begin: account::create_resource_address($t9, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:56+62
 
-    // assume WellFormed($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:56+62
+    // assume WellFormed($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:56+62
     assume $IsValid'address'($t11);
 
-    // assume Eq<address>($t11, account::spec_create_resource_address($t9, $t10)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:56+62
+    // assume Eq<address>($t11, account::spec_create_resource_address($t9, $t10)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:56+62
     assume $IsEqual'address'($t11, $1_account_spec_create_resource_address($t9, $t10));
 
-    // $t11 := opaque end: account::create_resource_address($t9, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:56+62
+    // $t11 := opaque end: account::create_resource_address($t9, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:56+62
 
-    // $t12 := get_global<pay_module::ResourceCap>($t11) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:29+13
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t11)) {
+    // $t12 := get_global<pay_module::ResourceCap>($t11) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:29+13
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t11)) {
         call $ExecFailureAbort();
     } else {
-        $t12 := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t11);
+        $t12 := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t11);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,6986,6999)"} true;
+        assume {:print "$at(5,7017,7030)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t14 := get_field<pay_module::ResourceCap>.cap($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:28+95
+    // $t14 := get_field<pay_module::ResourceCap>.cap($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:28+95
     $t14 := $t12->$cap;
 
     // assume Identical($t15, select account::SignerCapability.account<account::SignerCapability>($t14)) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/account.spec.move:652:9+30
     assume {:print "$at(88,32361,32391)"} true;
     assume ($t15 == $t14->$account);
 
-    // $t5 := account::create_signer_with_capability($t14) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:32+52
-    assume {:print "$at(5,7113,7165)"} true;
+    // $t5 := account::create_signer_with_capability($t14) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:32+52
+    assume {:print "$at(5,7144,7196)"} true;
     call $t5 := $1_account_create_signer_with_capability($t14);
     if ($abort_flag) {
-        assume {:print "$at(5,7113,7165)"} true;
+        assume {:print "$at(5,7144,7196)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t16 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:74+5
-    assume {:print "$at(5,7240,7245)"} true;
-    $t16 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t16 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:74+5
+    assume {:print "$at(5,7271,7276)"} true;
+    $t16 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t16);
 
-    // $t17 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:80+4
+    // $t17 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:80+4
     $t17 := MakeVec3(97, 115, 102);
     assume $IsValid'vec'u8''($t17);
 
-    // $t18 := opaque begin: account::create_resource_address($t16, $t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:49+36
+    // $t18 := opaque begin: account::create_resource_address($t16, $t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:49+36
 
-    // assume WellFormed($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:49+36
+    // assume WellFormed($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:49+36
     assume $IsValid'address'($t18);
 
-    // assume Eq<address>($t18, account::spec_create_resource_address($t16, $t17)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:49+36
+    // assume Eq<address>($t18, account::spec_create_resource_address($t16, $t17)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:49+36
     assume $IsEqual'address'($t18, $1_account_spec_create_resource_address($t16, $t17));
 
-    // $t18 := opaque end: account::create_resource_address($t16, $t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:49+36
+    // $t18 := opaque end: account::create_resource_address($t16, $t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:49+36
 
-    // $t19 := borrow_global<pay_module::Cylinder>($t18) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:21+17
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t18)) {
+    // $t19 := borrow_global<pay_module::Cylinder>($t18) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:21+17
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t18)) {
         call $ExecFailureAbort();
     } else {
-        $t19 := $Mutation($Global($t18), EmptyVec(), $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t18));
+        $t19 := $Mutation($Global($t18), EmptyVec(), $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t18));
     }
     if ($abort_flag) {
-        assume {:print "$at(5,7187,7204)"} true;
+        assume {:print "$at(5,7218,7235)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // trace_local[borrow]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:13+6
-    $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder' := $Dereference($t19);
-    assume {:print "$track_local(86,14,8):", $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'} $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder' == $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder';
+    // trace_local[borrow]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:13+6
+    $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder' := $Dereference($t19);
+    assume {:print "$track_local(86,14,8):", $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'} $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder' == $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder';
 
-    // $t20 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:26+6
-    assume {:print "$at(5,7279,7285)"} true;
+    // $t20 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:26+6
+    assume {:print "$at(5,7310,7316)"} true;
     $t20 := MakeVec3(65, 80, 84);
     assume $IsValid'vec'u8''($t20);
 
-    // $t21 := string::utf8($t20) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:21+12
+    // $t21 := string::utf8($t20) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:21+12
     call $t21 := $1_string_utf8($t20);
     if ($abort_flag) {
-        assume {:print "$at(5,7274,7286)"} true;
+        assume {:print "$at(5,7305,7317)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t22 := ==($t3, $t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:18+2
+    // $t22 := ==($t3, $t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:18+2
     $t22 := $IsEqual'$1_string_String'($t3, $t21);
 
-    // if ($t22) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:9+200
+    // if ($t22) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:9+200
     if ($t22) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:34+11
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:34+11
 L1:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:34+11
-    assume {:print "$at(5,7287,7298)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:34+11
+    assume {:print "$at(5,7318,7329)"} true;
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:19+4
-    assume {:print "$at(5,7307,7311)"} true;
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:19+4
+    assume {:print "$at(5,7338,7342)"} true;
 L0:
 
-    // $t23 := [85, 83, 68, 67] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:32+7
-    assume {:print "$at(5,7320,7327)"} true;
+    // $t23 := [85, 83, 68, 67] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:32+7
+    assume {:print "$at(5,7351,7358)"} true;
     $t23 := MakeVec4(85, 83, 68, 67);
     assume $IsValid'vec'u8''($t23);
 
-    // $t24 := string::utf8($t23) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:27+13
+    // $t24 := string::utf8($t23) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:27+13
     call $t24 := $1_string_utf8($t23);
     if ($abort_flag) {
-        assume {:print "$at(5,7315,7328)"} true;
+        assume {:print "$at(5,7346,7359)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t25 := ==($t3, $t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:24+2
+    // $t25 := ==($t3, $t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:24+2
     $t25 := $IsEqual'$1_string_String'($t3, $t24);
 
-    // if ($t25) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:15+159
+    // if ($t25) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:15+159
     if ($t25) { goto L4; } else { goto L3; }
 
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:15+159
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:15+159
 L4:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:15+159
-    assume {:print "$at(5,7303,7462)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:15+159
+    assume {:print "$at(5,7334,7493)"} true;
     goto L2;
 
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:19+4
-    assume {:print "$at(5,7351,7355)"} true;
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:19+4
+    assume {:print "$at(5,7382,7386)"} true;
 L3:
 
-    // $t26 := [85, 83, 68, 67] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:32+7
-    assume {:print "$at(5,7364,7371)"} true;
+    // $t26 := [85, 83, 68, 67] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:32+7
+    assume {:print "$at(5,7395,7402)"} true;
     $t26 := MakeVec4(85, 83, 68, 67);
     assume $IsValid'vec'u8''($t26);
 
-    // $t27 := string::utf8($t26) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:27+13
+    // $t27 := string::utf8($t26) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:27+13
     call $t27 := $1_string_utf8($t26);
     if ($abort_flag) {
-        assume {:print "$at(5,7359,7372)"} true;
+        assume {:print "$at(5,7390,7403)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t28 := !=($t3, $t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:24+2
+    // $t28 := !=($t3, $t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:24+2
     $t28 := !$IsEqual'$1_string_String'($t3, $t27);
 
-    // if ($t28) goto L6 else goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
+    // if ($t28) goto L6 else goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
     if ($t28) { goto L6; } else { goto L5; }
 
-    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:46+4
+    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:46+4
 L6:
 
-    // $t29 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:59+6
-    assume {:print "$at(5,7391,7397)"} true;
+    // $t29 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:59+6
+    assume {:print "$at(5,7422,7428)"} true;
     $t29 := MakeVec3(65, 80, 84);
     assume $IsValid'vec'u8''($t29);
 
-    // $t30 := string::utf8($t29) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:54+12
+    // $t30 := string::utf8($t29) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:54+12
     call $t30 := $1_string_utf8($t29);
     if ($abort_flag) {
-        assume {:print "$at(5,7386,7398)"} true;
+        assume {:print "$at(5,7417,7429)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t7 := !=($t3, $t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:51+2
+    // $t7 := !=($t3, $t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:51+2
     $t7 := !$IsEqual'$1_string_String'($t3, $t30);
 
-    // goto L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
+    // goto L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
     goto L7;
 
-    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
+    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
 L5:
 
-    // $t31 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
-    assume {:print "$at(5,7350,7399)"} true;
+    // $t31 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
+    assume {:print "$at(5,7381,7430)"} true;
     $t31 := false;
     assume $IsValid'bool'($t31);
 
-    // $t7 := $t31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
+    // $t7 := $t31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
     $t7 := $t31;
 
-    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
+    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
 L7:
 
-    // if ($t7) goto L8 else goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:15+115
-    assume {:print "$at(5,7347,7462)"} true;
+    // if ($t7) goto L8 else goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:15+115
+    assume {:print "$at(5,7378,7493)"} true;
     if ($t7) { goto L8; } else { goto L2; }
 
-    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:21+4
-    assume {:print "$at(5,7422,7426)"} true;
+    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:21+4
+    assume {:print "$at(5,7453,7457)"} true;
 L8:
 
-    // $t32 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:34+3
-    assume {:print "$at(5,7435,7438)"} true;
+    // $t32 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:34+3
+    assume {:print "$at(5,7466,7469)"} true;
     $t32 := $EmptyVec'u8'();
     assume $IsValid'vec'u8''($t32);
 
-    // $t33 := string::utf8($t32) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:29+9
+    // $t33 := string::utf8($t32) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:29+9
     call $t33 := $1_string_utf8($t32);
     if ($abort_flag) {
-        assume {:print "$at(5,7430,7439)"} true;
+        assume {:print "$at(5,7461,7470)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t34 := !=($t3, $t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:26+2
+    // $t34 := !=($t3, $t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:26+2
     $t34 := !$IsEqual'$1_string_String'($t3, $t33);
 
-    // if ($t34) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
+    // if ($t34) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
     if ($t34) { goto L10; } else { goto L9; }
 
-    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
+    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
 L10:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
-    assume {:print "$at(5,7414,7451)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
+    assume {:print "$at(5,7445,7482)"} true;
     goto L2;
 
-    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
+    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
 L9:
 
-    // drop($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
-    assume {:print "$at(5,7414,7451)"} true;
+    // drop($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
+    assume {:print "$at(5,7445,7482)"} true;
 
-    // $t35 := 1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:39+10
+    // $t35 := 1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:39+10
     $t35 := 1;
     assume $IsValid'u64'($t35);
 
-    // trace_abort($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
-    assume {:print "$at(5,7414,7451)"} true;
+    // trace_abort($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
+    assume {:print "$at(5,7445,7482)"} true;
     assume {:print "$track_abort(86,14):", $t35} $t35 == $t35;
 
-    // $t13 := move($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
+    // $t13 := move($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
     $t13 := $t35;
 
-    // goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
+    // goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
     goto L12;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:32+6
-    assume {:print "$at(5,7495,7501)"} true;
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:32+6
+    assume {:print "$at(5,7526,7532)"} true;
 L2:
 
-    // $t36 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:32+13
-    assume {:print "$at(5,7495,7508)"} true;
+    // $t36 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:32+13
+    assume {:print "$at(5,7526,7539)"} true;
     $t36 := $ChildMutation($t19, 1, $Dereference($t19)->$Bullet);
 
-    // $t37 := borrow_field<pay_module::Cylinder_coin>.address($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:27+26
+    // $t37 := borrow_field<pay_module::Cylinder_coin>.address($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:27+26
     $t37 := $ChildMutation($t36, 1, $Dereference($t36)->$address);
 
-    // vector::push_back<address>($t37, $t1) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:9+56
+    // vector::push_back<address>($t37, $t1) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+56
     call $t37 := $1_vector_push_back'address'($t37, $t1);
     if ($abort_flag) {
-        assume {:print "$at(5,7472,7528)"} true;
+        assume {:print "$at(5,7503,7559)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // write_back[Reference($t36).address (vector<address>)]($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:9+56
-    $t36 := $UpdateMutation($t36, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t36), $Dereference($t37)));
+    // write_back[Reference($t36).address (vector<address>)]($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+56
+    $t36 := $UpdateMutation($t36, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t36), $Dereference($t37)));
 
-    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:9+56
-    $t19 := $UpdateMutation($t19, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t36)));
+    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+56
+    $t19 := $UpdateMutation($t19, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t36)));
 
-    // $t38 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:32+13
-    assume {:print "$at(5,7561,7574)"} true;
+    // $t38 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:32+13
+    assume {:print "$at(5,7592,7605)"} true;
     $t38 := $ChildMutation($t19, 1, $Dereference($t19)->$Bullet);
 
-    // $t39 := borrow_field<pay_module::Cylinder_coin>.amount($t38) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:27+25
+    // $t39 := borrow_field<pay_module::Cylinder_coin>.amount($t38) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:27+25
     $t39 := $ChildMutation($t38, 2, $Dereference($t38)->$amount);
 
-    // vector::push_back<u64>($t39, $t2) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+51
+    // vector::push_back<u64>($t39, $t2) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:9+51
     call $t39 := $1_vector_push_back'u64'($t39, $t2);
     if ($abort_flag) {
-        assume {:print "$at(5,7538,7589)"} true;
+        assume {:print "$at(5,7569,7620)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // write_back[Reference($t38).amount (vector<u64>)]($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+51
-    $t38 := $UpdateMutation($t38, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t38), $Dereference($t39)));
+    // write_back[Reference($t38).amount (vector<u64>)]($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:9+51
+    $t38 := $UpdateMutation($t38, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t38), $Dereference($t39)));
 
-    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t38) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+51
-    $t19 := $UpdateMutation($t19, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t38)));
+    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t38) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:9+51
+    $t19 := $UpdateMutation($t19, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t38)));
 
-    // write_back[pay_module::Cylinder@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+51
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory := $ResourceUpdate($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $GlobalLocationAddress($t19),
+    // write_back[pay_module::Cylinder@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:9+51
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory := $ResourceUpdate($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $GlobalLocationAddress($t19),
         $Dereference($t19));
 
-    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:197:5+1
-    assume {:print "$at(5,7652,7653)"} true;
+    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:198:5+1
+    assume {:print "$at(5,7683,7684)"} true;
 L11:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:197:5+1
-    assume {:print "$at(5,7652,7653)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:198:5+1
+    assume {:print "$at(5,7683,7684)"} true;
     return;
 
-    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:197:5+1
+    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:198:5+1
 L12:
 
-    // abort($t13) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:197:5+1
-    assume {:print "$at(5,7652,7653)"} true;
+    // abort($t13) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:198:5+1
+    assume {:print "$at(5,7683,7684)"} true;
     $abort_code := $t13;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::push_to_vector [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+861
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_push_to_vector$verify(_$t0: $signer, _$t1: int, _$t2: int, _$t3: $1_string_String) returns ()
+// fun pay_module::push_to_vector [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+861
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_push_to_vector$verify(_$t0: $signer, _$t1: int, _$t2: int, _$t3: $1_string_String) returns ()
 {
     // declare local variables
     var $t4: int;
     var $t5: $signer;
     var $t6: int;
     var $t7: bool;
-    var $t8: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
+    var $t8: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
     var $t9: int;
     var $t10: Vec (int);
     var $t11: int;
-    var $t12: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap;
+    var $t12: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap;
     var $t13: int;
     var $t14: $1_account_SignerCapability;
     var $t15: int;
     var $t16: int;
     var $t17: Vec (int);
     var $t18: int;
-    var $t19: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
+    var $t19: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
     var $t20: Vec (int);
     var $t21: $1_string_String;
     var $t22: bool;
@@ -31391,16 +31391,16 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     var $t33: $1_string_String;
     var $t34: bool;
     var $t35: int;
-    var $t36: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t36: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t37: $Mutation (Vec (int));
-    var $t38: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin);
+    var $t38: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin);
     var $t39: $Mutation (Vec (int));
     var $t0: $signer;
     var $t1: int;
     var $t2: int;
     var $t3: $1_string_String;
     var $temp_0'$1_string_String': $1_string_String;
-    var $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder': $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder;
+    var $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder': $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder;
     var $temp_0'address': int;
     var $temp_0'signer': $signer;
     var $temp_0'u64': int;
@@ -31413,371 +31413,371 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
-    assume {:print "$at(5,6792,6793)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
+    assume {:print "$at(5,6823,6824)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
     assume $IsValid'address'($t1);
 
-    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
+    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
     assume $IsValid'u64'($t2);
 
-    // assume WellFormed($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
+    // assume WellFormed($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
     assume $IsValid'$1_string_String'($t3);
 
-    // assume forall $rsc: pay_module::ResourceCap: ResourceDomain<pay_module::ResourceCap>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'($rsc))));
+    // assume forall $rsc: pay_module::ResourceCap: ResourceDomain<pay_module::ResourceCap>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'($rsc))));
 
-    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'($rsc))));
+    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'($rsc))));
 
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
     assume {:print "$track_local(86,14,0):", $t0} $t0 == $t0;
 
-    // trace_local[to_address]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
+    // trace_local[to_address]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
     assume {:print "$track_local(86,14,1):", $t1} $t1 == $t1;
 
-    // trace_local[amount]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
+    // trace_local[amount]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
     assume {:print "$track_local(86,14,2):", $t2} $t2 == $t2;
 
-    // trace_local[coin]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:183:5+1
+    // trace_local[coin]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:184:5+1
     assume {:print "$track_local(86,14,3):", $t3} $t3 == $t3;
 
-    // $t9 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:107+5
-    assume {:print "$at(5,7064,7069)"} true;
-    $t9 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t9 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:107+5
+    assume {:print "$at(5,7095,7100)"} true;
+    $t9 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t9);
 
-    // $t10 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:113+4
+    // $t10 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:113+4
     $t10 := MakeVec3(97, 115, 102);
     assume $IsValid'vec'u8''($t10);
 
-    // $t11 := opaque begin: account::create_resource_address($t9, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:56+62
+    // $t11 := opaque begin: account::create_resource_address($t9, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:56+62
 
-    // assume WellFormed($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:56+62
+    // assume WellFormed($t11) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:56+62
     assume $IsValid'address'($t11);
 
-    // assume Eq<address>($t11, account::spec_create_resource_address($t9, $t10)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:56+62
+    // assume Eq<address>($t11, account::spec_create_resource_address($t9, $t10)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:56+62
     assume $IsEqual'address'($t11, $1_account_spec_create_resource_address($t9, $t10));
 
-    // $t11 := opaque end: account::create_resource_address($t9, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:56+62
+    // $t11 := opaque end: account::create_resource_address($t9, $t10) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:56+62
 
-    // $t12 := get_global<pay_module::ResourceCap>($t11) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:29+13
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t11)) {
+    // $t12 := get_global<pay_module::ResourceCap>($t11) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:29+13
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t11)) {
         call $ExecFailureAbort();
     } else {
-        $t12 := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t11);
+        $t12 := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t11);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,6986,6999)"} true;
+        assume {:print "$at(5,7017,7030)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t14 := get_field<pay_module::ResourceCap>.cap($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:185:28+95
+    // $t14 := get_field<pay_module::ResourceCap>.cap($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:28+95
     $t14 := $t12->$cap;
 
     // assume Identical($t15, select account::SignerCapability.account<account::SignerCapability>($t14)) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/account.spec.move:652:9+30
     assume {:print "$at(88,32361,32391)"} true;
     assume ($t15 == $t14->$account);
 
-    // $t5 := account::create_signer_with_capability($t14) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:186:32+52
-    assume {:print "$at(5,7113,7165)"} true;
+    // $t5 := account::create_signer_with_capability($t14) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:32+52
+    assume {:print "$at(5,7144,7196)"} true;
     call $t5 := $1_account_create_signer_with_capability($t14);
     if ($abort_flag) {
-        assume {:print "$at(5,7113,7165)"} true;
+        assume {:print "$at(5,7144,7196)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t16 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:74+5
-    assume {:print "$at(5,7240,7245)"} true;
-    $t16 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t16 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:74+5
+    assume {:print "$at(5,7271,7276)"} true;
+    $t16 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t16);
 
-    // $t17 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:80+4
+    // $t17 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:80+4
     $t17 := MakeVec3(97, 115, 102);
     assume $IsValid'vec'u8''($t17);
 
-    // $t18 := opaque begin: account::create_resource_address($t16, $t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:49+36
+    // $t18 := opaque begin: account::create_resource_address($t16, $t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:49+36
 
-    // assume WellFormed($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:49+36
+    // assume WellFormed($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:49+36
     assume $IsValid'address'($t18);
 
-    // assume Eq<address>($t18, account::spec_create_resource_address($t16, $t17)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:49+36
+    // assume Eq<address>($t18, account::spec_create_resource_address($t16, $t17)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:49+36
     assume $IsEqual'address'($t18, $1_account_spec_create_resource_address($t16, $t17));
 
-    // $t18 := opaque end: account::create_resource_address($t16, $t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:49+36
+    // $t18 := opaque end: account::create_resource_address($t16, $t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:49+36
 
-    // $t19 := borrow_global<pay_module::Cylinder>($t18) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:21+17
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t18)) {
+    // $t19 := borrow_global<pay_module::Cylinder>($t18) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:21+17
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t18)) {
         call $ExecFailureAbort();
     } else {
-        $t19 := $Mutation($Global($t18), EmptyVec(), $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t18));
+        $t19 := $Mutation($Global($t18), EmptyVec(), $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t18));
     }
     if ($abort_flag) {
-        assume {:print "$at(5,7187,7204)"} true;
+        assume {:print "$at(5,7218,7235)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // trace_local[borrow]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:187:13+6
-    $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder' := $Dereference($t19);
-    assume {:print "$track_local(86,14,8):", $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'} $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder' == $temp_0'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder';
+    // trace_local[borrow]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:13+6
+    $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder' := $Dereference($t19);
+    assume {:print "$track_local(86,14,8):", $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'} $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder' == $temp_0'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder';
 
-    // $t20 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:26+6
-    assume {:print "$at(5,7279,7285)"} true;
+    // $t20 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:26+6
+    assume {:print "$at(5,7310,7316)"} true;
     $t20 := MakeVec3(65, 80, 84);
     assume $IsValid'vec'u8''($t20);
 
-    // $t21 := string::utf8($t20) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:21+12
+    // $t21 := string::utf8($t20) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:21+12
     call $t21 := $1_string_utf8($t20);
     if ($abort_flag) {
-        assume {:print "$at(5,7274,7286)"} true;
+        assume {:print "$at(5,7305,7317)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t22 := ==($t3, $t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:18+2
+    // $t22 := ==($t3, $t21) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:18+2
     $t22 := $IsEqual'$1_string_String'($t3, $t21);
 
-    // if ($t22) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:9+200
+    // if ($t22) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:9+200
     if ($t22) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:34+11
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:34+11
 L1:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:188:34+11
-    assume {:print "$at(5,7287,7298)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:34+11
+    assume {:print "$at(5,7318,7329)"} true;
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:19+4
-    assume {:print "$at(5,7307,7311)"} true;
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:19+4
+    assume {:print "$at(5,7338,7342)"} true;
 L0:
 
-    // $t23 := [85, 83, 68, 67] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:32+7
-    assume {:print "$at(5,7320,7327)"} true;
+    // $t23 := [85, 83, 68, 67] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:32+7
+    assume {:print "$at(5,7351,7358)"} true;
     $t23 := MakeVec4(85, 83, 68, 67);
     assume $IsValid'vec'u8''($t23);
 
-    // $t24 := string::utf8($t23) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:27+13
+    // $t24 := string::utf8($t23) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:27+13
     call $t24 := $1_string_utf8($t23);
     if ($abort_flag) {
-        assume {:print "$at(5,7315,7328)"} true;
+        assume {:print "$at(5,7346,7359)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t25 := ==($t3, $t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:24+2
+    // $t25 := ==($t3, $t24) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:24+2
     $t25 := $IsEqual'$1_string_String'($t3, $t24);
 
-    // if ($t25) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:15+159
+    // if ($t25) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:15+159
     if ($t25) { goto L4; } else { goto L3; }
 
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:15+159
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:15+159
 L4:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:189:15+159
-    assume {:print "$at(5,7303,7462)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:190:15+159
+    assume {:print "$at(5,7334,7493)"} true;
     goto L2;
 
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:19+4
-    assume {:print "$at(5,7351,7355)"} true;
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:19+4
+    assume {:print "$at(5,7382,7386)"} true;
 L3:
 
-    // $t26 := [85, 83, 68, 67] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:32+7
-    assume {:print "$at(5,7364,7371)"} true;
+    // $t26 := [85, 83, 68, 67] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:32+7
+    assume {:print "$at(5,7395,7402)"} true;
     $t26 := MakeVec4(85, 83, 68, 67);
     assume $IsValid'vec'u8''($t26);
 
-    // $t27 := string::utf8($t26) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:27+13
+    // $t27 := string::utf8($t26) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:27+13
     call $t27 := $1_string_utf8($t26);
     if ($abort_flag) {
-        assume {:print "$at(5,7359,7372)"} true;
+        assume {:print "$at(5,7390,7403)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t28 := !=($t3, $t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:24+2
+    // $t28 := !=($t3, $t27) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:24+2
     $t28 := !$IsEqual'$1_string_String'($t3, $t27);
 
-    // if ($t28) goto L6 else goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
+    // if ($t28) goto L6 else goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
     if ($t28) { goto L6; } else { goto L5; }
 
-    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:46+4
+    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:46+4
 L6:
 
-    // $t29 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:59+6
-    assume {:print "$at(5,7391,7397)"} true;
+    // $t29 := [65, 80, 84] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:59+6
+    assume {:print "$at(5,7422,7428)"} true;
     $t29 := MakeVec3(65, 80, 84);
     assume $IsValid'vec'u8''($t29);
 
-    // $t30 := string::utf8($t29) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:54+12
+    // $t30 := string::utf8($t29) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:54+12
     call $t30 := $1_string_utf8($t29);
     if ($abort_flag) {
-        assume {:print "$at(5,7386,7398)"} true;
+        assume {:print "$at(5,7417,7429)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t7 := !=($t3, $t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:51+2
+    // $t7 := !=($t3, $t30) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:51+2
     $t7 := !$IsEqual'$1_string_String'($t3, $t30);
 
-    // goto L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
+    // goto L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
     goto L7;
 
-    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
+    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
 L5:
 
-    // $t31 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
-    assume {:print "$at(5,7350,7399)"} true;
+    // $t31 := false at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
+    assume {:print "$at(5,7381,7430)"} true;
     $t31 := false;
     assume $IsValid'bool'($t31);
 
-    // $t7 := $t31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
+    // $t7 := $t31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
     $t7 := $t31;
 
-    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:18+49
+    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:18+49
 L7:
 
-    // if ($t7) goto L8 else goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:191:15+115
-    assume {:print "$at(5,7347,7462)"} true;
+    // if ($t7) goto L8 else goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:15+115
+    assume {:print "$at(5,7378,7493)"} true;
     if ($t7) { goto L8; } else { goto L2; }
 
-    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:21+4
-    assume {:print "$at(5,7422,7426)"} true;
+    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:21+4
+    assume {:print "$at(5,7453,7457)"} true;
 L8:
 
-    // $t32 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:34+3
-    assume {:print "$at(5,7435,7438)"} true;
+    // $t32 := [] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:34+3
+    assume {:print "$at(5,7466,7469)"} true;
     $t32 := $EmptyVec'u8'();
     assume $IsValid'vec'u8''($t32);
 
-    // $t33 := string::utf8($t32) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:29+9
+    // $t33 := string::utf8($t32) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:29+9
     call $t33 := $1_string_utf8($t32);
     if ($abort_flag) {
-        assume {:print "$at(5,7430,7439)"} true;
+        assume {:print "$at(5,7461,7470)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // $t34 := !=($t3, $t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:26+2
+    // $t34 := !=($t3, $t33) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:26+2
     $t34 := !$IsEqual'$1_string_String'($t3, $t33);
 
-    // if ($t34) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
+    // if ($t34) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
     if ($t34) { goto L10; } else { goto L9; }
 
-    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
+    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
 L10:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
-    assume {:print "$at(5,7414,7451)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
+    assume {:print "$at(5,7445,7482)"} true;
     goto L2;
 
-    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
+    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
 L9:
 
-    // drop($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
-    assume {:print "$at(5,7414,7451)"} true;
+    // drop($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
+    assume {:print "$at(5,7445,7482)"} true;
 
-    // $t35 := 1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:39+10
+    // $t35 := 1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:39+10
     $t35 := 1;
     assume $IsValid'u64'($t35);
 
-    // trace_abort($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
-    assume {:print "$at(5,7414,7451)"} true;
+    // trace_abort($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
+    assume {:print "$at(5,7445,7482)"} true;
     assume {:print "$track_abort(86,14):", $t35} $t35 == $t35;
 
-    // $t13 := move($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
+    // $t13 := move($t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
     $t13 := $t35;
 
-    // goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:192:13+37
+    // goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:193:13+37
     goto L12;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:32+6
-    assume {:print "$at(5,7495,7501)"} true;
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:32+6
+    assume {:print "$at(5,7526,7532)"} true;
 L2:
 
-    // $t36 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:32+13
-    assume {:print "$at(5,7495,7508)"} true;
+    // $t36 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:32+13
+    assume {:print "$at(5,7526,7539)"} true;
     $t36 := $ChildMutation($t19, 1, $Dereference($t19)->$Bullet);
 
-    // $t37 := borrow_field<pay_module::Cylinder_coin>.address($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:27+26
+    // $t37 := borrow_field<pay_module::Cylinder_coin>.address($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:27+26
     $t37 := $ChildMutation($t36, 1, $Dereference($t36)->$address);
 
-    // vector::push_back<address>($t37, $t1) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:9+56
+    // vector::push_back<address>($t37, $t1) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+56
     call $t37 := $1_vector_push_back'address'($t37, $t1);
     if ($abort_flag) {
-        assume {:print "$at(5,7472,7528)"} true;
+        assume {:print "$at(5,7503,7559)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // write_back[Reference($t36).address (vector<address>)]($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:9+56
-    $t36 := $UpdateMutation($t36, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_address($Dereference($t36), $Dereference($t37)));
+    // write_back[Reference($t36).address (vector<address>)]($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+56
+    $t36 := $UpdateMutation($t36, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_address($Dereference($t36), $Dereference($t37)));
 
-    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:194:9+56
-    $t19 := $UpdateMutation($t19, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t36)));
+    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t36) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+56
+    $t19 := $UpdateMutation($t19, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t36)));
 
-    // $t38 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:32+13
-    assume {:print "$at(5,7561,7574)"} true;
+    // $t38 := borrow_field<pay_module::Cylinder>.Bullet($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:32+13
+    assume {:print "$at(5,7592,7605)"} true;
     $t38 := $ChildMutation($t19, 1, $Dereference($t19)->$Bullet);
 
-    // $t39 := borrow_field<pay_module::Cylinder_coin>.amount($t38) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:27+25
+    // $t39 := borrow_field<pay_module::Cylinder_coin>.amount($t38) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:27+25
     $t39 := $ChildMutation($t38, 2, $Dereference($t38)->$amount);
 
-    // vector::push_back<u64>($t39, $t2) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+51
+    // vector::push_back<u64>($t39, $t2) on_abort goto L12 with $t13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:9+51
     call $t39 := $1_vector_push_back'u64'($t39, $t2);
     if ($abort_flag) {
-        assume {:print "$at(5,7538,7589)"} true;
+        assume {:print "$at(5,7569,7620)"} true;
         $t13 := $abort_code;
         assume {:print "$track_abort(86,14):", $t13} $t13 == $t13;
         goto L12;
     }
 
-    // write_back[Reference($t38).amount (vector<u64>)]($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+51
-    $t38 := $UpdateMutation($t38, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin'_amount($Dereference($t38), $Dereference($t39)));
+    // write_back[Reference($t38).amount (vector<u64>)]($t39) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:9+51
+    $t38 := $UpdateMutation($t38, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin'_amount($Dereference($t38), $Dereference($t39)));
 
-    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t38) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+51
-    $t19 := $UpdateMutation($t19, $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t38)));
+    // write_back[Reference($t19).Bullet (pay_module::Cylinder_coin)]($t38) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:9+51
+    $t19 := $UpdateMutation($t19, $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'_Bullet($Dereference($t19), $Dereference($t38)));
 
-    // write_back[pay_module::Cylinder@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:195:9+51
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory := $ResourceUpdate($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $GlobalLocationAddress($t19),
+    // write_back[pay_module::Cylinder@]($t19) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:196:9+51
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory := $ResourceUpdate($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $GlobalLocationAddress($t19),
         $Dereference($t19));
 
-    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:197:5+1
-    assume {:print "$at(5,7652,7653)"} true;
+    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:198:5+1
+    assume {:print "$at(5,7683,7684)"} true;
 L11:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:197:5+1
-    assume {:print "$at(5,7652,7653)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:198:5+1
+    assume {:print "$at(5,7683,7684)"} true;
     return;
 
-    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:197:5+1
+    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:198:5+1
 L12:
 
-    // abort($t13) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:197:5+1
-    assume {:print "$at(5,7652,7653)"} true;
+    // abort($t13) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:198:5+1
+    assume {:print "$at(5,7683,7684)"} true;
     $abort_code := $t13;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::reload [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+3502
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_reload$verify(_$t0: $signer, _$t1: bool, _$t2: bool, _$t3: int, _$t4: int, _$t5: int, _$t6: $1_string_String) returns ()
+// fun pay_module::reload [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+3574
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_reload$verify(_$t0: $signer, _$t1: bool, _$t2: bool, _$t3: int, _$t4: int, _$t5: int, _$t6: $1_string_String) returns ()
 {
     // declare local variables
     var $t7: int;
@@ -31817,7 +31817,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     var $t41: int;
     var $t42: Vec (int);
     var $t43: int;
-    var $t44: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap;
+    var $t44: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap;
     var $t45: $1_account_SignerCapability;
     var $t46: int;
     var $t47: $signer;
@@ -31825,14 +31825,14 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     var $t49: int;
     var $t50: Vec (int);
     var $t51: int;
-    var $t52: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t53: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
+    var $t52: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t53: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
     var $t54: Vec (int);
     var $t55: int;
     var $t56: Vec (int);
     var $t57: int;
-    var $t58: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t59: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
+    var $t58: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t59: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
     var $t60: Vec (int);
     var $t61: Vec (int);
     var $t62: $1_string_String;
@@ -31877,850 +31877,860 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
-    assume {:print "$at(5,9507,9508)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
+    assume {:print "$at(5,9538,9539)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'bool'($t1);
 
-    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'bool'($t2);
 
-    // assume WellFormed($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'u64'($t3);
 
-    // assume WellFormed($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'address'($t4);
 
-    // assume WellFormed($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'address'($t5);
 
-    // assume WellFormed($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'$1_string_String'($t6);
 
-    // assume forall $rsc: account::Account: ResourceDomain<account::Account>(): And(WellFormed($rsc), And(Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.rotation_capability_offer($rsc)))), 1), Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.signer_capability_offer($rsc)))), 1))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: account::Account: ResourceDomain<account::Account>(): And(WellFormed($rsc), And(Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.rotation_capability_offer($rsc)))), 1), Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.signer_capability_offer($rsc)))), 1))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_account_Account_$memory, $a_0)}(var $rsc := $ResourceValue($1_account_Account_$memory, $a_0);
     (($IsValid'$1_account_Account'($rsc) && ((LenVec($rsc->$rotation_capability_offer->$for->$vec) <= 1) && (LenVec($rsc->$signer_capability_offer->$for->$vec) <= 1))))));
 
-    // assume forall $rsc: coin::CoinInfo<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinInfo<aptos_coin::AptosCoin>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::CoinInfo<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinInfo<aptos_coin::AptosCoin>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     (($IsValid'$1_coin_CoinInfo'$1_aptos_coin_AptosCoin''($rsc) && ((LenVec($rsc->$supply->$vec) <= 1) && (var $range_1 := $rsc->$supply->$vec; (forall $i_2: int :: InRangeVec($range_1, $i_2) ==> (var $elem := ReadVec($range_1, $i_2);
     ((((((($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) <==> $1_option_$is_none'$1_optional_aggregator_Integer'($elem->$integer)) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) <==> $1_option_$is_none'$1_aggregator_Aggregator'($elem->$aggregator))) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) ==> ($1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$value <= $1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$limit))) && ($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) ==> ($1_aggregator_spec_aggregator_get_val($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator)) <= $1_aggregator_spec_get_limit($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator))))) && (LenVec($elem->$aggregator->$vec) <= 1)) && (LenVec($elem->$integer->$vec) <= 1)))))))))));
 
-    // assume forall $rsc: coin::CoinStore<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinStore<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::CoinStore<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinStore<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_CoinStore'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume forall $rsc: coin::Ghost$supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::Ghost$supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume exists<coin::Ghost$supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $ResourceExists($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // assume forall $rsc: coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume exists<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $ResourceExists($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // assume forall $rsc: coin::CoinInfo<#0>: ResourceDomain<coin::CoinInfo<#0>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::CoinInfo<#0>: ResourceDomain<coin::CoinInfo<#0>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinInfo'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinInfo'#0'_$memory, $a_0);
     (($IsValid'$1_coin_CoinInfo'#0''($rsc) && ((LenVec($rsc->$supply->$vec) <= 1) && (var $range_1 := $rsc->$supply->$vec; (forall $i_2: int :: InRangeVec($range_1, $i_2) ==> (var $elem := ReadVec($range_1, $i_2);
     ((((((($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) <==> $1_option_$is_none'$1_optional_aggregator_Integer'($elem->$integer)) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) <==> $1_option_$is_none'$1_aggregator_Aggregator'($elem->$aggregator))) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) ==> ($1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$value <= $1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$limit))) && ($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) ==> ($1_aggregator_spec_aggregator_get_val($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator)) <= $1_aggregator_spec_get_limit($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator))))) && (LenVec($elem->$aggregator->$vec) <= 1)) && (LenVec($elem->$integer->$vec) <= 1)))))))))));
 
-    // assume forall $rsc: coin::CoinStore<#0>: ResourceDomain<coin::CoinStore<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::CoinStore<#0>: ResourceDomain<coin::CoinStore<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinStore'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinStore'#0'_$memory, $a_0);
     ($IsValid'$1_coin_CoinStore'#0''($rsc))));
 
-    // assume forall $rsc: coin::Ghost$supply<#0>: ResourceDomain<coin::Ghost$supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::Ghost$supply<#0>: ResourceDomain<coin::Ghost$supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$supply'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$supply'#0'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$supply'#0''($rsc))));
 
-    // assume exists<coin::Ghost$supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume exists<coin::Ghost$supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $ResourceExists($1_coin_Ghost$supply'#0'_$memory, 0);
 
-    // assume forall $rsc: coin::Ghost$aggregate_supply<#0>: ResourceDomain<coin::Ghost$aggregate_supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::Ghost$aggregate_supply<#0>: ResourceDomain<coin::Ghost$aggregate_supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$aggregate_supply'#0'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$aggregate_supply'#0'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$aggregate_supply'#0''($rsc))));
 
-    // assume exists<coin::Ghost$aggregate_supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume exists<coin::Ghost$aggregate_supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $ResourceExists($1_coin_Ghost$aggregate_supply'#0'_$memory, 0);
 
-    // assume forall $rsc: aptos_account::DirectTransferConfig: ResourceDomain<aptos_account::DirectTransferConfig>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: aptos_account::DirectTransferConfig: ResourceDomain<aptos_account::DirectTransferConfig>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_aptos_account_DirectTransferConfig_$memory, $a_0)}(var $rsc := $ResourceValue($1_aptos_account_DirectTransferConfig_$memory, $a_0);
     ($IsValid'$1_aptos_account_DirectTransferConfig'($rsc))));
 
-    // assume forall $rsc: pay_module::ResourceCap: ResourceDomain<pay_module::ResourceCap>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'($rsc))));
+    // assume forall $rsc: pay_module::ResourceCap: ResourceDomain<pay_module::ResourceCap>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'($rsc))));
 
-    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'($rsc))));
+    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'($rsc))));
 
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,0):", $t0} $t0 == $t0;
 
-    // trace_local[need_swap]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[need_swap]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,1):", $t1} $t1 == $t1;
 
-    // trace_local[need_garble]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[need_garble]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,2):", $t2} $t2 == $t2;
 
-    // trace_local[amount]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[amount]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,3):", $t3} $t3 == $t3;
 
-    // trace_local[to_address]($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[to_address]($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,4):", $t4} $t4 == $t4;
 
-    // trace_local[from_address]($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[from_address]($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,5):", $t5} $t5 == $t5;
 
-    // trace_local[coin]($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[coin]($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,6):", $t6} $t6 == $t6;
 
-    // $t17 := signer::address_of($t0) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:18+26
-    assume {:print "$at(5,9705,9731)"} true;
-    call $t17 := $1_signer_address_of($t0);
+    // transfer_module::check_account_exist($t0, $t4) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+61
+    assume {:print "$at(5,9728,9789)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_check_account_exist($t0, $t4);
     if ($abort_flag) {
-        assume {:print "$at(5,9705,9731)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,9728,9789)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t19 := !=($t17, $t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:44+2
-    $t19 := !$IsEqual'address'($t17, $t4);
+    // $t18 := signer::address_of($t0) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:18+26
+    assume {:print "$at(5,9808,9834)"} true;
+    call $t18 := $1_signer_address_of($t0);
+    if ($abort_flag) {
+        assume {:print "$at(5,9808,9834)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
+        goto L43;
+    }
 
-    // if ($t19) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
+    // $t19 := !=($t18, $t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:44+2
+    $t19 := !$IsEqual'address'($t18, $t4);
+
+    // if ($t19) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
     if ($t19) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
 L1:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
-    assume {:print "$at(5,9696,9767)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
+    assume {:print "$at(5,9799,9870)"} true;
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
 L0:
 
-    // $t20 := 4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:58+21
-    assume {:print "$at(5,9745,9766)"} true;
+    // $t20 := 4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:58+21
+    assume {:print "$at(5,9848,9869)"} true;
     $t20 := 4;
     assume $IsValid'u64'($t20);
 
-    // trace_abort($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
-    assume {:print "$at(5,9696,9767)"} true;
+    // trace_abort($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
+    assume {:print "$at(5,9799,9870)"} true;
     assume {:print "$track_abort(86,15):", $t20} $t20 == $t20;
 
-    // $t18 := move($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
-    $t18 := $t20;
+    // $t17 := move($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
+    $t17 := $t20;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
     goto L43;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:37+10
-    assume {:print "$at(5,9805,9815)"} true;
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:37+10
+    assume {:print "$at(5,9908,9918)"} true;
 L2:
 
-    // $t21 := account::exists_at($t4) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:17+32
-    assume {:print "$at(5,9785,9817)"} true;
+    // $t21 := account::exists_at($t4) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:17+32
+    assume {:print "$at(5,9888,9920)"} true;
     call $t21 := $1_account_exists_at($t4);
     if ($abort_flag) {
-        assume {:print "$at(5,9785,9817)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,9888,9920)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // if ($t21) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
+    // if ($t21) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
     if ($t21) { goto L4; } else { goto L3; }
 
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
 L4:
 
-    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
-    assume {:print "$at(5,9777,9835)"} true;
+    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
+    assume {:print "$at(5,9880,9938)"} true;
     goto L5;
 
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
 L3:
 
-    // $t22 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:50+16
-    assume {:print "$at(5,9818,9834)"} true;
+    // $t22 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:50+16
+    assume {:print "$at(5,9921,9937)"} true;
     $t22 := 5;
     assume $IsValid'u64'($t22);
 
-    // trace_abort($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
-    assume {:print "$at(5,9777,9835)"} true;
+    // trace_abort($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
+    assume {:print "$at(5,9880,9938)"} true;
     assume {:print "$track_abort(86,15):", $t22} $t22 == $t22;
 
-    // $t18 := move($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
-    $t18 := $t22;
+    // $t17 := move($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
+    $t17 := $t22;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
     goto L43;
 
-    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:17+6
-    assume {:print "$at(5,9853,9859)"} true;
+    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:17+6
+    assume {:print "$at(5,9956,9962)"} true;
 L5:
 
-    // $t23 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:25+1
-    assume {:print "$at(5,9861,9862)"} true;
+    // $t23 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:25+1
+    assume {:print "$at(5,9964,9965)"} true;
     $t23 := 0;
     assume $IsValid'u64'($t23);
 
-    // $t24 := !=($t3, $t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:23+2
+    // $t24 := !=($t3, $t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:23+2
     $t24 := !$IsEqual'u64'($t3, $t23);
 
-    // if ($t24) goto L7 else goto L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
+    // if ($t24) goto L7 else goto L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
     if ($t24) { goto L7; } else { goto L6; }
 
-    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
+    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
 L7:
 
-    // goto L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
-    assume {:print "$at(5,9845,9878)"} true;
+    // goto L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
+    assume {:print "$at(5,9948,9981)"} true;
     goto L8;
 
-    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
+    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
 L6:
 
-    // $t25 := 6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:27+14
-    assume {:print "$at(5,9863,9877)"} true;
+    // $t25 := 6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:27+14
+    assume {:print "$at(5,9966,9980)"} true;
     $t25 := 6;
     assume $IsValid'u64'($t25);
 
-    // trace_abort($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
-    assume {:print "$at(5,9845,9878)"} true;
+    // trace_abort($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
+    assume {:print "$at(5,9948,9981)"} true;
     assume {:print "$track_abort(86,15):", $t25} $t25 == $t25;
 
-    // $t18 := move($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
-    $t18 := $t25;
+    // $t17 := move($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
+    $t17 := $t25;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
     goto L43;
 
-    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:17+6
-    assume {:print "$at(5,9896,9902)"} true;
+    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:17+6
+    assume {:print "$at(5,9999,10005)"} true;
 L8:
 
-    // $t26 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:24+1
-    assume {:print "$at(5,9903,9904)"} true;
+    // $t26 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:24+1
+    assume {:print "$at(5,10006,10007)"} true;
     $t26 := 0;
     assume $IsValid'u64'($t26);
 
-    // $t27 := >($t3, $t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:23+1
+    // $t27 := >($t3, $t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:23+1
     call $t27 := $Gt($t3, $t26);
 
-    // if ($t27) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
+    // if ($t27) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
     if ($t27) { goto L10; } else { goto L9; }
 
-    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
+    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
 L10:
 
-    // goto L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
-    assume {:print "$at(5,9888,9933)"} true;
+    // goto L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
+    assume {:print "$at(5,9991,10036)"} true;
     goto L11;
 
-    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
+    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
 L9:
 
-    // $t28 := 15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:26+27
-    assume {:print "$at(5,9905,9932)"} true;
+    // $t28 := 15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:26+27
+    assume {:print "$at(5,10008,10035)"} true;
     $t28 := 15;
     assume $IsValid'u64'($t28);
 
-    // trace_abort($t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
-    assume {:print "$at(5,9888,9933)"} true;
+    // trace_abort($t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
+    assume {:print "$at(5,9991,10036)"} true;
     assume {:print "$track_abort(86,15):", $t28} $t28 == $t28;
 
-    // $t18 := move($t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
-    $t18 := $t28;
+    // $t17 := move($t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
+    $t17 := $t28;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
     goto L43;
 
-    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:36+6
-    assume {:print "$at(5,9970,9976)"} true;
+    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:36+6
+    assume {:print "$at(5,10073,10079)"} true;
 L11:
 
-    // $t29 := signer::address_of($t0) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:17+26
-    assume {:print "$at(5,9951,9977)"} true;
+    // $t29 := signer::address_of($t0) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:17+26
+    assume {:print "$at(5,10054,10080)"} true;
     call $t29 := $1_signer_address_of($t0);
     if ($abort_flag) {
-        assume {:print "$at(5,9951,9977)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10054,10080)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t30 := ==($t29, $t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:43+2
+    // $t30 := ==($t29, $t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:43+2
     $t30 := $IsEqual'address'($t29, $t5);
 
-    // if ($t30) goto L13 else goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
+    // if ($t30) goto L13 else goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
     if ($t30) { goto L13; } else { goto L12; }
 
-    // label L13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
+    // label L13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
 L13:
 
-    // goto L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
-    assume {:print "$at(5,9943,10021)"} true;
+    // goto L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
+    assume {:print "$at(5,10046,10124)"} true;
     goto L14;
 
-    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
+    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
 L12:
 
-    // $t31 := 9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:58+28
-    assume {:print "$at(5,9992,10020)"} true;
+    // $t31 := 9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:58+28
+    assume {:print "$at(5,10095,10123)"} true;
     $t31 := 9;
     assume $IsValid'u64'($t31);
 
-    // trace_abort($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
-    assume {:print "$at(5,9943,10021)"} true;
+    // trace_abort($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
+    assume {:print "$at(5,10046,10124)"} true;
     assume {:print "$track_abort(86,15):", $t31} $t31 == $t31;
 
-    // $t18 := move($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
-    $t18 := $t31;
+    // $t17 := move($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
+    $t17 := $t31;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
     goto L43;
 
-    // label L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:17+10
-    assume {:print "$at(5,10039,10049)"} true;
+    // label L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:17+10
+    assume {:print "$at(5,10142,10152)"} true;
 L14:
 
-    // $t32 := 0x0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:29+4
-    assume {:print "$at(5,10051,10055)"} true;
+    // $t32 := 0x0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:29+4
+    assume {:print "$at(5,10154,10158)"} true;
     $t32 := 0;
     assume $IsValid'address'($t32);
 
-    // $t33 := !=($t4, $t32) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:27+2
+    // $t33 := !=($t4, $t32) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:27+2
     $t33 := !$IsEqual'address'($t4, $t32);
 
-    // if ($t33) goto L16 else goto L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
+    // if ($t33) goto L16 else goto L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
     if ($t33) { goto L16; } else { goto L15; }
 
-    // label L16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
+    // label L16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
 L16:
 
-    // goto L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
-    assume {:print "$at(5,10031,10072)"} true;
+    // goto L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
+    assume {:print "$at(5,10134,10175)"} true;
     goto L17;
 
-    // label L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
+    // label L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
 L15:
 
-    // $t34 := 8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:34+15
-    assume {:print "$at(5,10056,10071)"} true;
+    // $t34 := 8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:34+15
+    assume {:print "$at(5,10159,10174)"} true;
     $t34 := 8;
     assume $IsValid'u64'($t34);
 
-    // trace_abort($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
-    assume {:print "$at(5,10031,10072)"} true;
+    // trace_abort($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
+    assume {:print "$at(5,10134,10175)"} true;
     assume {:print "$track_abort(86,15):", $t34} $t34 == $t34;
 
-    // $t18 := move($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
-    $t18 := $t34;
+    // $t17 := move($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
+    $t17 := $t34;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
     goto L43;
 
-    // label L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:17+10
-    assume {:print "$at(5,10090,10100)"} true;
+    // label L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:17+10
+    assume {:print "$at(5,10193,10203)"} true;
 L17:
 
-    // $t35 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:29+5
-    assume {:print "$at(5,10102,10107)"} true;
-    $t35 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t35 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:29+5
+    assume {:print "$at(5,10205,10210)"} true;
+    $t35 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t35);
 
-    // $t36 := !=($t4, $t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:27+2
+    // $t36 := !=($t4, $t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:27+2
     $t36 := !$IsEqual'address'($t4, $t35);
 
-    // if ($t36) goto L19 else goto L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
+    // if ($t36) goto L19 else goto L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
     if ($t36) { goto L19; } else { goto L18; }
 
-    // label L19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
+    // label L19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
 L19:
 
-    // goto L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
-    assume {:print "$at(5,10082,10134)"} true;
+    // goto L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
+    assume {:print "$at(5,10185,10237)"} true;
     goto L20;
 
-    // label L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
+    // label L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
 L18:
 
-    // $t37 := 16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:35+25
-    assume {:print "$at(5,10108,10133)"} true;
+    // $t37 := 16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:35+25
+    assume {:print "$at(5,10211,10236)"} true;
     $t37 := 16;
     assume $IsValid'u64'($t37);
 
-    // trace_abort($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
-    assume {:print "$at(5,10082,10134)"} true;
+    // trace_abort($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
+    assume {:print "$at(5,10185,10237)"} true;
     assume {:print "$track_abort(86,15):", $t37} $t37 == $t37;
 
-    // $t18 := move($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
-    $t18 := $t37;
+    // $t17 := move($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
+    $t17 := $t37;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
     goto L43;
 
-    // label L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:36+6
-    assume {:print "$at(5,10171,10177)"} true;
+    // label L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:36+6
+    assume {:print "$at(5,10274,10280)"} true;
 L20:
 
-    // $t38 := signer::address_of($t0) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:17+26
-    assume {:print "$at(5,10152,10178)"} true;
+    // $t38 := signer::address_of($t0) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:17+26
+    assume {:print "$at(5,10255,10281)"} true;
     call $t38 := $1_signer_address_of($t0);
     if ($abort_flag) {
-        assume {:print "$at(5,10152,10178)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10255,10281)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t39 := !=($t38, $t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:43+2
+    // $t39 := !=($t38, $t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:43+2
     $t39 := !$IsEqual'address'($t38, $t4);
 
-    // if ($t39) goto L22 else goto L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
+    // if ($t39) goto L22 else goto L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
     if ($t39) { goto L22; } else { goto L21; }
 
-    // label L22 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
+    // label L22 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
 L22:
 
-    // goto L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
-    assume {:print "$at(5,10144,10219)"} true;
+    // goto L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
+    assume {:print "$at(5,10247,10322)"} true;
     goto L23;
 
-    // label L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
+    // label L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
 L21:
 
-    // $t40 := 30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:56+27
-    assume {:print "$at(5,10191,10218)"} true;
+    // $t40 := 30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:56+27
+    assume {:print "$at(5,10294,10321)"} true;
     $t40 := 30;
     assume $IsValid'u64'($t40);
 
-    // trace_abort($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
-    assume {:print "$at(5,10144,10219)"} true;
+    // trace_abort($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
+    assume {:print "$at(5,10247,10322)"} true;
     assume {:print "$track_abort(86,15):", $t40} $t40 == $t40;
 
-    // $t18 := move($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
-    $t18 := $t40;
+    // $t17 := move($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
+    $t17 := $t40;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
     goto L43;
 
-    // label L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:107+5
-    assume {:print "$at(5,10431,10436)"} true;
+    // label L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:107+5
+    assume {:print "$at(5,10534,10539)"} true;
 L23:
 
-    // $t41 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:107+5
-    assume {:print "$at(5,10431,10436)"} true;
-    $t41 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t41 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:107+5
+    assume {:print "$at(5,10534,10539)"} true;
+    $t41 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t41);
 
-    // $t42 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:113+4
+    // $t42 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:113+4
     $t42 := MakeVec3(97, 115, 102);
     assume $IsValid'vec'u8''($t42);
 
-    // $t43 := opaque begin: account::create_resource_address($t41, $t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:56+62
+    // $t43 := opaque begin: account::create_resource_address($t41, $t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+62
 
-    // assume WellFormed($t43) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:56+62
+    // assume WellFormed($t43) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+62
     assume $IsValid'address'($t43);
 
-    // assume Eq<address>($t43, account::spec_create_resource_address($t41, $t42)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:56+62
+    // assume Eq<address>($t43, account::spec_create_resource_address($t41, $t42)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+62
     assume $IsEqual'address'($t43, $1_account_spec_create_resource_address($t41, $t42));
 
-    // $t43 := opaque end: account::create_resource_address($t41, $t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:56+62
+    // $t43 := opaque end: account::create_resource_address($t41, $t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+62
 
-    // $t44 := get_global<pay_module::ResourceCap>($t43) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:29+13
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t43)) {
+    // $t44 := get_global<pay_module::ResourceCap>($t43) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:29+13
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t43)) {
         call $ExecFailureAbort();
     } else {
-        $t44 := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t43);
+        $t44 := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t43);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,10353,10366)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10456,10469)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t45 := get_field<pay_module::ResourceCap>.cap($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:28+95
+    // $t45 := get_field<pay_module::ResourceCap>.cap($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:28+95
     $t45 := $t44->$cap;
 
     // assume Identical($t46, select account::SignerCapability.account<account::SignerCapability>($t45)) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/account.spec.move:652:9+30
     assume {:print "$at(88,32361,32391)"} true;
     assume ($t46 == $t45->$account);
 
-    // $t47 := account::create_signer_with_capability($t45) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:254:32+52
-    assume {:print "$at(5,10480,10532)"} true;
+    // $t47 := account::create_signer_with_capability($t45) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:32+52
+    assume {:print "$at(5,10583,10635)"} true;
     call $t47 := $1_account_create_signer_with_capability($t45);
     if ($abort_flag) {
-        assume {:print "$at(5,10480,10532)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10583,10635)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // trace_local[resource_signer]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:254:13+15
+    // trace_local[resource_signer]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:13+15
     assume {:print "$track_local(86,15,16):", $t47} $t47 == $t47;
 
-    // $t48 := signer::address_of($t47) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:255:32+35
-    assume {:print "$at(5,10565,10600)"} true;
+    // $t48 := signer::address_of($t47) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:258:32+35
+    assume {:print "$at(5,10668,10703)"} true;
     call $t48 := $1_signer_address_of($t47);
     if ($abort_flag) {
-        assume {:print "$at(5,10565,10600)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10668,10703)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // trace_local[resource_address]($t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:255:13+16
+    // trace_local[resource_address]($t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:258:13+16
     assume {:print "$track_local(86,15,15):", $t48} $t48 == $t48;
 
-    // $t49 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:81+5
-    assume {:print "$at(5,10682,10687)"} true;
-    $t49 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t49 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:81+5
+    assume {:print "$at(5,10785,10790)"} true;
+    $t49 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t49);
 
-    // $t50 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:87+4
+    // $t50 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:87+4
     $t50 := MakeVec3(97, 115, 102);
     assume $IsValid'vec'u8''($t50);
 
-    // $t51 := opaque begin: account::create_resource_address($t49, $t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+36
+    // $t51 := opaque begin: account::create_resource_address($t49, $t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:56+36
 
-    // assume WellFormed($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+36
+    // assume WellFormed($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:56+36
     assume $IsValid'address'($t51);
 
-    // assume Eq<address>($t51, account::spec_create_resource_address($t49, $t50)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+36
+    // assume Eq<address>($t51, account::spec_create_resource_address($t49, $t50)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:56+36
     assume $IsEqual'address'($t51, $1_account_spec_create_resource_address($t49, $t50));
 
-    // $t51 := opaque end: account::create_resource_address($t49, $t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+36
+    // $t51 := opaque end: account::create_resource_address($t49, $t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:56+36
 
-    // $t52 := borrow_global<pay_module::Cylinder>($t51) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:28+17
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t51)) {
+    // $t52 := borrow_global<pay_module::Cylinder>($t51) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:28+17
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t51)) {
         call $ExecFailureAbort();
     } else {
-        $t52 := $Mutation($Global($t51), EmptyVec(), $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t51));
+        $t52 := $Mutation($Global($t51), EmptyVec(), $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t51));
     }
     if ($abort_flag) {
-        assume {:print "$at(5,10629,10646)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10732,10749)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t53 := get_field<pay_module::Cylinder>.Bullet($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:28+72
+    // $t53 := get_field<pay_module::Cylinder>.Bullet($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:28+72
     $t53 := $Dereference($t52)->$Bullet;
 
-    // $t54 := get_field<pay_module::Cylinder_coin>.amount($t53) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:28+79
+    // $t54 := get_field<pay_module::Cylinder_coin>.amount($t53) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:28+79
     $t54 := $t53->$amount;
 
-    // trace_local[borrow_amount]($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:13+13
+    // trace_local[borrow_amount]($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:13+13
     assume {:print "$track_local(86,15,14):", $t54} $t54 == $t54;
 
-    // $t55 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:82+5
-    assume {:print "$at(5,10791,10796)"} true;
-    $t55 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t55 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:82+5
+    assume {:print "$at(5,10894,10899)"} true;
+    $t55 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t55);
 
-    // $t56 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:88+4
+    // $t56 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:88+4
     $t56 := MakeVec3(97, 115, 102);
     assume $IsValid'vec'u8''($t56);
 
-    // $t57 := opaque begin: account::create_resource_address($t55, $t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:57+36
+    // $t57 := opaque begin: account::create_resource_address($t55, $t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:57+36
 
-    // assume WellFormed($t57) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:57+36
+    // assume WellFormed($t57) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:57+36
     assume $IsValid'address'($t57);
 
-    // assume Eq<address>($t57, account::spec_create_resource_address($t55, $t56)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:57+36
+    // assume Eq<address>($t57, account::spec_create_resource_address($t55, $t56)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:57+36
     assume $IsEqual'address'($t57, $1_account_spec_create_resource_address($t55, $t56));
 
-    // $t57 := opaque end: account::create_resource_address($t55, $t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:57+36
+    // $t57 := opaque end: account::create_resource_address($t55, $t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:57+36
 
-    // $t58 := borrow_global<pay_module::Cylinder>($t57) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:29+17
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t57)) {
+    // $t58 := borrow_global<pay_module::Cylinder>($t57) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:29+17
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t57)) {
         call $ExecFailureAbort();
     } else {
-        $t58 := $Mutation($Global($t57), EmptyVec(), $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t57));
+        $t58 := $Mutation($Global($t57), EmptyVec(), $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t57));
     }
     if ($abort_flag) {
-        assume {:print "$at(5,10738,10755)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10841,10858)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t59 := get_field<pay_module::Cylinder>.Bullet($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:29+72
+    // $t59 := get_field<pay_module::Cylinder>.Bullet($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:29+72
     $t59 := $Dereference($t58)->$Bullet;
 
-    // $t60 := get_field<pay_module::Cylinder_coin>.address($t59) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:29+80
+    // $t60 := get_field<pay_module::Cylinder_coin>.address($t59) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:29+80
     $t60 := $t59->$address;
 
-    // trace_local[borrow_address]($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:13+14
+    // trace_local[borrow_address]($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:13+14
     assume {:print "$track_local(86,15,13):", $t60} $t60 == $t60;
 
-    // $t61 := [98, 111, 114, 114, 111, 119, 32, 97, 109, 111, 117, 110, 116, 32, 97, 110, 100, 32, 97, 100, 100, 114, 101, 115, 115, 32, 58] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:258:28+30
-    assume {:print "$at(5,10847,10877)"} true;
+    // $t61 := [98, 111, 114, 114, 111, 119, 32, 97, 109, 111, 117, 110, 116, 32, 97, 110, 100, 32, 97, 100, 100, 114, 101, 115, 115, 32, 58] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:28+30
+    assume {:print "$at(5,10950,10980)"} true;
     $t61 := ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(MakeVec4(98, 111, 114, 114), MakeVec4(111, 119, 32, 97)), MakeVec4(109, 111, 117, 110)), MakeVec4(116, 32, 97, 110)), MakeVec4(100, 32, 97, 100)), MakeVec4(100, 114, 101, 115)), MakeVec3(115, 32, 58));
     assume $IsValid'vec'u8''($t61);
 
-    // $t62 := string::utf8($t61) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:258:23+36
+    // $t62 := string::utf8($t61) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:23+36
     call $t62 := $1_string_utf8($t61);
     if ($abort_flag) {
-        assume {:print "$at(5,10842,10878)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10945,10981)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // debug::print<string::String>($t62) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:258:9+51
+    // debug::print<string::String>($t62) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:9+51
     call $1_debug_print'$1_string_String'($t62);
     if ($abort_flag) {
-        assume {:print "$at(5,10828,10879)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10931,10982)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // debug::print<vector<u64>>($t54) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:9+28
-    assume {:print "$at(5,10889,10917)"} true;
+    // debug::print<vector<u64>>($t54) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:262:9+28
+    assume {:print "$at(5,10992,11020)"} true;
     call $1_debug_print'vec'u64''($t54);
     if ($abort_flag) {
-        assume {:print "$at(5,10889,10917)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10992,11020)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // debug::print<vector<address>>($t60) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:9+29
-    assume {:print "$at(5,10927,10956)"} true;
+    // debug::print<vector<address>>($t60) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:263:9+29
+    assume {:print "$at(5,11030,11059)"} true;
     call $1_debug_print'vec'address''($t60);
     if ($abort_flag) {
-        assume {:print "$at(5,10927,10956)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11030,11059)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t63 := [35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:28+28
-    assume {:print "$at(5,10985,11013)"} true;
+    // $t63 := [35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:264:28+28
+    assume {:print "$at(5,11088,11116)"} true;
     $t63 := ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(MakeVec4(35, 35, 35, 35), MakeVec4(35, 35, 35, 35)), MakeVec4(35, 35, 35, 35)), MakeVec4(35, 35, 35, 35)), MakeVec4(35, 35, 35, 35)), MakeVec4(35, 35, 35, 35)), MakeVec1(35));
     assume $IsValid'vec'u8''($t63);
 
-    // $t64 := string::utf8($t63) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:23+34
+    // $t64 := string::utf8($t63) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:264:23+34
     call $t64 := $1_string_utf8($t63);
     if ($abort_flag) {
-        assume {:print "$at(5,10980,11014)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11083,11117)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // debug::print<string::String>($t64) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:9+49
+    // debug::print<string::String>($t64) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:264:9+49
     call $1_debug_print'$1_string_String'($t64);
     if ($abort_flag) {
-        assume {:print "$at(5,10966,11015)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11069,11118)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t65 := !=($t4, $t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:27+2
-    assume {:print "$at(5,11244,11246)"} true;
+    // $t65 := !=($t4, $t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:27+2
+    assume {:print "$at(5,11347,11349)"} true;
     $t65 := !$IsEqual'address'($t4, $t48);
 
-    // if ($t65) goto L25 else goto L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
+    // if ($t65) goto L25 else goto L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
     if ($t65) { goto L25; } else { goto L24; }
 
-    // label L25 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
+    // label L25 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
 L25:
 
-    // goto L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
-    assume {:print "$at(5,11226,11301)"} true;
+    // goto L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
+    assume {:print "$at(5,11329,11404)"} true;
     goto L26;
 
-    // label L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
+    // label L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
 L24:
 
-    // $t66 := 17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:46+37
-    assume {:print "$at(5,11263,11300)"} true;
+    // $t66 := 17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:46+37
+    assume {:print "$at(5,11366,11403)"} true;
     $t66 := 17;
     assume $IsValid'u64'($t66);
 
-    // trace_abort($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
-    assume {:print "$at(5,11226,11301)"} true;
+    // trace_abort($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
+    assume {:print "$at(5,11329,11404)"} true;
     assume {:print "$track_abort(86,15):", $t66} $t66 == $t66;
 
-    // $t18 := move($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
-    $t18 := $t66;
+    // $t17 := move($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
+    $t17 := $t66;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
     goto L43;
 
-    // label L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:28+15
-    assume {:print "$at(5,11330,11345)"} true;
+    // label L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:28+15
+    assume {:print "$at(5,11433,11448)"} true;
 L26:
 
-    // $t67 := vector::is_empty<address>($t60) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:18+27
-    assume {:print "$at(5,11320,11347)"} true;
+    // $t67 := vector::is_empty<address>($t60) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:18+27
+    assume {:print "$at(5,11423,11450)"} true;
     call $t67 := $1_vector_is_empty'address'($t60);
     if ($abort_flag) {
-        assume {:print "$at(5,11320,11347)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11423,11450)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t68 := !($t67) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:17+1
+    // $t68 := !($t67) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:17+1
     call $t68 := $Not($t67);
 
-    // if ($t68) goto L28 else goto L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
+    // if ($t68) goto L28 else goto L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
     if ($t68) { goto L28; } else { goto L27; }
 
-    // label L28 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
+    // label L28 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
 L28:
 
-    // goto L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
-    assume {:print "$at(5,11311,11368)"} true;
+    // goto L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
+    assume {:print "$at(5,11414,11471)"} true;
     goto L29;
 
-    // label L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
+    // label L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
 L27:
 
-    // $t69 := 19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:46+19
-    assume {:print "$at(5,11348,11367)"} true;
+    // $t69 := 19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:46+19
+    assume {:print "$at(5,11451,11470)"} true;
     $t69 := 19;
     assume $IsValid'u64'($t69);
 
-    // trace_abort($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
-    assume {:print "$at(5,11311,11368)"} true;
+    // trace_abort($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
+    assume {:print "$at(5,11414,11471)"} true;
     assume {:print "$track_abort(86,15):", $t69} $t69 == $t69;
 
-    // $t18 := move($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
-    $t18 := $t69;
+    // $t17 := move($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
+    $t17 := $t69;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
     goto L43;
 
-    // label L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:28+14
-    assume {:print "$at(5,11397,11411)"} true;
+    // label L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:28+14
+    assume {:print "$at(5,11500,11514)"} true;
 L29:
 
-    // $t70 := vector::is_empty<u64>($t54) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:18+26
-    assume {:print "$at(5,11387,11413)"} true;
+    // $t70 := vector::is_empty<u64>($t54) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:18+26
+    assume {:print "$at(5,11490,11516)"} true;
     call $t70 := $1_vector_is_empty'u64'($t54);
     if ($abort_flag) {
-        assume {:print "$at(5,11387,11413)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11490,11516)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t71 := !($t70) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:17+1
+    // $t71 := !($t70) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:17+1
     call $t71 := $Not($t70);
 
-    // if ($t71) goto L31 else goto L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
+    // if ($t71) goto L31 else goto L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
     if ($t71) { goto L31; } else { goto L30; }
 
-    // label L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
+    // label L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
 L31:
 
-    // goto L32 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
-    assume {:print "$at(5,11378,11433)"} true;
+    // goto L32 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
+    assume {:print "$at(5,11481,11536)"} true;
     goto L32;
 
-    // label L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
+    // label L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
 L30:
 
-    // $t72 := 18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:45+18
-    assume {:print "$at(5,11414,11432)"} true;
+    // $t72 := 18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:45+18
+    assume {:print "$at(5,11517,11535)"} true;
     $t72 := 18;
     assume $IsValid'u64'($t72);
 
-    // trace_abort($t72) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
-    assume {:print "$at(5,11378,11433)"} true;
+    // trace_abort($t72) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
+    assume {:print "$at(5,11481,11536)"} true;
     assume {:print "$track_abort(86,15):", $t72} $t72 == $t72;
 
-    // $t18 := move($t72) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
-    $t18 := $t72;
+    // $t17 := move($t72) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
+    $t17 := $t72;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
     goto L43;
 
-    // label L32 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:13+9
-    assume {:print "$at(5,11448,11457)"} true;
+    // label L32 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:13+9
+    assume {:print "$at(5,11551,11560)"} true;
 L32:
 
-    // $t73 := !($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:12+1
-    assume {:print "$at(5,11447,11448)"} true;
+    // $t73 := !($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:12+1
+    assume {:print "$at(5,11550,11551)"} true;
     call $t73 := $Not($t1);
 
-    // if ($t73) goto L34 else goto L33 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+1558
+    // if ($t73) goto L34 else goto L33 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:9+1558
     if ($t73) { goto L34; } else { goto L33; }
 
-    // label L34 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:16+11
-    assume {:print "$at(5,11475,11486)"} true;
+    // label L34 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:16+11
+    assume {:print "$at(5,11578,11589)"} true;
 L34:
 
-    // if ($t2) goto L36 else goto L35 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:13+1331
-    assume {:print "$at(5,11472,12803)"} true;
+    // if ($t2) goto L36 else goto L35 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:13+1331
+    assume {:print "$at(5,11575,12906)"} true;
     if ($t2) { goto L36; } else { goto L35; }
 
-    // label L36 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:32+6
-    assume {:print "$at(5,11578,11584)"} true;
+    // label L36 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:277:32+6
+    assume {:print "$at(5,11681,11687)"} true;
 L36:
 
-    // pay_module::push_to_vector($t0, $t4, $t3, $t6) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:17+45
-    assume {:print "$at(5,11563,11608)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_push_to_vector($t0, $t4, $t3, $t6);
+    // pay_module::push_to_vector($t0, $t4, $t3, $t6) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:277:17+45
+    assume {:print "$at(5,11666,11711)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_push_to_vector($t0, $t4, $t3, $t6);
     if ($abort_flag) {
-        assume {:print "$at(5,11563,11608)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11666,11711)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t74 := pay_module::check_enough_bullet($t60, $t54) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:275:20+49
-    assume {:print "$at(5,11629,11678)"} true;
-    call $t74 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_check_enough_bullet($t60, $t54);
+    // $t74 := pay_module::check_enough_bullet($t60, $t54) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:278:20+49
+    assume {:print "$at(5,11732,11781)"} true;
+    call $t74 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_check_enough_bullet($t60, $t54);
     if ($abort_flag) {
-        assume {:print "$at(5,11629,11678)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11732,11781)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // if ($t74) goto L38 else goto L37 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:275:17+733
+    // if ($t74) goto L38 else goto L37 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:278:17+733
     if ($t74) { goto L38; } else { goto L37; }
 
-    // label L38 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:276:37+6
-    assume {:print "$at(5,11717,11723)"} true;
+    // label L38 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:279:37+6
+    assume {:print "$at(5,11820,11826)"} true;
 L38:
 
-    // pay_module::pay_apt_to_dapp($t0, $t3, $t48) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:276:21+47
-    assume {:print "$at(5,11701,11748)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_apt_to_dapp($t0, $t3, $t48);
+    // pay_module::pay_apt_to_dapp($t0, $t3, $t48) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:279:21+47
+    assume {:print "$at(5,11804,11851)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_apt_to_dapp($t0, $t3, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,11701,11748)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11804,11851)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // pay_module::check_each_vector_not_zero($t0, $t54, $t60, $t48) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:278:21+80
-    assume {:print "$at(5,11838,11918)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_check_each_vector_not_zero($t0, $t54, $t60, $t48);
+    // pay_module::check_each_vector_not_zero($t0, $t54, $t60, $t48) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:281:21+80
+    assume {:print "$at(5,11941,12021)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_check_each_vector_not_zero($t0, $t54, $t60, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,11838,11918)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11941,12021)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
@@ -32748,116 +32758,116 @@ L38:
       (var $range_0 := $Range(0, LenVec($t60)); (exists $i_1: int :: $InRange($range_0, $i_1) && (var i := $i_1;
     ((ReadVec($t54, i) > 0)))));
 
-    // aptos_account::batch_transfer($t47, $t60, $t54) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:279:21+60
-    assume {:print "$at(5,11940,12000)"} true;
+    // aptos_account::batch_transfer($t47, $t60, $t54) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:282:21+60
+    assume {:print "$at(5,12043,12103)"} true;
     call $1_aptos_account_batch_transfer($t47, $t60, $t54);
     if ($abort_flag) {
-        assume {:print "$at(5,11940,12000)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,12043,12103)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // pay_module::clean_Cylinder($t0, $t47) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:282:21+38
-    assume {:print "$at(5,12134,12172)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_clean_Cylinder($t0, $t47);
+    // pay_module::clean_Cylinder($t0, $t47) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:285:21+38
+    assume {:print "$at(5,12237,12275)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_clean_Cylinder($t0, $t47);
     if ($abort_flag) {
-        assume {:print "$at(5,12134,12172)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,12237,12275)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // goto L39 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:275:17+733
-    assume {:print "$at(5,11626,12359)"} true;
+    // goto L39 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:278:17+733
+    assume {:print "$at(5,11729,12462)"} true;
     goto L39;
 
-    // label L37 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:275:17+733
+    // label L37 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:278:17+733
 L37:
 
-    // label L39 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:13+1331
-    assume {:print "$at(5,11472,12803)"} true;
+    // label L39 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:13+1331
+    assume {:print "$at(5,11575,12906)"} true;
 L39:
 
-    // goto L40 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:13+1331
-    assume {:print "$at(5,11472,12803)"} true;
+    // goto L40 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:13+1331
+    assume {:print "$at(5,11575,12906)"} true;
     goto L40;
 
-    // label L35 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:290:33+6
-    assume {:print "$at(5,12466,12472)"} true;
+    // label L35 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:293:33+6
+    assume {:print "$at(5,12569,12575)"} true;
 L35:
 
-    // pay_module::pay_apt_to_dapp($t0, $t3, $t48) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:290:17+47
-    assume {:print "$at(5,12450,12497)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_apt_to_dapp($t0, $t3, $t48);
+    // pay_module::pay_apt_to_dapp($t0, $t3, $t48) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:293:17+47
+    assume {:print "$at(5,12553,12600)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_apt_to_dapp($t0, $t3, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,12450,12497)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,12553,12600)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // pay_module::pay_coin_to_dapp<#0>($t0, $t3, $t48) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:291:17+55
-    assume {:print "$at(5,12515,12570)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_coin_to_dapp'#0'($t0, $t3, $t48);
+    // pay_module::pay_coin_to_dapp<#0>($t0, $t3, $t48) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:294:17+55
+    assume {:print "$at(5,12618,12673)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_coin_to_dapp'#0'($t0, $t3, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,12515,12570)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,12618,12673)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // transfer_module::own_transfer<#0>($t47, $t4, $t3) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:293:17+77
-    assume {:print "$at(5,12685,12762)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_own_transfer'#0'($t47, $t4, $t3);
+    // transfer_module::own_transfer<#0>($t47, $t4, $t3) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:296:17+77
+    assume {:print "$at(5,12788,12865)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_own_transfer'#0'($t47, $t4, $t3);
     if ($abort_flag) {
-        assume {:print "$at(5,12685,12762)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,12788,12865)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // label L40 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+1558
-    assume {:print "$at(5,11444,13002)"} true;
+    // label L40 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:9+1558
+    assume {:print "$at(5,11547,13105)"} true;
 L40:
 
-    // goto L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+1558
-    assume {:print "$at(5,11444,13002)"} true;
+    // goto L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:9+1558
+    assume {:print "$at(5,11547,13105)"} true;
     goto L41;
 
-    // label L33 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:297:13+161
-    assume {:print "$at(5,12831,12992)"} true;
+    // label L33 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:300:13+161
+    assume {:print "$at(5,12934,13095)"} true;
 L33:
 
-    // if ($t2) goto L41 else goto L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:297:13+161
-    assume {:print "$at(5,12831,12992)"} true;
+    // if ($t2) goto L41 else goto L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:300:13+161
+    assume {:print "$at(5,12934,13095)"} true;
     if ($t2) { goto L41; } else { goto L41; }
 
-    // label L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+1558
-    assume {:print "$at(5,11444,13002)"} true;
+    // label L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:9+1558
+    assume {:print "$at(5,11547,13105)"} true;
 L41:
 
-    // label L42 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:304:5+1
-    assume {:print "$at(5,13008,13009)"} true;
+    // label L42 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:307:5+1
+    assume {:print "$at(5,13111,13112)"} true;
 L42:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:304:5+1
-    assume {:print "$at(5,13008,13009)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:307:5+1
+    assume {:print "$at(5,13111,13112)"} true;
     return;
 
-    // label L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:304:5+1
+    // label L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:307:5+1
 L43:
 
-    // abort($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:304:5+1
-    assume {:print "$at(5,13008,13009)"} true;
-    $abort_code := $t18;
+    // abort($t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:307:5+1
+    assume {:print "$at(5,13111,13112)"} true;
+    $abort_code := $t17;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::reload<aptos_coin::AptosCoin, #1> [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+3502
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_reload'$1_aptos_coin_AptosCoin_#1'$verify(_$t0: $signer, _$t1: bool, _$t2: bool, _$t3: int, _$t4: int, _$t5: int, _$t6: $1_string_String) returns ()
+// fun pay_module::reload<aptos_coin::AptosCoin, #1> [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+3574
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_reload'$1_aptos_coin_AptosCoin_#1'$verify(_$t0: $signer, _$t1: bool, _$t2: bool, _$t3: int, _$t4: int, _$t5: int, _$t6: $1_string_String) returns ()
 {
     // declare local variables
     var $t7: int;
@@ -32897,7 +32907,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     var $t41: int;
     var $t42: Vec (int);
     var $t43: int;
-    var $t44: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap;
+    var $t44: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap;
     var $t45: $1_account_SignerCapability;
     var $t46: int;
     var $t47: $signer;
@@ -32905,14 +32915,14 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     var $t49: int;
     var $t50: Vec (int);
     var $t51: int;
-    var $t52: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t53: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
+    var $t52: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t53: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
     var $t54: Vec (int);
     var $t55: int;
     var $t56: Vec (int);
     var $t57: int;
-    var $t58: $Mutation ($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder);
-    var $t59: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_coin;
+    var $t58: $Mutation ($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder);
+    var $t59: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_coin;
     var $t60: Vec (int);
     var $t61: Vec (int);
     var $t62: $1_string_String;
@@ -32957,850 +32967,860 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
-    assume {:print "$at(5,9507,9508)"} true;
+    // assume WellFormed($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
+    assume {:print "$at(5,9538,9539)"} true;
     assume $IsValid'signer'($t0) && $1_signer_is_txn_signer($t0) && $1_signer_is_txn_signer_addr($t0->$addr);
 
-    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'bool'($t1);
 
-    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'bool'($t2);
 
-    // assume WellFormed($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'u64'($t3);
 
-    // assume WellFormed($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'address'($t4);
 
-    // assume WellFormed($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'address'($t5);
 
-    // assume WellFormed($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume WellFormed($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $IsValid'$1_string_String'($t6);
 
-    // assume forall $rsc: account::Account: ResourceDomain<account::Account>(): And(WellFormed($rsc), And(Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.rotation_capability_offer($rsc)))), 1), Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.signer_capability_offer($rsc)))), 1))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: account::Account: ResourceDomain<account::Account>(): And(WellFormed($rsc), And(Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.rotation_capability_offer($rsc)))), 1), Le(Len<address>(select option::Option.vec(select account::CapabilityOffer.for(select account::Account.signer_capability_offer($rsc)))), 1))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_account_Account_$memory, $a_0)}(var $rsc := $ResourceValue($1_account_Account_$memory, $a_0);
     (($IsValid'$1_account_Account'($rsc) && ((LenVec($rsc->$rotation_capability_offer->$for->$vec) <= 1) && (LenVec($rsc->$signer_capability_offer->$for->$vec) <= 1))))));
 
-    // assume forall $rsc: coin::CoinInfo<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinInfo<aptos_coin::AptosCoin>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::CoinInfo<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinInfo<aptos_coin::AptosCoin>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     (($IsValid'$1_coin_CoinInfo'$1_aptos_coin_AptosCoin''($rsc) && ((LenVec($rsc->$supply->$vec) <= 1) && (var $range_1 := $rsc->$supply->$vec; (forall $i_2: int :: InRangeVec($range_1, $i_2) ==> (var $elem := ReadVec($range_1, $i_2);
     ((((((($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) <==> $1_option_$is_none'$1_optional_aggregator_Integer'($elem->$integer)) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) <==> $1_option_$is_none'$1_aggregator_Aggregator'($elem->$aggregator))) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) ==> ($1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$value <= $1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$limit))) && ($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) ==> ($1_aggregator_spec_aggregator_get_val($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator)) <= $1_aggregator_spec_get_limit($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator))))) && (LenVec($elem->$aggregator->$vec) <= 1)) && (LenVec($elem->$integer->$vec) <= 1)))))))))));
 
-    // assume forall $rsc: coin::CoinStore<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinStore<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::CoinStore<aptos_coin::AptosCoin>: ResourceDomain<coin::CoinStore<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_CoinStore'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume forall $rsc: coin::Ghost$supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::Ghost$supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume exists<coin::Ghost$supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $ResourceExists($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // assume forall $rsc: coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>: ResourceDomain<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume exists<coin::Ghost$aggregate_supply<aptos_coin::AptosCoin>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $ResourceExists($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // assume forall $rsc: coin::CoinInfo<#0>: ResourceDomain<coin::CoinInfo<#0>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::CoinInfo<#0>: ResourceDomain<coin::CoinInfo<#0>>(): And(WellFormed($rsc), And(Le(Len<optional_aggregator::OptionalAggregator>(select option::Option.vec(select coin::CoinInfo.supply($rsc))), 1), forall $elem: optional_aggregator::OptionalAggregator: select option::Option.vec(select coin::CoinInfo.supply($rsc)): And(And(And(And(And(Iff(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), option::$is_none<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), Iff(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), option::$is_none<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))), Implies(option::$is_some<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)), Le(select optional_aggregator::Integer.value<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem))), select optional_aggregator::Integer.limit<optional_aggregator::Integer>(option::$borrow<optional_aggregator::Integer>(select optional_aggregator::OptionalAggregator.integer($elem)))))), Implies(option::$is_some<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)), Le(aggregator::spec_aggregator_get_val(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem))), aggregator::spec_get_limit(option::$borrow<aggregator::Aggregator>(select optional_aggregator::OptionalAggregator.aggregator($elem)))))), Le(Len<aggregator::Aggregator>(select option::Option.vec(select optional_aggregator::OptionalAggregator.aggregator($elem))), 1)), Le(Len<optional_aggregator::Integer>(select option::Option.vec(select optional_aggregator::OptionalAggregator.integer($elem))), 1)))) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinInfo'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     (($IsValid'$1_coin_CoinInfo'$1_aptos_coin_AptosCoin''($rsc) && ((LenVec($rsc->$supply->$vec) <= 1) && (var $range_1 := $rsc->$supply->$vec; (forall $i_2: int :: InRangeVec($range_1, $i_2) ==> (var $elem := ReadVec($range_1, $i_2);
     ((((((($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) <==> $1_option_$is_none'$1_optional_aggregator_Integer'($elem->$integer)) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) <==> $1_option_$is_none'$1_aggregator_Aggregator'($elem->$aggregator))) && ($1_option_$is_some'$1_optional_aggregator_Integer'($elem->$integer) ==> ($1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$value <= $1_option_$borrow'$1_optional_aggregator_Integer'($elem->$integer)->$limit))) && ($1_option_$is_some'$1_aggregator_Aggregator'($elem->$aggregator) ==> ($1_aggregator_spec_aggregator_get_val($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator)) <= $1_aggregator_spec_get_limit($1_option_$borrow'$1_aggregator_Aggregator'($elem->$aggregator))))) && (LenVec($elem->$aggregator->$vec) <= 1)) && (LenVec($elem->$integer->$vec) <= 1)))))))))));
 
-    // assume forall $rsc: coin::CoinStore<#0>: ResourceDomain<coin::CoinStore<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::CoinStore<#0>: ResourceDomain<coin::CoinStore<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_CoinStore'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_CoinStore'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume forall $rsc: coin::Ghost$supply<#0>: ResourceDomain<coin::Ghost$supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::Ghost$supply<#0>: ResourceDomain<coin::Ghost$supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume exists<coin::Ghost$supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $ResourceExists($1_coin_Ghost$supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // assume forall $rsc: coin::Ghost$aggregate_supply<#0>: ResourceDomain<coin::Ghost$aggregate_supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: coin::Ghost$aggregate_supply<#0>: ResourceDomain<coin::Ghost$aggregate_supply<#0>>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0)}(var $rsc := $ResourceValue($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, $a_0);
     ($IsValid'$1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin''($rsc))));
 
-    // assume exists<coin::Ghost$aggregate_supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume exists<coin::Ghost$aggregate_supply<#0>>(0x0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume $ResourceExists($1_coin_Ghost$aggregate_supply'$1_aptos_coin_AptosCoin'_$memory, 0);
 
-    // assume forall $rsc: aptos_account::DirectTransferConfig: ResourceDomain<aptos_account::DirectTransferConfig>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // assume forall $rsc: aptos_account::DirectTransferConfig: ResourceDomain<aptos_account::DirectTransferConfig>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume (forall $a_0: int :: {$ResourceValue($1_aptos_account_DirectTransferConfig_$memory, $a_0)}(var $rsc := $ResourceValue($1_aptos_account_DirectTransferConfig_$memory, $a_0);
     ($IsValid'$1_aptos_account_DirectTransferConfig'($rsc))));
 
-    // assume forall $rsc: pay_module::ResourceCap: ResourceDomain<pay_module::ResourceCap>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap'($rsc))));
+    // assume forall $rsc: pay_module::ResourceCap: ResourceDomain<pay_module::ResourceCap>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap'($rsc))));
 
-    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
-    assume (forall $a_0: int :: {$ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $a_0);
-    ($IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder'($rsc))));
+    // assume forall $rsc: pay_module::Cylinder: ResourceDomain<pay_module::Cylinder>(): WellFormed($rsc) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
+    assume (forall $a_0: int :: {$ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0)}(var $rsc := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $a_0);
+    ($IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder'($rsc))));
 
-    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[caller]($t0) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,0):", $t0} $t0 == $t0;
 
-    // trace_local[need_swap]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[need_swap]($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,1):", $t1} $t1 == $t1;
 
-    // trace_local[need_garble]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[need_garble]($t2) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,2):", $t2} $t2 == $t2;
 
-    // trace_local[amount]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[amount]($t3) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,3):", $t3} $t3 == $t3;
 
-    // trace_local[to_address]($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[to_address]($t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,4):", $t4} $t4 == $t4;
 
-    // trace_local[from_address]($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[from_address]($t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,5):", $t5} $t5 == $t5;
 
-    // trace_local[coin]($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:241:5+1
+    // trace_local[coin]($t6) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:5+1
     assume {:print "$track_local(86,15,6):", $t6} $t6 == $t6;
 
-    // $t17 := signer::address_of($t0) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:18+26
-    assume {:print "$at(5,9705,9731)"} true;
-    call $t17 := $1_signer_address_of($t0);
+    // transfer_module::check_account_exist($t0, $t4) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+61
+    assume {:print "$at(5,9728,9789)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_check_account_exist($t0, $t4);
     if ($abort_flag) {
-        assume {:print "$at(5,9705,9731)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,9728,9789)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t19 := !=($t17, $t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:44+2
-    $t19 := !$IsEqual'address'($t17, $t4);
+    // $t18 := signer::address_of($t0) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:18+26
+    assume {:print "$at(5,9808,9834)"} true;
+    call $t18 := $1_signer_address_of($t0);
+    if ($abort_flag) {
+        assume {:print "$at(5,9808,9834)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
+        goto L43;
+    }
 
-    // if ($t19) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
+    // $t19 := !=($t18, $t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:44+2
+    $t19 := !$IsEqual'address'($t18, $t4);
+
+    // if ($t19) goto L1 else goto L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
     if ($t19) { goto L1; } else { goto L0; }
 
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
 L1:
 
-    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
-    assume {:print "$at(5,9696,9767)"} true;
+    // goto L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
+    assume {:print "$at(5,9799,9870)"} true;
     goto L2;
 
-    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
+    // label L0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
 L0:
 
-    // $t20 := 4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:58+21
-    assume {:print "$at(5,9745,9766)"} true;
+    // $t20 := 4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:58+21
+    assume {:print "$at(5,9848,9869)"} true;
     $t20 := 4;
     assume $IsValid'u64'($t20);
 
-    // trace_abort($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
-    assume {:print "$at(5,9696,9767)"} true;
+    // trace_abort($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
+    assume {:print "$at(5,9799,9870)"} true;
     assume {:print "$track_abort(86,15):", $t20} $t20 == $t20;
 
-    // $t18 := move($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
-    $t18 := $t20;
+    // $t17 := move($t20) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
+    $t17 := $t20;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:242:9+71
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+71
     goto L43;
 
-    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:37+10
-    assume {:print "$at(5,9805,9815)"} true;
+    // label L2 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:37+10
+    assume {:print "$at(5,9908,9918)"} true;
 L2:
 
-    // $t21 := account::exists_at($t4) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:17+32
-    assume {:print "$at(5,9785,9817)"} true;
+    // $t21 := account::exists_at($t4) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:17+32
+    assume {:print "$at(5,9888,9920)"} true;
     call $t21 := $1_account_exists_at($t4);
     if ($abort_flag) {
-        assume {:print "$at(5,9785,9817)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,9888,9920)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // if ($t21) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
+    // if ($t21) goto L4 else goto L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
     if ($t21) { goto L4; } else { goto L3; }
 
-    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
+    // label L4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
 L4:
 
-    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
-    assume {:print "$at(5,9777,9835)"} true;
+    // goto L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
+    assume {:print "$at(5,9880,9938)"} true;
     goto L5;
 
-    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
+    // label L3 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
 L3:
 
-    // $t22 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:50+16
-    assume {:print "$at(5,9818,9834)"} true;
+    // $t22 := 5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:50+16
+    assume {:print "$at(5,9921,9937)"} true;
     $t22 := 5;
     assume $IsValid'u64'($t22);
 
-    // trace_abort($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
-    assume {:print "$at(5,9777,9835)"} true;
+    // trace_abort($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
+    assume {:print "$at(5,9880,9938)"} true;
     assume {:print "$track_abort(86,15):", $t22} $t22 == $t22;
 
-    // $t18 := move($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
-    $t18 := $t22;
+    // $t17 := move($t22) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
+    $t17 := $t22;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:243:9+58
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+58
     goto L43;
 
-    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:17+6
-    assume {:print "$at(5,9853,9859)"} true;
+    // label L5 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:17+6
+    assume {:print "$at(5,9956,9962)"} true;
 L5:
 
-    // $t23 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:25+1
-    assume {:print "$at(5,9861,9862)"} true;
+    // $t23 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:25+1
+    assume {:print "$at(5,9964,9965)"} true;
     $t23 := 0;
     assume $IsValid'u64'($t23);
 
-    // $t24 := !=($t3, $t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:23+2
+    // $t24 := !=($t3, $t23) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:23+2
     $t24 := !$IsEqual'u64'($t3, $t23);
 
-    // if ($t24) goto L7 else goto L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
+    // if ($t24) goto L7 else goto L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
     if ($t24) { goto L7; } else { goto L6; }
 
-    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
+    // label L7 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
 L7:
 
-    // goto L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
-    assume {:print "$at(5,9845,9878)"} true;
+    // goto L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
+    assume {:print "$at(5,9948,9981)"} true;
     goto L8;
 
-    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
+    // label L6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
 L6:
 
-    // $t25 := 6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:27+14
-    assume {:print "$at(5,9863,9877)"} true;
+    // $t25 := 6 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:27+14
+    assume {:print "$at(5,9966,9980)"} true;
     $t25 := 6;
     assume $IsValid'u64'($t25);
 
-    // trace_abort($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
-    assume {:print "$at(5,9845,9878)"} true;
+    // trace_abort($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
+    assume {:print "$at(5,9948,9981)"} true;
     assume {:print "$track_abort(86,15):", $t25} $t25 == $t25;
 
-    // $t18 := move($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
-    $t18 := $t25;
+    // $t17 := move($t25) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
+    $t17 := $t25;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:244:9+33
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+33
     goto L43;
 
-    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:17+6
-    assume {:print "$at(5,9896,9902)"} true;
+    // label L8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:17+6
+    assume {:print "$at(5,9999,10005)"} true;
 L8:
 
-    // $t26 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:24+1
-    assume {:print "$at(5,9903,9904)"} true;
+    // $t26 := 0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:24+1
+    assume {:print "$at(5,10006,10007)"} true;
     $t26 := 0;
     assume $IsValid'u64'($t26);
 
-    // $t27 := >($t3, $t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:23+1
+    // $t27 := >($t3, $t26) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:23+1
     call $t27 := $Gt($t3, $t26);
 
-    // if ($t27) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
+    // if ($t27) goto L10 else goto L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
     if ($t27) { goto L10; } else { goto L9; }
 
-    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
+    // label L10 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
 L10:
 
-    // goto L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
-    assume {:print "$at(5,9888,9933)"} true;
+    // goto L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
+    assume {:print "$at(5,9991,10036)"} true;
     goto L11;
 
-    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
+    // label L9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
 L9:
 
-    // $t28 := 15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:26+27
-    assume {:print "$at(5,9905,9932)"} true;
+    // $t28 := 15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:26+27
+    assume {:print "$at(5,10008,10035)"} true;
     $t28 := 15;
     assume $IsValid'u64'($t28);
 
-    // trace_abort($t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
-    assume {:print "$at(5,9888,9933)"} true;
+    // trace_abort($t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
+    assume {:print "$at(5,9991,10036)"} true;
     assume {:print "$track_abort(86,15):", $t28} $t28 == $t28;
 
-    // $t18 := move($t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
-    $t18 := $t28;
+    // $t17 := move($t28) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
+    $t17 := $t28;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:245:9+45
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+45
     goto L43;
 
-    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:36+6
-    assume {:print "$at(5,9970,9976)"} true;
+    // label L11 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:36+6
+    assume {:print "$at(5,10073,10079)"} true;
 L11:
 
-    // $t29 := signer::address_of($t0) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:17+26
-    assume {:print "$at(5,9951,9977)"} true;
+    // $t29 := signer::address_of($t0) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:17+26
+    assume {:print "$at(5,10054,10080)"} true;
     call $t29 := $1_signer_address_of($t0);
     if ($abort_flag) {
-        assume {:print "$at(5,9951,9977)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10054,10080)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t30 := ==($t29, $t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:43+2
+    // $t30 := ==($t29, $t5) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:43+2
     $t30 := $IsEqual'address'($t29, $t5);
 
-    // if ($t30) goto L13 else goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
+    // if ($t30) goto L13 else goto L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
     if ($t30) { goto L13; } else { goto L12; }
 
-    // label L13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
+    // label L13 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
 L13:
 
-    // goto L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
-    assume {:print "$at(5,9943,10021)"} true;
+    // goto L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
+    assume {:print "$at(5,10046,10124)"} true;
     goto L14;
 
-    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
+    // label L12 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
 L12:
 
-    // $t31 := 9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:58+28
-    assume {:print "$at(5,9992,10020)"} true;
+    // $t31 := 9 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:58+28
+    assume {:print "$at(5,10095,10123)"} true;
     $t31 := 9;
     assume $IsValid'u64'($t31);
 
-    // trace_abort($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
-    assume {:print "$at(5,9943,10021)"} true;
+    // trace_abort($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
+    assume {:print "$at(5,10046,10124)"} true;
     assume {:print "$track_abort(86,15):", $t31} $t31 == $t31;
 
-    // $t18 := move($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
-    $t18 := $t31;
+    // $t17 := move($t31) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
+    $t17 := $t31;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:246:9+78
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+78
     goto L43;
 
-    // label L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:17+10
-    assume {:print "$at(5,10039,10049)"} true;
+    // label L14 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:17+10
+    assume {:print "$at(5,10142,10152)"} true;
 L14:
 
-    // $t32 := 0x0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:29+4
-    assume {:print "$at(5,10051,10055)"} true;
+    // $t32 := 0x0 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:29+4
+    assume {:print "$at(5,10154,10158)"} true;
     $t32 := 0;
     assume $IsValid'address'($t32);
 
-    // $t33 := !=($t4, $t32) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:27+2
+    // $t33 := !=($t4, $t32) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:27+2
     $t33 := !$IsEqual'address'($t4, $t32);
 
-    // if ($t33) goto L16 else goto L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
+    // if ($t33) goto L16 else goto L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
     if ($t33) { goto L16; } else { goto L15; }
 
-    // label L16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
+    // label L16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
 L16:
 
-    // goto L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
-    assume {:print "$at(5,10031,10072)"} true;
+    // goto L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
+    assume {:print "$at(5,10134,10175)"} true;
     goto L17;
 
-    // label L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
+    // label L15 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
 L15:
 
-    // $t34 := 8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:34+15
-    assume {:print "$at(5,10056,10071)"} true;
+    // $t34 := 8 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:34+15
+    assume {:print "$at(5,10159,10174)"} true;
     $t34 := 8;
     assume $IsValid'u64'($t34);
 
-    // trace_abort($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
-    assume {:print "$at(5,10031,10072)"} true;
+    // trace_abort($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
+    assume {:print "$at(5,10134,10175)"} true;
     assume {:print "$track_abort(86,15):", $t34} $t34 == $t34;
 
-    // $t18 := move($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
-    $t18 := $t34;
+    // $t17 := move($t34) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
+    $t17 := $t34;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:247:9+41
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:250:9+41
     goto L43;
 
-    // label L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:17+10
-    assume {:print "$at(5,10090,10100)"} true;
+    // label L17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:17+10
+    assume {:print "$at(5,10193,10203)"} true;
 L17:
 
-    // $t35 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:29+5
-    assume {:print "$at(5,10102,10107)"} true;
-    $t35 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t35 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:29+5
+    assume {:print "$at(5,10205,10210)"} true;
+    $t35 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t35);
 
-    // $t36 := !=($t4, $t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:27+2
+    // $t36 := !=($t4, $t35) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:27+2
     $t36 := !$IsEqual'address'($t4, $t35);
 
-    // if ($t36) goto L19 else goto L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
+    // if ($t36) goto L19 else goto L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
     if ($t36) { goto L19; } else { goto L18; }
 
-    // label L19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
+    // label L19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
 L19:
 
-    // goto L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
-    assume {:print "$at(5,10082,10134)"} true;
+    // goto L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
+    assume {:print "$at(5,10185,10237)"} true;
     goto L20;
 
-    // label L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
+    // label L18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
 L18:
 
-    // $t37 := 16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:35+25
-    assume {:print "$at(5,10108,10133)"} true;
+    // $t37 := 16 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:35+25
+    assume {:print "$at(5,10211,10236)"} true;
     $t37 := 16;
     assume $IsValid'u64'($t37);
 
-    // trace_abort($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
-    assume {:print "$at(5,10082,10134)"} true;
+    // trace_abort($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
+    assume {:print "$at(5,10185,10237)"} true;
     assume {:print "$track_abort(86,15):", $t37} $t37 == $t37;
 
-    // $t18 := move($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
-    $t18 := $t37;
+    // $t17 := move($t37) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
+    $t17 := $t37;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:248:9+52
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:251:9+52
     goto L43;
 
-    // label L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:36+6
-    assume {:print "$at(5,10171,10177)"} true;
+    // label L20 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:36+6
+    assume {:print "$at(5,10274,10280)"} true;
 L20:
 
-    // $t38 := signer::address_of($t0) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:17+26
-    assume {:print "$at(5,10152,10178)"} true;
+    // $t38 := signer::address_of($t0) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:17+26
+    assume {:print "$at(5,10255,10281)"} true;
     call $t38 := $1_signer_address_of($t0);
     if ($abort_flag) {
-        assume {:print "$at(5,10152,10178)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10255,10281)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t39 := !=($t38, $t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:43+2
+    // $t39 := !=($t38, $t4) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:43+2
     $t39 := !$IsEqual'address'($t38, $t4);
 
-    // if ($t39) goto L22 else goto L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
+    // if ($t39) goto L22 else goto L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
     if ($t39) { goto L22; } else { goto L21; }
 
-    // label L22 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
+    // label L22 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
 L22:
 
-    // goto L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
-    assume {:print "$at(5,10144,10219)"} true;
+    // goto L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
+    assume {:print "$at(5,10247,10322)"} true;
     goto L23;
 
-    // label L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
+    // label L21 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
 L21:
 
-    // $t40 := 30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:56+27
-    assume {:print "$at(5,10191,10218)"} true;
+    // $t40 := 30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:56+27
+    assume {:print "$at(5,10294,10321)"} true;
     $t40 := 30;
     assume $IsValid'u64'($t40);
 
-    // trace_abort($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
-    assume {:print "$at(5,10144,10219)"} true;
+    // trace_abort($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
+    assume {:print "$at(5,10247,10322)"} true;
     assume {:print "$track_abort(86,15):", $t40} $t40 == $t40;
 
-    // $t18 := move($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
-    $t18 := $t40;
+    // $t17 := move($t40) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
+    $t17 := $t40;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:249:9+75
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:252:9+75
     goto L43;
 
-    // label L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:107+5
-    assume {:print "$at(5,10431,10436)"} true;
+    // label L23 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:107+5
+    assume {:print "$at(5,10534,10539)"} true;
 L23:
 
-    // $t41 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:107+5
-    assume {:print "$at(5,10431,10436)"} true;
-    $t41 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t41 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:107+5
+    assume {:print "$at(5,10534,10539)"} true;
+    $t41 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t41);
 
-    // $t42 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:113+4
+    // $t42 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:113+4
     $t42 := MakeVec3(97, 115, 102);
     assume $IsValid'vec'u8''($t42);
 
-    // $t43 := opaque begin: account::create_resource_address($t41, $t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:56+62
+    // $t43 := opaque begin: account::create_resource_address($t41, $t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+62
 
-    // assume WellFormed($t43) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:56+62
+    // assume WellFormed($t43) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+62
     assume $IsValid'address'($t43);
 
-    // assume Eq<address>($t43, account::spec_create_resource_address($t41, $t42)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:56+62
+    // assume Eq<address>($t43, account::spec_create_resource_address($t41, $t42)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+62
     assume $IsEqual'address'($t43, $1_account_spec_create_resource_address($t41, $t42));
 
-    // $t43 := opaque end: account::create_resource_address($t41, $t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:56+62
+    // $t43 := opaque end: account::create_resource_address($t41, $t42) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+62
 
-    // $t44 := get_global<pay_module::ResourceCap>($t43) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:29+13
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t43)) {
+    // $t44 := get_global<pay_module::ResourceCap>($t43) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:29+13
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t43)) {
         call $ExecFailureAbort();
     } else {
-        $t44 := $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_ResourceCap_$memory, $t43);
+        $t44 := $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_ResourceCap_$memory, $t43);
     }
     if ($abort_flag) {
-        assume {:print "$at(5,10353,10366)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10456,10469)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t45 := get_field<pay_module::ResourceCap>.cap($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:253:28+95
+    // $t45 := get_field<pay_module::ResourceCap>.cap($t44) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:28+95
     $t45 := $t44->$cap;
 
     // assume Identical($t46, select account::SignerCapability.account<account::SignerCapability>($t45)) at /Users/dylan/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/account.spec.move:652:9+30
     assume {:print "$at(88,32361,32391)"} true;
     assume ($t46 == $t45->$account);
 
-    // $t47 := account::create_signer_with_capability($t45) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:254:32+52
-    assume {:print "$at(5,10480,10532)"} true;
+    // $t47 := account::create_signer_with_capability($t45) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:32+52
+    assume {:print "$at(5,10583,10635)"} true;
     call $t47 := $1_account_create_signer_with_capability($t45);
     if ($abort_flag) {
-        assume {:print "$at(5,10480,10532)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10583,10635)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // trace_local[resource_signer]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:254:13+15
+    // trace_local[resource_signer]($t47) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:13+15
     assume {:print "$track_local(86,15,16):", $t47} $t47 == $t47;
 
-    // $t48 := signer::address_of($t47) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:255:32+35
-    assume {:print "$at(5,10565,10600)"} true;
+    // $t48 := signer::address_of($t47) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:258:32+35
+    assume {:print "$at(5,10668,10703)"} true;
     call $t48 := $1_signer_address_of($t47);
     if ($abort_flag) {
-        assume {:print "$at(5,10565,10600)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10668,10703)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // trace_local[resource_address]($t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:255:13+16
+    // trace_local[resource_address]($t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:258:13+16
     assume {:print "$track_local(86,15,15):", $t48} $t48 == $t48;
 
-    // $t49 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:81+5
-    assume {:print "$at(5,10682,10687)"} true;
-    $t49 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t49 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:81+5
+    assume {:print "$at(5,10785,10790)"} true;
+    $t49 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t49);
 
-    // $t50 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:87+4
+    // $t50 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:87+4
     $t50 := MakeVec3(97, 115, 102);
     assume $IsValid'vec'u8''($t50);
 
-    // $t51 := opaque begin: account::create_resource_address($t49, $t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+36
+    // $t51 := opaque begin: account::create_resource_address($t49, $t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:56+36
 
-    // assume WellFormed($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+36
+    // assume WellFormed($t51) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:56+36
     assume $IsValid'address'($t51);
 
-    // assume Eq<address>($t51, account::spec_create_resource_address($t49, $t50)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+36
+    // assume Eq<address>($t51, account::spec_create_resource_address($t49, $t50)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:56+36
     assume $IsEqual'address'($t51, $1_account_spec_create_resource_address($t49, $t50));
 
-    // $t51 := opaque end: account::create_resource_address($t49, $t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:56+36
+    // $t51 := opaque end: account::create_resource_address($t49, $t50) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:56+36
 
-    // $t52 := borrow_global<pay_module::Cylinder>($t51) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:28+17
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t51)) {
+    // $t52 := borrow_global<pay_module::Cylinder>($t51) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:28+17
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t51)) {
         call $ExecFailureAbort();
     } else {
-        $t52 := $Mutation($Global($t51), EmptyVec(), $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t51));
+        $t52 := $Mutation($Global($t51), EmptyVec(), $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t51));
     }
     if ($abort_flag) {
-        assume {:print "$at(5,10629,10646)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10732,10749)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t53 := get_field<pay_module::Cylinder>.Bullet($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:28+72
+    // $t53 := get_field<pay_module::Cylinder>.Bullet($t52) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:28+72
     $t53 := $Dereference($t52)->$Bullet;
 
-    // $t54 := get_field<pay_module::Cylinder_coin>.amount($t53) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:28+79
+    // $t54 := get_field<pay_module::Cylinder_coin>.amount($t53) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:28+79
     $t54 := $t53->$amount;
 
-    // trace_local[borrow_amount]($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:256:13+13
+    // trace_local[borrow_amount]($t54) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:13+13
     assume {:print "$track_local(86,15,14):", $t54} $t54 == $t54;
 
-    // $t55 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:82+5
-    assume {:print "$at(5,10791,10796)"} true;
-    $t55 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t55 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:82+5
+    assume {:print "$at(5,10894,10899)"} true;
+    $t55 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t55);
 
-    // $t56 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:88+4
+    // $t56 := [97, 115, 102] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:88+4
     $t56 := MakeVec3(97, 115, 102);
     assume $IsValid'vec'u8''($t56);
 
-    // $t57 := opaque begin: account::create_resource_address($t55, $t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:57+36
+    // $t57 := opaque begin: account::create_resource_address($t55, $t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:57+36
 
-    // assume WellFormed($t57) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:57+36
+    // assume WellFormed($t57) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:57+36
     assume $IsValid'address'($t57);
 
-    // assume Eq<address>($t57, account::spec_create_resource_address($t55, $t56)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:57+36
+    // assume Eq<address>($t57, account::spec_create_resource_address($t55, $t56)) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:57+36
     assume $IsEqual'address'($t57, $1_account_spec_create_resource_address($t55, $t56));
 
-    // $t57 := opaque end: account::create_resource_address($t55, $t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:57+36
+    // $t57 := opaque end: account::create_resource_address($t55, $t56) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:57+36
 
-    // $t58 := borrow_global<pay_module::Cylinder>($t57) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:29+17
-    if (!$ResourceExists($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t57)) {
+    // $t58 := borrow_global<pay_module::Cylinder>($t57) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:29+17
+    if (!$ResourceExists($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t57)) {
         call $ExecFailureAbort();
     } else {
-        $t58 := $Mutation($Global($t57), EmptyVec(), $ResourceValue($c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_Cylinder_$memory, $t57));
+        $t58 := $Mutation($Global($t57), EmptyVec(), $ResourceValue($5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_Cylinder_$memory, $t57));
     }
     if ($abort_flag) {
-        assume {:print "$at(5,10738,10755)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10841,10858)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t59 := get_field<pay_module::Cylinder>.Bullet($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:29+72
+    // $t59 := get_field<pay_module::Cylinder>.Bullet($t58) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:29+72
     $t59 := $Dereference($t58)->$Bullet;
 
-    // $t60 := get_field<pay_module::Cylinder_coin>.address($t59) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:29+80
+    // $t60 := get_field<pay_module::Cylinder_coin>.address($t59) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:29+80
     $t60 := $t59->$address;
 
-    // trace_local[borrow_address]($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:257:13+14
+    // trace_local[borrow_address]($t60) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:13+14
     assume {:print "$track_local(86,15,13):", $t60} $t60 == $t60;
 
-    // $t61 := [98, 111, 114, 114, 111, 119, 32, 97, 109, 111, 117, 110, 116, 32, 97, 110, 100, 32, 97, 100, 100, 114, 101, 115, 115, 32, 58] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:258:28+30
-    assume {:print "$at(5,10847,10877)"} true;
+    // $t61 := [98, 111, 114, 114, 111, 119, 32, 97, 109, 111, 117, 110, 116, 32, 97, 110, 100, 32, 97, 100, 100, 114, 101, 115, 115, 32, 58] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:28+30
+    assume {:print "$at(5,10950,10980)"} true;
     $t61 := ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(MakeVec4(98, 111, 114, 114), MakeVec4(111, 119, 32, 97)), MakeVec4(109, 111, 117, 110)), MakeVec4(116, 32, 97, 110)), MakeVec4(100, 32, 97, 100)), MakeVec4(100, 114, 101, 115)), MakeVec3(115, 32, 58));
     assume $IsValid'vec'u8''($t61);
 
-    // $t62 := string::utf8($t61) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:258:23+36
+    // $t62 := string::utf8($t61) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:23+36
     call $t62 := $1_string_utf8($t61);
     if ($abort_flag) {
-        assume {:print "$at(5,10842,10878)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10945,10981)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // debug::print<string::String>($t62) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:258:9+51
+    // debug::print<string::String>($t62) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:9+51
     call $1_debug_print'$1_string_String'($t62);
     if ($abort_flag) {
-        assume {:print "$at(5,10828,10879)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10931,10982)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // debug::print<vector<u64>>($t54) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:259:9+28
-    assume {:print "$at(5,10889,10917)"} true;
+    // debug::print<vector<u64>>($t54) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:262:9+28
+    assume {:print "$at(5,10992,11020)"} true;
     call $1_debug_print'vec'u64''($t54);
     if ($abort_flag) {
-        assume {:print "$at(5,10889,10917)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,10992,11020)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // debug::print<vector<address>>($t60) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:260:9+29
-    assume {:print "$at(5,10927,10956)"} true;
+    // debug::print<vector<address>>($t60) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:263:9+29
+    assume {:print "$at(5,11030,11059)"} true;
     call $1_debug_print'vec'address''($t60);
     if ($abort_flag) {
-        assume {:print "$at(5,10927,10956)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11030,11059)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t63 := [35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:28+28
-    assume {:print "$at(5,10985,11013)"} true;
+    // $t63 := [35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:264:28+28
+    assume {:print "$at(5,11088,11116)"} true;
     $t63 := ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(ConcatVec(MakeVec4(35, 35, 35, 35), MakeVec4(35, 35, 35, 35)), MakeVec4(35, 35, 35, 35)), MakeVec4(35, 35, 35, 35)), MakeVec4(35, 35, 35, 35)), MakeVec4(35, 35, 35, 35)), MakeVec1(35));
     assume $IsValid'vec'u8''($t63);
 
-    // $t64 := string::utf8($t63) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:23+34
+    // $t64 := string::utf8($t63) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:264:23+34
     call $t64 := $1_string_utf8($t63);
     if ($abort_flag) {
-        assume {:print "$at(5,10980,11014)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11083,11117)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // debug::print<string::String>($t64) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:261:9+49
+    // debug::print<string::String>($t64) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:264:9+49
     call $1_debug_print'$1_string_String'($t64);
     if ($abort_flag) {
-        assume {:print "$at(5,10966,11015)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11069,11118)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t65 := !=($t4, $t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:27+2
-    assume {:print "$at(5,11244,11246)"} true;
+    // $t65 := !=($t4, $t48) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:27+2
+    assume {:print "$at(5,11347,11349)"} true;
     $t65 := !$IsEqual'address'($t4, $t48);
 
-    // if ($t65) goto L25 else goto L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
+    // if ($t65) goto L25 else goto L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
     if ($t65) { goto L25; } else { goto L24; }
 
-    // label L25 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
+    // label L25 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
 L25:
 
-    // goto L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
-    assume {:print "$at(5,11226,11301)"} true;
+    // goto L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
+    assume {:print "$at(5,11329,11404)"} true;
     goto L26;
 
-    // label L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
+    // label L24 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
 L24:
 
-    // $t66 := 17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:46+37
-    assume {:print "$at(5,11263,11300)"} true;
+    // $t66 := 17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:46+37
+    assume {:print "$at(5,11366,11403)"} true;
     $t66 := 17;
     assume $IsValid'u64'($t66);
 
-    // trace_abort($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
-    assume {:print "$at(5,11226,11301)"} true;
+    // trace_abort($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
+    assume {:print "$at(5,11329,11404)"} true;
     assume {:print "$track_abort(86,15):", $t66} $t66 == $t66;
 
-    // $t18 := move($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
-    $t18 := $t66;
+    // $t17 := move($t66) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
+    $t17 := $t66;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:266:9+75
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:269:9+75
     goto L43;
 
-    // label L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:28+15
-    assume {:print "$at(5,11330,11345)"} true;
+    // label L26 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:28+15
+    assume {:print "$at(5,11433,11448)"} true;
 L26:
 
-    // $t67 := vector::is_empty<address>($t60) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:18+27
-    assume {:print "$at(5,11320,11347)"} true;
+    // $t67 := vector::is_empty<address>($t60) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:18+27
+    assume {:print "$at(5,11423,11450)"} true;
     call $t67 := $1_vector_is_empty'address'($t60);
     if ($abort_flag) {
-        assume {:print "$at(5,11320,11347)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11423,11450)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t68 := !($t67) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:17+1
+    // $t68 := !($t67) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:17+1
     call $t68 := $Not($t67);
 
-    // if ($t68) goto L28 else goto L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
+    // if ($t68) goto L28 else goto L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
     if ($t68) { goto L28; } else { goto L27; }
 
-    // label L28 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
+    // label L28 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
 L28:
 
-    // goto L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
-    assume {:print "$at(5,11311,11368)"} true;
+    // goto L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
+    assume {:print "$at(5,11414,11471)"} true;
     goto L29;
 
-    // label L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
+    // label L27 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
 L27:
 
-    // $t69 := 19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:46+19
-    assume {:print "$at(5,11348,11367)"} true;
+    // $t69 := 19 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:46+19
+    assume {:print "$at(5,11451,11470)"} true;
     $t69 := 19;
     assume $IsValid'u64'($t69);
 
-    // trace_abort($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
-    assume {:print "$at(5,11311,11368)"} true;
+    // trace_abort($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
+    assume {:print "$at(5,11414,11471)"} true;
     assume {:print "$track_abort(86,15):", $t69} $t69 == $t69;
 
-    // $t18 := move($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
-    $t18 := $t69;
+    // $t17 := move($t69) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
+    $t17 := $t69;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:267:9+57
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+57
     goto L43;
 
-    // label L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:28+14
-    assume {:print "$at(5,11397,11411)"} true;
+    // label L29 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:28+14
+    assume {:print "$at(5,11500,11514)"} true;
 L29:
 
-    // $t70 := vector::is_empty<u64>($t54) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:18+26
-    assume {:print "$at(5,11387,11413)"} true;
+    // $t70 := vector::is_empty<u64>($t54) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:18+26
+    assume {:print "$at(5,11490,11516)"} true;
     call $t70 := $1_vector_is_empty'u64'($t54);
     if ($abort_flag) {
-        assume {:print "$at(5,11387,11413)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11490,11516)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t71 := !($t70) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:17+1
+    // $t71 := !($t70) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:17+1
     call $t71 := $Not($t70);
 
-    // if ($t71) goto L31 else goto L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
+    // if ($t71) goto L31 else goto L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
     if ($t71) { goto L31; } else { goto L30; }
 
-    // label L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
+    // label L31 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
 L31:
 
-    // goto L32 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
-    assume {:print "$at(5,11378,11433)"} true;
+    // goto L32 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
+    assume {:print "$at(5,11481,11536)"} true;
     goto L32;
 
-    // label L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
+    // label L30 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
 L30:
 
-    // $t72 := 18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:45+18
-    assume {:print "$at(5,11414,11432)"} true;
+    // $t72 := 18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:45+18
+    assume {:print "$at(5,11517,11535)"} true;
     $t72 := 18;
     assume $IsValid'u64'($t72);
 
-    // trace_abort($t72) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
-    assume {:print "$at(5,11378,11433)"} true;
+    // trace_abort($t72) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
+    assume {:print "$at(5,11481,11536)"} true;
     assume {:print "$track_abort(86,15):", $t72} $t72 == $t72;
 
-    // $t18 := move($t72) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
-    $t18 := $t72;
+    // $t17 := move($t72) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
+    $t17 := $t72;
 
-    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:268:9+55
+    // goto L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:9+55
     goto L43;
 
-    // label L32 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:13+9
-    assume {:print "$at(5,11448,11457)"} true;
+    // label L32 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:13+9
+    assume {:print "$at(5,11551,11560)"} true;
 L32:
 
-    // $t73 := !($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:12+1
-    assume {:print "$at(5,11447,11448)"} true;
+    // $t73 := !($t1) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:12+1
+    assume {:print "$at(5,11550,11551)"} true;
     call $t73 := $Not($t1);
 
-    // if ($t73) goto L34 else goto L33 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+1558
+    // if ($t73) goto L34 else goto L33 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:9+1558
     if ($t73) { goto L34; } else { goto L33; }
 
-    // label L34 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:16+11
-    assume {:print "$at(5,11475,11486)"} true;
+    // label L34 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:16+11
+    assume {:print "$at(5,11578,11589)"} true;
 L34:
 
-    // if ($t2) goto L36 else goto L35 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:13+1331
-    assume {:print "$at(5,11472,12803)"} true;
+    // if ($t2) goto L36 else goto L35 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:13+1331
+    assume {:print "$at(5,11575,12906)"} true;
     if ($t2) { goto L36; } else { goto L35; }
 
-    // label L36 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:32+6
-    assume {:print "$at(5,11578,11584)"} true;
+    // label L36 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:277:32+6
+    assume {:print "$at(5,11681,11687)"} true;
 L36:
 
-    // pay_module::push_to_vector($t0, $t4, $t3, $t6) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:17+45
-    assume {:print "$at(5,11563,11608)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_push_to_vector($t0, $t4, $t3, $t6);
+    // pay_module::push_to_vector($t0, $t4, $t3, $t6) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:277:17+45
+    assume {:print "$at(5,11666,11711)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_push_to_vector($t0, $t4, $t3, $t6);
     if ($abort_flag) {
-        assume {:print "$at(5,11563,11608)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11666,11711)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // $t74 := pay_module::check_enough_bullet($t60, $t54) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:275:20+49
-    assume {:print "$at(5,11629,11678)"} true;
-    call $t74 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_check_enough_bullet($t60, $t54);
+    // $t74 := pay_module::check_enough_bullet($t60, $t54) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:278:20+49
+    assume {:print "$at(5,11732,11781)"} true;
+    call $t74 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_check_enough_bullet($t60, $t54);
     if ($abort_flag) {
-        assume {:print "$at(5,11629,11678)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11732,11781)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // if ($t74) goto L38 else goto L37 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:275:17+733
+    // if ($t74) goto L38 else goto L37 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:278:17+733
     if ($t74) { goto L38; } else { goto L37; }
 
-    // label L38 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:276:37+6
-    assume {:print "$at(5,11717,11723)"} true;
+    // label L38 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:279:37+6
+    assume {:print "$at(5,11820,11826)"} true;
 L38:
 
-    // pay_module::pay_apt_to_dapp($t0, $t3, $t48) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:276:21+47
-    assume {:print "$at(5,11701,11748)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_apt_to_dapp($t0, $t3, $t48);
+    // pay_module::pay_apt_to_dapp($t0, $t3, $t48) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:279:21+47
+    assume {:print "$at(5,11804,11851)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_apt_to_dapp($t0, $t3, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,11701,11748)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11804,11851)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // pay_module::check_each_vector_not_zero($t0, $t54, $t60, $t48) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:278:21+80
-    assume {:print "$at(5,11838,11918)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_check_each_vector_not_zero($t0, $t54, $t60, $t48);
+    // pay_module::check_each_vector_not_zero($t0, $t54, $t60, $t48) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:281:21+80
+    assume {:print "$at(5,11941,12021)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_check_each_vector_not_zero($t0, $t54, $t60, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,11838,11918)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,11941,12021)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
@@ -33828,116 +33848,116 @@ L38:
       (var $range_0 := $Range(0, LenVec($t60)); (exists $i_1: int :: $InRange($range_0, $i_1) && (var i := $i_1;
     ((ReadVec($t54, i) > 0)))));
 
-    // aptos_account::batch_transfer($t47, $t60, $t54) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:279:21+60
-    assume {:print "$at(5,11940,12000)"} true;
+    // aptos_account::batch_transfer($t47, $t60, $t54) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:282:21+60
+    assume {:print "$at(5,12043,12103)"} true;
     call $1_aptos_account_batch_transfer($t47, $t60, $t54);
     if ($abort_flag) {
-        assume {:print "$at(5,11940,12000)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,12043,12103)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // pay_module::clean_Cylinder($t0, $t47) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:282:21+38
-    assume {:print "$at(5,12134,12172)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_clean_Cylinder($t0, $t47);
+    // pay_module::clean_Cylinder($t0, $t47) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:285:21+38
+    assume {:print "$at(5,12237,12275)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_clean_Cylinder($t0, $t47);
     if ($abort_flag) {
-        assume {:print "$at(5,12134,12172)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,12237,12275)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // goto L39 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:275:17+733
-    assume {:print "$at(5,11626,12359)"} true;
+    // goto L39 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:278:17+733
+    assume {:print "$at(5,11729,12462)"} true;
     goto L39;
 
-    // label L37 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:275:17+733
+    // label L37 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:278:17+733
 L37:
 
-    // label L39 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:13+1331
-    assume {:print "$at(5,11472,12803)"} true;
+    // label L39 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:13+1331
+    assume {:print "$at(5,11575,12906)"} true;
 L39:
 
-    // goto L40 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:271:13+1331
-    assume {:print "$at(5,11472,12803)"} true;
+    // goto L40 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:274:13+1331
+    assume {:print "$at(5,11575,12906)"} true;
     goto L40;
 
-    // label L35 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:290:33+6
-    assume {:print "$at(5,12466,12472)"} true;
+    // label L35 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:293:33+6
+    assume {:print "$at(5,12569,12575)"} true;
 L35:
 
-    // pay_module::pay_apt_to_dapp($t0, $t3, $t48) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:290:17+47
-    assume {:print "$at(5,12450,12497)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_apt_to_dapp($t0, $t3, $t48);
+    // pay_module::pay_apt_to_dapp($t0, $t3, $t48) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:293:17+47
+    assume {:print "$at(5,12553,12600)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_apt_to_dapp($t0, $t3, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,12450,12497)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,12553,12600)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // pay_module::pay_coin_to_dapp<#0>($t0, $t3, $t48) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:291:17+55
-    assume {:print "$at(5,12515,12570)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_pay_coin_to_dapp'$1_aptos_coin_AptosCoin'($t0, $t3, $t48);
+    // pay_module::pay_coin_to_dapp<#0>($t0, $t3, $t48) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:294:17+55
+    assume {:print "$at(5,12618,12673)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_pay_coin_to_dapp'$1_aptos_coin_AptosCoin'($t0, $t3, $t48);
     if ($abort_flag) {
-        assume {:print "$at(5,12515,12570)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,12618,12673)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // transfer_module::own_transfer<#0>($t47, $t4, $t3) on_abort goto L43 with $t18 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:293:17+77
-    assume {:print "$at(5,12685,12762)"} true;
-    call $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_transfer_module_own_transfer'$1_aptos_coin_AptosCoin'($t47, $t4, $t3);
+    // transfer_module::own_transfer<#0>($t47, $t4, $t3) on_abort goto L43 with $t17 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:296:17+77
+    assume {:print "$at(5,12788,12865)"} true;
+    call $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_transfer_module_own_transfer'$1_aptos_coin_AptosCoin'($t47, $t4, $t3);
     if ($abort_flag) {
-        assume {:print "$at(5,12685,12762)"} true;
-        $t18 := $abort_code;
-        assume {:print "$track_abort(86,15):", $t18} $t18 == $t18;
+        assume {:print "$at(5,12788,12865)"} true;
+        $t17 := $abort_code;
+        assume {:print "$track_abort(86,15):", $t17} $t17 == $t17;
         goto L43;
     }
 
-    // label L40 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+1558
-    assume {:print "$at(5,11444,13002)"} true;
+    // label L40 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:9+1558
+    assume {:print "$at(5,11547,13105)"} true;
 L40:
 
-    // goto L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+1558
-    assume {:print "$at(5,11444,13002)"} true;
+    // goto L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:9+1558
+    assume {:print "$at(5,11547,13105)"} true;
     goto L41;
 
-    // label L33 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:297:13+161
-    assume {:print "$at(5,12831,12992)"} true;
+    // label L33 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:300:13+161
+    assume {:print "$at(5,12934,13095)"} true;
 L33:
 
-    // if ($t2) goto L41 else goto L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:297:13+161
-    assume {:print "$at(5,12831,12992)"} true;
+    // if ($t2) goto L41 else goto L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:300:13+161
+    assume {:print "$at(5,12934,13095)"} true;
     if ($t2) { goto L41; } else { goto L41; }
 
-    // label L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:270:9+1558
-    assume {:print "$at(5,11444,13002)"} true;
+    // label L41 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:273:9+1558
+    assume {:print "$at(5,11547,13105)"} true;
 L41:
 
-    // label L42 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:304:5+1
-    assume {:print "$at(5,13008,13009)"} true;
+    // label L42 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:307:5+1
+    assume {:print "$at(5,13111,13112)"} true;
 L42:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:304:5+1
-    assume {:print "$at(5,13008,13009)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:307:5+1
+    assume {:print "$at(5,13111,13112)"} true;
     return;
 
-    // label L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:304:5+1
+    // label L43 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:307:5+1
 L43:
 
-    // abort($t18) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:304:5+1
-    assume {:print "$at(5,13008,13009)"} true;
-    $abort_code := $t18;
+    // abort($t17) at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:307:5+1
+    assume {:print "$at(5,13111,13112)"} true;
+    $abort_code := $t17;
     $abort_flag := true;
     return;
 
 }
 
-// fun pay_module::swap_to_other [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:239:5+34
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_pay_module_swap_to_other$verify() returns ()
+// fun pay_module::swap_to_other [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:240:5+34
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_pay_module_swap_to_other$verify() returns ()
 {
     // declare local variables
 
@@ -33945,32 +33965,32 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     call $InitVerification();
 
     // bytecode translation starts here
-    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:239:38+1
-    assume {:print "$at(5,9470,9471)"} true;
+    // label L1 at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:240:38+1
+    assume {:print "$at(5,9501,9502)"} true;
 L1:
 
-    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:239:38+1
-    assume {:print "$at(5,9470,9471)"} true;
+    // return () at /Users/dylan/Documents/GitHub/diffusion/sources/pay_module.move:240:38+1
+    assume {:print "$at(5,9501,9502)"} true;
     return;
 
 }
 
 // struct roll::WinningNum at /Users/dylan/Documents/GitHub/diffusion/sources/roll_module.move:6:5+56
-datatype $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum($n: int)
+datatype $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum($n: int)
 }
-function {:inline} $Update'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'_n(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum, x: int): $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum {
-    $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum(x)
+function {:inline} $Update'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'_n(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum, x: int): $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum {
+    $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum(x)
 }
-function $IsValid'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'(s: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum): bool {
+function $IsValid'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'(s: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum): bool {
     $IsValid'u8'(s->$n)
 }
-function {:inline} $IsEqual'$c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum'(s1: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum, s2: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum): bool {
+function {:inline} $IsEqual'$5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum'(s1: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum, s2: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum): bool {
     s1 == s2
 }
 
 // fun roll::play [verification] at /Users/dylan/Documents/GitHub/diffusion/sources/roll_module.move:11:5+249
-procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_play$verify(_$t0: $signer) returns ()
+procedure {:timeLimit 40} $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_play$verify(_$t0: $signer) returns ()
 {
     // declare local variables
     var $t1: int;
@@ -33985,7 +34005,7 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
     var $t10: int;
     var $t11: int;
     var $t12: int;
-    var $t13: $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum;
+    var $t13: $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum;
     var $t0: $signer;
     var $temp_0'signer': $signer;
     $t0 := _$t0;
@@ -34023,8 +34043,8 @@ procedure {:timeLimit 40} $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81
         goto L4;
     }
 
-    // $t3 := 0xc87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4 at /Users/dylan/Documents/GitHub/diffusion/sources/roll_module.move:12:48+5
-    $t3 := 90682609343407582171500998883475776352797137604525427788853087948778796752052;
+    // $t3 := 0x5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd at /Users/dylan/Documents/GitHub/diffusion/sources/roll_module.move:12:48+5
+    $t3 := 43251477466318101518319900415509203977164535116702829365049826154249147567053;
     assume $IsValid'address'($t3);
 
     // $t4 := ==($t1, $t3) at /Users/dylan/Documents/GitHub/diffusion/sources/roll_module.move:12:45+2
@@ -34114,7 +34134,7 @@ L2:
 
     // $t13 := pack roll::WinningNum($t12) at /Users/dylan/Documents/GitHub/diffusion/sources/roll_module.move:17:26+36
     assume {:print "$at(6,381,417)"} true;
-    $t13 := $c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4_roll_WinningNum($t12);
+    $t13 := $5f9f77fe71a07cfbb2edb2c6430e5761dc2eda14be106749cf1517bc9762cbcd_roll_WinningNum($t12);
 
     // opaque begin: event::emit<roll::WinningNum>($t13) at /Users/dylan/Documents/GitHub/diffusion/sources/roll_module.move:17:9+54
 

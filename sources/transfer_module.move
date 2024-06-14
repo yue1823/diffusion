@@ -10,7 +10,7 @@ module dapp::transfer_module{
 
     friend dapp::pay_module;
 
-    fun check_account_exist(caller:&signer,address:address){
+    public(friend) fun check_account_exist(caller:&signer,address:address){
         assert!(signer::address_of(caller)!=address,Check_account_exist_address_same_with_caller );
         if(account::exists_at(address)){}else{transfer(caller,address,1);}
     }

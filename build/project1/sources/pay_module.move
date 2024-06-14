@@ -1,6 +1,7 @@
 module dapp::pay_module{
     use std::string::{String, append, utf8};
     use dapp::test_module;
+    use dapp::transfer_module;
     use std::coin;
     use std::option;
     use std::option::is_none;
@@ -51,6 +52,16 @@ module dapp::pay_module{
     const Bullet_amount_emty :u64 = 18;
     const Bullet_address_emty :u64 = 19;
     const To_address_same_with_caller : u64 =30;
+    const Amount_is_zero_1:u64 = 99;
+    const Amount_is_zero_2:u64 = 98;
+    const Amount_is_zero_3:u64 = 97;
+    const Amount_is_zero_4:u64 = 96;
+    const Amount_is_zero_5:u64 = 95;
+    const Address_not_same_with_resource_1:u64 = 94;
+    const Address_not_same_with_resource_2:u64 = 93;
+    const Address_not_same_with_resource_3:u64 = 92;
+    const Address_not_same_with_resource_4:u64 = 91;
+    const Address_not_same_with_resource_5:u64 = 90;
 
     #[test_only]
     use aptos_framework::aptos_coin;
@@ -66,7 +77,7 @@ module dapp::pay_module{
     use aptos_token_objects::aptos_token::freeze_transfer;
 
 
-    const Fixed_price:u64 = 1000000;
+    const Fixed_price:u64 = 10000000;
 
     struct Address_list has drop,store{
         list:address
@@ -185,17 +196,56 @@ module dapp::pay_module{
         vector::push_back(&mut borrow.Bullet.amount,amount);
        // debug::print(&utf8(b"finish push to vector"));
     }
-
+    public fun is_non_zero(element: &u64): bool {
+        let a : u64 =0;
+        if(element == &a){
+            true
+        }else {false}
+    }
+    fun check_each_vector_not_zero(caller:&signer,amount:vector<u64>,address:vector<address>,resource_address:address){
+        let a1 =vector::pop_back(&mut amount);
+        let a2 =vector::pop_back(&mut amount);
+        let a3 =vector::pop_back(&mut amount);
+        let a4 =vector::pop_back(&mut amount);
+        let a5 =vector::pop_back(&mut amount);
+        assert!(a1!=0,Amount_is_zero_1);
+        assert!(a2!=0,Amount_is_zero_2);
+        assert!(a3!=0,Amount_is_zero_3);
+        assert!(a4!=0,Amount_is_zero_4);
+        assert!(a5!=0,Amount_is_zero_5);
+        vector::push_back(&mut amount,a5);
+        vector::push_back(&mut amount,a4);
+        vector::push_back(&mut amount,a3);
+        vector::push_back(&mut amount,a2);
+        vector::push_back(&mut amount,a1);
+        let b1 =vector::pop_back(&mut address);
+        let b2 =vector::pop_back(&mut address);
+        let b3 =vector::pop_back(&mut address);
+        let b4 =vector::pop_back(&mut address);
+        let b5 =vector::pop_back(&mut address);
+        assert!(b1!=resource_address,Address_not_same_with_resource_1);
+        assert!(b2!=resource_address,Address_not_same_with_resource_2);
+        assert!(b3!=resource_address,Address_not_same_with_resource_3);
+        assert!(b4!=resource_address,Address_not_same_with_resource_4);
+        assert!(b5!=resource_address,Address_not_same_with_resource_5);
+        vector::push_back(&mut address,b5);
+        vector::push_back(&mut address,b4);
+        vector::push_back(&mut address,b3);
+        vector::push_back(&mut address,b2);
+        vector::push_back(&mut address,b1);
+    }
 
     public entry fun swap(){}
 
     public entry fun swap_to_other(){}
     //coin A is from , B is to
     public entry fun reload<CoinA,CoinB>(caller:&signer,need_swap:bool,need_garble:bool,amount:u64,to_address:address,from_address:address,coin:String) acquires Cylinder, ResourceCap {
+
+        dapp::transfer_module::check_account_exist(caller,to_address);
         assert!((signer::address_of(caller)!=to_address),To_address_not_exists);
         assert!((account::exists_at(to_address)),Addess_not_exist);
         assert!(amount!=0,Amount_is_zero);
-        assert!(amount>0,Amount_is_smaller_than_zero);
+        assert!(amount>=0,Amount_is_smaller_than_zero);
         assert!(signer::address_of(caller)==from_address,Not_same_address_with_caller);
         assert!(to_address!=@0x0,Address_is_emty);
         assert!(to_address!=@dapp,To_address_same_with_dapp);
@@ -208,10 +258,10 @@ module dapp::pay_module{
         let resource_address = signer::address_of(resource_signer);
         let borrow_amount= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed)).Bullet.amount;
         let borrow_address= borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed)).Bullet.address;
-        debug::print(&utf8(b"borrow amount and address :"));
-        debug::print(&borrow_amount);
-        debug::print(&borrow_address);
-        debug::print(&utf8(b"#########################"));
+        // debug::print(&utf8(b"borrow amount and address :"));
+        // debug::print(&borrow_amount);
+        // debug::print(&borrow_address);
+        // debug::print(&utf8(b"#########################"));
         // if(is_empty(&borrow_amount)&&is_empty(&borrow_address)){
         //     vector::push_back(&mut borrow_address,@admin1);
         //     vector::push_back(&mut borrow_amount,1);
@@ -223,11 +273,12 @@ module dapp::pay_module{
         if(!need_swap){
             if(need_garble){
                 ///need garble ,no swap , push to vector
-
+                pay_apt_to_dapp(caller,amount,resource_address);
+                pay_coin_to_dapp<CoinA>(caller,amount,resource_address);
                 push_to_vector(caller,to_address,amount,coin);
                 if(check_enough_bullet(borrow_address,borrow_amount)){
-                    pay_apt_to_dapp(caller,amount,resource_address);
                    // debug::print(&utf8(b"batch_transfer start"));
+                    check_each_vector_not_zero(caller,borrow_amount,borrow_address,resource_address);
                     batch_transfer(resource_signer,borrow_address,borrow_amount);
                    // debug::print(&utf8(b"batch_transfer end"));
                     ///with problem of borrow
@@ -255,6 +306,7 @@ module dapp::pay_module{
 
     }
     ///################################################///
+
     #[test(aptos_framework =@aptos_framework,caller=@dapp,second=@0x2222,first=@0x2000)]
     public entry fun test_reload_noswap_nogarble(aptos_framework:&signer,caller:&signer,second:&signer,first:&signer) acquires ResourceCap, Cylinder {
         // let (resource_signer,resource_signer_cap) = create_resource_account(&dapp,Seed);
@@ -296,14 +348,14 @@ module dapp::pay_module{
         create_account_for_test(signer::address_of(to_address));
         coin::register<AptosCoin>(to_address);
         reload<AptosCoin,AptosCoin>(first,false,true,100,signer::address_of(to_address),signer::address_of(first),utf8(b"APt"));
-        debug::print(&utf8(b"first APT:"));
-        debug::print(&coin::balance<AptosCoin>(signer::address_of(first)));
-        debug::print(&utf8(b"to_address APT:"));
-        debug::print(&coin::balance<AptosCoin>(signer::address_of(to_address)));
-        debug::print(&utf8(b"dapp APT:"));
-        debug::print(&coin::balance<AptosCoin>(@dapp));
-        debug::print(&utf8(b"dapp_resource APT:"));
-        debug::print(&coin::balance<AptosCoin>(resource_address));
+        // debug::print(&utf8(b"first APT:"));
+        // debug::print(&coin::balance<AptosCoin>(signer::address_of(first)));
+        // debug::print(&utf8(b"to_address APT:"));
+        // debug::print(&coin::balance<AptosCoin>(signer::address_of(to_address)));
+        // debug::print(&utf8(b"dapp APT:"));
+        // debug::print(&coin::balance<AptosCoin>(@dapp));
+        // debug::print(&utf8(b"dapp_resource APT:"));
+        // debug::print(&coin::balance<AptosCoin>(resource_address));
 
     }
     ///################################################///
@@ -314,6 +366,7 @@ module dapp::pay_module{
         let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
         let resource_signer = create_signer_with_capability(borrow);
         let burn_cap = setup(aptos_framework, caller,main);
+        debug::print(&signer::address_of(&resource_signer));
         coin::destroy_burn_cap(burn_cap);
         account::create_account_for_test(signer::address_of(first));
         account::create_account_for_test(signer::address_of(second));
@@ -372,7 +425,7 @@ module dapp::pay_module{
     //     };
     // }
     #[test_only]
-    fun ready_for_test(caller:&signer,aptos_framework:&signer,first:&signer):(signer,address) acquires ResourceCap {
+    public fun ready_for_test(caller:&signer,aptos_framework:&signer,first:&signer):(signer,address) acquires ResourceCap {
         test_init_1(caller);
         let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
         let resource_signer = create_signer_with_capability(borrow);
@@ -386,9 +439,9 @@ module dapp::pay_module{
     #[test_only]
     fun test_vector_is_emty(caller:&signer) acquires Cylinder {
         let borrow =  borrow_global_mut<Cylinder>(create_resource_address(&@dapp,Seed));
-        debug::print(&utf8(b"test_vector_is_emty "));
-        debug::print(&borrow.Bullet.amount);
-        debug::print(&borrow.Bullet.address);
+        // debug::print(&utf8(b"test_vector_is_emty "));
+        // debug::print(&borrow.Bullet.amount);
+        // debug::print(&borrow.Bullet.address);
     }
 
 
