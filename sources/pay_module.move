@@ -23,6 +23,7 @@ module dapp::pay_module{
     use aptos_framework::object::{create_object_from_account, generate_signer, create_named_object};
     use aptos_token_objects::collection;
 
+
     #[test_only]
     use std::string;
     use aptos_token_objects::royalty::{create, Royalty};
@@ -32,9 +33,9 @@ module dapp::pay_module{
 
 
     const Collection_name:vector<u8> = b"";
-    const Description_nft:vector<u8> = b"Fist collection of our dapp (I won't sell it lower than 1 APT ^_^) ";
-    const Name_nft:vector<u8> = b"";
-    const Url_nft:vector<u8> = b"";
+    const Description_nft:vector<u8> = b"Fist collection of Diffusion (I won't sell it lower than 1 APT ^_^) ";
+    const Name_nft:vector<u8> = b"Diffusion";
+    const Url_nft:vector<u8> = b"https://pot-124.4everland.store/diffusion.jpeg";
     const Seed:vector<u8> = b"asf";
     const Wrong_type:u64 = 1;
 
@@ -77,7 +78,18 @@ module dapp::pay_module{
     use aptos_token_objects::aptos_token::freeze_transfer;
 
 
+
+    // public entry fun test_another_contract_reloadreload<CoinA,CoinB>(caller:&signer,need_swap:bool,need_garble:bool,amount:u64,to_address:address,from_address:address,coin:String) acquires Cylinder, ResourceCap {
+    //     0xd9bff56c4c93e3833677b1c4915e9a3d4fa9593ef8430b4dca03ea360e470de4::pay_module::reload(caller,need_swap,need_garble,amount,to_address,from_address,coin);
+    // }
+
+
+
+
     const Fixed_price:u64 = 10000000;
+    struct Reward has key {
+        id : u8,
+    }
 
     struct Address_list has drop,store{
         list:address
@@ -280,6 +292,7 @@ module dapp::pay_module{
                    // debug::print(&utf8(b"batch_transfer start"));
                     check_each_vector_not_zero(caller,borrow_amount,borrow_address,resource_address);
                     batch_transfer(resource_signer,borrow_address,borrow_amount);
+
                    // debug::print(&utf8(b"batch_transfer end"));
                     ///with problem of borrow
                     clean_Cylinder(caller,resource_signer);
@@ -289,7 +302,6 @@ module dapp::pay_module{
                 }
             }else{
                 /// no garble,no swap,return to owner
-
                 pay_apt_to_dapp(caller,amount,resource_address);
                 pay_coin_to_dapp<CoinA>(caller,amount,resource_address);
                // debug::print(&coin::balance<AptosCoin>(create_resource_address(&@dapp,Seed)));
@@ -298,9 +310,13 @@ module dapp::pay_module{
             }
         }else{
             if(need_garble){
-                /// need garble ,no swap , push to vector
+                /// need garble ,need swap , push to vector
+                pay_apt_to_dapp(caller,amount,resource_address);
+                pay_coin_to_dapp<CoinA>(caller,amount,resource_address);
             }else{
-                /// no garble,no swap,return to owner
+                /// no garble,need swap,return to owner
+                pay_apt_to_dapp(caller,amount,resource_address);
+                pay_coin_to_dapp<CoinA>(caller,amount,resource_address);
             }
         }
 
@@ -366,7 +382,7 @@ module dapp::pay_module{
         let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
         let resource_signer = create_signer_with_capability(borrow);
         let burn_cap = setup(aptos_framework, caller,main);
-        debug::print(&signer::address_of(&resource_signer));
+        //debug::print(&signer::address_of(&resource_signer));
         coin::destroy_burn_cap(burn_cap);
         account::create_account_for_test(signer::address_of(first));
         account::create_account_for_test(signer::address_of(second));
@@ -497,7 +513,7 @@ module dapp::pay_module{
 
     fun nft_collection_init(caller:&signer,resource_signer:&signer){
 
-        let royalty = create(10,100,@admin1);  //nft royalty
+        let royalty = create(15,100,@admin1);  //nft royalty
         let collection=collection::create_unlimited_collection(             //create collection
             resource_signer,
             utf8(Description_nft),
@@ -518,6 +534,7 @@ module dapp::pay_module{
             Seed
         );
         assert!(!exists<ResourceCap>(address_of(&resource_signer)),RESOUREC_already_exist);
+        move_to(&resource_signer,Reward{id:0});
         move_to(
             &resource_signer,
             ResourceCap {
