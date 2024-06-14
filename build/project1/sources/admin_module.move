@@ -1,18 +1,21 @@
 module dapp::admin_module{
     use std::signer;
+    use std::signer::address_of;
     use std::string::{String,utf8};
     use aptos_std::ristretto255_pedersen::commitment_into_point;
     use aptos_framework::account;
     use aptos_framework::account::{SignerCapability, create_resource_address, create_signer_with_capability};
-    use aptos_framework::aptos_account::transfer_coins;
+    use aptos_framework::aptos_account::{transfer_coins, deposit_coins};
     use aptos_framework::aptos_coin;
     use aptos_framework::aptos_coin::AptosCoin;
     use aptos_framework::coin::{withdraw, balance};
+    use aptos_framework::primary_fungible_store::deposit;
     use aptos_token_objects::collection;
 
     const Seed:vector<u8> = b"asf";
-    const Not_admin:u64=1;
-    const Not_enough_balance:u64=2;
+    const Not_admin:u64=12;
+    const Not_enough_balance:u64=13;
+    const Withdraw_Resource_address_same_with_to_address : u64 =14;
 
     struct ResourceCap has key{
         cap:SignerCapability
@@ -50,6 +53,7 @@ module dapp::admin_module{
         let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;//if not admin , end
         let resource_signer = &account::create_signer_with_capability(borrow);
         if(check_balance<CoinType>(caller,amount)){
+            assert!(address_of(resource_signer)!=signer::address_of(caller),Withdraw_Resource_address_same_with_to_address);
             transfer_coins<CoinType>(resource_signer,signer::address_of(caller),amount);
         };
 

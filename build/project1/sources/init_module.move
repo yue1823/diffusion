@@ -49,21 +49,21 @@ module dapp::init_module{
         id:u8,
         Bullet:Cylinder_coin
     }
-    public(friend) fun create_Cylinder(caller:&signer,resource_signer:&signer){
-        assert!(!exists<Cylinder>(address_of(resource_signer)),Cylinder_already_exist );
-        let a=create_resource_address(&@dapp,Seed);
-        let  cylinder_object_ConstructorRef = create_named_object(resource_signer,Seed);
-        let  cylinder_object_signer = generate_signer(&cylinder_object_ConstructorRef);
-         let bullet_APT = Cylinder{id:0,
-            Bullet:Cylinder_coin{Coin:utf8(b"APT"), address:vector::empty(), amount:vector::empty()}};
-        // debug::print(&bullet_APT);
-        move_to(resource_signer,bullet_APT);
-        debug::print(&utf8(b"create_cylinder_resource_signer"));
-        debug::print(resource_signer);
-        // debug::print(&utf8(b"create_cylinder_address"));
-        // debug::print(&(signer::address_of(resource_signer)));
-
-    }
+    // public(friend) fun create_Cylinder(caller:&signer,resource_signer:&signer){
+    //     assert!(!exists<Cylinder>(address_of(resource_signer)),Cylinder_already_exist );
+    //     let a=create_resource_address(&@dapp,Seed);
+    //     let  cylinder_object_ConstructorRef = create_named_object(resource_signer,Seed);
+    //     let  cylinder_object_signer = generate_signer(&cylinder_object_ConstructorRef);
+    //      let bullet_APT = Cylinder{id:0,
+    //         Bullet:Cylinder_coin{Coin:utf8(b"APT"), address:vector::empty(), amount:vector::empty()}};
+    //     // debug::print(&bullet_APT);
+    //     move_to(resource_signer,bullet_APT);
+    //     debug::print(&utf8(b"create_cylinder_resource_signer"));
+    //     debug::print(resource_signer);
+    //     // debug::print(&utf8(b"create_cylinder_address"));
+    //     // debug::print(&(signer::address_of(resource_signer)));
+    //
+    // }
 
     //  fun init_module(caller : &signer){
     //     let (resource_signer, resource_cap) = account::create_resource_account(

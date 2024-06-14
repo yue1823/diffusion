@@ -10,22 +10,21 @@ compiled_package_info:
     aptos_token: "0000000000000000000000000000000000000000000000000000000000000003"
     aptos_token_objects: "0000000000000000000000000000000000000000000000000000000000000004"
     core_resources: 000000000000000000000000000000000000000000000000000000000a550c18
-    dapp: 199095a1b1b0f7cfe8d1dcfed29c35956583561c1251f17dd4806c18cc34d387
+    dapp: c87c89bb5e98e202cb48ecf96bf4e7cfd5622febac422b9e85c81dbd1e501cb4
     std: "0000000000000000000000000000000000000000000000000000000000000001"
     vm: "0000000000000000000000000000000000000000000000000000000000000000"
     vm_reserved: "0000000000000000000000000000000000000000000000000000000000000000"
-  source_digest: 580124760576510F12BC5FD990D84BD62F5ACE40CA5BF2281160D8A834CFBD9A
+  source_digest: 96FB815699AFA6A7B4EC455F0B6A3B460824A178B746F1CC2661CDBE2AB21648
   build_flags:
-    dev_mode: false
-    test_mode: false
+    dev_mode: true
+    test_mode: true
     generate_docs: false
     generate_abis: false
     generate_move_model: true
     full_model_generation: false
     install_dir: ~
     force_recompilation: false
-    additional_named_addresses:
-      dapp: 199095a1b1b0f7cfe8d1dcfed29c35956583561c1251f17dd4806c18cc34d387
+    additional_named_addresses: {}
     architecture: ~
     fetch_deps_only: false
     skip_fetch_latest_git_deps: false
