@@ -1,0 +1,18 @@
+.Diffusion{
+    position: relative;
+}
+.diffusion_logo_circular-image {
+    position: relative;
+    width:6%;
+    height:6%;
+    top:13px;
+    border-radius: 50%;
+}
+.Diffusion-logo_where {
+    position: relative;
+    right:2%;
+}
+.Diffusion-WalletSelect_layout{
+    position: relative;
+    left:4%;
+}

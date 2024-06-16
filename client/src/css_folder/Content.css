@@ -1,0 +1,7 @@
+.main_content{
+    position: relative;
+}
+.second_content{
+    position: relative;
+    left:100%;
+}
