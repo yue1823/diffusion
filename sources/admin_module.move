@@ -101,27 +101,27 @@ module dapp::admin_module{
         transfer<AptosCoin>(first,resource_address,100000000);
 
 
-        debug::print(&utf8(b"Resource_address balance : "));
-        debug::print(&balance<AptosCoin>(resource_address));
-        debug::print(&utf8(b"dapp_address balance : "));
-        debug::print(&balance<AptosCoin>(signer::address_of(caller)));
-        debug::print(&utf8(b"first_address balance : "));
-        debug::print(&balance<AptosCoin>(signer::address_of(first)));
-        debug::print(&utf8(b"admin_address balance : "));
-        debug::print(&balance<AptosCoin>(signer::address_of(admin)));
-        debug::print(&utf8(b"############After withdraw ###########"));
+        // debug::print(&utf8(b"Resource_address balance : "));
+        // debug::print(&balance<AptosCoin>(resource_address));
+        // debug::print(&utf8(b"dapp_address balance : "));
+        // debug::print(&balance<AptosCoin>(signer::address_of(caller)));
+        // debug::print(&utf8(b"first_address balance : "));
+        // debug::print(&balance<AptosCoin>(signer::address_of(first)));
+        // debug::print(&utf8(b"admin_address balance : "));
+        // debug::print(&balance<AptosCoin>(signer::address_of(admin)));
+        // debug::print(&utf8(b"############After withdraw ###########"));
 
         admin_withdraw<AptosCoin>(admin,50000000);
-        debug::print(&utf8(b"######################################"));
-
-        debug::print(&utf8(b"Resource_address balance : "));
-        debug::print(&balance<AptosCoin>(resource_address));
-        debug::print(&utf8(b"dapp_address balance : "));
-        debug::print(&balance<AptosCoin>(signer::address_of(caller)));
-        debug::print(&utf8(b"first_address balance : "));
-        debug::print(&balance<AptosCoin>(signer::address_of(first)));
-        debug::print(&utf8(b"admin_address balance : "));
-        debug::print(&balance<AptosCoin>(signer::address_of(admin)));
+        // debug::print(&utf8(b"######################################"));
+        //
+        // debug::print(&utf8(b"Resource_address balance : "));
+        // debug::print(&balance<AptosCoin>(resource_address));
+        // debug::print(&utf8(b"dapp_address balance : "));
+        // debug::print(&balance<AptosCoin>(signer::address_of(caller)));
+        // debug::print(&utf8(b"first_address balance : "));
+        // debug::print(&balance<AptosCoin>(signer::address_of(first)));
+        // debug::print(&utf8(b"admin_address balance : "));
+        // debug::print(&balance<AptosCoin>(signer::address_of(admin)));
         //admin_withdraw<AptosCoin>(not_admin,1000000);
     }
 
