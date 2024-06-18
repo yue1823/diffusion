@@ -4,12 +4,14 @@ import TOP_bar from './header/heard_bar';
 import Main_content from "./content/content";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+import { DataContext } from './DataContext';
 
 const aptosConfig = new AptosConfig({ network: Network.DEVNET });
 const aptos = new Aptos(aptosConfig);
 
 function App() {
     const { account } = useWallet();
+    const [sharedData, setSharedData] = useState<number>(0);
     const [accountHasList, setAccountHasList] = useState<boolean>(false);
     const [user_address,setuser_address]=useState<string>("User address")
     const  [index_of_to_address,set_index_of_to_address]=useState<number>(0);
@@ -36,15 +38,16 @@ function App() {
     }, [account?.address]);
   return (
       <>
+          <DataContext.Provider value={{ sharedData, setSharedData }}>
+              <Layout>
 
-          <Layout>
+                  <TOP_bar/>
+                  <Main_content address={user_address} index_of_address={index_of_to_address}/>
+                  <Row align="middle">
 
-              <TOP_bar/>
-              <Main_content address={user_address} index_of_address={index_of_to_address}/>
-              <Row align="middle">
-
-              </Row>
-          </Layout>
+                  </Row>
+              </Layout>
+          </DataContext.Provider>
 
       </>
   );

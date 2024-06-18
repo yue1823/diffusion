@@ -2,11 +2,12 @@ import React, {ReactNode, useEffect, useState} from 'react';
 import "../css_folder/heardbar.css"
 import { HappyProvider } from '@ant-design/happy-work-theme';
 import {
+    Alert,
     Button,
     Col,
-    ConfigProvider,
+    ConfigProvider, Drawer,
     Input,
-    Layout,
+    Layout, message,
     notification,
     NotificationArgsProps,
     Row,
@@ -26,16 +27,32 @@ import {
 } from "@ant-design/icons";
 import Context from '@ant-design/icons/lib/components/Context';
 
+
 const connect_Wallet = 'Connect Wallet.';
 type NotificationPlacement = NotificationArgsProps['placement'];
+interface CProps {
+    setSharedData: React.Dispatch<React.SetStateAction<number>>;
+}
 
 
-
-const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ address,index_of_address:number}) => {
+const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ address,index_of_address:number,}) => {
     const [rows, setRows] = useState<number[]>([0]);
     const [steps,set_steps] = useState(0);
+    const [share_data,setshare_data] =useState<number>(0);
+    const [amount,setamount]=useState<number>(0);
+    const [cointype,setcointypr] = useState<string>("")
     const longAddressPattern = /^0x[a-fA-F0-9]{64}$/; // 長地址模式
     const shortAddressPattern = /^0x[a-fA-F0-9]{1,63}$/;
+    const [open, setOpen] = useState(false);
+
+    const showDrawer = () => {
+        setOpen(true);
+    };
+
+    const onClose = () => {
+        setOpen(false);
+    };
+
     const onChange = (value: string) => {
         console.log(`selected ${value}`);
     };
@@ -43,6 +60,10 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
     const onSearch = (value: string) => {
         console.log('search:', value);
     };
+    const button_clixk=()=>{
+        const a =document.getElementById('hiddenData') as HTMLImageElement;
+        setshare_data(parseInt(a.alt,10));
+    }
 
     // Filter `option.label` match the user type `input`
     const filterOption = (input: string, option?: { label: string; value: string }) =>
@@ -67,6 +88,20 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
         }, 6000);
     };
     //button
+    //happy work button
+    const check_everything=()=>{
+        if(steps==4){
+            //amount cointype to_address need_garble
+            if(longAddressPattern.test(to_address) || shortAddressPattern.test(to_address)){
+
+            }else{
+                message.error('To address not true.')
+            }
+        }else{
+            showDrawer()
+        }
+    }
+
     ////////////////////////////////
     const [need_garble , setneed_garble]=useState<boolean>(false)
     const [to_address,setto_address]=useState<string>("")
@@ -75,7 +110,12 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
     } = theme.useToken();
 
     const addRow = () => {
-        setRows((prevRows) => [...prevRows, prevRows.length]);
+        //setRows((prevRows) => [...prevRows, prevRows.length]);
+        setRows((prevRows) => {if (prevRows.length < 5) {
+            return [...prevRows, prevRows.length];
+        } else {
+            return prevRows; // 不添加新行
+        }})
     };
     const removeRow = () => {
         setRows((prevRows) => {
@@ -102,12 +142,13 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
     }
     useEffect(() => {
         if(steps<1){set_steps(1)}
+
     },[to_address]);
     return (
         <div
             style={{
                 padding: 20,
-                minHeight: 380,
+                minHeight: 400,
                 minWidth: 470,
                 background: colorBgContainer,
                 borderRadius: borderRadiusLG,
@@ -137,25 +178,32 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
             <Row>Address</Row>
             {rows.map((row, index) => (
                 <Row key={index}>
-                    <Input placeholder="To address" prefix={<UserOutlined/>} onChange={address=>{setto_address(address.target.value);
-                        if(steps<2){set_steps(2)}
-                       }} value={to_address}/>
+                    <Input placeholder="To address" prefix={<UserOutlined/>} onChange={address => {
+                        setto_address(address.target.value);
+                        if (steps < 2) {
+                            set_steps(2)
+                        }
+                    }} value={to_address}/>
                 </Row>
+
             ))}
-            <Row >
+            <Row>
                 <Button
                     type="primary"
-                    icon={<UserAddOutlined />}
+                    icon={<UserAddOutlined/>}
                     loading={loadings[2]}
                     onClick={() => {
-                        addRow()}}
+                        addRow()
+                    }}
                 />
                 <Button
                     type="primary"
-                    icon={<UserDeleteOutlined />}
-                    style={{left:365}}
+                    icon={<UserDeleteOutlined/>}
+                    style={{left: 365}}
                     loading={loadings[2]}
-                    onClick={()=>{removeRow()}}
+                    onClick={() => {
+                        removeRow()
+                    }}
                 />
             </Row>
             <br/>
@@ -166,11 +214,15 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                     placeholder="How much"
                     optionFilterProp="children"
                     onChange={value => {
-                        if(steps<3){set_steps(3)}
-                        console.log(`selected ${value}`);}}
+                        if (steps < 3) {
+                            set_steps(3)
+                        };
+                        setamount(value as number);
+                        console.log(`selected ${value}`);
+                    }}
                     onSearch={onSearch}
                     filterOption={filterOption}
-                    style={{minWidth:100}}
+                    style={{minWidth: 100}}
                     options={[
                         {
                             value: '1',
@@ -192,11 +244,15 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                     placeholder="Which coin"
                     optionFilterProp="children"
                     onChange={value => {
-                        if(steps<4){set_steps(4)}
-                        console.log(`selected ${value}`);}}
+                        if (steps < 4) {
+                            set_steps(4)
+                        };
+                        setcointypr(value as  string);
+                        console.log(`selected ${value}`);
+                    }}
                     onSearch={onSearch}
                     filterOption={filterOption}
-                    style={{minWidth:100,left:207}}
+                    style={{minWidth: 100, left: 207}}
                     options={[
                         {
                             value: 'APT',
@@ -238,16 +294,52 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
             </Row>
             <br/>
             <Row>
+
                 <HappyProvider>
-                    <Button type="primary" style={{height:50,width:190,background:"#f1eddd",color:"black"}}>Happy Work</Button>
+                    <Button type="primary"  onClick={check_everything} style={{height: 50, width: 190, background: "#f1eddd", color: "black"} }>Happy Work</Button>
                 </HappyProvider>
+                <Drawer title="Check Input" onClose={onClose} open={open}>
+                    <Steps
+                            direction="vertical"
+                            current={steps}
+                            status="error"
+                            items={[
+                            {
+                                title: 'Connect Wallet',
+
+                            },
+                            {
+                                title: 'Set to address',
+
+                            },
+                            {
+                                title: 'Set how much',
+
+                            },
+                                {
+                                    title: 'Set which coin',
+
+                                },
+                        ]}
+                    />
+                </Drawer>
+
             </Row>
+
+                <img id="hiddenData" alt={`${rows.length}`} style={{display: 'none'}}/>
+
+
+
         </div>
     );
 }
 
-export default Select_content
 
-export const Number_of_index = (): number => {
-        return 1
+const C: React.FC<CProps> = ({setSharedData}) => {
+    return (
+        <div>
+            <Select_content address="some_address" index_of_address={0}  />
+        </div>
+    );
 };
+export default Select_content
