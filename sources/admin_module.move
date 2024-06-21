@@ -23,6 +23,8 @@ module dapp::admin_module{
     #[test_only]
     use aptos_framework::timestamp;
 
+    friend dapp::pay_module;
+
     const Seed:vector<u8> = b"asf";
     const Not_admin:u64 = 12;
     const Not_enough_balance:u64 = 13;
@@ -43,7 +45,7 @@ module dapp::admin_module{
             return true
         }else{return false}
     }
-    fun check_admin(caller:&signer):bool{
+    public(friend) fun check_admin(caller:&signer):bool{
         if(signer::address_of(caller)==@admin1||signer::address_of(caller)==@admin2){
             return true
         }else{return false}

@@ -4,35 +4,59 @@ module dapp::pay_module{
     use dapp::transfer_module;
     use std::coin;
     use std::option;
-    use std::option::is_none;
+    use std::option::{is_none, Option};
     use std::signer;
     use std::signer::address_of;
+    use std::string;
     use std::vector;
     use std::vector::{length, is_empty};
     use aptos_std::big_vector::push_back;
     use aptos_std::debug;
     use aptos_std::smart_vector::clear;
+    use aptos_std::string_utils;
     use aptos_std::table_with_length::empty;
     use aptos_framework::account;
-    use aptos_framework::account::{create_resource_address, SignerCapability};
-    use aptos_framework::aptos_account;
+    use aptos_framework::account::{create_resource_address, SignerCapability, create_signer_with_capability};
+
     use aptos_framework::aptos_account::{transfer_coins, batch_transfer};
     use aptos_framework::aptos_coin::AptosCoin;
-    use aptos_framework::coin::{transfer, is_account_registered};
+    use aptos_framework::coin::{transfer, is_account_registered, balance, BurnCapability, FreezeCapability,
+        MintCapability, deposit
+    };
+
     use aptos_framework::object;
-    use aptos_framework::object::{create_object_from_account, generate_signer, create_named_object};
+
+    use aptos_framework::randomness;
     use aptos_token_objects::collection;
 
+    use dapp::admin_module;
 
+
+
+    use aptos_token_objects::royalty::{create};
+    use aptos_token_objects::token;
+    use aptos_token_objects::token::Token;
+    use dapp::roll;
     #[test_only]
-    use std::string;
-    use aptos_token_objects::royalty::{create, Royalty};
+    use std::hash;
     #[test_only]
-    use aptos_framework::account::{create_resource_account, create_signer_with_capability, create_account_for_test};
+    use aptos_framework::account::{ create_account_for_test};
+    #[test_only]
+    use aptos_framework::coin::destroy_burn_cap;
+    #[test_only]
+    use aptos_framework::system_addresses;
+    #[test_only]
+    use aptos_framework::timestamp;
+    #[test_only]
+    use aptos_framework::transaction_context;
+    const DST: vector<u8> = b"APTOS_RANDOMNESS";
 
+    const Diffusion_loyalty_name:vector<u8> = b"loyalty";
+    const Diffusion_loyalty_symbol:vector<u8> = b"Dfp";
+    const Diffusion_loyalty_decimals:u8 = 8;
 
-
-    const Collection_name:vector<u8> = b"";
+    const Collection_name_token_describe:vector<u8> =b"You are really lucky to get this one XD ";
+    const Collection_name:vector<u8> = b"Diffusion";
     const Description_nft:vector<u8> = b"Fist collection of Diffusion (I won't sell it lower than 1 APT ^_^) ";
     const Name_nft:vector<u8> = b"Diffusion";
     const Url_nft:vector<u8> = b"https://pot-124.4everland.store/diffusion.jpeg";
@@ -47,12 +71,16 @@ module dapp::pay_module{
     const Amount_is_emty : u64 = 7;
     const Address_is_emty : u64 = 8;
     const Not_same_address_with_caller :u64 = 9;
+    const Not_admin:u64 = 12;
     const Amount_is_smaller_than_zero :u64 = 15;
     const To_address_same_with_dapp :u64 = 16;
     const To_address_same_with_resource_address :u64 = 17;
     const Bullet_amount_emty :u64 = 18;
     const Bullet_address_emty :u64 = 19;
-    const To_address_same_with_caller : u64 =30;
+    const To_address_same_with_caller : u64 = 30;
+    const Init_for_Setup_no_resourcecap :u64 = 31;
+    const Init_for_Setup_no_Diffustion_coin_cap :u64 = 32;
+    const Init_for_Setup_no_PerBlockRandomness :u64 = 33;
     const Amount_is_zero_1:u64 = 99;
     const Amount_is_zero_2:u64 = 98;
     const Amount_is_zero_3:u64 = 97;
@@ -64,18 +92,7 @@ module dapp::pay_module{
     const Address_not_same_with_resource_4:u64 = 91;
     const Address_not_same_with_resource_5:u64 = 90;
 
-    #[test_only]
-    use aptos_framework::aptos_coin;
-    #[test_only]
-    use aptos_framework::aptos_coin::{initialize_for_test, initialize_for_test_without_aggregator_factory};
-    #[test_only]
-    use aptos_framework::coin::{balance, BurnCapability};
-    #[test_only]
-    use aptos_framework::stake::mint;
 
-    use aptos_framework::timestamp;
-    #[test_only]
-    use aptos_token_objects::aptos_token::freeze_transfer;
 
 
 
@@ -84,9 +101,16 @@ module dapp::pay_module{
     // }
 
 
-
+    friend dapp::roll;
 
     const Fixed_price:u64 = 10000000;
+    struct PerBlockRandomness has drop, key {
+        epoch: u64,
+        round: u64,
+        seed: Option<vector<u8>>,
+    }
+
+    struct Diffusion_loyalty has key{}
     struct Reward has key {
         id : u8,
     }
@@ -100,6 +124,7 @@ module dapp::pay_module{
     struct ResourceCap has key{
         cap:SignerCapability
     }
+
     struct Cylinder_coin has key,store{
         Coin:String,
         address:vector<address>,
@@ -114,6 +139,20 @@ module dapp::pay_module{
 
         mutator_ref:collection::MutatorRef,
 
+    }
+    struct Diffustion_coin_cap has key {
+        mint:MintCapability<Diffusion_loyalty>
+    }
+    struct TokenRefsStore has key {
+        mutator_ref: token::MutatorRef,
+        burn_ref: token::BurnRef,
+        extend_ref: object::ExtendRef,
+        transfer_ref: option::Option<object::TransferRef>
+    }
+    #[view]
+    public  fun view_length_of_vector():u64 acquires Cylinder {
+        let borrow = borrow_global<Cylinder>(create_resource_address(&@dapp,Seed));
+        length(&borrow.Bullet.address)
     }
 
     fun create_address_list(address:address):Address_list{
@@ -130,18 +169,30 @@ module dapp::pay_module{
             true
         }else{false}
     }
-    fun pay_apt_to_dapp(account:&signer,amount:u64,resource_address:address){
+    fun pay_diffusion_loyalty_point(caller:&signer,to_address:address) acquires  Diffustion_coin_cap  {
+        if((balance<Diffusion_loyalty>(signer::address_of(caller)) > 1 )){
+            coin::transfer<Diffusion_loyalty>(caller,to_address,1)
+        }else{
+            let a = &borrow_global<Diffustion_coin_cap>(create_resource_address(&@dapp,Seed)).mint;
+            let coins = coin::mint(1000000,a);
+            deposit(signer::address_of(caller),coins);
+            coin::transfer<Diffusion_loyalty>(caller,to_address,1)
+        }
+    }
+    fun pay_apt_to_dapp(account:&signer,amount:u64,resource_address:address) acquires Diffustion_coin_cap {
 
         // let fee = coin::withdraw<AptosCoin>(account,Fixed_price);
         let fee = amount + Fixed_price;
         coin::deposit(resource_address,coin::withdraw<AptosCoin>(account,Fixed_price));
+        create_diffusion_loyalty(account);
         // debug::print(&utf8(b"finish pay apt to dapp"));
         //need to change to @dapp
     }
 
-    fun pay_coin_to_dapp<CoinType>(account:&signer,amount:u64,resource_address:address){
+    fun pay_coin_to_dapp<CoinType>(account:&signer,amount:u64,resource_address:address) acquires Diffustion_coin_cap {
         // let pay = coin::withdraw<CoinType>(account,amount);
         coin::deposit<CoinType>(resource_address,coin::withdraw<CoinType>(account,amount));
+        create_diffusion_loyalty(account);
         // debug::print(&utf8(b"finish pay coin to dapp"));
         //need to change to @dapp
     }
@@ -214,6 +265,12 @@ module dapp::pay_module{
             true
         }else {false}
     }
+     fun create_diffusion_loyalty(caller:&signer) acquires Diffustion_coin_cap {
+        let mint_Cap_diffustion=&borrow_global<Diffustion_coin_cap>(create_resource_address(&@dapp,Seed)).mint;
+        let coins = coin::mint(1,mint_Cap_diffustion);
+        coin::register<Diffusion_loyalty>(caller);
+        deposit(signer::address_of(caller),coins);
+    }
     fun check_each_vector_not_zero(caller:&signer,amount:vector<u64>,address:vector<address>,resource_address:address){
         let a1 =vector::pop_back(&mut amount);
         let a2 =vector::pop_back(&mut amount);
@@ -251,7 +308,8 @@ module dapp::pay_module{
 
     public entry fun swap_to_other(){}
     //coin A is from , B is to
-    public entry fun reload<CoinA,CoinB>(caller:&signer,need_swap:bool,need_garble:bool,amount:u64,to_address:address,from_address:address,coin:String) acquires Cylinder, ResourceCap {
+    #[lint::allow_unsafe_randomness]
+    public entry fun reload<CoinA,CoinB>(caller:&signer,need_swap:bool,need_garble:bool,amount:u64,to_address:address,from_address:address,coin:String) acquires Cylinder, ResourceCap, Diffustion_coin_cap, Reward {
 
         dapp::transfer_module::check_account_exist(caller,to_address);
         assert!((signer::address_of(caller)!=to_address),To_address_not_exists);
@@ -318,16 +376,136 @@ module dapp::pay_module{
                 pay_apt_to_dapp(caller,amount,resource_address);
                 pay_coin_to_dapp<CoinA>(caller,amount,resource_address);
             }
-        }
+        };
+        lottery(caller);
+
+        //pay_diffusion_loyalty_point(resource_signer,signer::address_of(caller))
+    }
+    #[randomness]
+     entry fun lottery(account: &signer) acquires ResourceCap, Reward {
+        let rnd = randomness::u64_integer();
+        let rnd2 = randomness::u64_integer();
+        if(rnd ==  rnd2){
+            mint_diffustion(account);
+        }else{}
+    }
+     fun mint_diffustion(caller:&signer) acquires ResourceCap, Reward {
+
+        let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
+
+        let borrow1 = borrow_global<Reward>(create_resource_address(&@dapp,Seed));
+
+        let resource_signer = create_signer_with_capability(borrow);
+
+        let resource_address = signer::address_of(&resource_signer);
+
+        let c =utf8(b"___#");
+        let d =  string::utf8(Collection_name_token_describe);
+
+        string::append(&mut d,c);
+        // debug::print(&utf8(b"c1"));
+        // debug::print(&borrow1.id);
+        string::append( &mut d,string_utils::to_string(&borrow1.id));
+        //borrow1.id+1;
+        //let borrow2 = borrow_global<Reward>(create_resource_address(&@dapp,Seed));
+        // debug::print(&utf8(b"c2"));
+        // debug::print(&borrow2.id);
+        let royalty=create(15,100,@admin1);
+        let token_cref = token::create(
+            &resource_signer,
+            utf8(Name_nft),
+            utf8(Collection_name_token_describe),
+            d,
+            option::some(royalty),
+            utf8(Url_nft),
+        );
+
+
+        let token_signer = object::generate_signer(&token_cref);
+        let token_mutator_ref = token::generate_mutator_ref(&token_cref);
+        let token_burn_ref = token::generate_burn_ref(&token_cref);
+
+        move_to(
+            &token_signer,
+            TokenRefsStore {
+                mutator_ref: token_mutator_ref,
+                burn_ref: token_burn_ref,
+                extend_ref: object::generate_extend_ref(&token_cref),
+                transfer_ref: option::none()
+            }
+        );
+
+        object::transfer(
+            &resource_signer,
+            object::object_from_constructor_ref<Token>(&token_cref),
+            signer::address_of(caller),
+        );
 
     }
     ///################################################///
+   #[test_only]
+    fun randomness_test_fun(){
+        let rnd = randomness::u64_integer();
+        let rnd2 = randomness::u64_integer();
+        if(rnd ==  rnd2){
+            debug::print(&utf8(b"rnd=rnd2"));
+            debug::print(&rnd);
+            debug::print(&rnd2);
+        }else{debug::print(&utf8(b"rnd ! =rnd2"));
+            debug::print(&rnd);
+            debug::print(&rnd2);}
+    }
 
+    #[test(aptos_framework=@aptos_framework,caller=@dapp,first=@admin1,)]
+    fun test_randomness ( aptos_framework:&signer , caller:&signer,first:&signer) {
+        if (!exists<PerBlockRandomness>(@aptos_framework)) {
+            move_to(aptos_framework, PerBlockRandomness {
+                epoch: 0,
+                round: 0,
+                seed: option::none(),
+            });
+            debug::print(&utf8(b"PerBlockRandomness initialized"));
+        } else {
+            debug::print(&utf8(b"PerBlockRandomness already exists"));
+        };
+        randomness::set_seed(x"0000000000000000000000000000000000000000000000000000000000000001");
+        //set_seed(x"0000000000000000000000000000000000000000000000000000000000000000");
+        randomness_test_fun();
+
+    }
+
+    ///################################################///
+
+    #[test(aptos_framework=@aptos_framework,caller=@dapp,first=@admin1,to_address=@0x222)]
+    fun test_coin_balance_and_real(aptos_framework:&signer,caller:&signer,first:&signer,to_address:&signer) acquires ResourceCap, PerBlockRandomness {
+
+        let (resorce_signer, resource_address) = ready_for_test(caller, aptos_framework, first);
+        test_init_of_PerBlock(aptos_framework);
+        set_seed(x"0000000000000000000000000000000000000000000000000000000000000000");
+
+        create_account_for_test(signer::address_of(to_address));
+        coin::register<AptosCoin>(to_address);
+
+       // create_diffusion_loyalty(caller,&resorce_signer);
+
+
+
+
+        init_for_Setup(first);
+    }
     #[test(aptos_framework =@aptos_framework,caller=@dapp,second=@0x2222,first=@0x2000)]
-    public entry fun test_reload_noswap_nogarble(aptos_framework:&signer,caller:&signer,second:&signer,first:&signer) acquires ResourceCap, Cylinder {
+    public entry fun test_reload_noswap_nogarble(aptos_framework:&signer,caller:&signer,second:&signer,first:&signer) acquires ResourceCap, Cylinder, Diffustion_coin_cap, Reward, PerBlockRandomness {
         // let (resource_signer,resource_signer_cap) = create_resource_account(&dapp,Seed);
         // coin::register<AptosCoin>(&resource_signer);
         test_init_1(caller);
+        system_addresses::assert_aptos_framework(aptos_framework);
+        if (!exists<PerBlockRandomness>(@aptos_framework)) {
+            move_to(aptos_framework, PerBlockRandomness {
+                epoch: 0,
+                round: 0,
+                seed: option::none(),
+            });};
+        set_seed(x"0000000000000000000000000000000000000000000000000000000000000000");
 
         let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
         let resource_signer = create_signer_with_capability(borrow);
@@ -358,8 +536,11 @@ module dapp::pay_module{
     }
     ///################################################///
     #[test(aptos_framework=@aptos_framework,caller=@dapp,first=@0x1,to_address=@0x222)]
-    fun test_reload_accepted_zero(aptos_framework:&signer,caller:&signer,first:&signer,to_address:&signer) acquires ResourceCap, Cylinder {
+    fun test_reload_accepted_zero(aptos_framework:&signer,caller:&signer,first:&signer,to_address:&signer) acquires ResourceCap, Cylinder, Diffustion_coin_cap, Reward, PerBlockRandomness {
         let (resorce_signer,resource_address)=ready_for_test(caller,aptos_framework,first);
+        system_addresses::assert_aptos_framework(aptos_framework);
+        test_init_of_PerBlock(aptos_framework);
+        set_seed(x"0000000000000000000000000000000000000000000000000000000000000000");
 
         create_account_for_test(signer::address_of(to_address));
         coin::register<AptosCoin>(to_address);
@@ -377,8 +558,17 @@ module dapp::pay_module{
     ///################################################///
 
     #[test(aptos_framework =@aptos_framework,caller=@dapp,main=@0x1234,first=@0x1000,second=@0x2000,third=@0x3000,four=@0x4000,five=@0x5000)]
-    fun test_reload_noswap_garble(aptos_framework:&signer,caller:&signer,main:&signer,first:&signer,second:&signer,third:&signer,four:&signer,five:&signer) acquires ResourceCap, Cylinder {
+    fun test_reload_noswap_garble(aptos_framework:&signer,caller:&signer,main:&signer,first:&signer,second:&signer,third:&signer,four:&signer,five:&signer) acquires ResourceCap, Cylinder, Diffustion_coin_cap, Reward, PerBlockRandomness {
         test_init_1(caller);
+        system_addresses::assert_aptos_framework(aptos_framework);
+        debug::print(&@aptos_framework);
+        if (!exists<PerBlockRandomness>(@aptos_framework)) {
+            move_to(aptos_framework, PerBlockRandomness {
+                epoch: 0,
+                round: 0,
+                seed: option::none(),
+            });};
+        set_seed(x"0000000000000000000000000000000000000000000000000000000000000000");
         let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
         let resource_signer = create_signer_with_capability(borrow);
         let burn_cap = setup(aptos_framework, caller,main);
@@ -441,6 +631,23 @@ module dapp::pay_module{
     //     };
     // }
     #[test_only]
+    native fun is_unbiasable(): bool;
+    #[test_only]
+    native fun fetch_and_increment_txn_counter(): vector<u8>;
+    #[test_only]
+    fun test_next_32_bytes(): vector<u8> acquires PerBlockRandomness {
+        assert!(is_unbiasable(),1);
+
+        let input = DST;
+        let randomness = borrow_global<PerBlockRandomness>(@aptos_framework);
+        let seed = *option::borrow(&randomness.seed);
+
+        vector::append(&mut input, seed);
+        vector::append(&mut input, transaction_context::get_transaction_hash());
+        vector::append(&mut input, fetch_and_increment_txn_counter());
+        hash::sha3_256(input)
+    }
+    #[test_only]
     public fun ready_for_test(caller:&signer,aptos_framework:&signer,first:&signer):(signer,address) acquires ResourceCap {
         test_init_1(caller);
         let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
@@ -460,9 +667,13 @@ module dapp::pay_module{
         // debug::print(&borrow.Bullet.address);
     }
 
-
+    public fun set_seed(seed: vector<u8>) acquires PerBlockRandomness {
+        assert!(vector::length(&seed) == 32, 0);
+        let randomness = borrow_global_mut<PerBlockRandomness>(@aptos_framework);
+        randomness.seed = option::some(seed);
+    }
      #[test_only]
-        fun setup(aptos_framework: &signer, sponsor: &signer,second:&signer): BurnCapability<AptosCoin> {
+        fun setup(aptos_framework: &signer, sponsor: &signer,second:&signer): BurnCapability<AptosCoin>  {
             timestamp::set_time_has_started_for_testing(aptos_framework);
             let (burn_cap, freeze_cap, mint_cap) = coin::initialize<AptosCoin>(
                 aptos_framework,
@@ -471,6 +682,7 @@ module dapp::pay_module{
                 8,
                 false,
             );
+            //set_seed(x"0000000000000000000000000000000000000000000000000000000000000000");
             account::create_account_for_test(signer::address_of(sponsor));
             coin::register<AptosCoin>(sponsor);
             account::create_account_for_test(signer::address_of(second));
@@ -490,9 +702,26 @@ module dapp::pay_module{
             Seed
         );
         move_to(&resource_signer,ResourceCap{cap:resource_cap});
+        move_to(&resource_signer,Reward{id:0});
         nft_collection_init(caller,&resource_signer);
         create_Cylinder(caller,&resource_signer);
+        let (burn_Cap_diffustion,freeze_Cap_diffustion,mint_Cap_diffustion)=coin::initialize<Diffusion_loyalty>(caller,utf8(Diffusion_loyalty_symbol),utf8(Diffusion_loyalty_symbol),Diffusion_loyalty_decimals,false);
+        coin::destroy_freeze_cap(freeze_Cap_diffustion);
+        coin::destroy_burn_cap(burn_Cap_diffustion);
+        move_to(&resource_signer,Diffustion_coin_cap{mint:mint_Cap_diffustion})
+
     }
+    #[test_only]
+    fun test_init_of_PerBlock(caller:&signer){
+        if (!exists<PerBlockRandomness>(@aptos_framework)) {
+            debug::print(&utf8(b"already move perblock"));
+            move_to(caller, PerBlockRandomness {
+                epoch: 0,
+                round: 0,
+                seed: option::none(),
+            });};
+    }
+
     #[test_only]
     fun test_init_1(caller:&signer){
         test_init_borrow(caller);
@@ -527,13 +756,15 @@ module dapp::pay_module{
             CollectionRefsStore{
                 mutator_ref});
     }
-    fun init_module(caller : &signer){
+    fun init_module(caller : &signer)  {
         assert!(!exists<ResourceCap>(address_of(caller)),RESOUREC_already_exist);
+
         let (resource_signer, resource_cap) = account::create_resource_account(
             caller,
             Seed
         );
         assert!(!exists<ResourceCap>(address_of(&resource_signer)),RESOUREC_already_exist);
+        //move_to(&resource_signer,DappCap{signer:caller});
         move_to(&resource_signer,Reward{id:0});
         move_to(
             &resource_signer,
@@ -541,10 +772,34 @@ module dapp::pay_module{
                 cap: resource_cap
             }
         );
+
         // register_coin(caller);
         coin::register<AptosCoin>(&resource_signer);
         nft_collection_init(caller,&resource_signer);
         create_Cylinder(caller,&resource_signer);
+        let (burn_Cap_diffustion,freeze_Cap_diffustion,mint_Cap_diffustion)=coin::initialize<Diffusion_loyalty>(caller,utf8(Diffusion_loyalty_symbol),utf8(Diffusion_loyalty_symbol),Diffusion_loyalty_decimals,false);
+        coin::destroy_freeze_cap(freeze_Cap_diffustion);
+        coin::destroy_burn_cap(burn_Cap_diffustion);
+        coin::register<Diffusion_loyalty>(&resource_signer);
+        move_to(&resource_signer,Diffustion_coin_cap{mint:mint_Cap_diffustion});
+        if (!exists<PerBlockRandomness>(@dapp) ){
+            move_to(&resource_signer, PerBlockRandomness {
+                epoch: 0,
+                round: 0,
+                seed: option::none(),
+            });};
+
+    }
+    public entry fun init_for_Setup(caller:&signer) acquires ResourceCap, PerBlockRandomness {
+        assert!(admin_module::check_admin(caller),Not_admin);
+        assert!(exists<ResourceCap>(create_resource_address(&@dapp,Seed)),Init_for_Setup_no_resourcecap);
+        assert!(exists<Diffustion_coin_cap>(create_resource_address(&@dapp,Seed)),Init_for_Setup_no_Diffustion_coin_cap);
+        assert!(exists<PerBlockRandomness>(@aptos_framework),Init_for_Setup_no_PerBlockRandomness );
+        //let borrow1 = borrow_global<DappCap>(create_resource_address(&@dapp,Seed)).signer;
+        let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
+        let resource_signer = create_signer_with_capability(borrow);
+       //create_diffusion_loyalty(caller,&resource_signer);
+        set_seed(x"0000000000000000000000000000000000000000000000000000000000000000");
     }
 
 }

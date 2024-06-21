@@ -6,26 +6,27 @@ compiled_package_info:
     admin1: eeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56
     admin2: a51ce864e04cfbc35c06085e273b7be5b6ca047605bceb1ec6be8d6295c7ae7f
     aptos_framework: "0000000000000000000000000000000000000000000000000000000000000001"
+    aptos_fungible_asset: 000000000000000000000000000000000000000000000000000000000000000a
     aptos_std: "0000000000000000000000000000000000000000000000000000000000000001"
     aptos_token: "0000000000000000000000000000000000000000000000000000000000000003"
     aptos_token_objects: "0000000000000000000000000000000000000000000000000000000000000004"
     core_resources: 000000000000000000000000000000000000000000000000000000000a550c18
-    dapp: 6d07dbae9458f0e635b207b11145a951609517d4335c6dbb21f373fe68191936
-    ole_dapp: d9bff56c4c93e3833677b1c4915e9a3d4fa9593ef8430b4dca03ea360e470de4
+    dapp: 5ffea822f3607ad6a37b1b3ffacc4ca747da0681d3dba752bb557a49a468a8fb
     std: "0000000000000000000000000000000000000000000000000000000000000001"
     vm: "0000000000000000000000000000000000000000000000000000000000000000"
     vm_reserved: "0000000000000000000000000000000000000000000000000000000000000000"
-  source_digest: 2BF10843D737636A615E030BFD0C0FA72817E6FEFE57814A1BF662669ABD8843
+  source_digest: 3AA95A210482DB69B4FD2AFAC8C90F2A5A57790CBCB1658249A20514296EFF7E
   build_flags:
-    dev_mode: true
-    test_mode: true
+    dev_mode: false
+    test_mode: false
     generate_docs: false
     generate_abis: false
     generate_move_model: true
     full_model_generation: false
     install_dir: ~
     force_recompilation: false
-    additional_named_addresses: {}
+    additional_named_addresses:
+      dapp: 5ffea822f3607ad6a37b1b3ffacc4ca747da0681d3dba752bb557a49a468a8fb
     architecture: ~
     fetch_deps_only: false
     skip_fetch_latest_git_deps: false
@@ -37,6 +38,7 @@ compiled_package_info:
         - event
         - expected_failure
         - legacy_entry_fun
+        - "lint::allow_unsafe_randomness"
         - native_interface
         - randomness
         - resource_group
