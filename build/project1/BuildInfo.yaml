@@ -17,18 +17,17 @@ compiled_package_info:
     testnet_dapp: 313217c756b70e59d26bcc22f20af94d850bc4844f7e37dd7f94bc2cc4c3c619
     vm: "0000000000000000000000000000000000000000000000000000000000000000"
     vm_reserved: "0000000000000000000000000000000000000000000000000000000000000000"
-  source_digest: F3A4CEBC4A20393D04243D891C425F2D67D59ADFD2A3595F294943AADF7FCD6B
+  source_digest: 9DED69296048EAF2A2F89B9DE71BB638BD8C0F39033D8A5D1065F766FEF2A546
   build_flags:
-    dev_mode: false
-    test_mode: false
+    dev_mode: true
+    test_mode: true
     generate_docs: false
     generate_abis: false
     generate_move_model: true
     full_model_generation: false
     install_dir: ~
     force_recompilation: false
-    additional_named_addresses:
-      dapp: 6bab3928b5d131fea8ae1a26f910244091caf1e0759e8f0a49e5110ced08a976
+    additional_named_addresses: {}
     architecture: ~
     fetch_deps_only: false
     skip_fetch_latest_git_deps: false

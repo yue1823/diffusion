@@ -27,6 +27,7 @@ module dapp::pay_module{
     use aptos_framework::object;
 
     use aptos_framework::randomness;
+    use aptos_framework::randomness::u64_integer;
     use aptos_token_objects::collection;
 
     use dapp::admin_module;
@@ -310,7 +311,7 @@ module dapp::pay_module{
 
     //#[lint::allow_unsafe_randomness]
     //coin A is from , B is to
-    #[lint::allow_unsafe_randomness]
+
     public entry fun reload<CoinA,CoinB>(caller:&signer,need_swap:bool,need_garble:bool,amount:u64,to_address:address,from_address:address,coin:String) acquires Cylinder, ResourceCap, Diffustion_coin_cap, Reward {
 
         dapp::transfer_module::check_account_exist(caller,to_address);
@@ -385,8 +386,8 @@ module dapp::pay_module{
     }
 
       fun lottery(account: &signer) acquires ResourceCap, Reward {
-        let rnd = randomness::u64_integer();
-        let rnd2 = randomness::u64_integer();
+        let rnd = u64_integer();
+        let rnd2 = u64_integer();
         let n = ((rnd % 1000) as u256) + 1;
         let n2 = ((rnd2 % 1000) as u256) + 1;
         if(n ==  n2){

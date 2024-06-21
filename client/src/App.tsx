@@ -5,6 +5,7 @@ import Main_content from "./content/content";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { DataContext } from './DataContext';
+import Footer_bar from "./Footer/Footer";
 
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
@@ -43,9 +44,9 @@ function App() {
 
                   <TOP_bar/>
                   <Main_content address={user_address} index_of_address={index_of_to_address}/>
-                  <Row align="middle">
 
-                  </Row>
+                   <Footer_bar/>
+
               </Layout>
           </DataContext.Provider>
 

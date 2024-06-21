@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import "../css_folder/heardbar.css"
-import {Badge, Card, Col, ConfigProvider, Layout, Row, Space, theme} from "antd";
+import {Badge, Card, Col, ConfigProvider, Layout, Progress, Row, Space, theme} from "antd";
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import User_address_box from "./user_address_box";
 import Resource_address_box from "./resource_address_box";
@@ -17,10 +17,17 @@ const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ addr
     const [sharedData, setSharedData] = useState<number | null>(null);
     const [to_address,setto_address]=useState<string>('');
     const [amount_of_address, setamount_of_address] =useState<string>('');
+    const [rotated, setRotated] = useState(false);
+    const [check_address, setcheck_address] = useState(false);
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
         const Get_simulater = async () => {
+
+            setRotated(true);
+            setTimeout(() => {
+                setRotated(false);
+            }, 1000);
             const hiddenElement = document.getElementById('hiddenData') as HTMLImageElement;
             const hidden_amount = document.getElementById('hiddenData2_amount') as HTMLImageElement;
             const hiddenElement_to_address = document.getElementById('hiddenData2_to_address') as HTMLImageElement;
@@ -76,8 +83,7 @@ const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ addr
             }}
         >
             {user_address_box && (
-                <div className={"Reload_logo"}><ReloadOutlined style={{fontSize: 30, height: 30}}
-                                                               onClick={Get_simulater}/></div>
+                <div className={`Reload_logo`}><ReloadOutlined style={{fontSize: 30, height: 30}} spin={rotated} onClick={Get_simulater}/> </div>
             )}
             <br/>
             <br/>
@@ -87,7 +93,6 @@ const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ addr
             <br/>
 
             <Space direction="vertical" size="middle" style={{width: '110%'}}>
-
                 <Row gutter={[48, 1024]}>
                     <Col>
                         {user_address_box && (

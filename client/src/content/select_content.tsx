@@ -9,7 +9,7 @@ import {
     Input,
     Layout, message,
     notification,
-    NotificationArgsProps,
+    NotificationArgsProps, Popover, Progress,
     Row,
     Select,
     Steps,
@@ -19,7 +19,7 @@ import {
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import {
     CheckOutlined,
-    CloseOutlined,
+    CloseOutlined, InfoCircleOutlined,
     MinusOutlined,
     PlusOutlined,
     ShareAltOutlined, UserAddOutlined, UserDeleteOutlined,
@@ -208,7 +208,16 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                         defaultChecked
                         onChange={value => setneed_garble(value)}
                     />
+                    &nbsp;
+                    &nbsp;
+                    <Popover content={<div><p>prevent coercion</p></div>} title="Garble">
+                        <InfoCircleOutlined style={{fontSize: 20,top:10}}/>
+                    </Popover>
                 </Col>
+                <Col>
+
+                </Col>
+
             </Row>
             <br/>
             <Row>
@@ -341,6 +350,7 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                     <Button type="primary" onClick={check_everything}
                             style={{height: 50, width: 190, background: "#f1eddd", color: "black"}}>Happy Work</Button>
                 </HappyProvider>
+
                 <Drawer title="Check Input" onClose={onClose} open={open}>
                     <Steps
                         direction="vertical"

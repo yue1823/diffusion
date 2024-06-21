@@ -10,6 +10,7 @@
 
 
 }
+
 .to_address_box_position{
     position:relative;
     left:340%;
@@ -186,4 +187,9 @@
     position:relative;
     left:20%;
     top:-250px;
+}
+.Progress_position{
+    position:relative;
+    left:0% ;
+    top: 0px;
 }
