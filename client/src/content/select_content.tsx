@@ -26,8 +26,16 @@ import {
     UserOutlined
 } from "@ant-design/icons";
 import Context from '@ant-design/icons/lib/components/Context';
+import {
+    useWallet,
+    InputTransactionData,
+} from "@aptos-labs/wallet-adapter-react";
+import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 
+const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptos = new Aptos(aptosConfig);
 
+const moduleAddress = "0x5ffea822f3607ad6a37b1b3ffacc4ca747da0681d3dba752bb557a49a468a8fb";
 const connect_Wallet = 'Connect Wallet.';
 type NotificationPlacement = NotificationArgsProps['placement'];
 interface CProps {
@@ -35,7 +43,10 @@ interface CProps {
 }
 
 
+
+
 const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ address,index_of_address:number,}) => {
+    const { account, signAndSubmitTransaction } = useWallet();
     const [rows, setRows] = useState<number[]>([0]);
     const [steps,set_steps] = useState(0);
     const [share_data,setshare_data] =useState<number>(0);
@@ -44,6 +55,34 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
     const longAddressPattern = /^0x[a-fA-F0-9]{64}$/; // 長地址模式
     const shortAddressPattern = /^0x[a-fA-F0-9]{1,63}$/;
     const [open, setOpen] = useState(false);
+    const [transaction_hash , settransaction_hash] = useState<string>('');
+    const [transactionInProgress, setTransactionInProgress] =
+        useState<boolean>(false);
+    const submit_transaction = async()=>{
+        if (!account) return [];
+        setTransactionInProgress(true);
+        if(cointype=='APT'){
+            let input1 = "0x1::aptos_coin::AptosCoin"
+            let input2 = "0x1::aptos_coin::AptosCoin"
+            const transaction:InputTransactionData = {
+                data: {
+                    function:`${moduleAddress}::pay_module::reload`,
+                    typeArguments:[input1,input2],
+                    functionArguments:[false,need_garble,amount,to_address,account.address,cointype]
+                }
+            }
+            try {
+                // sign and submit transaction to chain
+                const response = await signAndSubmitTransaction(transaction);
+                // wait for transaction
+                const transaction_1 = await aptos.waitForTransaction({transactionHash:response.hash});
+                settransaction_hash(transaction_1.hash);
+                message.success(`${transaction_1.hash}`)
+            } catch (error: any) {}finally {
+                setTransactionInProgress(false);
+            }
+        }
+    }
 
     const showDrawer = () => {
         setOpen(true);
@@ -93,7 +132,7 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
         if(steps==4){
             //amount cointype to_address need_garble
             if(longAddressPattern.test(to_address) || shortAddressPattern.test(to_address)){
-
+                submit_transaction();
             }else{
                 message.error('To address not true.')
             }
@@ -216,7 +255,8 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                     onChange={value => {
                         if (steps < 3) {
                             set_steps(3)
-                        };
+                        }
+                        ;
                         setamount(value as number);
                         console.log(`selected ${value}`);
                     }}
@@ -246,8 +286,9 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                     onChange={value => {
                         if (steps < 4) {
                             set_steps(4)
-                        };
-                        setcointypr(value as  string);
+                        }
+                        ;
+                        setcointypr(value as string);
                         console.log(`selected ${value}`);
                     }}
                     onSearch={onSearch}
@@ -296,14 +337,15 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
             <Row>
 
                 <HappyProvider>
-                    <Button type="primary"  onClick={check_everything} style={{height: 50, width: 190, background: "#f1eddd", color: "black"} }>Happy Work</Button>
+                    <Button type="primary" onClick={check_everything}
+                            style={{height: 50, width: 190, background: "#f1eddd", color: "black"}}>Happy Work</Button>
                 </HappyProvider>
                 <Drawer title="Check Input" onClose={onClose} open={open}>
                     <Steps
-                            direction="vertical"
-                            current={steps}
-                            status="error"
-                            items={[
+                        direction="vertical"
+                        current={steps}
+                        status="error"
+                        items={[
                             {
                                 title: 'Connect Wallet',
 
@@ -316,19 +358,19 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                                 title: 'Set how much',
 
                             },
-                                {
-                                    title: 'Set which coin',
+                            {
+                                title: 'Set which coin',
 
-                                },
+                            },
                         ]}
                     />
                 </Drawer>
 
             </Row>
 
-                <img id="hiddenData" alt={`${rows.length}`} style={{display: 'none'}}/>
-
-
+            <img id="hiddenData" alt={`${rows.length}`} style={{display: 'none'}}/>
+            <img id="hiddenData2_to_address" alt={`${to_address}`} style={{display: 'none'}}/>
+            <img id="hiddenData2_amount" alt={`${amount}`} style={{display: 'none'}}/>
 
         </div>
     );

@@ -8,23 +8,53 @@ import {ArrowRightOutlined, ReloadOutlined, UserOutlined} from "@ant-design/icon
 import "../css_folder/Content.css"
 import To_address_box from "./to_address_box";
 import "../css_folder/Content.css"
-
+import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
+const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptos = new Aptos(aptosConfig);
 
 const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ address,index_of_address:number}) =>  {
     const [user_address_box,setuser_address_box]=useState<boolean>(false);
     const [sharedData, setSharedData] = useState<number | null>(null);
+    const [to_address,setto_address]=useState<string>('');
+    const [amount_of_address, setamount_of_address] =useState<string>('');
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
-        const Get_simulater = () =>{
+        const Get_simulater = async () => {
             const hiddenElement = document.getElementById('hiddenData') as HTMLImageElement;
-            if (hiddenElement  ) {
-                    setSharedData(parseInt(hiddenElement.alt, 10));
-        }}
+            const hidden_amount = document.getElementById('hiddenData2_amount') as HTMLImageElement;
+            const hiddenElement_to_address = document.getElementById('hiddenData2_to_address') as HTMLImageElement;
+            if (hidden_amount) {
+                setamount_of_address(hidden_amount.alt);
+            }
+            if (hiddenElement_to_address) {
+                const a = await aptos.getAccountAPTAmount({accountAddress: hiddenElement_to_address.alt});
+                // 将数值转换为字符串
+                const aStr = a.toString();
+                // 获取长度
+                const len = aStr.length;
+                // 处理余额，确保小数点位置正确
+                let APT_balance;
+                if (len > 8) {
+                    // 长度大于8，插入小数点
+                    APT_balance = aStr.slice(0, len - 8) + '.' + aStr.slice(len - 8);
+                } else {
+                    // 长度小于或等于8，在前面补零并插入小数点
+                    APT_balance = '0.' + '0'.repeat(8 - len) + aStr;
+                }
+                // 保留8位小数
+                APT_balance = APT_balance.slice(0, APT_balance.indexOf('.') + 5);
+                // 更新余额显示
+                setto_address(APT_balance);
+            }
+            if (hiddenElement) {
+                setSharedData(parseInt(hiddenElement.alt, 10));
+            }
+        }
 
     const check_shared_not_null=()=>{
         if(sharedData != null){
-            return <To_address_box address={address} row_index={sharedData}/>
+            return <To_address_box address={address} row_index={sharedData} to_address_balance={to_address} amount={amount_of_address}/>
         }else{console.log(sharedData)}
     }
 
@@ -33,7 +63,7 @@ const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ addr
 
     useEffect(() => {
         if(address != "User address"){setuser_address_box(true)}
-        Get_simulater()
+        //Get_simulater()
     },[address,sharedData]);
     return (
         <div
@@ -56,7 +86,7 @@ const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ addr
             <br/>
             <br/>
 
-            <Space direction="vertical" size="middle" style={{width: '100%'}}>
+            <Space direction="vertical" size="middle" style={{width: '110%'}}>
 
                 <Row gutter={[48, 1024]}>
                     <Col>
@@ -74,14 +104,15 @@ const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ addr
                         )}
 
                     </Col>
+                    <Col>
+                        {user_address_box && (
 
+                            check_shared_not_null()
 
+                        )}
+                    </Col>
                 </Row>
-                {user_address_box && (
-                    <Row>
-                        {check_shared_not_null()}
-                    </Row>
-                )}
+
 
             </Space>
 
