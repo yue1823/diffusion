@@ -3,9 +3,9 @@ module dapp::roll {
     use std::string::utf8;
     use aptos_std::debug;
     use aptos_framework::randomness;
-    use  dapp::nft_module;
-    use dapp::pay_module;
 
+
+   friend dapp::pay_module;
 
     #[event]
     struct WinningNum has drop, store {
@@ -13,19 +13,16 @@ module dapp::roll {
     }
 
     #[randomness]
-    entry fun play(account: &signer) {
-        assert!(signer::address_of(account) != @dapp, 0);
-
+    public(friend) entry fun play(account: &signer) {
         let rnd = randomness::u64_integer();
-        let n = ((rnd % 10) as u8) + 1;
-        debug::print(&utf8(b"rnd value : "));
-        debug::print(&rnd);
-        debug::print(&utf8(b"n value : "));
-        debug::print(&n);
-
-        0x1::event::emit(WinningNum {
-            n
-        });
+        let rnd2 = randomness::u64_integer();
+        let n = ((rnd % 1000) as u256) + 1;
+        let n2 = ((rnd2 % 1000) as u256) + 1;
+        if(n ==  n2){
+            debug::print(&utf8(b"you are lucky "));
+        }else{
+            debug::print(&utf8(b"bad luck "));
+        }
     }
     // #[randomness]
     // public(friend) entry fun lottery(account: &signer){

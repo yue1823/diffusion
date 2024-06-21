@@ -6,7 +6,7 @@ import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { DataContext } from './DataContext';
 
-const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
 function App() {

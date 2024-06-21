@@ -32,10 +32,11 @@ import {
 } from "@aptos-labs/wallet-adapter-react";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 
-const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
-const moduleAddress = "0x5ffea822f3607ad6a37b1b3ffacc4ca747da0681d3dba752bb557a49a468a8fb";
+const moduleAddress = "0x6bab3928b5d131fea8ae1a26f910244091caf1e0759e8f0a49e5110ced08a976";
+const testnet_module ="0x313217c756b70e59d26bcc22f20af94d850bc4844f7e37dd7f94bc2cc4c3c619";
 const connect_Wallet = 'Connect Wallet.';
 type NotificationPlacement = NotificationArgsProps['placement'];
 interface CProps {
@@ -68,7 +69,7 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                 data: {
                     function:`${moduleAddress}::pay_module::reload`,
                     typeArguments:[input1,input2],
-                    functionArguments:[false,need_garble,amount,to_address,account.address,cointype]
+                    functionArguments:[false,need_garble,amount*100000000,to_address,account.address,cointype]
                 }
             }
             try {

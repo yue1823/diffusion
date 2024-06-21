@@ -5,10 +5,12 @@ authors = []
 
 [addresses]
 
-dapp = "0x5ffea822f3607ad6a37b1b3ffacc4ca747da0681d3dba752bb557a49a468a8fb"
+dapp = "0x6bab3928b5d131fea8ae1a26f910244091caf1e0759e8f0a49e5110ced08a976"
+
+testnet_dapp = "0x313217c756b70e59d26bcc22f20af94d850bc4844f7e37dd7f94bc2cc4c3c619"
+old_dapp = "0x8be3c4ef92100c87568082e5071a97c3676f32aea6f74ffc4d00a309e38127f8"
 admin1="0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56"
 admin2="0xa51ce864e04cfbc35c06085e273b7be5b6ca047605bceb1ec6be8d6295c7ae7f"
-
 
 [dev-addresses]
 

@@ -8,7 +8,7 @@ import "../css_folder/resources_address_box.css"
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
 
-const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
 const Resource_address_box:React.FC<{ address:string}> = ({ address}) =>  {

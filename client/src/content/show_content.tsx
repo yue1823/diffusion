@@ -9,7 +9,7 @@ import "../css_folder/Content.css"
 import To_address_box from "./to_address_box";
 import "../css_folder/Content.css"
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
-const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
 const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ address,index_of_address:number}) =>  {
