@@ -61,10 +61,10 @@ module dapp::admin_module{
 
     public entry fun admin_withdraw<CoinType>(caller:&signer,amount:u64) acquires ResourceCap {
         assert!(check_admin(caller),Not_admin);
-        assert!(check_balance<CoinType>(caller,amount),Not_enough_balance); //check dapp balance,if not -> end
         let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;//if not admin , end
         let resource_signer = &account::create_signer_with_capability(borrow);
-        if(check_balance<CoinType>(caller,amount)){
+        assert!(check_balance<CoinType>(resource_signer,amount),Not_enough_balance); //check dapp balance,if not -> end
+        if(check_balance<CoinType>(resource_signer,amount)){
             assert!(address_of(resource_signer)!=signer::address_of(caller),Withdraw_Resource_address_same_with_to_address);
             transfer_coins<CoinType>(resource_signer,signer::address_of(caller),amount);
         };

@@ -14,8 +14,8 @@ const Footer_bar:React.FC<{ }> = ({ }) => {
     return (
         <>
             <></>
-                <Footer style={{textAlign:'center' ,backgroundColor: "#EBE5DF"}}>
-                    Create by Yue  <br/>
+                <Footer style={{textAlign:'center' ,backgroundColor: "#e1dcd6"}}>
+                    Diffusion ©{new Date().getFullYear()} Create by Yue  <br/>
                     <a href="https://github.com/yue1823" target="_blank" rel="noopener noreferrer">
                         <GithubOutlined style={{fontSize: 30}}/>
                     </a>

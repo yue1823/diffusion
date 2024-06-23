@@ -7,7 +7,7 @@ import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
 import "../css_folder/Content.css"
 
-const aptosConfig = new AptosConfig({ network: Network.TESTNET });
+const aptosConfig = new AptosConfig({ network: Network.DEVNET });
 const aptos = new Aptos(aptosConfig);
 
 const Arrow_position:React.FC<{ address:string,row_index:number}> =({address,row_index})=>{

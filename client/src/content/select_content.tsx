@@ -7,19 +7,20 @@ import {
     Col,
     ConfigProvider, Drawer,
     Input,
-    Layout, message,
+    Layout, List, message,
     notification,
     NotificationArgsProps, Popover, Progress,
     Row,
     Select,
     Steps,
     Switch,
-    theme
+    theme,
+    Typography
 } from "antd";
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import {
     CheckOutlined,
-    CloseOutlined, InfoCircleOutlined,
+    CloseOutlined, GithubOutlined, InfoCircleOutlined,
     MinusOutlined,
     PlusOutlined,
     ShareAltOutlined, UserAddOutlined, UserDeleteOutlined,
@@ -32,10 +33,10 @@ import {
 } from "@aptos-labs/wallet-adapter-react";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 
-const aptosConfig = new AptosConfig({ network: Network.TESTNET });
+const aptosConfig = new AptosConfig({ network: Network.DEVNET });
 const aptos = new Aptos(aptosConfig);
 
-const moduleAddress = "0x6bab3928b5d131fea8ae1a26f910244091caf1e0759e8f0a49e5110ced08a976";
+const moduleAddress = "0xfbd26e5585a977ca7d1d0e1d6a8337fa9ca37ad01dc945d978cc296327dd20f0";
 const testnet_module ="0x313217c756b70e59d26bcc22f20af94d850bc4844f7e37dd7f94bc2cc4c3c619";
 const connect_Wallet = 'Connect Wallet.';
 type NotificationPlacement = NotificationArgsProps['placement'];
@@ -76,15 +77,30 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                 // sign and submit transaction to chain
                 const response = await signAndSubmitTransaction(transaction);
                 // wait for transaction
-                const transaction_1 = await aptos.waitForTransaction({transactionHash:response.hash});
+                const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+                const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=devnet`;
                 settransaction_hash(transaction_1.hash);
-                message.success(`${transaction_1.hash}`)
-            } catch (error: any) {}finally {
+
+                message.success(
+                    <span>
+                        hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                    </span>
+                    )
+
+            } catch (error: any) {
+                message.error(`please try again`)
+            } finally {
                 setTransactionInProgress(false);
+
             }
         }
     }
+    const data = [
+        {label: 'Diffusion fees charge',value:0.1},
+        {label: 'Expected transfer ',value:amount},
 
+    ];
+    const totalCost = data.reduce((sum, item) => sum + Number(item.value), 0);
     const showDrawer = () => {
         setOpen(true);
     };
@@ -345,10 +361,30 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
             </Row>
             <br/>
             <Row>
+                <List
+
+                    size={"small"}
+                    style={{width:420}}
+                    header={<div>Fees (APT)</div>}
+                    footer={<div>Total cost: <span style={{float: 'right'}}>{totalCost}</span></div>}
+                    bordered
+                    dataSource={data}
+                    renderItem={(item) => (
+                        <List.Item>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                                <span>{item.label}</span>
+                                {item.value}
+                            </div>
+                        </List.Item>
+                    )}
+                />
+            </Row>
+            <br/>
+            <Row>
 
                 <HappyProvider>
                     <Button type="primary" onClick={check_everything}
-                            style={{height: 50, width: 190, background: "#f1eddd", color: "black"}}>Happy Work</Button>
+                            style={{height: 50, width: 190, background: "#f1eddd", color: "black"}}>Safe Transfer</Button>
                 </HappyProvider>
 
                 <Drawer title="Check Input" onClose={onClose} open={open}>

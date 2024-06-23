@@ -9,7 +9,7 @@ import "../css_folder/Content.css"
 import To_address_box from "./to_address_box";
 import "../css_folder/Content.css"
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
-const aptosConfig = new AptosConfig({ network: Network.TESTNET });
+const aptosConfig = new AptosConfig({ network: Network.DEVNET });
 const aptos = new Aptos(aptosConfig);
 
 const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ address,index_of_address:number}) =>  {
@@ -23,40 +23,41 @@ const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ addr
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
         const Get_simulater = async () => {
-
-            setRotated(true);
-            setTimeout(() => {
-                setRotated(false);
-            }, 1000);
-            const hiddenElement = document.getElementById('hiddenData') as HTMLImageElement;
-            const hidden_amount = document.getElementById('hiddenData2_amount') as HTMLImageElement;
-            const hiddenElement_to_address = document.getElementById('hiddenData2_to_address') as HTMLImageElement;
-            if (hidden_amount) {
-                setamount_of_address(hidden_amount.alt);
-            }
-            if (hiddenElement_to_address) {
-                const a = await aptos.getAccountAPTAmount({accountAddress: hiddenElement_to_address.alt});
-                // 将数值转换为字符串
-                const aStr = a.toString();
-                // 获取长度
-                const len = aStr.length;
-                // 处理余额，确保小数点位置正确
-                let APT_balance;
-                if (len > 8) {
-                    // 长度大于8，插入小数点
-                    APT_balance = aStr.slice(0, len - 8) + '.' + aStr.slice(len - 8);
-                } else {
-                    // 长度小于或等于8，在前面补零并插入小数点
-                    APT_balance = '0.' + '0'.repeat(8 - len) + aStr;
-                }
-                // 保留8位小数
-                APT_balance = APT_balance.slice(0, APT_balance.indexOf('.') + 5);
-                // 更新余额显示
-                setto_address(APT_balance);
-            }
-            if (hiddenElement) {
-                setSharedData(parseInt(hiddenElement.alt, 10));
-            }
+            try{
+                    setRotated(true);
+                    setTimeout(() => {
+                        setRotated(false);
+                    }, 1000);
+                    const hiddenElement = document.getElementById('hiddenData') as HTMLImageElement;
+                    const hidden_amount = document.getElementById('hiddenData2_amount') as HTMLImageElement;
+                    const hiddenElement_to_address = document.getElementById('hiddenData2_to_address') as HTMLImageElement;
+                    if (hidden_amount) {
+                        setamount_of_address(hidden_amount.alt);
+                    }
+                    if (hiddenElement_to_address) {
+                        const a = await aptos.getAccountAPTAmount({accountAddress: hiddenElement_to_address.alt});
+                        // 将数值转换为字符串
+                        const aStr = a.toString();
+                        // 获取长度
+                        const len = aStr.length;
+                        // 处理余额，确保小数点位置正确
+                        let APT_balance;
+                        if (len > 8) {
+                            // 长度大于8，插入小数点
+                            APT_balance = aStr.slice(0, len - 8) + '.' + aStr.slice(len - 8);
+                        } else {
+                            // 长度小于或等于8，在前面补零并插入小数点
+                            APT_balance = '0.' + '0'.repeat(8 - len) + aStr;
+                        }
+                        // 保留8位小数
+                        APT_balance = APT_balance.slice(0, APT_balance.indexOf('.') + 5);
+                        // 更新余额显示
+                        setto_address(APT_balance);
+                    }
+                    if (hiddenElement) {
+                        setSharedData(parseInt(hiddenElement.alt, 10));
+                    }
+            }catch (error:any){}
         }
 
     const check_shared_not_null=()=>{
