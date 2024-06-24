@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import "../css_folder/heardbar.css"
-import {Badge, Card, Col, ConfigProvider, Layout, Progress, Row, Space, theme} from "antd";
+import {Badge, Card, Col, ConfigProvider, Layout, message, Progress, Row, Space, theme} from "antd";
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import User_address_box from "./user_address_box";
 import Resource_address_box from "./resource_address_box";
-import {ArrowRightOutlined, ReloadOutlined, UserOutlined} from "@ant-design/icons";
+import {ArrowRightOutlined, MessageOutlined, ReloadOutlined, UserOutlined} from "@ant-design/icons";
 import "../css_folder/Content.css"
 import To_address_box from "./to_address_box";
 import "../css_folder/Content.css"
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
-const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
 const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ address,index_of_address:number}) =>  {
@@ -57,7 +57,9 @@ const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ addr
                     if (hiddenElement) {
                         setSharedData(parseInt(hiddenElement.alt, 10));
                     }
-            }catch (error:any){}
+            }catch (error:any){
+                message.error("Wrong address");
+            }
         }
 
     const check_shared_not_null=()=>{
@@ -78,11 +80,13 @@ const Show_content:React.FC<{ address:string,index_of_address:number}> = ({ addr
             style={{
                 padding: 24,
                 minHeight: 400,
-                minWidth: 800,
+                minWidth: 820,
                 background: colorBgContainer,
                 borderRadius: borderRadiusLG,
             }}
         >
+
+
             {user_address_box && (
                 <div className={`Reload_logo`}><ReloadOutlined style={{fontSize: 30, height: 30}} spin={rotated} onClick={Get_simulater}/> </div>
             )}

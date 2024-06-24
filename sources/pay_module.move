@@ -38,6 +38,7 @@ module dapp::pay_module{
     use aptos_token_objects::royalty::{create};
     use aptos_token_objects::token;
     use aptos_token_objects::token::Token;
+    use dapp::admin_module::{check_admin, check_balance};
 
 
     #[test_only]
@@ -54,10 +55,11 @@ module dapp::pay_module{
     #[test_only]
     use aptos_framework::transaction_context;
     const DST: vector<u8> = b"APTOS_RANDOMNESS";
+    const Lattery_prob:u128 = 1000;   //set chance of nft
 
     const Diffusion_loyalty_name:vector<u8> = b"loyalty";
     const Diffusion_loyalty_symbol:vector<u8> = b"Dfp";
-    const Diffusion_loyalty_decimals:u8 = 1;
+    const Diffusion_loyalty_decimals:u8 = 0;
 
     const Collection_name_token_describe:vector<u8> =b"You are really lucky to get this one XD ";
     const Collection_name:vector<u8> = b"Diffusion";
@@ -86,6 +88,10 @@ module dapp::pay_module{
     const Init_for_Setup_no_Diffustion_coin_cap :u64 = 32;
     const Init_for_Setup_no_PerBlockRandomness :u64 = 33;
     const NO_random : u64 =35;
+    const Not_enough_balance:u64 = 36;
+    const Withdraw_Resource_address_same_with_to_address : u64 = 37;
+    const NO_resource_Cap : u64 =38;
+    const Zero_ammount :u64 =39;
     const Amount_is_zero_1:u64 = 99;
     const Amount_is_zero_2:u64 = 98;
     const Amount_is_zero_3:u64 = 97;
@@ -165,6 +171,19 @@ module dapp::pay_module{
         length(&borrow.Bullet.address)
     }
 
+    public entry fun admin_withdraw<CoinType>(caller:&signer,amount:u64) acquires ResourceCap {
+        assert!(check_admin(caller),Not_admin);
+        assert!(amount!=0,Zero_ammount);
+        assert!(exists<ResourceCap>(create_resource_address(&@dapp,Seed)),NO_resource_Cap);
+        let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;//if not admin , end
+        let resource_signer = &account::create_signer_with_capability(borrow);
+        assert!(check_balance<CoinType>(resource_signer,amount),Not_enough_balance); //check dapp balance,if not -> end
+        if(check_balance<CoinType>(resource_signer,amount)){
+            assert!(address_of(resource_signer)!=signer::address_of(caller),Withdraw_Resource_address_same_with_to_address);
+            transfer_coins<CoinType>(resource_signer,signer::address_of(caller),amount);
+        };
+
+    }
 
 
     fun create_address_list(address:address):Address_list{
@@ -398,12 +417,15 @@ module dapp::pay_module{
     }
     fun lottery(caller:&signer) acquires Randomness_store, ResourceCap, Reward {
         let borrow = borrow_global<Randomness_store>(signer::address_of(caller));
-        let n = ((borrow.first % 1000) as u256) + 1;
-        let n2 = ((borrow.second % 1000) as u256) + 1;
+        let n = ((borrow.first % Lattery_prob) as u256) + 1;
+        let n2 = ((borrow.second % Lattery_prob) as u256) + 1;
         if(n ==  n2){
+                    debug::print(&n2);
+                     debug::print(&n);
                    debug::print(&utf8(b"you are lucky "));
                    mint_diffustion(caller);
-               }else{debug::print(&utf8(b"bad luck "));}
+               }else{debug::print(&n2);
+            debug::print(&n);debug::print(&utf8(b"bad luck "));}
     }
 
 
@@ -836,10 +858,10 @@ module dapp::pay_module{
             })
         };
     }
-    #[view]
-    entry fun check_randome(caller:&signer){
-        exists<Randomness_store>(signer::address_of(caller));
-    }
+    // #[view]
+    // entry fun check_randome(){
+    //     exists<Randomness_store>(signer::address_of(caller));
+    // }
     // public entry fun init_for_Setup(caller:&signer) acquires ResourceCap, PerBlockRandomness {
     //     assert!(admin_module::check_admin(caller),Not_admin);
     //     assert!(exists<ResourceCap>(create_resource_address(&@dapp,Seed)),Init_for_Setup_no_resourcecap);

@@ -1,6 +1,7 @@
 import React, {ReactNode, useEffect, useState} from 'react';
 import "../css_folder/heardbar.css"
 import { HappyProvider } from '@ant-design/happy-work-theme';
+import Apt_logo from "../art/Aptos_mark_BLK.svg"
 import {
     Alert,
     Button,
@@ -20,9 +21,9 @@ import {
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import {
     CheckOutlined,
-    CloseOutlined, GithubOutlined, InfoCircleOutlined,
+    CloseOutlined, createFromIconfontCN, GithubOutlined, InfoCircleOutlined,
     MinusOutlined,
-    PlusOutlined,
+    PlusOutlined, ReloadOutlined,
     ShareAltOutlined, UserAddOutlined, UserDeleteOutlined,
     UserOutlined
 } from "@ant-design/icons";
@@ -33,10 +34,10 @@ import {
 } from "@aptos-labs/wallet-adapter-react";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 
-const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
-const moduleAddress = "0xfbd26e5585a977ca7d1d0e1d6a8337fa9ca37ad01dc945d978cc296327dd20f0";
+const moduleAddress = "0x2e86a41d1b86d4a82c1c74ece536108fc8f9dc5858a6ab5eb488e37d83098eb2";
 const testnet_module ="0x313217c756b70e59d26bcc22f20af94d850bc4844f7e37dd7f94bc2cc4c3c619";
 const connect_Wallet = 'Connect Wallet.';
 type NotificationPlacement = NotificationArgsProps['placement'];
@@ -60,6 +61,7 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
     const [transaction_hash , settransaction_hash] = useState<string>('');
     const [transactionInProgress, setTransactionInProgress] =
         useState<boolean>(false);
+
     const submit_transaction = async()=>{
         if (!account) return [];
         setTransactionInProgress(true);
@@ -78,7 +80,7 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                 const response = await signAndSubmitTransaction(transaction);
                 // wait for transaction
                 const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
-                const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=devnet`;
+                const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
                 settransaction_hash(transaction_1.hash);
 
                 message.success(
@@ -212,6 +214,7 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                 left: 30,
             }}
         >
+
             <Row gutter={[16, 16]}>
                 <Col><ShareAltOutlined style={{fontSize: 25}}/></Col>
                 <Col style={{fontSize: 25}}>
@@ -221,7 +224,7 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                     <Switch
                         checkedChildren={<CheckOutlined/>}
                         unCheckedChildren={<CloseOutlined/>}
-                        defaultChecked
+                        defaultChecked={false}
                         onChange={value => setneed_garble(value)}
                     />
                     &nbsp;
@@ -360,25 +363,29 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                 />
             </Row>
             <br/>
-            <Row>
-                <List
+                {(steps==4) && (
 
-                    size={"small"}
-                    style={{width:420}}
-                    header={<div>Fees (APT)</div>}
-                    footer={<div>Total cost: <span style={{float: 'right'}}>{totalCost}</span></div>}
-                    bordered
-                    dataSource={data}
-                    renderItem={(item) => (
-                        <List.Item>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                                <span>{item.label}</span>
-                                {item.value}
-                            </div>
-                        </List.Item>
-                    )}
-                />
-            </Row>
+                    <Row>
+                        <List
+
+                            size={"small"}
+                            style={{width:420}}
+                            header={<div>Fees (APT) <span style={{float: 'right' ,width:20,height:20}}><img alt={"apt_logo"} src={Apt_logo}></img></span></div>}
+                            footer={<div>Total cost: <span style={{float: 'right'}}>{totalCost}</span></div>}
+                            bordered
+                            dataSource={data}
+                            renderItem={(item) => (
+                                <List.Item>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                                        <span>{item.label}</span>
+                                        {item.value}
+                                    </div>
+                                </List.Item>
+                            )}
+                        />
+
+                    </Row>
+                 )}
             <br/>
             <Row>
 

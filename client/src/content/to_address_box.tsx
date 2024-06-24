@@ -222,7 +222,7 @@ export default To_address_box
 
                             <Badge.Ribbon text="To Address" color={"green"}>
                                 <Card title={<><UserOutlined /> Receiver</>} size="small" style={{minWidth:200}}>
-                                    APT : {to_address_balance}  <ArrowRightOutlined/>  APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                                    APT : {to_address_balance}  <ArrowRightOutlined/>  APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
 
                                 </Card>
                             </Badge.Ribbon>
@@ -235,7 +235,7 @@ export default To_address_box
                     <div className={"to_address_box_position_2_1"}>
                             <Badge.Ribbon text="To Address 1" color={"green"}>
                                 <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 200}}>
-                                    APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                                    APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                                 </Card>
                             </Badge.Ribbon>
                     </div>
@@ -244,7 +244,7 @@ export default To_address_box
 
                             <Badge.Ribbon text="To Address 2" color={"purple"}>
                                 <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 200}}>
-                                    APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                                    APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                                 </Card>
                             </Badge.Ribbon>
 
@@ -259,7 +259,7 @@ export default To_address_box
                 <div className={"to_address_box_position_3_1"}>
                     <Badge.Ribbon text="To Address 1" color={"green"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 200}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
                 </div>
@@ -268,7 +268,7 @@ export default To_address_box
 
                     <Badge.Ribbon text="To Address 2" color={"purple"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 200}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
 
@@ -278,7 +278,7 @@ export default To_address_box
 
                     <Badge.Ribbon text="To Address 3" color={"yellow"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 150}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
 
@@ -291,7 +291,7 @@ export default To_address_box
                 <div className={"to_address_box_position_4_1"}>
                     <Badge.Ribbon text="To Address 1" color={"green"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 200}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
                 </div>
@@ -300,7 +300,7 @@ export default To_address_box
 
                     <Badge.Ribbon text="To Address 2" color={"purple"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 200}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
 
@@ -310,7 +310,7 @@ export default To_address_box
 
                     <Badge.Ribbon text="To Address 3" color={"yellow"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 150}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
 
@@ -319,7 +319,7 @@ export default To_address_box
 
                     <Badge.Ribbon text="To Address 4" color={"orange"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 150}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
 
@@ -332,7 +332,7 @@ export default To_address_box
                 <div className={"to_address_box_position_5_1"}>
                     <Badge.Ribbon text="To Address 1" color={"green"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 200}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
                 </div>
@@ -341,7 +341,7 @@ export default To_address_box
 
                     <Badge.Ribbon text="To Address 2" color={"purple"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 200}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
 
@@ -351,7 +351,7 @@ export default To_address_box
 
                     <Badge.Ribbon text="To Address 3" color={"yellow"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 150}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
 
@@ -360,7 +360,7 @@ export default To_address_box
 
                     <Badge.Ribbon text="To Address 4" color={"orange"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 150}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
 
@@ -369,7 +369,7 @@ export default To_address_box
 
                     <Badge.Ribbon text="To Address 4" color={"orange"}>
                         <Card title={<><UserOutlined/> Receiver</>} size="small" style={{minWidth: 150}}>
-                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toString()}
+                            APT : {to_address_balance} <ArrowRightOutlined/> APT : {(parseFloat(to_address_balance)+parseFloat(amount)).toFixed(4).toString()}
                         </Card>
                     </Badge.Ribbon>
 

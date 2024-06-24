@@ -4,11 +4,12 @@ module dapp::admin_module{
     use std::string::{String,utf8};
     use aptos_std::ristretto255_pedersen::commitment_into_point;
     use aptos_framework::account;
-    use aptos_framework::account::{SignerCapability, create_resource_address, create_signer_with_capability};
+    use aptos_framework::account::{SignerCapability, create_resource_address, create_signer_with_capability, exists_at};
     use aptos_framework::aptos_account::{transfer_coins, deposit_coins};
     use aptos_framework::aptos_coin;
     use aptos_framework::aptos_coin::AptosCoin;
     use aptos_framework::coin::{withdraw, balance};
+    use aptos_framework::object::object_exists;
     use aptos_framework::primary_fungible_store::deposit;
     use aptos_token_objects::collection;
     use dapp::pay_module;
@@ -29,7 +30,8 @@ module dapp::admin_module{
     const Not_admin:u64 = 12;
     const Not_enough_balance:u64 = 13;
     const Withdraw_Resource_address_same_with_to_address : u64 = 14;
-
+    const NO_resource_Cap : u64 =15;
+    const Zero_ammount :u64 =16;
     struct ResourceCap has key{
         cap:SignerCapability
     }
@@ -40,7 +42,7 @@ module dapp::admin_module{
     }
 
 
-    fun check_balance<CoinType>(caller:&signer,amount:u64):bool{
+    public(friend) fun check_balance<CoinType>(caller:&signer,amount:u64):bool{
         if(balance<CoinType>(create_resource_address(&@dapp,Seed))>amount){
             return true
         }else{return false}
@@ -53,23 +55,25 @@ module dapp::admin_module{
     fun check_admin_ability()  {
         //let borrow = borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
     }
-    public entry fun set_aprove_admin(caller:&signer) {
-        // assert!(check_admin(caller),Not_admin);
-        // let borrow = borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
-        // move_to(caller,ResourceCap{cap:borrow});
-    }
+    // public entry fun set_aprove_admin(caller:&signer) {
+    //     // assert!(check_admin(caller),Not_admin);
+    //     // let borrow = borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
+    //     // move_to(caller,ResourceCap{cap:borrow});
+    // }
 
-    public entry fun admin_withdraw<CoinType>(caller:&signer,amount:u64) acquires ResourceCap {
-        assert!(check_admin(caller),Not_admin);
-        assert!(check_balance<CoinType>(caller,amount),Not_enough_balance); //check dapp balance,if not -> end
-        let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;//if not admin , end
-        let resource_signer = &account::create_signer_with_capability(borrow);
-        if(check_balance<CoinType>(caller,amount)){
-            assert!(address_of(resource_signer)!=signer::address_of(caller),Withdraw_Resource_address_same_with_to_address);
-            transfer_coins<CoinType>(resource_signer,signer::address_of(caller),amount);
-        };
-
-    }
+    // public entry fun admin_withdraw<CoinType>(caller:&signer,amount:u64) acquires ResourceCap {
+    //     assert!(check_admin(caller),Not_admin);
+    //     assert!(amount!=0,Zero_ammount);
+    //     assert!(exists<ResourceCap>(create_resource_address(&@dapp,Seed)),NO_resource_Cap);
+    //     let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;//if not admin , end
+    //     let resource_signer = &account::create_signer_with_capability(borrow);
+    //     assert!(check_balance<CoinType>(resource_signer,amount),Not_enough_balance); //check dapp balance,if not -> end
+    //     if(check_balance<CoinType>(resource_signer,amount)){
+    //         assert!(address_of(resource_signer)!=signer::address_of(caller),Withdraw_Resource_address_same_with_to_address);
+    //         transfer_coins<CoinType>(resource_signer,signer::address_of(caller),amount);
+    //     };
+    //
+    // }
 
     ///################################################///
 
@@ -84,6 +88,7 @@ module dapp::admin_module{
             8,
             false,
         );
+        debug::print(&exists<ResourceCap>(create_resource_address(&@dapp,Seed)));
         let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
         let resource_signer = create_signer_with_capability(borrow);
         let resource_address = signer::address_of(&resource_signer);
@@ -113,7 +118,7 @@ module dapp::admin_module{
         // debug::print(&balance<AptosCoin>(signer::address_of(admin)));
         // debug::print(&utf8(b"############After withdraw ###########"));
 
-        admin_withdraw<AptosCoin>(admin,50000000);
+        // admin_withdraw<AptosCoin>(admin,50000000);
         // debug::print(&utf8(b"######################################"));
         //
         // debug::print(&utf8(b"Resource_address balance : "));

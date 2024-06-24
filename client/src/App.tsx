@@ -8,7 +8,7 @@ import { DataContext } from './DataContext';
 import Footer_bar from "./Footer/Footer";
 import {CloseOutlined, UserAddOutlined, UserOutlined} from "@ant-design/icons";
 
-const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
     const [user_address,setuser_address]=useState<string>("User address")
     const  [index_of_to_address]=useState<number>(0);
     const [diffusion_account,setdiffusion_account]=useState<boolean>(false);
-    const diffusion_address = "0xfbd26e5585a977ca7d1d0e1d6a8337fa9ca37ad01dc945d978cc296327dd20f0";
+    const diffusion_address = "0x2e86a41d1b86d4a82c1c74ece536108fc8f9dc5858a6ab5eb488e37d83098eb2";
     const [transaction_hash , settransaction_hash] = useState<string>('');
     const create_diffusion_account =  async () =>{
         if (!account) return [];
@@ -44,7 +44,7 @@ function App() {
             const response = await signAndSubmitTransaction(transaction);
             // wait for transaction
             const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
-            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=devnet`;
+            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
             settransaction_hash(transaction_1.hash);
             message.success(
                 <span>
@@ -61,24 +61,18 @@ function App() {
         // change this to be your module account address
         const random_resource = `${diffusion_address}::pay_module::Randomness_store` as `${string}::${string}::${string}`
         const random_view_fun  = `${diffusion_address}::pay_module::check_randome` as `${string}::${string}::${string}`
-        const moduleAddress = "0xfbd26e5585a977ca7d1d0e1d6a8337fa9ca37ad01dc945d978cc296327dd20f0";
+
         try {
             setuser_address(account.address);
-            const diffusion_exists = await aptos.general.view({payload: {function: random_view_fun, typeArguments: [random_resource]}});
-            //const diffusion_exists = await aptos.account.getAccountResource({accountAddress: account.address, resourceType:random_resource})
-
-            if(diffusion_exists){
-                setdiffusion_account(true)
-            }else{
-                showDrawer();
-            }
-            setAccountHasList(true);
+            const diffusion_exists = await aptos.account.getAccountResource({accountAddress: account.address, resourceType:random_resource})
+            setOpen(false);
         } catch (e: any) {
-            setAccountHasList(false);
+            setOpen(true);
+            console.error('Failed to parse JSON:', e);
         }
     };
     useEffect(() => {
-    fetchList() ;
+    fetchList();
     }, [account?.address]);
   return (
       <>
