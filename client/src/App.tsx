@@ -1,50 +1,109 @@
 import React, {useEffect, useState} from 'react';
-import {Col, Layout, Row} from "antd";
+import {Avatar, Button, Col, Drawer, Layout, Row, Steps, Image, message} from "antd";
 import TOP_bar from './header/heard_bar';
 import Main_content from "./content/content";
-import { useWallet } from "@aptos-labs/wallet-adapter-react";
+import {InputTransactionData, useWallet} from "@aptos-labs/wallet-adapter-react";
 import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+import { DataContext } from './DataContext';
+import Footer_bar from "./Footer/Footer";
+import {CloseOutlined, UserAddOutlined, UserOutlined} from "@ant-design/icons";
 
-const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
 function App() {
-    const { account } = useWallet();
+    const { account, signAndSubmitTransaction } =useWallet() ;
+
+    const [open, setOpen] = useState(false);
+
+    const showDrawer = () => {
+        setOpen(true);
+    };
+
+    const onClose = () => {
+        setOpen(false);
+    };
+
+    const [sharedData, setSharedData] = useState<number>(0);
     const [accountHasList, setAccountHasList] = useState<boolean>(false);
     const [user_address,setuser_address]=useState<string>("User address")
-    const  [index_of_to_address,set_index_of_to_address]=useState<number>(0);
+    const  [index_of_to_address]=useState<number>(0);
+    const [diffusion_account,setdiffusion_account]=useState<boolean>(false);
+    const diffusion_address = "0x2e86a41d1b86d4a82c1c74ece536108fc8f9dc5858a6ab5eb488e37d83098eb2";
+    const [transaction_hash , settransaction_hash] = useState<string>('');
+    const create_diffusion_account =  async () =>{
+        if (!account) return [];
+        const transaction:InputTransactionData = {
+            data: {
+                function:`${diffusion_address}::pay_module::save_randome`,
+                functionArguments:[]
+            }
+        }
+        try {
+            // sign and submit transaction to chain
+            const response = await signAndSubmitTransaction(transaction);
+            // wait for transaction
+            const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+            settransaction_hash(transaction_1.hash);
+            message.success(
+                <span>
+                        hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                    </span>
+            )
+            onClose()
+        } catch (error: any) {
+            message.error(`please try again`)
+        } finally {}
+    }
     const fetchList = async () => {
         if (!account) return [];
         // change this to be your module account address
+        const random_resource = `${diffusion_address}::pay_module::Randomness_store` as `${string}::${string}::${string}`
+        const random_view_fun  = `${diffusion_address}::pay_module::check_randome` as `${string}::${string}::${string}`
 
-        const moduleAddress = "0xcbddf398841353776903dbab2fdaefc54f181d07e114ae818b1a67af28d1b018";
         try {
             setuser_address(account.address);
-            const todoListResource = await aptos.getAccountResource(
-                {
-                    accountAddress:account?.address,
-                    resourceType:`${moduleAddress}::todolist::TodoList`
-                }
-            );
-            setAccountHasList(true);
+            const diffusion_exists = await aptos.account.getAccountResource({accountAddress: account.address, resourceType:random_resource})
+            setOpen(false);
         } catch (e: any) {
-            setAccountHasList(false);
+            setOpen(true);
+            console.error('Failed to parse JSON:', e);
         }
     };
     useEffect(() => {
-        fetchList();
+    fetchList();
     }, [account?.address]);
   return (
       <>
+          <DataContext.Provider value={{ sharedData, setSharedData }}>
+              <Layout>
 
-          <Layout>
+                  <TOP_bar/>
+                  <Main_content address={user_address} index_of_address={index_of_to_address}/>
 
-              <TOP_bar/>
-              <Main_content address={user_address} index_of_address={index_of_to_address}/>
-              <Row align="middle">
+                   <Footer_bar/>
 
-              </Row>
-          </Layout>
+              </Layout>
+          </DataContext.Provider>
+          <Drawer title={<> <Avatar size={"small"} icon={<UserOutlined/>}/> Diffusion account </>}
+                  open={open}>
+              <Image
+                  width={300}
+                  src="https://raw.githubusercontent.com/yue1823/diffusion/main/client/src/art/diffusion7.png"
+              />
+              <br/>
+              <br/>
+              <Steps
+                  current={0}
+                  status={"error"}
+                  items={[{title: 'No diffusion account', description: "Create one account first."}]}>
+              </Steps>
+              <br/>
+              <Button type="primary" shape="round" icon={<UserAddOutlined/>} size={'large'} onClick={create_diffusion_account}>Create Account</Button>
+
+
+          </Drawer>
 
       </>
   );

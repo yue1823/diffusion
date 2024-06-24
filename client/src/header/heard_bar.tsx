@@ -18,6 +18,7 @@ function TOP_bar() {
                             <img src={diffusion_art}
                                  alt={"diffusion logo"}
                                  className={"diffusion_logo_circular-image "}/>
+
                         </div>
                         <div className={"Diffusion-WalletSelect_layout"}>
                             <WalletSelector />
