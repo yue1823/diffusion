@@ -11,6 +11,7 @@ const Swap_page:React.FC<{ }> = ({ }) => {
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
+
     return (
         <>
             <Content style={{padding: '15px 30px'}}>
@@ -24,7 +25,6 @@ const Swap_page:React.FC<{ }> = ({ }) => {
                             borderRadius: borderRadiusLG,
                         }}
                     >
-
                             <Swap_box/>
                     </div>
                 </Row>

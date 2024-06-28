@@ -5,8 +5,8 @@ export const RESOURCE_ACCOUNT = "0xf5f11a0fa0ef6e2cd215d73cc3bd3c4cc2ad5b1c24625
 export const MODULES_ACCOUNT = "0x43417434fd869edee76cca2a4d2301e528a1551b1d719b75c350c3c97d15b8b9";
 
 export const TokensMapping = {
-    APTOS: '0x1::aptos_coin::AptosCoin', // APTOS
-    USDT: '0x43417434fd869edee76cca2a4d2301e528a1551b1d719b75c350c3c97d15b8b9::coins::USDT', //devnet USDT
+    APTOS:'0x1::aptos_coin::AptosCoin', // APTOS
+    USDC:'0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDC', //devnet USDT
 };
 
 export type TxPayloadCallFunction = {

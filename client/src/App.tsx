@@ -27,7 +27,7 @@ function App() {
         setOpen(false);
     };
 
-    const [swap,setswap]=useState<boolean>(true);
+    const [swap,setswap]=useState<boolean>(false);
     const [sharedData, setSharedData] = useState<number>(0);
     const [accountHasList, setAccountHasList] = useState<boolean>(false);
     const [user_address,setuser_address]=useState<string>("User address")
@@ -58,7 +58,10 @@ function App() {
             onClose()
         } catch (error: any) {
             message.error(`please try again`)
-        } finally {}
+        } finally {
+
+            
+        }
     }
     const fetchList = async () => {
         if (!account) return [];
