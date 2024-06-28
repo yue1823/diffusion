@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Avatar, Button, Col, Drawer, Layout, Row, Steps, Image, message} from "antd";
+import {Avatar, Button, Col, Drawer, Layout, Row, Steps, Image, message, List} from "antd";
 import TOP_bar from './header/heard_bar';
 import Main_content from "./content/content";
 import {InputTransactionData, useWallet} from "@aptos-labs/wallet-adapter-react";
@@ -7,6 +7,9 @@ import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { DataContext } from './DataContext';
 import Footer_bar from "./Footer/Footer";
 import {CloseOutlined, UserAddOutlined, UserOutlined} from "@ant-design/icons";
+import {BrowserRouter as Router ,Route, Routes,Outlet} from "react-router-dom";
+import Swap_page from "./swap_page";
+import Apt_logo from "./art/Aptos_mark_BLK.svg";
 
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
@@ -24,6 +27,7 @@ function App() {
         setOpen(false);
     };
 
+    const [swap,setswap]=useState<boolean>(true);
     const [sharedData, setSharedData] = useState<number>(0);
     const [accountHasList, setAccountHasList] = useState<boolean>(false);
     const [user_address,setuser_address]=useState<string>("User address")
@@ -76,12 +80,25 @@ function App() {
     }, [account?.address]);
   return (
       <>
+
           <DataContext.Provider value={{ sharedData, setSharedData }}>
               <Layout>
 
                   <TOP_bar/>
-                  <Main_content address={user_address} index_of_address={index_of_to_address}/>
-
+                  <Router>
+                      <Routes>
+                          {swap && (
+                              <>
+                                  <Route path="/" element={<Swap_page/>}  />
+                              </>
+                          )}
+                      </Routes>
+                  </Router>
+                  {(!swap) && (
+                      <>
+                          <Main_content address={user_address} index_of_address={index_of_to_address}/>
+                      </>
+                  )}
                    <Footer_bar/>
 
               </Layout>
@@ -101,10 +118,7 @@ function App() {
               </Steps>
               <br/>
               <Button type="primary" shape="round" icon={<UserAddOutlined/>} size={'large'} onClick={create_diffusion_account}>Create Account</Button>
-
-
           </Drawer>
-
       </>
   );
 }
