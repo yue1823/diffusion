@@ -1,9 +1,10 @@
-import React from 'react';
+
 import {Row, theme} from "antd";
+import React, {useEffect, useState} from 'react';
 import Show_content from "./content/show_content";
 import Select_content from "./content/select_content";
 import {Content} from "antd/lib/layout/layout";
-
+import Swap_box from "./swap_page/swap_box";
 
 
 const Swap_page:React.FC<{ }> = ({ }) => {
@@ -24,7 +25,7 @@ const Swap_page:React.FC<{ }> = ({ }) => {
                         }}
                     >
 
-
+                            <Swap_box/>
                     </div>
                 </Row>
             </Content>

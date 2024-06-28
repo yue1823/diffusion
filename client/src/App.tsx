@@ -82,26 +82,28 @@ function App() {
       <>
 
           <DataContext.Provider value={{ sharedData, setSharedData }}>
-              <Layout>
+              <Router>
+                  <Layout>
 
-                  <TOP_bar/>
-                  <Router>
-                      <Routes>
-                          {swap && (
-                              <>
-                                  <Route path="/" element={<Swap_page/>}  />
-                              </>
-                          )}
-                      </Routes>
-                  </Router>
-                  {(!swap) && (
-                      <>
-                          <Main_content address={user_address} index_of_address={index_of_to_address}/>
-                      </>
-                  )}
-                   <Footer_bar/>
+                      <TOP_bar/>
 
-              </Layout>
+                          <Routes>
+                              {swap && (
+                                  <>
+                                      <Route path="/" element={<Swap_page/>}  />
+                                  </>
+                              )}
+                          </Routes>
+
+                      {(!swap) && (
+                          <>
+                              <Main_content address={user_address} index_of_address={index_of_to_address}/>
+                          </>
+                      )}
+                       <Footer_bar/>
+
+                  </Layout>
+              </Router>
           </DataContext.Provider>
           <Drawer title={<> <Avatar size={"small"} icon={<UserOutlined/>}/> Diffusion account </>}
                   open={open}>
