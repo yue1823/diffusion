@@ -20,8 +20,28 @@ module dapp::pay_module{
     use aptos_framework::aptos_coin::AptosCoin;
     use aptos_framework::coin::{transfer, is_account_registered};
     use aptos_framework::object;
+<<<<<<< Updated upstream
     use aptos_framework::object::{create_object_from_account, generate_signer, create_named_object};
     use aptos_token_objects::collection;
+
+=======
+    use aptos_framework::object::transfer_to_object;
+    use aptos_framework::randomness;
+    use aptos_framework::timestamp;
+
+
+    use aptos_token_objects::collection;
+
+    use dapp::admin_module;
+    use dapp::roll;
+    use liquid::liquidity_pool;
+
+    use aptos_token_objects::royalty::{create};
+    use aptos_token_objects::token;
+    use aptos_token_objects::token::Token;
+    use dapp::admin_module::{check_admin, check_balance};
+
+>>>>>>> Stashed changes
 
 
     #[test_only]
@@ -121,6 +141,7 @@ module dapp::pay_module{
     }
     fun create_amount_list(amount:u64):Amount_list{
         Amount_list{list:amount}
+
     }
     fun check_dapp_isnt_registered<CoinA>(caller:&signer){
         if(is_account_registered<CoinA>(@dapp)){}else{coin::register<CoinA>(caller)}
@@ -249,7 +270,15 @@ module dapp::pay_module{
 
     public entry fun swap(){}
 
+<<<<<<< Updated upstream
     public entry fun swap_to_other(){}
+=======
+    public entry fun swap_to_other(){
+
+    }
+
+    //#[lint::allow_unsafe_randomness]
+>>>>>>> Stashed changes
     //coin A is from , B is to
     public entry fun reload<CoinA,CoinB>(caller:&signer,need_swap:bool,need_garble:bool,amount:u64,to_address:address,from_address:address,coin:String) acquires Cylinder, ResourceCap {
 
@@ -318,7 +347,96 @@ module dapp::pay_module{
                 pay_apt_to_dapp(caller,amount,resource_address);
                 pay_coin_to_dapp<CoinA>(caller,amount,resource_address);
             }
+<<<<<<< Updated upstream
         }
+=======
+        };
+       // let luck  = roll::lottery2(caller);
+        //if(luck){mint_diffustion(caller)}else{};
+         lottery(caller);
+        //pay_diffusion_loyalty_point(resource_signer,signer::address_of(caller))
+    }
+    fun lottery(caller:&signer) acquires Randomness_store, ResourceCap, Reward {
+        let borrow = borrow_global<Randomness_store>(signer::address_of(caller));
+
+        let timestamp = (timestamp::now_seconds() as u128);
+        let n = ((((borrow.first*timestamp )% Lattery_prob)) as u256) + 1;
+        let n2 = ((((borrow.second*timestamp )% Lattery_prob)) as u256) + 1;
+        if(n ==  n2){
+            debug::print(&n2);
+            debug::print(&n);
+            debug::print(&utf8(b"you are lucky "));
+                   mint_diffustion(caller);
+               }else{
+            debug::print(&n2);
+            debug::print(&n);
+            debug::print(&utf8(b"bad luck "));
+        }
+    }
+
+
+     //  fun lottery(account: &signer) acquires ResourceCap, Reward {
+     //    let rnd = u64_integer();
+     //    let rnd2 = u64_integer();
+     //    let n = ((rnd % 1000) as u256) + 1;
+     //    let n2 = ((rnd2 % 1000) as u256) + 1;
+     //    if(n ==  n2){
+     //        debug::print(&utf8(b"you are lucky "));
+     //        mint_diffustion(account);
+     //    }else{debug::print(&utf8(b"bad luck "));}
+     // }
+     fun mint_diffustion(caller:&signer) acquires ResourceCap, Reward {
+
+        let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
+
+        let borrow1 = borrow_global<Reward>(create_resource_address(&@dapp,Seed));
+
+        let resource_signer = create_signer_with_capability(borrow);
+
+        let resource_address = signer::address_of(&resource_signer);
+
+        let c =utf8(b"___#");
+        let d =  string::utf8(Collection_name_token_describe);
+
+        string::append(&mut d,c);
+        // debug::print(&utf8(b"c1"));
+        // debug::print(&borrow1.id);
+        string::append( &mut d,string_utils::to_string(&borrow1.id));
+        //borrow1.id+1;
+        //let borrow2 = borrow_global<Reward>(create_resource_address(&@dapp,Seed));
+        // debug::print(&utf8(b"c2"));
+        // debug::print(&borrow2.id);
+        let royalty=create(15,100,@admin1);
+        let token_cref = token::create(
+            &resource_signer,
+            utf8(Name_nft),
+            utf8(Collection_name_token_describe),
+            d,
+            option::some(royalty),
+            utf8(Url_nft),
+        );
+
+
+        let token_signer = object::generate_signer(&token_cref);
+        let token_mutator_ref = token::generate_mutator_ref(&token_cref);
+        let token_burn_ref = token::generate_burn_ref(&token_cref);
+
+        move_to(
+            &token_signer,
+            TokenRefsStore {
+                mutator_ref: token_mutator_ref,
+                burn_ref: token_burn_ref,
+                extend_ref: object::generate_extend_ref(&token_cref),
+                transfer_ref: option::none()
+            }
+        );
+
+        object::transfer(
+            &resource_signer,
+            object::object_from_constructor_ref<Token>(&token_cref),
+            signer::address_of(caller),
+        );
+>>>>>>> Stashed changes
 
     }
     ///################################################///

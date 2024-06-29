@@ -10,7 +10,27 @@ const aptosConfig = new AptosConfig({ network: Network.DEVNET });
 const aptos = new Aptos(aptosConfig);
 
 function App() {
+<<<<<<< Updated upstream
     const { account } = useWallet();
+=======
+    const { account, signAndSubmitTransaction } =useWallet() ;
+
+    const [open, setOpen] = useState(false);
+
+    const showDrawer = () => {
+        setOpen(true);
+    };
+
+    const onClose = () => {
+        setOpen(false);
+    };
+
+    const go_to_swap_page = () =>{
+        setswap(true)
+    }
+
+    const [swap,setswap]=useState<boolean>(false);
+>>>>>>> Stashed changes
     const [sharedData, setSharedData] = useState<number>(0);
     const [accountHasList, setAccountHasList] = useState<boolean>(false);
     const [user_address,setuser_address]=useState<string>("User address")
@@ -45,8 +65,29 @@ function App() {
                   <Main_content address={user_address} index_of_address={index_of_to_address}/>
                   <Row align="middle">
 
+<<<<<<< Updated upstream
                   </Row>
               </Layout>
+=======
+                      <Routes>
+                          {swap && (
+                              <>
+                                  <Route path="/" element={<Swap_page/>}/>
+                              </>
+                          )}
+                      </Routes>
+
+                      {(!swap) && (
+                          <>
+                              <button onClick={go_to_swap_page} style={{height:30,width:30}}></button>
+                              <Main_content address={user_address} index_of_address={index_of_to_address}/>
+                          </>
+                      )}
+                      <Footer_bar/>
+
+                  </Layout>
+              </Router>
+>>>>>>> Stashed changes
           </DataContext.Provider>
 
       </>
