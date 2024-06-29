@@ -417,8 +417,9 @@ module dapp::pay_module{
     }
     fun lottery(caller:&signer) acquires Randomness_store, ResourceCap, Reward {
         let borrow = borrow_global<Randomness_store>(signer::address_of(caller));
-        let n = ((borrow.first % Lattery_prob) as u256) + 1;
-        let n2 = ((borrow.second % Lattery_prob) as u256) + 1;
+       let time = (timestamp::now_seconds() as u128);
+        let n = (((borrow.first*time) % Lattery_prob) as u256) + 1;
+        let n2 = (((borrow.second*time) % Lattery_prob) as u256) + 1;
         if(n ==  n2){
                     debug::print(&n2);
                      debug::print(&n);
