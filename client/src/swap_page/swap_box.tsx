@@ -2,13 +2,33 @@ import React, {useEffect, useState} from 'react';
 import SDK from "@pontem/liquidswap-sdk";
 import { AptosAccount, CoinClient, FaucetClient } from 'aptos';
 import { NODE_URL, TokensMapping, MODULES_ACCOUNT, RESOURCE_ACCOUNT, FAUCET_URL, NETWORKS_MAPPING } from "./common";
-import {message} from "antd";
+import {Avatar, Button, Col, Input, message, Row, Segmented, Select, theme} from "antd";
 import {Buffer} from "buffer";
 import Decimal from 'decimal.js';
-import {d} from "@pontem/liquidswap-sdk/dist/tsc/utils";
+import {d, getOptimalLiquidityAmount} from "@pontem/liquidswap-sdk/dist/tsc/utils";
 import {dStable, f, lp_value} from "@pontem/liquidswap-sdk/dist/tsc/utils/swap-math";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
-
+import {AptosCoinInfoResource, AptosResourceType, CurveType} from "@pontem/liquidswap-sdk/dist/tsc/types/aptos";
+import {VERSION_0, VERSION_0_5} from "@pontem/liquidswap-sdk/dist/tsc/constants";
+import {UserOutlined} from "@ant-design/icons";
+import logo from "../art/diffusion.png";
+import logo_aries from "../logo/aries.svg";
+import logo_pontem from "../logo/Pontem.svg";
+import logo_panora from "../logo/Panora.svg";
+import logo_pancake from "../logo/pancake.svg";
+import logo_cellena from "../logo/cellana.svg";
+import {HappyProvider} from "@ant-design/happy-work-theme";
+import {useNavigate} from "react-router-dom";
+import {InputTransactionData, useWallet} from "@aptos-labs/wallet-adapter-react";
+interface ICalculateRatesParams {
+    fromToken: AptosResourceType;
+    toToken: AptosResourceType;
+    amount: Decimal | number;
+    interactiveToken: 'from' | 'to';
+    curveType: CurveType;
+    slippage: number;
+    version?: typeof VERSION_0 | typeof VERSION_0_5;
+}
 
 type TxPayloadCallFunction = {
     type: 'entry_function_payload';
@@ -20,11 +40,12 @@ const aptosConfig = new AptosConfig({ network: Network.MAINNET});
 const aptos = new Aptos(aptosConfig);
 
 const Swap_box:React.FC<{ }> = ({ }) => {
+    const { account, signAndSubmitTransaction } = useWallet();
     const [pool_fee,setpool_fee]=useState<string>('');
     const DENOMINATOR = new Decimal(10000);
     const e8 = new Decimal('100000000');
     const sdk = new SDK({
-        nodeUrl: "https://api.mainnet.aptoslabs.com/v1",
+        nodeUrl: "https://fullnode.testnet.aptoslabs.com/v1",
         networkOptions: {
             resourceAccount: "0x05a97986a9d031c4567e15b797be516910cfcb4156312482efc6a19c0a30c948",
             moduleAccount: "0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12",
@@ -35,7 +56,32 @@ const Swap_box:React.FC<{ }> = ({ }) => {
             },
         },
     });
+    const client = sdk.client;
 
+    const create_swap = async() =>{
+        if(!account){return}
+        try {
+            if (swap_to_coin != swap_from_coin) {
+                const response = await signAndSubmitTransaction({
+                    data:{
+                        function:"0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12::scripts_v3::swap",
+                        typeArguments: ["0x1::aptos_coin::AptosCoin","0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDC","0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12::curves::Uncorrelated"],
+                        functionArguments: ["1000000","69218"],
+                    }}
+
+                )
+                await aptos.waitForTransaction(response?.hash)
+                console.log(`Swap transaction ${response?.hash} is submitted.`);
+                console.log(`Check on explorer: https://explorer.aptoslabs.com/txn/${response?.hash}?network=${NETWORKS_MAPPING.DEVNET}`);
+
+            }
+        }catch (e:any){}
+    }
+    const {
+        token: { colorBgContainer, borderRadiusLG },
+    } = theme.useToken();
+    const filterOption = (input: string, option?: { label: string; value: string }) =>
+        (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
     const ask_price = async () =>{
         const client = sdk.client;
         try {
@@ -48,20 +94,130 @@ const Swap_box:React.FC<{ }> = ({ }) => {
             //     curveType: 'Uncorrelated',
             //     interactiveToken: 'from',
             // })
-            message.success(`Price:${usdtRate}`)
+            // const { rate, receiveLp } = await calculateRateAndMinReceivedLP({
+            //     fromToken:TokensMapping.APTOS,
+            //     toToken:"0x498d8926f16eb9ca90cab1b3a26aa6f97a080b3fcbe6e83ae150b7243a00fb68::devnet_coins::DevnetUSDC",
+            //     amount: 10000000, // 0.1 APTOS
+            //     curveType: 'uncorrelated',
+            //     interactiveToken: 'from',
+            //     slippage: 0.005,
+            // });
+
+            message.success(`rate:${usdtRate}`)
             console.log('SsdtRate: ', usdtRate);
         }catch (e:any){
             console.log("error",e);
             message.error(`error:${e}`)
         }
     }
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1);
+    };
     /////Pontem sdk //////
+
+
     const extractAddressFromType=(type: string) =>{
         return type.split('::')[0];
 
     }
 
+    const calculateRateAndMinReceivedLP = async (
 
+        params: ICalculateRatesParams,
+    ): Promise<{ rate: string; receiveLp: string }> => {
+
+        const { modules } = sdk.networkOptions;
+
+        let fromCoinInfo;
+        try {
+            let a ="0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>" as `${string}::${string}::${string}`
+            fromCoinInfo =
+                await aptos.getAccountResource({accountAddress:"0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56",resourceType:a})
+            // await sdk.Resources.fetchAccountResource<AptosCoinInfoResource>(
+            //     "0xeeeb01ae130cecc693d410641b2b79328fa0ba025c2ec00405b4823ad9221d56",
+            //     "0x1::aptos_coin::AptosCoin",
+            // );
+
+        } catch (e) {
+            console.log(e);
+        }
+
+        let toCoinInfo;
+        try {
+            let a ="0x1::coin::CoinInfo<0x498d8926f16eb9ca90cab1b3a26aa6f97a080b3fcbe6e83ae150b7243a00fb68::devnet_coins::DevnetUSDC>" as `${string}::${string}::${string}`
+            toCoinInfo =
+                await aptos.getAccountResource({accountAddress:"0x498d8926f16eb9ca90cab1b3a26aa6f97a080b3fcbe6e83ae150b7243a00fb68",resourceType:a})
+            // await sdk.Resources.fetchAccountResource<AptosCoinInfoResource>(
+            //     extractAddressFromType(params.toToken),
+            //     composeType(modules.CoinInfo,[params.toToken]),
+            // );
+            console.log("hello 2 ");
+        } catch (e) {
+            console.log("fail 2");
+            console.log(e);
+        }
+
+        if (!fromCoinInfo) {
+            throw new Error('From Coin not exists');
+        }
+
+        if (!toCoinInfo) {
+            throw new Error('To Coin not exists');
+        }
+
+        const isSorted = is_sorted(params.fromToken, params.toToken);
+
+        const { liquidityPoolResource } = await sdk.Liquidity.getLiquidityPoolResource(
+            params,
+        );
+
+        if (!liquidityPoolResource) {
+            throw new Error(`LiquidityPool not existed`);
+        }
+
+        const fromReserve = isSorted
+            ? d(liquidityPoolResource.data.coin_x_reserve.value)
+            : d(liquidityPoolResource.data.coin_y_reserve.value);
+        const toReserve = isSorted
+            ? d(liquidityPoolResource.data.coin_y_reserve.value)
+            : d(liquidityPoolResource.data.coin_x_reserve.value);
+
+        const optimalAmount =
+            params.interactiveToken === 'from'
+                ? getOptimalLiquidityAmount(d(params.amount), fromReserve, toReserve)
+                : getOptimalLiquidityAmount(d(params.amount), toReserve, fromReserve);
+
+        const { liquidityPoolResource: lpSupplyResponse } =
+            await sdk.Liquidity.getLiquiditySupplyResource(params);
+        if (!lpSupplyResponse) {
+            throw new Error(`lpSupplyResponse not existed`);
+        }
+
+        let lpSupply;
+        try {
+            // TODO: fix typing
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            lpSupply = lpSupplyResponse.data.supply.vec[0].integer.vec[0].value;
+        } catch (e) {
+            console.log(e);
+        }
+
+        const receiveLp = sdk.Liquidity.calculateSupply({
+            slippage: params.slippage,
+            fromReserve,
+            toReserve,
+            fromAmount:
+                params.interactiveToken === 'from' ? params.amount : optimalAmount,
+            toAmount:
+                params.interactiveToken === 'to' ? params.amount : optimalAmount,
+            lpSupply: lpSupply,
+            isSorted,
+        });
+
+        return { rate: optimalAmount.toFixed(0), receiveLp };
+    }
 
 
     const cmp=(a: number, b: number)=>{
@@ -383,15 +539,211 @@ const Swap_box:React.FC<{ }> = ({ }) => {
         }
         return rate.toFixed(0);
     }
-   /////Pontem sdk //////
+    /////Pontem sdk //////
+    const [swap_from_coin,setswap_from_coin]=useState<string>('');
+    const [swap_to_coin,setswap_to_coin]=useState<string>('');
+    const [rate ,setrate]=useState<string>('');
+    const [amount ,setamouunt]=useState<string>('');
+    const ask = async ()=>{
+        try {
 
+            if (swap_from_coin == "APT") {
+                if (swap_to_coin == "USDT") {
+                    let usdtRate = await calculateRate(TokensMapping.APTOS,TokensMapping.USDT,parseFloat(amount)*10000000,'Uncorrelated',"from",0.5);
+                    let a = parseFloat(usdtRate)/100000;
+                    setrate(a.toString());
+                }
+                if(swap_to_coin == "USDC"){
+                    let usdtRate = await calculateRate(TokensMapping.APTOS,TokensMapping.USDC,parseFloat(amount)*10000000,'Uncorrelated',"from",0.5);
+                    let a = parseFloat(usdtRate)/100000;
+                    setrate(a.toString());
+                }
+            }else if(swap_from_coin == "USDC"){
 
+                if (swap_to_coin == "USDT") {
+                    let usdtRate = await calculateRate(TokensMapping.USDC,  "0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDT",parseFloat(amount)*1000000, 'Uncorrelated', "from", 0.5);
+                    let b= parseFloat(usdtRate)/1000000;
+                    setrate(b.toString());
+                }
+                if(swap_to_coin == "APT"){
+                    let usdtRate = await calculateRate(TokensMapping.USDC, TokensMapping.APTOS, parseFloat(amount)*1000000, 'Uncorrelated', "from", 0.5);
+                    let b= parseFloat(usdtRate)/100000000;
+                    setrate(b.toString());
+                }
+            }else{
+                if (swap_to_coin == "USDC") {
+                    let usdtRate = await calculateRate("0x3c1d4a86594d681ff7e5d5a233965daeabdc6a15fe5672ceeda5260038857183::vcoins::V<0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDC>",  "0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDT",parseFloat(amount)*1000000, 'Uncorrelated', "from", 0.5);
+                    setrate(usdtRate)
+                }
+                if(swap_to_coin == "APT"){
+                    let usdtRate = await calculateRate("0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDT", '0x1::aptos_coin::AptosCoin', parseFloat(amount)*1000000, 'Uncorrelated', "from", 0.5);
+                    setrate(usdtRate)
+                }
+            }
 
+        }catch (e:any){
+            console.log(e);
+        }
+    }
 
-
+    useEffect(() => {
+        ask()
+    },[swap_from_coin,swap_to_coin,amount]);
     return (
         <>
-            <button onClick={ask_price}>ask </button>
+
+            <div
+                style={{
+                    padding: 50,
+                    minHeight: 400,
+                    minWidth: 100,
+                    background: "#EBE5DF",
+                    borderRadius: borderRadiusLG,
+                    textAlign: 'center',
+                }}
+            >
+                <HappyProvider>
+                    <Button type="primary" onClick={goBack}
+                            style={{height: 20, width: 50, background: "#f1eddd", color: "black" ,left:-310}}>Back</Button>
+                </HappyProvider>
+                <Segmented size="large" options={[
+                    {
+                        label: (
+                            <div className="swap_page_Select_box">
+                                <Avatar src={logo_pontem}/>
+                                <div>Pontem</div>
+                            </div>
+                        ),
+                        value: 'user2',
+
+                    },
+                    {
+                        label: (
+                            <div className="swap_page_Select_box">
+                                <Avatar src={logo_aries}/>
+                                <div>Aries</div>
+                            </div>
+                        ),
+                        value: 'user3',
+                        // disabled: true,
+                    },
+
+                    {
+                        label: (
+                            <div className="swap_page_Select_box">
+                                <Avatar src={logo_pancake}/>
+                                <div>Pancake</div>
+                            </div>
+                        ),
+                        value: 'user4',
+                        // disabled: true,
+                    }, {
+                        label: (
+                            <div className="swap_page_Select_box">
+                                <Avatar src={logo_panora}/>
+                                <div>Panora</div>
+                            </div>
+                        ),
+                        value: 'user5',
+                        // disabled: true,
+                    },
+                    {
+                        label: (
+                            <div className="swap_page_Select_box">
+                                <Avatar src={logo_cellena}/>
+                                <div>Cellena</div>
+                            </div>
+                        ),
+                        value: 'user6',
+                        // disabled: true,
+                    },
+                ]}>
+                </Segmented>
+                <br/>
+                <br/>
+                <Row>
+
+                    <Input size="large" placeholder="from" prefix={<UserOutlined/>} onChange={value => {
+                        setamouunt(value.target.value)
+                    }}/>
+                    <br/>
+                    <Select
+                        showSearch
+                        placeholder="Which coin"
+                        optionFilterProp="children"
+                        onChange={value => {
+                            setswap_from_coin(value)
+                            console.log(`selected ${value}`);
+                        }}
+                        filterOption={filterOption}
+                        style={{minWidth: 100}}
+                        options={[
+                            {
+                                value: 'APT',
+                                label: 'APT',
+                            },
+                            {
+                                value: 'USDC',
+                                label: 'USDC',
+                            },
+                            {
+                                value: 'USDT',
+                                label: 'USDT',
+                            },
+                        ]}
+                    />
+                </Row>
+                <br/>
+                <br/>
+
+                <Row>
+                    {swap_from_coin == swap_to_coin &&
+                        <Input disabled={true} size="large" placeholder="to" prefix={<UserOutlined/>} value={1}/>
+                    }
+                    {swap_from_coin != swap_to_coin &&
+                        <Input disabled={true} size="large" placeholder="to" prefix={<UserOutlined/>} value={rate}/>
+                    }
+                    <br/>
+                    <Select
+                        showSearch
+                        placeholder="Which coin"
+                        optionFilterProp="children"
+                        onChange={value => {
+
+                            setswap_to_coin(value)
+                            console.log(`select to  ${value}`);
+                        }}
+                        filterOption={filterOption}
+                        style={{minWidth: 100}}
+                        options={[
+                            {
+                                value: 'APT',
+                                label: 'APT',
+                            },
+                            {
+                                value: 'USDC',
+                                label: 'USDC',
+                            },
+                            {
+                                value: 'USDT',
+                                label: 'USDT',
+                            },
+                        ]}
+                    />
+
+                </Row>
+
+                <HappyProvider>
+                    <Button type="primary" onClick={create_swap}
+                            style={{height: 50, width: 190, background: "#f1eddd", color: "black"}}>Swap</Button>
+                </HappyProvider>
+
+                {/*from :{swap_from_coin}<br/>*/}
+                {/*to :{swap_to_coin}<br/>*/}
+                {/*rate :{rate}<br/>*/}
+                {/*amount :{amount}<br/>*/}
+                {/*<button onClick={ask_price}>ask</button>*/}
+            </div>
         </>
     );
 }

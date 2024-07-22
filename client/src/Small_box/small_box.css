@@ -1,0 +1,12 @@
+.clickable-card {
+    transition: transform 0.1s ease-in-out;
+}
+
+.clickable-card:active {
+    transform: scale(0.95);
+}
+
+.drawer_type{
+    height:800px;
+    width: 505px;
+}
