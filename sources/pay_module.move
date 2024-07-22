@@ -27,6 +27,7 @@ module dapp::pay_module{
     use aptos_framework::object;
     use aptos_framework::object::transfer_to_object;
     use aptos_framework::randomness;
+    use aptos_framework::timestamp;
 
 
     use aptos_token_objects::collection;
@@ -417,9 +418,10 @@ module dapp::pay_module{
     }
     fun lottery(caller:&signer) acquires Randomness_store, ResourceCap, Reward {
         let borrow = borrow_global<Randomness_store>(signer::address_of(caller));
-       let time = (timestamp::now_seconds() as u128);
+        let time = (timestamp::now_seconds() as u128);
         let n = (((borrow.first*time) % Lattery_prob) as u256) + 1;
         let n2 = (((borrow.second*time) % Lattery_prob) as u256) + 1;
+
         if(n ==  n2){
                     debug::print(&n2);
                      debug::print(&n);
@@ -800,6 +802,82 @@ module dapp::pay_module{
         move_to(resource_signer,bullet_APT);
 
     }
+
+    fun nft_collection_init(caller:&signer,resource_signer:&signer){
+
+        let royalty = create(15,100,@admin1);  //nft royalty
+        let collection=collection::create_unlimited_collection(             //create collection
+            resource_signer,
+            utf8(Description_nft),
+            utf8(Name_nft),
+            option::some(royalty),
+            utf8( Url_nft)
+        );
+        let collection_signer =  object::generate_signer(&collection);
+        let mutator_ref = aptos_token_objects::collection::generate_mutator_ref(&collection);
+        move_to(&collection_signer,
+            CollectionRefsStore{
+                mutator_ref});
+    }
+
+   fun init_module(caller : &signer)  {
+        assert!(!exists<ResourceCap>(address_of(caller)),RESOUREC_already_exist);
+
+        let (resource_signer, resource_cap) = account::create_resource_account(
+            caller,
+            Seed
+        );
+        assert!(!exists<ResourceCap>(address_of(&resource_signer)),RESOUREC_already_exist);
+        //move_to(&resource_signer,DappCap{signer:caller});
+        move_to(&resource_signer,Reward{id:0});
+        move_to(
+            &resource_signer,
+            ResourceCap {
+                cap: resource_cap
+            }
+        );
+
+        // register_coin(caller);
+        coin::register<AptosCoin>(&resource_signer);
+        nft_collection_init(caller,&resource_signer);
+        create_Cylinder(caller,&resource_signer);
+        let (burn_Cap_diffustion,freeze_Cap_diffustion,mint_Cap_diffustion)=coin::initialize<Diffusion_loyalty>(caller,utf8(Diffusion_loyalty_symbol),utf8(Diffusion_loyalty_symbol),Diffusion_loyalty_decimals,false);
+        coin::destroy_freeze_cap(freeze_Cap_diffustion);
+        coin::destroy_burn_cap(burn_Cap_diffustion);
+        coin::register<Diffusion_loyalty>(&resource_signer);
+        move_to(&resource_signer,Diffustion_coin_cap{mint:mint_Cap_diffustion});
+    }
+
+    #[randomness]
+    entry fun save_randome(caller:&signer)  {
+        let a = randomness::u128_integer();
+        let b = randomness::u128_integer();
+         if (exists<Randomness_store>(signer::address_of(caller))) {
+            //move_from<DiceRollHistory>(addr)
+        } else {
+            move_to(caller,Randomness_store{
+                first:a,
+                second:b,
+            })
+        };
+    }
+    // #[view]
+    // entry fun check_randome(){
+    //     exists<Randomness_store>(signer::address_of(caller));
+    // }
+    // public entry fun init_for_Setup(caller:&signer) acquires ResourceCap, PerBlockRandomness {
+    //     assert!(admin_module::check_admin(caller),Not_admin);
+    //     assert!(exists<ResourceCap>(create_resource_address(&@dapp,Seed)),Init_for_Setup_no_resourcecap);
+    //     assert!(exists<Diffustion_coin_cap>(create_resource_address(&@dapp,Seed)),Init_for_Setup_no_Diffustion_coin_cap);
+    //     assert!(exists<PerBlockRandomness>(@aptos_framework),Init_for_Setup_no_PerBlockRandomness );
+    //     //let borrow1 = borrow_global<DappCap>(create_resource_address(&@dapp,Seed)).signer;
+    //     let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
+    //     let resource_signer = create_signer_with_capability(borrow);
+    //    //create_diffusion_loyalty(caller,&resource_signer);
+    //     set_seed(x"0000000000000000000000000000000000000000000000000000000000000000");
+    // }
+
+}
 
     fun nft_collection_init(caller:&signer,resource_signer:&signer){
 
