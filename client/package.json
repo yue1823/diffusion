@@ -8,6 +8,7 @@
     "@aptos-labs/ts-sdk": "^1.18.1",
     "@aptos-labs/wallet-adapter-ant-design": "^2.4.10",
     "@aptos-labs/wallet-adapter-react": "^3.2.0",
+    "@pontem/liquidswap-sdk": "^0.7.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -19,6 +20,7 @@
     "petra-plugin-wallet-adapter": "^0.4.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
@@ -27,7 +29,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -46,5 +50,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  },
+  "homepage": "http://{username}.github.io/{repository-name}"
 }

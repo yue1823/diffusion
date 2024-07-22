@@ -15,9 +15,8 @@ root.render(
     <div className={"main-background"}>
         <AptosWalletAdapterProvider plugins={wallets} autoConnect={true}>
                 <React.StrictMode>
-
+                    <App />
                 </React.StrictMode>
-                <App />
             </AptosWalletAdapterProvider>
     </div>
 );
