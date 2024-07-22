@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/%7Brepository-name%7D/static/css/main.699bc8bb.css",
+    "main.js": "/%7Brepository-name%7D/static/js/main.ae7d30e2.js",
+    "static/js/429.1aaac45e.chunk.js": "/%7Brepository-name%7D/static/js/429.1aaac45e.chunk.js",
+    "static/js/453.258b012d.chunk.js": "/%7Brepository-name%7D/static/js/453.258b012d.chunk.js",
+    "static/media/diffusion7.png": "/%7Brepository-name%7D/static/media/diffusion7.b4e9b7ef9548c7c1acdb.png",
+    "static/media/diffusion.png": "/%7Brepository-name%7D/static/media/diffusion.f172784e9a233fa33ceb.png",
+    "static/media/vs_logo.jpg": "/%7Brepository-name%7D/static/media/vs_logo.8728dbc77ee617d9e9a0.jpg",
+    "static/media/Panora.svg": "/%7Brepository-name%7D/static/media/Panora.f4570ab04cf0dd19d663c211da826819.svg",
+    "static/media/axios.cjs": "/%7Brepository-name%7D/static/media/axios.f73c6a014bbc8a882637.cjs",
+    "static/media/aries.svg": "/%7Brepository-name%7D/static/media/aries.163c4f0fb4815cfba04da8009b31f4ce.svg",
+    "static/media/cellana.svg": "/%7Brepository-name%7D/static/media/cellana.4444019c3f3804bd48afb9152611079a.svg",
+    "static/media/pancake.svg": "/%7Brepository-name%7D/static/media/pancake.eb3a356ff231ceb4fda5970d3803a36b.svg",
+    "static/media/Pontem.svg": "/%7Brepository-name%7D/static/media/Pontem.c875556510b17805a5445bfb95e2092a.svg",
+    "static/media/Aptos_mark_BLK.svg": "/%7Brepository-name%7D/static/media/Aptos_mark_BLK.6d7f9292c1e6d9a23888962bec06bb95.svg",
+    "index.html": "/%7Brepository-name%7D/index.html",
+    "main.699bc8bb.css.map": "/%7Brepository-name%7D/static/css/main.699bc8bb.css.map",
+    "main.ae7d30e2.js.map": "/%7Brepository-name%7D/static/js/main.ae7d30e2.js.map",
+    "429.1aaac45e.chunk.js.map": "/%7Brepository-name%7D/static/js/429.1aaac45e.chunk.js.map",
+    "453.258b012d.chunk.js.map": "/%7Brepository-name%7D/static/js/453.258b012d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.699bc8bb.css",
+    "static/js/main.ae7d30e2.js"
+  ]
+}
