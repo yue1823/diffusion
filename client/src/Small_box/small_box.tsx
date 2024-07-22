@@ -45,9 +45,9 @@ const Small_box:React.FC<{left_preview:string,right_preview:string,left:number,m
         <>
             <div
                 style={{
-                    padding: 25,
+                    padding: 15,
                     minHeight: 380,
-                    width:700,
+                    width:750,
                     background: "#EBE5DF",
                     borderRadius: 40,
 
@@ -55,9 +55,9 @@ const Small_box:React.FC<{left_preview:string,right_preview:string,left:number,m
             >
                 <Row gutter={24}>
                     <Col span={8}>
-                        <div style={{padding: 10}}>
+                        <div style={{padding: 10,position:"relative",left:-5,top:-7}}>
                             <img src={preview_link_1} alt={"left_preview"}
-                                 style={{width: 200, height: 200, borderRadius: 20}}></img>
+                                 style={{width: 220, height: 220, borderRadius: 20}}></img>
                         </div>
                     </Col>
                     <Col span={8} style={{textAlign:"center"}}>
@@ -72,16 +72,16 @@ const Small_box:React.FC<{left_preview:string,right_preview:string,left:number,m
                         </Card>
                     </Col>
                     <Col span={8}>
-                        <div style={{padding: 10}}>
+                        <div style={{padding: 10,position:"relative",left:-8,top:-7}}>
                             <img src={preview_link_2} alt={"left_preview"}
-                                 style={{width: 200, height: 200, borderRadius: 20}}></img>
+                                 style={{width: 220, height: 220, borderRadius: 20}}></img>
                         </div>
                     </Col>
 
                 </Row>
                 <Row>
-                    <Tooltip title={"30% trump/40% middle/30% biden"}>
-                        <Progress percent={100} strokeColor={threeColors} percentPosition={{align: 'center', type: 'inner'}}/>
+                    <Tooltip title={"30% trump/40% middle/30% biden"} >
+                        <Progress style={{position:"relative",top:-10,width:710,left:6}} percent={100} strokeColor={threeColors} percentPosition={{align: 'center', type: 'inner'}}/>
                     </Tooltip>
                 </Row>
                 <Row gutter={24}>
