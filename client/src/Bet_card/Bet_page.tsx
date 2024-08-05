@@ -1,15 +1,35 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Content} from "antd/lib/layout/layout";
 import Swap_box from "../swap_page/swap_box";
 import {Router} from "react-router-dom";
 import {Col, Row} from "antd";
 import Aka from "../Small_box/aka";
+import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
+
+
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
+const aptos = new Aptos(aptosConfig);
+
+const module_address="0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa";
+const resources_type ="0x1::account::Account";
+
 const Bet_page:React.FC<{}> = ({}) =>{
 
 
 
 
+    useEffect(() => {
+        const fetch_pair_resources = () =>{
+            const https = `https://aptos-mainnet.nodit.io/v1/accounts/${module_address}/resource/${resources_type}`
+            try{
+                //fetch(https,https_required).then(respone => respone.json());
+            }catch (e:any){
+                console.log(e);
+            }
+        }
 
+
+    },[])
     return(
         <>
             <Content style={{padding: '15px 30px'}}>

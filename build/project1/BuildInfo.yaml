@@ -17,21 +17,21 @@ compiled_package_info:
     testnet_dapp: 2e86a41d1b86d4a82c1c74ece536108fc8f9dc5858a6ab5eb488e37d83098eb2
     vm: "0000000000000000000000000000000000000000000000000000000000000000"
     vm_reserved: "0000000000000000000000000000000000000000000000000000000000000000"
-  source_digest: A925A2CCA8A92DF852C56B3298F72542E3355251BFE6697B771B313B947F7D37
+  source_digest: 3D340EEC8237DCDD342B5F32CE659ED9B57F490E1A278742AA78B12894EA6FEF
   build_flags:
-    dev_mode: false
-    test_mode: false
+    dev_mode: true
+    test_mode: true
+    override_std: ~
     generate_docs: false
     generate_abis: false
     generate_move_model: true
     full_model_generation: false
     install_dir: ~
     force_recompilation: false
-    additional_named_addresses:
-      dapp: 917ab0592fb9e2c840b4663eff2624337a57678aa2e4f9c097cb21e3ee90022c
+    additional_named_addresses: {}
     architecture: ~
     fetch_deps_only: false
-    skip_fetch_latest_git_deps: false
+    skip_fetch_latest_git_deps: true
     compiler_config:
       bytecode_version: ~
       known_attributes:
@@ -39,6 +39,7 @@ compiled_package_info:
         - deprecated
         - event
         - expected_failure
+        - "fmt::skip"
         - legacy_entry_fun
         - "lint::allow_unsafe_randomness"
         - native_interface

@@ -7,23 +7,31 @@ import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { DataContext } from './DataContext';
 import Footer_bar from "./Footer/Footer";
 import {CloseOutlined, UserAddOutlined, UserOutlined} from "@ant-design/icons";
-import {BrowserRouter as Router, Route, Routes, Outlet, useNavigate} from "react-router-dom";
+import {HashRouter as Router, Route, Routes, Outlet, useNavigate} from "react-router-dom";
 import Swap_page from "./swap_page";
 import Apt_logo from "./art/Aptos_mark_BLK.svg";
 import { Link } from 'react-router-dom';
 import Bet_page from "./Bet_card/Bet_page";
 import Admin_page from "./admin/admin_page";
 import NFT_page from "./nft/nft_page";
+import {WalletSelector} from "@aptos-labs/wallet-adapter-ant-design";
+import Helper_page from "./helper/helper";
+import Carousel_comp from "./Carousel/Carousel_comp";
+import {Content,Footer,Header} from "antd/lib/layout/layout";
 
 
 
+const test_config = new AptosConfig({
+    fullnode: "https://aptos-testnet.nodit.io/bT8aS3ezHOl6T1_PyaM30lkg7odC_42l/v1",
+    indexer: "https://aptos-testnet.nodit.io/bT8aS3ezHOl6T1_PyaM30lkg7odC_42l/v1/graphql",
+});
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
-const aptos = new Aptos(aptosConfig);
+
+const aptos = new Aptos(test_config);
 
 function App() {
 
     const { account, signAndSubmitTransaction } =useWallet() ;
-
     const [open, setOpen] = useState(false);
 
     const showDrawer = () => {
@@ -106,19 +114,36 @@ function App() {
 
           <DataContext.Provider value={{ sharedData, setSharedData }}>
 
+                <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} >
                   <Layout>
                       <Router>
-
-                        <TOP_bar user_address={user_address}  index_of_address={index_of_to_address}/>
-                          <Routes>
-                              <Route  path="/Transfer" element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
-                              <Route  path="/Swap" element={<Swap_page/>}/>
-                              <Route  path="/Bet"   element={<Bet_page/>}/>
-                              <Route  path={"/admin"} element={<Admin_page/>}/>
-                              <Route  path={"/nft"} element={<NFT_page/>}/>
-                              {/*<Route path={"/"} element={<Main_content address={user_address} index_of_address={index_of_address}/>}></Route>*/}
-                              {/*<Route path={"/swap"} element={<Swap_page/>}/>*/}
-                          </Routes>
+                            <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                                <Col span={24}>
+                                    <Header style={{display: 'flex', alignItems: 'center',backgroundColor: "#EBE5DF",height:80}}>
+                                        <TOP_bar user_address={user_address}  index_of_address={index_of_to_address}/>
+                                    </Header>
+                                </Col>
+                            </Row>
+                            <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                                <Col span={24}>
+                                    <Content style={{width:1452,height:100}}>
+                                        <Carousel_comp/>
+                                    </Content>
+                                </Col>
+                            </Row>
+                            <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                              <Routes>
+                                  <Route  path="/" element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
+                                  <Route  path="/Transfer" element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
+                                  <Route  path="/Swap" element={<Swap_page/>}/>
+                                  <Route  path="/Bet"   element={<Bet_page/>}/>
+                                  <Route  path={"/admin"} element={<Admin_page/>}/>
+                                  <Route  path={"/nft"} element={<NFT_page/>}/>
+                                  <Route  path={"/helper"} element={<Helper_page/>}/>
+                                  {/*<Route path={"/"} element={<Main_content address={user_address} index_of_address={index_of_address}/>}></Route>*/}
+                                  {/*<Route path={"/swap"} element={<Swap_page/>}/>*/}
+                              </Routes>
+                            </Row>
                       {/*<nav>*/}
                       {/*    <ul>*/}
                       {/*        <li><Link to="/">Home</Link></li>*/}
@@ -145,12 +170,29 @@ function App() {
                       {/*    </>*/}
                       {/*)}*/}
                       {/*    <Main_content address={user_address} index_of_address={index_of_to_address}/>*/}
-                      <Footer_bar/>
+                          <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                              <Col span={24}>
+                                  <Footer style={{textAlign:'center' ,backgroundColor: "#e1dcd6",width:1452}}>
+                                      <Footer_bar/>
+                                  </Footer>
+                              </Col>
+                          </Row>
                       </Router>
                   </Layout>
-
+                </Row>
           </DataContext.Provider>
-          <Drawer title={<> <Avatar size={"small"} icon={<UserOutlined/>}/> Diffusion account </>}
+
+          <Drawer title={<> <Row gutter={24}>
+              <Col span={16}>
+                  <div style={{position:"relative",top:10}}>
+                      <Avatar size={"small"} icon={<UserOutlined/>}/> Diffusion account
+                  </div>
+                  </Col>
+              <Col span={8}>
+                  <div style={{position:"relative",left:-60,top:-2}}>
+                  <WalletSelector />
+                  </div></Col>
+          </Row></> }
                   open={open}>
               <Image
                   width={300}

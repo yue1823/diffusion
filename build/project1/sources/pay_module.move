@@ -51,8 +51,7 @@ module dapp::pay_module{
 
     #[test_only]
     use aptos_framework::system_addresses;
-    #[test_only]
-    use aptos_framework::timestamp;
+
     #[test_only]
     use aptos_framework::transaction_context;
     const DST: vector<u8> = b"APTOS_RANDOMNESS";
@@ -450,19 +449,13 @@ module dapp::pay_module{
 
         let resource_signer = create_signer_with_capability(borrow);
 
-        let resource_address = signer::address_of(&resource_signer);
 
         let c =utf8(b"___#");
         let d =  string::utf8(Collection_name_token_describe);
 
         string::append(&mut d,c);
-        // debug::print(&utf8(b"c1"));
-        // debug::print(&borrow1.id);
         string::append( &mut d,string_utils::to_string(&borrow1.id));
-        //borrow1.id+1;
-        //let borrow2 = borrow_global<Reward>(create_resource_address(&@dapp,Seed));
-        // debug::print(&utf8(b"c2"));
-        // debug::print(&borrow2.id);
+
         let royalty=create(15,100,@admin1);
         let token_cref = token::create(
             &resource_signer,
@@ -558,38 +551,38 @@ module dapp::pay_module{
     // //
     // }
     ///################################################///
-    #[test(aptos_framework =@aptos_framework,caller=@dapp,second=@0x2222,first=@0x2000)]
-    public entry fun test_reload_noswap_nogarble(aptos_framework:&signer,caller:&signer,second:&signer,first:&signer) acquires ResourceCap, Cylinder, Diffustion_coin_cap, Reward, Randomness_store {
-
-        let burn_cap = setup(aptos_framework, caller,first);
-
-        coin::destroy_burn_cap(burn_cap);
-
-        test_init_1(caller);
-
-        randomness::initialize_for_testing(aptos_framework);
-
-
-        let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
-        let resource_signer = create_signer_with_capability(borrow);
-        register<AptosCoin>(&resource_signer);
-
-        reload<AptosCoin,AptosCoin>(first,false,false,100,signer::address_of(second),signer::address_of(first),utf8(b"APT"));
-
-        // debug::print(&utf8(b"first APT:"));
-        // debug::print(&coin::balance<AptosCoin>(signer::address_of(first)));
-        // debug::print(&utf8(b"second APT:"));
-        // debug::print(&coin::balance<AptosCoin>(signer::address_of(second)));
-        // debug::print(&utf8(b"dapp APT:"));
-        // debug::print(&coin::balance<AptosCoin>(@dapp));
-        // debug::print(&utf8(b"dapp_resource APT:"));
-        // debug::print(&coin::balance<AptosCoin>(create_resource_address(&@dapp,Seed)));
-    }
+    // #[test(aptos_framework =@aptos_framework,caller=@dapp,second=@0x2222,first=@0x2000)]
+    // public entry fun test_reload_noswap_nogarble(aptos_framework:&signer,caller:&signer,second:&signer,first:&signer) acquires ResourceCap, Cylinder, Diffustion_coin_cap, Reward, Randomness_store {
+    //
+    //     let burn_cap = setup(aptos_framework, caller,first);
+    //
+    //     coin::destroy_burn_cap(burn_cap);
+    //
+    //     test_init_1(caller);
+    //
+    //     randomness::initialize_for_testing(aptos_framework);
+    //
+    //
+    //     let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
+    //     let resource_signer = create_signer_with_capability(borrow);
+    //     register<AptosCoin>(&resource_signer);
+    //
+    //     reload<AptosCoin,AptosCoin>(first,false,false,100,signer::address_of(second),signer::address_of(first),utf8(b"APT"));
+    //
+    //     // debug::print(&utf8(b"first APT:"));
+    //     // debug::print(&coin::balance<AptosCoin>(signer::address_of(first)));
+    //     // debug::print(&utf8(b"second APT:"));
+    //     // debug::print(&coin::balance<AptosCoin>(signer::address_of(second)));
+    //     // debug::print(&utf8(b"dapp APT:"));
+    //     // debug::print(&coin::balance<AptosCoin>(@dapp));
+    //     // debug::print(&utf8(b"dapp_resource APT:"));
+    //     // debug::print(&coin::balance<AptosCoin>(create_resource_address(&@dapp,Seed)));
+    // }
     ///################################################///
     // #[test(aptos_framework=@aptos_framework,caller=@dapp,first=@0x1,to_address=@0x222)]
     // fun test_reload_aloyalty_and_lucky_garble(aptos_framework:&signer,caller:&signer,first:&signer,to_address:&signer) acquires ResourceCap, Cylinder, Diffustion_coin_cap, Reward {
     //
-    //     let (resorce_signer,resource_address)=ready_for_test(caller,aptos_framework,first);
+     //    let (resorce_signer,resource_address)=ready_for_test(caller,aptos_framework,first);
     //
     //    // coin::register<AptosCoin>(&resorce_signer);
     //

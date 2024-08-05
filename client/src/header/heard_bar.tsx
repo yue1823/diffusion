@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "../css_folder/heardbar.css"
-import {Col, ConfigProvider, Layout, Menu, MenuProps, Row, theme} from "antd";
+import {Col, ConfigProvider, Dropdown, Layout, Menu, MenuProps, Row, theme} from "antd";
 import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import diffusion_art from '../art/diffusion.png';
@@ -50,8 +50,20 @@ const items: MenuItem[] = [
             </Link>
         ),
         icon: <BookOutlined />
+    },
+    {
+        key: 'Helper',
+        label: (
+            <Link to={"/Helper"}>
+               Helper
+            </Link>
+        ),
+        icon: <BookOutlined />
     }
 ];
+const drop_item: MenuProps['items'] = [
+    
+]
 const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_address,index_of_address}) =>{
 
     return (
@@ -85,14 +97,27 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_ad
                 {/*    /!*    </div>*!/*/}
                 {/*    /!*    <BarsOutlined style={{position:"relative",fontSize:40,left:65}}/>*!/*/}
                 {/*</Header>*/}
-            <Header style={{display: 'flex', alignItems: 'center',backgroundColor: "#EBE5DF",height:90}}>
+
+            <Col span={2}>
                 <img src={diffusion_art}
                      alt={"diffusion logo"}
-                     style={{width: 60, borderRadius: 20, height: 60}}/>
+                     style={{width: 80, borderRadius: 20, height: 80 ,position:"relative",top:10,right:30}}/>
+                <></>
+            </Col>
+            <Col span={18}>
                 <Menu_click/>
-                <WalletSelector />
-                <BarsOutlined style={{position:"relative",left:25,fontSize:40}}/>
-            </Header>
+            </Col>
+            <Col span={3}>
+                <WalletSelector/>
+            </Col>
+            <Col span={1}>
+
+                <Dropdown menu={{ items }}>
+                    <BarsOutlined style={{position: "relative", left: 25, fontSize: 50,top:10}}/>
+                </Dropdown>
+            </Col>
+
+
 
 
 
@@ -111,36 +136,41 @@ const Menu_click = () => {
     };
 
 
-    return (<ConfigProvider
-        theme={{
-            token:{
-                colorTextLightSolid:"#101010",
-                colorBgElevated:"#EBE5DF",
-                padding:35,
+    return (
+        <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                <ConfigProvider
+                theme={{
+                    token:{
+                        colorTextLightSolid:"#101010",
+                        colorBgElevated:"#EBE5DF",
+                        padding:35,
 
-            },
-            components: {
-                Menu: {
-                    /* 这里是你的组件 token */
-                    fontSize:25,
-                    darkItemBg:"#EBE5DF",
-                    darkPopupBg:"#EBE5DF",
-                    darkItemSelectedBg:"#001529",
-                    darkSubMenuItemBg:"#EBE5DF",
-                    itemHoverBg:"#EBE5DF",
-                    itemHoverColor:"#EBE5DF",
-                    subMenuItemBg:"#EBE5DF",
-                    itemColor:"#EBE5DF",
-                    popupBg:"#EBE5DF",
-                    horizontalItemHoverBg:"#EBE5DF",
+                    },
+                    components: {
+                        Menu: {
+                            /* 这里是你的组件 token */
+                            fontSize:25,
+                            darkItemBg:"#EBE5DF",
+                            darkPopupBg:"#EBE5DF",
+                            darkItemSelectedBg:"#001529",
+                            darkSubMenuItemBg:"#EBE5DF",
+                            itemHoverBg:"#EBE5DF",
+                            itemHoverColor:"#EBE5DF",
+                            subMenuItemBg:"#EBE5DF",
+                            itemColor:"#EBE5DF",
+                            popupBg:"#EBE5DF",
+                            horizontalItemHoverBg:"#EBE5DF",
 
 
-                },
-            },
-        }}
-    >
-        <Menu onClick={onClick} selectedKeys={[current]} className={"Menu-position"} mode="horizontal" items={items} theme={"dark"} style={{backgroundColor:"#EBE5DF",height:90,width:2000}}/>
-    </ConfigProvider>)
+                        },
+                    },
+                }}
+            >
+
+                <Menu onClick={onClick} selectedKeys={[current]} className={"Menu-position"} mode="horizontal" items={items} theme={"dark"} style={{position:"relative",backgroundColor:"#EBE5DF",height:100,width:900}}/>
+            </ConfigProvider>
+        </Row>
+    )
 }
 
 export default TOP_bar;

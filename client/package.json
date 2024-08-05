@@ -54,5 +54,5 @@
   "devDependencies": {
     "gh-pages": "^6.1.1"
   },
-  "homepage": "http://{username}.github.io/{repository-name}"
+  "homepage": "https://yue1823.github.io/diffusion"
 }
