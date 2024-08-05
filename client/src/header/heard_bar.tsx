@@ -62,7 +62,7 @@ const items: MenuItem[] = [
     }
 ];
 const drop_item: MenuProps['items'] = [
-    
+
 ]
 const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_address,index_of_address}) =>{
 
@@ -113,7 +113,7 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_ad
             <Col span={1}>
 
                 <Dropdown menu={{ items }}>
-                    <BarsOutlined style={{position: "relative", left: 25, fontSize: 50,top:10}}/>
+                    <BarsOutlined style={{position: "relative", left: 5, fontSize: 50,top:10}}/>
                 </Dropdown>
             </Col>
 

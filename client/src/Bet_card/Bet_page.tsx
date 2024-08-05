@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react';
 import {Content} from "antd/lib/layout/layout";
 import Swap_box from "../swap_page/swap_box";
 import {Router} from "react-router-dom";
-import {Col, Row} from "antd";
+import {Col, Row ,Tree} from "antd";
 import Aka from "../Small_box/aka";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
-
+import type { TreeDataNode } from 'antd';
 
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
@@ -14,7 +14,12 @@ const module_address="0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964
 const resources_type ="0x1::account::Account";
 
 const Bet_page:React.FC<{}> = ({}) =>{
+        const [tree_data,set_tree_data]=useState<string[]>([]);
+        const fetch_data_from_aptos=()=>{
 
+
+
+        }
 
 
 
@@ -43,7 +48,7 @@ const Bet_page:React.FC<{}> = ({}) =>{
                         }}
                     >
 
-                        <Row>
+                        <Row gutter={24}>
                             <Col span={4}>
                                 <div
                                     style={{
@@ -54,7 +59,9 @@ const Bet_page:React.FC<{}> = ({}) =>{
                                         borderRadius: 10,
                                         textAlign: 'center',
                                     }}
-                                ></div>
+                                >
+                                    <Tree checkable defaultSelectedKeys={['0-1']} defaultExpandAll treeData={treeData} blockNode  style={{backgroundColor:"#EBE5DF"}}/>
+                                </div>
                             </Col>
                             <Col span={18}>
                                 <div
@@ -134,4 +141,27 @@ const Bet_page:React.FC<{}> = ({}) =>{
         </>
     );
 }
+const treeData: TreeDataNode[] = [
+    {
+        title: 'All',
+        key: '0',
+        children: [
+            {
+                title: 'Game',
+                key: '0-0',
+
+            },
+            {
+                title: 'Sport',
+                key: '0-1',
+
+            },
+            {
+                title: 'Unexpect',
+                key: '0-2',
+
+            },
+        ],
+    },
+];
 export default Bet_page;

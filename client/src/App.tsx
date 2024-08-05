@@ -114,7 +114,7 @@ function App() {
 
           <DataContext.Provider value={{ sharedData, setSharedData }}>
 
-                <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} >
+                <Row gutter={[{ xs: 16, sm: 24, md: 32, lg: 40 },{ xs: 16, sm: 24, md: 32, lg: 40 }]}>
                   <Layout>
                       <Router>
                             <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
@@ -124,25 +124,41 @@ function App() {
                                     </Header>
                                 </Col>
                             </Row>
-                            <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
-                                <Col span={24}>
-                                    <Content style={{width:1452,height:100}}>
-                                        <Carousel_comp/>
-                                    </Content>
-                                </Col>
-                            </Row>
-                            <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
-                              <Routes>
-                                  <Route  path="/" element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
-                                  <Route  path="/Transfer" element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
-                                  <Route  path="/Swap" element={<Swap_page/>}/>
-                                  <Route  path="/Bet"   element={<Bet_page/>}/>
-                                  <Route  path={"/admin"} element={<Admin_page/>}/>
-                                  <Route  path={"/nft"} element={<NFT_page/>}/>
-                                  <Route  path={"/helper"} element={<Helper_page/>}/>
-                                  {/*<Route path={"/"} element={<Main_content address={user_address} index_of_address={index_of_address}/>}></Route>*/}
-                                  {/*<Route path={"/swap"} element={<Swap_page/>}/>*/}
-                              </Routes>
+                          {/*<Content style={{display:"flex"}}>*/}
+                          {/*    <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }} style={{width:"auto"}}>*/}
+                          {/*        <Col flex={"auto"}>*/}
+                          {/*            <Carousel_comp/>*/}
+                          {/*        </Col>*/}
+                          {/*    </Row>*/}
+                          {/*</Content>*/}
+                          <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                              <Col span={24}>
+                                      <div style={{width:1462,height:100}}>
+                                      <Content>
+                                          <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                                              <Col span={24}>
+                                                  <Carousel_comp/>
+                                              </Col>
+                                          </Row>
+                                      </Content>
+                                  </div>
+                              </Col>
+                          </Row>
+
+                          <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                                <Content style={{padding: '15px 30px'}}>
+                                  <Routes>
+                                      <Route  path="/" element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
+                                      <Route  path="/Transfer" element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
+                                      <Route  path="/Swap" element={<Swap_page/>}/>
+                                      <Route  path="/Bet"   element={<Bet_page/>}/>
+                                      <Route  path={"/admin"} element={<Admin_page/>}/>
+                                      <Route  path={"/nft"} element={<NFT_page/>}/>
+                                      <Route  path={"/helper"} element={<Helper_page/>}/>
+                                      {/*<Route path={"/"} element={<Main_content address={user_address} index_of_address={index_of_address}/>}></Route>*/}
+                                      {/*<Route path={"/swap"} element={<Swap_page/>}/>*/}
+                                  </Routes>
+                                </Content>
                             </Row>
                       {/*<nav>*/}
                       {/*    <ul>*/}
@@ -172,7 +188,7 @@ function App() {
                       {/*    <Main_content address={user_address} index_of_address={index_of_to_address}/>*/}
                           <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
                               <Col span={24}>
-                                  <Footer style={{textAlign:'center' ,backgroundColor: "#e1dcd6",width:1452}}>
+                                  <Footer style={{textAlign:'center' ,backgroundColor: "#e1dcd6"}}>
                                       <Footer_bar/>
                                   </Footer>
                               </Col>

@@ -12,8 +12,9 @@ const { Header, Content, Footer } = Layout;
 const Main_content:React.FC<{ address:string , index_of_address:number}> = ({ address,index_of_address}) => {
     return (
         <>
-            <Content style={{padding: '15px 30px'}}>
-                <Row gutter={26}>
+
+
+                <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
                     <Col span={1}></Col>
                     <Col span={14}>
                         <Show_content address={address} index_of_address={index_of_address}/>
@@ -23,7 +24,7 @@ const Main_content:React.FC<{ address:string , index_of_address:number}> = ({ ad
                     </Col>
                     <Col span={1}></Col>
                 </Row>
-            </Content>
+
         </>
     );
 }

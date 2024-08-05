@@ -15,12 +15,24 @@ const Footer_bar:React.FC<{ }> = ({ }) => {
         <>
             <></>
 
+                    <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                        <Col span={6}></Col>
+                        <Col span={12}>
+                            Diffusion ©{new Date().getFullYear()} Create by Yue
+                        </Col>
+                        <Col span={6}></Col>
+                    </Row>
+                    <br/>
 
-                    Diffusion ©{new Date().getFullYear()} Create by Yue  <br/>
-                    <a href="https://github.com/yue1823" target="_blank" rel="noopener noreferrer">
-                        <GithubOutlined style={{fontSize: 30}}/>
-                    </a>
-
+                    <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                        <Col span={6}></Col>
+                        <Col span={12}>
+                            <a href="https://github.com/yue1823" target="_blank" rel="noopener noreferrer">
+                                <GithubOutlined style={{fontSize: 30}}/>
+                            </a>
+                        </Col>
+                        <Col span={6}></Col>
+                    </Row>
 
 
         </>
