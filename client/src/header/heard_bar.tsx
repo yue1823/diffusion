@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import "../css_folder/heardbar.css"
-import {Col, ConfigProvider, Dropdown, Layout, Menu, MenuProps, Row, theme} from "antd";
+import {Card, Col, ConfigProvider, Dropdown, Layout, Menu, Row, theme} from "antd";
+import type { MenuProps } from 'antd';
 import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
+import APT_LOGO from '../logo/aptos-apt-logo.svg';
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import diffusion_art from '../art/diffusion.png';
 import {
@@ -19,15 +21,15 @@ const { Header, Content, Footer } = Layout;
 type MenuItem = Required<MenuProps>['items'][number];
 const items: MenuItem[] = [
     {
-        label: (<Link to={"/Transfer"}>
+        label: (<Link to={"/app/"}>
             Transfer
         </Link>),
-        key: 'Transfer',
+        key: '/',
         icon: <SendOutlined />,
     },
     {
         label: (
-            <Link to={"/Swap"}>
+            <Link to={"/app/Swap"}>
                 Swap
             </Link>
             ),
@@ -36,7 +38,7 @@ const items: MenuItem[] = [
 
     },
     {
-        label: (<Link to={"/nft"}>
+        label: (<Link to={"/app/nft"}>
             NFT
         </Link>),
         key: 'Nft',
@@ -45,7 +47,7 @@ const items: MenuItem[] = [
     {
         key: 'Bet',
         label: (
-            <Link to={"/Bet"}>
+            <Link to={"/app/Bet"}>
                 Bet Card
             </Link>
         ),
@@ -54,15 +56,43 @@ const items: MenuItem[] = [
     {
         key: 'Helper',
         label: (
-            <Link to={"/Helper"}>
+            <Link to={"/app/Helper"}>
                Helper
             </Link>
         ),
         icon: <BookOutlined />
     }
 ];
-const drop_item: MenuProps['items'] = [
 
+const drop_item: MenuProps['items']= [
+    {
+        key:'1',
+        label: (
+            <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+
+                    <Card
+                        style={{width: 300}}
+                        cover={
+                            <img
+                                alt={"apt"}
+                                src={APT_LOGO}
+                            />
+                        }
+                    ></Card>
+
+
+            </a>
+
+        )
+    },
+    {
+        key: '2',
+        label: (
+            <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+                1st menu item
+            </a>
+        ),
+    },
 ]
 const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_address,index_of_address}) =>{
 
@@ -111,8 +141,47 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_ad
                 <WalletSelector/>
             </Col>
             <Col span={1}>
+                <Dropdown menu={{
+                    items:  [
+                        {
+                            key:'1',
+                            label: (
 
-                <Dropdown menu={{ items }}>
+                                    <Link to={"/my_page"}>
+                                            <Card
+                                                style={{width: 300}}
+                                                cover={
+                                                    <img
+                                                        alt="example"
+                                                        src={APT_LOGO}
+                                                        style={{height:100,width:100}}
+                                                    />
+                                                }
+
+                                            >
+                                                <Row>
+                                                    <Col span={4}>
+                                                        User :
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col span={4}>
+                                                        Level :
+                                                    </Col>
+                                                </Row>
+                                                </Card>
+                                    </Link>
+
+
+                            )
+                        },{
+                            key: '2',
+                            label: (
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+                                    1st menu item
+                                </a>
+                            ),
+                        },]}}>
                     <BarsOutlined style={{position: "relative", left: 5, fontSize: 50,top:10}}/>
                 </Dropdown>
             </Col>
@@ -172,5 +241,7 @@ const Menu_click = () => {
         </Row>
     )
 }
+
+
 
 export default TOP_bar;

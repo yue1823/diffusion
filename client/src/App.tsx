@@ -18,6 +18,7 @@ import {WalletSelector} from "@aptos-labs/wallet-adapter-ant-design";
 import Helper_page from "./helper/helper";
 import Carousel_comp from "./Carousel/Carousel_comp";
 import {Content,Footer,Header} from "antd/lib/layout/layout";
+import User_page from "./user/user_page";
 
 
 
@@ -116,7 +117,7 @@ function App() {
 
                 <Row gutter={[{ xs: 16, sm: 24, md: 32, lg: 40 },{ xs: 16, sm: 24, md: 32, lg: 40 }]}>
                   <Layout>
-                      <Router>
+
                             <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
                                 <Col span={24}>
                                     <Header style={{display: 'flex', alignItems: 'center',backgroundColor: "#EBE5DF",height:80}}>
@@ -148,13 +149,14 @@ function App() {
                           <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
                                 <Content style={{padding: '15px 30px'}}>
                                   <Routes>
-                                      <Route  path="/" element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
-                                      <Route  path="/Transfer" element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
-                                      <Route  path="/Swap" element={<Swap_page/>}/>
-                                      <Route  path="/Bet"   element={<Bet_page/>}/>
-                                      <Route  path={"/admin"} element={<Admin_page/>}/>
-                                      <Route  path={"/nft"} element={<NFT_page/>}/>
-                                      <Route  path={"/helper"} element={<Helper_page/>}/>
+                                      <Route  path={"/" } element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
+                                      <Route  path={"app"} element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
+                                      <Route  path={"/swap"} element={<Swap_page/>}/>
+                                      <Route  path={"Bet"  } element={<Bet_page/>}/>
+                                      <Route  path={"admin"} element={<Admin_page/>}/>
+                                      <Route  path={"nft"} element={<NFT_page/>}/>
+                                      <Route  path={"Helper"} element={<Helper_page/>}/>
+                                      <Route path={"my_page"} element={<User_page/>}></Route>
                                       {/*<Route path={"/"} element={<Main_content address={user_address} index_of_address={index_of_address}/>}></Route>*/}
                                       {/*<Route path={"/swap"} element={<Swap_page/>}/>*/}
                                   </Routes>
@@ -193,7 +195,7 @@ function App() {
                                   </Footer>
                               </Col>
                           </Row>
-                      </Router>
+
                   </Layout>
                 </Row>
           </DataContext.Provider>
