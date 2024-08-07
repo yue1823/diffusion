@@ -149,28 +149,35 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_ad
 
                                     <Link to={"/my_page"}>
                                             <Card
-                                                style={{width: 300}}
+                                                style={{width: 300 ,backgroundColor:"#ded9cd"}}
                                                 cover={
-                                                    <img
-                                                        alt="example"
-                                                        src={APT_LOGO}
-                                                        style={{height:100,width:100}}
-                                                    />
+                                                    <Row  gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                                                        <Col span={4}></Col>
+                                                        <Col span={24}>
+                                                            <img
+                                                                alt="example"
+                                                                src={APT_LOGO}
+                                                                style={{height: 100, width: 100,left:100,position:"relative",top:10}}
+                                                            />
+                                                        </Col>
+                                                        <Col span={4}></Col>
+                                                    </Row>
+
                                                 }
 
                                             >
-                                                    <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                                            <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
 
                                                         <Col span={24}>
-                                                            <Card>
+                                                            <Card  style={{backgroundColor:"#646262",color:"white"}}>
                                                                 <Row>
                                                                     <Col span={4}>
-                                                                        User:
+                                                                        Level:
                                                                     </Col>
                                                                 </Row>
                                                                 <Row>
                                                                     <Col span={24}>
-                                                                        <Progress percent={99.9} strokeColor={twoColors} />
+                                                                        <Progress percent={50} strokeColor={twoColors} style={{color:"white"}}/>
                                                                     </Col>
                                                                 </Row>
 
