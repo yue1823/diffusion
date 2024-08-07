@@ -1,20 +1,28 @@
-import {Button, Card, Col, ProgressProps, Row, theme} from "antd";
-import React, {useEffect, useState} from 'react';
-
+import {Button, Card, Col, ProgressProps, Row, Segmented, Statistic, theme} from "antd";
+import React, {useEffect, useRef, useState} from 'react';
+import APT_LOGO from '../logo/aptos-apt-logo.svg';
 import {Content, Header} from "antd/lib/layout/layout";
-import {CopyOutlined} from "@ant-design/icons";
+import {AppstoreOutlined, ArrowDownOutlined, ArrowUpOutlined, BarsOutlined, CopyOutlined} from "@ant-design/icons";
 import {toast, ToastContainer} from "react-toastify";
 import copy from "copy-to-clipboard";
+import { PieChart } from '@mui/x-charts/PieChart';
 
-
+const pie_data = [
+    { id: 0, value: 10, label: 'series A' },
+    { id: 1, value: 15, label: 'series B' },
+    { id: 2, value: 20, label: 'series C' },]
 
 const User_page:React.FC<{ }> = ({ }) => {
+    const [right_of_segement,setright_of_segement]=useState<string>('List');
+    const [helper_point,set_helper_point]=useState<string>('');
+    const [wrong_time,set_wrong_time]=useState<string>('');
     const [value,setvalue]= useState<string>('0');
     const [user_address,set_user_address]=useState<string>("hello") ;
     const [user_balance,setuser_balance]=useState<string>('0');
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
+
     const copy_address_button =() =>{
         copy(user_address);
         toast.success("Success Copy !", {
@@ -38,7 +46,11 @@ const User_page:React.FC<{ }> = ({ }) => {
                             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                                 <Col span={6}>
                                     <Card title={"User"} style={{height:580}}>
-
+                                        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                                            <Col span={24}>
+                                                <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoxLt9VoPGmIKfc-DXgX2R0hfvRdEIWU8qxg&s"} alt={"img1"}></img>
+                                            </Col>
+                                        </Row>
                                     </Card>
                                 </Col>
                                 <Col span={18}>
@@ -48,10 +60,40 @@ const User_page:React.FC<{ }> = ({ }) => {
                                                 <Card style={{height:345,backgroundColor:"#f4f4f1"}}>
                                                   <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                                                       <Col span={8}>
-                                                          <h3>APT of User</h3>
+                                                          <h3>Balance of User</h3>
                                                           <h2>${value}</h2>
                                                       </Col>
                                                   </Row>
+                                                    <Row>
+                                                        <Col span={24}>
+
+                                                            <Card style={{height:250}}>
+                                                                <Row>
+                                                                    <Col span={24} >
+                                                                        <PieChart
+                                                                            series={[
+                                                                                {
+                                                                                    data: [{ id: 0, value: 4.8, label: 'APT' },
+                                                                                        { id: 1, value: 10, label: 'USDC' },
+                                                                                        { id: 2, value: 20, label: 'USDT' },],
+                                                                                    innerRadius: 60,
+                                                                                    outerRadius: 90,
+                                                                                    paddingAngle: 4,
+                                                                                    cornerRadius: -2,
+                                                                                    startAngle: 0,
+                                                                                    endAngle: 360,
+                                                                                    cx: 150,
+                                                                                    cy: 95,
+                                                                                }
+                                                                            ]}
+                                                                            height={200}
+                                                                        />
+                                                                        <img src={APT_LOGO} style={{height:80,width:80,position:"relative",top:-140,left:116}}></img>
+                                                                    </Col>
+                                                                </Row>
+                                                            </Card>
+                                                        </Col>
+                                                    </Row>
                                                 </Card>
                                             </Col>
                                             <Col span={8}>
@@ -90,20 +132,47 @@ const User_page:React.FC<{ }> = ({ }) => {
                                                 </Card>
                                                 <br/>
                                                 <Card style={{height: 100, backgroundColor: "#f4f4f1"}}>
-
+                                                    <Row>
+                                                        <Col span={24}>
+                                                            <Card style={{height:80 ,position:"relative",top:-14}}>
+                                                                <Statistic
+                                                                    title="Helper Point"
+                                                                    value={helper_point}
+                                                                    precision={2}
+                                                                    valueStyle={{ color: '#3f8600' }}
+                                                                    prefix={<ArrowUpOutlined />}
+                                                                    suffix=" pt"
+                                                                    style={{position:"relative",top:-14}}
+                                                                />
+                                                            </Card>
+                                                        </Col>
+                                                    </Row>
                                                 </Card>
                                                 <br/>
                                                 <Card style={{height: 100, backgroundColor: "#f4f4f1"}}>
-
+                                                    <Row>
+                                                        <Col span={24}>
+                                                            <Card style={{height:80 ,position:"relative",top:-14}}>
+                                                                <Statistic
+                                                                    title="Wrong Times"
+                                                                    value={wrong_time}
+                                                                    precision={2}
+                                                                    valueStyle={{ color: '#cf1322' }}
+                                                                    prefix={<ArrowDownOutlined />}
+                                                                    suffix=" t"
+                                                                    style={{position:"relative",top:-14}}
+                                                                />
+                                                            </Card>
+                                                        </Col>
+                                                    </Row>
                                                 </Card>
                                             </Col>
                                         </Row>
                                         <br/>
                                         <Row>
                                             <Col span={24}>
-                                               <Card style={{height: 170, backgroundColor: "#f4f4f1"}}>
-                                                   <></>
-
+                                               <Card title={<span>{<Segmented options={segemat_options} onChange={check =>{setright_of_segement(check)}} />}</span>} style={{height: 170, backgroundColor: "#f4f4f1",padding:1}}>
+                                                   <Segment_position right={right_of_segement} />
                                                </Card>
                                             </Col>
                                         </Row>
@@ -118,5 +187,38 @@ const User_page:React.FC<{ }> = ({ }) => {
         </>
     );
 }
+
+const Segment_position :React.FC<{ right:string}> = ({ right})=>{
+    return(
+        <>
+            {(right=="List") &&
+                <Row>
+                    <Col span={24}>
+                        <Card >
+
+                        </Card>
+                    </Col>
+                </Row>
+        }
+            {(right=="Transaction") &&
+            <Row>
+                <Col span={24}>
+                    <Card>
+
+                    </Card>
+                </Col>
+            </Row>
+        }
+        </>
+    )
+}
+const segemat_options = [
+    { label: 'List',
+        value: 'List',
+        icon: <BarsOutlined /> },
+    { label: 'Transaction',
+        value: 'Transaction',
+        icon: <AppstoreOutlined /> },
+]
 
 export default User_page;

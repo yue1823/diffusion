@@ -190,13 +190,6 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_ad
 
 
                             )
-                        },{
-                            key: '2',
-                            label: (
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-                                    1st menu item
-                                </a>
-                            ),
                         },]}}>
                     <BarsOutlined style={{position: "relative", left: 5, fontSize: 50,top:10}}/>
                 </Dropdown>
