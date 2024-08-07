@@ -21,7 +21,7 @@ const { Header, Content, Footer } = Layout;
 type MenuItem = Required<MenuProps>['items'][number];
 const items: MenuItem[] = [
     {
-        label: (<Link to={"/app/"}>
+        label: (<Link to={"/"}>
             Transfer
         </Link>),
         key: '/',
@@ -29,7 +29,7 @@ const items: MenuItem[] = [
     },
     {
         label: (
-            <Link to={"/app/Swap"}>
+            <Link to={"/Swap"}>
                 Swap
             </Link>
             ),
@@ -38,7 +38,7 @@ const items: MenuItem[] = [
 
     },
     {
-        label: (<Link to={"/app/nft"}>
+        label: (<Link to={"/nft"}>
             NFT
         </Link>),
         key: 'Nft',
@@ -47,7 +47,7 @@ const items: MenuItem[] = [
     {
         key: 'Bet',
         label: (
-            <Link to={"/app/Bet"}>
+            <Link to={"/Bet"}>
                 Bet Card
             </Link>
         ),
@@ -56,7 +56,7 @@ const items: MenuItem[] = [
     {
         key: 'Helper',
         label: (
-            <Link to={"/app/Helper"}>
+            <Link to={"/Helper"}>
                Helper
             </Link>
         ),

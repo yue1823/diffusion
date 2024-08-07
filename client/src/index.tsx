@@ -23,7 +23,7 @@ root.render(
                 <React.StrictMode>
                     <Router>
                         <Routes>
-                            <Route  index path="/app/*" element={<App />}/>
+                            <Route  index path="/*" element={<App />}/>
                         </Routes>
                         <Routes>
                             <Route  path="/website" element={<Website_page/>}/>

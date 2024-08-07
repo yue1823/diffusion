@@ -19,6 +19,8 @@ import {
     Typography
 } from "antd";
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
     CheckOutlined,
     CloseOutlined, createFromIconfontCN, GithubOutlined, InfoCircleOutlined,
@@ -45,7 +47,7 @@ interface CProps {
     setSharedData: React.Dispatch<React.SetStateAction<number>>;
 }
 
-
+const notify = () => toast("Wow so easy !");
 
 
 const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ address,index_of_address:number,}) => {
@@ -391,7 +393,8 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
 
                 <HappyProvider>
                     <Button type="primary" onClick={check_everything}
-                            style={{height: 50, width: 190, background: "#f1eddd", color: "black"}}>Safe Transfer</Button>
+                            style={{height: 50, width: 190, background: "#f1eddd", color: "black"}}>Safe
+                        Transfer</Button>
                 </HappyProvider>
 
                 <Drawer title="Check Input" onClose={onClose} open={open}>

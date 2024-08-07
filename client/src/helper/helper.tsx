@@ -19,12 +19,12 @@ const Helper_page:React.FC<{ }> = ({ }) => {
             <Content style={{padding: '15px 30px'}}>
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} >
 
-                    <Col xs={{ span:0, offset: 0}} lg={{ span: 2, offset: 0 }}>
+                    <Col span={24}>
                     <div
                         style={{
                             padding: 24,
                             minHeight: 600,
-                            minWidth: 1200,
+
                             background: colorBgContainer,
                             borderRadius: borderRadiusLG,
                         }}
@@ -43,13 +43,13 @@ const Collpse_this_page = () =>{
     return(
         <>
             <Row gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 },{ xs: 8, sm: 16, md: 24, lg: 32 }]}>
-                <Col xs={{ span:24, offset: 0}} lg={{ span: 24, offset: 0 }}>
+                <Col span={24}>
                     <Collapse
                         size="small"
                         items={[{ key: '1', label: 'This is small size panel header', children: <p>{text1}</p> }]}
                     />
                 </Col>
-                <Col xs={{ span:24, offset: 0}} lg={{ span: 24, offset: 0 }}>
+                <Col  span={24}>
                     <Collapse
                         size="small"
                         items={[{ key: '1', label: 'This is small size panel header', children: <p>{text1}
