@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "../css_folder/heardbar.css"
-import {Card, Col, ConfigProvider, Dropdown, Layout, Menu, Row, theme} from "antd";
+import {Card, Col, ConfigProvider, Dropdown, Layout, Menu, Progress, ProgressProps, Row, theme} from "antd";
 import type { MenuProps } from 'antd';
 import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
 import APT_LOGO from '../logo/aptos-apt-logo.svg';
@@ -159,16 +159,25 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_ad
                                                 }
 
                                             >
-                                                <Row>
-                                                    <Col span={4}>
-                                                        User :
-                                                    </Col>
-                                                </Row>
-                                                <Row>
-                                                    <Col span={4}>
-                                                        Level :
-                                                    </Col>
-                                                </Row>
+                                                    <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+
+                                                        <Col span={24}>
+                                                            <Card>
+                                                                <Row>
+                                                                    <Col span={4}>
+                                                                        User:
+                                                                    </Col>
+                                                                </Row>
+                                                                <Row>
+                                                                    <Col span={24}>
+                                                                        <Progress percent={99.9} strokeColor={twoColors} />
+                                                                    </Col>
+                                                                </Row>
+
+                                                            </Card>
+                                                        </Col>
+                                                    </Row>
+
                                                 </Card>
                                     </Link>
 
@@ -242,6 +251,10 @@ const Menu_click = () => {
     )
 }
 
+const twoColors: ProgressProps['strokeColor'] = {
+    '0%': '#108ee9',
+    '100%': '#87d068',
+};
 
 
 export default TOP_bar;

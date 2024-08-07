@@ -1,4 +1,4 @@
-import {Card, Col, Row, theme} from "antd";
+import {Card, Col, ProgressProps, Row, theme} from "antd";
 import React, {useEffect, useState} from 'react';
 
 import {Content} from "antd/lib/layout/layout";
