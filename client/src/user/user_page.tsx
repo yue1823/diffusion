@@ -1,8 +1,16 @@
 import {Button, Card, Col, ProgressProps, Row, Segmented, Statistic, theme} from "antd";
 import React, {useEffect, useRef, useState} from 'react';
 import APT_LOGO from '../logo/aptos-apt-logo.svg';
+import My_logo from "../art/yue_logo.jpeg";
 import {Content, Header} from "antd/lib/layout/layout";
-import {AppstoreOutlined, ArrowDownOutlined, ArrowUpOutlined, BarsOutlined, CopyOutlined} from "@ant-design/icons";
+import {
+    AppstoreOutlined,
+    ArrowDownOutlined,
+    ArrowUpOutlined,
+    BarsOutlined,
+    CopyOutlined, FallOutlined,
+    RiseOutlined
+} from "@ant-design/icons";
 import {toast, ToastContainer} from "react-toastify";
 import copy from "copy-to-clipboard";
 import { PieChart } from '@mui/x-charts/PieChart';
@@ -19,6 +27,9 @@ const User_page:React.FC<{ }> = ({ }) => {
     const [value,setvalue]= useState<string>('0');
     const [user_address,set_user_address]=useState<string>("hello") ;
     const [user_balance,setuser_balance]=useState<string>('0');
+    const [user_name ,set_user_name]=useState<string>('User');
+    const [user_gain,set_user_gain]=useState<string>('0');
+    const [user_lost,set_user_lost]=useState<string>('0');
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
@@ -45,10 +56,65 @@ const User_page:React.FC<{ }> = ({ }) => {
                         >
                             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                                 <Col span={6}>
-                                    <Card title={"User"} style={{height:580}}>
-                                        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                                    <Card  style={{height:580}}>
+                                        <Row gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 },{ xs: 8, sm: 16, md: 24, lg: 32 }]}>
                                             <Col span={24}>
-                                                <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoxLt9VoPGmIKfc-DXgX2R0hfvRdEIWU8qxg&s"} alt={"img1"}></img>
+                                                <Card style={{height: 260, backgroundColor: "#f4f4f1"}}>
+                                                    <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                                                        <Col span={24}>
+                                                            <img
+                                                                src={My_logo}
+                                                                alt={"img1"}
+                                                            style={{height:210,width:210, borderRadius: 20,backgroundColor:"white"}}>
+                                                            </img>
+                                                        </Col>
+                                                    </Row>
+                                                </Card>
+                                                <br/>
+                                                <Card style={{height: 64, backgroundColor: "#f4f4f1"}}>
+                                                    <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                                                        <Col span={24}>
+                                                            <Card style={{backgroundColor:"#60605b",color:"#f4f4f1",position:"relative",top:-18,height:50}}>
+                                                                <h1 style={{position:"relative",top:-20}}>{user_name}</h1>
+                                                            </Card>
+                                                        </Col>
+                                                    </Row>
+                                                </Card>
+                                                <br/>
+                                                <Card style={{height: 168, backgroundColor: "#f4f4f1"}}>
+                                                    <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} style={{position:"relative",top:-10}}>
+                                                        <Col span={24}>
+                                                            <Card style={{backgroundColor:"white",height:60}}>
+                                                                <Statistic
+                                                                    title="Gain"
+                                                                    value={user_gain}
+                                                                    precision={2}
+                                                                    valueStyle={{ color: '#3f8600' }}
+                                                                    prefix={<RiseOutlined />}
+                                                                    suffix=" APT"
+                                                                    style={{position:"relative",top:-25}}
+                                                                />
+                                                            </Card>
+                                                        </Col>
+                                                    </Row>
+                                                    <br/>
+                                                    <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} style={{position:"relative",top:-12}}>
+                                                        <Col span={24}>
+                                                            <Card style={{backgroundColor:"white",height:60}}>
+                                                                <Statistic
+                                                                    title="Lost"
+                                                                    value={user_gain}
+                                                                    precision={2}
+                                                                    valueStyle={{ color: '#cf1322' }}
+                                                                    prefix={<FallOutlined />}
+                                                                    suffix=" APT"
+                                                                    style={{position:"relative",top:-25}}
+                                                                />
+                                                            </Card>
+
+                                                        </Col>
+                                                    </Row>
+                                                </Card>
                                             </Col>
                                         </Row>
                                     </Card>
