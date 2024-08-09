@@ -1,7 +1,7 @@
 import {Button, Card, Col, ProgressProps, Row, Segmented, Statistic, theme} from "antd";
 import React, {useEffect, useRef, useState} from 'react';
 import APT_LOGO from '../logo/aptos-apt-logo.svg';
-import My_logo from "../art/yue_logo.jpeg";
+import My_logo from "../art/logo_of_yue.svg";
 import {Content, Header} from "antd/lib/layout/layout";
 import {
     AppstoreOutlined,

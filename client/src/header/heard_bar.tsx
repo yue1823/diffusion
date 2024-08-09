@@ -4,6 +4,7 @@ import {Card, Col, ConfigProvider, Dropdown, Layout, Progress, ProgressProps,Men
 import type { MenuProps } from 'antd';
 import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
 import APT_LOGO from '../logo/aptos-apt-logo.svg';
+import My_logo from "../art/yue_logo.jpeg";
 import MyMenu from "./menu_of_header";
 import BurgerMenu from 'react-burger-menu';
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
@@ -161,8 +162,8 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_ad
                                                         <Col span={24}>
                                                             <img
                                                                 alt="example"
-                                                                src={APT_LOGO}
-                                                                style={{height: 100, width: 100,left:100,position:"relative",top:10}}
+                                                                src={My_logo}
+                                                                style={{height: 200, width: 200,left:50,position:"relative",top:10}}
                                                             />
                                                         </Col>
                                                         <Col span={4}></Col>

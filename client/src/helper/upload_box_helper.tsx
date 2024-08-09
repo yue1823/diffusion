@@ -1,5 +1,5 @@
 
-import {Col, Collapse, Row, theme, Image, Card, Segmented, Button} from "antd";
+import {Col, Collapse, Row, theme, Image, Card, Segmented, Button, Statistic} from "antd";
 import React, {ReactNode, useEffect, useState} from 'react';
 import Modal from '@mui/material/Modal';
 import { ToastContainer, toast } from "react-toastify";
@@ -23,7 +23,7 @@ const box_style = {
     boxShadow: 2,
     p: 4,
 };
-const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string }> = ({ left_url,right_url,pair_name_left,pair_name_right}) => {
+const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,pool:string}> = ({ left_url,right_url,pair_name_left,pair_name_right,pool}) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -39,8 +39,15 @@ const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_lef
                         setOpen(true)
                     }}>
                         <Row>
-                            <Col>
-
+                            <Col span={24}>
+                                <Row>
+                                    <Col span={10}>
+                                        <Image src={left_url} alt={`left_img`} preview={false} style={{height:120,width:120,borderRadius: 10,position:"relative"}}> </Image>
+                                    </Col>
+                                    <Col offset={4} span={10} >
+                                        <Image src={right_url} alt={`right_img`} preview={false} style={{height:120,width:120,borderRadius: 10,position:"relative"}}> </Image>
+                                    </Col>
+                                </Row>
                             </Col>
                         </Row>
                     </Card>
@@ -76,6 +83,30 @@ const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_lef
                                 <Row>
                                     <Col span={24}>
                                         <Card style={{height:150 ,backgroundColor:"#d5d2d2",borderRadius: 10}}>
+                                            <Row>
+                                                <Col span={24}>
+                                                    <div style={{
+                                                        backgroundColor: "white",
+                                                        height: 120,
+                                                        width: 90,
+                                                        position: "relative",
+                                                        right: 10,
+                                                        top: -10,
+                                                        borderRadius: 10
+                                                    }}>
+                                                        <p style={{position: "relative", height: 20, width: 100,top:70,left:12}}>
+                                                            <h1>APT</h1></p>
+                                                    </div>
+                                                    <Statistic
+                                                        value={pool}
+                                                            precision={2}
+                                                            valueStyle={{color:"#3f8600"}}
+                                                            title={"Pool"}
+                                                            style={{position:"relative",top:-120}}
+                                                    ></Statistic>
+
+                                                </Col>
+                                            </Row>
 
                                         </Card>
                                     </Col>
