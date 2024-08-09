@@ -7,16 +7,17 @@ import {  Container } from "reactstrap"; // 假設你使用了 reactstrap
 import {Content} from "antd/lib/layout/layout";
 import APT_logo from "../logo/aptos-apt-logo.svg"
 import '../css_/rainbow_button.css';
+import "../css_/helper_vs_box_.css"
 import { motion } from "framer-motion";
 import {Box} from "@mui/material";
 const box_style = {
     position: 'absolute' as 'absolute',
+
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 600,
     borderRadius: 10,
-
     backgroundColor:"#ffffff",
     height:450,
     boxShadow: 2,
@@ -45,21 +46,25 @@ const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_lef
                     </Card>
                 </motion.div>
                 <Modal
+                    disableEnforceFocus
+                    disableAutoFocus
                     open={open}
                     onClose={handleClose}
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
+                    classes={""}
+                    sx={{borderRadius: 60,p:4,border:"white",'&:fouvu':{outline:'none'}}}
                 >
-                    <Box sx={box_style}>
+                    <Box sx={box_style} className={"warm-card"}>
                         <Row gutter={[18,36]}>
                             <Col span={18}>
-                                <Card title={<span> <h1>{pair_name_left}     VS     {pair_name_right} </h1></span>} style={{height:320 ,backgroundColor:"#d5d2d2",borderRadius: 10}}>
+                                <Card title={<span> <h1>{pair_name_left}     VS     {pair_name_right} </h1></span>} style={{height:320 ,backgroundColor:"#d5d2d2",borderRadius: 10}} >
                                     <Row>
                                         <Col span={10}>
                                             <Image src={left_url} alt={`left_img`} preview={false} style={{height:120,width:120,borderRadius: 10,position:"relative",top:-10}}> </Image>
                                         </Col>
                                     </Row>
-
+                                        <div className={"split-line"}></div>
                                     <Row>
                                         <Col offset={16} span={10} >
                                             <Image src={right_url} alt={`right_img`} preview={false} style={{height:120,width:120,borderRadius: 10,position:"relative",top:-10}}> </Image>
