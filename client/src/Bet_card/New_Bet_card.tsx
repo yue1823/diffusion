@@ -1,9 +1,10 @@
 
-import {Card, Col, Image, Row, Statistic, theme} from "antd";
+import {Card, Col, Image, Input, message, Row, Statistic, theme} from "antd";
 import React, {useEffect, useState} from 'react';
 import { motion } from "framer-motion";
 import Modal from "@mui/material/Modal";
 import {Box} from "@mui/material";
+import {useWallet} from "@aptos-labs/wallet-adapter-react";
 const box_style = {
     position: 'absolute' as 'absolute',
 
@@ -19,12 +20,24 @@ const box_style = {
 };
 
 
-const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,balance:string }> = ({left_url,right_url,pair_name_left,pair_name_right,balance }) => {
+const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,balance:string ,left:string,middle:string,right :string}> = ({left_url,right_url,pair_name_left,pair_name_right,balance,left,right,middle }) => {
+    const { account, signAndSubmitTransaction } = useWallet();
     const [open, setOpen] = React.useState(false);
-    const [inpu_value,set_input_value]=useState("");
+    const [input_value,set_input_value]=useState("0");
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const max_button = () => set_input_value(balance);
+
+    const check_before_submit = ()=>{
+        const a = parseFloat(input_value);
+        if( a == 0){
+            return message.error(`please enter input amount`)
+        }
+        submit_transaction();
+    }
+    const submit_transaction = () => {
+        if (!account) return [];
+    }
     return (
         <>
             <Col span={8}>
@@ -105,10 +118,72 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                 <Row>
                                     <Col span={24}>
                                         <Card style={{height: 110, position: "relative", top: -5}}>
-
+                                            <h3 style={{position: "relative", right: 5}}>APT Amount</h3>
+                                            <Input placeholder="0.00" prefix={"$"} onChange={input=>{
+                                                set_input_value(input.target.value);
+                                            }} style={{position: "relative",top:10 , right: 5}}></Input>
                                         </Card>
                                     </Col>
                                 </Row>
+                            </Col>
+                        </Row>
+                        <br/>
+                        <Row gutter={[26,26]} style={{}}>
+                            <Col span={8}>
+                                <motion.div className={"box"}
+                                            whileHovwe={{scale: 1.5}}
+                                            whileTap={{scale: 0.9}}
+                                            transition={{type: "spring", stiffness: 400, damping: 25}}>
+                                    <button className={"rainbow"} style={{height:100}} onClick={check_before_submit()}>
+                                        <Row>
+                                            <Col offset={2} span={20}><p style={{fontSize:20}}>{pair_name_left}</p></Col>
+                                        </Row>
+                                        <Row>
+                                            <Col span={24}>   <div style={{backgroundColor:"white",height:40,borderRadius: 10,color:"blue"}}>
+                                                    <p style={{fontSize:20}}><h3>{left}</h3></p>
+                                            </div>
+                                            </Col>
+                                        </Row>
+
+                                    </button>
+                                </motion.div>
+                            </Col>
+                            <Col span={8}>
+                                <motion.div className={"box"}
+                                            whileHovwe={{scale: 1.5}}
+                                            whileTap={{scale: 0.9}}
+                                            transition={{type: "spring", stiffness: 400, damping: 25}}>
+                                    <button className={"rainbow"} style={{height:100}} onClick={check_before_submit()}>
+                                        <Row>
+                                            <Col offset={2} span={20}><p style={{fontSize:20}}>Middle</p></Col>
+                                        </Row>
+                                        <Row>
+                                            <Col span={24}>   <div style={{backgroundColor:"white",height:40,borderRadius: 10,color:"green"}}>
+                                                <p style={{fontSize:20}}><h3>{middle}</h3></p>
+                                            </div>
+                                            </Col>
+                                        </Row>
+                                    </button>
+                                </motion.div>
+                            </Col>
+                            <Col span={8}>
+                                <motion.div className={"box"}
+                                            whileHovwe={{scale: 1.5}}
+                                            whileTap={{scale: 0.9}}
+                                            transition={{type: "spring", stiffness: 400, damping: 25}}>
+                                    <button className={"rainbow"} style={{height:100}} onClick={check_before_submit()}>
+
+                                        <Row>
+                                            <Col offset={2} span={20}><p style={{fontSize:20}}>{pair_name_right}</p></Col>
+                                        </Row>
+                                        <Row>
+                                            <Col span={24}>   <div style={{backgroundColor:"white",height:40,borderRadius: 10,color:"red"}}>
+                                                <p style={{fontSize:20}}><h3>{right}</h3></p>
+                                            </div>
+                                            </Col>
+                                        </Row>
+                                    </button>
+                                </motion.div>
                             </Col>
                         </Row>
                     </Box>
