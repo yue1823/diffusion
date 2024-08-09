@@ -3,8 +3,8 @@
     z-index: -1;
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 101%;
+    height: 103%;
     background: rgb(17, 17, 17);
     left: 0px;
     top: 0px;
