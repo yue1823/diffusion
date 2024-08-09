@@ -41,7 +41,7 @@
     animation-range-end: normal;
     opacity: 0;
     background: linear-gradient(45deg, rgb(255, 0, 0), rgb(255, 115, 0), rgb(255, 251, 0), rgb(72, 255, 0), rgb(0, 255, 213), rgb(0, 43, 255), rgb(122, 0, 255), rgb(255, 0, 200), rgb(255, 0, 0)) 0% 0% / 400%;
-    animation: 20s linear 0s infinite normal none running dvWuPe;
+    animation: 20s linear 0s infinite normal none running rainbow-animation;
     transition: opacity 0.3s ease-in-out;
 }
 button {
@@ -74,5 +74,16 @@ button {
 }
 .rainbow:hover::before {
     opacity: 1; /* 鼠标悬停时显示彩虹光 */
+}
+@keyframes rainbow-animation {
+0% {
+    background-position: 0px 0px;
+}
+50% {
+    background-position: 400% 0px;
+}
+100% {
+    background-position: 0px 0px;
+}
 }
 ```
