@@ -1,5 +1,5 @@
 ``` Css
-.bXaQVp::after {
+.rainbow::after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -10,7 +10,7 @@
     top: 0px;
 }
 
-.bXaQVp {
+.rainbow {
     cursor: pointer;
     display: inline-block;
     margin-bottom: 1rem;
@@ -27,7 +27,7 @@
     color: rgb(255, 255, 255);
     border-color: transparent;
 }
-.bXaQVp::before {
+.rainbow::before {
     content: "";
     position: absolute;
     top: -2px;
@@ -71,5 +71,8 @@ button {
     text-shadow: none;
     text-align: center;
     cursor: default;
+}
+.rainbow:hover::before {
+    opacity: 1; /* 鼠标悬停时显示彩虹光 */
 }
 ```
