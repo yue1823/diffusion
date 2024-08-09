@@ -45,22 +45,7 @@
     transition: opacity 0.3s ease-in-out;
 }
 .button {
-    font-style: ;
-    font-variant-ligatures: ;
-    font-variant-caps: ;
-    font-variant-numeric: ;
-    font-variant-east-asian: ;
-    font-variant-alternates: ;
-    font-variant-position: ;
-    font-weight: ;
-    font-stretch: ;
-    font-size: ;
-    font-family: ;
-    font-optical-sizing: ;
-    font-size-adjust: ;
-    font-kerning: ;
-    font-feature-settings: ;
-    font-variation-settings: ;
+   
     text-rendering: auto;
     color: buttontext;
     letter-spacing: normal;
