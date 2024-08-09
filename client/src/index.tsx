@@ -12,6 +12,7 @@ import Main_content from "./content/content";
 import Swap_page from "./swap_page";
 import Bet_page from "./Bet_card/Bet_page";
 import Admin_page from "./admin/admin_page";
+import {pushRotate as Menu} from "react-burger-menu";
 import Website_page from "./website/website_page";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,8 +23,9 @@ root.render(
         <AptosWalletAdapterProvider plugins={wallets} autoConnect={true}>
                 <React.StrictMode>
                     <Router>
+
                         <Routes>
-                            <Route  index path="/*" element={<App />}/>
+                            <Route  index path="/*" element={<App id={"page-wrap"}/>}/>
                         </Routes>
                         <Routes>
                             <Route  path="/website" element={<Website_page/>}/>

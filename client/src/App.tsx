@@ -30,7 +30,7 @@ const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 
 const aptos = new Aptos(test_config);
 
-function App() {
+const App: React.FC<{id:string}> = ({id}) => {
 
     const { account, signAndSubmitTransaction } =useWallet() ;
     const [open, setOpen] = useState(false);

@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import "../css_folder/heardbar.css"
-import {Card, Col, ConfigProvider, Dropdown, Layout, Menu, Progress, ProgressProps, Row, theme} from "antd";
+import {Card, Col, ConfigProvider, Dropdown, Layout, Progress, ProgressProps,Menu, Row, theme} from "antd";
 import type { MenuProps } from 'antd';
 import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
 import APT_LOGO from '../logo/aptos-apt-logo.svg';
+import MyMenu from "./menu_of_header";
+import BurgerMenu from 'react-burger-menu';
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import diffusion_art from '../art/diffusion.png';
+import classNames from 'classnames';
 import {
     AppstoreOutlined,
     BarsOutlined, BookOutlined,
@@ -18,6 +21,7 @@ import {Link, Route, Routes} from "react-router-dom";
 import Main_content from "../content/content";
 import Swap_page from "../swap_page";
 const { Header, Content, Footer } = Layout;
+
 type MenuItem = Required<MenuProps>['items'][number];
 const items: MenuItem[] = [
     {
@@ -141,6 +145,7 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_ad
                 <WalletSelector/>
             </Col>
             <Col span={1}>
+
                 <Dropdown menu={{
                     items:  [
                         {
