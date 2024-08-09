@@ -44,7 +44,7 @@
     animation: 20s linear 0s infinite normal none running rainbow-animation;
     transition: opacity 0.3s ease-in-out;
 }
-button {
+.button {
     font-style: ;
     font-variant-ligatures: ;
     font-variant-caps: ;
