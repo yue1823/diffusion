@@ -14,13 +14,21 @@ import {
 import {toast, ToastContainer} from "react-toastify";
 import copy from "copy-to-clipboard";
 import { PieChart } from '@mui/x-charts/PieChart';
-
+import {useWallet} from "@aptos-labs/wallet-adapter-react";
+const options = {
+    method: 'GET',
+    headers: {accept: 'application/json', 'X-API-KEY': 'nodit-demo'}
+};
+const Network = "mainnnet";
+const resources_address = "0x1::account::Account";
 const pie_data = [
-    { id: 0, value: 10, label: 'series A' },
-    { id: 1, value: 15, label: 'series B' },
-    { id: 2, value: 20, label: 'series C' },]
-
+    { id: 0, value: 1.2, label: 'APT' },
+    { id: 1, value: 0, label: 'zUSDC' },
+    { id: 2, value: 0, label: 'wUSDC' },
+    { id: 3, value: 0, label: 'zUSDT' },
+    { id: 4, value: 0, label: 'wUSDT' },];
 const User_page:React.FC<{ }> = ({ }) => {
+    const { account, signAndSubmitTransaction } = useWallet();
     const [right_of_segement,setright_of_segement]=useState<string>('List');
     const [helper_point,set_helper_point]=useState<string>('');
     const [wrong_time,set_wrong_time]=useState<string>('');
@@ -30,6 +38,7 @@ const User_page:React.FC<{ }> = ({ }) => {
     const [user_name ,set_user_name]=useState<string>('User');
     const [user_gain,set_user_gain]=useState<string>('0');
     const [user_lost,set_user_lost]=useState<string>('0');
+
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
@@ -40,6 +49,24 @@ const User_page:React.FC<{ }> = ({ }) => {
             position: "bottom-right"
         });
     }
+    const fatch_account_from_aptos = () => {
+        if (!account) return [];
+        fetch(`https://aptos-${Network}.nodit.io/v1/accounts/${account.address}`, options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+    }
+    const  fatch_resource_from_aptos = () =>{
+        if (!account) return [];
+        fetch(`https://aptos-${Network}.nodit.io/v1/accounts/${account.address}/resource/${resources_address}`, options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+    }
+    useEffect(() => {
+
+
+    },[]);
     return (
         <>
             <Content style={{padding: '15px 30px'}}>
@@ -139,9 +166,7 @@ const User_page:React.FC<{ }> = ({ }) => {
                                                                         <PieChart
                                                                             series={[
                                                                                 {
-                                                                                    data: [{ id: 0, value: 4.8, label: 'APT' },
-                                                                                        { id: 1, value: 10, label: 'USDC' },
-                                                                                        { id: 2, value: 20, label: 'USDT' },],
+                                                                                    data: pie_data,
                                                                                     innerRadius: 60,
                                                                                     outerRadius: 90,
                                                                                     paddingAngle: 4,

@@ -23,21 +23,29 @@ const box_style = {
 const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,balance:string ,left:string,middle:string,right :string}> = ({left_url,right_url,pair_name_left,pair_name_right,balance,left,right,middle }) => {
     const { account, signAndSubmitTransaction } = useWallet();
     const [open, setOpen] = React.useState(false);
-    const [input_value,set_input_value]=useState("0");
+    const [input_value,set_input_value]=useState("");
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const max_button = () => set_input_value(balance);
 
     const check_before_submit = ()=>{
         const a = parseFloat(input_value);
-        if( a == 0){
-            return message.error(`please enter input amount`)
+        try{
+            if( a == 0){
+                return message.error(`please enter input amount`)
+            }
+        }catch (error:any){
+
         }
+
         submit_transaction();
     }
     const submit_transaction = () => {
         if (!account) return [];
     }
+    useEffect(() => {
+
+    },[]);
     return (
         <>
             <Col span={8}>
@@ -133,8 +141,9 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                 <motion.div className={"box"}
                                             whileHovwe={{scale: 1.5}}
                                             whileTap={{scale: 0.9}}
-                                            transition={{type: "spring", stiffness: 400, damping: 25}}>
-                                    <button className={"rainbow"} style={{height:100}} onClick={check_before_submit()}>
+                                            transition={{type: "spring", stiffness: 400, damping: 25}}
+                                            onClick={check_before_submit()}>
+                                    <button className={"rainbow"} style={{height:100}} >
                                         <Row>
                                             <Col offset={2} span={20}><p style={{fontSize:20}}>{pair_name_left}</p></Col>
                                         </Row>
@@ -152,8 +161,10 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                 <motion.div className={"box"}
                                             whileHovwe={{scale: 1.5}}
                                             whileTap={{scale: 0.9}}
-                                            transition={{type: "spring", stiffness: 400, damping: 25}}>
-                                    <button className={"rainbow"} style={{height:100}} onClick={check_before_submit()}>
+                                            transition={{type: "spring", stiffness: 400, damping: 25}}
+                                            onClick={check_before_submit()}
+                                >
+                                    <button className={"rainbow"} style={{height:100}} >
                                         <Row>
                                             <Col offset={2} span={20}><p style={{fontSize:20}}>Middle</p></Col>
                                         </Row>
@@ -170,8 +181,9 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                 <motion.div className={"box"}
                                             whileHovwe={{scale: 1.5}}
                                             whileTap={{scale: 0.9}}
-                                            transition={{type: "spring", stiffness: 400, damping: 25}}>
-                                    <button className={"rainbow"} style={{height:100}} onClick={check_before_submit()}>
+                                            transition={{type: "spring", stiffness: 400, damping: 25}}
+                                            onClick={check_before_submit()}>
+                                    <button className={"rainbow"} style={{height:100}} >
 
                                         <Row>
                                             <Col offset={2} span={20}><p style={{fontSize:20}}>{pair_name_right}</p></Col>
