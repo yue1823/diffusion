@@ -21,23 +21,24 @@ const options = {
 };
 const Network = "mainnnet";
 const resources_address = "0x1::account::Account";
-const pie_data = [
-    { id: 0, value: 1.2, label: 'APT' },
-    { id: 1, value: 0, label: 'zUSDC' },
-    { id: 2, value: 0, label: 'wUSDC' },
-    { id: 3, value: 0, label: 'zUSDT' },
-    { id: 4, value: 0, label: 'wUSDT' },];
+
 const User_page:React.FC<{ }> = ({ }) => {
     const { account, signAndSubmitTransaction } = useWallet();
     const [right_of_segement,setright_of_segement]=useState<string>('List');
     const [helper_point,set_helper_point]=useState<string>('');
     const [wrong_time,set_wrong_time]=useState<string>('');
-    const [value,setvalue]= useState<string>('0');
+    const [value,set_value]= useState<string>('0');
     const [user_address,set_user_address]=useState<string>("hello") ;
     const [user_balance,setuser_balance]=useState<string>('0');
     const [user_name ,set_user_name]=useState<string>('User');
     const [user_gain,set_user_gain]=useState<string>('0');
     const [user_lost,set_user_lost]=useState<string>('0');
+    const [pie_data,set_pie_data] = useState([
+        { id: 0, value: 1.2, label: 'APT' },
+        { id: 1, value: 0, label: 'zUSDC' },
+        { id: 2, value: 0, label: 'wUSDC' },
+        { id: 3, value: 0, label: 'zUSDT' },
+        { id: 4, value: 0, label: 'wUSDT' },]);
 
     const {
         token: { colorBgContainer, borderRadiusLG },
@@ -64,9 +65,9 @@ const User_page:React.FC<{ }> = ({ }) => {
             .catch(err => console.error(err));
     }
     useEffect(() => {
+        fatch_account_from_aptos();
 
-
-    },[]);
+    },[account]);
     return (
         <>
             <Content style={{padding: '15px 30px'}}>

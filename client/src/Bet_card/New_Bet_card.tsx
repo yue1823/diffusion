@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Modal from "@mui/material/Modal";
 import {Box} from "@mui/material";
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
+import "../css_/user_bet_box.css"
 const box_style = {
     position: 'absolute' as 'absolute',
 
@@ -57,6 +58,20 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                     <Card style={{height: 180}} onClick={value => {
                         setOpen(true)
                     }}>
+                        <Row style={{position:"relative",top:-10}}>
+                            <Col span={10} offset={2}>
+                                <Image preview={false} src={left_url} style={{height:100,width:100,borderRadius: 10}}></Image>
+                            </Col>
+                            <Col span={10} offset={2}>
+                                    <Image preview={false} src={right_url} style={{height:100,width:100,borderRadius: 10}}></Image>
+                            </Col>
+                        </Row>
+                        <div ></div>
+                        <Row gutter={[24,24]}>
+                            <Col span={8}><div style={{backgroundColor:"black",width:80,height:45,color:"white",borderRadius: 10,}}><div style={{position:"relative",backgroundColor:"white",height:35,width:65,borderRadius: 7,color:"blue",top:5,left:7}}><span style={{position:"relative",fontSize:25,left:10,top:-1}}>{left}</span></div></div></Col>
+                            <Col span={8}><div style={{backgroundColor:"black",width:80,height:45,color:"white",borderRadius: 10,}}><div style={{position:"relative",backgroundColor:"white",height:35,width:65,borderRadius: 7,color:"green",top:5,left:7}}><span style={{position:"relative",fontSize:25,left:10,top:-1}}>{middle}</span></div></div></Col>
+                            <Col span={8}><div style={{backgroundColor:"black",width:80,height:45,color:"white",borderRadius: 10,}}><div style={{position:"relative",backgroundColor:"white",height:35,width:65,borderRadius: 7,color:"red",top:5,left:7}}><span style={{position:"relative",fontSize:25,left:10,top:-1}}>{right}</span></div></div></Col>
+                        </Row>
                     </Card>
                 </motion.div>
                 <Modal
@@ -69,10 +84,10 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                     classes={""}
                     sx={{borderRadius: 60,p:4,border:"white",'&:fouvu':{outline:'none'}}}
                 >
-                    <Box sx={box_style} className={""}>
+                    <Box sx={box_style} className={"warm-card"}>
                         <Row gutter={[24,8]}>
                             <Col span={16}>
-                                <Card  style={{borderRadius: 10,backgroundColor:"#f3f3f3" ,height:290}}>
+                                <Card  style={{borderRadius: 10,backgroundColor:"#f3f3f3" ,height:290}} >
                                     <Row>
                                         <Col span={10}>
                                             <Image src={left_url} alt={`left_img`} preview={false} style={{height:120,width:120,borderRadius: 10,position:"relative",top:-10,right:10}}> </Image>
@@ -129,7 +144,7 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                             <h3 style={{position: "relative", right: 5}}>APT Amount</h3>
                                             <Input placeholder="0.00" prefix={"$"} onChange={input=>{
                                                 set_input_value(input.target.value);
-                                            }} style={{position: "relative",top:10 , right: 5}}></Input>
+                                            }} style={{position: "relative",top:10 , right: 5}} value={input_value}></Input>
                                         </Card>
                                     </Col>
                                 </Row>

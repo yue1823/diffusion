@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {Avatar, Button, Col, Drawer, Layout, Row, Steps, Image, message, List} from "antd";
+import {Avatar, Button, Col, Drawer, Layout, Row, Steps, Image, message, List, Input, Popover} from "antd";
 import TOP_bar from './header/heard_bar';
 import Main_content from "./content/content";
 import {InputTransactionData, useWallet} from "@aptos-labs/wallet-adapter-react";
 import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { DataContext } from './DataContext';
 import Footer_bar from "./Footer/Footer";
-import {CloseOutlined, UserAddOutlined, UserOutlined} from "@ant-design/icons";
+import {CloseOutlined, InfoCircleOutlined, UserAddOutlined, UserOutlined} from "@ant-design/icons";
 import {HashRouter as Router, Route, Routes, Outlet, useNavigate} from "react-router-dom";
 import Swap_page from "./swap_page";
 import Apt_logo from "./art/Aptos_mark_BLK.svg";
@@ -19,6 +19,9 @@ import Helper_page from "./helper/helper";
 import Carousel_comp from "./Carousel/Carousel_comp";
 import {Content,Footer,Header} from "antd/lib/layout/layout";
 import User_page from "./user/user_page";
+import {toast, ToastContainer} from "react-toastify";
+import {motion} from "framer-motion";
+import New_Bet_page from "./Bet_card/New_Bet_page";
 
 
 
@@ -42,8 +45,8 @@ const App: React.FC<{id:string}> = ({id}) => {
     const onClose = () => {
         setOpen(false);
     };
-
-
+    const content = "Set up your icon for diffusion";
+    const content1 = "Tell us your name for diffusion";
     const [swap,setswap]=useState<boolean>(true);
     const [sharedData, setSharedData] = useState<number>(0);
     const [accountHasList, setAccountHasList] = useState<boolean>(false);
@@ -52,6 +55,7 @@ const App: React.FC<{id:string}> = ({id}) => {
     const [diffusion_account,setdiffusion_account]=useState<boolean>(false);
     const diffusion_address = "0x2e86a41d1b86d4a82c1c74ece536108fc8f9dc5858a6ab5eb488e37d83098eb2";
     const [transaction_hash , settransaction_hash] = useState<string>('');
+    const [icon_url , set_icon_url]  = useState('https://raw.githubusercontent.com/yue1823/diffusion/main/client/src/art/diffusion7.png');
     const create_diffusion_account =  async () =>{
         if (!account) return [];
         const transaction:InputTransactionData = {
@@ -67,17 +71,20 @@ const App: React.FC<{id:string}> = ({id}) => {
             const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
             const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
             settransaction_hash(transaction_1.hash);
-            message.success(
-                <span>
+            // message.success(
+            //
+            // )
+            toast.success(<span>
                         hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
-                    </span>
-            )
+                    </span>, {
+                position: "bottom-right"
+            });
             onClose()
         } catch (error: any) {
             message.error(`please try again`)
         } finally {
 
-            
+
         }
     }
     const fetchList = async () => {
@@ -152,7 +159,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                                       <Route  path={"/" } element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
                                       <Route  path={"app"} element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
                                       <Route  path={"/swap"} element={<Swap_page/>}/>
-                                      <Route  path={"Bet"  } element={<Bet_page/>}/>
+                                      <Route  path={"Bet"  } element={<New_Bet_page/>}/>
                                       <Route  path={"admin"} element={<Admin_page/>}/>
                                       <Route  path={"nft"} element={<NFT_page/>}/>
                                       <Route  path={"Helper"} element={<Helper_page/>}/>
@@ -210,33 +217,101 @@ const App: React.FC<{id:string}> = ({id}) => {
                   <div style={{position:"relative",left:-60,top:-2}}>
                   <WalletSelector />
                   </div></Col>
-          </Row></> }
-                  open={open}>
-              <Image
-                  width={300}
-                  src="https://raw.githubusercontent.com/yue1823/diffusion/main/client/src/art/diffusion7.png"
-              />
-              <br/>
-              <br/>
-              <Steps
-                  current={0}
-                  status={"error"}
-                  items={[{title: 'No diffusion account', description: "Create one account first."}]}>
-              </Steps>
-              <br/>
-              <Button type="primary" shape="round" icon={<UserAddOutlined/>} size={'large'} onClick={create_diffusion_account}>Create Account</Button>
+          </Row></>  }
+                  open={open} style={{backgroundColor: "#f5f4f0"}} onClose={onClose}>
+              <Row gutter={[24,24]}>
+                  <Col span={24}>
+                      <Row>
+                          <Col span={24}>
+                              <Image
+                                  src={icon_url}
+                              />
+                          </Col>
+
+                      </Row>
+                      <br/>
+                      <Row gutter={[24,24]}>
+                          <Col span={24}><h2>User Name</h2></Col>
+                          <br/>
+                          <Col span={24}>
+                              <Input placeholder="Name" suffix={<span style={{fontSize: 20}}>
+                                   <Popover content={content1}>
+                                        <InfoCircleOutlined/>
+                                    </Popover>
+                              </span>}
+                                     onChange={input => {
+                                         set_icon_url(input.target.value);
+                                     }}
+                              style={{position:"relative",top:-10}}></Input>
+
+                          </Col>
+                          <Col span={24}  style={{position:"relative",top:-15}}><h2>Icon</h2></Col>
+                          <br/>
+                          <Col span={24}>
+                              <Input placeholder="https://" style={{position:"relative",top:-25}} suffix={<span style={{fontSize: 20}} >
+                                   <Popover content={content}>
+                                        <InfoCircleOutlined/>
+                                    </Popover>
+                              </span>}
+                                     onChange={input => {
+                                         set_icon_url(input.target.value);
+                                     }}></Input>
+
+                          </Col>
+                      </Row>
+                      <br/>
+
+                      <Row>
+                          <Col span={24}>
+                              <Steps
+                                  current={0}
+                                  status={"error"}
+                                  items={[{title: 'No diffusion account', description: "Create one account first."}]}
+                                  style={{position:"relative",top:-25}} >
+                              </Steps>
+                              <ToastContainer
+                                  position="bottom-right"
+                                  autoClose={5000}
+                                  hideProgressBar={false}
+                                  newestOnTop={false}
+                                  closeOnClick
+                                  rtl={false}
+                                  pauseOnFocusLoss
+                                  draggable
+                                  pauseOnHover
+                                  theme="light"
+                              />
+                          </Col>
+                      </Row>
+
+                      <br/>
+                      <Row>
+                          <Col span={20} style={{position:"relative",top:-25}} >
+                              <motion.div className={"box"}
+                                          whileHovwe={{scale: 1.5}}
+                                          whileTap={{scale: 0.9}}
+                                          transition={{type: "spring", stiffness: 400, damping: 25}}>
+                                  <button style={{width:320}}
+                                          onClick={create_diffusion_account} className={"rainbow"}><UserAddOutlined/>Create
+                                      Account
+                                  </button>
+                              </motion.div>
+                          </Col>
+                      </Row>
+                  </Col>
+              </Row>
           </Drawer>
       </>
   );
 }
 
-const NavigationButton = () =>{
+const NavigationButton = () => {
     const navigate = useNavigate();
-    const swap_button_link=()=>{
+    const swap_button_link = () => {
         navigate('/swap');
     };
     return (
-        <button style={{ height: 30, width: 30 }} onClick={swap_button_link}>
+        <button style={{height: 30, width: 30}} onClick={swap_button_link}>
             Go to Swap
         </button>
     );
