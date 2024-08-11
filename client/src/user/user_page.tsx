@@ -12,8 +12,18 @@ import {
     RiseOutlined
 } from "@ant-design/icons";
 import {toast, ToastContainer} from "react-toastify";
+import {Connection, PublicKey} from '@solana/web3.js'
 import copy from "copy-to-clipboard";
 import { PieChart } from '@mui/x-charts/PieChart';
+import {
+    PriceStatus,
+    PythHttpClient,
+    getPythClusterApiUrl,
+    getPythProgramKeyForCluster,
+    PythCluster,
+    PythConnection, PriceType
+} from "@pythnetwork/client";
+
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 const options = {
@@ -26,13 +36,19 @@ const resources_address = "0xa5e5b08ee9d38bab784a3c2620b0518349d8f1132dc9fe418a7
 const aptosConfig = new AptosConfig({ network: Network.DEVNET });
 const aptos = new Aptos(aptosConfig);
 
+const pyth_apt_usd = 'https://hermes.pyth.network/v2/updates/price/stream?ids[]=0x03ae4db29ed4ae33d323568895aa00337e658e348b37509f5372ae51f0af00d5';
+const PYTHNET_CLUSTER_NAME: PythCluster = 'pythnet'
+const connection = new Connection(getPythClusterApiUrl(PYTHNET_CLUSTER_NAME))
+const pythPublicKey = getPythProgramKeyForCluster(PYTHNET_CLUSTER_NAME)
+
+
 const User_page:React.FC<{ }> = ({ }) => {
     const { account, signAndSubmitTransaction } = useWallet();
     const [right_of_segement,setright_of_segement]=useState<string>('List');
     const [helper_point,set_helper_point]=useState<string>('');
     const [wrong_time,set_wrong_time]=useState<string>('');
     const [value,set_value]= useState<string>('0');
-
+    const [total_usd_value,set_total_usd_value]=useState('0');
     const [user_icon , set_user_icon]=useState('https://raw.githubusercontent.com/yue1823/diffusion/main/client/src/art/diffusion7.png');
     const [user_address,set_user_address]=useState<string>("hello") ;
     const [user_balance,setuser_balance]=useState<string>('0');
@@ -45,7 +61,8 @@ const User_page:React.FC<{ }> = ({ }) => {
         { id: 2, value: 0, label: 'wUSDC' },
         { id: 3, value: 0, label: 'zUSDT' },
         { id: 4, value: 0, label: 'wUSDT' },]);
-
+    let [a,seta] =useState(0);
+    let [b,setb]= useState(0);
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
@@ -65,7 +82,7 @@ const User_page:React.FC<{ }> = ({ }) => {
     }
     const  fatch_account_resource_from_aptos = () =>{
         if (!account) return [];
-        fetch(`https://aptos-${Network}.nodit.io/v1/accounts/${account.address}/resource/${resources_address}`, options)
+             fetch(`https://aptos-${Network}.nodit.io/v1/accounts/${account.address}/resource/${resources_address}`, options)
             .then(response => response.json())
             .then(response => {
                 const {name,icon} = response.save1;
@@ -76,17 +93,35 @@ const User_page:React.FC<{ }> = ({ }) => {
                 set_user_lost(lose);
             })
             .catch(err => console.error(err));
+            //const priceUpdates = await connection.getLatestVaas()
     }
     const devnet_fatch_pie_data = () =>{
         if (!account) return [];
+
         set_user_address(account.address)
         try{
             const promise = aptos.account.getAccountAPTAmount({accountAddress:account.address});
             promise.then(balance => {
+                console.log(balance)
                 let real_balance = balance /100000000;
                 const updata_pie_data = [...pie_data];
                 updata_pie_data[0]={...updata_pie_data[0],value: real_balance}
                 set_pie_data(updata_pie_data);
+                const url = 'https://api.dexscreener.com/latest/dex/tokens/0x1::aptos_coin::AptosCoin';
+                fetch(url, { method: 'GET', headers: { 'Accept': 'application/json' } })
+                    .then(response => response.json())
+                    .then(response => {
+                        const  priceNative = response.pairs[0].priceNative;
+
+                        const apt = real_balance*priceNative;
+                        const wusdc = aptos.account.getAccountCoinAmount({accountAddress:account.address,coinType: "0x5e156f1207d0ebfa19a9eeff00d62a282278fb8719f4fab3a586a0a2c0fffbea::coin::T" as `${string}::${string}::${string}`} );
+                        const usdt = aptos.account.getAccountCoinAmount({accountAddress:account.address,coinType: "0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDC" as `${string}::${string}::${string}`} );
+                        wusdc.then(balance =>seta(balance))
+                        usdt.then(balance =>setb(balance))
+                        let amount =(a+b+apt).toFixed(2).toString();
+                        set_value(amount);
+                    })
+
             }).catch(error => {
                 console.error('Error fetching balance:', error);
             });
@@ -94,9 +129,48 @@ const User_page:React.FC<{ }> = ({ }) => {
             console.log(error);
         }
     }
-    useEffect(() => {
-        //fatch_account_from_aptos();
 
+
+    // const feeds = [new PublicKey('H6ARHf6YXhGYeQfUzQNGk6rDNnLBQKrenN712K4AQJEG')]
+    // const pythConnection = new PythConnection(connection, pythPublicKey, 'confirmed', feeds)
+    // pythConnection.onPriceChangeVerbose((productAccount, priceAccount) => {
+    //     // The arguments to the callback include solana account information / the update slot if you need it.
+    //
+    //     const product = productAccount.accountInfo.data.product
+    //     const price = priceAccount.accountInfo.data
+    //
+    //     // sample output:
+    //     // SOL/USD: $14.627930000000001 ±$0.01551797
+    //     if (price.price && price.confidence) {
+    //         // tslint:disable-next-line:no-console
+    //         console.log(`${product.symbol}: $${price.price} \xB1$${price.confidence}`)
+    //     } else {
+    //         // tslint:disable-next-line:no-console
+    //         console.log(`${product.symbol}: price currently unavailable. status is ${PriceStatus[price.status]}`)
+    //     }
+    //     pythConnection.stop()
+    //
+    // })
+
+    const apt_price =async () => {
+        if (!account) return [];
+        try {
+            const url = 'https://api.dexscreener.com/latest/dex/tokens/0x1::aptos_coin::AptosCoin';
+               fetch(url, { method: 'GET', headers: { 'Accept': 'application/json' } })
+                   .then(response => response.json())
+                   .then(response => {
+                        const  priceNative = response.pairs[0].priceNative;
+
+                        })
+            const wusdc = aptos.account.getAccountCoinAmount({accountAddress:account.address,coinType: "0x5e156f1207d0ebfa19a9eeff00d62a282278fb8719f4fab3a586a0a2c0fffbea::coin::T" as `${string}::${string}::${string}`} );
+               const usdt = aptos.account.getAccountCoinAmount({accountAddress:account.address,coinType: "0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDC" as `${string}::${string}::${string}`} );
+        } catch (error) {
+            console.error('Error fetching price data:', error);
+        }
+    }
+    useEffect(() => {
+        //pythConnection.start()
+        apt_price().then(r => console.log(r))
         devnet_fatch_pie_data()
     },[account]);
     return (
