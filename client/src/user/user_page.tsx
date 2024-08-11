@@ -15,12 +15,16 @@ import {toast, ToastContainer} from "react-toastify";
 import copy from "copy-to-clipboard";
 import { PieChart } from '@mui/x-charts/PieChart';
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
+import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 const options = {
     method: 'GET',
     headers: {accept: 'application/json', 'X-API-KEY': 'nodit-demo'}
 };
-const Network = "mainnnet";
-const resources_address = "0x1::account::Account";
+const NOW_Network = "testnet";
+const resources_address = "0xa5e5b08ee9d38bab784a3c2620b0518349d8f1132dc9fe418a7209fe749054cb::helper::Account_tree";
+
+const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptos = new Aptos(aptosConfig);
 
 const User_page:React.FC<{ }> = ({ }) => {
     const { account, signAndSubmitTransaction } = useWallet();
@@ -28,13 +32,15 @@ const User_page:React.FC<{ }> = ({ }) => {
     const [helper_point,set_helper_point]=useState<string>('');
     const [wrong_time,set_wrong_time]=useState<string>('');
     const [value,set_value]= useState<string>('0');
+
+    const [user_icon , set_user_icon]=useState('https://raw.githubusercontent.com/yue1823/diffusion/main/client/src/art/diffusion7.png');
     const [user_address,set_user_address]=useState<string>("hello") ;
     const [user_balance,setuser_balance]=useState<string>('0');
     const [user_name ,set_user_name]=useState<string>('User');
     const [user_gain,set_user_gain]=useState<string>('0');
     const [user_lost,set_user_lost]=useState<string>('0');
     const [pie_data,set_pie_data] = useState([
-        { id: 0, value: 1.2, label: 'APT' },
+        { id: 0, value: 0, label: 'APT' },
         { id: 1, value: 0, label: 'zUSDC' },
         { id: 2, value: 0, label: 'wUSDC' },
         { id: 3, value: 0, label: 'zUSDT' },
@@ -57,16 +63,41 @@ const User_page:React.FC<{ }> = ({ }) => {
             .then(response => console.log(response))
             .catch(err => console.error(err));
     }
-    const  fatch_resource_from_aptos = () =>{
+    const  fatch_account_resource_from_aptos = () =>{
         if (!account) return [];
         fetch(`https://aptos-${Network}.nodit.io/v1/accounts/${account.address}/resource/${resources_address}`, options)
             .then(response => response.json())
-            .then(response => console.log(response))
+            .then(response => {
+                const {name,icon} = response.save1;
+                set_user_icon(icon);
+                set_user_name(name);
+                const { diffusion_loyalty, level,win,lose } = response.save_5;
+                set_user_gain(win);
+                set_user_lost(lose);
+            })
             .catch(err => console.error(err));
     }
+    const devnet_fatch_pie_data = () =>{
+        if (!account) return [];
+        set_user_address(account.address)
+        try{
+            const promise = aptos.account.getAccountAPTAmount({accountAddress:account.address});
+            promise.then(balance => {
+                let real_balance = balance /100000000;
+                const updata_pie_data = [...pie_data];
+                updata_pie_data[0]={...updata_pie_data[0],value: real_balance}
+                set_pie_data(updata_pie_data);
+            }).catch(error => {
+                console.error('Error fetching balance:', error);
+            });
+        }catch (error:any){
+            console.log(error);
+        }
+    }
     useEffect(() => {
-        fatch_account_from_aptos();
+        //fatch_account_from_aptos();
 
+        devnet_fatch_pie_data()
     },[account]);
     return (
         <>
@@ -91,7 +122,7 @@ const User_page:React.FC<{ }> = ({ }) => {
                                                     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                                                         <Col span={24}>
                                                             <img
-                                                                src={My_logo}
+                                                                src={user_icon}
                                                                 alt={"img1"}
                                                             style={{height:210,width:210, borderRadius: 20,backgroundColor:"white"}}>
                                                             </img>
@@ -131,7 +162,7 @@ const User_page:React.FC<{ }> = ({ }) => {
                                                             <Card style={{backgroundColor:"white",height:60}}>
                                                                 <Statistic
                                                                     title="Lost"
-                                                                    value={user_gain}
+                                                                    value={user_lost}
                                                                     precision={2}
                                                                     valueStyle={{ color: '#cf1322' }}
                                                                     prefix={<FallOutlined />}

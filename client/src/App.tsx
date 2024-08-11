@@ -19,19 +19,18 @@ import Helper_page from "./helper/helper";
 import Carousel_comp from "./Carousel/Carousel_comp";
 import {Content,Footer,Header} from "antd/lib/layout/layout";
 import User_page from "./user/user_page";
-import {toast, ToastContainer} from "react-toastify";
+import {Bounce, toast, ToastContainer} from "react-toastify";
 import {motion} from "framer-motion";
 import New_Bet_page from "./Bet_card/New_Bet_page";
 
 
-
+const Now_network = 'devnet';
 const test_config = new AptosConfig({
     fullnode: "https://aptos-testnet.nodit.io/bT8aS3ezHOl6T1_PyaM30lkg7odC_42l/v1",
     indexer: "https://aptos-testnet.nodit.io/bT8aS3ezHOl6T1_PyaM30lkg7odC_42l/v1/graphql",
 });
-const aptosConfig = new AptosConfig({ network: Network.TESTNET });
-
-const aptos = new Aptos(test_config);
+const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptos = new Aptos(aptosConfig);
 
 const App: React.FC<{id:string}> = ({id}) => {
 
@@ -53,15 +52,16 @@ const App: React.FC<{id:string}> = ({id}) => {
     const [user_address,setuser_address]=useState<string>("User address")
     const  [index_of_to_address]=useState<number>(0);
     const [diffusion_account,setdiffusion_account]=useState<boolean>(false);
-    const diffusion_address = "0x2e86a41d1b86d4a82c1c74ece536108fc8f9dc5858a6ab5eb488e37d83098eb2";
+    const diffusion_address = "0xa5e5b08ee9d38bab784a3c2620b0518349d8f1132dc9fe418a7209fe749054cb";
     const [transaction_hash , settransaction_hash] = useState<string>('');
     const [icon_url , set_icon_url]  = useState('https://raw.githubusercontent.com/yue1823/diffusion/main/client/src/art/diffusion7.png');
+    const [account_name , set_account_name] = useState('');
     const create_diffusion_account =  async () =>{
         if (!account) return [];
         const transaction:InputTransactionData = {
             data: {
-                function:`${diffusion_address}::pay_module::save_randome`,
-                functionArguments:[]
+                function:`${diffusion_address}::helper::create_account_tree`,
+                functionArguments:[account_name,icon_url]
             }
         }
         try {
@@ -69,7 +69,7 @@ const App: React.FC<{id:string}> = ({id}) => {
             const response = await signAndSubmitTransaction(transaction);
             // wait for transaction
             const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
-            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=${Now_network}`;
             settransaction_hash(transaction_1.hash);
             // message.success(
             //
@@ -77,11 +77,20 @@ const App: React.FC<{id:string}> = ({id}) => {
             toast.success(<span>
                         hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
                     </span>, {
-                position: "bottom-right"
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
             });
             onClose()
         } catch (error: any) {
-            message.error(`please try again`)
+            console.log(error);
+            message.error(`please try again`);
         } finally {
 
 
@@ -90,7 +99,7 @@ const App: React.FC<{id:string}> = ({id}) => {
     const fetchList = async () => {
         if (!account) return [];
         // change this to be your module account address
-        const random_resource = `${diffusion_address}::pay_module::Randomness_store` as `${string}::${string}::${string}`
+        const random_resource = `${diffusion_address}::helper::Account_tree` as `${string}::${string}::${string}`
         const random_view_fun  = `${diffusion_address}::pay_module::check_randome` as `${string}::${string}::${string}`
 
         try {
@@ -240,7 +249,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                                     </Popover>
                               </span>}
                                      onChange={input => {
-                                         set_icon_url(input.target.value);
+                                         set_account_name(input.target.value);
                                      }}
                               style={{position:"relative",top:-10}}></Input>
 
