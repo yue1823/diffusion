@@ -52,7 +52,7 @@ const App: React.FC<{id:string}> = ({id}) => {
     const [user_address,setuser_address]=useState<string>("User address")
     const  [index_of_to_address]=useState<number>(0);
     const [diffusion_account,setdiffusion_account]=useState<boolean>(false);
-    const diffusion_address = "0xa5e5b08ee9d38bab784a3c2620b0518349d8f1132dc9fe418a7209fe749054cb";
+    const diffusion_address = "0xfc33225e4f4155e79db5cb873c065e7de6f9cbe25302b0ec2928e5fea76c31ec";
     const [transaction_hash , settransaction_hash] = useState<string>('');
     const [icon_url , set_icon_url]  = useState('https://raw.githubusercontent.com/yue1823/diffusion/main/client/src/art/diffusion7.png');
     const [account_name , set_account_name] = useState('');

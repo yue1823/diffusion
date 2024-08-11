@@ -36,10 +36,10 @@ import {
 } from "@aptos-labs/wallet-adapter-react";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 
-const aptosConfig = new AptosConfig({ network: Network.TESTNET });
+const aptosConfig = new AptosConfig({ network: Network.DEVNET });
 const aptos = new Aptos(aptosConfig);
 
-const moduleAddress = "0x2e86a41d1b86d4a82c1c74ece536108fc8f9dc5858a6ab5eb488e37d83098eb2";
+const moduleAddress = "0xfc33225e4f4155e79db5cb873c065e7de6f9cbe25302b0ec2928e5fea76c31ec";
 const testnet_module ="0x313217c756b70e59d26bcc22f20af94d850bc4844f7e37dd7f94bc2cc4c3c619";
 const connect_Wallet = 'Connect Wallet.';
 type NotificationPlacement = NotificationArgsProps['placement'];
@@ -72,9 +72,9 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
             let input2 = "0x1::aptos_coin::AptosCoin"
             const transaction:InputTransactionData = {
                 data: {
-                    function:`${moduleAddress}::pay_module::reload`,
+                    function:`${moduleAddress}::helper::reload_single`,
                     typeArguments:[input1,input2],
-                    functionArguments:[false,need_garble,amount*100000000,to_address,account.address,cointype]
+                    functionArguments:[false,need_garble,amount*100000000,to_address,cointype,"0x1",amount*100000000]
                 }
             }
             try {

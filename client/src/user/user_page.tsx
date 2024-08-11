@@ -31,7 +31,7 @@ const options = {
     headers: {accept: 'application/json', 'X-API-KEY': 'nodit-demo'}
 };
 const NOW_Network = "testnet";
-const resources_address = "0xa5e5b08ee9d38bab784a3c2620b0518349d8f1132dc9fe418a7209fe749054cb::helper::Account_tree";
+const resources_address = "0xfc33225e4f4155e79db5cb873c065e7de6f9cbe25302b0ec2928e5fea76c31ec::helper::Account_tree";
 
 const aptosConfig = new AptosConfig({ network: Network.DEVNET });
 const aptos = new Aptos(aptosConfig);
@@ -91,6 +91,8 @@ const User_page:React.FC<{ }> = ({ }) => {
                 const { diffusion_loyalty, level,win,lose } = response.save_5;
                 set_user_gain(win);
                 set_user_lost(lose);
+                const{badges} = response.save_4;
+
             })
             .catch(err => console.error(err));
             //const priceUpdates = await connection.getLatestVaas()
@@ -102,7 +104,7 @@ const User_page:React.FC<{ }> = ({ }) => {
         try{
             const promise = aptos.account.getAccountAPTAmount({accountAddress:account.address});
             promise.then(balance => {
-                console.log(balance)
+
                 let real_balance = balance /100000000;
                 const updata_pie_data = [...pie_data];
                 updata_pie_data[0]={...updata_pie_data[0],value: real_balance}
@@ -152,25 +154,10 @@ const User_page:React.FC<{ }> = ({ }) => {
     //
     // })
 
-    const apt_price =async () => {
-        if (!account) return [];
-        try {
-            const url = 'https://api.dexscreener.com/latest/dex/tokens/0x1::aptos_coin::AptosCoin';
-               fetch(url, { method: 'GET', headers: { 'Accept': 'application/json' } })
-                   .then(response => response.json())
-                   .then(response => {
-                        const  priceNative = response.pairs[0].priceNative;
 
-                        })
-            const wusdc = aptos.account.getAccountCoinAmount({accountAddress:account.address,coinType: "0x5e156f1207d0ebfa19a9eeff00d62a282278fb8719f4fab3a586a0a2c0fffbea::coin::T" as `${string}::${string}::${string}`} );
-               const usdt = aptos.account.getAccountCoinAmount({accountAddress:account.address,coinType: "0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDC" as `${string}::${string}::${string}`} );
-        } catch (error) {
-            console.error('Error fetching price data:', error);
-        }
-    }
     useEffect(() => {
         //pythConnection.start()
-        apt_price().then(r => console.log(r))
+
         devnet_fatch_pie_data()
     },[account]);
     return (
