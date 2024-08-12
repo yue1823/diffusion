@@ -135,3 +135,4 @@ export default LogoAnimation;
   background: #373a47;
 }
 ```
+`https://medium.com/geekculture/how-to-use-google-analytics-on-reactjs-in-5-minutes-7f6b43017ba9`
