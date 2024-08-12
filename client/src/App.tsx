@@ -22,6 +22,7 @@ import User_page from "./user/user_page";
 import {Bounce, toast, ToastContainer} from "react-toastify";
 import {motion} from "framer-motion";
 import New_Bet_page from "./Bet_card/New_Bet_page";
+import Website_page from "./website/website_page";
 
 
 const Now_network = 'devnet';
@@ -173,6 +174,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                                       <Route  path={"nft"} element={<NFT_page/>}/>
                                       <Route  path={"Helper"} element={<Helper_page/>}/>
                                       <Route path={"my_page"} element={<User_page/>}></Route>
+
                                       {/*<Route path={"/"} element={<Main_content address={user_address} index_of_address={index_of_address}/>}></Route>*/}
                                       {/*<Route path={"/swap"} element={<Swap_page/>}/>*/}
                                   </Routes>

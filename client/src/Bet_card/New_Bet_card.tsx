@@ -55,17 +55,17 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
         if (!account) return [];
         try {
             // sign and submit transaction to chain
-            const response = await signAndSubmitTransaction(transaction);
+            //const response = await signAndSubmitTransaction(transaction);
             // wait for transaction
-            const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
-            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+            //const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+           // const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
 
-
-            message.success(
-                <span>
-                        hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
-                    </span>
-            )
+            //
+            // message.success(
+            //     <span>
+            //             hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+            //         </span>
+            // )
 
         } catch (error: any) {
             message.error(`please try again`)
@@ -185,7 +185,7 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                             whileTap={{scale: 0.9}}
                                             transition={{type: "spring", stiffness: 400, damping: 25}}
                                             onClick={check_before_submit()}>
-                                    <button className={"rainbow"} style={{height:100}}  onClick={submit_transaction}>
+                                    <button className={"rainbow"} style={{height:100}} >
                                         <Row>
                                             <Col offset={2} span={20}><p style={{fontSize:20}}>{pair_name_left}</p></Col>
                                         </Row>
@@ -206,7 +206,7 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                             transition={{type: "spring", stiffness: 400, damping: 25}}
                                             onClick={check_before_submit()}
                                 >
-                                    <button className={"rainbow"} style={{height:100}}  onClick={submit_transaction}>
+                                    <button className={"rainbow"} style={{height:100}} >
                                         <Row>
                                             <Col offset={2} span={20}><p style={{fontSize:20}}>Middle</p></Col>
                                         </Row>
@@ -225,7 +225,7 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                             whileTap={{scale: 0.9}}
                                             transition={{type: "spring", stiffness: 400, damping: 25}}
                                             onClick={check_before_submit()}>
-                                    <button className={"rainbow"} style={{height:100}}  onClick={submit_transaction}>
+                                    <button className={"rainbow"} style={{height:100}}  >
 
                                         <Row>
                                             <Col offset={2} span={20}><p style={{fontSize:20}}>{pair_name_right}</p></Col>

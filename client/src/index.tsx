@@ -26,8 +26,8 @@ root.render(
 
                         <Routes>
                             <Route  index path="/*" element={<App id={"page-wrap"}/>}/>
-                        </Routes>
-                        <Routes>
+
+
                             <Route  path="/website" element={<Website_page/>}/>
                         </Routes>
 

@@ -134,9 +134,12 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_ad
                 {/*</Header>*/}
 
             <Col span={2}>
+                <Link to={"/website"}>
+
                 <img src={diffusion_art}
                      alt={"diffusion logo"}
-                     style={{width: 80, borderRadius: 20, height: 80 ,position:"relative",top:10,right:30}}/>
+                     style={{width: 80, borderRadius: 20, height: 80 ,position:"relative",top:10,right:30}} />
+                </Link>
                 <></>
             </Col>
             <Col span={18}>
