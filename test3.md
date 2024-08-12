@@ -1,6 +1,6 @@
 ```css
 body {
-  background: linear-gradient(to right, black 0%, black 100%);
+  background: linear-gradient(to right, #797777 0%,#656565 20%,#3C3C3C 50%, black 100%);
 }
 
 #sky {
