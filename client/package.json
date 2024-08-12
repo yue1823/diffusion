@@ -36,6 +36,7 @@
     "react-toastify": "^10.0.5",
     "reactstrap": "^9.2.2",
     "redux-burger-menu": "^0.2.8",
+    "swiper": "^11.1.9",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
