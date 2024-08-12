@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import Scroll_down from "./scroll_down";
 interface StarrySkyState {
     num: number;
     vw: number;
@@ -131,8 +132,8 @@ const Website_page: React.FC = () => {
 
                 {/*<div id="circle" className="circle bg-yellow-500"></div>*/}
                 <StarrySky/>
-
-                <Row style={{ height: 1000, position: 'absolute', top: 100, left:100, width: '100%', zIndex: 2 }}>
+                <Scroll_down/>
+                <Row style={{ height: 1000, position: 'relative', top: 100, left:100, width: '100%', zIndex: 2 }}>
                     <Col span={24}>
                         <Swiper
                             pagination={{
@@ -140,12 +141,17 @@ const Website_page: React.FC = () => {
                             }}
                             modules={[Pagination]}
                             className="mySwiper"
-                            style={{position:"absolute",left:1000,width:450,height:350,top:150}}
+                            style={{position:"absolute",left:1000,width:450,height:350,top:150,borderRadius: 20,}}
                         >
                             <SwiperSlide><Image src={Logo_1} style={{position:"relative",top:-10}}></Image></SwiperSlide>
                             <SwiperSlide><Image src={Logo_2} style={{position:"relative",top:-40}}></Image></SwiperSlide>
 
                         </Swiper>
+                    </Col>
+                </Row>
+                <Row style={{ height: 1000, position: 'relative', top: 100, left:100, width: '100%', zIndex: 2 }}>
+                    <Col span={24}>
+
                     </Col>
                 </Row>
             </Col>
