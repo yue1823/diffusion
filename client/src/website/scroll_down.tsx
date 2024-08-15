@@ -4,7 +4,7 @@ const Scroll_down: React.FC = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     const handleScroll = () => {
-        const position = window.scrollY;
+        const position = -window.scrollY;
         setScrollPosition(position);
     };
 
@@ -18,11 +18,13 @@ const Scroll_down: React.FC = () => {
 
     const moonStyle = {
         position: 'fixed' as 'fixed',
-        right: `${-50 + scrollPosition * 0.1}px`, // 控制月亮的水平位置，隨著滾動向右移動
+        right: `${-680 + scrollPosition * 0.1}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: '20%',
         transform: `translateX(${Math.min(scrollPosition, 500)}px)`,
         transition: 'transform 0.1s ease-out',
         zIndex:2,
+        width:100,
+        height:100,
     };
 
     return (

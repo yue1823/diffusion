@@ -28,10 +28,9 @@ import {useWallet} from "@aptos-labs/wallet-adapter-react";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 const options = {
     method: 'GET',
-    headers: {accept: 'application/json', 'X-API-KEY': 'nodit-demo'}
+    headers: {accept: 'application/json', 'X-API-KEY': 'bT8aS3ezHOl6T1_PyaM30lkg7odC_42l'}
 };
 const NOW_Network = "testnet";
-const resources_address = "0xfc33225e4f4155e79db5cb873c065e7de6f9cbe25302b0ec2928e5fea76c31ec::helper::Account_tree";
 
 const aptosConfig = new AptosConfig({ network: Network.DEVNET });
 const aptos = new Aptos(aptosConfig);
@@ -63,6 +62,8 @@ const User_page:React.FC<{ }> = ({ }) => {
         { id: 4, value: 0, label: 'wUSDT' },]);
     let [a,seta] =useState(0);
     let [b,setb]= useState(0);
+    const resources_address = `${account?.address}::helper::Account_tree`;
+
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();

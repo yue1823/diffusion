@@ -219,3 +219,40 @@
         transform: translate(0, 0);
     }
 }
+
+.card_slid::before {
+    content: "";
+    box-shadow: 0px 0px 24px 0px #FFEB3B;
+    mix-blend-mode: screen;
+    transition: opacity 0.3s;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 100%;
+    opacity: 0;
+}
+
+.card_slid::after {
+    content: "";
+    box-shadow: 0px 0px 23px 0px #FDFCA9 inset, 0px 0px 8px 0px #FFFFFF42;
+    transition: opacity 0.3s;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 100%;
+    opacity: 0;
+}
+.card_slid{
+
+    z-index: 1;
+    text-decoration: none;
+    text-align: center;
+    appearance: none;
+    display: inline-block;
+}

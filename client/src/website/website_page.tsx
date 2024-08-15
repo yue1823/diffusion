@@ -133,20 +133,36 @@ const Website_page: React.FC = () => {
                 {/*<div id="circle" className="circle bg-yellow-500"></div>*/}
                 <StarrySky/>
                 <Scroll_down/>
-                <Row style={{ height: 1000, position: 'relative', top: 100, left:100, width: '100%', zIndex: 2 }}>
-                    <Col span={24}>
-                        <Swiper
-                            pagination={{
-                                dynamicBullets: true,
-                            }}
-                            modules={[Pagination]}
-                            className="mySwiper"
-                            style={{position:"absolute",left:1000,width:450,height:350,top:150,borderRadius: 20,}}
-                        >
-                            <SwiperSlide><Image src={Logo_1} style={{position:"relative",top:-10}}></Image></SwiperSlide>
-                            <SwiperSlide><Image src={Logo_2} style={{position:"relative",top:-40}}></Image></SwiperSlide>
+                <Row style={{ height: 1000, position: 'absolute', zIndex: 2 ,top:"0%"}}>
+                    <Col span={16} offset={16}>
+                        <a className={"button-wrapper"} >
+                            <div style={{position: "absolute", top: 130,left:400}}>
+                                <span className="dot dot-1"></span>
+                                <span className="dot dot-2"></span>
+                                <span className="dot dot-3"></span>
+                            </div>
 
-                        </Swiper>
+                            <span className="dot dot-4"></span>
+                            <span className="dot dot-5"></span>
+                            <span className="dot dot-6"></span>
+                                <span className="dot dot-7"></span>
+                            <span className={"card_slid"}>
+                            <Swiper
+                                pagination={{
+                                    dynamicBullets: true,
+                                }}
+                                modules={[Pagination]}
+                                className="mySwiper"
+                                style={{left:500,width:450,height:350,top:150,borderRadius: 20,}}
+                            >
+                                <SwiperSlide><Image src={Logo_1} style={{position:"relative",top:-10}}></Image></SwiperSlide>
+                                <SwiperSlide><Image src={Logo_2} style={{position:"relative",top:-40}}></Image></SwiperSlide>
+                            </Swiper>
+                                </span>
+                        </a>
+                    </Col>
+                    <Col span={24}>
+
                     </Col>
                 </Row>
                 <Row style={{ height: 1000, position: 'relative', top: 100, left:100, width: '100%', zIndex: 2 }}>

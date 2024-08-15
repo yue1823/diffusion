@@ -39,7 +39,7 @@ import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 const aptosConfig = new AptosConfig({ network: Network.DEVNET });
 const aptos = new Aptos(aptosConfig);
 
-const moduleAddress = "0xfc33225e4f4155e79db5cb873c065e7de6f9cbe25302b0ec2928e5fea76c31ec";
+const moduleAddress = "0x06484fa91822ffab0092151219d0ca96beff41934e9ebbdaac432899594c5055";
 const testnet_module ="0x313217c756b70e59d26bcc22f20af94d850bc4844f7e37dd7f94bc2cc4c3c619";
 const connect_Wallet = 'Connect Wallet.';
 type NotificationPlacement = NotificationArgsProps['placement'];
