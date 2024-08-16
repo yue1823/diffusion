@@ -154,3 +154,8 @@ Css is dead
 ```
 https://codepen.io/alvaromontoro/pen/GRXGPBP
 ```
+
+generate _site 
+```
+https://codepen.io/jh3y/pen/LYJMPBL
+```
