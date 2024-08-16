@@ -24,51 +24,64 @@ const aptosConfig = new AptosConfig({ network: Network.DEVNET });
 const aptos = new Aptos(aptosConfig);
 const moduleAddress = '0xfc33225e4f4155e79db5cb873c065e7de6f9cbe25302b0ec2928e5fea76c31ec'
 
-const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,balance:string ,left:string,middle:string,right :string}> = ({left_url,right_url,pair_name_left,pair_name_right,balance,left,right,middle }) => {
+const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,balance:string ,left:string,middle:string,right :string}> = ({left_url,right_url,pair_name_left,pair_name_right,balance,left,right,middle }) => {
     const { account, signAndSubmitTransaction } = useWallet();
     const [open, setOpen] = React.useState(false);
-    const [input_value,set_input_value]=useState("");
+    const [input_value,set_input_value]=useState("0");
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const max_button = () => set_input_value(balance);
+    const check_before_submit = (key:string)=>{
 
-    const transaction:InputTransactionData = {
-        data: {
-            function:`${moduleAddress}::helper::create_bet_card`,
-            typeArguments:[],
-            functionArguments:[]
-        }
-    }
-    const check_before_submit = ()=>{
         const a = parseFloat(input_value);
         try{
             if( a == 0){
                 return message.error(`please enter input amount`)
             }
+            console.log(a)
         }catch (error:any){
-
+            console.log(error)
         }
 
-        submit_transaction();
+        submit_transaction(key).then(r => console.log(r));
     }
-    const submit_transaction = async () => {
+    const submit_transaction = async (key:string) => {
         if (!account) return [];
-        try {
-            // sign and submit transaction to chain
-            //const response = await signAndSubmitTransaction(transaction);
-            // wait for transaction
-            //const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
-           // const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+        const regex = /^\d+(\.\d{1,2})?$/;
+        if(regex.test(input_value)){
 
-            //
-            // message.success(
-            //     <span>
-            //             hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
-            //         </span>
-            // )
+            let result = `${pair_name_left} vs ${pair_name_right}`;
+            const now =new Date();
+            const day = String(now.getDate()).padStart(2,'0');
+            const month = String(now.getMonth()+1).padStart(2,'0');
+            const year = String(now.getFullYear());
 
-        } catch (error: any) {
-            message.error(`please try again`)
+            const transaction:InputTransactionData = {
+                data: {
+                    function:`${moduleAddress}::helper::create_bet_card`,
+                    typeArguments:[],
+                    functionArguments:[parseFloat(input_value)*100000000,`${day}${month}${year}`,key,result]
+                }
+            }
+            try {
+                // sign and submit transaction to chain
+                const response = await signAndSubmitTransaction(transaction);
+                // wait for transaction
+                const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+                const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+
+
+                message.success(
+                    <span>
+                            hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                        </span>
+                )
+
+            } catch (error: any) {
+                message.error(`please try again`)
+            }
+        }else{
+            message.error(`please input right number`)
         }
     }
     useEffect(() => {
@@ -184,8 +197,8 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                             whileHovwe={{scale: 1.5}}
                                             whileTap={{scale: 0.9}}
                                             transition={{type: "spring", stiffness: 400, damping: 25}}
-                                            onClick={check_before_submit()}>
-                                    <button className={"rainbow"} style={{height:100}} >
+                                            >
+                                    <button className={"rainbow"} style={{height:100}} onClick={() =>check_before_submit("1")}>
                                         <Row>
                                             <Col offset={2} span={20}><p style={{fontSize:20}}>{pair_name_left}</p></Col>
                                         </Row>
@@ -204,9 +217,9 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                             whileHovwe={{scale: 1.5}}
                                             whileTap={{scale: 0.9}}
                                             transition={{type: "spring", stiffness: 400, damping: 25}}
-                                            onClick={check_before_submit()}
+
                                 >
-                                    <button className={"rainbow"} style={{height:100}} >
+                                    <button className={"rainbow"} style={{height:100}} onClick={() =>check_before_submit("2")}>
                                         <Row>
                                             <Col offset={2} span={20}><p style={{fontSize:20}}>Middle</p></Col>
                                         </Row>
@@ -224,8 +237,8 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                             whileHovwe={{scale: 1.5}}
                                             whileTap={{scale: 0.9}}
                                             transition={{type: "spring", stiffness: 400, damping: 25}}
-                                            onClick={check_before_submit()}>
-                                    <button className={"rainbow"} style={{height:100}}  >
+                                            >
+                                    <button className={"rainbow"} style={{height:100}}  onClick={() =>check_before_submit("3")}>
 
                                         <Row>
                                             <Col offset={2} span={20}><p style={{fontSize:20}}>{pair_name_right}</p></Col>
@@ -247,4 +260,4 @@ const New_Bet_page:React.FC<{left_url:string,right_url:string,pair_name_left:str
     );
 }
 
-export default New_Bet_page;
+export default New_Bet_card;

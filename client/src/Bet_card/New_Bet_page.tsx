@@ -37,6 +37,19 @@ interface Data {
     };
     // 其他字段可以根据需要定义
 }
+interface SavePair {
+    expired_time: string;
+    left: string;
+    left2: string;
+    left_url: string;
+    middle: string;
+    middle2: string;
+    pair_name: string;
+    pair_type: string;
+    right: string;
+    right2: string;
+    right_url: string;
+}
 const text1 = `
   If you are our diffusion helper , you can help us to upload correct result.
 `;
@@ -47,7 +60,7 @@ const options = {
     method: 'GET',
     headers: {accept: 'application/json', 'X-API-KEY': 'bT8aS3ezHOl6T1_PyaM30lkg7odC_42l'}
 };
-const New_Bet_page:React.FC<{ length:number}> = ({length }) => {
+const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string}> = ({length,pair ,balance1}) => {
     const { account, signAndSubmitTransaction } = useWallet();
     const [savePair, setSavePair] = useState<SavePair[]>([]);
     const [pair_can_upload,set_pair_can_upload]=useState<string[]>([]);
@@ -59,29 +72,26 @@ const New_Bet_page:React.FC<{ length:number}> = ({length }) => {
         const length = savePair.length;
         return(
             <>
-                {Array.from({ length: boxCount }).map((_, index) => (
-                    <New_Bet_card left_url={"data:image/png;base64,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"} right_url={"data:image/png;base64,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"} pair_name_left={"aptos"} pair_name_right={"sol"} balance={"100"} left={"1.78"} right={"1.8"} middle={"1.6"}/>
-                ))}
+                {Array.from({ length: boxCount }).map((_, index) => {
+                    const [firstPart, secondPart] = pair[index].pair_name.split(" vs ");
+                    const a = (parseInt(pair[index].left, 10)/parseInt(pair[index].left2, 10)).toFixed(2).toString();
+                    const b = (parseInt(pair[index].middle, 10)/parseInt(pair[index].middle2, 10)).toFixed(2).toString();
+                    const c = (parseInt(pair[index].right, 10)/parseInt(pair[index].right2, 10)).toFixed(2).toString();
+                    let real_balance = (parseInt(balance1,10)/100000000).toFixed(2).toString();
+                    // console.log(`a : ${a}`);
+                    // console.log(`b : ${b}`);
+                    // console.log(`c : ${c}`);
+                    // console.log(`left url : ${pair[index].left_url}`);
+                    // console.log(`right url : ${pair[index].right_url}`);
+                    return(
+                        <New_Bet_card key={index} left_url={pair[index].left_url} right_url={pair[index].right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={b} middle={c}/>
+                    );
+                })}
             </>
         )
     }
 
-    const  fatch_diffusion_resource_from_aptos = () =>{
-        if (!account) return [];
-        fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${resources_address}/resource/${resources_name}`, options)
-            .then(response =>{
-                console.log(response)
-                response.json().then((response:Data) => {
-                    setSavePair(response.save_Pair_result_store.save_pair);
-                    // const {name,icon} = response.save1;
-                    // const { diffusion_loyalty, level,win,lose } = response.save_5;
-                    // const{badges} = response.save_4;
-                    console.error(response)
-                })
-                    .catch(err => console.error(err));})
 
-        //const priceUpdates = await connection.getLatestVaas()
-    }
     useEffect(() => {
         //pythConnection.start()
 

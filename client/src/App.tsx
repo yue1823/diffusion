@@ -61,44 +61,69 @@ interface  Chips {
     right:string;
     given:string;
 }
-interface Data {
-    fee:{
-        allocation_share_1:string;
-        allocation_share_2:string;
-        bank_share_1:string;
-        bank_share_2:string;
-        fees_1:string;
-        fees_2:string;
-        margin:string;
-        nft_chance_1:string;
-        nft_chance_2:string;
-        nft_id:string;
-    };
-    save_Cylinder_Pairs:Cylinder_Pair[];
-    save_Helper_list:{
-        list:Helper[];
-        period:string[];
-    };
-    save_Pair_result_store: {
-        save_admin_set_result:boolean[];
-        save_can_claim:boolean[];
-        save_chips:Chips[];
-        save_pair: SavePair[];
-        save_lost_pair:{
-                        big_vec: {
-                            vec: any[];  // 你可以根据具体数据类型替换 `any`
-                        };
-                        bucket_size: {
-                            vec: any[];  // 你可以根据具体数据类型替换 `any`
-                        };
-                        inline_capacity: {
-                            vec: any[];  // 你可以根据具体数据类型替换 `any`
-                        };
-                        inline_vec: any[];  // 你可以根据具体数据类型替换 `any`
-                    };
-        save_result:string[];
-    };
-    // 其他字段可以根据需要定义
+interface Badges{
+    name : string;
+    url : string;
+}
+interface Badges_list{
+    save_badges:Badges;
+    save_can_mint:boolean;
+    save_allow_list:string[];
+    save_list:string[];
+}
+// interface Data {
+//     fee:{
+//         allocation_share_1:string;
+//         allocation_share_2:string;
+//         bank_share_1:string;
+//         bank_share_2:string;
+//         fees_1:string;
+//         fees_2:string;
+//         margin:string;
+//         nft_chance_1:string;
+//         nft_chance_2:string;
+//         nft_id:string;
+//     };
+//     save_Cylinder_Pairs:Cylinder_Pair[];
+//     save_Helper_list:{
+//         list:Helper[];
+//         period:string[];
+//     };
+//     save_Pair_result_store: {
+//         save_admin_set_result:boolean[];
+//         save_can_claim:boolean[];
+//         save_chips:Chips[];
+//         save_pair: SavePair[];
+//         save_lost_pair:{
+//                         big_vec: {
+//                             vec: any[];  // 你可以根据具体数据类型替换 `any`
+//                         };
+//                         bucket_size: {
+//                             vec: any[];  // 你可以根据具体数据类型替换 `any`
+//                         };
+//                         inline_capacity: {
+//                             vec: any[];  // 你可以根据具体数据类型替换 `any`
+//                         };
+//                         inline_vec: any[];  // 你可以根据具体数据类型替换 `any`
+//                     };
+//         save_result:string[];
+//     };
+//     save_badges_list:Badges_list[];
+//     save_helper_chance:{
+//         chance_for_wrong_time:string;
+//         helper_number:string;
+//         least_helper_result:string;
+//         maimun_helper_num:string;
+//     }
+//     // 其他字段可以根据需要定义
+// }
+interface Data{
+    save_admin_set_result: any[]; // 如果不知道具体结构，可以使用any[]
+    save_can_claim: any[];
+    save_chips: any[];
+    save_lost_pair: any[]; // 用object或自定义结构替换
+    save_pair: any[]; // 这是你关心的部分
+    save_result: string;
 }
 const options = {
     method: 'GET',
@@ -143,6 +168,7 @@ const App: React.FC<{id:string}> = ({id}) => {
     const [icon_url , set_icon_url]  = useState('https://raw.githubusercontent.com/yue1823/diffusion/main/client/src/art/diffusion7.png');
     const [account_name , set_account_name] = useState('');
     const [savePair, setSavePair] = useState<SavePair[]>([]);
+    const [balance1,set_balance]=useState<string>('');
     const create_diffusion_account =  async () =>{
         if (!account) return [];
         const transaction:InputTransactionData = {
@@ -190,6 +216,8 @@ const App: React.FC<{id:string}> = ({id}) => {
         const random_view_fun  = `${diffusion_address}::pay_module::check_randome` as `${string}::${string}::${string}`
 
         try {
+            let a= await aptos.account.getAccountAPTAmount({accountAddress: account.address}).then(balance=>{ set_balance(String(balance));});
+
             setuser_address(account.address);
             const diffusion_exists = await aptos.account.getAccountResource({accountAddress: account.address, resourceType:random_resource})
             setOpen(false);
@@ -203,16 +231,20 @@ const App: React.FC<{id:string}> = ({id}) => {
         if (!account) return [];
         fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${resources_address}/resource/${resources_name}`, options)
             .then(response => response.json())
-            .then((response:Data) => {
-                if (response && response.save_Pair_result_store && response.save_Pair_result_store.save_pair) {
-                    setSavePair(response.save_Pair_result_store.save_pair);
+            .then((response) => {
+                if (response && response.data.save_Pair_result_store && response.data.save_Pair_result_store.save_pair) {
+                    setSavePair(response.data.save_Pair_result_store.save_pair as SavePair[]);
                 } else {
                     console.error('Unexpected data structure:', response);
                 }
+                //else {
+                //     console.error('Unexpected data structure:', response);
+                // }
                 // const {name,icon} = response.save1;
                 // const { diffusion_loyalty, level,win,lose } = response.save_5;
                 // const{badges} = response.save_4;
                 console.log(response)
+                console.log(`save_pair ${savePair}`)
                 console.log(`length of save_pair ${savePair.length}`)
             })
             .catch(err => console.error(err));
@@ -232,7 +264,7 @@ const App: React.FC<{id:string}> = ({id}) => {
         };
         setFavicon(Apt_logo);
 
-       //fatch_diffusion_resource_from_aptos()
+       fatch_diffusion_resource_from_aptos()
         console.log(`save_pair ： ${savePair}`)
     fetchList();
     }, [account?.address]);
@@ -265,6 +297,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                                           <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
                                               <Col span={24}>
                                                   <Carousel_comp/>
+
                                               </Col>
                                           </Row>
                                       </Content>
@@ -278,7 +311,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                                       <Route  path={"/" } element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
                                       <Route  path={"app"} element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
                                       <Route  path={"/swap"} element={<Swap_page/>}/>
-                                      <Route  path={"Bet"  } element={<New_Bet_page length={savePair.length}/>}/>
+                                      <Route  path={"Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1}/>}/>
                                       <Route  path={"admin"} element={<Admin_page/>}/>
                                       <Route  path={"nft"} element={<NFT_page/>}/>
                                       <Route  path={"Helper"} element={<Helper_page/>}/>
