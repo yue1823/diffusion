@@ -84,7 +84,7 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string}> = 
                     // console.log(`left url : ${pair[index].left_url}`);
                     // console.log(`right url : ${pair[index].right_url}`);
                     return(
-                        <New_Bet_card key={index} left_url={pair[index].left_url} right_url={pair[index].right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={b} middle={c}/>
+                        <New_Bet_card key={index} left_url={pair[index].left_url} right_url={pair[index].right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b}/>
                     );
                 })}
             </>

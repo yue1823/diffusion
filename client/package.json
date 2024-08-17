@@ -26,6 +26,7 @@
     "antd": "^5.1.4",
     "copy-to-clipboard": "^3.3.3",
     "framer-motion": "^12.0.0-alpha.0",
+    "gsap": "^3.12.5",
     "kinet": "^2.2.1",
     "petra-plugin-wallet-adapter": "^0.4.5",
     "react": "^18.3.1",

@@ -3,7 +3,7 @@ import {Avatar, Button, Col, Drawer, Layout, Row, Steps, Image, message, List, I
 import TOP_bar from './header/heard_bar';
 import Main_content from "./content/content";
 import {InputTransactionData, useWallet} from "@aptos-labs/wallet-adapter-react";
-import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+import {Aptos, AptosConfig, MoveValue, Network} from "@aptos-labs/ts-sdk";
 import { DataContext } from './DataContext';
 import Footer_bar from "./Footer/Footer";
 import {CloseOutlined, InfoCircleOutlined, UserAddOutlined, UserOutlined} from "@ant-design/icons";
@@ -32,6 +32,10 @@ interface Cylinder_Pair{
     save_total:string;
     send_address_vector:string[];
     send_amount_vector:string[];
+}
+interface  Helper_data{
+    chips: Chips[];
+    pairs:SavePair[];
 }
 interface Helper{
     account:string;
@@ -71,60 +75,60 @@ interface Badges_list{
     save_allow_list:string[];
     save_list:string[];
 }
-// interface Data {
-//     fee:{
-//         allocation_share_1:string;
-//         allocation_share_2:string;
-//         bank_share_1:string;
-//         bank_share_2:string;
-//         fees_1:string;
-//         fees_2:string;
-//         margin:string;
-//         nft_chance_1:string;
-//         nft_chance_2:string;
-//         nft_id:string;
-//     };
-//     save_Cylinder_Pairs:Cylinder_Pair[];
-//     save_Helper_list:{
-//         list:Helper[];
-//         period:string[];
-//     };
-//     save_Pair_result_store: {
-//         save_admin_set_result:boolean[];
-//         save_can_claim:boolean[];
-//         save_chips:Chips[];
-//         save_pair: SavePair[];
-//         save_lost_pair:{
-//                         big_vec: {
-//                             vec: any[];  // 你可以根据具体数据类型替换 `any`
-//                         };
-//                         bucket_size: {
-//                             vec: any[];  // 你可以根据具体数据类型替换 `any`
-//                         };
-//                         inline_capacity: {
-//                             vec: any[];  // 你可以根据具体数据类型替换 `any`
-//                         };
-//                         inline_vec: any[];  // 你可以根据具体数据类型替换 `any`
-//                     };
-//         save_result:string[];
-//     };
-//     save_badges_list:Badges_list[];
-//     save_helper_chance:{
-//         chance_for_wrong_time:string;
-//         helper_number:string;
-//         least_helper_result:string;
-//         maimun_helper_num:string;
-//     }
-//     // 其他字段可以根据需要定义
-// }
-interface Data{
-    save_admin_set_result: any[]; // 如果不知道具体结构，可以使用any[]
-    save_can_claim: any[];
-    save_chips: any[];
-    save_lost_pair: any[]; // 用object或自定义结构替换
-    save_pair: any[]; // 这是你关心的部分
-    save_result: string;
+interface Data {
+    fee:{
+        allocation_share_1:string;
+        allocation_share_2:string;
+        bank_share_1:string;
+        bank_share_2:string;
+        fees_1:string;
+        fees_2:string;
+        margin:string;
+        nft_chance_1:string;
+        nft_chance_2:string;
+        nft_id:string;
+    };
+    save_Cylinder_Pairs:Cylinder_Pair[];
+    save_Helper_list:{
+        list:Helper[];
+        period:string[];
+    };
+    save_Pair_result_store: {
+        save_admin_set_result:boolean[];
+        save_can_claim:boolean[];
+        save_chips:Chips[];
+        save_pair: SavePair[];
+        save_lost_pair:{
+                        big_vec: {
+                            vec: any[];  // 你可以根据具体数据类型替换 `any`
+                        };
+                        bucket_size: {
+                            vec: any[];  // 你可以根据具体数据类型替换 `any`
+                        };
+                        inline_capacity: {
+                            vec: any[];  // 你可以根据具体数据类型替换 `any`
+                        };
+                        inline_vec: any[];  // 你可以根据具体数据类型替换 `any`
+                    };
+        save_result:string[];
+    };
+    save_badges_list:Badges_list[];
+    save_helper_chance:{
+        chance_for_wrong_time:string;
+        helper_number:string;
+        least_helper_result:string;
+        maimun_helper_num:string;
+    }
+    // 其他字段可以根据需要定义
 }
+// interface Data{
+//     save_admin_set_result: any[]; // 如果不知道具体结构，可以使用any[]
+//     save_can_claim: any[];
+//     save_chips: any[];
+//     save_lost_pair: any[]; // 用object或自定义结构替换
+//     save_pair: any[]; // 这是你关心的部分
+//     save_result: string;
+// }
 const options = {
     method: 'GET',
     headers: {accept: 'application/json', 'X-API-KEY':'bT8aS3ezHOl6T1_PyaM30lkg7odC_42l'}
@@ -133,8 +137,8 @@ const text1 = `
   If you are our diffusion helper , you can help us to upload correct result.
 `;
 const NOW_Network = "testnet";
-const resources_name = "0x6484fa91822ffab0092151219d0ca96beff41934e9ebbdaac432899594c5055::helper::Diffusion_store_tree";
-const resources_address = "0x7d6d0640179e280abefeda5d687115ebcf5595337e777e86d1296fb1967fa4b";
+const resources_name = "0x3ec4c1b27a5466be2c45f3a9b134634d9e394979b3d157c60e385e714267e0ca::helper::Diffusion_store_tree";
+const resources_address = "0x7a40fc78cba8e4b86f7bf90f21bc78f453d5a4dc158d60cd40e3e0455cebcd5";
 
 const test_config = new AptosConfig({
     fullnode: "https://aptos-testnet.nodit.io/bT8aS3ezHOl6T1_PyaM30lkg7odC_42l/v1",
@@ -142,7 +146,10 @@ const test_config = new AptosConfig({
 });
 const aptosConfig = new AptosConfig({ network: Network.TESTNET});
 const aptos = new Aptos(aptosConfig);
-
+const defaultHelperData: Helper_data = {
+    chips: [],
+    pairs: []
+};
 const App: React.FC<{id:string}> = ({id}) => {
 
     const { account, signAndSubmitTransaction } =useWallet() ;
@@ -163,12 +170,14 @@ const App: React.FC<{id:string}> = ({id}) => {
     const [user_address,setuser_address]=useState<string>("User address")
     const  [index_of_to_address]=useState<number>(0);
     const [diffusion_account,setdiffusion_account]=useState<boolean>(false);
-    const diffusion_address = "0x06484fa91822ffab0092151219d0ca96beff41934e9ebbdaac432899594c5055";
+    const diffusion_address = "0x3ec4c1b27a5466be2c45f3a9b134634d9e394979b3d157c60e385e714267e0ca";
     const [transaction_hash , settransaction_hash] = useState<string>('');
     const [icon_url , set_icon_url]  = useState('https://raw.githubusercontent.com/yue1823/diffusion/main/client/src/art/diffusion7.png');
     const [account_name , set_account_name] = useState('');
     const [savePair, setSavePair] = useState<SavePair[]>([]);
     const [balance1,set_balance]=useState<string>('');
+    const [helper_data,set_helper_data]=useState<MoveValue[]>();
+    const [fetch_data,setfetch_data]=useState<Helper_data>();
     const create_diffusion_account =  async () =>{
         if (!account) return [];
         const transaction:InputTransactionData = {
@@ -212,8 +221,10 @@ const App: React.FC<{id:string}> = ({id}) => {
     const fetchList = async () => {
         if (!account) return [];
         // change this to be your module account address
-        const random_resource = `${diffusion_address}::helper::Account_tree` as `${string}::${string}::${string}`
-        const random_view_fun  = `${diffusion_address}::pay_module::check_randome` as `${string}::${string}::${string}`
+        const random_resource = `${diffusion_address}::helper::Account_tree` as `${string}::${string}::${string}`;
+        const random_view_fun  = `${diffusion_address}::pay_module::check_randome` as `${string}::${string}::${string}`;
+
+
 
         try {
             let a= await aptos.account.getAccountAPTAmount({accountAddress: account.address}).then(balance=>{ set_balance(String(balance));});
@@ -221,6 +232,16 @@ const App: React.FC<{id:string}> = ({id}) => {
             setuser_address(account.address);
             const diffusion_exists = await aptos.account.getAccountResource({accountAddress: account.address, resourceType:random_resource})
             setOpen(false);
+            const helper_data = await aptos.view(
+                {
+                    payload: {
+                        function: `${diffusion_address}::helper::check_helper_list`,
+                        functionArguments: [account.address]
+                    }
+                }
+            )
+            console.log(helper_data);
+            set_helper_data(helper_data);
         } catch (e: any) {
             setOpen(true);
             console.error('Failed to parse JSON:', e);
@@ -232,8 +253,12 @@ const App: React.FC<{id:string}> = ({id}) => {
         fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${resources_address}/resource/${resources_name}`, options)
             .then(response => response.json())
             .then((response) => {
+
+
                 if (response && response.data.save_Pair_result_store && response.data.save_Pair_result_store.save_pair) {
                     setSavePair(response.data.save_Pair_result_store.save_pair as SavePair[]);
+                    const new_date:Helper_data = { pairs:response.data.save_Pair_result_store.save_pair as SavePair[],chips:response.data.save_Pair_result_store.save_chips as Chips[]}
+                    setfetch_data(new_date)
                 } else {
                     console.error('Unexpected data structure:', response);
                 }
@@ -243,9 +268,9 @@ const App: React.FC<{id:string}> = ({id}) => {
                 // const {name,icon} = response.save1;
                 // const { diffusion_loyalty, level,win,lose } = response.save_5;
                 // const{badges} = response.save_4;
-                console.log(response)
-                console.log(`save_pair ${savePair}`)
-                console.log(`length of save_pair ${savePair.length}`)
+                // console.log(response)
+                // console.log(`save_pair ${savePair}`)
+                // console.log(`length of save_pair ${savePair.length}`)
             })
             .catch(err => console.error(err));
         //const priceUpdates = await connection.getLatestVaas()
@@ -265,10 +290,11 @@ const App: React.FC<{id:string}> = ({id}) => {
         setFavicon(Apt_logo);
 
        fatch_diffusion_resource_from_aptos()
-        console.log(`save_pair ： ${savePair}`)
+        // console.log(`save_pair ： ${savePair}`)
     fetchList();
     }, [account?.address]);
-  return (
+
+    return (
       <>
 
           <DataContext.Provider value={{ sharedData, setSharedData }}>
@@ -314,7 +340,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                                       <Route  path={"Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1}/>}/>
                                       <Route  path={"admin"} element={<Admin_page/>}/>
                                       <Route  path={"nft"} element={<NFT_page/>}/>
-                                      <Route  path={"Helper"} element={<Helper_page/>}/>
+                                      <Route  path={"Helper"} element={<Helper_page helper_data={helper_data ? helper_data:[]} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>
                                       <Route path={"my_page"} element={<User_page/>}></Route>
 
                                       {/*<Route path={"/"} element={<Main_content address={user_address} index_of_address={index_of_address}/>}></Route>*/}

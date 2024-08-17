@@ -36,10 +36,10 @@ import {
 } from "@aptos-labs/wallet-adapter-react";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 
-const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
-const moduleAddress = "0x06484fa91822ffab0092151219d0ca96beff41934e9ebbdaac432899594c5055";
+const moduleAddress = "0x3ec4c1b27a5466be2c45f3a9b134634d9e394979b3d157c60e385e714267e0ca";
 const testnet_module ="0x313217c756b70e59d26bcc22f20af94d850bc4844f7e37dd7f94bc2cc4c3c619";
 const connect_Wallet = 'Connect Wallet.';
 type NotificationPlacement = NotificationArgsProps['placement'];

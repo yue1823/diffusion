@@ -20,9 +20,9 @@ const box_style = {
     boxShadow: 2,
     p: 4,
 };
-const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
-const moduleAddress = '0xfc33225e4f4155e79db5cb873c065e7de6f9cbe25302b0ec2928e5fea76c31ec'
+const moduleAddress = '0x3ec4c1b27a5466be2c45f3a9b134634d9e394979b3d157c60e385e714267e0ca'
 
 const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,balance:string ,left:string,middle:string,right :string}> = ({left_url,right_url,pair_name_left,pair_name_right,balance,left,right,middle }) => {
     const { account, signAndSubmitTransaction } = useWallet();

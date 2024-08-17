@@ -95,7 +95,7 @@ const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_lef
                                                         top: -10,
                                                         borderRadius: 10
                                                     }}>
-                                                        <p style={{position: "relative", height: 20, width: 100,top:70,left:12}}>
+                                                        <p style={{position: "relative", height: 20, width: 100,top:70,left:-4}}>
                                                             <h1>APT</h1></p>
                                                     </div>
                                                     <Statistic
