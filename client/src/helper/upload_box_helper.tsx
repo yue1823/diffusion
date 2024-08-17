@@ -1,8 +1,8 @@
 
-import {Col, Collapse, Row, theme, Image, Card, Segmented, Button, Statistic} from "antd";
+import {Col, Collapse, Row, theme, Image, Card, Segmented, Button, Statistic, message} from "antd";
 import React, {ReactNode, useEffect, useState} from 'react';
 import Modal from '@mui/material/Modal';
-import { ToastContainer, toast } from "react-toastify";
+import {ToastContainer, toast, Bounce} from "react-toastify";
 import {  Container } from "reactstrap"; // 假設你使用了 reactstrap
 import {Content} from "antd/lib/layout/layout";
 import APT_logo from "../logo/aptos-apt-logo.svg"
@@ -11,6 +11,8 @@ import '../css_/rainbow_button.css';
 import "../css_/helper_vs_box_.css"
 import { motion } from "framer-motion";
 import {Box} from "@mui/material";
+import {InputTransactionData, useWallet} from "@aptos-labs/wallet-adapter-react";
+import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 const box_style = {
     position: 'absolute' as 'absolute',
 
@@ -24,10 +26,55 @@ const box_style = {
     boxShadow: 2,
     p: 4,
 };
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
+const aptos = new Aptos(aptosConfig);
+
+const module_address="0x3ec4c1b27a5466be2c45f3a9b134634d9e394979b3d157c60e385e714267e0ca";
 const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,pool:string}> = ({ left_url,right_url,pair_name_left,pair_name_right,pool}) => {
+    const { account, signAndSubmitTransaction } =useWallet() ;
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const [which1,setwhich1]=useState('');
+    const submit_transaction = async (key:string) => {
+        setwhich1(key)
+        const transaction: InputTransactionData = {
+            data: {
+                function: `${module_address}::helper::helper_upload_result`,
+                functionArguments: [`${pair_name_left} vs ${pair_name_right}` ,which1 ]
+            }
+        }
+        try {
+            // sign and submit transaction to chain
+            const response = await signAndSubmitTransaction(transaction);
+            // wait for transaction
+            const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+            // message.success(
+            //
+            // )
+            toast.success(<span>
+                        hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                    </span>, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            });
+
+        } catch (error: any) {
+            console.log(error);
+            message.error(`please try again`);
+        } finally {
+
+        }
+    }
+
     return (
         <>
             <Col span={8}>
@@ -129,7 +176,7 @@ const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_lef
                                             whileHovwe={{scale: 1.5}}
                                             whileTap={{scale: 0.9}}
                                             transition={{type: "spring", stiffness: 400, damping: 25}}>
-                                    <button className={"rainbow"}>
+                                    <button className={"rainbow"} onClick={() => submit_transaction("1")}>
                                         {pair_name_left}
                                     </button>
                                 </motion.div>
@@ -139,7 +186,7 @@ const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_lef
                                             whileHovwe={{scale: 1.5}}
                                             whileTap={{scale: 0.9}}
                                             transition={{type: "spring", stiffness: 400, damping: 25}}>
-                                    <button className={"rainbow"}>
+                                    <button className={"rainbow"} onClick={() => submit_transaction("2")}>
                                         Middle
                                     </button>
                                 </motion.div>
@@ -149,13 +196,24 @@ const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_lef
                                             whileHovwe={{scale: 1.5}}
                                             whileTap={{scale: 0.9}}
                                             transition={{type: "spring", stiffness: 400, damping: 25}}>
-                                    <button className={"rainbow"}>
+                                    <button className={"rainbow"} onClick={() => submit_transaction("3")}>
                                         {pair_name_right}
                                     </button>
                                 </motion.div>
                             </Col>
                         </Row>
-
+                        <ToastContainer
+                            position="bottom-right"
+                            autoClose={5000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="light"
+                        />
                     </Box>
                 </Modal>
             </Col>

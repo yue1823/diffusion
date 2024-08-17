@@ -47,6 +47,7 @@ interface Helper{
     wrong_time:string;
 }
 interface SavePair {
+    can_bet:boolean;
     expired_time: string;
     left: string;
     left2: string;
@@ -337,7 +338,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                                       <Route  path={"/" } element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
                                       <Route  path={"app"} element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
                                       <Route  path={"/swap"} element={<Swap_page/>}/>
-                                      <Route  path={"Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1}/>}/>
+                                      <Route  path={"Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>
                                       <Route  path={"admin"} element={<Admin_page/>}/>
                                       <Route  path={"nft"} element={<NFT_page/>}/>
                                       <Route  path={"Helper"} element={<Helper_page helper_data={helper_data ? helper_data:[]} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>

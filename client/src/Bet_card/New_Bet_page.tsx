@@ -12,6 +12,7 @@ import {ArrowDownOutlined, ArrowUpOutlined} from "@ant-design/icons";
 import Helper_page from "../helper/helper";
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
 import {Network} from "@aptos-labs/ts-sdk";
+import Helper_upload_box from "../helper/upload_box_helper";
 interface Box_number{
     boxCount: number; // 传入的数量
 }
@@ -37,7 +38,18 @@ interface Data {
     };
     // 其他字段可以根据需要定义
 }
+interface  Helper_data{
+    chips: Chips[];
+    pairs:SavePair[];
+}
+interface  Chips {
+    left:string;
+    middle:string;
+    right:string;
+    given:string;
+}
 interface SavePair {
+    can_bet:boolean;
     expired_time: string;
     left: string;
     left2: string;
@@ -60,11 +72,37 @@ const options = {
     method: 'GET',
     headers: {accept: 'application/json', 'X-API-KEY': 'bT8aS3ezHOl6T1_PyaM30lkg7odC_42l'}
 };
-const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string}> = ({length,pair ,balance1}) => {
+const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,balance1:string}> = ({fetch_data,which1,balance1}) =>{
+    if (!fetch_data) return null;
+    const filteredPairs = fetch_data.pairs
+        .filter(pair =>
+            (which1 === "All" || pair.pair_type === which1) &&
+            pair.can_bet
+        );
+    //Array.from({ length: fetch_data.pairs.length }).map((_, index)
+    console.log(filteredPairs);
+    return (
+        <>
+            {filteredPairs.map((pair, index) => {
+                const [firstPart, secondPart] = pair.pair_name.split(" vs ");
+                const a = (parseInt(pair.left, 10)/parseInt(pair.left2, 10)).toFixed(2).toString();
+                const b = (parseInt(pair.middle, 10)/parseInt(pair.middle2, 10)).toFixed(2).toString();
+                const c = (parseInt(pair.right, 10)/parseInt(pair.right2, 10)).toFixed(2).toString();
+                let real_balance = (parseInt(balance1,10)/100000000).toFixed(2).toString();
+
+                return (
+                    <New_Bet_card key={index} left_url={pair.left_url} right_url={pair.right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b}/>
+
+                );
+            })}
+        </>
+    );
+}
+const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetch_data:Helper_data}> = ({length,pair ,balance1,fetch_data}) => {
     const { account, signAndSubmitTransaction } = useWallet();
     const [savePair, setSavePair] = useState<SavePair[]>([]);
     const [pair_can_upload,set_pair_can_upload]=useState<string[]>([]);
-
+    const [which,set_which] =useState('All');
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
@@ -140,14 +178,16 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string}> = 
                                 <Col span={20}>
                                     <Card title={<span>
                                     <Segmented<string>
-                                        options={['Game', 'Sport', 'Unexpected']}
+                                        options={["All",'game', 'sport', 'unexpected']}
                                         onChange={(value) => {
+                                            set_which(value);
                                             console.log(value); // string
                                         }}
                                     />
                                 </span>} style={{height: 500, backgroundColor: "#f4f4f1"}}>
                                         <Row gutter={[24, 16]}>
-                                            <Desicion_number_of_box boxCount={length}/>
+                                            <Deal_with_data_bet fetch_data={fetch_data} balance1={balance1} which1={which}/>
+                                            {/*<Desicion_number_of_box boxCount={length}/>*/}
                                         </Row>
 
                                     </Card>

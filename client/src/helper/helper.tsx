@@ -38,6 +38,7 @@ interface  Helper_data{
     pairs:SavePair[];
 }
 interface Helper{
+
     account:string;
     helper_contribute:string[];
     helper_point:string;
@@ -47,6 +48,7 @@ interface Helper{
     wrong_time:string;
 }
 interface SavePair {
+    can_bet:boolean;
     expired_time: string;
     left: string;
     left2: string;
@@ -123,9 +125,15 @@ interface Data {
 }
 const Deal_with_data: React.FC<{ fetch_data: Helper_data ,which1:string}> = ({fetch_data,which1}) =>{
     if (!fetch_data) return null;
-    const filteredPairs = which1 === "All"
-        ? fetch_data.pairs // 如果 which1 为 "all"，则不进行过滤
-        : fetch_data.pairs.filter(pair => pair.pair_type === which1);
+    // const filteredPairs = which1 === "All"
+    //     ? fetch_data.pairs // 如果 which1 为 "all"，则不进行过滤
+    //     : fetch_data.pairs.filter(pair => pair.pair_type === which1);
+
+    const filteredPairs = fetch_data.pairs
+        .filter(pair =>
+            (which1 === "All" || pair.pair_type === which1) &&
+            !pair.can_bet
+        );
     //Array.from({ length: fetch_data.pairs.length }).map((_, index)
     console.log(filteredPairs);
     return (
