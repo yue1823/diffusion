@@ -62,6 +62,34 @@ interface SavePair {
     right2: string;
     right_url: string;
 }
+interface Bet_card_data{
+    a_win:string;
+    b_win:string;
+    c_win:string;
+    expired_time:string;
+    pair:SavePair;
+    time:string;
+    which:string;
+}
+interface Badges{
+    name : string;
+    url : string;
+}
+interface Profile{
+    save_icon:{
+        icon:string;
+        name:string;
+    };
+    save_bet_card:Bet_card_data[];
+    save_badges:Badges[];
+    save_level:{
+        diffusion_point:string;
+        level:string;
+        lose:string;
+        win:string;
+    }
+
+}
 const text1 = `
   If you are our diffusion helper , you can help us to upload correct result.
 `;
@@ -98,11 +126,12 @@ const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,bala
         </>
     );
 }
-const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetch_data:Helper_data}> = ({length,pair ,balance1,fetch_data}) => {
+const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetch_data:Helper_data,profile_data:Profile}> = ({length,pair ,balance1,fetch_data,profile_data}) => {
     const { account, signAndSubmitTransaction } = useWallet();
     const [savePair, setSavePair] = useState<SavePair[]>([]);
     const [pair_can_upload,set_pair_can_upload]=useState<string[]>([]);
     const [which,set_which] =useState('All');
+    const [user , set_user] = useState<Profile>();
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
@@ -128,13 +157,20 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
             </>
         )
     }
-
+        const set_data = () =>{
+            if (!fetch_data) return null;
+            set_user(profile_data);
+            // console.log(`user data : ${user}`)
+            // console.log(user?.save_icon.icon)
+            // console.log(user?.save_icon.name)
+            // console.log(user?.save_level)
+        }
 
     useEffect(() => {
         //pythConnection.start()
-
+        set_data()
         //fatch_diffusion_resource_from_aptos()
-    },[account]);
+    },[account,profile_data]);
     return (
         <>
             <Content style={{padding: '15px 30px'}}>
@@ -153,12 +189,11 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
                         >
                             <Row gutter={{xs: 8, sm: 16, md: 24, lg: 32}}>
                                 <Col span={4}>
-                                    <Card title={"Helper"} style={{height: 500, backgroundColor: "#f4f4f1"}}>
+                                    <Card title={`${user?.save_icon.name}`} style={{height: 500, backgroundColor: "#f4f4f1"}}>
                                         <Row>
                                             <Col span={24}>
-                                                <Card>
-                                                    <img src={APT_logo} alt={"logo1"}></img>
-                                                </Card>
+                                                <img src={user?.save_icon.icon} alt={"logo1"}
+                                                     style={{width: 150, height: 150}}></img>
                                             </Col>
                                         </Row>
                                         <br/>

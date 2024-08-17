@@ -21,6 +21,48 @@ import {
 import {Link, Route, Routes} from "react-router-dom";
 import Main_content from "../content/content";
 import Swap_page from "../swap_page";
+interface SavePair {
+    can_bet:boolean;
+    expired_time: string;
+    left: string;
+    left2: string;
+    left_url: string;
+    middle: string;
+    middle2: string;
+    pair_name: string;
+    pair_type: string;
+    right: string;
+    right2: string;
+    right_url: string;
+}
+interface Bet_card_data{
+    a_win:string;
+    b_win:string;
+    c_win:string;
+    expired_time:string;
+    pair:SavePair;
+    time:string;
+    which:string;
+}
+interface Badges{
+    name : string;
+    url : string;
+}
+interface Profile{
+    save_icon:{
+        icon:string;
+        name:string;
+    };
+    save_bet_card:Bet_card_data[];
+    save_badges:Badges[];
+    save_level:{
+        diffusion_point:string;
+        level:string;
+        lose:string;
+        win:string;
+    }
+
+}
 const { Header, Content, Footer } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -99,7 +141,7 @@ const drop_item: MenuProps['items']= [
         ),
     },
 ]
-const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_address,index_of_address}) =>{
+const TOP_bar:React.FC<{ user_address:string,index_of_address:number,profile_data:Profile}>=({user_address,index_of_address,profile_data}) =>{
 
     return (
         <>
@@ -164,8 +206,8 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_ad
                                                         <Col span={4}></Col>
                                                         <Col span={24}>
                                                             <img
-                                                                alt="example"
-                                                                src={My_logo}
+                                                                alt={`${profile_data.save_icon.icon}`}
+                                                                src={profile_data.save_icon.icon}
                                                                 style={{height: 200, width: 200,left:50,position:"relative",top:10}}
                                                             />
                                                         </Col>
@@ -179,12 +221,13 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number}>=({user_ad
 
                                                         <Col span={24}>
                                                             <Card  style={{backgroundColor:"#646262",color:"white"}}>
-                                                                <Row>
-                                                                    <Col span={4}>
+                                                                <Row gutter={[12,12]}>
+                                                                    <Col span={24}>
+                                                                        <h1 style={{color:"white"}}>{profile_data.save_icon.name}</h1>
+                                                                    </Col>
+                                                                    <Col span={24}>
                                                                         Level:
                                                                     </Col>
-                                                                </Row>
-                                                                <Row>
                                                                     <Col span={24}>
                                                                         <Progress percent={50} strokeColor={twoColors} style={{color:"white"}}/>
                                                                     </Col>

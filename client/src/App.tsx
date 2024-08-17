@@ -130,6 +130,31 @@ interface Data {
 //     save_pair: any[]; // 这是你关心的部分
 //     save_result: string;
 // }
+interface Profile{
+    save_icon:{
+        icon:string;
+        name:string;
+    };
+    save_bet_card:Bet_card_data[];
+    save_badges:Badges[];
+    save_level:{
+        diffusion_point:string;
+        level:string;
+        lose:string;
+        win:string;
+    }
+
+}
+
+interface Bet_card_data{
+    a_win:string;
+    b_win:string;
+    c_win:string;
+    expired_time:string;
+    pair:SavePair;
+    time:string;
+    which:string;
+}
 const options = {
     method: 'GET',
     headers: {accept: 'application/json', 'X-API-KEY':'bT8aS3ezHOl6T1_PyaM30lkg7odC_42l'}
@@ -150,6 +175,20 @@ const aptos = new Aptos(aptosConfig);
 const defaultHelperData: Helper_data = {
     chips: [],
     pairs: []
+};
+const defaultProfile: Profile= {
+    save_icon:{
+        icon:'https://pot-124.4everland.store/user_badges.png',
+        name:'User'
+    },
+    save_bet_card:[],
+    save_badges:[],
+    save_level:{
+        diffusion_point:'0',
+        level:'0',
+        lose:'0',
+        win:'0',
+    }
 };
 const App: React.FC<{id:string}> = ({id}) => {
 
@@ -178,6 +217,7 @@ const App: React.FC<{id:string}> = ({id}) => {
     const [savePair, setSavePair] = useState<SavePair[]>([]);
     const [balance1,set_balance]=useState<string>('');
     const [helper_data,set_helper_data]=useState<MoveValue[]>();
+    const [user_profile,set_user_profile] = useState<Profile>();
     const [fetch_data,setfetch_data]=useState<Helper_data>();
     const create_diffusion_account =  async () =>{
         if (!account) return [];
@@ -227,6 +267,7 @@ const App: React.FC<{id:string}> = ({id}) => {
 
 
 
+
         try {
             let a= await aptos.account.getAccountAPTAmount({accountAddress: account.address}).then(balance=>{ set_balance(String(balance));});
 
@@ -243,6 +284,28 @@ const App: React.FC<{id:string}> = ({id}) => {
             )
             console.log(helper_data);
             set_helper_data(helper_data);
+            fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${random_resource}`, options)
+                .then(response => response.json())
+                .then((response) => {
+                    if(response){
+                        const new_profile : Profile = {
+                            save_icon:{
+                                icon:response.data.save_1.icon,
+                                name:response.data.save_1.name
+                            },
+                            save_bet_card:response.data.save_2 as Bet_card_data[],
+                            save_badges:response.data.save_4 as Badges[],
+                            save_level:{
+                                diffusion_point:response.data.save_5.diffusion_loyalty,
+                                level:response.data.save_5.level,
+                                win:response.data.save_5.win,
+                                lose:response.data.save_5.lose
+                            }
+                        }
+                        set_user_profile(new_profile)
+                        console.log(user_profile);
+                    }
+                })
         } catch (e: any) {
             setOpen(true);
             console.error('Failed to parse JSON:', e);
@@ -306,7 +369,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                             <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
                                 <Col span={24}>
                                     <Header style={{display: 'flex', alignItems: 'center',backgroundColor: "#EBE5DF",height:80}}>
-                                        <TOP_bar user_address={user_address}  index_of_address={index_of_to_address}/>
+                                        <TOP_bar user_address={user_address}  index_of_address={index_of_to_address} profile_data={user_profile ? user_profile:defaultProfile}/>
                                     </Header>
                                 </Col>
                             </Row>
@@ -338,7 +401,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                                       <Route  path={"/" } element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
                                       <Route  path={"app"} element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
                                       <Route  path={"/swap"} element={<Swap_page/>}/>
-                                      <Route  path={"Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>
+                                      <Route  path={"Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1} fetch_data={fetch_data ? fetch_data:defaultHelperData} profile_data={user_profile ? user_profile:defaultProfile}/>} />
                                       <Route  path={"admin"} element={<Admin_page/>}/>
                                       <Route  path={"nft"} element={<NFT_page/>}/>
                                       <Route  path={"Helper"} element={<Helper_page helper_data={helper_data ? helper_data:[]} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>
