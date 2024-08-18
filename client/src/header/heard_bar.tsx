@@ -112,9 +112,9 @@ const items: MenuItem[] = [
     {
         key: 'Bridge',
         label: (
-            <Link to={"/Bridge"}>
-                Bridge
-            </Link>
+            // <Link to={"/Bridge"}>
+               ' Bridge'
+            // </Link>
         ),
         icon: <BookOutlined />,
         disabled:true

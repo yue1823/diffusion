@@ -329,7 +329,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                             }
                         }
                         set_user_profile(new_profile)
-                        console.log(response);
+                       // console.log(response);
                     }
                 })
         } catch (e: any) {
@@ -349,15 +349,41 @@ const App: React.FC<{id:string}> = ({id}) => {
                     const length1 = response.data.save_Pair_result_store.save_pair.length;
                     //console.log(`first time : ${dataArray}`)
                     for (let i = 0; i < length1; i++) {
-                        const new_result: Real_Result_Data = {
-                            save_data1:response.data.save_Pair_result_store.save_pair[i] ,
-                            save_can_claim: response.data.save_Pair_result_store.save_can_claim[i],
-                            save_result: response.data.save_Pair_result_store.save_result[i]
+                        if(i ==0){
+                            const new_result: Real_Result_Data = {
+                                save_data1:response.data.save_Pair_result_store.save_pair[i] ,
+                                save_can_claim: response.data.save_Pair_result_store.save_can_claim[i],
+                                save_result: response.data.save_Pair_result_store.save_result[3]
+                            }
+                            dataArray.push(new_result);
+                        }else{
+                            const new_result: Real_Result_Data = {
+                                save_data1:response.data.save_Pair_result_store.save_pair[i] ,
+                                save_can_claim: response.data.save_Pair_result_store.save_can_claim[i],
+                                save_result: response.data.save_Pair_result_store.save_result[3+2*i]
+                            }
+                            dataArray.push(new_result);
                         }
-                        dataArray.push(new_result);
+                        // console.log(`save_result [0]: ${response.data.save_Pair_result_store.save_result[0]} `)
+                        // console.log(`save_result [1]: ${response.data.save_Pair_result_store.save_result[1]} `)
+                        // console.log(`save_result [2]: ${response.data.save_Pair_result_store.save_result[2]} `)
+                        // console.log(`save_result [3]: ${response.data.save_Pair_result_store.save_result[3]} `)
+                        // console.log(`save_result [4]: ${response.data.save_Pair_result_store.save_result[4]} `)
+
                     }
                     set_data_to_user_page(dataArray);
-                    //console.log(`second time : ${dataArray[0].save_data1}`)
+                    //console.log(`dataArray : ${dataArray}`)
+                    // console.log(`dataArray 0: ${dataArray[0].save_can_claim}`)
+                    // console.log(`dataArray 0: ${dataArray[0].save_result}`)
+                    // console.log(`dataArray 0: ${dataArray[0].save_data1.pair_name}`)
+                    // console.log(`dataArray 1: ${dataArray[1].save_can_claim}`)
+                    // console.log(`dataArray 1: ${dataArray[1].save_result}`)
+                    // console.log(`dataArray 1: ${dataArray[1].save_data1.pair_name}`)
+                    // console.log(`dataArray 2: ${dataArray[2].save_can_claim}`)
+                    // console.log(`dataArray 2: ${dataArray[2].save_result}`)
+                    // console.log(`dataArray 2: ${dataArray[2].save_data1.pair_name}`)
+                    // console.log(`dataArray length: ${dataArray.length}`)
+
                 }
                 // set_data_to_user_page
                 if (response && response.data.save_Pair_result_store && response.data.save_Pair_result_store.save_pair) {

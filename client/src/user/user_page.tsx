@@ -98,19 +98,37 @@ const have_card_data :Result_Data[] = [];
 const How_many_claim_card:React.FC<{profile_data:Profile,result_data:Result_Data[] ,which1:string}> = ({profile_data,result_data,which1}) =>{
     if (!profile_data) return null;
     if (!result_data) return null;
+    const empty_vector:Result_Data[]=[];
+    //const [input_data, set_input_data]=useState<Result_Data>();
     const filteredPairs = profile_data.save_bet_card.filter(pair => {
         if (which1 === "All") {
             return true; // 返回所有 bet cards
         } else if (which1 === "Claim") {
             // 在 result_data 中查找匹配的 pair
+            // console.log(`pair.name : ${pair.pair.pair_name }`)
+            // console.log(`pair.which : ${pair.which}`)
+            const find_data = result_data.filter(result =>{
+                if(pair.pair.pair_name == result.save_data1.pair.pair_name){
+                    if(pair.pair.expired_time == result.save_data1.expired_time){
+                        if(pair.which == result.save_result){
+                            const new_data:Result_Data  = {
+                                save_data1:pair,
+                                save_can_claim:result.save_can_claim,
+                                save_result:result.save_result,
+                            }
+                            //set_input_data(new_data)
+                            empty_vector.push(new_data);
+                        }
+                    }
+                }
+            })
             const matchingResult = result_data.find(result =>
-                result.save_data1.pair.pair_name=== pair.pair.pair_name &&
-                result.save_data1.expired_time === pair.expired_time
-
+                result.save_data1.pair.pair_name === pair.pair.pair_name &&
+                result.save_data1.pair.expired_time === pair.expired_time
+               // console.log(`result which : ${result.save_result} result naem : ${result.save_data1.pair.pair_name} `)
             );
-            console.log(`save_result : ${ matchingResult?.save_result}`);
-            console.log(`pair.which : ${ pair.which}`)
 
+            //console.log(`matchingResult: ${matchingResult}`)
             // 如果匹配且 save_result 和 save_can_claim 都为 true
             return matchingResult?.save_result === pair.which && matchingResult?.save_can_claim === true;
         }
@@ -119,25 +137,47 @@ const How_many_claim_card:React.FC<{profile_data:Profile,result_data:Result_Data
     const combinedData = filteredPairs.map(pair => {
         const matchingResult = result_data.find(result =>
             result.save_data1.pair.pair_name === pair.pair.pair_name &&
-            result.save_data1.expired_time === pair.pair.expired_time
+            result.save_data1.pair.expired_time === pair.pair.expired_time
         );
-
+        // if(matchingResult){
+        //     console.log(`match data : ${matchingResult.save_data1}`)
+        //     console.log(`save_result : ${ matchingResult.save_result}`);
+        //     console.log(`pair.claim : ${matchingResult.save_can_claim}`)
+        //     ;}
         // 创建一个新的 Result_Data 对象，包含 Bet card 数据和对应的 result
         return {
             save_data1: pair, // 用户的 Bet card 数据
             save_can_claim: matchingResult?.save_can_claim || false,
             save_result: matchingResult?.save_result || ''
         } as Result_Data;
+
+
     });
+
+   // console.log(`combinedData : ${combinedData.length}`)
+    //     console.log(`save_result : ${ matchingResult.save_result}`);
+    //     console.log(`pair.claim : ${matchingResult.save_can_claim}`)
     // useEffect(() => {
     // },[filteredPairs]);
     return (
         <>
-            <Row gutter={24}>
-                {combinedData.map((pair, index) => (
-                    <Claim_card_user_page  key={index}  profile_data={profile_data} result_data={pair}/>
-                ))}
-            </Row>
+            {which1 === "Claim" &&
+                <Row gutter={24}>
+                    {empty_vector.map((pair, index) => (
+
+                        <Claim_card_user_page  key={index}  profile_data={profile_data} result_data={pair}/>
+                    ))}
+                </Row>
+            }
+            {which1 === "All" &&
+                <Row gutter={24}>
+                    {combinedData.map((pair, index) => (
+
+                        <Claim_card_user_page  key={index}  profile_data={profile_data} result_data={pair}/>
+                    ))}
+                </Row>
+            }
+
         </>
     );
 }
@@ -197,7 +237,14 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] }>
                 }
             }
         }
+        // console.log(`result_data 0: ${result_data[0].save_result}`)
+        // console.log(`result_data 1: ${result_data[1].save_result}`)
+        // console.log(`result_data 2: ${result_data[2].save_result}`)
         set_data_go_claim_card(have_card_data);
+        // console.log(`have_card_data length: ${have_card_data.length}`)
+        // console.log(`have_card_data 0: ${have_card_data[0].save_can_claim}`)
+        // console.log(`have_card_data 0: ${have_card_data[0].save_result}`)
+        // console.log(`have_card_data 0: ${have_card_data[0].save_data1.pair.pair_name}`)
     }
     const fatch_account_from_aptos = () => {
         if (!account) return [];
