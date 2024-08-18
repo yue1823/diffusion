@@ -26,13 +26,67 @@ import {
 
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
+import Claim_card_user_page from "./claim_card";
+
+interface SavePair {
+    can_bet:boolean;
+    expired_time: string;
+    left: string;
+    left2: string;
+    left_url: string;
+    middle: string;
+    middle2: string;
+    pair_name: string;
+    pair_type: string;
+    right: string;
+    right2: string;
+    right_url: string;
+}
+interface Bet_card_data{
+    a_win:string;
+    b_win:string;
+    c_win:string;
+    bet:string;
+    expired_time:string;
+    pair:SavePair;
+    time:string;
+    which:string;
+}
+interface Badges{
+    name : string;
+    url : string;
+}
+interface Profile{
+    save_icon:{
+        icon:string;
+        name:string;
+    };
+    save_bet_card:Bet_card_data[];
+    save_badges:Badges[];
+    save_level:{
+        diffusion_point:string;
+        level:string;
+        lose:string;
+        win:string;
+    }
+
+}
+interface Result_Data{
+    save_data1:Bet_card_data;
+    save_can_claim:boolean;
+    save_result:string;
+}
+interface Real_Result_Data{
+    save_data1:SavePair;
+    save_can_claim:boolean;
+    save_result:string;
+}
 const options = {
     method: 'GET',
     headers: {accept: 'application/json', 'X-API-KEY': 'bT8aS3ezHOl6T1_PyaM30lkg7odC_42l'}
 };
 const NOW_Network = "testnet";
-
-const aptosConfig = new AptosConfig({ network: Network.DEVNET });
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
 const pyth_apt_usd = 'https://hermes.pyth.network/v2/updates/price/stream?ids[]=0x03ae4db29ed4ae33d323568895aa00337e658e348b37509f5372ae51f0af00d5';
@@ -40,10 +94,56 @@ const PYTHNET_CLUSTER_NAME: PythCluster = 'pythnet'
 const connection = new Connection(getPythClusterApiUrl(PYTHNET_CLUSTER_NAME))
 const pythPublicKey = getPythProgramKeyForCluster(PYTHNET_CLUSTER_NAME)
 
+const have_card_data :Result_Data[] = [];
+const How_many_claim_card:React.FC<{profile_data:Profile,result_data:Result_Data[] ,which1:string}> = ({profile_data,result_data,which1}) =>{
+    if (!profile_data) return null;
+    if (!result_data) return null;
+    const filteredPairs = profile_data.save_bet_card.filter(pair => {
+        if (which1 === "All") {
+            return true; // 返回所有 bet cards
+        } else if (which1 === "Claim") {
+            // 在 result_data 中查找匹配的 pair
+            const matchingResult = result_data.find(result =>
+                result.save_data1.pair.pair_name=== pair.pair.pair_name &&
+                result.save_data1.expired_time === pair.expired_time
 
-const User_page:React.FC<{ }> = ({ }) => {
+            );
+            console.log(`save_result : ${ matchingResult?.save_result}`);
+            console.log(`pair.which : ${ pair.which}`)
+
+            // 如果匹配且 save_result 和 save_can_claim 都为 true
+            return matchingResult?.save_result === pair.which && matchingResult?.save_can_claim === true;
+        }
+        return false;
+    });
+    const combinedData = filteredPairs.map(pair => {
+        const matchingResult = result_data.find(result =>
+            result.save_data1.pair.pair_name === pair.pair.pair_name &&
+            result.save_data1.expired_time === pair.pair.expired_time
+        );
+
+        // 创建一个新的 Result_Data 对象，包含 Bet card 数据和对应的 result
+        return {
+            save_data1: pair, // 用户的 Bet card 数据
+            save_can_claim: matchingResult?.save_can_claim || false,
+            save_result: matchingResult?.save_result || ''
+        } as Result_Data;
+    });
+    // useEffect(() => {
+    // },[filteredPairs]);
+    return (
+        <>
+            <Row gutter={24}>
+                {combinedData.map((pair, index) => (
+                    <Claim_card_user_page  key={index}  profile_data={profile_data} result_data={pair}/>
+                ))}
+            </Row>
+        </>
+    );
+}
+const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] }> = ({profile_data,result_data }) => {
     const { account, signAndSubmitTransaction } = useWallet();
-    const [right_of_segement,setright_of_segement]=useState<string>('List');
+    const [right_of_segement,setright_of_segement]=useState<string>('Claim');
     const [helper_point,set_helper_point]=useState<string>('');
     const [wrong_time,set_wrong_time]=useState<string>('');
     const [value,set_value]= useState<string>('0');
@@ -54,6 +154,7 @@ const User_page:React.FC<{ }> = ({ }) => {
     const [user_name ,set_user_name]=useState<string>('User');
     const [user_gain,set_user_gain]=useState<string>('0');
     const [user_lost,set_user_lost]=useState<string>('0');
+    const [data_go_claim_card,set_data_go_claim_card]=useState<Result_Data[]>();
     const [pie_data,set_pie_data] = useState([
         { id: 0, value: 0, label: 'APT' },
         { id: 1, value: 0, label: 'zUSDC' },
@@ -74,12 +175,37 @@ const User_page:React.FC<{ }> = ({ }) => {
             position: "bottom-right"
         });
     }
+
+    const compare_data = () =>{
+       // have_card_data    Result_Data
+        //result_data  -Real_Result_Data
+        //
+        let length1 =profile_data.save_bet_card.length;
+        let length2 =result_data.length;
+        for (let i = 0; i < length1; i++) {
+            let j=0;
+            for ( j=0;j < length2; j++) {
+                if(profile_data.save_bet_card[i].pair.pair_name === result_data[j].save_data1.pair_name){
+                    if(profile_data.save_bet_card[i].pair.expired_time === result_data[j].save_data1.expired_time){
+                        const new_data : Result_Data ={
+                            save_data1:profile_data.save_bet_card[i],
+                            save_can_claim:result_data[j].save_can_claim,
+                            save_result:result_data[j].save_result
+                        }
+                        have_card_data.push(new_data);
+                    }
+                }
+            }
+        }
+        set_data_go_claim_card(have_card_data);
+    }
     const fatch_account_from_aptos = () => {
         if (!account) return [];
         fetch(`https://aptos-${Network}.nodit.io/v1/accounts/${account.address}`, options)
             .then(response => response.json())
             .then(response => console.log(response))
             .catch(err => console.error(err));
+
     }
     const  fatch_account_resource_from_aptos = () =>{
         if (!account) return [];
@@ -155,12 +281,18 @@ const User_page:React.FC<{ }> = ({ }) => {
     //
     // })
 
+   // const deal_with_date = () =>{
+   //      const new_data : Result_Data = {
+   //          save_data1:profile_data.save_bet_card
+   //          save_can_claim:
+   //      }
+   //  }
 
     useEffect(() => {
         //pythConnection.start()
-
-        devnet_fatch_pie_data()
-    },[account]);
+        devnet_fatch_pie_data();
+        compare_data();
+    },[account,profile_data]);
     return (
         <>
             <Content style={{padding: '15px 30px'}}>
@@ -184,7 +316,7 @@ const User_page:React.FC<{ }> = ({ }) => {
                                                     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                                                         <Col span={24}>
                                                             <img
-                                                                src={user_icon}
+                                                                src={profile_data.save_icon.icon}
                                                                 alt={"img1"}
                                                             style={{height:210,width:210, borderRadius: 20,backgroundColor:"white"}}>
                                                             </img>
@@ -196,7 +328,7 @@ const User_page:React.FC<{ }> = ({ }) => {
                                                     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                                                         <Col span={24}>
                                                             <Card style={{backgroundColor:"#60605b",color:"#f4f4f1",position:"relative",top:-18,height:50}}>
-                                                                <h1 style={{position:"relative",top:-20}}>{user_name}</h1>
+                                                                <h1 style={{position:"relative",top:-42,fontSize:50,color:"white"}}>{profile_data.save_icon.name}</h1>
                                                             </Card>
                                                         </Col>
                                                     </Row>
@@ -357,7 +489,7 @@ const User_page:React.FC<{ }> = ({ }) => {
                                         <Row>
                                             <Col span={24}>
                                                <Card title={<span>{<Segmented options={segemat_options} onChange={check =>{setright_of_segement(check)}} />}</span>} style={{height: 170, backgroundColor: "#f4f4f1",padding:1}}>
-                                                   <Segment_position right={right_of_segement} />
+                                                   <Segment_position right={right_of_segement} profile_data={profile_data}  result_data={data_go_claim_card ? data_go_claim_card : have_card_data}/>
                                                </Card>
                                             </Col>
                                         </Row>
@@ -373,37 +505,40 @@ const User_page:React.FC<{ }> = ({ }) => {
     );
 }
 
-const Segment_position :React.FC<{ right:string}> = ({ right})=>{
+const Segment_position :React.FC<{ profile_data:Profile,result_data:Result_Data[] ,right:string}> = ({ right,result_data,profile_data})=>{
     return(
         <>
-            {(right=="List") &&
-                <Row>
-                    <Col span={24}>
-                        <Card >
 
-                        </Card>
-                    </Col>
-                </Row>
-        }
-            {(right=="Transaction") &&
-            <Row>
-                <Col span={24}>
-                    <Card>
+                <How_many_claim_card result_data={result_data}  profile_data={profile_data} which1={right} />
 
-                    </Card>
-                </Col>
-            </Row>
-        }
+
+        {/*    {(right=="Claim") &&*/}
+        {/*        <Row>*/}
+        {/*            <Col span={24}>*/}
+        {/*                    */}
+        {/*                <p>aaa</p>*/}
+        {/*            </Col>*/}
+        {/*        </Row>*/}
+        {/*}*/}
+        {/*    {(right=="") &&*/}
+        {/*    <Row>*/}
+        {/*        <Col span={24}>*/}
+        {/*            <Card>*/}
+
+        {/*            </Card>*/}
+        {/*        </Col>*/}
+        {/*    </Row>*/}
+        {/*}*/}
         </>
     )
 }
 const segemat_options = [
-    { label: 'List',
-        value: 'List',
-        icon: <BarsOutlined /> },
-    { label: 'Transaction',
-        value: 'Transaction',
-        icon: <AppstoreOutlined /> },
+    { label: 'Claim',
+        value: 'Claim',
+        icon: <BarsOutlined />  },
+    { label: 'All',
+        value: 'All',
+        icon: <AppstoreOutlined />},
 ]
 
 export default User_page;

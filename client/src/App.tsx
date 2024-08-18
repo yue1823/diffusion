@@ -150,10 +150,16 @@ interface Bet_card_data{
     a_win:string;
     b_win:string;
     c_win:string;
+    bet:string;
     expired_time:string;
     pair:SavePair;
     time:string;
     which:string;
+}
+interface Real_Result_Data{
+    save_data1:SavePair;
+    save_can_claim:boolean;
+    save_result:string;
 }
 const options = {
     method: 'GET',
@@ -172,6 +178,25 @@ const test_config = new AptosConfig({
 });
 const aptosConfig = new AptosConfig({ network: Network.TESTNET});
 const aptos = new Aptos(aptosConfig);
+const defaultReal_Result_Data: Real_Result_Data = {
+    save_data1: {
+        can_bet:false,
+        expired_time: "",
+        left: "",
+        left2: "",
+        left_url: "",
+        middle: "",
+        middle2:"",
+        pair_name:"",
+        pair_type: "",
+        right: "",
+        right2: "",
+        right_url: "",
+    },
+    save_can_claim: false,
+    save_result:"99"
+};
+let dataArray: Real_Result_Data[] = [];
 const defaultHelperData: Helper_data = {
     chips: [],
     pairs: []
@@ -219,6 +244,7 @@ const App: React.FC<{id:string}> = ({id}) => {
     const [helper_data,set_helper_data]=useState<MoveValue[]>();
     const [user_profile,set_user_profile] = useState<Profile>();
     const [fetch_data,setfetch_data]=useState<Helper_data>();
+    const [data_to_user_page,set_data_to_user_page]=useState<Real_Result_Data[]>();
     const create_diffusion_account =  async () =>{
         if (!account) return [];
         const transaction:InputTransactionData = {
@@ -303,7 +329,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                             }
                         }
                         set_user_profile(new_profile)
-                        console.log(user_profile);
+                        console.log(response);
                     }
                 })
         } catch (e: any) {
@@ -317,8 +343,23 @@ const App: React.FC<{id:string}> = ({id}) => {
         fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${resources_address}/resource/${resources_name}`, options)
             .then(response => response.json())
             .then((response) => {
+                  //console.log(response)
 
-
+                if(response){
+                    const length1 = response.data.save_Pair_result_store.save_pair.length;
+                    //console.log(`first time : ${dataArray}`)
+                    for (let i = 0; i < length1; i++) {
+                        const new_result: Real_Result_Data = {
+                            save_data1:response.data.save_Pair_result_store.save_pair[i] ,
+                            save_can_claim: response.data.save_Pair_result_store.save_can_claim[i],
+                            save_result: response.data.save_Pair_result_store.save_result[i]
+                        }
+                        dataArray.push(new_result);
+                    }
+                    set_data_to_user_page(dataArray);
+                    //console.log(`second time : ${dataArray[0].save_data1}`)
+                }
+                // set_data_to_user_page
                 if (response && response.data.save_Pair_result_store && response.data.save_Pair_result_store.save_pair) {
                     setSavePair(response.data.save_Pair_result_store.save_pair as SavePair[]);
                     const new_date:Helper_data = { pairs:response.data.save_Pair_result_store.save_pair as SavePair[],chips:response.data.save_Pair_result_store.save_chips as Chips[]}
@@ -405,7 +446,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                                       <Route  path={"admin"} element={<Admin_page/>}/>
                                       <Route  path={"nft"} element={<NFT_page/>}/>
                                       <Route  path={"Helper"} element={<Helper_page helper_data={helper_data ? helper_data:[]} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>
-                                      <Route path={"my_page"} element={<User_page/>}></Route>
+                                      <Route path={"my_page"} element={<User_page profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray}/>}></Route>
 
                                       {/*<Route path={"/"} element={<Main_content address={user_address} index_of_address={index_of_address}/>}></Route>*/}
                                       {/*<Route path={"/swap"} element={<Swap_page/>}/>*/}

@@ -108,6 +108,16 @@ const items: MenuItem[] = [
             </Link>
         ),
         icon: <BookOutlined />
+    },
+    {
+        key: 'Bridge',
+        label: (
+            <Link to={"/Bridge"}>
+                Bridge
+            </Link>
+        ),
+        icon: <BookOutlined />,
+        disabled:true
     }
 ];
 
@@ -175,7 +185,7 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number,profile_dat
                 {/*    /!*    <BarsOutlined style={{position:"relative",fontSize:40,left:65}}/>*!/*/}
                 {/*</Header>*/}
 
-            <Col span={2}>
+            <Col span={1}>
                 <Link to={"/website"}>
 
                 <img src={diffusion_art}
@@ -187,7 +197,7 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number,profile_dat
             <Col span={18}>
                 <Menu_click/>
             </Col>
-            <Col span={3}>
+            <Col span={4}>
                 <WalletSelector/>
             </Col>
             <Col span={1}>
@@ -243,7 +253,7 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number,profile_dat
 
                             )
                         },]}}>
-                    <BarsOutlined style={{position: "relative", left: 5, fontSize: 50,top:10}}/>
+                    <BarsOutlined style={{position: "relative", left: 5, fontSize: 60,top:10}}/>
                 </Dropdown>
             </Col>
 
@@ -273,7 +283,7 @@ const Menu_click = () => {
                     token:{
                         colorTextLightSolid:"#101010",
                         colorBgElevated:"#EBE5DF",
-                        padding:35,
+                        padding:25,
 
                     },
                     components: {

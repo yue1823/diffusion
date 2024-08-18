@@ -55,6 +55,10 @@ const Admin_page:React.FC<{ }> = ({ }) => {
                         <Col span={12}>
                             <Set_chance/>
                         </Col>
+                        <br/>
+                        <Col span={12}>
+                            <Time_to_stop_bet/>
+                        </Col>
                         <ToastContainer
                             position="bottom-right"
                             autoClose={5000}
@@ -689,7 +693,103 @@ const Set_chance: React.FC<{}> = ({ }) => {
                     <br/>
                     <Col span={24}>
                         <button className={"rainbow"} onClick={() => submit_transaction()}>
-                            admin like
+                            Set chance
+                        </button>
+                    </Col>
+
+                </Row>
+            </Drawer>
+        </>
+    );
+}
+const Time_to_stop_bet: React.FC<{}> = ({ }) => {
+    const [open , set_open] = useState<boolean>(false);
+    const button_click = () =>{
+        set_open(true)
+    }
+    const button_close = () =>{
+        set_open(false)
+    }
+    const {
+        token: { colorBgContainer, borderRadiusLG },
+    } = theme.useToken();
+    const { account, signAndSubmitTransaction } =useWallet() ;
+    const [fee1,setfee1]=useState('');
+    const [pair_name,set_pair_name]=useState('');
+
+
+
+
+
+    const submit_transaction = async () => {
+        const transaction: InputTransactionData = {
+            data: {
+                function: `${module_address}::helper::admin_said_times_up`,
+                functionArguments: [pair_name]
+            }
+        }
+        try {
+            // sign and submit transaction to chain
+            const response = await signAndSubmitTransaction(transaction);
+            // wait for transaction
+            const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+            // message.success(
+            //
+            // )
+            toast.success(<span>
+                        hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                    </span>, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            });
+
+        } catch (error: any) {
+            console.log(error);
+            message.error(`please try again`);
+        } finally {
+
+
+        }
+    }
+    useEffect(() => {
+        const fetch_pair_resources = () =>{
+            const https = `https://aptos-mainnet.nodit.io/v1/accounts/${module_address}/resource/${resources_type}`
+            try{
+                //fetch(https,https_required).then(respone => respone.json());
+            }catch (e:any){
+                console.log(e);
+            }
+        }
+
+        //fetch_pair_resources()
+    },[account])
+    return (
+        <>
+            <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>
+                Time to stop bet
+            </Button>
+
+            <Drawer open={open} onClose={button_close} style={{width: 1000}} title={"Create_pair"}>
+                <Row gutter={[8,24]}>
+
+                    <Col span={24}>
+                        <Input placeholder="pair_name" onChange={value => {
+                            set_pair_name(value.target.value)
+                        }}></Input>
+                    </Col>
+
+                    <br/>
+                    <Col span={24}>
+                        <button className={"rainbow"} onClick={() => submit_transaction()}>
+                            Stop bet
                         </button>
                     </Col>
 
