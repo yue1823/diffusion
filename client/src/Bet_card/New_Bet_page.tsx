@@ -100,7 +100,8 @@ const options = {
     method: 'GET',
     headers: {accept: 'application/json', 'X-API-KEY': 'bT8aS3ezHOl6T1_PyaM30lkg7odC_42l'}
 };
-const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,balance1:string}> = ({fetch_data,which1,balance1}) =>{
+const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,balance1:string,currentPage:number}> = ({fetch_data,which1,balance1,currentPage}) =>{
+
     if (!fetch_data) return null;
     const filteredPairs = fetch_data.pairs
         .filter(pair =>
@@ -108,10 +109,16 @@ const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,bala
             pair.can_bet
         );
     //Array.from({ length: fetch_data.pairs.length }).map((_, index)
+
+    const itemsPerPage = 6;
+    const totalItems = filteredPairs.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    const currentData = filteredPairs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
     console.log(filteredPairs);
     return (
         <>
-            {filteredPairs.map((pair, index) => {
+            {currentData.map((pair, index) => {
                 const [firstPart, secondPart] = pair.pair_name.split(" vs ");
                 const a = (parseInt(pair.left, 10)/parseInt(pair.left2, 10)).toFixed(2).toString();
                 const b = (parseInt(pair.middle, 10)/parseInt(pair.middle2, 10)).toFixed(2).toString();
@@ -119,14 +126,17 @@ const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,bala
                 let real_balance = (parseInt(balance1,10)/100000000).toFixed(2).toString();
 
                 return (
-                    <New_Bet_card key={index} left_url={pair.left_url} right_url={pair.right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b} expired_time={pair.expired_time}/>
+                    <>
+                        <New_Bet_card key={index} left_url={pair.left_url} right_url={pair.right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b} expired_time={pair.expired_time}/>
 
+                    </>
                 );
             })}
         </>
     );
 }
 const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetch_data:Helper_data,profile_data:Profile}> = ({length,pair ,balance1,fetch_data,profile_data}) => {
+    const [currentPage, setCurrentPage] = useState(1);
     const { account, signAndSubmitTransaction } = useWallet();
     const [savePair, setSavePair] = useState<SavePair[]>([]);
     const [pair_can_upload,set_pair_can_upload]=useState<string[]>([]);
@@ -157,6 +167,17 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
     //         </>
     //     )
     // }
+
+    const filteredPairs = fetch_data.pairs
+        .filter(pair =>
+            (which === "All" || pair.pair_type === which) &&
+            pair.can_bet
+        );
+    //Array.from({ length: fetch_data.pairs.length }).map((_, index)
+
+    const itemsPerPage = 6;
+    const totalItems = filteredPairs.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
         const set_data = () =>{
             if (!fetch_data) return null;
             set_user(profile_data);
@@ -221,7 +242,9 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
                                     />
                                 </span>} style={{height: 500, backgroundColor: "#f4f4f1"}}>
                                         <Row gutter={[24, 16]}>
-                                            <Deal_with_data_bet fetch_data={fetch_data} balance1={balance1} which1={which}/>
+
+                                            <Deal_with_data_bet fetch_data={fetch_data} balance1={balance1} which1={which} currentPage={currentPage}/>
+
                                             {/*<Desicion_number_of_box boxCount={length}/>*/}
                                         </Row>
 
@@ -229,9 +252,29 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
                                 </Col>
                             </Row>
                             <br/>
+                            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} >
+                                <Col span={8} offset={17}>
+                                    <div>
+                                        <button
+                                            className={"rainbow"}
+                                            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                                            disabled={currentPage === 1}>
+                                            Previous
+                                        </button>
+                                        <span>{currentPage} / {totalPages}</span>
+                                        <button
+                                            className={"rainbow"}
+                                            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                                            disabled={currentPage === totalPages}>
+                                            Next
+                                        </button>
+                                    </div>
+                                </Col>
+                            </Row>
                         </div>
                     </Col>
                 </Row>
+
             </Content>
         </>
     );
