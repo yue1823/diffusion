@@ -19,6 +19,8 @@ import {
     Typography
 } from "antd";
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
     CheckOutlined,
     CloseOutlined, createFromIconfontCN, GithubOutlined, InfoCircleOutlined,
@@ -37,7 +39,7 @@ import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
-const moduleAddress = "0x2e86a41d1b86d4a82c1c74ece536108fc8f9dc5858a6ab5eb488e37d83098eb2";
+const moduleAddress = "0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873";
 const testnet_module ="0x313217c756b70e59d26bcc22f20af94d850bc4844f7e37dd7f94bc2cc4c3c619";
 const connect_Wallet = 'Connect Wallet.';
 type NotificationPlacement = NotificationArgsProps['placement'];
@@ -45,7 +47,7 @@ interface CProps {
     setSharedData: React.Dispatch<React.SetStateAction<number>>;
 }
 
-
+const notify = () => toast("Wow so easy !");
 
 
 const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ address,index_of_address:number,}) => {
@@ -70,9 +72,9 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
             let input2 = "0x1::aptos_coin::AptosCoin"
             const transaction:InputTransactionData = {
                 data: {
-                    function:`${moduleAddress}::pay_module::reload`,
+                    function:`${moduleAddress}::helper::reload_single`,
                     typeArguments:[input1,input2],
-                    functionArguments:[false,need_garble,amount*100000000,to_address,account.address,cointype]
+                    functionArguments:[false,need_garble,amount*100000000,to_address,cointype,"0x1",amount*100000000]
                 }
             }
             try {
@@ -391,7 +393,8 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
 
                 <HappyProvider>
                     <Button type="primary" onClick={check_everything}
-                            style={{height: 50, width: 190, background: "#f1eddd", color: "black"}}>Safe Transfer</Button>
+                            style={{height: 50, width: 190, background: "#f1eddd", color: "black"}}>Safe
+                        Transfer</Button>
                 </HappyProvider>
 
                 <Drawer title="Check Input" onClose={onClose} open={open}>

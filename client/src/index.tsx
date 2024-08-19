@@ -7,6 +7,13 @@ import "./css_folder/App.css"
 import reportWebVitals from './reportWebVitals';
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import './css_folder/global.css';
+import {HashRouter as Router, Route, Routes} from "react-router-dom";
+import Main_content from "./content/content";
+import Swap_page from "./swap_page";
+import Bet_page from "./Bet_card/Bet_page";
+import Admin_page from "./admin/admin_page";
+import {pushRotate as Menu} from "react-burger-menu";
+import Website_page from "./website/website_page";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -15,7 +22,16 @@ root.render(
     <div className={"main-background"}>
         <AptosWalletAdapterProvider plugins={wallets} autoConnect={true}>
                 <React.StrictMode>
-                    <App />
+                    <Router>
+
+                        <Routes>
+                            <Route  index path="/*" element={<App id={"page-wrap"}/>}/>
+
+
+                            <Route  path="/website" element={<Website_page/>}/>
+                        </Routes>
+
+                    </Router>
                 </React.StrictMode>
             </AptosWalletAdapterProvider>
     </div>

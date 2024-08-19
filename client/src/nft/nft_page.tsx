@@ -3,6 +3,8 @@ import {Row, theme} from "antd";
 import React, {useEffect, useState} from 'react';
 
 import {Content} from "antd/lib/layout/layout";
+import NotificationBoxes from "../user/cute_card";
+import CountdownTimer from "../user/Count_time";
 
 
 
@@ -24,7 +26,7 @@ const NFT_page:React.FC<{ }> = ({ }) => {
                             borderRadius: borderRadiusLG,
                         }}
                     >
-
+                        <CountdownTimer expiredDate={"30092024"}/>
                     </div>
                 </Row>
             </Content>

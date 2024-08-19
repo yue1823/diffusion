@@ -1,0 +1,40 @@
+/* MyMenu.css */
+
+#outer-container {
+    perspective: 1500px;
+}
+
+#page-wrap {
+    transition: transform 0.5s;
+    transform-origin: 100% 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.bm-menu {
+    background: #373a47;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+}
+
+.bm-item-list {
+    color: #b8b7ad;
+}
+
+.bm-item {
+    display: inline-block;
+    color: #d1d1d1;
+    margin-bottom: 10px;
+}
+
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 36px;
+}
+
+.bm-burger-bars {
+    background: #373a47;
+}

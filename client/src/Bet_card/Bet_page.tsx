@@ -1,18 +1,49 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Content} from "antd/lib/layout/layout";
 import Swap_box from "../swap_page/swap_box";
 import {Router} from "react-router-dom";
-import {Col, Row} from "antd";
+import {Card, Col, ConfigProvider, Row ,Tree} from "antd";
 import Aka from "../Small_box/aka";
+import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
+import type { TreeDataNode } from 'antd';
+
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
+const aptos = new Aptos(aptosConfig);
+
+const module_address="0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa";
+const resources_type ="0x1::account::Account";
+
 const Bet_page:React.FC<{}> = ({}) =>{
+        const [tree_data,set_tree_data]=useState<string[]>([]);
+        const [check ,setcheck] =useState<string>('');
+    const onCheck = (checkedKeysValue: any) => {
+        checkedKeysValue.map((key: React.SetStateAction<string>) => ( setcheck(key)));
+        tree_data.push(check);
+    };
+        const fetch_data_from_aptos=()=>{
 
 
 
+        }
 
 
+
+    useEffect(() => {
+        const fetch_pair_resources = () =>{
+            const https = `https://aptos-mainnet.nodit.io/v1/accounts/${module_address}/resource/${resources_type}`
+            try{
+                //fetch(https,https_required).then(respone => respone.json());
+            }catch (e:any){
+                console.log(e);
+            }
+        }
+
+
+    },[])
     return(
         <>
             <Content style={{padding: '15px 30px'}}>
+
                     <div
                         style={{
                             padding: 20,
@@ -23,8 +54,9 @@ const Bet_page:React.FC<{}> = ({}) =>{
                         }}
                     >
 
-                        <Row>
+                        <Row gutter={24}>
                             <Col span={4}>
+
                                 <div
                                     style={{
                                         padding: 0,
@@ -34,7 +66,32 @@ const Bet_page:React.FC<{}> = ({}) =>{
                                         borderRadius: 10,
                                         textAlign: 'center',
                                     }}
-                                ></div>
+                                >
+                                    <ConfigProvider
+                                        theme={{
+                                            components: {
+                                                Card: {
+                                                    headerBg:"#EBE5DF",
+                                                    actionsBg:"#EBE5DF",
+                                                    /* 这里是你的组件 token */
+                                                },
+                                            },
+                                        }}
+                                    >
+                                        <Card title="Tags" bordered={false} style={{backgroundColor:"#EBE5DF"}}>
+                                            <Tree
+                                                checkable
+                                                defaultSelectedKeys={['0-1']}
+                                                defaultExpandAll
+                                                treeData={treeData}
+                                                blockNode
+                                                style={{backgroundColor:"#EBE5DF"}}
+                                                onCheck={onCheck } />
+                                        </Card>
+                                    </ConfigProvider>
+
+
+                                </div>
                             </Col>
                             <Col span={18}>
                                 <div
@@ -109,9 +166,36 @@ const Bet_page:React.FC<{}> = ({}) =>{
 
 
                     </div>
+                <Row>
+                    <p> {tree_data} </p>
+
+                </Row>
             </Content>
 
         </>
     );
 }
+const treeData: TreeDataNode[] = [
+    {
+        title: 'All',
+        key: 'All',
+        children: [
+            {
+                title: 'Game',
+                key: 'Game',
+
+            },
+            {
+                title: 'Sport',
+                key: 'Sport',
+
+            },
+            {
+                title: 'Unexpect',
+                key: 'Unexpect',
+
+            },
+        ],
+    },
+];
 export default Bet_page;

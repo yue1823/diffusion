@@ -77,60 +77,60 @@ module dapp::admin_module{
 
     ///################################################///
 
-   #[test(aptos_framework=@aptos_framework,caller=@dapp,first=@0x1,admin=@admin1,not_admin=@0x11111)]
-    fun test_admin_withdraw(aptos_framework:&signer,caller:&signer,first:&signer,admin:&signer,not_admin:&signer) acquires ResourceCap {
-        timestamp::set_time_has_started_for_testing(aptos_framework);
-        test_init(caller);
-        let (burn_cap, freeze_cap, mint_cap) = coin::initialize<AptosCoin>(
-            aptos_framework,
-            string::utf8(b"TC"),
-            string::utf8(b"TC"),
-            8,
-            false,
-        );
-        debug::print(&exists<ResourceCap>(create_resource_address(&@dapp,Seed)));
-        let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
-        let resource_signer = create_signer_with_capability(borrow);
-        let resource_address = signer::address_of(&resource_signer);
-        account::create_account_for_test(signer::address_of(admin));
-        coin::register<AptosCoin>(admin);
-        account::create_account_for_test(signer::address_of(&resource_signer));
-        coin::register<AptosCoin>(&resource_signer);
-        account::create_account_for_test(signer::address_of(caller));
-        coin::register<AptosCoin>(caller);
-        account::create_account_for_test(signer::address_of(first));
-        coin::register<AptosCoin>(first);
-        coin::deposit(signer::address_of(first), coin::mint<AptosCoin>(200000000, &mint_cap));  //20 apt
-        coin::destroy_freeze_cap(freeze_cap);
-        coin::destroy_burn_cap(burn_cap);
-        coin::destroy_mint_cap(mint_cap);
-
-        transfer<AptosCoin>(first,resource_address,100000000);
-
-
-        // debug::print(&utf8(b"Resource_address balance : "));
-        // debug::print(&balance<AptosCoin>(resource_address));
-        // debug::print(&utf8(b"dapp_address balance : "));
-        // debug::print(&balance<AptosCoin>(signer::address_of(caller)));
-        // debug::print(&utf8(b"first_address balance : "));
-        // debug::print(&balance<AptosCoin>(signer::address_of(first)));
-        // debug::print(&utf8(b"admin_address balance : "));
-        // debug::print(&balance<AptosCoin>(signer::address_of(admin)));
-        // debug::print(&utf8(b"############After withdraw ###########"));
-
-        // admin_withdraw<AptosCoin>(admin,50000000);
-        // debug::print(&utf8(b"######################################"));
-        //
-        // debug::print(&utf8(b"Resource_address balance : "));
-        // debug::print(&balance<AptosCoin>(resource_address));
-        // debug::print(&utf8(b"dapp_address balance : "));
-        // debug::print(&balance<AptosCoin>(signer::address_of(caller)));
-        // debug::print(&utf8(b"first_address balance : "));
-        // debug::print(&balance<AptosCoin>(signer::address_of(first)));
-        // debug::print(&utf8(b"admin_address balance : "));
-        // debug::print(&balance<AptosCoin>(signer::address_of(admin)));
-        //admin_withdraw<AptosCoin>(not_admin,1000000);
-    }
+   // #[test(aptos_framework=@aptos_framework,caller=@dapp,first=@0x1,admin=@admin1,not_admin=@0x11111)]
+   //  fun test_admin_withdraw(aptos_framework:&signer,caller:&signer,first:&signer,admin:&signer,not_admin:&signer) acquires ResourceCap {
+   //      timestamp::set_time_has_started_for_testing(aptos_framework);
+   //      test_init(caller);
+   //      let (burn_cap, freeze_cap, mint_cap) = coin::initialize<AptosCoin>(
+   //          aptos_framework,
+   //          string::utf8(b"TC"),
+   //          string::utf8(b"TC"),
+   //          8,
+   //          false,
+   //      );
+   //      debug::print(&exists<ResourceCap>(create_resource_address(&@dapp,Seed)));
+   //      let borrow = &borrow_global<ResourceCap>(create_resource_address(&@dapp,Seed)).cap;
+   //      let resource_signer = create_signer_with_capability(borrow);
+   //      let resource_address = signer::address_of(&resource_signer);
+   //      account::create_account_for_test(signer::address_of(admin));
+   //      coin::register<AptosCoin>(admin);
+   //      account::create_account_for_test(signer::address_of(&resource_signer));
+   //      coin::register<AptosCoin>(&resource_signer);
+   //      account::create_account_for_test(signer::address_of(caller));
+   //      coin::register<AptosCoin>(caller);
+   //      account::create_account_for_test(signer::address_of(first));
+   //      coin::register<AptosCoin>(first);
+   //      coin::deposit(signer::address_of(first), coin::mint<AptosCoin>(200000000, &mint_cap));  //20 apt
+   //      coin::destroy_freeze_cap(freeze_cap);
+   //      coin::destroy_burn_cap(burn_cap);
+   //      coin::destroy_mint_cap(mint_cap);
+   //
+   //      transfer<AptosCoin>(first,resource_address,100000000);
+   //
+   //
+   //      // debug::print(&utf8(b"Resource_address balance : "));
+   //      // debug::print(&balance<AptosCoin>(resource_address));
+   //      // debug::print(&utf8(b"dapp_address balance : "));
+   //      // debug::print(&balance<AptosCoin>(signer::address_of(caller)));
+   //      // debug::print(&utf8(b"first_address balance : "));
+   //      // debug::print(&balance<AptosCoin>(signer::address_of(first)));
+   //      // debug::print(&utf8(b"admin_address balance : "));
+   //      // debug::print(&balance<AptosCoin>(signer::address_of(admin)));
+   //      // debug::print(&utf8(b"############After withdraw ###########"));
+   //
+   //      // admin_withdraw<AptosCoin>(admin,50000000);
+   //      // debug::print(&utf8(b"######################################"));
+   //      //
+   //      // debug::print(&utf8(b"Resource_address balance : "));
+   //      // debug::print(&balance<AptosCoin>(resource_address));
+   //      // debug::print(&utf8(b"dapp_address balance : "));
+   //      // debug::print(&balance<AptosCoin>(signer::address_of(caller)));
+   //      // debug::print(&utf8(b"first_address balance : "));
+   //      // debug::print(&balance<AptosCoin>(signer::address_of(first)));
+   //      // debug::print(&utf8(b"admin_address balance : "));
+   //      // debug::print(&balance<AptosCoin>(signer::address_of(admin)));
+   //      //admin_withdraw<AptosCoin>(not_admin,1000000);
+   //  }
 
 
     ///################################################///

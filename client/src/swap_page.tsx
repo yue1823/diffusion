@@ -1,5 +1,5 @@
 
-import {Row, theme} from "antd";
+import {Col, Row, theme} from "antd";
 import React, {useEffect, useState} from 'react';
 import Show_content from "./content/show_content";
 import Select_content from "./content/select_content";
@@ -14,23 +14,29 @@ const Swap_page:React.FC<{ }> = ({ }) => {
 
     return (
         <>
-            <Content style={{padding: '15px 30px'}}>
-                <Row>
-                    <div
-                        style={{
-                            padding: 24,
-                            minHeight: 600,
-                            minWidth: 1200,
-                            background: colorBgContainer,
-                            borderRadius: borderRadiusLG,
-                        }}
-                    >
+
+            <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                <Col span={3}></Col>
+                <Col span={12}>
+                    <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                        <div
+                            style={{
+                                padding: 24,
+                                minHeight: 600,
+                                minWidth: 1200,
+                                background: colorBgContainer,
+                                borderRadius: borderRadiusLG,
+                            }}
+                        >
                             <Swap_box/>
-                    </div>
-                </Row>
-            </Content>
+                        </div>
+                    </Row>
+                </Col>
+                <Col span={6}></Col>
+            </Row>
+
         </>
-);
+    );
 }
 
 export default Swap_page;

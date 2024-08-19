@@ -591,159 +591,174 @@ const Swap_box:React.FC<{ }> = ({ }) => {
     },[swap_from_coin,swap_to_coin,amount]);
     return (
         <>
-
-            <div
-                style={{
-                    padding: 50,
-                    minHeight: 400,
-                    minWidth: 100,
-                    background: "#EBE5DF",
-                    borderRadius: borderRadiusLG,
-                    textAlign: 'center',
-                }}
-            >
-                <HappyProvider>
-                    <Button type="primary" onClick={goBack}
-                            style={{height: 20, width: 50, background: "#f1eddd", color: "black" ,left:-310}}>Back</Button>
-                </HappyProvider>
-                <Segmented size="large" options={[
-                    {
-                        label: (
-                            <div className="swap_page_Select_box">
-                                <Avatar src={logo_pontem}/>
-                                <div>Pontem</div>
-                            </div>
-                        ),
-                        value: 'user2',
-
-                    },
-                    {
-                        label: (
-                            <div className="swap_page_Select_box">
-                                <Avatar src={logo_aries}/>
-                                <div>Aries</div>
-                            </div>
-                        ),
-                        value: 'user3',
-                        // disabled: true,
-                    },
-
-                    {
-                        label: (
-                            <div className="swap_page_Select_box">
-                                <Avatar src={logo_pancake}/>
-                                <div>Pancake</div>
-                            </div>
-                        ),
-                        value: 'user4',
-                        // disabled: true,
-                    }, {
-                        label: (
-                            <div className="swap_page_Select_box">
-                                <Avatar src={logo_panora}/>
-                                <div>Panora</div>
-                            </div>
-                        ),
-                        value: 'user5',
-                        // disabled: true,
-                    },
-                    {
-                        label: (
-                            <div className="swap_page_Select_box">
-                                <Avatar src={logo_cellena}/>
-                                <div>Cellena</div>
-                            </div>
-                        ),
-                        value: 'user6',
-                        // disabled: true,
-                    },
-                ]}>
-                </Segmented>
-                <br/>
-                <br/>
-                <Row>
-
-                    <Input size="large" placeholder="from" prefix={<UserOutlined/>} onChange={value => {
-                        setamouunt(value.target.value)
-                    }}/>
-                    <br/>
-                    <Select
-                        showSearch
-                        placeholder="Which coin"
-                        optionFilterProp="children"
-                        onChange={value => {
-                            setswap_from_coin(value)
-                            console.log(`selected ${value}`);
+            <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                <Col span={24}>
+                    <div
+                        style={{
+                            padding: 50,
+                            background: "#EBE5DF",
+                            borderRadius: borderRadiusLG,
+                            textAlign: 'center',
                         }}
-                        filterOption={filterOption}
-                        style={{minWidth: 100}}
-                        options={[
-                            {
-                                value: 'APT',
-                                label: 'APT',
-                            },
-                            {
-                                value: 'USDC',
-                                label: 'USDC',
-                            },
-                            {
-                                value: 'USDT',
-                                label: 'USDT',
-                            },
-                        ]}
-                    />
-                </Row>
-                <br/>
-                <br/>
+                    >
+                        {/*<HappyProvider>*/}
+                        {/*    <Button type="primary" onClick={goBack}*/}
+                        {/*            style={{height: 20, width: 50, background: "#f1eddd", color: "black" ,left:-310}}>Back</Button>*/}
+                        {/*</HappyProvider>*/}
+                        <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}}>
+                            <Col span={6}></Col>
+                            <Col span={12}>
+                                <Segmented size="large" options={[
+                                    {
+                                        label: (
+                                            <div className="swap_page_Select_box">
+                                                <Avatar src={logo_pontem}/>
+                                                <div>Pontem</div>
+                                            </div>
+                                        ),
+                                        value: 'user2',
 
-                <Row>
-                    {swap_from_coin == swap_to_coin &&
-                        <Input disabled={true} size="large" placeholder="to" prefix={<UserOutlined/>} value={1}/>
-                    }
-                    {swap_from_coin != swap_to_coin &&
-                        <Input disabled={true} size="large" placeholder="to" prefix={<UserOutlined/>} value={rate}/>
-                    }
-                    <br/>
-                    <Select
-                        showSearch
-                        placeholder="Which coin"
-                        optionFilterProp="children"
-                        onChange={value => {
+                                    },
+                                    {
+                                        label: (
+                                            <div className="swap_page_Select_box">
+                                                <Avatar src={logo_aries}/>
+                                                <div>Aries</div>
+                                            </div>
+                                        ),
+                                        value: 'user3',
+                                        // disabled: true,
+                                    },
 
-                            setswap_to_coin(value)
-                            console.log(`select to  ${value}`);
-                        }}
-                        filterOption={filterOption}
-                        style={{minWidth: 100}}
-                        options={[
-                            {
-                                value: 'APT',
-                                label: 'APT',
-                            },
-                            {
-                                value: 'USDC',
-                                label: 'USDC',
-                            },
-                            {
-                                value: 'USDT',
-                                label: 'USDT',
-                            },
-                        ]}
-                    />
+                                    {
+                                        label: (
+                                            <div className="swap_page_Select_box">
+                                                <Avatar src={logo_pancake}/>
+                                                <div>Pancake</div>
+                                            </div>
+                                        ),
+                                        value: 'user4',
+                                        // disabled: true,
+                                    }, {
+                                        label: (
+                                            <div className="swap_page_Select_box">
+                                                <Avatar src={logo_panora}/>
+                                                <div>Panora</div>
+                                            </div>
+                                        ),
+                                        value: 'user5',
+                                        // disabled: true,
+                                    },
+                                    {
+                                        label: (
+                                            <div className="swap_page_Select_box">
+                                                <Avatar src={logo_cellena}/>
+                                                <div>Cellena</div>
+                                            </div>
+                                        ),
+                                        value: 'user6',
+                                        // disabled: true,
+                                    },
+                                ]}>
+                                </Segmented>
+                            </Col>
+                            <Col span={6}></Col>
+                        </Row>
 
-                </Row>
+                        <br/>
+                        <br/>
+                        <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}}>
 
-                <HappyProvider>
-                    <Button type="primary" onClick={create_swap}
-                            style={{height: 50, width: 190, background: "#f1eddd", color: "black"}}>Swap</Button>
-                </HappyProvider>
+                            <Input size="large" placeholder="from" prefix={<UserOutlined/>} onChange={value => {
+                                setamouunt(value.target.value)
+                            }}/>
+                            <br/>
+                            <Select
+                                showSearch
+                                placeholder="Which coin"
+                                optionFilterProp="children"
+                                onChange={value => {
+                                    setswap_from_coin(value)
+                                    console.log(`selected ${value}`);
+                                }}
+                                filterOption={filterOption}
+                                style={{minWidth: 100}}
+                                options={[
+                                    {
+                                        value: 'APT',
+                                        label: 'APT',
+                                    },
+                                    {
+                                        value: 'USDC',
+                                        label: 'USDC',
+                                    },
+                                    {
+                                        value: 'USDT',
+                                        label: 'USDT',
+                                    },
+                                ]}
+                            />
+                        </Row>
+                        <br/>
+                        <br/>
 
-                {/*from :{swap_from_coin}<br/>*/}
-                {/*to :{swap_to_coin}<br/>*/}
-                {/*rate :{rate}<br/>*/}
-                {/*amount :{amount}<br/>*/}
-                {/*<button onClick={ask_price}>ask</button>*/}
-            </div>
+                        <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}}>
+                            {swap_from_coin == swap_to_coin &&
+                                <Input disabled={true} size="large" placeholder="to" prefix={<UserOutlined/>}
+                                       value={1}/>
+                            }
+                            {swap_from_coin != swap_to_coin &&
+                                <Input disabled={true} size="large" placeholder="to" prefix={<UserOutlined/>}
+                                       value={rate}/>
+                            }
+                            <br/>
+                            <Select
+                                showSearch
+                                placeholder="Which coin"
+                                optionFilterProp="children"
+                                onChange={value => {
+
+                                    setswap_to_coin(value)
+                                    console.log(`select to  ${value}`);
+                                }}
+                                filterOption={filterOption}
+                                style={{minWidth: 100}}
+                                options={[
+                                    {
+                                        value: 'APT',
+                                        label: 'APT',
+                                    },
+                                    {
+                                        value: 'USDC',
+                                        label: 'USDC',
+                                    },
+                                    {
+                                        value: 'USDT',
+                                        label: 'USDT',
+                                    },
+                                ]}
+                            />
+
+                        </Row>
+
+                        <HappyProvider>
+                            <Button type="primary" onClick={create_swap}
+                                    style={{
+                                        height: 50,
+                                        width: 190,
+                                        background: "#f1eddd",
+                                        color: "black"
+                                    }}>Swap</Button>
+                        </HappyProvider>
+
+                        {/*from :{swap_from_coin}<br/>*/}
+                        {/*to :{swap_to_coin}<br/>*/}
+                        {/*rate :{rate}<br/>*/}
+                        {/*amount :{amount}<br/>*/}
+                        {/*<button onClick={ask_price}>ask</button>*/}
+                    </div>
+                </Col>
+            </Row>
         </>
     );
 }
