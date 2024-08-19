@@ -119,7 +119,7 @@ const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,bala
                 let real_balance = (parseInt(balance1,10)/100000000).toFixed(2).toString();
 
                 return (
-                    <New_Bet_card key={index} left_url={pair.left_url} right_url={pair.right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b}/>
+                    <New_Bet_card key={index} left_url={pair.left_url} right_url={pair.right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b} expired_time={pair.expired_time}/>
 
                 );
             })}
@@ -135,28 +135,28 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
-    const Desicion_number_of_box: React.FC<Box_number> = ({boxCount}) =>{
-        const length = savePair.length;
-        return(
-            <>
-                {Array.from({ length: boxCount }).map((_, index) => {
-                    const [firstPart, secondPart] = pair[index].pair_name.split(" vs ");
-                    const a = (parseInt(pair[index].left, 10)/parseInt(pair[index].left2, 10)).toFixed(2).toString();
-                    const b = (parseInt(pair[index].middle, 10)/parseInt(pair[index].middle2, 10)).toFixed(2).toString();
-                    const c = (parseInt(pair[index].right, 10)/parseInt(pair[index].right2, 10)).toFixed(2).toString();
-                    let real_balance = (parseInt(balance1,10)/100000000).toFixed(2).toString();
-                    // console.log(`a : ${a}`);
-                    // console.log(`b : ${b}`);
-                    // console.log(`c : ${c}`);
-                    // console.log(`left url : ${pair[index].left_url}`);
-                    // console.log(`right url : ${pair[index].right_url}`);
-                    return(
-                        <New_Bet_card key={index} left_url={pair[index].left_url} right_url={pair[index].right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b}/>
-                    );
-                })}
-            </>
-        )
-    }
+    // const Desicion_number_of_box: React.FC<Box_number> = ({boxCount}) =>{
+    //     const length = savePair.length;
+    //     return(
+    //         <>
+    //             {Array.from({ length: boxCount }).map((_, index) => {
+    //                 const [firstPart, secondPart] = pair[index].pair_name.split(" vs ");
+    //                 const a = (parseInt(pair[index].left, 10)/parseInt(pair[index].left2, 10)).toFixed(2).toString();
+    //                 const b = (parseInt(pair[index].middle, 10)/parseInt(pair[index].middle2, 10)).toFixed(2).toString();
+    //                 const c = (parseInt(pair[index].right, 10)/parseInt(pair[index].right2, 10)).toFixed(2).toString();
+    //                 let real_balance = (parseInt(balance1,10)/100000000).toFixed(2).toString();
+    //                 // console.log(`a : ${a}`);
+    //                 // console.log(`b : ${b}`);
+    //                 // console.log(`c : ${c}`);
+    //                 // console.log(`left url : ${pair[index].left_url}`);
+    //                 // console.log(`right url : ${pair[index].right_url}`);
+    //                 return(
+    //                     <New_Bet_card key={index} left_url={pair[index].left_url} right_url={pair[index].right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b}/>
+    //                 );
+    //             })}
+    //         </>
+    //     )
+    // }
         const set_data = () =>{
             if (!fetch_data) return null;
             set_user(profile_data);

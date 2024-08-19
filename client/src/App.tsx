@@ -44,7 +44,7 @@ interface Helper{
     need_admin:boolean;
     pay_margin:boolean;
     upload_times:string;
-    wrong_time:string;
+    wrong_times:string;
 }
 interface SavePair {
     can_bet:boolean;
@@ -169,8 +169,8 @@ const text1 = `
   If you are our diffusion helper , you can help us to upload correct result.
 `;
 const NOW_Network = "testnet";
-const resources_name = "0x3ec4c1b27a5466be2c45f3a9b134634d9e394979b3d157c60e385e714267e0ca::helper::Diffusion_store_tree";
-const resources_address = "0x7a40fc78cba8e4b86f7bf90f21bc78f453d5a4dc158d60cd40e3e0455cebcd5";
+const resources_name = "0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873::helper::Diffusion_store_tree";
+const resources_address = "0xbe47168a83a2ed7114a689e02a7a1cacc04c19fd9f056e9dbf7c921175d05da8";
 
 const test_config = new AptosConfig({
     fullnode: "https://aptos-testnet.nodit.io/bT8aS3ezHOl6T1_PyaM30lkg7odC_42l/v1",
@@ -215,6 +215,15 @@ const defaultProfile: Profile= {
         win:'0',
     }
 };
+const default_helper_to_helper_point:Helper={
+    account:'',
+    helper_contribute:[],
+    helper_point:'',
+    need_admin:false,
+    pay_margin:false,
+    upload_times:'',
+    wrong_times:'',
+};
 const App: React.FC<{id:string}> = ({id}) => {
 
     const { account, signAndSubmitTransaction } =useWallet() ;
@@ -235,7 +244,7 @@ const App: React.FC<{id:string}> = ({id}) => {
     const [user_address,setuser_address]=useState<string>("User address")
     const  [index_of_to_address]=useState<number>(0);
     const [diffusion_account,setdiffusion_account]=useState<boolean>(false);
-    const diffusion_address = "0x3ec4c1b27a5466be2c45f3a9b134634d9e394979b3d157c60e385e714267e0ca";
+    const diffusion_address = "0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873";
     const [transaction_hash , settransaction_hash] = useState<string>('');
     const [icon_url , set_icon_url]  = useState('https://raw.githubusercontent.com/yue1823/diffusion/main/client/src/art/diffusion7.png');
     const [account_name , set_account_name] = useState('');
@@ -245,6 +254,7 @@ const App: React.FC<{id:string}> = ({id}) => {
     const [user_profile,set_user_profile] = useState<Profile>();
     const [fetch_data,setfetch_data]=useState<Helper_data>();
     const [data_to_user_page,set_data_to_user_page]=useState<Real_Result_Data[]>();
+    const [helper_to_helper_point,set_helper_to_helper_point]=useState<Helper>();
     const create_diffusion_account =  async () =>{
         if (!account) return [];
         const transaction:InputTransactionData = {
@@ -332,10 +342,46 @@ const App: React.FC<{id:string}> = ({id}) => {
                        // console.log(response);
                     }
                 })
+
+            if(helper_data[0] == true){
+                try{
+                    const helper_data1 = await aptos.view(
+                        {
+                            payload: {
+                                function: `${diffusion_address}::helper::helper_upload_which_result`,
+                                functionArguments: [account.address]
+                            }
+                        }
+                    )
+                    //console.log((helper_data1[0] as Helper).wrong_times)
+
+                    if(helper_data1){
+                        const new_helper :Helper = {
+                            account:(helper_data1[0] as Helper).account,
+                            helper_contribute:(helper_data1[0] as Helper).helper_contribute,
+                            helper_point:(helper_data1[0] as Helper).helper_point,
+
+                            need_admin:(helper_data1[0] as Helper).need_admin,
+                            pay_margin:(helper_data1[0] as Helper).pay_margin,
+                            upload_times:(helper_data1[0] as Helper).upload_times,
+                            wrong_times:(helper_data1[0] as Helper).wrong_times,
+                        }
+                        ///console.log( new_helper)
+                        set_helper_to_helper_point(new_helper);
+                       // console.log()
+                    }
+                }catch (e:any){console.log(e)}
+
+            }
+
+
+
         } catch (e: any) {
             setOpen(true);
-            console.error('Failed to parse JSON:', e);
+            console.error('Failed to helper bool:', e);
         }
+
+
     };
 
     const  fatch_diffusion_resource_from_aptos = async () =>{
@@ -343,7 +389,7 @@ const App: React.FC<{id:string}> = ({id}) => {
         fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${resources_address}/resource/${resources_name}`, options)
             .then(response => response.json())
             .then((response) => {
-                  //console.log(response)
+                  console.log(response)
 
                 if(response){
                     const length1 = response.data.save_Pair_result_store.save_pair.length;
@@ -422,7 +468,7 @@ const App: React.FC<{id:string}> = ({id}) => {
 
        fatch_diffusion_resource_from_aptos()
         // console.log(`save_pair ： ${savePair}`)
-    fetchList();
+        fetchList();
     }, [account?.address]);
 
     return (
@@ -472,7 +518,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                                       <Route  path={"admin"} element={<Admin_page/>}/>
                                       <Route  path={"nft"} element={<NFT_page/>}/>
                                       <Route  path={"Helper"} element={<Helper_page helper_data={helper_data ? helper_data:[]} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>
-                                      <Route path={"my_page"} element={<User_page profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray}/>}></Route>
+                                      <Route path={"my_page"} element={<User_page profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray} move_data={helper_data ? helper_data:[]} helper_list={helper_to_helper_point ? helper_to_helper_point: default_helper_to_helper_point}/>}></Route>
 
                                       {/*<Route path={"/"} element={<Main_content address={user_address} index_of_address={index_of_address}/>}></Route>*/}
                                       {/*<Route path={"/swap"} element={<Swap_page/>}/>*/}

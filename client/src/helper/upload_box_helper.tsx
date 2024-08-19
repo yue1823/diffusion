@@ -29,8 +29,8 @@ const box_style = {
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
-const module_address="0x3ec4c1b27a5466be2c45f3a9b134634d9e394979b3d157c60e385e714267e0ca";
-const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,pool:string}> = ({ left_url,right_url,pair_name_left,pair_name_right,pool}) => {
+const module_address="0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873";
+const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,pool:string,expired_time:string}> = ({ left_url,right_url,pair_name_left,pair_name_right,pool,expired_time}) => {
     const { account, signAndSubmitTransaction } =useWallet() ;
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -41,7 +41,7 @@ const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_lef
         const transaction: InputTransactionData = {
             data: {
                 function: `${module_address}::helper::helper_upload_result`,
-                functionArguments: [`${pair_name_left} vs ${pair_name_right}` ,which1 ]
+                functionArguments: [`${pair_name_left} vs ${pair_name_right}` ,which1,expired_time ]
             }
         }
         try {

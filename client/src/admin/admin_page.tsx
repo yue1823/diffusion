@@ -12,7 +12,7 @@ import {Bounce, toast, ToastContainer} from "react-toastify";
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
-const module_address="0x3ec4c1b27a5466be2c45f3a9b134634d9e394979b3d157c60e385e714267e0ca";
+const module_address="0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873";
 const resources_type ="0x1::account::Account";
 const https_required = {
     method: 'GET',
@@ -111,35 +111,61 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
                 functionArguments: [pair_name,left1,left2,middle1,middle2,right1,right2,time,pairtype,input1,input2]
             }
         }
-        try {
-            // sign and submit transaction to chain
-            const response = await signAndSubmitTransaction(transaction);
-            // wait for transaction
-            const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
-            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
-            // message.success(
-            //
-            // )
-            toast.success(<span>
+        const datePattern = /^(0[1-9]|[12][0-9]|3[01])(0[1-9]|1[0-2])\d{4}$/;
+        if (!datePattern.test(time)) {
+            message.error("无效的日期。");
+            throw new Error("日期格式不正确。应为 ddmmyyyy 格式，并且日期必须有效。");
+        }
+        const day = parseInt(time.slice(0, 2), 10);
+        const month = parseInt(time.slice(2, 4), 10);
+        const year = parseInt(time.slice(4, 8), 10);
+        const isValidDate = (d: number, m: number, y: number): boolean => {
+            const leapYear = (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0);
+            const daysInMonth = [31, leapYear ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            return m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth[m - 1];
+        };
+        if (!isValidDate(day, month, year)) {
+            message.error("无效的日期。");
+            throw new Error("无效的日期。");
+        }else {
+
+            try {
+                // sign and submit transaction to chain
+                const response = await signAndSubmitTransaction(transaction);
+                // wait for transaction
+                const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+                const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+                // message.success(
+                //
+                // )
+                toast.success(<span>
                         hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
                     </span>, {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                transition: Bounce,
-            });
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                });
+                // setinput1("")
+                // setinput2("")
+                // setpair_name("")
+                // settime("")
+                // setpairtype("")
+                // setleft1("")
+                // setmiddle1("")
+                // setright1("")
+            } catch (error: any) {
+                console.log(error);
+                message.error(`please try again`);
+            } finally {
 
-        } catch (error: any) {
-            console.log(error);
-            message.error(`please try again`);
-        } finally {
 
-
+            }
         }
     }
     useEffect(() => {
@@ -221,21 +247,31 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
 
                         <Col span={24}>
                             <Input placeholder="pairtype (unexpected/game/sport)" onChange={value => {
+
                                 setpairtype(value.target.value)
                             }}></Input>
                         </Col>
-                        <Col span={24}>
-                            <Input placeholder="left url" onChange={value => {
-                                setinput1(value.target.value)
-                            }}></Input>
-                        </Col>
-                        <Col span={24}>
-                            <Input placeholder="right url" onChange={value => {
-                                setinput2(value.target.value)
-                            }}></Input>
-                        </Col>
-                        <Col span={24}>
-                            <button className={"rainbow"} onClick={() => submit_transaction()}>
+                    <Col span={24}>
+
+                        <button onClick={() => {
+                            setinput1('')
+                        }}><img src={input1} style={{height: 100, width: 100}}></img></button>
+                        <Input placeholder="left url" onChange={value => {
+                            setinput1(value.target.value)
+                        }}></Input>
+                    </Col>
+                    <Col span={24}>
+
+                        <button onClick={() => {
+                            setinput2('')
+                        }}><img src={input2} style={{height: 100, width: 100}}></img></button>
+                        <Input placeholder="right url" onChange={value => {
+                            setinput2(value.target.value)
+                        }}></Input>
+                    </Col>
+                    <Col span={24}>
+
+                    <button className={"rainbow"} onClick={() => submit_transaction()}>
                                 create pair
                             </button>
                         </Col>
@@ -261,7 +297,7 @@ const Upload_result_button: React.FC<{ }> = ({}) => {
     const [pairname,setpairname]=useState('');
     const [result1,setresult1]=useState('');
     const [result2,setresult2]=useState('');
-
+    const [expired_time,set_expired_time]=useState('');
 
 
 
@@ -269,7 +305,7 @@ const Upload_result_button: React.FC<{ }> = ({}) => {
         const transaction: InputTransactionData = {
             data: {
                 function: `${module_address}::helper::upload_result`,
-                functionArguments: [pairname,result1,result2]
+                functionArguments: [pairname,result1,result2,expired_time]
             }
         }
         try {
@@ -339,6 +375,13 @@ const Upload_result_button: React.FC<{ }> = ({}) => {
                     <Col span={24}>
                         <Input placeholder="result2" onChange={value => {
                             setresult2(value.target.value)
+
+                        }}></Input>
+                    </Col>
+                    <Col span={24}>
+                        <Input placeholder="expired_time" onChange={value => {
+                            set_expired_time(value.target.value)
+
                         }}></Input>
                     </Col>
                     <br/>
@@ -704,6 +747,7 @@ const Set_chance: React.FC<{}> = ({ }) => {
 }
 const Time_to_stop_bet: React.FC<{}> = ({ }) => {
     const [open , set_open] = useState<boolean>(false);
+    const [expired_time ,set_expired_time]=useState('');
     const button_click = () =>{
         set_open(true)
     }
@@ -725,7 +769,7 @@ const Time_to_stop_bet: React.FC<{}> = ({ }) => {
         const transaction: InputTransactionData = {
             data: {
                 function: `${module_address}::helper::admin_said_times_up`,
-                functionArguments: [pair_name]
+                functionArguments: [pair_name,expired_time]
             }
         }
         try {
@@ -783,9 +827,15 @@ const Time_to_stop_bet: React.FC<{}> = ({ }) => {
                     <Col span={24}>
                         <Input placeholder="pair_name" onChange={value => {
                             set_pair_name(value.target.value)
+
                         }}></Input>
                     </Col>
+                    <Col span={24}>
+                        <Input placeholder="expired_time" onChange={value => {
+                            set_expired_time(value.target.value)
 
+                        }}></Input>
+                    </Col>
                     <br/>
                     <Col span={24}>
                         <button className={"rainbow"} onClick={() => submit_transaction()}>

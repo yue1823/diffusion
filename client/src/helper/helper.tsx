@@ -16,7 +16,7 @@ import EnvelopeComponent from "./letter.";
 import ButtonWithProgress from "./submit_button";
 import {Bounce, toast, ToastContainer} from "react-toastify";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk"; // Assuming you have a CSS file for the styles
-const diffusion_address = "0x3ec4c1b27a5466be2c45f3a9b134634d9e394979b3d157c60e385e714267e0ca";
+const diffusion_address = "0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873";
 const NOW_Network = "testnet";
 const aptosConfig = new AptosConfig({ network: Network.TESTNET});
 const aptos = new Aptos(aptosConfig);
@@ -154,6 +154,7 @@ const Deal_with_data: React.FC<{ fetch_data: Helper_data ,which1:string}> = ({fe
                         pair_name_left={firstPart}
                         pair_name_right={secondPart}
                         pool={pool}
+                        expired_time={pair.expired_time}
                     />
                 );
             })}

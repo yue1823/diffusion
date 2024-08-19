@@ -22,9 +22,9 @@ const box_style = {
 };
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
-const moduleAddress = '0x3ec4c1b27a5466be2c45f3a9b134634d9e394979b3d157c60e385e714267e0ca'
+const moduleAddress = '0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873'
 
-const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,balance:string ,left:string,middle:string,right :string}> = ({left_url,right_url,pair_name_left,pair_name_right,balance,left,right,middle }) => {
+const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,balance:string ,left:string,middle:string,right :string,expired_time:string}> = ({left_url,right_url,pair_name_left,pair_name_right,balance,left,right,middle,expired_time }) => {
     const { account, signAndSubmitTransaction } = useWallet();
     const [open, setOpen] = React.useState(false);
     const [input_value,set_input_value]=useState("0");
@@ -60,7 +60,7 @@ const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:str
                 data: {
                     function:`${moduleAddress}::helper::create_bet_card`,
                     typeArguments:[],
-                    functionArguments:[parseFloat(input_value)*100000000,`${day}${month}${year}`,key,result]
+                    functionArguments:[parseFloat(input_value)*100000000,`${day}${month}${year}`,key,result,expired_time]
                 }
             }
             try {

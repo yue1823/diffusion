@@ -25,8 +25,9 @@ import {
 } from "@pythnetwork/client";
 
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
-import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
+import {Aptos, AptosConfig, MoveValue, Network} from "@aptos-labs/ts-sdk";
 import Claim_card_user_page from "./claim_card";
+import {Link} from "react-router-dom";
 
 interface SavePair {
     can_bet:boolean;
@@ -80,6 +81,15 @@ interface Real_Result_Data{
     save_data1:SavePair;
     save_can_claim:boolean;
     save_result:string;
+}
+interface Helper{
+    account:string;
+    helper_contribute:string[];
+    helper_point:string;
+    need_admin:boolean;
+    pay_margin:boolean;
+    upload_times:string;
+    wrong_times:string;
 }
 const options = {
     method: 'GET',
@@ -158,6 +168,7 @@ const How_many_claim_card:React.FC<{profile_data:Profile,result_data:Result_Data
     //     console.log(`save_result : ${ matchingResult.save_result}`);
     //     console.log(`pair.claim : ${matchingResult.save_can_claim}`)
     // useEffect(() => {
+    //     empty_vector.length = 0;
     // },[filteredPairs]);
     return (
         <>
@@ -181,7 +192,7 @@ const How_many_claim_card:React.FC<{profile_data:Profile,result_data:Result_Data
         </>
     );
 }
-const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] }> = ({profile_data,result_data }) => {
+const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] ,move_data:MoveValue[],helper_list:Helper}> = ({profile_data,result_data,move_data,helper_list}) => {
     const { account, signAndSubmitTransaction } = useWallet();
     const [right_of_segement,setright_of_segement]=useState<string>('Claim');
     const [helper_point,set_helper_point]=useState<string>('');
@@ -195,6 +206,7 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] }>
     const [user_gain,set_user_gain]=useState<string>('0');
     const [user_lost,set_user_lost]=useState<string>('0');
     const [data_go_claim_card,set_data_go_claim_card]=useState<Result_Data[]>();
+
     const [pie_data,set_pie_data] = useState([
         { id: 0, value: 0, label: 'APT' },
         { id: 1, value: 0, label: 'zUSDC' },
@@ -333,15 +345,23 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] }>
    //          save_data1:profile_data.save_bet_card
    //          save_can_claim:
    //      }
-   //  }
+   // }
+   //  useEffect(() => {
+   //          empty_vector.length = 0;
+   //      },[account]);
 
     useEffect(() => {
         //pythConnection.start()
+        if(move_data[0] && move_data[1]){
+            set_helper_point(helper_list.helper_point);
+            set_wrong_time(helper_list.wrong_times);
+        }
 
         set_user_gain((parseFloat(profile_data.save_level.win)/100000000).toFixed(2).toString());
         set_user_lost((parseFloat(profile_data.save_level.lose)/100000000).toFixed(2).toString());
         devnet_fatch_pie_data();
         compare_data();
+
     },[account,profile_data]);
     return (
         <>
@@ -490,7 +510,7 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] }>
                                                                 <Card style={{backgroundColor:"#60605b",color:"#f4f4f1",height:50}}>
                                                                     <Row>
                                                                         <div style={{position:"relative",top:-10}}>
-                                                                            {user_address}
+                                                                            {user_address.substring(0, 28)}
                                                                         </div>
                                                                     </Row>
                                                                 </Card>
@@ -502,15 +522,24 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] }>
                                                     <Row>
                                                         <Col span={24}>
                                                             <Card style={{height:80 ,position:"relative",top:-14}}>
-                                                                <Statistic
-                                                                    title="Helper Point"
-                                                                    value={helper_point}
-                                                                    precision={2}
-                                                                    valueStyle={{ color: '#3f8600' }}
-                                                                    prefix={<ArrowUpOutlined />}
-                                                                    suffix=" pt"
-                                                                    style={{position:"relative",top:-14}}
-                                                                />
+                                                                {move_data[0] ?
+                                                                    <>
+                                                                        {move_data[1] ?  <Statistic
+                                                                            title="Helper Point"
+                                                                            value={helper_point}
+                                                                            precision={2}
+                                                                            valueStyle={{ color: '#3f8600' }}
+                                                                            prefix={<ArrowUpOutlined />}
+                                                                            suffix=" pt"
+                                                                            style={{position:"relative",top:-14}}
+                                                                        /> : <>
+
+                                                                        </>}
+                                                                    </>
+
+                                                                    :<>
+                                                                    <p>Sorry , you are not helper</p>
+                                                                    </> }
                                                             </Card>
                                                         </Col>
                                                     </Row>
@@ -520,15 +549,29 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] }>
                                                     <Row>
                                                         <Col span={24}>
                                                             <Card style={{height:80 ,position:"relative",top:-14}}>
-                                                                <Statistic
-                                                                    title="Wrong Times"
-                                                                    value={wrong_time}
-                                                                    precision={2}
-                                                                    valueStyle={{ color: '#cf1322' }}
-                                                                    prefix={<ArrowDownOutlined />}
-                                                                    suffix=" t"
-                                                                    style={{position:"relative",top:-14}}
-                                                                />
+                                                                {move_data[0] ?
+                                                                    <>
+                                                                        {move_data[1] ? <Statistic
+                                                                            title="Wrong Times"
+                                                                            value={wrong_time}
+                                                                            precision={2}
+                                                                            valueStyle={{ color: '#cf1322' }}
+                                                                            prefix={<ArrowDownOutlined />}
+                                                                            suffix=" t"
+                                                                            style={{position:"relative",top:-14}}
+                                                                        /> : <>
+
+                                                                        </>}
+                                                                    </>
+
+                                                                    : <div style={{position:"relative",left:-15,top:-15}}>
+                                                                        <Link to={"/Bet"}>
+                                                                            <button className="custom-btn btn-2"
+                                                                                    onClick={() => {
+                                                                                    }}>Go Bet
+                                                                            </button>
+                                                                        </Link>
+                                                                    </div>}
                                                             </Card>
                                                         </Col>
                                                     </Row>
