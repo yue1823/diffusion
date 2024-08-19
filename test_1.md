@@ -172,14 +172,15 @@ const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
         timeDifference = 36 * 60 * 60 * 1000;
       }
 
-      // Calculate days, hours, and minutes
+      // Calculate days, hours, minutes, and seconds
       const totalSeconds = Math.floor(timeDifference / 1000);
       const days = Math.floor(totalSeconds / (3600 * 24));
       const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
       const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
 
       // Format the time left
-      setTimeLeft(`${days} days ${hours} hours ${minutes} minutes`);
+      setTimeLeft(`${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`);
     };
 
     calculateTimeLeft();
@@ -196,5 +197,6 @@ const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
 };
 
 export default CountdownTimer;
+
 ```
 
