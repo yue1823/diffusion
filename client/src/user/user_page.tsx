@@ -337,6 +337,9 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] }>
 
     useEffect(() => {
         //pythConnection.start()
+
+        set_user_gain((parseFloat(profile_data.save_level.win)/100000000).toFixed(2).toString());
+        set_user_lost((parseFloat(profile_data.save_level.lose)/100000000).toFixed(2).toString());
         devnet_fatch_pie_data();
         compare_data();
     },[account,profile_data]);

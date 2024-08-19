@@ -57,7 +57,7 @@ interface Profile{
     }
 
 }
-const Flip_card_small:React.FC<{result_data:Result_Data,profile_data:Profile}> = ({result_data,profile_data}) =>{
+const Flip_card_small:React.FC<{result_data:Result_Data,profile_data:Profile,random_url:string}> = ({result_data,profile_data,random_url}) =>{
 
     const [real_url ,set_url ] =useState<string>('');
     const [balance ,set_balance]=useState<string>('');
@@ -95,7 +95,7 @@ const Flip_card_small:React.FC<{result_data:Result_Data,profile_data:Profile}> =
                         <figure>
 
                             <img
-                                src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                                src={random_url}
                                 alt="Brohm Lake"
                                 style={{left: 0, width: "100%", position: "absolute"}}/>
                             <figcaption style={{fontSize: 5 ,position:"relative",right:-15,top:10,width:60,height:40}} >
