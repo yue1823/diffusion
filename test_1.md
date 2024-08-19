@@ -149,7 +149,7 @@ https://motion.framer.wiki/action-drag
 import { useState, useEffect } from 'react';
 
 const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
-  const [timeLeft, setTimeLeft] = useState<number>(0);
+  const [timeLeft, setTimeLeft] = useState<string>('');
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -158,16 +158,28 @@ const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
       const month = parseInt(expiredDate.slice(2, 4), 10) - 1; // JavaScript months are 0-based
       const year = parseInt(expiredDate.slice(4, 8), 10);
 
+      // Expiration date at midnight of the provided date
       const expirationDate = new Date(year, month, day);
 
-      let timeDifference = expirationDate.getTime() - now.getTime();
+      // Current date and time
+      const currentDate = now;
+
+      // Time difference in milliseconds
+      let timeDifference = expirationDate.getTime() - currentDate.getTime();
 
       if (timeDifference < 0) {
         // If expiredDate is in the past, set to 36 hours
         timeDifference = 36 * 60 * 60 * 1000;
       }
 
-      setTimeLeft(timeDifference);
+      // Calculate days, hours, and minutes
+      const totalSeconds = Math.floor(timeDifference / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+
+      // Format the time left
+      setTimeLeft(`${days} days ${hours} hours ${minutes} minutes`);
     };
 
     calculateTimeLeft();
@@ -176,18 +188,9 @@ const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
     return () => clearInterval(interval);
   }, [expiredDate]);
 
-  const formatTime = (milliseconds: number): string => {
-    const totalSeconds = Math.floor(milliseconds / 1000);
-    const hours = Math.floor(totalSeconds / 3600);
-    const days = Math.floor(hours / 24);
-    const remainingHours = hours % 24;
-    
-    return `${days} days ${remainingHours} hours`;
-  };
-
   return (
     <div>
-      {formatTime(timeLeft)}
+      {timeLeft}
     </div>
   );
 };
