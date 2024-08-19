@@ -146,7 +146,7 @@ https://motion.framer.wiki/action-drag
 
 計時
 ```
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
   const [timeLeft, setTimeLeft] = useState<string>('');
@@ -158,29 +158,21 @@ const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
       const month = parseInt(expiredDate.slice(2, 4), 10) - 1; // JavaScript months are 0-based
       const year = parseInt(expiredDate.slice(4, 8), 10);
 
-      // Expiration date at midnight of the provided date
       const expirationDate = new Date(year, month, day);
-
-      // Current date and time
       const currentDate = now;
 
-      // Time difference in milliseconds
       let timeDifference = expirationDate.getTime() - currentDate.getTime();
-
       if (timeDifference < 0) {
-        // If expiredDate is in the past, set to 36 hours
         timeDifference = 36 * 60 * 60 * 1000;
       }
 
-      // Calculate days, hours, minutes, and seconds
       const totalSeconds = Math.floor(timeDifference / 1000);
       const days = Math.floor(totalSeconds / (3600 * 24));
       const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
       const minutes = Math.floor((totalSeconds % 3600) / 60);
       const seconds = totalSeconds % 60;
 
-      // Format the time left
-      setTimeLeft(`${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`);
+      setTimeLeft({ days, hours, minutes, seconds });
     };
 
     calculateTimeLeft();
@@ -189,14 +181,53 @@ const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
     return () => clearInterval(interval);
   }, [expiredDate]);
 
+  const containerStyle: React.CSSProperties = {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '1.5rem',
+  };
+
+  const itemStyle: React.CSSProperties = {
+    textAlign: 'center',
+  };
+
+  const numberStyle: React.CSSProperties = {
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    marginBottom: '0.5rem',
+  };
+
+  const labelStyle: React.CSSProperties = {
+    fontSize: '1rem',
+    color: '#555',
+  };
+
   return (
-    <div>
-      {timeLeft}
+    <div style={containerStyle}>
+      <div style={itemStyle}>
+        <div style={numberStyle}>{timeLeft.days}</div>
+        <div style={labelStyle}>Days</div>
+      </div>
+      <div style={itemStyle}>
+        <div style={numberStyle}>{timeLeft.hours}</div>
+        <div style={labelStyle}>Hours</div>
+      </div>
+      <div style={itemStyle}>
+        <div style={numberStyle}>{timeLeft.minutes}</div>
+        <div style={labelStyle}>Minutes</div>
+      </div>
+      <div style={itemStyle}>
+        <div style={numberStyle}>{timeLeft.seconds}</div>
+        <div style={labelStyle}>Seconds</div>
+      </div>
     </div>
   );
 };
 
 export default CountdownTimer;
+
 
 ```
 
