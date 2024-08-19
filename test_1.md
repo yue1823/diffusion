@@ -142,3 +142,56 @@ framer 教學
 ```
 https://motion.framer.wiki/action-drag
 ```
+
+
+計時
+```
+import { useState, useEffect } from 'react';
+
+const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
+  const [timeLeft, setTimeLeft] = useState<number>(0);
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const day = parseInt(expiredDate.slice(0, 2), 10);
+      const month = parseInt(expiredDate.slice(2, 4), 10) - 1; // JavaScript months are 0-based
+      const year = parseInt(expiredDate.slice(4, 8), 10);
+
+      const expirationDate = new Date(year, month, day);
+
+      let timeDifference = expirationDate.getTime() - now.getTime();
+
+      if (timeDifference < 0) {
+        // If expiredDate is in the past, set to 36 hours
+        timeDifference = 36 * 60 * 60 * 1000;
+      }
+
+      setTimeLeft(timeDifference);
+    };
+
+    calculateTimeLeft();
+    const interval = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(interval);
+  }, [expiredDate]);
+
+  const formatTime = (milliseconds: number): string => {
+    const totalSeconds = Math.floor(milliseconds / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const days = Math.floor(hours / 24);
+    const remainingHours = hours % 24;
+    
+    return `${days} days ${remainingHours} hours`;
+  };
+
+  return (
+    <div>
+      {formatTime(timeLeft)}
+    </div>
+  );
+};
+
+export default CountdownTimer;
+```
+
