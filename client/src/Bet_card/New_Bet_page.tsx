@@ -133,7 +133,8 @@ const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,bala
     return (
         <>
             {currentData.map((pair, index) => {
-                const [firstPart, secondPart] = pair.pair_name.split(" vs ");
+                const [firstPart, ddd] = pair.pair_name.split(" vs ");
+                const [secondPart ,thirdPart]= ddd.split(" - ");
                 const a = (parseInt(pair.left, 10)/parseInt(pair.left2, 10)).toFixed(2).toString();
                 const b = (parseInt(pair.middle, 10)/parseInt(pair.middle2, 10)).toFixed(2).toString();
                 const c = (parseInt(pair.right, 10)/parseInt(pair.right2, 10)).toFixed(2).toString();
@@ -141,7 +142,7 @@ const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,bala
 
                 return (
                     <>
-                        <New_Bet_card key={index} left_url={pair.left_url} right_url={pair.right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b} expired_time={pair.expired_time}/>
+                        <New_Bet_card key={index} left_url={pair.left_url} right_url={pair.right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b} expired_time={pair.expired_time} type={thirdPart}/>
 
                     </>
                 );
@@ -150,43 +151,43 @@ const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,bala
     );
 }
 
-const Deal_with_uer_card_data: React.FC<{ fetch_data: Helper_data ,which1:string,balance1:string,currentPage:number}> = ({fetch_data,which1,balance1,currentPage}) =>{
-
-    if (!fetch_data) return null;
-    const filteredPairs = fetch_data.pairs
-        .filter(pair =>
-            (which1 === "All" || pair.pair_type === which1) &&
-            pair.can_bet
-        );
-    //Array.from({ length: fetch_data.pairs.length }).map((_, index)
-
-    const itemsPerPage = 6;
-    const totalItems = filteredPairs.length;
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-    const currentData = filteredPairs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-    console.log(filteredPairs);
-    return (
-        <>
-            {currentData.map((pair, index) => {
-                const [firstPart, ba] = pair.pair_name.split(" vs ");
-                const [secondPart,thirdPart]=ba.split(" - ");
-
-                const a = (parseInt(pair.left, 10)/parseInt(pair.left2, 10)).toFixed(2).toString();
-                const b = (parseInt(pair.middle, 10)/parseInt(pair.middle2, 10)).toFixed(2).toString();
-                const c = (parseInt(pair.right, 10)/parseInt(pair.right2, 10)).toFixed(2).toString();
-                let real_balance = (parseInt(balance1,10)/100000000).toFixed(2).toString();
-
-                return (
-                    <>
-                        <New_Bet_card key={index} left_url={pair.left_url} right_url={pair.right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b} expired_time={pair.expired_time}/>
-
-                    </>
-                );
-            })}
-        </>
-    );
-}
+// const Deal_with_uer_card_data: React.FC<{ fetch_data: Helper_data ,which1:string,balance1:string,currentPage:number}> = ({fetch_data,which1,balance1,currentPage}) =>{
+//
+//     if (!fetch_data) return null;
+//     const filteredPairs = fetch_data.pairs
+//         .filter(pair =>
+//             (which1 === "All" || pair.pair_type === which1) &&
+//             pair.can_bet
+//         );
+//     //Array.from({ length: fetch_data.pairs.length }).map((_, index)
+//
+//     const itemsPerPage = 6;
+//     const totalItems = filteredPairs.length;
+//     const totalPages = Math.ceil(totalItems / itemsPerPage);
+//
+//     const currentData = filteredPairs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+//     console.log(filteredPairs);
+//     return (
+//         <>
+//             {currentData.map((pair, index) => {
+//                 const [firstPart, ba] = pair.pair_name.split(" vs ");
+//                 const [secondPart,thirdPart]=ba.split(" - ");
+//
+//                 const a = (parseInt(pair.left, 10)/parseInt(pair.left2, 10)).toFixed(2).toString();
+//                 const b = (parseInt(pair.middle, 10)/parseInt(pair.middle2, 10)).toFixed(2).toString();
+//                 const c = (parseInt(pair.right, 10)/parseInt(pair.right2, 10)).toFixed(2).toString();
+//                 let real_balance = (parseInt(balance1,10)/100000000).toFixed(2).toString();
+//
+//                 return (
+//                     <>
+//                         <New_Bet_card key={index} left_url={pair.left_url} right_url={pair.right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b} expired_time={pair.expired_time}/>
+//
+//                     </>
+//                 );
+//             })}
+//         </>
+//     );
+// }
 const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetch_data:Helper_data,profile_data:Profile,result_data:Real_Result_Data[]}> = ({length,pair ,balance1,fetch_data,profile_data,result_data}) => {
     const [currentPage, setCurrentPage] = useState(1);
     const { account, signAndSubmitTransaction } = useWallet();
