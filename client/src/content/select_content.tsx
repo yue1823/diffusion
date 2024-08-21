@@ -369,7 +369,6 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
 
                     <Row>
                         <List
-
                             size={"small"}
                             style={{width:420}}
                             header={<div>Fees (APT) <span style={{float: 'right' ,width:20,height:20}}><img alt={"apt_logo"} src={Apt_logo}></img></span></div>}
