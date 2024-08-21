@@ -13,6 +13,8 @@ import Helper_page from "../helper/helper";
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
 import {Network} from "@aptos-labs/ts-sdk";
 import Helper_upload_box from "../helper/upload_box_helper";
+import Claim_card_user_page from "../user/claim_card";
+import {How_many_claim_card} from "../user/user_page";
 interface Box_number{
     boxCount: number; // 传入的数量
 }
@@ -66,6 +68,7 @@ interface Bet_card_data{
     a_win:string;
     b_win:string;
     c_win:string;
+    bet:string;
     expired_time:string;
     pair:SavePair;
     time:string;
@@ -90,6 +93,17 @@ interface Profile{
     }
 
 }
+interface Result_Data{
+    save_data1:Bet_card_data;
+    save_can_claim:boolean;
+    save_result:string;
+}
+interface Real_Result_Data{
+    save_data1:SavePair;
+    save_can_claim:boolean;
+    save_result:string;
+}
+const have_card_data :Result_Data[] = [];
 const text1 = `
   If you are our diffusion helper , you can help us to upload correct result.
 `;
@@ -135,13 +149,53 @@ const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,bala
         </>
     );
 }
-const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetch_data:Helper_data,profile_data:Profile}> = ({length,pair ,balance1,fetch_data,profile_data}) => {
+
+const Deal_with_uer_card_data: React.FC<{ fetch_data: Helper_data ,which1:string,balance1:string,currentPage:number}> = ({fetch_data,which1,balance1,currentPage}) =>{
+
+    if (!fetch_data) return null;
+    const filteredPairs = fetch_data.pairs
+        .filter(pair =>
+            (which1 === "All" || pair.pair_type === which1) &&
+            pair.can_bet
+        );
+    //Array.from({ length: fetch_data.pairs.length }).map((_, index)
+
+    const itemsPerPage = 6;
+    const totalItems = filteredPairs.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    const currentData = filteredPairs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+    console.log(filteredPairs);
+    return (
+        <>
+            {currentData.map((pair, index) => {
+                const [firstPart, ba] = pair.pair_name.split(" vs ");
+                const [secondPart,thirdPart]=ba.split(" - ");
+
+                const a = (parseInt(pair.left, 10)/parseInt(pair.left2, 10)).toFixed(2).toString();
+                const b = (parseInt(pair.middle, 10)/parseInt(pair.middle2, 10)).toFixed(2).toString();
+                const c = (parseInt(pair.right, 10)/parseInt(pair.right2, 10)).toFixed(2).toString();
+                let real_balance = (parseInt(balance1,10)/100000000).toFixed(2).toString();
+
+                return (
+                    <>
+                        <New_Bet_card key={index} left_url={pair.left_url} right_url={pair.right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b} expired_time={pair.expired_time}/>
+
+                    </>
+                );
+            })}
+        </>
+    );
+}
+const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetch_data:Helper_data,profile_data:Profile,result_data:Real_Result_Data[]}> = ({length,pair ,balance1,fetch_data,profile_data,result_data}) => {
     const [currentPage, setCurrentPage] = useState(1);
     const { account, signAndSubmitTransaction } = useWallet();
     const [savePair, setSavePair] = useState<SavePair[]>([]);
     const [pair_can_upload,set_pair_can_upload]=useState<string[]>([]);
     const [which,set_which] =useState('All');
     const [user , set_user] = useState<Profile>();
+    const [bet_page_or_not,set_bet_page_or_not]=useState(true);
+    const [data_go_claim_card,set_data_go_claim_card]=useState<Result_Data[]>();
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
@@ -167,7 +221,39 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
     //         </>
     //     )
     // }
-
+    const compare_data = () =>{
+        // have_card_data    Result_Data
+        //result_data  -Real_Result_Data
+        //
+        let length1 =profile_data.save_bet_card.length;
+        let length2 =result_data.length;
+        // console.log(`length1: ${length1}`)
+        // console.log(`length2: ${length2}`)
+        for (let i = 0; i < length1; i++) {
+            let j=0;
+            for ( j=0;j < length2; j++) {
+                if(profile_data.save_bet_card[i].pair.pair_name === result_data[j].save_data1.pair_name){
+                    if(profile_data.save_bet_card[i].pair.expired_time === result_data[j].save_data1.expired_time){
+                        const new_data : Result_Data ={
+                            save_data1:profile_data.save_bet_card[i],
+                            save_can_claim:result_data[j].save_can_claim,
+                            save_result:result_data[j].save_result
+                        }
+                        have_card_data.push(new_data);
+                    }
+                }
+            }
+        }
+        // console.log(`result_data length: ${result_data.length}`)
+        // console.log(`result_data 0: ${result_data[0].save_result}`)
+        // console.log(`result_data 1: ${result_data[1].save_result}`)
+        // console.log(`result_data 2: ${result_data[2].save_result}`)
+        set_data_go_claim_card(have_card_data);
+        // console.log(`have_card_data length: ${have_card_data.length}`)
+        // console.log(`have_card_data 0: ${have_card_data[0].save_can_claim}`)
+        // console.log(`have_card_data 0: ${have_card_data[0].save_result}`)
+        // console.log(`have_card_data 0: ${have_card_data[0].save_data1.pair.pair_name}`)
+    }
     const filteredPairs = fetch_data.pairs
         .filter(pair =>
             (which === "All" || pair.pair_type === which) &&
@@ -190,6 +276,7 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
     useEffect(() => {
         //pythConnection.start()
         set_data()
+        compare_data()
         //fatch_diffusion_resource_from_aptos()
     },[account,profile_data]);
     return (
@@ -220,6 +307,19 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
                                         <br/>
                                         <Row>
                                             <Col span={24}>
+                                                {bet_page_or_not ? <>
+                                                    <button className="custom-btn btn-6" onClick={() =>{
+                                                        set_bet_page_or_not(false);
+                                                    }} style={{width:150}}>
+                                                            My Card
+                                                    </button>
+                                                </> : <>
+                                                    <button className="custom-btn btn-6" onClick={() =>{
+                                                        set_bet_page_or_not(true);
+                                                    }} style={{width:150}}>
+                                                            Go Bet
+                                                    </button>
+                                                </>}
 
                                             </Col>
                                         </Row>
@@ -232,7 +332,9 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
                                     </Card>
                                 </Col>
                                 <Col span={20}>
-                                    <Card title={<span>
+
+                                    {bet_page_or_not ? <>
+                                        <Card title={<span>
                                     <Segmented<string>
                                         options={["All",'game', 'sport', 'unexpected']}
                                         onChange={(value) => {
@@ -241,14 +343,31 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
                                         }}
                                     />
                                 </span>} style={{height: 500, backgroundColor: "#f4f4f1"}}>
-                                        <Row gutter={[24, 16]}>
+                                            <Row gutter={[24, 16]}>
 
-                                            <Deal_with_data_bet fetch_data={fetch_data} balance1={balance1} which1={which} currentPage={currentPage}/>
+                                                <Deal_with_data_bet fetch_data={fetch_data} balance1={balance1} which1={which} currentPage={currentPage}/>
 
-                                            {/*<Desicion_number_of_box boxCount={length}/>*/}
-                                        </Row>
-
+                                                {/*<Desicion_number_of_box boxCount={length}/>*/}
+                                            </Row>
                                     </Card>
+                                    </> : <>
+                                    <Card title={<span>
+                                    <Segmented<string>
+                                        options={["All",'Claim']}
+                                        onChange={(value) => {
+                                            set_which(value);
+                                            console.log(value); // string
+                                        }}
+                                    />
+                                </span>} style={{height: 500, backgroundColor: "#f4f4f1"}}>
+                                        <Row gutter={[24, 16]}>
+                                        <How_many_claim_card which1={which} profile_data={profile_data} result_data={data_go_claim_card?data_go_claim_card:have_card_data}/>
+                                        </Row> </Card>
+
+
+                                    </>}
+
+
                                 </Col>
                             </Row>
                             <br/>
