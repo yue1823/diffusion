@@ -1,5 +1,5 @@
 
-import {Card, Col, Image, Input, message, Row, Statistic, theme} from "antd";
+import {Card, Col, Image, Input, List, message, Row, Statistic, theme} from "antd";
 import React, {useEffect, useState} from 'react';
 import { motion } from "framer-motion";
 import Modal from "@mui/material/Modal";
@@ -7,6 +7,7 @@ import {Box} from "@mui/material";
 import {InputTransactionData, useWallet} from "@aptos-labs/wallet-adapter-react";
 import "../css_/user_bet_box.css"
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
+import Apt_logo from "../art/Aptos_mark_BLK.svg";
 const box_style = {
     position: 'absolute' as 'absolute',
 
@@ -16,10 +17,15 @@ const box_style = {
     width: 600,
     borderRadius: 10,
     backgroundColor:"#dfdace",
-    height:470,
+    height:"auto",
     boxShadow: 2,
     p: 4,
 };
+const data = [
+    {label: 'Diffusion fees charge 10%',value:0.1},
+    {label: 'Expected bet ',value:1},
+
+];
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 const moduleAddress = '0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873'
@@ -28,11 +34,11 @@ const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:str
     const { account, signAndSubmitTransaction } = useWallet();
     const [open, setOpen] = React.useState(false);
     const [input_value,set_input_value]=useState("0");
+    const [amount_value,se_amount_value]=useState<string>('');
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const max_button = () => set_input_value(balance);
     const check_before_submit = (key:string)=>{
-
         const a = parseFloat(input_value);
         try{
             if( a == 0){
@@ -42,7 +48,6 @@ const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:str
         }catch (error:any){
             console.log(error)
         }
-
         submit_transaction(key).then(r => console.log(r));
     }
     const submit_transaction = async (key:string) => {
@@ -192,6 +197,24 @@ const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:str
                         </Row>
                         <br/>
                         <Row gutter={[26,26]} style={{}}>
+                            <Col span={24}>
+                                <List
+                                    size={"small"}
+
+                                    header={<div>Fees (APT) <span style={{float: 'right' ,width:20,height:20}}><img alt={"apt_logo"} src={Apt_logo}></img></span></div>}
+                                    footer={<div>Total cost: <span style={{float: 'right'}}>{"1"}</span></div>}
+                                    bordered
+                                    dataSource={data}
+                                    renderItem={(item) => (
+                                        <List.Item>
+                                            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                                                <span>{item.label}</span>
+                                                {item.value}
+                                            </div>
+                                        </List.Item>
+                                    )}
+                                />
+                            </Col>
                             <Col span={8}>
                                 <motion.div className={"box"}
                                             whileHovwe={{scale: 1.5}}
