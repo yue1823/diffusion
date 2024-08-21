@@ -1,4 +1,4 @@
-import {Button, Card, Col, ProgressProps, Row, Segmented, Statistic, theme} from "antd";
+import {Button, Card, Col, message, ProgressProps, Row, Segmented, Statistic, theme} from "antd";
 import React, {useEffect, useRef, useState} from 'react';
 import APT_LOGO from '../logo/aptos-apt-logo.svg';
 import My_logo from "../art/logo_of_yue.svg";
@@ -11,7 +11,7 @@ import {
     CopyOutlined, FallOutlined,
     RiseOutlined
 } from "@ant-design/icons";
-import {toast, ToastContainer} from "react-toastify";
+import {Bounce, toast, ToastContainer} from "react-toastify";
 import {Connection, PublicKey} from '@solana/web3.js'
 import copy from "copy-to-clipboard";
 import { PieChart } from '@mui/x-charts/PieChart';
@@ -24,7 +24,7 @@ import {
     PythConnection, PriceType
 } from "@pythnetwork/client";
 
-import {useWallet} from "@aptos-labs/wallet-adapter-react";
+import {InputTransactionData, useWallet} from "@aptos-labs/wallet-adapter-react";
 import {Aptos, AptosConfig, MoveValue, Network} from "@aptos-labs/ts-sdk";
 import Claim_card_user_page from "./claim_card";
 import {Link} from "react-router-dom";
@@ -98,7 +98,7 @@ const options = {
 const NOW_Network = "testnet";
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
-
+const module_address="0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873";
 const pyth_apt_usd = 'https://hermes.pyth.network/v2/updates/price/stream?ids[]=0x03ae4db29ed4ae33d323568895aa00337e658e348b37509f5372ae51f0af00d5';
 const PYTHNET_CLUSTER_NAME: PythCluster = 'pythnet'
 const connection = new Connection(getPythClusterApiUrl(PYTHNET_CLUSTER_NAME))
@@ -206,6 +206,7 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] ,m
     const [user_gain,set_user_gain]=useState<string>('0');
     const [user_lost,set_user_lost]=useState<string>('0');
     const [data_go_claim_card,set_data_go_claim_card]=useState<Result_Data[]>();
+    const [move , set_move]=useState(false);
 
     const [pie_data,set_pie_data] = useState([
         { id: 0, value: 0, label: 'APT' },
@@ -319,6 +320,46 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] ,m
     }
 
 
+        const submit_transaction_pay_margin = async () => {
+            const transaction: InputTransactionData = {
+                data: {
+                    function: `${module_address}::helper::apply_to_be_helper`,
+                    functionArguments: []
+                }
+            }
+            try {
+                // sign and submit transaction to chain
+                const response = await signAndSubmitTransaction(transaction);
+                // wait for transaction
+                const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+                const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+                // message.success(
+                //
+                // )
+                toast.success(<span>
+                        hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                    </span>, {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                });
+
+            } catch (error: any) {
+                console.log(error);
+                message.error(`please try again`);
+            } finally {
+
+
+            }
+        }
+
+
     // const feeds = [new PublicKey('H6ARHf6YXhGYeQfUzQNGk6rDNnLBQKrenN712K4AQJEG')]
     // const pythConnection = new PythConnection(connection, pythPublicKey, 'confirmed', feeds)
     // pythConnection.onPriceChangeVerbose((productAccount, priceAccount) => {
@@ -359,6 +400,7 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] ,m
 
         set_user_gain((parseFloat(profile_data.save_level.win)/100000000).toFixed(2).toString());
         set_user_lost((parseFloat(profile_data.save_level.lose)/100000000).toFixed(2).toString());
+        set_move(move_data[1] as  boolean);
         devnet_fatch_pie_data();
         compare_data();
 
@@ -524,7 +566,7 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] ,m
                                                             <Card style={{height:80 ,position:"relative",top:-14}}>
                                                                 {move_data[0] ?
                                                                     <>
-                                                                        {move_data[1] ?  <Statistic
+                                                                        {move ?  <Statistic
                                                                             title="Helper Point"
                                                                             value={helper_point}
                                                                             precision={2}
@@ -533,7 +575,7 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] ,m
                                                                             suffix=" pt"
                                                                             style={{position:"relative",top:-14}}
                                                                         /> : <>
-
+                                                                            <p>Although you are a helper,but you need to pay the margin first.</p>
                                                                         </>}
                                                                     </>
 
@@ -551,7 +593,7 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] ,m
                                                             <Card style={{height:80 ,position:"relative",top:-14}}>
                                                                 {move_data[0] ?
                                                                     <>
-                                                                        {move_data[1] ? <Statistic
+                                                                        {move ? <Statistic
                                                                             title="Wrong Times"
                                                                             value={wrong_time}
                                                                             precision={2}
@@ -560,13 +602,22 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] ,m
                                                                             suffix=" t"
                                                                             style={{position:"relative",top:-14}}
                                                                         /> : <>
-
+                                                                            <button className="custom-btn btn-2"
+                                                                                    onClick={() => {
+                                                                                        submit_transaction_pay_margin()
+                                                                                        set_move(true)
+                                                                                    }}>Pay margin
+                                                                            </button>
                                                                         </>}
                                                                     </>
 
-                                                                    : <div style={{position:"relative",left:-15,top:-15}}>
+                                                                    : <div style={{
+                                                                        position: "relative",
+                                                                        left: -15,
+                                                                        top: -15
+                                                                    }}>
                                                                         <Link to={"/Bet"}>
-                                                                            <button className="custom-btn btn-2"
+                                                                        <button className="custom-btn btn-2"
                                                                                     onClick={() => {
                                                                                     }}>Go Bet
                                                                             </button>
@@ -588,7 +639,18 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] ,m
                                         </Row>
                                     </Card>
                                 </Col>
-
+                                <ToastContainer
+                                    position="bottom-right"
+                                    autoClose={5000}
+                                    hideProgressBar={false}
+                                    newestOnTop={false}
+                                    closeOnClick
+                                    rtl={false}
+                                    pauseOnFocusLoss
+                                    draggable
+                                    pauseOnHover
+                                    theme="light"
+                                />
                             </Row>
                         </div>
                     </Col>
@@ -635,3 +697,4 @@ const segemat_options = [
 ]
 
 export default User_page;
+export { How_many_claim_card };
