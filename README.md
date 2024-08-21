@@ -17,3 +17,9 @@ We want to integrate bridge in the future, enabling users from different chains 
 - website design
 - whitepaper of diffusion
   
+# Social 
+
+diffustion X : https://x.com/diffusion15205/status/1823227898779914650?s=46
+
+founder X :
+https://x.com/yue_1678/status/1769369187074621890?s=46
