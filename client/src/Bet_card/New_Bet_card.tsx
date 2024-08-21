@@ -30,14 +30,24 @@ const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 const moduleAddress = '0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873'
 
-const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,balance:string ,left:string,middle:string,right :string,expired_time:string}> = ({left_url,right_url,pair_name_left,pair_name_right,balance,left,right,middle,expired_time }) => {
+const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:string,pair_name_right:string ,balance:string ,left:string,middle:string,right :string,expired_time:string,type:string}> = ({left_url,right_url,pair_name_left,pair_name_right,balance,left,right,middle,expired_time ,type}) => {
     const { account, signAndSubmitTransaction } = useWallet();
     const [open, setOpen] = React.useState(false);
     const [input_value,set_input_value]=useState("0");
     const [amount_value,se_amount_value]=useState<string>('');
+    const [step_number,set_step_number]=useState(0);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const max_button = () => set_input_value(balance);
+    const max_button = () => {set_input_value(balance);set_step_number(1)}
+
+    const deal_with_data = () =>{
+        if(type == "LOL"){
+
+        } else if(type == "football"){
+
+        }
+    }
+
     const check_before_submit = (key:string)=>{
         const a = parseFloat(input_value);
         try{
@@ -189,6 +199,7 @@ const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                             <h3 style={{position: "relative", right: 5}}>APT Amount</h3>
                                             <Input placeholder="0.00" prefix={"$"} onChange={input=>{
                                                 set_input_value(input.target.value);
+                                                set_step_number(1);
                                             }} style={{position: "relative",top:10 , right: 5}} value={input_value}></Input>
                                         </Card>
                                     </Col>
@@ -197,24 +208,27 @@ const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:str
                         </Row>
                         <br/>
                         <Row gutter={[26,26]} style={{}}>
-                            <Col span={24}>
-                                <List
-                                    size={"small"}
+                            {step_number > 0 && (<>
+                                <Col span={24}>
+                                    <List
+                                        size={"small"}
 
-                                    header={<div>Fees (APT) <span style={{float: 'right' ,width:20,height:20}}><img alt={"apt_logo"} src={Apt_logo}></img></span></div>}
-                                    footer={<div>Total cost: <span style={{float: 'right'}}>{"1"}</span></div>}
-                                    bordered
-                                    dataSource={data}
-                                    renderItem={(item) => (
-                                        <List.Item>
-                                            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                                                <span>{item.label}</span>
-                                                {item.value}
-                                            </div>
-                                        </List.Item>
-                                    )}
-                                />
-                            </Col>
+                                        header={<div>Fees (APT) <span style={{float: 'right' ,width:20,height:20}}><img alt={"apt_logo"} src={Apt_logo}></img></span></div>}
+                                        footer={<div>Total cost: <span style={{float: 'right'}}>{"1"}</span></div>}
+                                        bordered
+                                        dataSource={data}
+                                        renderItem={(item) => (
+                                            <List.Item>
+                                                <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                                                    <span>{item.label}</span>
+                                                    {item.value}
+                                                </div>
+                                            </List.Item>
+                                        )}
+                                    />
+                                </Col>
+                            </>)}
+
                             <Col span={8}>
                                 <motion.div className={"box"}
                                             whileHovwe={{scale: 1.5}}
