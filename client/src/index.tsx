@@ -2,6 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { PetraWallet } from "petra-plugin-wallet-adapter";
 import { AptosWalletAdapterProvider } from "@aptos-labs/wallet-adapter-react";
+
+// import { PontemWalletAdapter } from '@pontem/aptos-wallet-adapter';
+
+//     HippoWalletAdapter,
+//     AptosWalletAdapter,
+//     HippoExtensionWalletAdapter,
+//     MartianWalletAdapter,
+//     FewchaWalletAdapter,
+//     SpikaWalletAdapter,
+//     RiseWalletAdapter,
+//     FletchWalletAdapter,
+//     WalletProvider
+
 import App from './App';
 import "./css_folder/App.css"
 import reportWebVitals from './reportWebVitals';
@@ -17,10 +30,27 @@ import Website_page from "./website/website_page";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-const wallets = [new PetraWallet()];
+ const wallets = [new PetraWallet()];
+// const wallets = [
+//     new PontemWalletAdapter(),
+//     new HippoWalletAdapter(),
+//     new MartianWalletAdapter(),
+//     new AptosWalletAdapter(),
+//     new FewchaWalletAdapter(),
+//     new HippoExtensionWalletAdapter(),
+//     new SpikaWalletAdapter(),
+//     new RiseWalletAdapter(),
+//     new FletchWalletAdapter()
+// ];
 root.render(
     <div className={"main-background"}>
         <AptosWalletAdapterProvider plugins={wallets} autoConnect={true}>
+        {/*    <WalletProvider*/}
+        {/*        wallets={wallets}*/}
+        {/*        autoConnect={true | false} /** allow auto wallet connection or not */}
+        {/*        onError={(error: Error) => {*/}
+        {/*            console.log('Handle Error Message', error);*/}
+        {/*        }}>*/}
                 <React.StrictMode>
                     <Router>
 
@@ -33,6 +63,9 @@ root.render(
 
                     </Router>
                 </React.StrictMode>
+                {/* your website */}
+            {/*// </WalletProvider>*/}
+
             </AptosWalletAdapterProvider>
     </div>
 );
