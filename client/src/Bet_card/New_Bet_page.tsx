@@ -143,7 +143,6 @@ const Deal_with_data_bet: React.FC<{ fetch_data: Helper_data ,which1:string,bala
                 return (
                     <>
                         <New_Bet_card key={index} left_url={pair.left_url} right_url={pair.right_url} pair_name_left={firstPart} pair_name_right={secondPart} balance={real_balance} left={a} right={c} middle={b} expired_time={pair.expired_time} type={thirdPart}/>
-
                     </>
                 );
             })}
