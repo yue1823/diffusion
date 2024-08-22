@@ -23,6 +23,7 @@ import {Bounce, toast, ToastContainer} from "react-toastify";
 import {motion} from "framer-motion";
 import New_Bet_page from "./Bet_card/New_Bet_page";
 import Website_page from "./website/website_page";
+import {diffusion} from "./setting";
 interface Cylinder_Pair{
     already_send:string;
     coin:string;
@@ -259,7 +260,7 @@ const App: React.FC<{id:string}> = ({id}) => {
         if (!account) return [];
         const transaction:InputTransactionData = {
             data: {
-                function:`${diffusion_address}::helper::create_account_tree`,
+                function:diffusion.function.create_account_tree(),
                 functionArguments:[account_name,icon_url]
             }
         }
@@ -308,21 +309,24 @@ const App: React.FC<{id:string}> = ({id}) => {
             let a= await aptos.account.getAccountAPTAmount({accountAddress: account.address}).then(balance=>{ set_balance(String(balance));});
 
             setuser_address(account.address);
-            const diffusion_exists = await aptos.account.getAccountResource({accountAddress: account.address, resourceType:random_resource})
+            //const diffusion_exists = await aptos.account.getAccountResource({accountAddress: account.address, resourceType:diffusion.function.create_account_tree()})
             setOpen(false);
             const helper_data = await aptos.view(
                 {
                     payload: {
-                        function: `${diffusion_address}::helper::check_helper_list`,
+                        function: diffusion.function.check_helper_list(),
                         functionArguments: [account.address]
                     }
                 }
             )
-            console.log(helper_data);
-            set_helper_data(helper_data);
-            fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${random_resource}`, options)
+            // console.log(helper_data);
+            // console.log(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`)
+             set_helper_data(helper_data);
+            fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`, options)
                 .then(response => response.json())
                 .then((response) => {
+
+                    console.log(response)
                     if(response){
                         const new_profile : Profile = {
                             save_icon:{
@@ -348,7 +352,7 @@ const App: React.FC<{id:string}> = ({id}) => {
                     const helper_data1 = await aptos.view(
                         {
                             payload: {
-                                function: `${diffusion_address}::helper::helper_upload_which_result`,
+                                function: diffusion.function.view_helper_upload_which_result(),
                                 functionArguments: [account.address]
                             }
                         }
@@ -386,7 +390,7 @@ const App: React.FC<{id:string}> = ({id}) => {
 
     const  fatch_diffusion_resource_from_aptos = async () =>{
         if (!account) return [];
-        fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${resources_address}/resource/${resources_name}`, options)
+        fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${diffusion.resources_address}/resource/${diffusion.function.diffusion_store_store()}`, options)
             .then(response => response.json())
             .then((response) => {
                   console.log(response)
