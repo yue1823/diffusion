@@ -1,5 +1,5 @@
 
-import {Row, theme} from "antd";
+import {Col, Row, theme} from "antd";
 import React, {useEffect, useState} from 'react';
 
 import {Content} from "antd/lib/layout/layout";
@@ -16,18 +16,22 @@ const NFT_page:React.FC<{ }> = ({ }) => {
     return (
         <>
             <Content style={{padding: '15px 30px'}}>
-                <Row>
-                    <div
-                        style={{
-                            padding: 24,
-                            minHeight: 600,
-                            minWidth: 1200,
-                            background: colorBgContainer,
-                            borderRadius: borderRadiusLG,
-                        }}
-                    >
-                        <CountdownTimer expiredDate={"30092024"}/>
-                    </div>
+                <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+                    <Col span={24}>
+                        <div
+                            style={{
+                                padding: 24,
+                                minHeight: 600,
+                                minWidth: 1200,
+                                background: colorBgContainer,
+                                borderRadius: borderRadiusLG,
+                            }}
+                        >
+                            {/*<CountdownTimer expiredDate={"30092024"}/>*/}
+                          <p>aaa</p>
+                        </div>
+                    </Col>
+
                 </Row>
             </Content>
         </>

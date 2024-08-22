@@ -1,10 +1,11 @@
 import {Col, Image, Row} from "antd";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import anime from 'animejs';
 import Logo_1 from "../art/diffusion_black.png";
 import Logo_2 from "../art/diffusion_fix.png";
 import "../css_/website_sky_css.css";
 import "../css_/firefly_button.css";
+import GOD1 from "./website_image/"
 import KinetComponent from "./firefly";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -90,35 +91,54 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
 
             <div >
 
-                <svg id="sky" >
-                    {[...Array(num)].map((_, y) => (
-                        <circle
-                            cx={this.getRandomX()}
-                            cy={this.getRandomY()}
-                            r={this.randomRadius()}
-                            stroke="none"
-                            strokeWidth="0"
-                            fill="white"
-                            key={y}
-                            className="star"
-                        />
-                    ))}
+
+                <Row>
+                    <Col span={24}>
+                        <svg id="sky">
+                            {[...Array(num)].map((_, y) => (
+                                <circle
+                                    cx={this.getRandomX()}
+                                    cy={this.getRandomY()}
+                                    r={this.randomRadius()}
+                                    stroke="none"
+                                    strokeWidth="0"
+                                    fill="white"
+                                    key={y}
+                                    className="star"
+                                />
+                            ))}
 
 
-                </svg>
-                <div id="shootingstars">
-                    {[...Array(60)].map((_, y) => (
-                        <div
-                            key={y}
-                            className="wish"
-                            style={{
-                                left: `${this.getRandomY()}px`,
-                                top: `${this.getRandomX()}px`,
+                        </svg>
+                        <div id="shootingstars">
+                            {[...Array(60)].map((_, y) => (
+                                <div
+                                    key={y}
+                                    className="wish"
+                                    style={{
+                                        left: `${this.getRandomY()}px`,
+                                        top: `${this.getRandomX()}px`,
+                                    }}
+                                />
+                            ))}
+                        </div>
+                    </Col>
+                    <Col span={8} offset={16}>
+                        <Swiper
+                            pagination={{
+                                dynamicBullets: true,
                             }}
-                        />
-                    ))}
-                </div>
-                <KinetComponent/>
+                            modules={[Pagination]}
+                            className="mySwiper"
+                            style={{left: 900, width: 450, height: 350, top: 150, borderRadius: 20, position: "absolute"}}
+                        >
+                            <SwiperSlide><Image src={Logo_1} style={{position: "relative", top: -10}}></Image></SwiperSlide>
+                            <SwiperSlide><Image src={Logo_2} style={{position: "relative", top: -40}}></Image></SwiperSlide>
+                        </Swiper>
+                        <KinetComponent/>
+                    </Col>
+                </Row>
+
 
             </div>
         );
@@ -127,13 +147,13 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
 
 const Website_page: React.FC = () => {
     return (
-        <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+        <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}}>
             <Col span={24}>
 
                 {/*<div id="circle" className="circle bg-yellow-500"></div>*/}
                 <StarrySky/>
                 <Scroll_down/>
-                <Row style={{ height: 1000, position: 'absolute', zIndex: 2 ,top:"0%"}}>
+                <Row style={{height: 1000, position: 'absolute', zIndex: 2 ,top:"0%"}}>
                     <Col span={16} offset={16}>
                         <a className={"button-wrapper"} >
                             <div style={{position: "absolute", top: 130,left:400}}>
@@ -147,17 +167,7 @@ const Website_page: React.FC = () => {
                             <span className="dot dot-6"></span>
                                 <span className="dot dot-7"></span>
                             <span className={"card_slid"}>
-                            <Swiper
-                                pagination={{
-                                    dynamicBullets: true,
-                                }}
-                                modules={[Pagination]}
-                                className="mySwiper"
-                                style={{left:500,width:450,height:350,top:150,borderRadius: 20,}}
-                            >
-                                <SwiperSlide><Image src={Logo_1} style={{position:"relative",top:-10}}></Image></SwiperSlide>
-                                <SwiperSlide><Image src={Logo_2} style={{position:"relative",top:-40}}></Image></SwiperSlide>
-                            </Swiper>
+
                                 </span>
                         </a>
                     </Col>
@@ -176,6 +186,41 @@ const Website_page: React.FC = () => {
 };
 
 export default Website_page;
+const ScrollImage: React.FC = () => {
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const position = window.pageYOffset;
+            setScrollPosition(position);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const imageStyle = {
+        transform: `translateX(${Math.min(scrollPosition - 300, 0)}px)`,
+        transition: 'transform 0.5s ease-out',
+        position: 'absolute' as 'absolute',
+        top: '50%',
+        left: '-300px', // 初始位置在页面左边界外
+        height: '300px', // 根据需要调整图片的高度
+        width: 'auto',
+    };
+
+    return (
+        <div style={{ height: '1000px', position: 'relative' }}>
+            <img
+                src={GOD1}
+                alt="Scrolling Image"
+                style={imageStyle}
+            />
+        </div>
+    );
+};
 // import {Col, Row, theme} from "antd";
 // import React, {useEffect, useState} from 'react';
 // const anime = require('animejs');
