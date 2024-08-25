@@ -11,7 +11,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
-import Scroll_down from "./scroll_down";
+
+import Scroll_down_moon from "./scroll_down";
 interface StarrySkyState {
     num: number;
     vw: number;
@@ -139,7 +140,7 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
                     </Col>
                 </Row>
 
-                <Scroll_down/>
+                <Scroll_down_moon/>
             </div>
         );
     }
@@ -152,7 +153,7 @@ const Website_page: React.FC = () => {
 
                 {/*<div id="circle" className="circle bg-yellow-500"></div>*/}
                 <StarrySky/>
-                <Scroll_down/>
+                <Scroll_down_moon/>
                 <Row style={{height: 1000, position: 'absolute', zIndex: 2 ,top:"0%"}}>
                     <Col span={16} offset={16}>
                         <a className={"button-wrapper"} >
