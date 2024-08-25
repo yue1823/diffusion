@@ -5,7 +5,7 @@ import Logo_1 from "../art/diffusion_black.png";
 import Logo_2 from "../art/diffusion_fix.png";
 import "../css_/website_sky_css.css";
 import "../css_/firefly_button.css";
-import GOD1 from "./website_image/"
+import GOD1 from "../website/website_image/god1.PNG";
 import KinetComponent from "./firefly";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -139,7 +139,7 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
                     </Col>
                 </Row>
 
-
+                <Scroll_down/>
             </div>
         );
     }
@@ -171,11 +171,11 @@ const Website_page: React.FC = () => {
                                 </span>
                         </a>
                     </Col>
-                    <Col span={24}>
-
+                    <Col span={24} >
+                        aa
                     </Col>
                 </Row>
-                <Row style={{ height: 1000, position: 'relative', top: 100, left:100, width: '100%', zIndex: 2 }}>
+                <Row style={{ height: 3000, position: 'relative', top: 100, left:100, width: '100%', zIndex: 2 }}>
                     <Col span={24}>
 
                     </Col>
@@ -186,41 +186,7 @@ const Website_page: React.FC = () => {
 };
 
 export default Website_page;
-const ScrollImage: React.FC = () => {
-    const [scrollPosition, setScrollPosition] = useState(0);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const position = window.pageYOffset;
-            setScrollPosition(position);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    const imageStyle = {
-        transform: `translateX(${Math.min(scrollPosition - 300, 0)}px)`,
-        transition: 'transform 0.5s ease-out',
-        position: 'absolute' as 'absolute',
-        top: '50%',
-        left: '-300px', // 初始位置在页面左边界外
-        height: '300px', // 根据需要调整图片的高度
-        width: 'auto',
-    };
-
-    return (
-        <div style={{ height: '1000px', position: 'relative' }}>
-            <img
-                src={GOD1}
-                alt="Scrolling Image"
-                style={imageStyle}
-            />
-        </div>
-    );
-};
 // import {Col, Row, theme} from "antd";
 // import React, {useEffect, useState} from 'react';
 // const anime = require('animejs');

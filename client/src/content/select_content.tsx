@@ -35,7 +35,8 @@ import {
     InputTransactionData,
 } from "@aptos-labs/wallet-adapter-react";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
-
+import "../setting";
+import {diffusion} from "../setting";
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
@@ -72,7 +73,7 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
             let input2 = "0x1::aptos_coin::AptosCoin"
             const transaction:InputTransactionData = {
                 data: {
-                    function:`${moduleAddress}::helper::reload_single`,
+                    function:diffusion.function.reload(),
                     typeArguments:[input1,input2],
                     functionArguments:[false,need_garble,amount*100000000,to_address,cointype,"0x1",amount*100000000]
                 }
@@ -100,7 +101,7 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
         }
     }
     const data = [
-        {label: 'Diffusion fees charge',value:0.1},
+        {label: 'Diffusion fees charge',value:amount*0.1},
         {label: 'Expected transfer ',value:amount},
 
     ];
@@ -265,6 +266,7 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                     onClick={() => {
                         addRow()
                     }}
+                    disabled={true}
                 />
                 <Button
                     type="primary"
@@ -274,6 +276,7 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
                     onClick={() => {
                         removeRow()
                     }}
+                    disabled={true}
                 />
             </Row>
             <br/>

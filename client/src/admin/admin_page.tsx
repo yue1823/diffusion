@@ -9,6 +9,8 @@ import Apt_logo from "../art/Aptos_mark_BLK.svg";
 import "../css_/rainbow_button.css";
 import {Bounce, toast, ToastContainer} from "react-toastify";
 
+import "../setting";
+import {diffusion} from "../setting";
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
@@ -102,14 +104,24 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
     const [input1,setinput1]=useState('');
     const [input2,setinput2]=useState('');
 
-
+    const isValidPairName = (pairName: string): boolean => {
+        const pattern = /^[^\s]+ vs [^\s]+ - (LOL|football|basketball|unexpected)$/;
+        return pattern.test(pairName);
+    };
 
     const submit_transaction = async () => {
         const transaction: InputTransactionData = {
             data: {
-                function: `${module_address}::helper::create_pair`,
+                function: diffusion.function.create_pair(),
                 functionArguments: [pair_name,left1,left2,middle1,middle2,right1,right2,time,pairtype,input1,input2]
             }
+        }
+        try{
+           isValidPairName(pair_name)
+        }catch (e:any){
+            message.error("无效的名字");
+            throw new Error("名字的格式不正确。应为 xxx vs xxx - LOL/football/basketball 格式，并且名字必须有效。");
+
         }
         const datePattern = /^(0[1-9]|[12][0-9]|3[01])(0[1-9]|1[0-2])\d{4}$/;
         if (!datePattern.test(time)) {
@@ -190,7 +202,7 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
                 <Row gutter={[8,24]}>
 
                         <Col span={24}>
-                            <Input placeholder="pair_name" onChange={value => {
+                            <Input placeholder="pair_name  (xxx VS xxx - LOL/football/xxx)" onChange={value => {
                                 setpair_name(value.target.value)
                             }}></Input>
                         </Col>
@@ -304,7 +316,7 @@ const Upload_result_button: React.FC<{ }> = ({}) => {
     const submit_transaction = async () => {
         const transaction: InputTransactionData = {
             data: {
-                function: `${module_address}::helper::upload_result`,
+                function: diffusion.function.upload_result(),
                 functionArguments: [pairname,result1,result2,expired_time]
             }
         }
@@ -340,17 +352,10 @@ const Upload_result_button: React.FC<{ }> = ({}) => {
         }
     }
     useEffect(() => {
-        const fetch_pair_resources = () =>{
-            const https = `https://aptos-mainnet.nodit.io/v1/accounts/${module_address}/resource/${resources_type}`
-            try{
-                //fetch(https,https_required).then(respone => respone.json());
-            }catch (e:any){
-                console.log(e);
-            }
-        }
+
 
         //fetch_pair_resources()
-    },[account])
+    },[])
     return (
         <>
             <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>
@@ -417,7 +422,7 @@ const Create_helper: React.FC<{}> = ({ }) => {
     const submit_transaction = async () => {
         const transaction: InputTransactionData = {
             data: {
-                function: `${module_address}::helper::create_helper`,
+                function:diffusion.function.create_helper(),
                 functionArguments: [add_or_delete,helper_address]
             }
         }
@@ -453,17 +458,8 @@ const Create_helper: React.FC<{}> = ({ }) => {
         }
     }
     useEffect(() => {
-        const fetch_pair_resources = () =>{
-            const https = `https://aptos-mainnet.nodit.io/v1/accounts/${module_address}/resource/${resources_type}`
-            try{
-                //fetch(https,https_required).then(respone => respone.json());
-            }catch (e:any){
-                console.log(e);
-            }
-        }
-
         //fetch_pair_resources()
-    },[account])
+    },[])
     return (
         <>
             <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>
@@ -519,7 +515,7 @@ const Admin_like: React.FC<{}> = ({ }) => {
     const submit_transaction = async () => {
         const transaction: InputTransactionData = {
             data: {
-                function: `${module_address}::helper::admin_like`,
+                function: diffusion.function.admin_like(),
                 functionArguments: [amount,string1,string2]
             }
         }
@@ -555,17 +551,10 @@ const Admin_like: React.FC<{}> = ({ }) => {
         }
     }
     useEffect(() => {
-        const fetch_pair_resources = () =>{
-            const https = `https://aptos-mainnet.nodit.io/v1/accounts/${module_address}/resource/${resources_type}`
-            try{
-                //fetch(https,https_required).then(respone => respone.json());
-            }catch (e:any){
-                console.log(e);
-            }
-        }
+
 
         //fetch_pair_resources()
-    },[account])
+    },[])
     return (
         <>
             <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>
@@ -638,7 +627,7 @@ const Set_chance: React.FC<{}> = ({ }) => {
     const submit_transaction = async () => {
         const transaction: InputTransactionData = {
             data: {
-                function: `${module_address}::helper::admin_like`,
+                function: diffusion.function.set_chance(),
                 functionArguments: [string1,fee1,fee2]
             }
         }
@@ -674,17 +663,10 @@ const Set_chance: React.FC<{}> = ({ }) => {
         }
     }
     useEffect(() => {
-        const fetch_pair_resources = () =>{
-            const https = `https://aptos-mainnet.nodit.io/v1/accounts/${module_address}/resource/${resources_type}`
-            try{
-                //fetch(https,https_required).then(respone => respone.json());
-            }catch (e:any){
-                console.log(e);
-            }
-        }
+
 
         //fetch_pair_resources()
-    },[account])
+    },[])
     return (
         <>
             <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>
@@ -768,7 +750,7 @@ const Time_to_stop_bet: React.FC<{}> = ({ }) => {
     const submit_transaction = async () => {
         const transaction: InputTransactionData = {
             data: {
-                function: `${module_address}::helper::admin_said_times_up`,
+                function: diffusion.function.admin_said_times_up(),
                 functionArguments: [pair_name,expired_time]
             }
         }
@@ -804,17 +786,9 @@ const Time_to_stop_bet: React.FC<{}> = ({ }) => {
         }
     }
     useEffect(() => {
-        const fetch_pair_resources = () =>{
-            const https = `https://aptos-mainnet.nodit.io/v1/accounts/${module_address}/resource/${resources_type}`
-            try{
-                //fetch(https,https_required).then(respone => respone.json());
-            }catch (e:any){
-                console.log(e);
-            }
-        }
 
         //fetch_pair_resources()
-    },[account])
+    },[])
     return (
         <>
             <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>

@@ -16,6 +16,8 @@ import EnvelopeComponent from "./letter.";
 import ButtonWithProgress from "./submit_button";
 import {Bounce, toast, ToastContainer} from "react-toastify";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk"; // Assuming you have a CSS file for the styles
+import "../setting";
+import {diffusion} from "../setting";
 const diffusion_address = "0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873";
 const NOW_Network = "testnet";
 const aptosConfig = new AptosConfig({ network: Network.TESTNET});
@@ -178,7 +180,7 @@ const Helper_page:React.FC<{helper_data:MoveValue[] ,fetch_data:Helper_data}> = 
     const submit_transaction = async () => {
         const transaction: InputTransactionData = {
             data: {
-                function: `${diffusion_address}::helper::apply_to_be_helper`,
+                function: diffusion.function.apply_to_be_helper(),
                 functionArguments: []
             }
         }

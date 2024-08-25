@@ -13,6 +13,8 @@ import { motion } from "framer-motion";
 import {Box} from "@mui/material";
 import {InputTransactionData, useWallet} from "@aptos-labs/wallet-adapter-react";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
+import "../setting";
+import {diffusion} from "../setting";
 const box_style = {
     position: 'absolute' as 'absolute',
 
@@ -40,7 +42,7 @@ const Helper_upload_box:React.FC<{left_url:string,right_url:string,pair_name_lef
         setwhich1(key)
         const transaction: InputTransactionData = {
             data: {
-                function: `${module_address}::helper::helper_upload_result`,
+                function:diffusion.function.helper_upload_result(),
                 functionArguments: [`${pair_name_left} vs ${pair_name_right}` ,which1,expired_time ]
             }
         }

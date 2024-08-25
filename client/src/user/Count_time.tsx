@@ -6,7 +6,7 @@ interface TimeLeft{
     minutes:number;
     seconds:number;
 }
-const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
+const CountdownTimer = ({ expiredDate,yes_or_not}: { expiredDate: string  ,yes_or_not:boolean}) => {
     const [timeLeft, setTimeLeft] = useState<TimeLeft>({
         days:0,
         hours:0,
@@ -16,26 +16,37 @@ const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
 
     useEffect(() => {
         const calculateTimeLeft = () => {
-            const now = new Date();
-            const day = parseInt(expiredDate.slice(0, 2), 10);
-            const month = parseInt(expiredDate.slice(2, 4), 10) - 1; // JavaScript months are 0-based
-            const year = parseInt(expiredDate.slice(4, 8), 10);
+            if(yes_or_not ){
+                const now = new Date();
+                const day = parseInt(expiredDate.slice(0, 2), 10);
+                const month = parseInt(expiredDate.slice(2, 4), 10) - 1; // JavaScript months are 0-based
+                const year = parseInt(expiredDate.slice(4, 8), 10);
 
-            const expirationDate = new Date(year, month, day);
-            const currentDate = now;
+                const expirationDate = new Date(year, month, day);
+                const currentDate = now;
 
-            let timeDifference = expirationDate.getTime() - currentDate.getTime();
-            if (timeDifference < 0) {
-                timeDifference = 36 * 60 * 60 * 1000;
+                let timeDifference = expirationDate.getTime() - currentDate.getTime();
+                if (timeDifference < 0) {
+                    timeDifference = 36 * 60 * 60 * 1000;
+                }
+
+                const totalSeconds = Math.floor(timeDifference / 1000);
+                const days = Math.floor(totalSeconds / (3600 * 24));
+                const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const seconds = totalSeconds % 60;
+                setTimeLeft(({ days, hours, minutes, seconds }));
+            }else{
+                let timeDifference = 36 * 60 * 60 * 1000;
+
+                const totalSeconds = Math.floor(timeDifference / 1000);
+                const days = Math.floor(totalSeconds / (3600 * 24));
+                const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const seconds = totalSeconds % 60;
+
+                setTimeLeft({ days, hours, minutes, seconds });
             }
-
-            const totalSeconds = Math.floor(timeDifference / 1000);
-            const days = Math.floor(totalSeconds / (3600 * 24));
-            const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-            const minutes = Math.floor((totalSeconds % 3600) / 60);
-            const seconds = totalSeconds % 60;
-
-            setTimeLeft(({ days, hours, minutes, seconds }));
         };
 
         calculateTimeLeft();
@@ -72,24 +83,51 @@ const CountdownTimer = ({ expiredDate }: { expiredDate: string }) => {
     };
 
     return (
-        <div style={containerStyle}>
-            <div style={{...itemStyle}}>
-                <div style={numberStyle}>{timeLeft.days}</div>
-                <div style={labelStyle}>Days</div>
-            </div>
-            <div style={{...itemStyle}}>
-                <div style={numberStyle}>{timeLeft.hours}</div>
-                <div style={labelStyle}>Hours</div>
-            </div>
-            <div style={{...itemStyle}}>
-                <div style={numberStyle}>{timeLeft.minutes}</div>
-                <div style={labelStyle}>Minutes</div>
-            </div>
-            <div style={{...itemStyle}}>
-                <div style={numberStyle}>{timeLeft.seconds}</div>
-                <div style={labelStyle}>Seconds</div>
-            </div>
-        </div>
+        <>
+        {yes_or_not ? <>
+                <div style={containerStyle}>
+                    <div style={{...itemStyle}}>
+                        <div style={numberStyle}>{timeLeft.days}</div>
+                        <div style={labelStyle}>Days</div>
+                    </div>
+                    <div style={{...itemStyle}}>
+                        <div style={numberStyle}>{timeLeft.hours}</div>
+                        <div style={labelStyle}>Hours</div>
+                    </div>
+                    <div style={{...itemStyle}}>
+                        <div style={numberStyle}>{timeLeft.minutes}</div>
+                        <div style={labelStyle}>Minutes</div>
+                    </div>
+                    <div style={{...itemStyle}}>
+                        <div style={numberStyle}>{timeLeft.seconds}</div>
+                        <div style={labelStyle}>Seconds</div>
+                    </div>
+                </div>
+
+            </>
+            :
+            <>
+                <div style={containerStyle}>
+                    <div style={{...itemStyle}}>
+                        <div style={numberStyle}>{timeLeft.days}</div>
+                        <div style={labelStyle}>Days</div>
+                    </div>
+                    <div style={{...itemStyle}}>
+                        <div style={numberStyle}>{timeLeft.hours}</div>
+                        <div style={labelStyle}>Hours</div>
+                    </div>
+                    <div style={{...itemStyle}}>
+                        <div style={numberStyle}>{timeLeft.minutes}</div>
+                        <div style={labelStyle}>Minutes</div>
+                    </div>
+                    <div style={{...itemStyle}}>
+                        <div style={numberStyle}>{timeLeft.seconds}</div>
+                        <div style={labelStyle}>Seconds</div>
+                    </div>
+                </div>
+            </>
+        }
+        </>
     );
 };
 
