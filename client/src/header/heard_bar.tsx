@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
+import { useAutoConnect } from "../components/AutoConnectProvider";
 import "../css_folder/heardbar.css"
 import {Card, Col, ConfigProvider, Dropdown, Layout, Progress, ProgressProps,Menu, Row, theme} from "antd";
 import type { MenuProps } from 'antd';
 import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
+import "@aptos-labs/wallet-adapter-ant-design/dist/index.css"
 import APT_LOGO from '../logo/aptos-apt-logo.svg';
 import My_logo from "../art/yue_logo.jpeg";
 import MyMenu from "./menu_of_header";
 import BurgerMenu from 'react-burger-menu';
-import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import diffusion_art from '../art/diffusion.png';
 import classNames from 'classnames';
 import {
@@ -21,6 +22,7 @@ import {
 import {Link, Route, Routes} from "react-router-dom";
 import Main_content from "../content/content";
 import Swap_page from "../swap_page";
+import {WalletProvider} from "../WalletProvider";
 interface SavePair {
     can_bet:boolean;
     expired_time: string;
@@ -198,7 +200,9 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number,profile_dat
                 <Menu_click/>
             </Col>
             <Col span={4}>
-                <WalletSelector/>
+
+                    <WalletSelector/>
+
             </Col>
             <Col span={1}>
 
