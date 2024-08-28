@@ -1,0 +1,109 @@
+.split-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    top:-5%;
+    height :400px;
+    width: 2px; /* 线条宽度，可以调整 */
+    background-color: black; /* 线条颜色 */
+    transform: rotate(60deg); /* 调整角度形成斜线 */
+    transform-origin: center;
+    animation: burning-border 2s infinite alternate;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+@keyframes warm-border {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 69, 0, 0.8),
+        0 0 20px rgba(255, 140, 0, 0.8),
+        0 0 30px rgba(255, 69, 0, 0.8),
+        0 0 40px rgba(255, 140, 0, 0.8);
+        border-color: rgba(255, 69, 0, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 140, 0, 0.8),
+        0 0 30px rgba(255, 69, 0, 0.8),
+        0 0 40px rgba(255, 140, 0, 0.8),
+        0 0 50px rgba(255, 69, 0, 0.8);
+        border-color: rgba(255, 140, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 69, 0, 0.8),
+        0 0 20px rgba(255, 140, 0, 0.8),
+        0 0 30px rgba(255, 69, 0, 0.8),
+        0 0 40px rgba(255, 140, 0, 0.8);
+        border-color: rgba(255, 69, 0, 0.8);
+    }
+}
+
+.warm-card {
+    border: 2px solid rgba(255, 69, 0, 0.8); /* 初始的边框颜色 */
+    animation: warm-border 1.5s infinite alternate; /* 動畫效果 */
+    transition: box-shadow 0.3s ease-in-out;
+    height: 320px ;
+    background-color:#d5d2d2;
+    border-radius: 10px;
+}
+
+@keyframes burning-border {
+    0% {
+        box-shadow:
+                0 0 10px rgba(255, 69, 0, 0.8),
+                0 0 20px rgba(255, 140, 0, 0.8),
+                0 0 30px rgba(255, 69, 0, 0.8),
+                0 0 40px rgba(255, 140, 0, 0.8),
+                inset 0 0 20px rgba(255, 69, 0, 0.8),
+                inset 0 0 30px rgba(255, 140, 0, 0.8);
+        border-width: 2px;
+        border-color: rgba(255, 69, 0, 0.8);
+
+    }
+    25% {
+        box-shadow:
+                0 0 15px rgba(255, 69, 0, 1),
+                0 0 25px rgba(255, 140, 0, 1),
+                0 0 35px rgba(255, 69, 0, 1),
+                0 0 45px rgba(255, 140, 0, 1),
+                inset 0 0 25px rgba(255, 69, 0, 1),
+                inset 0 0 35px rgba(255, 140, 0, 1);
+        border-width: 4px;
+        border-color: rgba(255, 140, 0, 1);
+
+    }
+    50% {
+        box-shadow:
+                0 0 20px rgba(255, 69, 0, 0.9),
+                0 0 30px rgba(255, 140, 0, 0.9),
+                0 0 40px rgba(255, 69, 0, 0.9),
+                0 0 50px rgba(255, 140, 0, 0.9),
+                inset 0 0 30px rgba(255, 69, 0, 0.9),
+                inset 0 0 40px rgba(255, 140, 0, 0.9);
+        border-width: 3px;
+        border-color: rgba(255, 69, 0, 0.9);
+
+    }
+    75% {
+        box-shadow:
+                0 0 10px rgba(255, 69, 0, 1),
+                0 0 20px rgba(255, 140, 0, 1),
+                0 0 30px rgba(255, 69, 0, 1),
+                0 0 40px rgba(255, 140, 0, 1),
+                inset 0 0 20px rgba(255, 69, 0, 1),
+                inset 0 0 30px rgba(255, 140, 0, 1);
+        border-width: 5px;
+        border-color: rgba(255, 140, 0, 1);
+
+    }
+    100% {
+        box-shadow:
+                0 0 15px rgba(255, 69, 0, 0.8),
+                0 0 25px rgba(255, 140, 0, 0.8),
+                0 0 35px rgba(255, 69, 0, 0.8),
+                0 0 45px rgba(255, 140, 0, 0.8),
+                inset 0 0 25px rgba(255, 69, 0, 0.8),
+                inset 0 0 35px rgba(255, 140, 0, 0.8);
+        border-width: 2px;
+        border-color: rgba(255, 69, 0, 0.8);
+
+    }
+}
