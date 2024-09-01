@@ -131,9 +131,9 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         top: topPosition,
         width: '3px',
         zIndex:10,
-        right:`${823 + scrollPosition * 0.1+415}px`,
+        right:`${(823 + scrollPosition * 0.1+415)}px`,
         height: scrollPosition >= 500
-            ? `${(linePosition-500 )}px`
+            ? `${Math.min(linePosition-500 ,1050)}px`
             : '0px',
         transform: `translateY(348px) translateX(${Math.min(scrollPosition, 365)}px)`,
         backgroundColor: 'white',
