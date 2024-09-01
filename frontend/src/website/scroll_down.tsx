@@ -10,7 +10,8 @@ import cloud5 from "./website_image/雲5.png";
 import cloud6 from "./website_image/雲6.png";
 import god2 from "./website_image/god2.png";
 import many_cloud1 from "./website_image/多雲.png";
-const Scroll_down_moon: React.FC = () => {
+import  Star  from './star';
+const Scroll_down_moon: React.FC <{}> = ({}) => {
 
     const [textOpacity, setTextOpacity] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -21,7 +22,7 @@ const Scroll_down_moon: React.FC = () => {
             const position = window.scrollY;
             // 只更新必要的状态
 
-
+            console.log(position);
 
             if (position < 400) {
                 setScrollPosition(-position * 0.5);
@@ -44,10 +45,11 @@ const Scroll_down_moon: React.FC = () => {
             }
 
     };
-    const handleScrollThrottled = () => {
-        requestAnimationFrame(handleScroll);
-    };
+
     useEffect(() => {
+        const handleScrollThrottled = () => {
+            requestAnimationFrame(handleScroll);
+        };
         window.addEventListener('scroll', handleScrollThrottled);
         return () => {
             window.removeEventListener('scroll', handleScrollThrottled);
@@ -243,54 +245,54 @@ const Scroll_down_moon: React.FC = () => {
     return (
         <>
             <div id="god-container" style={{position: 'relative'}}>
-                <LazyLoadImage  src={god1} style={godStyle} alt="god1"/>
+                <LazyLoadImage src={god1} style={godStyle} alt="god1"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage  src={moon1} style={moon1Style} alt="Moon1"/>
+                <LazyLoadImage src={moon1} style={moon1Style} alt="Moon1"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage  src={moon2} style={moon2Style} alt="Moon2"/>
+                <LazyLoadImage src={moon2} style={moon2Style} alt="Moon2"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage  src={cloud1} style={cloud1style} alt="cloud1"/>
+                <LazyLoadImage src={cloud1} style={cloud1style} alt="cloud1"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage  src={cloud2} style={cloud2style} alt="cloud2"/>
+                <LazyLoadImage src={cloud2} style={cloud2style} alt="cloud2"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage  src={cloud3} style={cloud3style} alt="cloud3"/>
+                <LazyLoadImage src={cloud3} style={cloud3style} alt="cloud3"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage  src={cloud4} style={cloud4style} alt="cloud4"/>
+                <LazyLoadImage src={cloud4} style={cloud4style} alt="cloud4"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage  src={cloud5} style={cloud5style} alt="cloud5"/>
+                <LazyLoadImage src={cloud5} style={cloud5style} alt="cloud5"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage   src={cloud6} style={cloud6style} alt="cloud6"/>
+                <LazyLoadImage src={cloud6} style={cloud6style} alt="cloud6"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage  src={god2} style={god2style} alt="god2"/>
+                <LazyLoadImage src={god2} style={god2style} alt="god2"/>
             </div>
 
             {scrollPosition <= 590 ? <></> : <>
                 <div style={fishinglink}></div>
             </>}
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage   src={many_cloud1} style={{...many_cloud1_style, left: -1}}
-                     alt="many_cloud1"/>
+                <LazyLoadImage src={many_cloud1} style={{...many_cloud1_style, left: -1}}
+                               alt="many_cloud1"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage   src={many_cloud1} style={{...many_cloud2_style, left: -1}}
-                     alt="many_cloud2"/>
+                <LazyLoadImage src={many_cloud1} style={{...many_cloud2_style, left: -1}}
+                               alt="many_cloud2"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage   src={many_cloud1} style={{...many_cloud3_style, left: -1}}
-                     alt="many_cloud3"/>
+                <LazyLoadImage src={many_cloud1} style={{...many_cloud3_style, left: -1}}
+                               alt="many_cloud3"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage  src={many_cloud1} style={{...many_cloud4_style, left: -1}}
-                     alt="many_cloud4"/>
+                <LazyLoadImage src={many_cloud1} style={{...many_cloud4_style, left: -1}}
+                               alt="many_cloud4"/>
             </div>
             <div style={{position: 'relative'}}>
                 <p style={{
@@ -308,6 +310,9 @@ const Scroll_down_moon: React.FC = () => {
                     Diffusion Roadmap
                 </p>
             </div>
+            {scrollPosition >= 590 ? <>
+                <Star position1={2200} position2={3050} position3={3400} position4={111}/>
+            </> : <></>}
 
         </>
 
@@ -316,7 +321,7 @@ const Scroll_down_moon: React.FC = () => {
 
 export default Scroll_down_moon;
 
-const LazyLoadImage = ({ src, alt, style }: { src: string; alt: string; style: React.CSSProperties }) => {
+const LazyLoadImage = ({src, alt, style}: { src: string; alt: string; style: React.CSSProperties }) => {
     const [isVisible, setIsVisible] = useState(false);
     const imgRef = useRef<HTMLImageElement>(null);
 
