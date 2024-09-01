@@ -1,5 +1,5 @@
 import {Col, Image, Row} from "antd";
-import React  from "react";
+import React, { useEffect }  from "react";
 import anime from 'animejs';
 import Logo_1 from "../art/diffusion_black.png";
 import Logo_2 from "../art/diffusion_fix.png";
@@ -124,32 +124,7 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
                             ))}
                         </div>
                     </Col>
-                    <Col span={8} offset={16}>
-                        <Swiper
-                            pagination={{
-                                dynamicBullets: true,
-                            }}
-                            modules={[Pagination]}
-                            className="mySwiper"
-                            style={{left: 900, width: 450, height: 350, top: 150, borderRadius: 20, position: "absolute"}}
-                        >
-                            <SwiperSlide><Image src={Logo_1} style={{position: "relative", top: -10}}></Image></SwiperSlide>
-                            <SwiperSlide><Image src={Logo_2} style={{position: "relative", top: -40}}></Image></SwiperSlide>
-                        </Swiper>
-                        {/*<KinetComponent/>*/}
-                    </Col>
-                </Row>
 
-                <Scroll_down_moon/>
-                <Row >
-                    <Col style={{height:400}}>
-
-                    </Col>
-                </Row>
-                <Row >
-                    <Col style={{height:400}}>
-
-                    </Col>
                 </Row>
             </div>
         );
@@ -157,12 +132,38 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
 }
 
 const Website_page: React.FC = () => {
+    useEffect(() => {
+        const handleScroll = () => {
+            requestAnimationFrame(() => {
+                // 处理滚动动画的代码
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     return (
         <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}}>
             <Col span={24}>
 
                 {/*<div id="circle" className="circle bg-yellow-500"></div>*/}
                 <StarrySky/>
+                <Col span={8} offset={16}>
+                    <Swiper
+                        pagination={{
+                            dynamicBullets: true,
+                        }}
+                        modules={[Pagination]}
+                        className="mySwiper"
+                        style={{left: 900, width: 450, height: 350, top: 150, borderRadius: 20, position: "absolute"}}
+                    >
+                        <SwiperSlide><Image src={Logo_1} style={{position: "relative", top: -10}}></Image></SwiperSlide>
+                        <SwiperSlide><Image src={Logo_2} style={{position: "relative", top: -40}}></Image></SwiperSlide>
+                    </Swiper>
+                    {/*<KinetComponent/>*/}
+                </Col>
                 <Scroll_down_moon/>
                 <Row style={{height: 1000, position: 'absolute', zIndex: 2 ,top:"0%"}}>
                     <Col span={16} offset={16}>

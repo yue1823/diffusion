@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import god1 from"./website_image/god1.PNG"
 import moon1 from "./website_image/moon1.PNG";
 import moon2 from "./website_image/moon2.PNG";
@@ -11,38 +11,46 @@ import cloud6 from "./website_image/雲6.png";
 import god2 from "./website_image/god2.png";
 import many_cloud1 from "./website_image/多雲.png";
 const Scroll_down_moon: React.FC = () => {
+
     const [textOpacity, setTextOpacity] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [linePosition,set_line_Position]=useState(0);
     const [topPosition, setTopPosition] = useState('10%');
     const handleScroll = () => {
-        const position = window.scrollY;
-        console.log(position)
-        if (position < 400) {
-            setScrollPosition(-position * 0.5);
 
-        } else if (position >= 400 && position < 1000) {
-            setScrollPosition((position -400  ) );
-        } else if (position >= 1000 && position <= 1950) {
-            const newTopPosition = ((position - 1000) / 500) * 50;
-            setTopPosition(`${Math.min(-newTopPosition, 40)}%`); // 最大為 40%
-        }
-        set_line_Position(position * 0.5);
-        if (position > 700  && position < 1000) {
-            const opacity = Math.min((position - 700) / 300, 1); // 计算透明度，最大为 1
-            setTextOpacity(opacity);
-        } else if(position > 1000 && position < 1500){
-            const opacity = Math.min((position + 700) / 300, 1); // 计算透明度，最大为 1
-            setTextOpacity(opacity);
-        }else{setTextOpacity(0); // 滚动位置不到 700px 时，文字保持隐藏
+            const position = window.scrollY;
+            // 只更新必要的状态
+
+
+
+            if (position < 400) {
+                setScrollPosition(-position * 0.5);
+            } else if (position >= 400 && position < 1000) {
+                setScrollPosition((position - 400));
+            } else if (position >= 1000 && position <= 1950) {
+                const newTopPosition = ((position - 1000) / 500) * 50;
+                setTopPosition(`${Math.min(-newTopPosition, 40)}%`);
             }
+            set_line_Position(position * 0.5);
+
+            if (position > 700 && position < 1000) {
+                const opacity = Math.min((position - 700) / 300, 1);
+                setTextOpacity(opacity);
+            } else if (position > 1000 && position < 1500) {
+                const opacity = Math.min((position + 700) / 300, 1);
+                setTextOpacity(opacity);
+            } else {
+                setTextOpacity(0);
+            }
+       
     };
-
+    const handleScrollThrottled = () => {
+        requestAnimationFrame(handleScroll);
+    };
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-
+        window.addEventListener('scroll', handleScrollThrottled);
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScrollThrottled);
         };
     }, []);
     const many_cloud1_style = {
@@ -236,53 +244,53 @@ const Scroll_down_moon: React.FC = () => {
     return (
         <>
             <div id="god-container" style={{position: 'relative'}}>
-                <img id="god1" src={god1} style={godStyle} alt="god1"/>
+                <LazyLoadImage  src={god1} style={godStyle} alt="god1"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="moon1" src={moon1} style={moon1Style} alt="Moon1"/>
+                <LazyLoadImage  src={moon1} style={moon1Style} alt="Moon1"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="moon2" src={moon2} style={moon2Style} alt="Moon2"/>
+                <LazyLoadImage  src={moon2} style={moon2Style} alt="Moon2"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="cloud1" src={cloud1} style={cloud1style} alt="cloud1"/>
+                <LazyLoadImage  src={cloud1} style={cloud1style} alt="cloud1"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="cloud2" src={cloud2} style={cloud2style} alt="cloud2"/>
+                <LazyLoadImage  src={cloud2} style={cloud2style} alt="cloud2"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="cloud3" src={cloud3} style={cloud3style} alt="cloud3"/>
+                <LazyLoadImage  src={cloud3} style={cloud3style} alt="cloud3"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="cloud4" src={cloud4} style={cloud4style} alt="cloud4"/>
+                <LazyLoadImage  src={cloud4} style={cloud4style} alt="cloud4"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="cloud5" src={cloud5} style={cloud5style} alt="cloud5"/>
+                <LazyLoadImage  src={cloud5} style={cloud5style} alt="cloud5"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="cloud6" src={cloud6} style={cloud6style} alt="cloud6"/>
+                <LazyLoadImage   src={cloud6} style={cloud6style} alt="cloud6"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="god2" src={god2} style={god2style} alt="god2"/>
+                <LazyLoadImage  src={god2} style={god2style} alt="god2"/>
             </div>
 
             {scrollPosition <= 590 ? <></> : <>
                 <div style={fishinglink}></div>
             </>}
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="many_cloud1" src={many_cloud1} style={{...many_cloud1_style, left: -1}}
+                <LazyLoadImage   src={many_cloud1} style={{...many_cloud1_style, left: -1}}
                      alt="many_cloud1"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="many_cloud2" src={many_cloud1} style={{...many_cloud2_style, left: -1}}
+                <LazyLoadImage   src={many_cloud1} style={{...many_cloud2_style, left: -1}}
                      alt="many_cloud2"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="many_cloud3" src={many_cloud1} style={{...many_cloud3_style, left: -1}}
+                <LazyLoadImage   src={many_cloud1} style={{...many_cloud3_style, left: -1}}
                      alt="many_cloud3"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
-                <img id="many_cloud4" src={many_cloud1} style={{...many_cloud4_style, left: -1}}
+                <LazyLoadImage  src={many_cloud1} style={{...many_cloud4_style, left: -1}}
                      alt="many_cloud4"/>
             </div>
             <div style={{position: 'relative'}}>
@@ -309,3 +317,35 @@ const Scroll_down_moon: React.FC = () => {
 
 export default Scroll_down_moon;
 
+const LazyLoadImage = ({ src, alt, style }: { src: string; alt: string; style: React.CSSProperties }) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const imgRef = useRef<HTMLImageElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                        observer.disconnect(); // 加载完毕后断开观察
+                    }
+                });
+            },
+            { threshold: 0.1 } // 当图片可见性达到 10% 时加载
+        );
+
+        if (imgRef.current) {
+            observer.observe(imgRef.current);
+        }
+
+        return () => {
+            if (imgRef.current) {
+                observer.unobserve(imgRef.current);
+            }
+        };
+    }, []);
+
+    return (
+        <img ref={imgRef} src={isVisible ? src : undefined} alt={alt} style={style} />
+    );
+};
