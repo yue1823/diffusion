@@ -141,6 +141,16 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
                 </Row>
 
                 <Scroll_down_moon/>
+                <Row >
+                    <Col style={{height:400}}>
+
+                    </Col>
+                </Row>
+                <Row >
+                    <Col style={{height:400}}>
+
+                    </Col>
+                </Row>
             </div>
         );
     }

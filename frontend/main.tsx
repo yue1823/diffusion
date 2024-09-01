@@ -18,18 +18,21 @@ const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <WalletProvider>
-      <QueryClientProvider client={queryClient}>
-          <React.StrictMode>
-              <Router>
-                  <Routes>
-                      <Route  path="/*" element={<App id={"page-wrap"}/>}/>
-                      <Route  path="/website" element={<Website_page/>}/>
-                  </Routes>
+        <QueryClientProvider client={queryClient}>
+            {/*<head>*/}
+            {/*    <script src="https://telegram.org/js/telegram-web-app.js"></script>*/}
+            {/*</head>*/}
+            <React.StrictMode>
+                <Router>
+                <Routes>
+                            <Route path="/*" element={<App id={"page-wrap"}/>}/>
+                            <Route path="/website" element={<Website_page/>}/>
+                        </Routes>
 
-              </Router>
-          </React.StrictMode>
-        <Toaster />
-      </QueryClientProvider>
+                    </Router>
+                </React.StrictMode>
+                <Toaster/>
+        </QueryClientProvider>
     </WalletProvider>
   </React.StrictMode>,
 );
