@@ -311,7 +311,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                 </p>
             </div>
             {scrollPosition >= 590 ? <>
-                <Star position1={2200} position2={3050} position3={3400} position4={111}/>
+                <Star position1={2200} position2={3050} position3={3400} position4={'50%'} text={" XueDao  hackthon champion       2024.07.20"}/>
             </> : <></>}
 
         </>

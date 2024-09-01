@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Star: React.FC <{position1:number,position2:number,position3:number,position4:number}>= ({position1,position2,position3,position4}) => {
+const Star: React.FC <{position1:number,position2:number,position3:number,position4:string,text:string}>= ({position1,position2,position3,position4,text}) => {
     const [opacity, setOpacity] = useState(0); // 控制透明度
     const [visibility, setVisibility] = useState<'hidden' | 'visible'>('hidden'); // 控制可见性
 
@@ -63,7 +63,19 @@ const Star: React.FC <{position1:number,position2:number,position3:number,positi
                     />
                 </div>
             </div>
-            <p></p>
+            <p
+            style={{
+                opacity:opacity,
+                transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
+                position: 'fixed', // 让文字固定在某个位置
+                top: '22%', // 调整为合适的位置
+                left: position4,
+                zIndex: 27,
+                transform: 'translate(-20%, -20%)',
+                fontSize: '30px',
+                color: 'white',}}>
+                {text}
+            </p>
         </>
     );
 };
