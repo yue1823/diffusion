@@ -145,7 +145,7 @@ const Website_page: React.FC = () => {
         };
     }, []);
     return (
-        <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}} style={{height:6000}}>
+        <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}} style={{height:9000}}>
             <Col span={24} >
 
                 {/*<div id="circle" className="circle bg-yellow-500"></div>*/}

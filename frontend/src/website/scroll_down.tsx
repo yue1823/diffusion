@@ -19,6 +19,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [linePosition,set_line_Position]=useState(0);
     const [topPosition, setTopPosition] = useState('10%');
+    const [SecobdtopPosition, setSecondTopPosition] = useState('60%');
     const handleScroll = () => {
 
             const position = window.scrollY;
@@ -45,19 +46,24 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
             } else {
                 setTextOpacity(0);
             }
-            if (position > 2500 && position < 4500) {
+            if (position > 2500 && position < 4000) {
                 const opacity = Math.min((position - 2600) / 100, 1);
                 setText2Opacity(opacity);
-                console.log(`text2:${text2Opacity}`)
+
             }  else {
                 setText2Opacity(0);
             }
-            if (position > 3000 && position < 4500) {
-                const opacity = Math.min((position - 3000) / 100, 1);
+            if (position > 3000 && position < 4000) {
+                const opacity = Math.min((position - 3000) / 100,1);
                 setText3Opacity(opacity);
-                console.log(`text2:${text2Opacity}`)
+
             }  else {
                 setText3Opacity(0);
+            }
+            if(position >= 3300){
+                const newTopPosition = ((position - 3000) / 500) * 50;
+                console.log(`${Math.min(-newTopPosition)}%`)
+                setSecondTopPosition(`${Math.min(-newTopPosition)}%`)
             }
 
     };
@@ -101,9 +107,9 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const many_cloud3_style = {
         position: 'fixed' as 'fixed',
         right: `${1880 - scrollPosition * 0.1}px`, // 控制月亮的水平位置，隨著滾動向右移動
-        top: `${topPosition}`,
-        transform: `translateX(${Math.min(-1118+scrollPosition*1.1)}px)  translateY(930px) rotate(90deg)`,
-        transition: 'transform 0.3s ease-out',
+        top: linePosition <=1200 ? `${topPosition}`: `${SecobdtopPosition} `,
+        transform: linePosition <=1200 ? `translateX(${Math.min(-1118+scrollPosition*1.1)}px)  translateY(930px) rotate(90deg)`:`translateX(${Math.min(-1118+scrollPosition*1.1)}px)  translateY(440px) rotate(90deg)`,
+
         zIndex:10,
         // display: 'flex',
         width:"72vmax",
@@ -115,9 +121,9 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const many_cloud4_style = {
         position: 'fixed' as 'fixed',
         right: `${1880 - scrollPosition * 0.1}px`, // 控制月亮的水平位置，隨著滾動向右移動
-        top: `${topPosition}`,
-        transform: `translateX(${Math.min(1503-scrollPosition*1.1)}px)  translateY(930px) rotate(270deg)`,
-        transition: 'transform 0.3s ease-out',
+        top: linePosition <=1200 ? `${topPosition}`: `${SecobdtopPosition}`,
+        transform: linePosition <=1200 ?`translateX(${Math.min(1503-scrollPosition*1.1)}px)  translateY(930px) rotate(270deg)`:`translateX(${Math.min(1503-scrollPosition*1.1)}px)  translateY(440px) rotate(270deg)`,
+
         zIndex:10,
         // display: 'flex',
         width:"72vmax",
@@ -126,16 +132,29 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
 
     }
+    const many_cloud5_style = {
+        position: 'fixed' as 'fixed',
+        right: `50%`, // 控制月亮的水平位置，隨著滾動向右移動
+        top: `${SecobdtopPosition}`,
+        transform: `translateX(${Math.min(603-scrollPosition*1.1)}px)  translateY(930px) rotate(0deg)`,
+        transition: 'transform 0.3s ease-out',
+        zIndex:10,
+        // display: 'flex',
+        width:"72vmax",
+        height:600,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+
+    }
     const fishinglink = {
         position: 'fixed' as 'fixed',
-        top: topPosition,
+        top: linePosition <=1700 ?`${topPosition}`:`${SecobdtopPosition}`,
         width: '3px',
         zIndex:10,
         right:`${(823 + scrollPosition * 0.1+415)}px`,
         height: scrollPosition >= 500
-            ? `${Math.min(linePosition-500 ,1050)}px`
+            ? `${Math.min(linePosition-500 ,1080)}px`
             : '0px',
-        transform: `translateY(348px) translateX(${Math.min(scrollPosition, 365)}px)`,
+        transform: linePosition <=1700 ?`translateY(348px) translateX(${Math.min(scrollPosition, 365)}px)`:`translateY(-100px) translateX(${Math.min(scrollPosition, 365)}px)`,
         backgroundColor: 'white',
         borderColorder:'white',
         transition: 'height 0.1s ease-out',
@@ -327,12 +346,27 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                 </p>
             </div>
             {scrollPosition >= 590 ? <>
-                <Star position1={2200} position2={4500} position3={3400} position4={'50%'} text={" XueDao  hackthon champion       2024.07.20"}/>
+
+                <Star position1={2200} position2={4500} position3={3400} position4={'50%'}
+                      text={" XueDao  hackthon champion       2024.07.20"}/>
             </> : <></>}
+            {linePosition >= 1150 ?
+                <div style={{
+                    width: '50px',      // 设置线条的宽度
+                    height: '5px',       // 设置线条的高度
+                    borderStyle: 'solid', // 设置线条样式
+                    borderWidth: '0 0 1px 0', // 指定下边框的宽度
+                    borderColor: '#f1eff6', // 设置线条颜色
+                    backgroundColor: "white",
+                    zIndex: 28,          // 控制线条的z-index
+                    transform: 'translate(850%,1950%)',
+                    position: 'fixed'
+                }}></div>
+                : <></>}
             {linePosition >= 1300 ? <>
                 <p style={{
 
-                    opacity:text2Opacity,
+                    opacity: text2Opacity,
                     transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
                     position: 'fixed', // 让文字固定在某个位置
                     top: '50%', // 调整为合适的位置
@@ -340,15 +374,16 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     zIndex: 27,
                     transform: 'translate(-50%, -50%)',
                     fontSize: '30px',
-                    color: 'white',
+                    color: '#7B7B7B',
                 }}>
                     Aptos code Collision 2024.10.30
                 </p>
             </> : <></>}
             {linePosition >= 1400 ? <>
+
                 <p style={{
 
-                    opacity:text3Opacity,
+                    opacity: text3Opacity,
                     transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
                     position: 'fixed', // 让文字固定在某个位置
                     top: '75%', // 调整为合适的位置
@@ -356,11 +391,16 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     zIndex: 27,
                     transform: 'translate(-50%, -50%)',
                     fontSize: '30px',
-                    color: 'white',
+                    color: '#7B7B7B',
                 }}>
                     Lanuch on Mainnet Q1/2025
                 </p>
             </> : <></>}
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage src={many_cloud1} style={{...many_cloud5_style, left: -1}}
+                               alt="many_cloud5"/>
+            </div>
+
         </>
 
     );
