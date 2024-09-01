@@ -145,8 +145,8 @@ const Website_page: React.FC = () => {
         };
     }, []);
     return (
-        <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}}>
-            <Col span={24}>
+        <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}} style={{height:6000}}>
+            <Col span={24} >
 
                 {/*<div id="circle" className="circle bg-yellow-500"></div>*/}
                 <StarrySky/>
@@ -189,7 +189,7 @@ const Website_page: React.FC = () => {
                 </Row>
                 <Row style={{ height: 3000, position: 'relative', top: 100, left:100, width: '100%', zIndex: 2 }}>
                     <Col span={24}>
-
+                        <p>a</p>
                     </Col>
                 </Row>
             </Col>

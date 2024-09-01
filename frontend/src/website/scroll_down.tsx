@@ -14,6 +14,8 @@ import  Star  from './star';
 const Scroll_down_moon: React.FC <{}> = ({}) => {
 
     const [textOpacity, setTextOpacity] = useState(0);
+    const [text2Opacity, setText2Opacity] = useState(0);
+    const [text3Opacity, setText3Opacity] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [linePosition,set_line_Position]=useState(0);
     const [topPosition, setTopPosition] = useState('10%');
@@ -42,6 +44,20 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                 setTextOpacity(opacity);
             } else {
                 setTextOpacity(0);
+            }
+            if (position > 2500 && position < 4500) {
+                const opacity = Math.min((position - 2600) / 100, 1);
+                setText2Opacity(opacity);
+                console.log(`text2:${text2Opacity}`)
+            }  else {
+                setText2Opacity(0);
+            }
+            if (position > 3000 && position < 4500) {
+                const opacity = Math.min((position - 3000) / 100, 1);
+                setText3Opacity(opacity);
+                console.log(`text2:${text2Opacity}`)
+            }  else {
+                setText3Opacity(0);
             }
 
     };
@@ -311,9 +327,40 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                 </p>
             </div>
             {scrollPosition >= 590 ? <>
-                <Star position1={2200} position2={3050} position3={3400} position4={'50%'} text={" XueDao  hackthon champion       2024.07.20"}/>
+                <Star position1={2200} position2={4500} position3={3400} position4={'50%'} text={" XueDao  hackthon champion       2024.07.20"}/>
             </> : <></>}
+            {linePosition >= 1300 ? <>
+                <p style={{
 
+                    opacity:text2Opacity,
+                    transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
+                    position: 'fixed', // 让文字固定在某个位置
+                    top: '50%', // 调整为合适的位置
+                    left: '58%',
+                    zIndex: 27,
+                    transform: 'translate(-50%, -50%)',
+                    fontSize: '30px',
+                    color: 'white',
+                }}>
+                    Aptos code Collision 2024.10.30
+                </p>
+            </> : <></>}
+            {linePosition >= 1400 ? <>
+                <p style={{
+
+                    opacity:text3Opacity,
+                    transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
+                    position: 'fixed', // 让文字固定在某个位置
+                    top: '75%', // 调整为合适的位置
+                    left: '57%',
+                    zIndex: 27,
+                    transform: 'translate(-50%, -50%)',
+                    fontSize: '30px',
+                    color: 'white',
+                }}>
+                    Lanuch on Mainnet Q1/2025
+                </p>
+            </> : <></>}
         </>
 
     );
