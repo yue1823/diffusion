@@ -7,6 +7,7 @@ import cloud2 from "./website_image/雲2.png";
 import cloud3 from "./website_image/雲3.png";
 import cloud4 from "../website/website_image/雲4.png";
 import cloud5 from "./website_image/雲5.png";
+import cloud6 from "./website_image/雲6.png";
 import god2 from "./website_image/god2.png";
 import many_cloud1 from "./website_image/多雲.png";
 const Scroll_down_moon: React.FC = () => {
@@ -146,26 +147,23 @@ const Scroll_down_moon: React.FC = () => {
     };
     const cloud1style = {
         position: 'fixed' as 'fixed',
-        right: `${1180 + scrollPosition * 0.1+50}px`, // 控制月亮的水平位置，隨著滾動向右移動
-        top: `calc(${topPosition} + -3.5%)`,
-        transform: `translateX(${Math.min(scrollPosition, 600)}px)`,
-        transition: 'transform 0.2s ease-out',
-        zIndex:2,
-        width:1000,
-        height:1000,
-        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
-
-        left:-800
-    };
-    const cloud2style = {
-        position: 'fixed' as 'fixed',
-        right: `${1280 - scrollPosition * 0.25}px`, // 控制月亮的水平位置，隨著滾動向右移動
-        top: `calc(${topPosition} + -1.2% )`,
-        transform: `translateX(${Math.min(scrollPosition, 600)}px)`,
+        right: `${Math.min(-425 + scrollPosition * 0.68)}px`, // 控制月亮的水平位置，隨著滾動向右移動
+        top: `calc(${topPosition} + 2.2% )`,
         transition: 'transform 0.2s ease-out',
         zIndex:7,
         width:1000,
         height:1000,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
+    const cloud2style = {
+        position: 'fixed' as 'fixed',
+        right: `${1280 - scrollPosition * 0.25}px`, // 控制月亮的水平位置，隨著滾動向右移動
+        top: `calc(${topPosition} + -25.2% )`,
+        transform: `translateX(${Math.min(scrollPosition, 800)}px)`,
+        transition: 'transform 0.2s ease-out',
+        zIndex:7,
+        width:"100vmax",
+        height:"100vmax",
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
 
     };
@@ -182,10 +180,11 @@ const Scroll_down_moon: React.FC = () => {
     };
     const cloud4style = {
         position: 'fixed' as 'fixed',
-        right: `${Math.min(-400 + scrollPosition * 0.5)}px`, // 控制月亮的水平位置，隨著滾動向右移動
-        top: `calc(${topPosition} + -2.6% )`,
+        right: `${Math.min(-400 + scrollPosition * 0.55)}px`, // 控制月亮的水平位置，隨著滾動向右移動
+        top: `calc(${topPosition} + 18% )`,
+        transform: `rotate(-22deg)`,
         transition: 'transform 0.2s ease-out',
-        zIndex:2,
+        zIndex:6,
         width:1000,
         height:1000,
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
@@ -197,6 +196,17 @@ const Scroll_down_moon: React.FC = () => {
         top: `calc(${topPosition} + 3.0% )`,
         transition: 'transform 0.2s ease-out',
         zIndex:8,
+        width:1000,
+        height:1000,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+
+    };
+    const cloud6style = {
+        position: 'fixed' as 'fixed',
+        right: `${Math.min(-400 + scrollPosition * 0.67)}px`, // 控制月亮的水平位置，隨著滾動向右移動
+        top: `calc(${topPosition} + 2.2% )`,
+        transition: 'transform 0.2s ease-out',
+        zIndex:9,
         width:1000,
         height:1000,
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
@@ -240,15 +250,15 @@ const Scroll_down_moon: React.FC = () => {
                 <img id="cloud5" src={cloud5} style={cloud5style} alt="cloud5"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
+                <img id="cloud6" src={cloud6} style={cloud6style} alt="cloud6"/>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
                 <img id="god2" src={god2} style={god2style} alt="god2"/>
             </div>
 
             {scrollPosition <= 590 ? <></> : <>
                 <div style={fishinglink}></div>
             </>}
-
-            {/*<>*/}
-
             <div id="moon-container" style={{position: 'relative'}}>
                 <img id="many_cloud1" src={many_cloud1} style={{...many_cloud1_style, left: -1}}
                      alt="many_cloud1"/>
@@ -265,51 +275,7 @@ const Scroll_down_moon: React.FC = () => {
                 <img id="many_cloud4" src={many_cloud1} style={{...many_cloud4_style, left: -1}}
                      alt="many_cloud4"/>
             </div>
-            {/*<div id="moon-container" style={{position: 'relative'}}>*/}
-            {/*    <img id="normal_cloud1" src={normal_cloud} style={{...normal_cloud_style, left: -780}}*/}
-            {/*         alt="normal_cloud1"/>*/}
-            {/*</div>*/}
-            {/*<div id="moon-container" style={{position: 'relative'}}>*/}
-            {/*    <img id="normal_cloud1" src={normal_cloud} style={{...normal_cloud_style, left: -715}}*/}
-            {/*         alt="normal_cloud1"/>*/}
-            {/*</div>*/}
-            {/*<div id="moon-container" style={{position: 'relative'}}>*/}
-            {/*    <img id="normal_cloud1" src={normal_cloud} style={{...normal_cloud_style, left: -650}}*/}
-            {/*         alt="normal_cloud1"/>*/}
-            {/*</div>*/}
-            {/*<div id="moon-container" style={{position: 'relative'}}>*/}
-            {/*    <img id="normal_cloud1" src={normal_cloud} style={{...normal_cloud_style, left: -585}}*/}
-            {/*         alt="normal_cloud1"/>*/}
-            {/*</div>*/}
-            {/*<div id="moon-container" style={{position: 'relative'}}>*/}
-            {/*    <img id="normal_cloud1" src={normal_cloud} style={{...normal_cloud_style, left: -520}}*/}
-            {/*         alt="normal_cloud1"/>*/}
-            {/*</div>*/}
-            {/*<div id="moon-container" style={{position: 'relative'}}>*/}
-            {/*    <img id="normal_cloud1" src={normal_cloud} style={{...normal_cloud_style, left: -455}}*/}
-            {/*         alt="normal_cloud1"/>*/}
-            {/*</div>*/}
-            {/*<div id="moon-container" style={{position: 'relative'}}>*/}
-            {/*    <img id="normal_cloud1" src={normal_cloud} style={{...normal_cloud_style, left: -390}}*/}
-            {/*         alt="normal_cloud1"/>*/}
-            {/*</div>*/}
-            {/*    <div id="moon-container" style={{position: 'relative'}}>*/}
-            {/*        <img id="normal_cloud1" src={normal_cloud} style={{...normal_cloud_style, left: -325}}*/}
-            {/*             alt="normal_cloud1"/>*/}
-            {/*    </div>*/}
-            {/*    <div id="moon-container" style={{position: 'relative'}}>*/}
-            {/*        <img id="normal_cloud1" src={normal_cloud} style={{...normal_cloud_style, left: -260}}*/}
-            {/*             alt="normal_cloud1"/>*/}
-            {/*    </div>*/}
-            {/*    <div id="moon-container" style={{position: 'relative'}}>*/}
-            {/*        <img id="normal_cloud1" src={normal_cloud} style={{...normal_cloud_style, left: -195}}*/}
-            {/*             alt="normal_cloud1"/>*/}
-            {/*    </div>*/}
-            {/*    <div id="moon-container" style={{position: 'relative'}}>*/}
-            {/*        <img id="normal_cloud1" src={normal_cloud} style={{...normal_cloud_style, left: -130}}*/}
-            {/*             alt="normal_cloud1"/>*/}
-            {/*    </div>*/}
-            {/*</>*/}
+
         </>
 
     );

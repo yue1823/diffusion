@@ -26,7 +26,7 @@ const NFT_page:React.FC<{ }> = ({ }) => {
                             borderRadius: borderRadiusLG,
                         }}
                     >
-                        <CountdownTimer expiredDate={"30092024"}/>
+                        <CountdownTimer expiredDate={"30092024"} yes_or_not={true}/>
                     </div>
                 </Row>
             </Content>
