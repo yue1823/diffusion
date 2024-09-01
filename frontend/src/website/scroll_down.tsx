@@ -11,6 +11,7 @@ import cloud6 from "./website_image/雲6.png";
 import god2 from "./website_image/god2.png";
 import many_cloud1 from "./website_image/多雲.png";
 const Scroll_down_moon: React.FC = () => {
+    const [textOpacity, setTextOpacity] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [linePosition,set_line_Position]=useState(0);
     const [topPosition, setTopPosition] = useState('10%');
@@ -27,6 +28,14 @@ const Scroll_down_moon: React.FC = () => {
             setTopPosition(`${Math.min(-newTopPosition, 40)}%`); // 最大為 40%
         }
         set_line_Position(position * 0.5);
+        if (position > 700  && position < 1000) {
+            const opacity = Math.min((position - 700) / 300, 1); // 计算透明度，最大为 1
+            setTextOpacity(opacity);
+        } else if(position > 1000 && position < 1500){
+            const opacity = Math.min((position + 700) / 300, 1); // 计算透明度，最大为 1
+            setTextOpacity(opacity);
+        }else{setTextOpacity(0); // 滚动位置不到 700px 时，文字保持隐藏
+            }
     };
 
     useEffect(() => {
@@ -223,6 +232,7 @@ const Scroll_down_moon: React.FC = () => {
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
 
     };
+
     return (
         <>
             <div id="god-container" style={{position: 'relative'}}>
@@ -275,6 +285,22 @@ const Scroll_down_moon: React.FC = () => {
                 <img id="many_cloud4" src={many_cloud1} style={{...many_cloud4_style, left: -1}}
                      alt="many_cloud4"/>
             </div>
+            <div style={{position: 'relative'}}>
+                <p style={{
+
+                    opacity: textOpacity,
+                    transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
+                    position: 'fixed', // 让文字固定在某个位置
+                    top: '50%', // 调整为合适的位置
+                    left: '50%',
+                    zIndex: 27,
+                    transform: 'translate(-50%, -50%)',
+                    fontSize: '24px',
+                    color: 'white',
+                }}>
+                    Diffusion Roadmap
+                </p>
+            </div>
 
         </>
 
@@ -282,3 +308,4 @@ const Scroll_down_moon: React.FC = () => {
 };
 
 export default Scroll_down_moon;
+

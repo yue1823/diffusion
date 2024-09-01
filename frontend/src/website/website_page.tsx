@@ -136,7 +136,7 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
                             <SwiperSlide><Image src={Logo_1} style={{position: "relative", top: -10}}></Image></SwiperSlide>
                             <SwiperSlide><Image src={Logo_2} style={{position: "relative", top: -40}}></Image></SwiperSlide>
                         </Swiper>
-                        <KinetComponent/>
+                        {/*<KinetComponent/>*/}
                     </Col>
                 </Row>
 
