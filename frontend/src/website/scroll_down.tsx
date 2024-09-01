@@ -42,7 +42,7 @@ const Scroll_down_moon: React.FC = () => {
             } else {
                 setTextOpacity(0);
             }
-       
+
     };
     const handleScrollThrottled = () => {
         requestAnimationFrame(handleScroll);
@@ -113,12 +113,11 @@ const Scroll_down_moon: React.FC = () => {
         top: topPosition,
         width: '3px',
         zIndex:10,
-        right:930,
-        // height: `${Math.min(-800+scrollPosition*1.4,5000)}px`,
+        right:`${823 + scrollPosition * 0.1+415}px`,
         height: scrollPosition >= 500
             ? `${(linePosition-500 )}px`
             : '0px',
-        transform: `translateY(348px)`,
+        transform: `translateY(348px) translateX(${Math.min(scrollPosition, 365)}px)`,
         backgroundColor: 'white',
         borderColorder:'white',
         transition: 'height 0.1s ease-out',
@@ -167,16 +166,16 @@ const Scroll_down_moon: React.FC = () => {
         right: `${Math.min(-425 + scrollPosition * 0.68)}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `calc(${topPosition} + 2.2% )`,
         transition: 'transform 0.2s ease-out',
-        zIndex:7,
+        zIndex:5,
         width:1000,
         height:1000,
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
     };
     const cloud2style = {
         position: 'fixed' as 'fixed',
-        right: `${1280 - scrollPosition * 0.25}px`, // 控制月亮的水平位置，隨著滾動向右移動
-        top: `calc(${topPosition} + -25.2% )`,
-        transform: `translateX(${Math.min(scrollPosition, 800)}px)`,
+        right: `${1165 - scrollPosition * 0.68}px`, // 控制月亮的水平位置，隨著滾動向右移動
+        top: `calc(${topPosition} + -27% )`,
+        transform: `translateX(${Math.min(scrollPosition, 390)}px)`,
         transition: 'transform 0.2s ease-out',
         zIndex:7,
         width:"100vmax",
