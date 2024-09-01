@@ -12,7 +12,7 @@ The Boilerplate template provides a starter dapp with all necessary dapp infrast
   
 # Social 
 
-diffustion X : https://x.com/diffusion15205/status/1823227898779914650?s=46
+diffusion X : https://x.com/diffusion15205/status/1823227898779914650?s=46
 
 founder X :
 https://x.com/yue_1678/status/1769369187074621890?s=46
