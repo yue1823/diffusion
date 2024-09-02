@@ -41,9 +41,9 @@ const Star: React.FC <{position1:number,position2:number,position3:number,positi
                 <div
                     style={{
                         position: 'fixed',
-                        top: line_position <=1700 ?'169px':`440px`,
+                        top: line_position <=1700 ?'169px':`450px`,
                         left: '38%',
-                        transform: line_position <=1700 ?'translateX(-50%) rotate(0deg)':`translateX(-50%) rotate(0deg) translateY(calc(${secondtop} * 11.5))`,
+                        transform: line_position <=1700 ?'translateX(-50%) rotate(0deg)':`translateX(-50%) rotate(0deg) translateY(calc(${secondtop} * 12))`,
                         visibility: visibility, // 控制可见性
                         borderLeft: '30px solid transparent',
                         borderRight: '30px solid transparent',
@@ -73,8 +73,8 @@ const Star: React.FC <{position1:number,position2:number,position3:number,positi
                 position: 'fixed', // 让文字固定在某个位置
                 left: position4,
                 zIndex: 27,
-                transform:line_position <=1700 ?'translate(-20%, -20%)':`translateX(-20%) translateY(calc(${secondtop} * 15.5))`,
-                top: line_position <=1700 ?'23.5%':`55.5%`,
+                transform:line_position <=1700 ?'translate(-20%, -20%)':`translateX(-20%) translateY(calc(${secondtop} * 16))`,
+                top: line_position <=1700 ?'23.5%':`56.5%`,
                 fontSize: '30px',
                 color: 'white',}}>
                 {text}

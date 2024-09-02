@@ -11,6 +11,10 @@ import cloud6 from "./website_image/雲6.png";
 import god2 from "./website_image/god2.png";
 import many_cloud1 from "./website_image/多雲.png";
 import  Star  from './star';
+import tree1 from "./website_image/樹1.png";
+import tree2 from "./website_image/樹2.png";
+import tree3 from "./website_image/樹3.png";
+import many_tree from "./website_image/樹木.png";
 const Scroll_down_moon: React.FC <{}> = ({}) => {
 
     const [textOpacity, setTextOpacity] = useState(0);
@@ -19,6 +23,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const [text4Opacity, setText4Opacity] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [linePosition,set_line_Position]=useState(0);
+    const [treePosition,set_tree_Position]=useState(0);
     const [topPosition, setTopPosition] = useState('10%');
     const [SecobdtopPosition, setSecondTopPosition] = useState('60%');
     const handleScroll = () => {
@@ -75,6 +80,11 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         } else {
             setText4Opacity(0);
         }
+        if (position > 5000) {
+            set_tree_Position((position-5000) * 0.1);
+        } else if (position >= 5100 && position < 7000) {
+            set_tree_Position(((position-5000) * 0.1));
+        } else( set_tree_Position(0));
     };
 
     useEffect(() => {
@@ -298,7 +308,50 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
 
     };
-
+    const tree1style = {
+        position:  'fixed' as 'fixed',
+         // 控制月亮的水平位置，隨著滾動向右移動
+        transition: 'transform 0.2s ease-out ',
+        top:`25.5%`,
+        transform:` rotate(4deg) translateX(${Math.min(-800 + treePosition *6, -315)}px) `,
+        zIndex:5,
+        width:700,
+        height:700,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
+    const tree2style = {
+        position:  'fixed' as 'fixed',
+        // 控制月亮的水平位置，隨著滾動向右移動
+        transition: 'transform 0.2s ease-out ',
+        top:`-2.5%`,
+        transform:` rotate(4deg) translateX(${Math.min(-800 + treePosition *6, -315)}px) `,
+        zIndex:5,
+        width:700,
+        height:700,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
+    const tree3style = {
+        position:  'fixed' as 'fixed',
+        // 控制月亮的水平位置，隨著滾動向右移動
+        transition: 'transform 0.2s ease-out ',
+        top:`-3.5%`,
+        transform:` rotate(1deg) translateX(${Math.min(-800 + treePosition *6, -310)}px) `,
+        zIndex:4,
+        width:700,
+        height:700,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
+    const manytree1style = {
+        position:  'fixed' as 'fixed',
+        // 控制月亮的水平位置，隨著滾動向右移動
+        transition: 'transform 0.2s ease-out ',
+        top:`-3.5%`,
+        transform:` rotate(1deg) translateX(${Math.min(-800 + treePosition *6, -410)}px) `,
+        zIndex:4,
+        width:700,
+        height:700,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
     return (
         <>
             <div id="god-container" style={{position: 'relative'}}>
@@ -384,7 +437,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     zIndex: 28,          // 控制线条的z-index
                     position: 'fixed',
                     top: linePosition <= 1700 ? '13%' : `calc(12% + 45.7%)`, // 调整为合适的位置
-                    transform: linePosition <= 1700 ? 'translate(850%,1950%)' : `translateX(850%) translateY(calc(${SecobdtopPosition} * 138))`,
+                    transform: linePosition <= 1700 ? 'translate(850%,1950%)' : `translateX(850%) translateY(calc(${SecobdtopPosition} * 140))`,
                 }}></div>
                 : <></>}
             {linePosition >= 1300 ? <>
@@ -393,7 +446,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     opacity: text2Opacity,
                     transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
                     position: 'fixed', // 让文字固定在某个位置
-                    top: linePosition <= 1700 ? '50%' : `calc(50% + 37.7%)`, // 调整为合适的位置
+                    top: linePosition <= 1700 ? '50%' : `calc(50% + 36.7%)`, // 调整为合适的位置
                     left: '58%',
                     zIndex: 27,
                     transform: linePosition <= 1700 ? 'translate(-50%, -50%)' : `translateY(calc(${SecobdtopPosition} * 18)) translateX(-50%)`,
@@ -410,7 +463,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     opacity: text3Opacity,
                     transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
                     position: 'fixed', // 让文字固定在某个位置
-                    top: linePosition <= 1700 ? '75%' : `calc(75% + 37.7%)`, // 调整为合适的位置
+                    top: linePosition <= 1700 ? '75%' : `calc(75% + 36.7%)`, // 调整为合适的位置
                     left: '57%',
                     zIndex: 27,
                     transform: linePosition <= 1700 ? `translateY(-50%) translateX(-50%)` : `translateY(calc(${SecobdtopPosition} * 18)) translateX(-50%)`,
@@ -443,6 +496,18 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                 }}>
                     Diffusion Partner
                 </p>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage src={tree1} style={{...tree1style}} alt="tree1"/>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage src={tree2} style={{...tree2style}} alt="tree2"/>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage src={tree3} style={{...tree3style}} alt="tree3"/>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage src={many_tree} style={{...manytree1style}} alt="manytree1"/>
             </div>
         </>
 
