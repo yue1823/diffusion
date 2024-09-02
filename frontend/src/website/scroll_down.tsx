@@ -345,11 +345,22 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position:  'fixed' as 'fixed',
         // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
-        top:`-3.5%`,
-        transform:` rotate(1deg) translateX(${Math.min(-800 + treePosition *6, -410)}px) `,
-        zIndex:4,
+        top:`-16.5%`,
+        transform:` rotate(-2deg) translateX(${Math.min(-800 + treePosition *10, 150)}px) `,
+        zIndex:2,
         width:700,
         height:700,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
+    const manytree2style = {
+        position:  'fixed' as 'fixed',
+        // 控制月亮的水平位置，隨著滾動向右移動
+        transition: 'transform 0.2s ease-out ',
+        top:`43.5%`,
+        transform:` rotate(-2deg) translateX(${Math.min(-800 + treePosition *10, 30)}px) `,
+        zIndex:5,
+        width:800,
+        height:800,
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
     };
     return (
@@ -508,6 +519,9 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
                 <LazyLoadImage src={many_tree} style={{...manytree1style}} alt="manytree1"/>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage src={many_tree} style={{...manytree2style}} alt="manytree2"/>
             </div>
         </>
 
