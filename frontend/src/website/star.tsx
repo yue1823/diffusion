@@ -74,7 +74,7 @@ const Star: React.FC <{position1:number,position2:number,position3:number,positi
                 left: position4,
                 zIndex: 27,
                 transform:line_position <=1700 ?'translate(-20%, -20%)':`translateX(-20%) translateY(calc(${secondtop} * 15.5))`,
-                top: line_position <=1700 ?'22%':`55.5%`,
+                top: line_position <=1700 ?'23.5%':`55.5%`,
                 fontSize: '30px',
                 color: 'white',}}>
                 {text}

@@ -132,14 +132,12 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
 }
 
 const Website_page: React.FC = () => {
-    const text = "Your Text Here";
+    const text = "Our Goal \n\nBring something fresh to the Aptos community \n\n\nWhat's Aptos need , we build it";
     const [letters, setLetters] = useState<string[]>([]);
 
     const anime_play = () => {
         let a =text.split('')
-        console.log(a)
         setLetters(a); // 更新 letters 状态
-        console.log(letters)
     }
     useEffect(() => {
         // 这个 useEffect 只会在 letters 更新后运行
@@ -149,7 +147,7 @@ const Website_page: React.FC = () => {
                 opacity: [0, 1],
                 easing: "easeInOutQuad",
                 duration: 2250,
-                delay: (_el, i) => 150 * (i + 1)
+                delay: (_el, i) => 80 * (i + 1)
             }).add({
             targets: '.letter',
             opacity: 1,  // 确保最终状态的透明度为1
@@ -172,29 +170,41 @@ const Website_page: React.FC = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
+    const formatText = (text: string) => {
+        return text.split('\n').map((line, index) => (
+            <React.Fragment key={index}>
+                {line.split('').map((char, i) => (
+                    <span
+                        key={i}
+                        className="letter"
+                        style={{
+                            color: "white",
+                            zIndex: 10,
+                            display: 'inline-block',
+                            opacity: 0, // 初始透明度
+                            transition: 'opacity 0.5s ease-in-out',
+                            fontSize: 25
+                        }}
+                    >
+                        {char === ' ' ? '\u00A0' : char} {/* 处理空格 */}
+                    </span>
+                ))}
+                <br /> {/* 添加换行 */}
+            </React.Fragment>
+        ));
+    };
     return (
 
         <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}} style={{height:9000}}>
             <Col span={24} >
 
                 {/*<div id="circle" className="circle bg-yellow-500"></div>*/}
-                <div style={{position: 'relative'}}>
-                    {letters.map((letter, index) => (
-                        <span
-                            key={index}
-                            className="letter"
-                            style={{
-                                color: "white",
-                                zIndex: 10,
-                                display: 'inline-block',
-                                opacity: 0, // 初始透明度
-                                transition: 'opacity 0.5s ease-in-out',
-                            }}
-                        >
-                    {letter === ' ' ? '\u00A0' : letter} {/* 处理空格 */}
-                </span>
-                    ))}
+                <div style={{position: 'absolute',
+                    top:160,
+                    left:200,
+                    width:700,
+                }}>
+                    {formatText(text)}
                 </div>
                 <StarrySky/>
 
@@ -223,21 +233,21 @@ const Website_page: React.FC = () => {
                 <Scroll_down_moon/>
                 <Row style={{height: 1000, position: 'absolute', zIndex: 2 ,top:"0%"}}>
                     <Col span={16} offset={16}>
-                        <a className={"button-wrapper"} >
-                            <div style={{position: "absolute", top: 130,left:400}}>
-                                <span className="dot dot-1"></span>
-                                <span className="dot dot-2"></span>
-                                <span className="dot dot-3"></span>
-                            </div>
+                        {/*<a className={"button-wrapper"} >*/}
+                        {/*    <div style={{position: "absolute", top: 130,left:400}}>*/}
+                        {/*        <span className="dot dot-1"></span>*/}
+                        {/*        <span className="dot dot-2"></span>*/}
+                        {/*        <span className="dot dot-3"></span>*/}
+                        {/*    </div>*/}
 
-                            <span className="dot dot-4"></span>
-                            <span className="dot dot-5"></span>
-                            <span className="dot dot-6"></span>
-                            <span className="dot dot-7"></span>
-                            <span className={"card_slid"}>
+                        {/*    <span className="dot dot-4"></span>*/}
+                        {/*    <span className="dot dot-5"></span>*/}
+                        {/*    <span className="dot dot-6"></span>*/}
+                        {/*    <span className="dot dot-7"></span>*/}
+                        {/*    <span className={"card_slid"}>*/}
 
-                                </span>
-                        </a>
+                        {/*        </span>*/}
+                        {/*</a>*/}
                     </Col>
                     <Col span={24} >
                         aa

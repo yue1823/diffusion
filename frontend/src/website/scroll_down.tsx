@@ -38,7 +38,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
             }
             set_line_Position(position * 0.5);
 
-            if (position > 700 && position < 1000) {
+            if (position > 500 && position < 1000) {
                 const opacity = Math.min((position - 700) / 300, 1);
                 setTextOpacity(opacity);
             } else if (position > 1000 && position < 1500) {
@@ -383,7 +383,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     backgroundColor: "white",
                     zIndex: 28,          // 控制线条的z-index
                     position: 'fixed',
-                    top: linePosition <= 1700 ? '12%' : `calc(12% + 45.7%)`, // 调整为合适的位置
+                    top: linePosition <= 1700 ? '13%' : `calc(12% + 45.7%)`, // 调整为合适的位置
                     transform: linePosition <= 1700 ? 'translate(850%,1950%)' : `translateX(850%) translateY(calc(${SecobdtopPosition} * 138))`,
                 }}></div>
                 : <></>}
