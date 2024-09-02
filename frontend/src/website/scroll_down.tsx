@@ -345,10 +345,10 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     Diffusion Roadmap
                 </p>
             </div>
-            {scrollPosition >= 590 ? <>
+            {scrollPosition >= 590 ? < >
+                    <Star position1={2200} position2={4500} position3={3400} position4={'50%'}
+                          text={" XueDao  hackthon champion       2024.07.20"} secondtop={SecobdtopPosition} line_position={linePosition}/>
 
-                <Star position1={2200} position2={4500} position3={3400} position4={'50%'}
-                      text={" XueDao  hackthon champion       2024.07.20"}/>
             </> : <></>}
             {linePosition >= 1150 ?
                 <div style={{
@@ -359,8 +359,9 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     borderColor: '#f1eff6', // 设置线条颜色
                     backgroundColor: "white",
                     zIndex: 28,          // 控制线条的z-index
-                    transform: 'translate(850%,1950%)',
-                    position: 'fixed'
+                    position: 'fixed',
+                    top: linePosition <=1700 ?'12%':`calc(12% + 45.7%)`, // 调整为合适的位置
+                    transform: linePosition <=1700 ?'translate(850%,1950%)':`translateX(850%) translateY(calc(${SecobdtopPosition} * 138))`,
                 }}></div>
                 : <></>}
             {linePosition >= 1300 ? <>
@@ -369,10 +370,10 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     opacity: text2Opacity,
                     transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
                     position: 'fixed', // 让文字固定在某个位置
-                    top: '50%', // 调整为合适的位置
+                    top: linePosition <=1700 ?'50%':`calc(50% + 37.7%)`, // 调整为合适的位置
                     left: '58%',
                     zIndex: 27,
-                    transform: 'translate(-50%, -50%)',
+                    transform: linePosition <=1700 ?'translate(-50%, -50%)':`translateY(calc(${SecobdtopPosition} * 18)) translateX(-50%)`,
                     fontSize: '30px',
                     color: '#7B7B7B',
                 }}>

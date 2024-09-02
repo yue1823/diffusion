@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Star: React.FC <{position1:number,position2:number,position3:number,position4:string,text:string}>= ({position1,position2,position3,position4,text}) => {
+const Star: React.FC <{position1:number,position2:number,position3:number,position4:string,text:string,secondtop:string,line_position:number}>= ({position1,position2,position3,position4,text,secondtop,line_position}) => {
     const [opacity, setOpacity] = useState(0); // 控制透明度
     const [visibility, setVisibility] = useState<'hidden' | 'visible'>('hidden'); // 控制可见性
 
@@ -34,13 +34,16 @@ const Star: React.FC <{position1:number,position2:number,position3:number,positi
 
     return (
         <>
-            <div style={{height:100,width:100}}>
+
+            <div style={{height:100,width:100,
+
+            }}>
                 <div
                     style={{
                         position: 'fixed',
-                        top: '160px',
+                        top: line_position <=1700 ?'169px':`440px`,
                         left: '38%',
-                        transform: 'translateX(-50%) rotate(0deg)',
+                        transform: line_position <=1700 ?'translateX(-50%) rotate(0deg)':`translateX(-50%) rotate(0deg) translateY(calc(${secondtop} * 11.5))`,
                         visibility: visibility, // 控制可见性
                         borderLeft: '30px solid transparent',
                         borderRight: '30px solid transparent',
@@ -68,10 +71,10 @@ const Star: React.FC <{position1:number,position2:number,position3:number,positi
                 opacity:opacity,
                 transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
                 position: 'fixed', // 让文字固定在某个位置
-                top: '22%', // 调整为合适的位置
                 left: position4,
                 zIndex: 27,
-                transform: 'translate(-20%, -20%)',
+                transform:line_position <=1700 ?'translate(-20%, -20%)':`translateX(-20%) translateY(calc(${secondtop} * 15.5))`,
+                top: line_position <=1700 ?'22%':`55.5%`,
                 fontSize: '30px',
                 color: 'white',}}>
                 {text}
