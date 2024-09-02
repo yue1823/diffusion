@@ -16,6 +16,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const [textOpacity, setTextOpacity] = useState(0);
     const [text2Opacity, setText2Opacity] = useState(0);
     const [text3Opacity, setText3Opacity] = useState(0);
+    const [text4Opacity, setText4Opacity] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [linePosition,set_line_Position]=useState(0);
     const [topPosition, setTopPosition] = useState('10%');
@@ -65,7 +66,15 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                 console.log(`${Math.min(-newTopPosition)}%`)
                 setSecondTopPosition(`${Math.min(-newTopPosition)}%`)
             }
-
+        if (position > 4400 && position < 4700) {
+            const opacity = Math.min((position - 4000) / 100, 1);
+            setText4Opacity(opacity);
+        }else if (position > 4700 && position < 5000) {
+            const opacity = Math.min((position + 4000) / 100, 1);
+            setText4Opacity(opacity);
+        } else {
+            setText4Opacity(0);
+        }
     };
 
     useEffect(() => {
@@ -136,11 +145,24 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position: 'fixed' as 'fixed',
         right: `50%`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `${SecobdtopPosition}`,
-        transform: `translateX(${Math.min(603-scrollPosition*1.1)}px)  translateY(930px) rotate(0deg)`,
+        transform: `translateX(${Math.min(230-scrollPosition*1.1)}px)  translateY(930px) rotate(0deg)`,
         transition: 'transform 0.3s ease-out',
         zIndex:10,
         // display: 'flex',
-        width:"72vmax",
+        width:"85vmax",
+        height:600,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+
+    }
+    const many_cloud6_style = {
+        position: 'fixed' as 'fixed',
+        right: `50%`, // 控制月亮的水平位置，隨著滾動向右移動
+        top: `${SecobdtopPosition}`,
+        transform: `translateX(${-Math.min(-78-scrollPosition*1.1)}px)  translateY(930px) rotate(0deg)`,
+        transition: 'transform 0.3s ease-out',
+        zIndex:10,
+        // display: 'flex',
+        width:"60vmax",
         height:600,
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
 
@@ -346,8 +368,9 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                 </p>
             </div>
             {scrollPosition >= 590 ? < >
-                    <Star position1={2200} position2={4500} position3={3400} position4={'50%'}
-                          text={" XueDao  hackthon champion       2024.07.20"} secondtop={SecobdtopPosition} line_position={linePosition}/>
+                <Star position1={2200} position2={4500} position3={3400} position4={'50%'}
+                      text={" XueDao  hackthon champion       2024.07.20"} secondtop={SecobdtopPosition}
+                      line_position={linePosition}/>
 
             </> : <></>}
             {linePosition >= 1150 ?
@@ -360,8 +383,8 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     backgroundColor: "white",
                     zIndex: 28,          // 控制线条的z-index
                     position: 'fixed',
-                    top: linePosition <=1700 ?'12%':`calc(12% + 45.7%)`, // 调整为合适的位置
-                    transform: linePosition <=1700 ?'translate(850%,1950%)':`translateX(850%) translateY(calc(${SecobdtopPosition} * 138))`,
+                    top: linePosition <= 1700 ? '12%' : `calc(12% + 45.7%)`, // 调整为合适的位置
+                    transform: linePosition <= 1700 ? 'translate(850%,1950%)' : `translateX(850%) translateY(calc(${SecobdtopPosition} * 138))`,
                 }}></div>
                 : <></>}
             {linePosition >= 1300 ? <>
@@ -370,10 +393,10 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     opacity: text2Opacity,
                     transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
                     position: 'fixed', // 让文字固定在某个位置
-                    top: linePosition <=1700 ?'50%':`calc(50% + 37.7%)`, // 调整为合适的位置
+                    top: linePosition <= 1700 ? '50%' : `calc(50% + 37.7%)`, // 调整为合适的位置
                     left: '58%',
                     zIndex: 27,
-                    transform: linePosition <=1700 ?'translate(-50%, -50%)':`translateY(calc(${SecobdtopPosition} * 18)) translateX(-50%)`,
+                    transform: linePosition <= 1700 ? 'translate(-50%, -50%)' : `translateY(calc(${SecobdtopPosition} * 18)) translateX(-50%)`,
                     fontSize: '30px',
                     color: '#7B7B7B',
                 }}>
@@ -387,10 +410,10 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     opacity: text3Opacity,
                     transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
                     position: 'fixed', // 让文字固定在某个位置
-                    top: linePosition <=1700 ?'75%':`calc(75% + 37.7%)`, // 调整为合适的位置
+                    top: linePosition <= 1700 ? '75%' : `calc(75% + 37.7%)`, // 调整为合适的位置
                     left: '57%',
                     zIndex: 27,
-                    transform:  linePosition <=1700 ?`translateY(-50%) translateX(-50%)`:`translateY(calc(${SecobdtopPosition} * 18)) translateX(-50%)`,
+                    transform: linePosition <= 1700 ? `translateY(-50%) translateX(-50%)` : `translateY(calc(${SecobdtopPosition} * 18)) translateX(-50%)`,
                     fontSize: '30px',
                     color: '#7B7B7B',
                 }}>
@@ -401,7 +424,26 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                 <LazyLoadImage src={many_cloud1} style={{...many_cloud5_style, left: -1}}
                                alt="many_cloud5"/>
             </div>
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage src={many_cloud1} style={{...many_cloud6_style, left: -1}}
+                               alt="many_cloud5"/>
+            </div>
+            <div style={{position: 'relative'}}>
+                <p style={{
 
+                    opacity: text4Opacity,
+                    transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
+                    position: 'fixed', // 让文字固定在某个位置
+                    top: '50%', // 调整为合适的位置
+                    left: '50%',
+                    zIndex: 27,
+                    transform: 'translate(-50%, -50%)',
+                    fontSize: '24px',
+                    color: 'white',
+                }}>
+                    Diffusion Partner
+                </p>
+            </div>
         </>
 
     );
