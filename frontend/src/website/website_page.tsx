@@ -157,7 +157,14 @@ const Website_page: React.FC = () => {
                         }}
                         modules={[Pagination]}
                         className="mySwiper"
-                        style={{left: 900, width: 450, height: 350, top: 150, borderRadius: 20, position: "absolute"}}
+                        style={{left: 900,
+                            width: 450,
+                            height: 350,
+                            top: 150,
+                            borderRadius: 20,
+                            position: "absolute",
+                            transform:`translateX(-25%)`
+                    }}
                     >
                         <SwiperSlide><Image src={Logo_1} style={{position: "relative", top: -10}}></Image></SwiperSlide>
                         <SwiperSlide><Image src={Logo_2} style={{position: "relative", top: -40}}></Image></SwiperSlide>
