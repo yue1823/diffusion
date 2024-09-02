@@ -1,5 +1,5 @@
 import {Col, Image, Row} from "antd";
-import React, { useEffect }  from "react";
+import React, { useEffect, useState }  from "react";
 import anime from 'animejs';
 import Logo_1 from "../art/diffusion_black.png";
 import Logo_2 from "../art/diffusion_fix.png";
@@ -132,6 +132,7 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
 }
 
 const Website_page: React.FC = () => {
+
     useEffect(() => {
         const handleScroll = () => {
             requestAnimationFrame(() => {
@@ -150,6 +151,7 @@ const Website_page: React.FC = () => {
 
                 {/*<div id="circle" className="circle bg-yellow-500"></div>*/}
                 <StarrySky/>
+                <AnimatedText />
                 <Col span={8} offset={16}>
                     <Swiper
                         pagination={{
@@ -205,3 +207,48 @@ const Website_page: React.FC = () => {
 };
 
 export default Website_page;
+const AnimatedText: React.FC = () => {
+    const [letters, setLetters] = useState<string[]>([]);
+
+    useEffect(() => {
+        // 将文本拆分为单个字符数组
+        const text = "Your Text Here";
+        setLetters(text.split(''));
+
+        // 使用 Anime.js 添加动画效果
+        anime.timeline({ loop: false })
+            .add({
+                targets: '.letter',
+                opacity: [0, 1],
+                easing: "easeInOutQuad",
+                duration: 2250,
+                delay: (_el, i) => 150 * (i + 1)
+            }).add({
+            targets: '.letter',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+    }, []);
+
+    return (
+        <div style={{position: 'relative'}}>
+            {letters.map((letter, index) => (
+                <span
+                    key={index}
+                    className="letter"
+                    style={{
+                        color:"white",
+                        zIndex: 10,
+                        display: 'inline-block',
+                        opacity: 0, // 初始透明度
+                        transition: 'opacity 0.5s ease-in-out', // 使用内联 style 控制动画
+                    }}
+                >
+                    <p> {letter}</p>
+                </span>
+            ))}
+        </div>
+    );
+};
