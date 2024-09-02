@@ -1,5 +1,5 @@
 import {Col, Image, Row} from "antd";
-import React, { useEffect, useState }  from "react";
+import React, { useEffect,  useState }  from "react";
 import anime from 'animejs';
 import Logo_1 from "../art/diffusion_black.png";
 import Logo_2 from "../art/diffusion_fix.png";
@@ -132,8 +132,35 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
 }
 
 const Website_page: React.FC = () => {
+    const text = "Your Text Here";
+    const [letters, setLetters] = useState<string[]>([]);
 
+    const anime_play = () => {
+        let a =text.split('')
+        console.log(a)
+        setLetters(a); // 更新 letters 状态
+        console.log(letters)
+    }
     useEffect(() => {
+        // 这个 useEffect 只会在 letters 更新后运行
+        anime.timeline({ loop: false })
+            .add({
+                targets: '.letter',
+                opacity: [0, 1],
+                easing: "easeInOutQuad",
+                duration: 2250,
+                delay: (_el, i) => 150 * (i + 1)
+            }).add({
+            targets: '.letter',
+            opacity: 1,  // 确保最终状态的透明度为1
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+    }, [letters]);
+    useEffect(() => {
+        anime_play()
+
         const handleScroll = () => {
             requestAnimationFrame(() => {
                 // 处理滚动动画的代码
@@ -145,13 +172,32 @@ const Website_page: React.FC = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
     return (
+
         <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}} style={{height:9000}}>
             <Col span={24} >
 
                 {/*<div id="circle" className="circle bg-yellow-500"></div>*/}
+                <div style={{position: 'relative'}}>
+                    {letters.map((letter, index) => (
+                        <span
+                            key={index}
+                            className="letter"
+                            style={{
+                                color: "white",
+                                zIndex: 10,
+                                display: 'inline-block',
+                                opacity: 0, // 初始透明度
+                                transition: 'opacity 0.5s ease-in-out',
+                            }}
+                        >
+                    {letter === ' ' ? '\u00A0' : letter} {/* 处理空格 */}
+                </span>
+                    ))}
+                </div>
                 <StarrySky/>
-                <AnimatedText />
+
                 <Col span={8} offset={16}>
                     <Swiper
                         pagination={{
@@ -159,7 +205,8 @@ const Website_page: React.FC = () => {
                         }}
                         modules={[Pagination]}
                         className="mySwiper"
-                        style={{left: 900,
+                        style={{
+                            left: 900,
                             width: 450,
                             height: 350,
                             top: 150,
@@ -207,48 +254,52 @@ const Website_page: React.FC = () => {
 };
 
 export default Website_page;
-const AnimatedText: React.FC = () => {
-    const [letters, setLetters] = useState<string[]>([]);
-
-    useEffect(() => {
-        // 将文本拆分为单个字符数组
-        const text = "Your Text Here";
-        setLetters(text.split(''));
-
-        // 使用 Anime.js 添加动画效果
-        anime.timeline({ loop: false })
-            .add({
-                targets: '.letter',
-                opacity: [0, 1],
-                easing: "easeInOutQuad",
-                duration: 2250,
-                delay: (_el, i) => 150 * (i + 1)
-            }).add({
-            targets: '.letter',
-            opacity: 0,
-            duration: 1000,
-            easing: "easeOutExpo",
-            delay: 1000
-        });
-    }, []);
-
-    return (
-        <div style={{position: 'relative'}}>
-            {letters.map((letter, index) => (
-                <span
-                    key={index}
-                    className="letter"
-                    style={{
-                        color:"white",
-                        zIndex: 10,
-                        display: 'inline-block',
-                        opacity: 0, // 初始透明度
-                        transition: 'opacity 0.5s ease-in-out', // 使用内联 style 控制动画
-                    }}
-                >
-                    <p> {letter}</p>
-                </span>
-            ))}
-        </div>
-    );
-};
+// const AnimatedText: React.FC = () => {
+//     const [letters, setLetters] = useState<string[]>([]);
+//     const animationRef = useRef<boolean>(false); // 用于标记动画是否已经运行过
+//
+//     useEffect(() => {
+//
+//
+//             const text = "Your Text Here";
+//             setLetters(text.split(''));
+//
+//             anime.timeline({ loop: false })
+//                 .add({
+//                     targets: '.letter',
+//                     opacity: [0, 1],
+//                     easing: "easeInOutQuad",
+//                     duration: 2250,
+//                     delay: (_el, i) => 150 * (i + 1)
+//                 }).add({
+//                 targets: '.letter',
+//                 opacity: 1,  // 确保最终状态的透明度为1
+//                 duration: 1000,
+//                 easing: "easeOutExpo",
+//                 delay: 1000
+//             });
+//
+//             animationRef.current = true; // 标记动画已经运行
+//
+//     }, []);
+//
+//     return (
+//         <div style={{position: 'relative'}}>
+//             {letters.map((letter, index) => (
+//                 <span
+//                     key={index}
+//                     className="letter"
+//                     style={{
+//                         color: "white",
+//                         zIndex: 10,
+//                         display: 'inline-block',
+//                         opacity: 0, // 初始透明度
+//                         transition: 'opacity 0.5s ease-in-out',
+//                     }}
+//                 >
+//                     {letter === ' ' ? '\u00A0' : letter} {/* 处理空格 */}
+//                 </span>
+//             ))}
+//         </div>
+//     );
+// };
