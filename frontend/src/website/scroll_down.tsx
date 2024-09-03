@@ -11,7 +11,7 @@ import cloud6 from "./website_image/雲6.png";
 import god2 from "./website_image/god2.png";
 import many_cloud1 from "./website_image/多雲.png";
 import  Star  from './star';
-import tree1 from "./website_image/樹1.png";
+// import tree1 from "./website_image/樹1.png";
 import tree2 from "./website_image/樹2.png";
 import tree3 from "./website_image/樹3.png";
 import many_tree from "./website_image/樹木.png";

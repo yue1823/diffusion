@@ -6,7 +6,7 @@ import Logo_2 from "../art/diffusion_fix.png";
 import "../css_/website_sky_css.css";
 import "../css_/firefly_button.css";
 
-import KinetComponent from "./firefly";
+// import KinetComponent from "./firefly";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
