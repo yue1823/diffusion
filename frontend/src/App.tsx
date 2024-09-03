@@ -505,14 +505,14 @@ const App: React.FC<{id:string}> = ({}) => {
                         <Row gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
                             <Content style={{padding: '15px 30px'}}>
                                 <Routes>
-                                    <Route  path={"/" } element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
-                                    <Route  path={"app"} element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
-                                    <Route  path={"/swap"} element={<Swap_page/>}/>
-                                    <Route  path={"Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1} fetch_data={fetch_data ? fetch_data:defaultHelperData} profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray}/> } />
-                                    <Route  path={"admin"} element={<Admin_page/>}/>
-                                    <Route  path={"nft"} element={<NFT_page/>}/>
-                                    <Route  path={"Helper"} element={<Helper_page helper_data={helper_data ? helper_data:[]} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>
-                                    <Route path={"my_page"} element={<User_page profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray} move_data={helper_data ? helper_data:[]} helper_list={helper_to_helper_point ? helper_to_helper_point: default_helper_to_helper_point}/>}></Route>
+                                    <Route  path={"diffusion/" } element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
+                                    <Route  path={"diffusion/app"} element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
+                                    <Route  path={"diffusion/swap"} element={<Swap_page/>}/>
+                                    <Route  path={"diffusion/Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1} fetch_data={fetch_data ? fetch_data:defaultHelperData} profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray}/> } />
+                                    <Route  path={"diffusion/admin"} element={<Admin_page/>}/>
+                                    <Route  path={"diffusion/nft"} element={<NFT_page/>}/>
+                                    <Route  path={"diffusion/Helper"} element={<Helper_page helper_data={helper_data ? helper_data:[]} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>
+                                    <Route path={"diffusion/my_page"} element={<User_page profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray} move_data={helper_data ? helper_data:[]} helper_list={helper_to_helper_point ? helper_to_helper_point: default_helper_to_helper_point}/>}></Route>
 
                                     {/*<Route path={"/"} element={<Main_content address={user_address} index_of_address={index_of_address}/>}></Route>*/}
                                     {/*<Route path={"/swap"} element={<Swap_page/>}/>*/}

@@ -65,51 +65,51 @@ interface Profile{
 type MenuItem = Required<MenuProps>['items'][number];
 const items: MenuItem[] = [
     {
-        label: (<Link to={"/"}>
+        label: (<Link to={"diffusion/"}>
             Transfer
         </Link>),
-        key: '/',
+        key: 'diffusion/',
         icon: <SendOutlined />,
     },
     {
         label: (
-            <Link to={"/Swap"}>
+            <Link to={"diffusion/Swap"}>
                 Swap
             </Link>
             ),
-        key: 'Swap',
+        key: 'diffusion/Swap',
         icon: <RetweetOutlined />,
 
     },
     {
-        label: (<Link to={"/nft"}>
+        label: (<Link to={"diffusion/nft"}>
             NFT
         </Link>),
-        key: 'Nft',
+        key: 'diffusion/Nft',
         icon: <RobotOutlined />
     },
     {
-        key: 'Bet',
+        key: 'diffusion/Bet',
         label: (
-            <Link to={"/Bet"}>
+            <Link to={"diffusion/Bet"}>
                 Bet Card
             </Link>
         ),
         icon: <BookOutlined />
     },
     {
-        key: 'Helper',
+        key: '/Helper',
         label: (
-            <Link to={"/Helper"}>
+            <Link to={"diffusion/Helper"}>
                Helper
             </Link>
         ),
         icon: <BookOutlined />
     },
     {
-        key: 'Bridge',
+        key: 'diffusion/Bridge',
         label: (
-            // <Link to={"/Bridge"}>
+            // <Link to={"diffusion/Bridge"}>
                ' Bridge'
             // </Link>
         ),
@@ -154,7 +154,7 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number,profile_dat
                 {/*</Header>*/}
             <Row gutter={[36,24]}>
             <Col span={2} style={{position:"relative",top:1,left:8}}>
-                <Link to={"/website"}>
+                <Link to={"diffusion/website"}>
 
                 <img src={diffusion_art}
                      alt={"diffusion logo"}

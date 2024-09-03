@@ -1,20 +1,23 @@
+
 import React, { useEffect } from 'react';
-import {Row,Col} from "antd";
+import {Col, Row} from "antd";
 
 const  Tel_create_bet: React.FC = () => {
 
     useEffect(() => {
-
+        console.log("enter tele create bet card")
     }, []);
 
     return (
-        <div style={{backgroundColor:"#22b1b5"}}>
-            <Row>
-                <Col>
-                    
-                </Col>
-            </Row>
-        </div>
+
+            <>
+`               <Row>
+                  <Col span={24} >
+                    <div style={{backgroundColor:"#6eb0e4",height:"1000%",width:"1000%"}}></div>
+                  </Col>
+                 </Row>
+            </>
+
     );
 };
 
