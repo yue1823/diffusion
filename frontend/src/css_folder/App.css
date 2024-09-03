@@ -2,3 +2,11 @@
 .main-background{
   background-color:#EBE5DF ;
 }
+@keyframes flyToCenter {
+  0% {
+    transform: translate(-100%, -100%); /* 初始位置: 页面外 */
+  }
+  100% {
+    transform: translate(calc(50vw - 50px), calc(50vh - 50px)); /* 终点位置: 居中 (页面中央) */
+  }
+}

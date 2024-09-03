@@ -132,7 +132,7 @@ class StarrySky extends React.Component<{}, StarrySkyState> {
 }
 
 const Website_page: React.FC = () => {
-    const text = "Our Goal \n\nBring something fresh to the Aptos community \n\n\nWhat's Aptos need , we build it";
+    const text = "Our Goal \n\nBring something fresh to the Aptos community \n\n\nWhat's Aptos need , we build it            -            Diffusion";
     const [letters, setLetters] = useState<string[]>([]);
 
     const anime_play = () => {
