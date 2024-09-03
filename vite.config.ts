@@ -18,6 +18,6 @@ export default defineConfig({
     },
   },
   assetsInclude: ['**/*.PNG'],
-  base: process.env.NODE_ENV === 'production' && process.env.DEPLOY_TARGET === 'gh-pages' ? '/diffusion/' : '/',
+  base: '/diffusion/',
 });
 
