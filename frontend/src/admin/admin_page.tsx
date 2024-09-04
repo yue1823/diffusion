@@ -15,17 +15,17 @@ const aptos = new Aptos(aptosConfig);
 
 const module_address="0x7776f4ac2f3a13f751b966220b0e68e0b5688682c31e4f93cbf12ce1cea4a7b9";
 
-const Admin_page:React.FC<{ }> = ({ }) => {
+const Admin_page:React.FC<{helper_num:number}> = ({helper_num }) => {
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
-    const [bankamount]=useState('0');
+    const [bankamount,set_bankamount]=useState('0');
     const [resource_amount,set_resource_amount]=useState('');
     const [margin_amount,set_margin_amount]=useState('');
     const fetch_data = async () =>{
         try{
 
-            //await aptos.account.getAccountAPTAmount({accountAddress:diffusion.Bank_address}).then(balance=>{ console.log(`bank : ${balance}`);set_bankamount(String(balance));});
+            await aptos.account.getAccountAPTAmount({accountAddress:diffusion.Bank_address}).then(balance=>{ set_bankamount(String(balance));});
             await aptos.account.getAccountAPTAmount({accountAddress:diffusion.resources_address}).then(balance=>{ set_resource_amount(String(balance/100000000));});
             await aptos.account.getAccountAPTAmount({accountAddress:diffusion.Helper_address}).then(balance=>{set_margin_amount(String(balance/100000000));});
             // console.log(`Bank_address : ${bankamount}`)
@@ -76,18 +76,19 @@ const Admin_page:React.FC<{ }> = ({ }) => {
                                 </Col>
                             </Col>
                             <Col span={3}>
-                                <Statistic
-                                    title="Helper number"
-                                    value={1}
-                                    precision={2}
-                                    valueStyle={{ color: '#cf1322' }}
-                                    prefix={''}
-                                    suffix=" "
-                                    style={{position:"relative",top:1}}
-                                />
+
                                 <Statistic
                                     title="Margin Amount"
                                     value={margin_amount}
+                                    precision={2}
+                                    valueStyle={{ color: '#cf1322' }}
+                                    prefix={''}
+                                    suffix="APT"
+                                    style={{position:"relative",top:1}}
+                                />
+                                <Statistic
+                                    title="Helper number"
+                                    value={helper_num}
                                     precision={2}
                                     valueStyle={{ color: '#cf1322' }}
                                     prefix={''}

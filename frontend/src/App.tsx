@@ -248,6 +248,7 @@ const App: React.FC<{id:string}> = ({}) => {
     const [fetch_data,setfetch_data]=useState<Helper_data>();
     const [data_to_user_page,set_data_to_user_page]=useState<Real_Result_Data[]>();
     const [helper_to_helper_point,set_helper_to_helper_point]=useState<Helper>();
+    const [helper_num,set_helper_number]=useState(0);
     const create_diffusion_account =  async () =>{
         if (!account) return [];
         const transaction:InputTransactionData = {
@@ -309,7 +310,7 @@ const App: React.FC<{id:string}> = ({}) => {
                     }
                 }
             )
-            console.log(helper_data);
+           // console.log(helper_data);
             // console.log(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`)
             set_helper_data(helper_data);
             try{
@@ -320,13 +321,13 @@ const App: React.FC<{id:string}> = ({}) => {
                         // console.log(`response.data.accountAddress ${response.data.save_1.account_address}`)
                         // console.log(`response.data.icon: ${response.data.save_1.icon}`)
                         // console.log(`response save_1 : ${response.data.save_1}`)
-                        console.log(response)
+                       // console.log(response)
                         if(response.error_code === "resource_not_found"){
-                            console.log(`1`)
+                           // console.log(`1`)
                             setOpen(true);
                         }
                         if(response.error_code != "resource_not_found"){
-                            console.log(`2`)
+                            //console.log(`2`)
                             setOpen(false);
                         }
                         if(response){
@@ -406,9 +407,10 @@ const App: React.FC<{id:string}> = ({}) => {
         fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${diffusion.resources_address}/resource/${diffusion.function.diffusion_store_store()}`, options)
             .then(response => response.json())
             .then((response) => {
-                console.log(response)
+              //  console.log(`diffusion store :${response.data.save_helper_chance.heler_number}`)
 
                 if(response){
+                    set_helper_number(response.data.save_helper_chance.heler_number);
                     const length1 = response.data.save_Pair_result_store.save_pair.length;
                     //console.log(`first time : ${dataArray}`)
                     for (let i = 0; i < length1; i++) {
@@ -532,7 +534,7 @@ const App: React.FC<{id:string}> = ({}) => {
                                     <Route  path={"diffusion/app"} element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
                                     <Route  path={"diffusion/swap"} element={<Swap_page/>}/>
                                     <Route  path={"diffusion/Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1} fetch_data={fetch_data ? fetch_data:defaultHelperData} profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray}/> } />
-                                    <Route  path={"diffusion/admin"} element={<Admin_page/>}/>
+                                    <Route  path={"diffusion/admin"} element={<Admin_page helper_num={helper_num}/>}/>
                                     <Route  path={"diffusion/nft"} element={<NFT_page/>}/>
                                     <Route  path={"diffusion/Helper"} element={<Helper_page helper_data={helper_data ? helper_data:[]} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>
                                     <Route path={"diffusion/my_page"} element={<User_page profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray} move_data={helper_data ? helper_data:[]} helper_list={helper_to_helper_point ? helper_to_helper_point: default_helper_to_helper_point}/>}></Route>

@@ -220,7 +220,6 @@ const Helper_page:React.FC<{helper_data:MoveValue[] ,fetch_data:Helper_data}> = 
 
         }
     }
-
     useEffect(() => {
 
     }, [account?.address]);

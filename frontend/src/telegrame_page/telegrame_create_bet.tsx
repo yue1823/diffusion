@@ -13,27 +13,30 @@ const  Tel_create_bet: React.FC = () => {
     return (
 
             <>
-                <Header style={{backgroundColor:"#6eb0e4",height:"10vmax" ,padding:5}}>
-                    <Row gutter={24}>
-                        <Col span={8}>
+                <Header style={{backgroundColor:"#ded9cd",height:"10vmax"}}>
+                    <Row gutter={24} >
+                        <Col span={6}>
                             <img src={diffusion_art}
                                  alt={"diffusion logo"}
                                  style={{
                                      borderRadius: 20,
                                      position: "relative",
+                                     width:"30vmax",
                                      height:"9vmax",
-                                     width:"9vmax",
+                                     left:"-60%",
+                                     top:"6%",
                                  }}/>
                         </Col>
-                        <Col span={4}>
-                            <p>aaa</p>
+                        <Col span={6}>
+                            <h1 style={{fontSize:32,
+                                position:"relative",
+                                left:"-80%",
+                                top:"14%",}}>Diffusion</h1>
                         </Col>
                         <Col span={12}>
                             <div style={{
                                 position: "relative",
-                                height:"9vmax",
-                                width:"9vmax",
-                                top:10
+                                top:"16%"
                             }}>
                                 <WalletSelector />
                             </div>
