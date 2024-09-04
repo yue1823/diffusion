@@ -19,17 +19,23 @@ const Admin_page:React.FC<{ }> = ({ }) => {
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
-    const [bankamount,set_bankamount]=useState('');
+    const [bankamount]=useState('0');
     const [resource_amount,set_resource_amount]=useState('');
     const [margin_amount,set_margin_amount]=useState('');
     const fetch_data = async () =>{
-        await aptos.account.getAccountAPTAmount({accountAddress: diffusion.Bank_address}).then(balance=>{ set_bankamount(String(balance));});
-        await aptos.account.getAccountAPTAmount({accountAddress: diffusion.resources_address}).then(balance=>{ set_resource_amount(String(balance));});
-        await aptos.account.getAccountAPTAmount({accountAddress: diffusion.Helper_address}).then(balance=>{set_margin_amount(String(balance));});
+        try{
+
+            //await aptos.account.getAccountAPTAmount({accountAddress:diffusion.Bank_address}).then(balance=>{ console.log(`bank : ${balance}`);set_bankamount(String(balance));});
+            await aptos.account.getAccountAPTAmount({accountAddress:diffusion.resources_address}).then(balance=>{ set_resource_amount(String(balance/100000000));});
+            await aptos.account.getAccountAPTAmount({accountAddress:diffusion.Helper_address}).then(balance=>{set_margin_amount(String(balance/100000000));});
+            // console.log(`Bank_address : ${bankamount}`)
+            // console.log(`resources address: ${resource_amount}`)
+            // console.log(`garble address: ${margin_amount}`)
+        }catch (e:any){console.log(`error : ${e}`)}
     }
     useEffect(() => {
         fetch_data();
-    }, []);
+    }, [resource_amount]);
     return (
         <>
             <Content style={{padding: '15px 30px'}}>

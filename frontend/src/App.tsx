@@ -297,7 +297,7 @@ const App: React.FC<{id:string}> = ({}) => {
 
         try {
              await aptos.account.getAccountAPTAmount({accountAddress: account.address}).then(balance=>{ set_balance(String(balance));});
-
+            //console.log(account.address)
             setuser_address(account.address);
             //const diffusion_exists = await aptos.account.getAccountResource({accountAddress: account.address, resourceType:diffusion.function.create_account_tree()})
 
