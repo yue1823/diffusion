@@ -18,12 +18,12 @@ const CountdownTimer = ({ expiredDate,yes_or_not}: { expiredDate: string  ,yes_o
         const calculateTimeLeft = () => {
             if(yes_or_not ){
                 const now = new Date();
-                const day = parseInt(expiredDate.slice(0, 2), 10);
-                const month = parseInt(expiredDate.slice(2, 4), 10) - 1; // JavaScripts months are 0-based
-                const year = parseInt(expiredDate.slice(4, 8), 10);
-
+                const day = expiredDate.length==7?parseInt((`0${parseInt(expiredDate.slice(0, 1), 10)}`)):parseInt(expiredDate.slice(0, 2), 10);
+                const month = expiredDate.length==7?parseInt(expiredDate.slice(1, 3), 10) - 1:parseInt(expiredDate.slice(2, 4), 10) - 1; // JavaScripts months are 0-based
+                const year = expiredDate.length==7?parseInt(expiredDate.slice(3, 7), 10) :parseInt(expiredDate.slice(4, 8), 10);
+                // {expiredDate.length==7?`0${expiredDate.slice(0,1)}/${expiredDate.slice(1,3)}/${expiredDate.slice(3,7)}`:`${expiredDate.slice(0,2)}/${expiredDate.slice(2,4)}/${expiredDate.slice(4,8)}`}
                 const expirationDate = new Date(year, month, day);
-                // const currentDate = now;
+                //const currentDate = now;
 
                 let timeDifference = expirationDate.getTime() - now.getTime();
                 if (timeDifference < 0) {

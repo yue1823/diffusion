@@ -51,12 +51,13 @@ const Select_content:React.FC<{ address:string,index_of_address:number}> = ({ ad
     const [cointype,setcointypr] = useState<string>("")
     const longAddressPattern = /^0x[a-fA-F0-9]{64}$/; // 長地址模式
     const shortAddressPattern = /^0x[a-fA-F0-9]{1,63}$/;
+
     const [open, setOpen] = useState(false);
     const [loadings] = useState<boolean[]>([]);
 
     const submit_transaction = async()=>{
         if (!account) return [];
-
+        if(to_address === account.address) return [];
         if(cointype=='APT'){
             let input1 = "0x1::aptos_coin::AptosCoin"
             let input2 = "0x1::aptos_coin::AptosCoin"

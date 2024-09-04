@@ -85,10 +85,11 @@ const Flip_card_big:React.FC<{result_data:Result_Data,profile_data:Profile,rando
         }
         set_real_result(result_data.save_result)
         set_balance((parseFloat(result_data.save_data1.bet)/100000000).toFixed(2).toString())
-        const day = result_data.save_data1.pair.expired_time.substring(0, 2);
-        const month = result_data.save_data1.pair.expired_time.substring(2, 4);
-        const year = result_data.save_data1.pair.expired_time.substring(4);
-        set_expired(`${day}/${month}/${year}`)
+        // const day = result_data.save_data1.pair.expired_time.substring(0, 2);
+        // const month = result_data.save_data1.pair.expired_time.substring(2, 4);
+        // const year = result_data.save_data1.pair.expired_time.substring(4);
+        
+        set_expired(`${result_data.save_data1.pair.expired_time.length==7?`0${result_data.save_data1.pair.expired_time.slice(0,1)}/${result_data.save_data1.pair.expired_time.slice(1,3)}/${result_data.save_data1.pair.expired_time.slice(3,7)}`:`${result_data.save_data1.pair.expired_time.slice(0,2)}/${result_data.save_data1.pair.expired_time.slice(2,4)}/${result_data.save_data1.pair.expired_time.slice(4,8)}`}`)
         if(result_data.save_data1.which == result_data.save_result){
             set_right_or_wrong(true);
             if(result_data.save_result =="1"){

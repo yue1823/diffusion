@@ -215,7 +215,7 @@ const EnvelopeComponent: React.FC = () => {
                         <div className="note__text">
                             <Row>
                                 <Col span={20} offset={4}>
-                                    <Link to={"/Bet"}>
+                                    <Link to={"/diffusion/Bet"}>
                                          <button className="custom-btn btn-6"><span style={{fontSize:17,position:"relative",top:7}}>Go To Bet Card</span></button>
                                     </Link>
                                 </Col>

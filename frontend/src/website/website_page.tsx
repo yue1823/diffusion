@@ -216,9 +216,11 @@ const Website_page: React.FC = () => {
                         modules={[Pagination]}
                         className="mySwiper"
                         style={{
-                            left: 900,
+                            zIndex:10,
+
                             width: 450,
                             height: 350,
+                            
                             top: 150,
                             borderRadius: 20,
                             position: "absolute",
@@ -250,12 +252,12 @@ const Website_page: React.FC = () => {
                         {/*</a>*/}
                     </Col>
                     <Col span={24} >
-                        aa
+
                     </Col>
                 </Row>
                 <Row style={{ height: 3000, position: 'relative', top: 100, left:100, width: '100%', zIndex: 2 }}>
                     <Col span={24}>
-                        <p>a</p>
+
                     </Col>
                 </Row>
             </Col>

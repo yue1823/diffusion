@@ -148,7 +148,7 @@ const Claim_card_user_page:React.FC<{result_data:Result_Data,profile_data:Profil
                     classes={""}
                     sx={{borderRadius: 60,p:4,border:"white",'&:fouvu':{outline:'none'}}}
                 >
-                    <Box sx={{width:300,heigth:500,position:"absolute",left:50}}>
+                    <Box sx={{width:300,heigth:500,position:"absolute",left:"-5%"}}>
                         <Flip_card_big  result_data={result_data} profile_data={profile_data} random_url={input_url}/>
                     </Box>
                 </Modal>

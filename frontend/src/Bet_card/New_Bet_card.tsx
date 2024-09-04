@@ -253,7 +253,7 @@ const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                             <h3 style={{
                                                 position: "relative",
                                                 top: -15, right:5
-                                            }}>{`${expired_time.slice(0,2)}/${expired_time.slice(2,4)}/${expired_time.slice(4,8)}`}</h3>
+                                            }}>{expired_time.length==7?`0${expired_time.slice(0,1)}/${expired_time.slice(1,3)}/${expired_time.slice(3,7)}`:`${expired_time.slice(0,2)}/${expired_time.slice(2,4)}/${expired_time.slice(4,8)}`}</h3>
                                         </Card>
                                     </Col>
                                 </Row>

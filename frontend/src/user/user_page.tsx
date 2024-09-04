@@ -573,7 +573,7 @@ const User_page:React.FC<{profile_data:Profile,result_data:Real_Result_Data[] ,m
                                                                         left: -15,
                                                                         top: -15
                                                                     }}>
-                                                                        <Link to={"/Bet"}>
+                                                                        <Link to={"/diffusion/Bet"}>
                                                                             <button className="custom-btn btn-2"
                                                                                     onClick={() => {
                                                                                     }}>Go Bet

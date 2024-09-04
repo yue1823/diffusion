@@ -178,7 +178,7 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number,profile_dat
                             key:'1',
                             label: (
 
-                                    <Link to={"/my_page"}>
+                                    <Link to={"diffusion/my_page"}>
                                             <Card
                                                 style={{width: 300 ,backgroundColor:"#ded9cd"}}
                                                 cover={
