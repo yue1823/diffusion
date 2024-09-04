@@ -300,7 +300,7 @@ const App: React.FC<{id:string}> = ({}) => {
 
             setuser_address(account.address);
             //const diffusion_exists = await aptos.account.getAccountResource({accountAddress: account.address, resourceType:diffusion.function.create_account_tree()})
-            setOpen(false);
+
             const helper_data = await aptos.view(
                 {
                     payload: {
@@ -312,67 +312,83 @@ const App: React.FC<{id:string}> = ({}) => {
             console.log(helper_data);
             // console.log(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`)
             set_helper_data(helper_data);
-            fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`, options)
-                .then(response => response.json())
-                .then((response) => {
+            try{
 
-                    console.log(response)
-                    if(response){
-                        const new_profile : Profile = {
-                            save_icon:{
-                                icon:response.data.save_1.icon,
-                                name:response.data.save_1.name
-                            },
-                            save_bet_card:response.data.save_2 as Bet_card_data[],
-                            save_badges:response.data.save_4 as Badges[],
-                            save_level:{
-                                diffusion_point:response.data.save_5.diffusion_loyalty,
-                                level:response.data.save_5.level,
-                                win:response.data.save_5.win,
-                                lose:response.data.save_5.lose
+                    fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`, options)
+                    .then(response => response.json())
+                    .then((response) => {
+                        console.log(`respone account: ${response.account}`)
+                        console.log(`respone icon: ${response.icon}`)
+                        if(response.account == null){
+                            console.log(`1`)
+                            setOpen(true);
+                        }
+                        if(response){
+                            const new_profile : Profile = {
+                                save_icon:{
+                                    icon:response.data.save_1.icon,
+                                    name:response.data.save_1.name
+                                },
+                                save_bet_card:response.data.save_2 as Bet_card_data[],
+                                save_badges:response.data.save_4 as Badges[],
+                                save_level:{
+                                    diffusion_point:response.data.save_5.diffusion_loyalty,
+                                    level:response.data.save_5.level,
+                                    win:response.data.save_5.win,
+                                    lose:response.data.save_5.lose
+                                }
                             }
+                            set_user_profile(new_profile)
+                            // console.log(response);
                         }
-                        set_user_profile(new_profile)
-                        // console.log(response);
-                    }
-                })
+                    })
 
-            if(helper_data[0] == true){
-                try{
-                    const helper_data1 = await aptos.view(
-                        {
-                            payload: {
-                                function: diffusion.function.view_helper_upload_which_result(),
-                                functionArguments: [account.address]
+
+
+                if(helper_data[0] == true){
+                    try{
+                        const helper_data1 = await aptos.view(
+                            {
+                                payload: {
+                                    function: diffusion.function.view_helper_upload_which_result(),
+                                    functionArguments: [account.address]
+                                }
                             }
+                        )
+                        //console.log((helper_data1[0] as Helper).wrong_times)
+
+                        if(helper_data1){
+                            const new_helper :Helper = {
+                                account:(helper_data1[0] as Helper).account,
+                                helper_contribute:(helper_data1[0] as Helper).helper_contribute,
+                                helper_point:(helper_data1[0] as Helper).helper_point,
+
+                                need_admin:(helper_data1[0] as Helper).need_admin,
+                                pay_margin:(helper_data1[0] as Helper).pay_margin,
+                                upload_times:(helper_data1[0] as Helper).upload_times,
+                                wrong_times:(helper_data1[0] as Helper).wrong_times,
+                            }
+                            ///console.log( new_helper)
+                            set_helper_to_helper_point(new_helper);
+                            // console.log()
                         }
-                    )
-                    //console.log((helper_data1[0] as Helper).wrong_times)
+                    }catch (e:any){console.log(e)}
 
-                    if(helper_data1){
-                        const new_helper :Helper = {
-                            account:(helper_data1[0] as Helper).account,
-                            helper_contribute:(helper_data1[0] as Helper).helper_contribute,
-                            helper_point:(helper_data1[0] as Helper).helper_point,
+                }
 
-                            need_admin:(helper_data1[0] as Helper).need_admin,
-                            pay_margin:(helper_data1[0] as Helper).pay_margin,
-                            upload_times:(helper_data1[0] as Helper).upload_times,
-                            wrong_times:(helper_data1[0] as Helper).wrong_times,
-                        }
-                        ///console.log( new_helper)
-                        set_helper_to_helper_point(new_helper);
-                        // console.log()
-                    }
-                }catch (e:any){console.log(e)}
+            }catch (e:any){
 
+                console.log(`417: ${e}`)
             }
 
 
 
+
         } catch (e: any) {
-            setOpen(true);
+
             console.error('Failed to helper bool:', e);
+        }finally {
+            //setOpen(false);
         }
 
 
@@ -567,7 +583,7 @@ const App: React.FC<{id:string}> = ({}) => {
                     <div style={{position:"relative",left:-60,top:-2}}>
                         <WalletSelector />
                     </div></Col>
-            </Row></>  }
+                </Row></>  }
                     open={open} style={{backgroundColor: "#f5f4f0"}} >
                 <Row gutter={[24,24]}>
                     <Col span={24}>
@@ -638,7 +654,7 @@ const App: React.FC<{id:string}> = ({}) => {
                         <Row>
                             <Col span={20} style={{position:"relative",top:-25}} >
                                 <motion.div className={"box"}
-                                            whileHover={{scale: 1.5}}
+                                            whileHover={{scale: 1.1}}
                                             whileTap={{scale: 0.9}}
                                             transition={{type: "spring", stiffness: 400, damping: 25}}>
                                     <button style={{width:320}}

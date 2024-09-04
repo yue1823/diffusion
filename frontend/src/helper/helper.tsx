@@ -16,7 +16,7 @@ import EnvelopeComponent from "./letter.";
 import ButtonWithProgress from "./submit_button";
 import {Bounce, toast, ToastContainer} from "react-toastify";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk"; // Assuming you have a CSS file for the styles
-const diffusion_address = "0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873";
+const diffusion_address = "0x7776f4ac2f3a13f751b966220b0e68e0b5688682c31e4f93cbf12ce1cea4a7b9";
 const NOW_Network = "testnet";
 const aptosConfig = new AptosConfig({ network: Network.TESTNET});
 const aptos = new Aptos(aptosConfig);
