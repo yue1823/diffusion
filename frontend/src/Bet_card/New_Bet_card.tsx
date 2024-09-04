@@ -268,7 +268,7 @@ const New_Bet_card:React.FC<{left_url:string,right_url:string,pair_name_left:str
                                                 right: 5
                                             }}>Balance :</h3>
                                             <motion.div className={"box"}
-                                                        whileHover={{scale: 1.5}}
+                                                        whileHover={{scale: 1.05}}
                                                         whileTap={{scale: 0.9}}
                                                         transition={{type: "spring", stiffness: 400, damping: 25}}>
                                                 <Statistic

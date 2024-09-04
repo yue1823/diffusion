@@ -309,7 +309,7 @@ const App: React.FC<{id:string}> = ({}) => {
                     }
                 }
             )
-            // console.log(helper_data);
+            console.log(helper_data);
             // console.log(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`)
             set_helper_data(helper_data);
             fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`, options)

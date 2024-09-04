@@ -12,7 +12,7 @@ import {Bounce, toast, ToastContainer} from "react-toastify";
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
-const module_address="0xd3d2a6b4340d87ea390368ddcab692cf4b330c86fb5daaa2609e1052c20ca873";
+const module_address="0x7776f4ac2f3a13f751b966220b0e68e0b5688682c31e4f93cbf12ce1cea4a7b9";
 
 const Admin_page:React.FC<{ }> = ({ }) => {
     const {
@@ -330,11 +330,11 @@ const Upload_result_button: React.FC<{ }> = ({}) => {
     },[account])
     return (
         <>
-            <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>
+            <Button title={"upload result"} style={{height:70,width:200}} onClick={button_click}>
                 upload result
             </Button>
 
-            <Drawer open={open} onClose={button_close} style={{width: 1000}} title={"Create_pair"}>
+            <Drawer open={open} onClose={button_close} style={{width: 1000}} title={" upload result"}>
                 <Row gutter={[8,24]}>
 
                     <Col span={24}>
@@ -434,11 +434,11 @@ const Create_helper: React.FC<{}> = ({ }) => {
     },[account])
     return (
         <>
-            <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>
+            <Button title={"Create_helper"} style={{height:70,width:200}} onClick={button_click}>
                 Create helper
             </Button>
 
-            <Drawer open={open} onClose={button_close} style={{width: 1000}} title={"Create_pair"}>
+            <Drawer open={open} onClose={button_close} style={{width: 1000}} title={"Create_helper"}>
                 <Row gutter={[8,24]}>
 
                     <Col span={24}>
@@ -526,11 +526,11 @@ const Admin_like: React.FC<{}> = ({ }) => {
     },[account])
     return (
         <>
-            <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>
+            <Button title={"Admin_like"} style={{height:70,width:200}} onClick={button_click}>
                 Admin_like
             </Button>
 
-            <Drawer open={open} onClose={button_close} style={{width: 1000}} title={"Create_pair"}>
+            <Drawer open={open} onClose={button_close} style={{width: 1000}} title={"Admin_like"}>
                 <Row gutter={[8,24]}>
 
                     <Col span={24}>
@@ -594,7 +594,7 @@ const Set_chance: React.FC<{}> = ({ }) => {
     const submit_transaction = async () => {
         const transaction: InputTransactionData = {
             data: {
-                function: `${module_address}::helper::admin_like`,
+                function: `${module_address}::helper::set_chance`,
                 functionArguments: [string1,fee1,fee2]
             }
         }
@@ -635,11 +635,11 @@ const Set_chance: React.FC<{}> = ({ }) => {
     },[account])
     return (
         <>
-            <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>
+            <Button title={"set_chance"} style={{height:70,width:200}} onClick={button_click}>
                 Set chance
             </Button>
 
-            <Drawer open={open} onClose={button_close} style={{width: 1000}} title={"Create_pair"}>
+            <Drawer open={open} onClose={button_close} style={{width: 1000}} title={"set_chance"}>
                 <Row gutter={[8,24]}>
 
                     <Col span={24}>
@@ -756,11 +756,11 @@ const Time_to_stop_bet: React.FC<{}> = ({ }) => {
     },[account])
     return (
         <>
-            <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>
+            <Button title={"Time_to_stop_bet"} style={{height:70,width:200}} onClick={button_click}>
                 Time to stop bet
             </Button>
 
-            <Drawer open={open} onClose={button_close} style={{width: 1000}} title={"Create_pair"}>
+            <Drawer open={open} onClose={button_close} style={{width: 1000}} title={"Time_to_stop_bet"}>
                 <Row gutter={[8,24]}>
 
                     <Col span={24}>
