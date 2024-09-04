@@ -1,5 +1,5 @@
 
-import {Button,  Col, Drawer, Input, message, Row, theme} from "antd";
+import {Button,  Col, Drawer, Input, message, Row, Statistic, theme} from "antd";
 import React, {useEffect, useState} from 'react';
 
 import {Content} from "antd/lib/layout/layout";
@@ -8,6 +8,7 @@ import {InputTransactionData, useWallet} from "@aptos-labs/wallet-adapter-react"
 
 import "../css_/rainbow_button.css";
 import {Bounce, toast, ToastContainer} from "react-toastify";
+import { diffusion } from "../setting";
 
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
@@ -18,7 +19,17 @@ const Admin_page:React.FC<{ }> = ({ }) => {
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
-
+    const [bankamount,set_bankamount]=useState('');
+    const [resource_amount,set_resource_amount]=useState('');
+    const [margin_amount,set_margin_amount]=useState('');
+    const fetch_data = async () =>{
+        await aptos.account.getAccountAPTAmount({accountAddress: diffusion.Bank_address}).then(balance=>{ set_bankamount(String(balance));});
+        await aptos.account.getAccountAPTAmount({accountAddress: diffusion.resources_address}).then(balance=>{ set_resource_amount(String(balance));});
+        await aptos.account.getAccountAPTAmount({accountAddress: diffusion.Helper_address}).then(balance=>{set_margin_amount(String(balance));});
+    }
+    useEffect(() => {
+        fetch_data();
+    }, []);
     return (
         <>
             <Content style={{padding: '15px 30px'}}>
@@ -27,34 +38,82 @@ const Admin_page:React.FC<{ }> = ({ }) => {
                         style={{
                             padding: 24,
                             minHeight: 600,
-                            minWidth: 1200,
+                            minWidth: 1500,
                             background: colorBgContainer,
                             borderRadius: borderRadiusLG,
                         }}
                     >
-                        <Col span={12}>
-                            <Create_pair_button/>
-                        </Col>
-                        <br/>
-                        <Col span={12}>
-                            <Upload_result_button />
-                        </Col>
-                        <br/>
-                        <Col span={12}>
-                            <Create_helper/>
-                        </Col>
-                        <br/>
-                        <Col span={12}>
-                            <Admin_like/>
-                        </Col>
-                        <br/>
-                        <Col span={12}>
-                            <Set_chance/>
-                        </Col>
-                        <br/>
-                        <Col span={12}>
-                            <Time_to_stop_bet/>
-                        </Col>
+                        <Row>
+                            <Col span={5}>
+                                <Col span={12}>
+                                    <Create_pair_button/>
+                                </Col>
+                                <br/>
+                                <Col span={12}>
+                                    <Upload_result_button />
+                                </Col>
+                                <br/>
+                                <Col span={12}>
+                                    <Create_helper/>
+                                </Col>
+                                <br/>
+                                <Col span={12}>
+                                    <Admin_like/>
+                                </Col>
+                                <br/>
+                                <Col span={12}>
+                                    <Set_chance/>
+                                </Col>
+                                <br/>
+                                <Col span={12}>
+                                    <Time_to_stop_bet/>
+                                </Col>
+                            </Col>
+                            <Col span={3}>
+                                <Statistic
+                                    title="Helper number"
+                                    value={1}
+                                    precision={2}
+                                    valueStyle={{ color: '#cf1322' }}
+                                    prefix={''}
+                                    suffix=" "
+                                    style={{position:"relative",top:1}}
+                                />
+                                <Statistic
+                                    title="Margin Amount"
+                                    value={margin_amount}
+                                    precision={2}
+                                    valueStyle={{ color: '#cf1322' }}
+                                    prefix={''}
+                                    suffix=" "
+                                    style={{position:"relative",top:1}}
+                                />
+                            </Col>
+                            <Col span={3}>
+                                <Statistic
+                                    title="Resource Amount"
+                                    value={resource_amount}
+                                    precision={2}
+                                    valueStyle={{ color: '#77a0e3' }}
+                                    prefix={''}
+                                    suffix="APT"
+                                    style={{position:"relative",top:1}}
+                                />
+
+                            </Col>
+                            <Col span={3}>
+                                <Statistic
+                                    title="Bank Amount"
+                                    value={bankamount}
+                                    precision={2}
+                                    valueStyle={{ color: '#77e385' }}
+                                    prefix={''}
+                                    suffix="APT"
+                                    style={{position:"relative",top:1}}
+                                />
+
+                            </Col>
+                        </Row>
                         <ToastContainer
                             position="bottom-right"
                             autoClose={5000}
@@ -69,6 +128,7 @@ const Admin_page:React.FC<{ }> = ({ }) => {
                         />
                     </div>
                 </Row>
+
             </Content>
         </>
     );
