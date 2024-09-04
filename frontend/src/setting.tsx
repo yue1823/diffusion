@@ -4,6 +4,7 @@ export const  diffusion = {
     garble_address:"0x987876fa678f2f8097b57b2b7a2d9689144455052802e1ab46b4363d12768115",
     Bank_address:"0xf711fef606b3114ee9d6f718d8c6a209eccc362dc8b1af31372d4c73a833e5be",
     Helper_address:"0x5ec0ff7e30c95dc7f6610eb8e414c744df05e1839703475ef8df66ad5c9d8192",
+    x_api_key:"bT8aS3ezHOl6T1_PyaM30lkg7odC_42l" as string,
     function:{
         admin_like:()=>`${diffusion.module_address}::helper::admin_like` as `${string}::${string}::${string}`,
         create_bet_card:() =>`${diffusion.module_address}::helper::create_bet_card` as `${string}::${string}::${string}`,
@@ -20,7 +21,8 @@ export const  diffusion = {
         diffusion_store_store: () => `${diffusion.module_address}::helper::Diffusion_store_tree` as `${string}::${string}::${string}`,
         create_helper:() => `${diffusion.module_address}::helper::create_helper` as `${string}::${string}::${string}`,
         apply_to_be_helper: () => `${diffusion.module_address}::helper::apply_to_be_helper` as `${string}::${string}::${string}`,
-    }
+    },
+    
 
 }
 

@@ -163,7 +163,7 @@ interface Real_Result_Data{
 }
 const options = {
     method: 'GET',
-    headers: {accept: 'application/json', 'X-API-KEY':'bT8aS3ezHOl6T1_PyaM30lkg7odC_42l'}
+    headers: {accept: 'application/json', 'X-API-KEY':`${diffusion.x_api_key}`}
 };
 // const text1 = `
 //   If you are our diffusion helper , you can help us to upload correct result.

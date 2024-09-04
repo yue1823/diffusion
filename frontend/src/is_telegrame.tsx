@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Website_page from './website/website_page';
 import Tel_create_bet from "./telegrame_page/telegrame_create_bet";
+
 // import { isTMA } from '@tma.js/sdk';
 
 const TelegramDetection: React.FC <{}>= ({}) => {
     const [isTelegram, setIsTelegram] = useState(false);
-
+    
     // const a = async () => {
     //     // setIsTelegram(await isTMA())
     //
