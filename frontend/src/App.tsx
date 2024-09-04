@@ -317,13 +317,20 @@ const App: React.FC<{id:string}> = ({}) => {
                     fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`, options)
                     .then(response => response.json())
                     .then((response) => {
-                        console.log(`respone account: ${response.account}`)
-                        console.log(`respone icon: ${response.icon}`)
-                        if(response.account == null){
+                        // console.log(`response.data.accountAddress ${response.data.save_1.account_address}`)
+                        // console.log(`response.data.icon: ${response.data.save_1.icon}`)
+                        // console.log(`response save_1 : ${response.data.save_1}`)
+                        console.log(response)
+                        if(response.error_code === "resource_not_found"){
                             console.log(`1`)
                             setOpen(true);
                         }
+                        if(response.error_code != "resource_not_found"){
+                            console.log(`2`)
+                            setOpen(false);
+                        }
                         if(response){
+
                             const new_profile : Profile = {
                                 save_icon:{
                                     icon:response.data.save_1.icon,
