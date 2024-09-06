@@ -15,7 +15,7 @@ const TelegramDetection: React.FC <{}>= ({}) => {
     // }
 
     useEffect(() => {
-        setIsTelegram(true)
+        setIsTelegram(false)
         console.log(`telegrame : ${isTelegram}`)
     }
     , [isTelegram]);
