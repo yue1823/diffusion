@@ -23,26 +23,75 @@ const  Tel_create_bet: React.FC = () => {
     const [user_profile,set_user_profile]=useState({
         name:'',icon:''
     })
+    const [all_pair_Data,set_all_pairdata]=useState<any[]>([]);
     const [which , set_which ]= useState("");
+    const [aliveable_pairs,set_aliveable_pairs]=useState<string[]>([]);
+    const [select_pairs,set_select_pair]=useState<string[]>([]);
     const fetch_data = async () =>{
         if (!account) return [];
-        fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`, options)
-            .then(response => response.json())
-            .then((response) => {
-                if(response){
-                    set_user_profile({
-                        icon:response.data.save_1.icon,
-                        name:response.data.save_1.name
-                    })
+        try{
+            fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`, options)
+                .then(response => response.json())
+                .then((response) => {
+                    if(response){
+                        set_user_profile({
+                            icon:response.data.save_1.icon,
+                            name:response.data.save_1.name
+                        })
+                    }
+                });
+        }catch(e:any){
+            console.log(`profile :${e}`)
+        }
+            fetch('https://aptos-testnet.nodit.io/v1/accounts/0x8e1610bc1fe8556c7e839f6afc1d420db7fa50fd7251adfb0e11aeb8516bae77/resource/0x7776f4ac2f3a13f751b966220b0e68e0b5688682c31e4f93cbf12ce1cea4a7b9%3A%3Ahelper%3A%3ADiffusion_store_tree', options)
+                .then(response => response.json())
+                .then(response => {
+                    set_all_pairdata(response.data.save_Pair_result_store);
+                    let new_pairs=[]  as  string[];
 
+                    for (let i =0 ; i < ( all_pair_Data).length;i++){
+                        // @ts-ignore
+                        if(all_pair_Data.save_pair[i].can_bet as boolean ==true){
+                            // @ts-ignore
+                            new_pairs.push(all_pair_Data.save_pair[i])
+                           console.log(all_pair_Data.save_pair[i])
+                        }
+                    }
+                    set_aliveable_pairs(new_pairs);
+                    //console.log(`all_pair_Data.save_pair:${(all_pair_Data as string[])}`)
+                    console.log(`aliveable :${aliveable_pairs}`)
+                }).catch(error => console.log(error))
 
-                }
-            });
+    }
+
+    const solve_which_pair  =(key:string)=>{
+        let new_pairs = [] as string[];
+        for(let i = 0 ; i < aliveable_pairs.length ; i++ ){
+
+            let [first_part,d] = aliveable_pairs[i].split(" vs ");
+            let [secondPart ,thirdPart]= d.split(" - ");
+            console.log(first_part)
+            console.log(secondPart)
+            if(thirdPart == key){
+                new_pairs.push(aliveable_pairs[i])
+            }
+        }
+
+        set_select_pair(new_pairs)
+       // console.log(`new_pairs :${new_pairs}`)
     }
     useEffect(() => {
-        fetch_data();
-        console.log(`which : ${which}`)
+        //console.log(`which : ${which}`)
+        solve_which_pair(which)
     }, [which]);
+    useEffect(() => {
+
+
+    }, [all_pair_Data]);
+    useEffect(() => {
+        fetch_data();
+
+    }, [account]);
 
     return (
 
@@ -95,16 +144,17 @@ const  Tel_create_bet: React.FC = () => {
                                     borderRadius: 5
                                 }}>
                                     <img src={user_profile.icon} alt={"user_icon"}></img>
-
-                                    {which == '' ? <>
-                                        <p>{user_profile.name}</p>
-                                    </> : <>
-                                    <button onClick={() => {
-                                            set_which('')
-                                        }} className={"rainbow"} style={{position: "relative",transform:"translateX(100%) translateY(-150%)"}}>
-                                            never
-                                        </button>
-                                    </>}
+                                    <Col span={12} offset={10}>
+                                        {which == '' ? <>
+                                            <p>{user_profile.name}</p>
+                                        </> : <>
+                                        <button onClick={() => {
+                                                set_which('')
+                                            }} className={"rainbow"} style={{position: "relative",transform:"translateY(-150%)"}}>
+                                                never
+                                            </button>
+                                        </>}
+                                    </Col>
                                 </div>
                             </Col>
                             {which == '' ? <>
@@ -146,7 +196,7 @@ const  Tel_create_bet: React.FC = () => {
                                             whileHover={{scale: 1.05}}
                                             whileTap={{scale: 0.9}}
                                             transition={{type: "spring", stiffness: 400, damping: 25}}
-                                            onClick={()=>{set_which("nba")}}
+                                            onClick={()=>{set_which("basketball")}}
                                         >
                                             <div style={{
                                                 height: "17vmax",
