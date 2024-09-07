@@ -113,7 +113,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position: 'fixed' as 'fixed',
         right: `${1880 - scrollPosition * 0.1}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `${topPosition}`,
-        transform: `translateX(${Math.min(1480-scrollPosition*1.28)}px)  translateY(440px) scaleX(-1)`,
+        transform: `translateX(${Math.min(1510-scrollPosition*1.28)}px)  translateY(440px) scaleX(-1)`,
         transition: 'transform 0.3s ease-out',
         zIndex:11,
         // display: 'flex',
@@ -127,7 +127,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position: 'fixed' as 'fixed',
         right: `${1880 - scrollPosition * 0.1}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: linePosition <=1700 ? `${topPosition}`: `${SecobdtopPosition} `,
-        transform: linePosition <=1700 ? `translateX(${Math.min(-1147+scrollPosition*1.1)}px)  translateY(950px) rotate(90deg)`:`translateX(${Math.min(-1147+scrollPosition*1.1)}px)  translateY(440px) rotate(90deg)`,
+        transform: linePosition <=1700 ? `translateX(${Math.min(-1167+scrollPosition*1.1)}px)  translateY(980px) rotate(90deg)`:`translateX(${Math.min(-1170+scrollPosition*1.1)}px)  translateY(420px) rotate(90deg)`,
 
         zIndex:10,
         // display: 'flex',
@@ -141,7 +141,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position: 'fixed' as 'fixed',
         right: `${1880 - scrollPosition * 0.1}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: linePosition <=1700 ? `${topPosition}`: `${SecobdtopPosition}`,
-        transform: linePosition <=1700 ?`translateX(${Math.min(1549-scrollPosition*1.1)}px)  translateY(950px) rotate(270deg)`:`translateX(${Math.min(1553-scrollPosition*1.1)}px)  translateY(440px) rotate(270deg)`,
+        transform: linePosition <=1700 ?`translateX(${Math.min(1589-scrollPosition*1.1)}px)  translateY(980px) rotate(270deg)`:`translateX(${Math.min(1589-scrollPosition*1.1)}px)  translateY(420px) rotate(270deg)`,
 
         zIndex:10,
         // display: 'flex',
@@ -182,14 +182,16 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         top: linePosition <=1700 ?`${topPosition}`:`${SecobdtopPosition}`,
         width: '3px',
         zIndex:10,
-        right:`${(928 + scrollPosition * 0.1+415)}px`,
+        right:`${(983 + scrollPosition * 0.1+415)}px`,
         height: scrollPosition >= 500
             ? `${Math.min(linePosition-500 ,1080)}px`
             : '0px',
-        transform: linePosition <=1700 ?`translateY(348px) translateX(${Math.min(scrollPosition, 365)}px)`:`translateY(-100px) translateX(${Math.min(scrollPosition, 365)}px)`,
-        backgroundColor: 'white',
+        transform: linePosition <=1700 ?`translateY(345px) translateX(${Math.min(scrollPosition, 365)}px)`:`translateY(-100px) translateX(${Math.min(scrollPosition, 365)}px)`,
+        backgroundColor: '#bfbfbf',
         borderColorder:'white',
         transition: 'height 0.1s ease-out',
+        borderRadius:5,
+        
     }
     const godStyle = {
         position: 'fixed' as 'fixed',
@@ -357,7 +359,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
         top:`30.5%`,
-        transform:` rotate(-2deg) translateX(${Math.min(-960 + treePosition *15, 120)}px) `,
+        transform:` rotate(-2deg) translateX(${Math.min(-1050 + treePosition *15, 120)}px) `,
         zIndex:4,
         width:"70vmax",
         height:800,
