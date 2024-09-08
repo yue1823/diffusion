@@ -43,7 +43,7 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
         if (!account) return [];
         const new_balance = await aptos.account.getAccountAPTAmount({accountAddress:account.address})
         if(new_balance != null || new_balance != undefined){
-            set_balance(new_balance.toString())
+            set_balance((new_balance/100000000).toFixed(2).toString())
         }
     }
     const solve_data = () =>{
@@ -61,7 +61,7 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
         solve_data()
         get_account_balance()
         // console.log(save_pair.expired_time)
-    }, []);
+    }, [save_pair]);
     return(
         <>
             <motion.div
@@ -274,7 +274,8 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
                                         }}></div>
                                     </Col>
                                     <Col span={24}>
-                                        <p style={{textAlign: "left", fontSize: 15}}>Expired Date : {save_pair.expired_time}</p>
+                                        <p style={{textAlign: "left", fontSize: 15}}>Expired Date : {save_pair.expired_time.length == 7 ?
+                                                `0${save_pair.expired_time.slice(0,1)}/${save_pair.expired_time.slice(1,3)}/${save_pair.expired_time.slice(3,7)}`:`${save_pair.expired_time.slice(0,2)}/${save_pair.expired_time.slice(2,4)}/${save_pair.expired_time.slice(4,8)}`}</p>
                                         <div style={{
                                             border: "solid 1px",
                                             width: "20vmax",
