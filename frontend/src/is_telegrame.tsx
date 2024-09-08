@@ -3,18 +3,25 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Website_page from './website/website_page';
 import Tel_create_bet from "./telegrame_page/telegrame_create_bet";
+import {isMobile} from 'react-device-detect';
 
 import { isTMA } from '@tma.js/sdk';
 
 const TelegramDetection: React.FC <{}>= ({}) => {
     const [isTelegram, setIsTelegram] = useState(false);
-    
+    const [is_mobile,set_is_mobile]=useState(false);
     const a = async () => {
         setIsTelegram(await isTMA())
 
     }
 
+    const check_is_mobile =async () =>{
+        if(isMobile){
+            set_is_mobile(true)
+        }
+     }
     useEffect(() => {
+        check_is_mobile()
         a()
         //setIsTelegram(true)
         console.log(`telegrame : ${isTelegram}`)
@@ -23,9 +30,9 @@ const TelegramDetection: React.FC <{}>= ({}) => {
 
     return (
         <>
-            {isTelegram === null ? (
+            {is_mobile === null ? (
                 <></> // 或者你可以放一些占位符
-            ) : isTelegram ? (
+            ) : is_mobile ? (
                 <>
                     <Tel_create_bet/>
                 </>
