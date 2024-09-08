@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import {Col, Result, Row, Typography,Image, Input, message} from "antd";
+import {Col, Result, Row, Typography,Image, Input, message, Segmented, Avatar} from "antd";
 import {Content, Footer, Header } from 'antd/es/layout/layout';
 import diffusion_art from '../art/diffusion.png';
 import { WalletSelector } from '@aptos-labs/wallet-adapter-ant-design';
@@ -382,7 +382,36 @@ const  Tel_create_bet: React.FC = () => {
 
 
                     </Content>
-                    <Footer style={{backgroundColor: "#6ee4c1", height: "10vmax",}}></Footer>
+                    <Footer style={{backgroundColor: "#6ee4c1", height: "10vmax",}}>
+                        <Row style={{position:"relative",right:"6vmax",top:"-2.8vmax"}}>
+                            <Col span={24}>
+                                <Segmented
+                                    style={{width:"46.8vmax",height:"10.5vmax"}}
+                                    options={[
+                                        {
+                                            label: (
+                                                <div style={{ padding: 4 }}>
+                                                    <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />
+                                                    <div>Bet Card</div>
+                                                </div>
+                                            ),
+                                            value: 'Bet Card',
+                                        },
+                                        {
+                                            label: (
+                                                <div style={{ padding: 4 }}>
+                                                    <Avatar style={{ backgroundColor: '#f56a00' }}>K</Avatar>
+                                                    <div>My Card</div>
+                                                </div>
+                                            ),
+                                            value: 'My Card',
+                                        },
+
+                                    ]}
+                                />
+                            </Col>
+                        </Row>
+                    </Footer>
                     <Modal
                         disableEnforceFocus
                         disableAutoFocus

@@ -1,4 +1,4 @@
-import {Col, Image, Input, Row, Typography,} from 'antd';
+import {Col, Image, Input, Row, message,} from 'antd';
 import React, { useEffect, useState } from 'react';
 import CountdownTimer from '../user/Count_time';
 import { motion } from 'framer-motion';
@@ -25,7 +25,7 @@ interface SavePair {
 }
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
-const { Paragraph, Text } = Typography;
+
 const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
     const { account, signAndSubmitTransaction } =useWallet() ;
     const [open, setOpen] = React.useState(false);
@@ -46,13 +46,25 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
     });
     const submit_transaction = async() =>{
         let key= 0 ;
-
+        if(transactiom_data.amount === 0){
+            message.error("Don't enter 0 APT")
+            return
+        }
+        if(transactiom_data.choose === ''){
+            message.error("Choose one")
+            return
+        }
         if(transactiom_data.choose === pair_name.left_name){
             key = 1 ;
         }else if (transactiom_data.choose === pair_name.right_name){
             key = 3;
         }else if (transactiom_data.choose === "middle"){
             key = 2;
+        }
+        const regex =  /^-?\d+(\.\d{1,3})?$/;
+        if(regex.test(transactiom_data.amount.toString())){}else{
+            message.error("Only allow 0.xxx APT")
+            return
         }
         const now =new Date();
         const day = String(now.getDate()).padStart(2,'0');
@@ -65,6 +77,21 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
                 typeArguments:[],
                 functionArguments:[transactiom_data.amount*100000000,`${day}${month}${year}`,key,save_pair.pair_name,save_pair.expired_time]
             }
+        }
+        try {
+            // sign and submit transaction to chain
+            const response = await signAndSubmitTransaction(transaction);
+            // wait for transaction
+            const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+            message.success(
+                <span>
+                            hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                        </span>
+            )
+
+        } catch (error: any) {
+            message.error(`please try again`)
         }
     }
     const get_account_balance = async() => {
@@ -260,7 +287,7 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
                     <Row>
                         <Col span={22} offset={1}>
                             <Input disabled={transactiom_data.choose == '' ? true :false} size={"large"} placeholder={"0.00"} addonAfter={<><img src={APT_logo} style={{width:"2vmax",height:"2vmax",position:"relative",left:"0.5vmax"}}></img>APT</>} onChange={(value) => {
-                                const regex = /^\d+$/;
+                                const regex = /^-?\d+(\.\d+)?$/;
                                 if(regex.test(value.target.value)){
                                     set_transactiom_data({
                                         choose: transactiom_data.choose,
@@ -354,7 +381,9 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
                     </Row>
                     <Row>
                         <Col span={24} style={{paddingLeft:17,paddingTop:10}}>
-                            <button className={"rainbow"} style={{width:"39vmax"}}>
+                            <button className={"rainbow"} style={{width:"39vmax"}} onClick={() =>{
+                                submit_transaction()
+                            }}>
                                 Create
                             </button>
                         </Col>
