@@ -223,47 +223,49 @@ const  Is_telegrame_web_app: React.FC = () => {
                                  style={{
                                      borderRadius: 20,
                                      position: "relative",
-                                     textAlign: "center"
+                                     textAlign: "center",
+                                     height:"9.5vmax",
+                                     width:"10vmax"
                                  }}/>
                         </Col>
                         <Col span={6}>
                             <h1 style={{fontSize:28,
                                 position:"relative",
-                                top:"10%",
-                                left:"-27%",
+                                top:"0%",
+                                left:"-47%",
                                 textAlign: "center"
                             }}>Diffusion</h1>
                         </Col>
                         <Col span={12}>
                             <div style={{
                                 position: "relative",
-                                top:"10%",
-                                left:"-5%",
+                                top:"0%",
+                                left:"15%",
                             }}>
                                 <WalletSelector />
                             </div>
                         </Col>
                     </Row>
                 </Header>
-                {page_select == 'My Card'? <Content style={{backgroundColor:"#4F4F4F",height:"80vmax" }}>
+                {page_select == 'My Card'? <Content style={{backgroundColor:"#4F4F4F",height:"82vmax",position:"relative" }}>
                         <Row gutter={[24, 24]} style={{padding: 20}}>
                             <Row>
-                                <Col span={9} offset={1} >
+                                <Col span={6} offset={1} >
                                     <Image  style={{height:"15vmax",width:"15vmax"}} src={user_profile.icon} alt={"user_icon"} fallback={"https://pot-124.4everland.store/user_badges.png"}></Image>
                                 </Col>
                                 <Col span={12} style={{position:"relative",left:"0.31vmax"}}>
-                                    <Row gutter={[24,8]}>
+                                    <Row gutter={[24,18]}>
                                         <Col span={24}>
-                                            <p style={{color:"#dfdfdf",position:"relative",right:"0.9vmax"}}>{user_profile.name}</p>
+                                            <p style={{color:"#dfdfdf",position:"relative",right:"0.9vmax",textAlign:"center"}}>{user_profile.name}</p>
                                         </Col>
                                         <Col span={24}>
-                                            <div style={{border:"solid 0.5px",width:"24vmax",height:"5vmax",borderColor:"#989797",backgroundColor:"rgba(21,21,21,0.63)",zIndex:7,paddingTop:9,paddingRight:20,paddingLeft:10,borderRadius:10}}>
+                                            <div style={{border:"solid 1px",width:"49vmax",height:"7vmax",borderColor:"#989797",backgroundColor:"rgba(21,21,21,0.63)",zIndex:7,paddingTop:9,paddingRight:20,paddingLeft:10,borderRadius:10}}>
 
                                                 <Row>
-                                                    <Col span={22}>
-                                                        <p style={{color:"#dfdfdf",fontSize:15,position:"relative",top:1}}>{(account?.address.slice(0,20))}</p>
+                                                    <Col span={23}>
+                                                        <p style={{color:"#dfdfdf",fontSize:15,position:"relative",top:1}}>{(account?.address.slice(0,32))}</p>
                                                     </Col>
-                                                    <Col span={2}>
+                                                    <Col span={1}>
                                                         <motion.div
                                                             className={"box"}
                                                             whileHover={{scale: 1.05}}
@@ -298,7 +300,7 @@ const  Is_telegrame_web_app: React.FC = () => {
                         </Row>
 
                     </Content>:
-                    <Content style={{backgroundColor:"#4F4F4F",height:"80vmax" }}>
+                    <Content style={{backgroundColor:"#4F4F4F",height:"82vmax" }}>
 
                         <Row gutter={[24, 24]} style={{padding: 20}}>
                             <Col span={24}>
@@ -309,23 +311,23 @@ const  Is_telegrame_web_app: React.FC = () => {
                                     borderRadius: 5
                                 }}>
                                     <Row>
-                                        <Col span={10}>
+                                        <Col span={6}>
                                             <Image  style={{height:"15vmax",width:"15vmax"}} src={user_profile.icon} alt={"user_icon"} fallback={"https://pot-124.4everland.store/user_badges.png"}></Image>
                                         </Col>
                                         <Col span={12}>
                                             {which == '' ? <>
                                                 <Row gutter={[24,8]}>
                                                     <Col span={24}>
-                                                        <p style={{color:"#dfdfdf"}}>{user_profile.name}</p>
+                                                        <p style={{color:"#dfdfdf",textAlign:"center"}}>{user_profile.name}</p>
                                                     </Col>
                                                     <Col span={24}>
-                                                        <div style={{border:"solid 0.5px",width:"24vmax",height:"5vmax",borderColor:"#989797",backgroundColor:"rgba(21,21,21,0.63)",zIndex:7,paddingTop:9,paddingRight:20,paddingLeft:10,borderRadius:10}}>
+                                                        <div style={{border:"solid 0.5px",width:"52vmax",height:"7vmax",borderColor:"#989797",backgroundColor:"rgba(21,21,21,0.63)",zIndex:7,paddingTop:9,paddingRight:20,paddingLeft:10,borderRadius:10}}>
 
                                                             <Row>
-                                                                <Col span={22}>
-                                                                    <p style={{color:"#dfdfdf",fontSize:15,position:"relative",top:1}}>{(account?.address.slice(0,20))}</p>
+                                                                <Col span={23}>
+                                                                    <p style={{color:"#dfdfdf",fontSize:15,position:"relative",top:1}}>{(account?.address.slice(0,33))}</p>
                                                                 </Col>
-                                                                <Col span={2}>
+                                                                <Col span={1}>
                                                                     <motion.div
                                                                         className={"box"}
                                                                         whileHover={{scale: 1.05}}
@@ -482,15 +484,15 @@ const  Is_telegrame_web_app: React.FC = () => {
 
                     </Content>}
 
-                <Footer style={{backgroundColor: "#6ee4c1", height: "10vmax",}}>
-                    <Row style={{position:"relative",right:"6vmax",top:"-2.8vmax"}}>
+                <Footer style={{backgroundColor: "#6ee4c1", height: "8vmax",}}>
+                    <Row style={{position:"relative",right:"7.9vmax",top:"-4vmax"}}>
                         <Col span={24}>
                             <Segmented
-                                style={{width:"46.8vmax",height:"10.5vmax"}}
+                                style={{width:"75.5vmax",height:"10.5vmax"}}
                                 options={[
                                     {
                                         label: (
-                                            <div style={{ padding: 4 , width:"20.5vmax",height:"10.5vmax",paddingTop:8}}>
+                                            <div style={{ padding: 4 , width:"34vmax",height:"10.5vmax",paddingTop:8}}>
                                                 <AuditOutlined style={{fontSize:50}}/>
                                                 <div style={{position:"relative",top:-10}}>Bet Card</div>
                                             </div>
@@ -499,7 +501,7 @@ const  Is_telegrame_web_app: React.FC = () => {
                                     },
                                     {
                                         label: (
-                                            <div style={{ padding: 4, width:"22vmax" ,height:"10.5vmax",paddingTop:8}}>
+                                            <div style={{ padding: 4, width:"34vmax" ,height:"10.5vmax",paddingTop:8}}>
                                                 <AppstoreOutlined style={{fontSize:50}}/>
                                                 <div style={{position:"relative",top:-10}}>My Card</div>
                                             </div>

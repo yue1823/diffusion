@@ -13,7 +13,8 @@ const TelegramDetection: React.FC <{}>= ({}) => {
     const [is_mobile,set_is_mobile]=useState(false);
     const a = async () => {
         setIsTelegram(await isTMA())
-
+        console.log(`enter to telegrame `)
+        setIsTelegram(true)
     }
 
     const check_is_mobile =async () =>{
@@ -25,7 +26,7 @@ const TelegramDetection: React.FC <{}>= ({}) => {
         check_is_mobile()
         a()
         //setIsTelegram(true)
-        console.log(`telegrame : ${isTelegram}`)
+
     }
     , [isTelegram]);
 
