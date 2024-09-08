@@ -11,7 +11,11 @@ export function WalletProvider({ children }: PropsWithChildren) {
   return (
     <AptosWalletAdapterProvider
       autoConnect={true}
-      dappConfig={{ network: NETWORK }}
+      dappConfig={{ network: NETWORK,
+          mizuwallet: {
+              manifestURL: "https://yue1823.github.io/diffusion/mizuwallet-connect-manifest.json"
+          }
+          }}
       onError={(error) => {
         toast({
           variant: "destructive",
