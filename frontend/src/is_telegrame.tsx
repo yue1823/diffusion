@@ -6,6 +6,7 @@ import Tel_create_bet from "./telegrame_page/telegrame_create_bet";
 import {isMobile} from 'react-device-detect';
 
 import { isTMA } from '@tma.js/sdk';
+import Is_telegrame_web_app from "./telegrame_page/is_telegrame_web_app";
 
 const TelegramDetection: React.FC <{}>= ({}) => {
     const [isTelegram, setIsTelegram] = useState(false);
@@ -30,22 +31,26 @@ const TelegramDetection: React.FC <{}>= ({}) => {
 
     return (
         <>
-            {is_mobile === null ? (
-                <></> // 或者你可以放一些占位符
-            ) : is_mobile ? (
-                <>
-                    <Tel_create_bet/>
-                </>
-            ) : (
-                <>
-                    <Router>
-                        <Routes>
-                            <Route path="/*" element={<App id={"page-wrap"}/>}/>
-                            <Route path="/diffusion/website" element={<Website_page/>}/>
-                        </Routes>
-                    </Router>
-                </>
-            )}
+            {isTelegram?<>
+            <Is_telegrame_web_app/>
+            </>:<>
+                    {is_mobile === null ? (
+                        <></> // 或者你可以放一些占位符
+                    ) : is_mobile ? (
+                        <>
+                            <Tel_create_bet/>
+                        </>
+                    ) : (
+                        <>
+                            <Router>
+                                <Routes>
+                                    <Route path="/*" element={<App id={"page-wrap"}/>}/>
+                                    <Route path="/diffusion/website" element={<Website_page/>}/>
+                                </Routes>
+                            </Router>
+                        </>
+                    )}
+            </>}
         </>
     );
 };
