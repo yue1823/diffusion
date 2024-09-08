@@ -46,14 +46,15 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
     });
     const submit_transaction = async() =>{
         let key= 0 ;
-        if(transactiom_data.amount === 0){
-            message.error("Don't enter 0 APT")
-            return
-        }
         if(transactiom_data.choose === ''){
             message.error("Choose one")
             return
         }
+        if(transactiom_data.amount === 0){
+            message.error("Don't enter 0 APT")
+            return
+        }
+
         if(transactiom_data.choose === pair_name.left_name){
             key = 1 ;
         }else if (transactiom_data.choose === pair_name.right_name){
@@ -208,7 +209,12 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
                             }}>
                                 <Row gutter={[24,12]}>
                                     <Col span={24}>
-                                        <p style={{fontSize:30}}>{pair_name.left_name}</p>
+                                        <p  style={{
+                                            fontSize: 30,
+                                            textAlign: "center",
+                                            position: "relative",
+                                            right: 14
+                                        }}>{pair_name.left_name}</p>
                                     </Col>
                                     <Col span={24} style={{position:"relative",right:"1.8vmax"}}>
                                         <div style={{

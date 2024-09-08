@@ -4,18 +4,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Website_page from './website/website_page';
 import Tel_create_bet from "./telegrame_page/telegrame_create_bet";
 
-// import { isTMA } from '@tma.js/sdk';
+import { isTMA } from '@tma.js/sdk';
 
 const TelegramDetection: React.FC <{}>= ({}) => {
     const [isTelegram, setIsTelegram] = useState(false);
     
-    // const a = async () => {
-    //     // setIsTelegram(await isTMA())
-    //
-    // }
+    const a = async () => {
+        setIsTelegram(await isTMA())
+
+    }
 
     useEffect(() => {
-        setIsTelegram(true)
+        a()
+        //setIsTelegram(true)
         console.log(`telegrame : ${isTelegram}`)
     }
     , [isTelegram]);
