@@ -1,13 +1,14 @@
-import {Col, Image, Row, Typography,} from 'antd';
+import {Col, Image, Input, Row, Typography,} from 'antd';
 import React, { useEffect, useState } from 'react';
 import CountdownTimer from '../user/Count_time';
 import { motion } from 'framer-motion';
 import Modal from "@mui/material/Modal";
 import {Box} from "@mui/material";
 import { CloseOutlined } from '@ant-design/icons';
-import { useWallet } from '@aptos-labs/wallet-adapter-react';
+import {InputTransactionData, useWallet } from '@aptos-labs/wallet-adapter-react';
 import {Aptos, AptosConfig, Network } from '@aptos-labs/ts-sdk';
-
+import APT_logo from "../art/Aptos_mark_BLK.svg";
+import { diffusion } from '../setting';
 interface SavePair {
     can_bet:boolean;
     expired_time: string;
@@ -32,13 +33,40 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
         choose:'',
         amount:0,
     })
-    const handleClose = () => {setOpen(false);}
+    const handleClose = () => {setOpen(false);
+        set_transactiom_data(
+            {choose:'',
+                amount:0
+            })}
     const [balance , set_balance]=useState('0');
     const [pair_name,set_pair_name]= useState({
         left_name:'',
         right_name:'',
         pair_type:''
     });
+    const submit_transaction = async() =>{
+        let key= 0 ;
+
+        if(transactiom_data.choose === pair_name.left_name){
+            key = 1 ;
+        }else if (transactiom_data.choose === pair_name.right_name){
+            key = 3;
+        }else if (transactiom_data.choose === "middle"){
+            key = 2;
+        }
+        const now =new Date();
+        const day = String(now.getDate()).padStart(2,'0');
+        const month = String(now.getMonth()+1).padStart(2,'0');
+        const year = String(now.getFullYear());
+
+        const transaction:InputTransactionData = {
+            data: {
+                function:diffusion.function.create_bet_card(),
+                typeArguments:[],
+                functionArguments:[transactiom_data.amount*100000000,`${day}${month}${year}`,key,save_pair.pair_name,save_pair.expired_time]
+            }
+        }
+    }
     const get_account_balance = async() => {
         if (!account) return [];
         const new_balance = await aptos.account.getAccountAPTAmount({accountAddress:account.address})
@@ -58,6 +86,7 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
 
 
     useEffect(() => {
+
         solve_data()
         get_account_balance()
         // console.log(save_pair.expired_time)
@@ -120,13 +149,13 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
                 classes={""}
                 sx={{borderRadius: 60,paddingTop:10,paddingRight:3,paddingLeft:2,border:"white",'&:fouvu':{outline:'none'}}}
             >
-                <Box sx={{width: "43vmax", height: "70vmax", backgroundColor: "#dffff6",borderRadius:5}} className={""}>
+                <Box sx={{width: "43vmax", height: "77vmax", backgroundColor: "#dffff6",borderRadius:5}} className={""}>
                     <motion.div
                         className={"box"}
                         whileHover={{scale: 1.05}}
                         whileTap={{scale: 0.91}}
                         transition={{type: "spring", stiffness: 100, damping: 50}}
-                        onClick={() => setOpen(false)}
+                        onClick={() => handleClose()}
                     >
                         <CloseOutlined style={{fontSize: 30,position:"relative",left:"1vmax",top:"1vmax"}}/>
                     </motion.div>
@@ -230,6 +259,25 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
                     </Row>
                     <Row>
                         <Col span={22} offset={1}>
+                            <Input disabled={transactiom_data.choose == '' ? true :false} size={"large"} placeholder={"0.00"} addonAfter={<><img src={APT_logo} style={{width:"2vmax",height:"2vmax",position:"relative",left:"0.5vmax"}}></img>APT</>} onChange={(value) => {
+                                const regex = /^\d+$/;
+                                if(regex.test(value.target.value)){
+                                    set_transactiom_data({
+                                        choose: transactiom_data.choose,
+                                        amount:parseFloat(value.target.value)
+                                    })
+                                }else{
+                                    set_transactiom_data({
+                                        choose: transactiom_data.choose,
+                                        amount:0
+                                    })
+                                }
+                            }}></Input>
+                        </Col>
+                    </Row>
+                    <br/>
+                    <Row style={{position:"relative", top:-5}}>
+                        <Col span={22} offset={1}>
                             <div style={{border:"solid 0.5px",borderRadius:5,height:"20vmax",backgroundColor:"rgb(100,98,98)",color:"rgb(237,237,237)"}}>
                                 <Row gutter={[24,8]} style={{paddingTop:5,paddingLeft:10}}>
                                     <Col span={24}>
@@ -262,7 +310,7 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
                                         }}></div>
                                     </Col>
                                     <Col span={24}>
-                                        <p style={{textAlign: "left", fontSize: 15}}>Fee (10%) : {transactiom_data.amount*0.1}</p>
+                                        <p style={{textAlign: "left", fontSize: 15}}>Fee (10%) : {(transactiom_data.amount*0.1).toFixed(2)}</p>
                                         <div style={{
                                             border: "solid 1px",
                                             width: "20vmax",
@@ -304,7 +352,13 @@ const  Tel_create_bet_box: React.FC <{save_pair:SavePair}> = ({save_pair}) => {
                             </div>
                         </Col>
                     </Row>
-
+                    <Row>
+                        <Col span={24} style={{paddingLeft:17,paddingTop:10}}>
+                            <button className={"rainbow"} style={{width:"39vmax"}}>
+                                Create
+                            </button>
+                        </Col>
+                    </Row>
                 </Box>
             </Modal>
         </>
