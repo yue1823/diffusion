@@ -7,6 +7,7 @@ import {isMobile} from 'react-device-detect';
 
 import { isTMA } from '@tma.js/sdk';
 import Is_telegrame_web_app from "./telegrame_page/is_telegrame_web_app";
+import { ToastContainer } from "react-toastify";
 
 const TelegramDetection: React.FC <{}>= ({}) => {
     const [isTelegram, setIsTelegram] = useState(false);
@@ -52,6 +53,18 @@ const TelegramDetection: React.FC <{}>= ({}) => {
                         </>
                     )}
             </>}
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </>
     );
 };
