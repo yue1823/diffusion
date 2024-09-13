@@ -21,13 +21,43 @@ interface Profile{
         save_5: any
     }
 }
-const BarChart: React.FC = () => {
+interface SavePair {
+    can_bet:boolean;
+    expired_time: string;
+    left: string;
+    left2: string;
+    left_url: string;
+    middle: string;
+    middle2: string;
+    pair_name: string;
+    pair_type: string;
+    right: string;
+    right2: string;
+    right_url: string;
+}
+interface Data {
+    fee:any,
+    save_Cylinder_Pairs:any,
+    save_Helper_list:any,
+    save_Pair_result_store:{
+        save_admin_set_result:boolean[],
+        save_can_claim:boolean[],
+        save_chips:any,
+        save_lost_pair:any,
+        save_pair:SavePair[],
+        save_result:any,
+        save_user:any
+    },
+    save_badges_list:any,
+    save_helper_chance:any
+}
+const BarChart: React.FC<{data1:{win:number,lose:number}}> = ({data1}) => {
     const data = {
         labels: ['win', 'lose'],
         datasets: [
             {
                 label: '',
-                data: [165,59],
+                data: [data1.win,data1.lose],
                 backgroundColor: ['rgba(75, 192, 192, 0.2)','rgba(192,75,155,0.2)'],
                 borderColor: ['rgba(75, 192, 192, 1)','rgb(192,75,134)'],
                 borderWidth: 1,
@@ -60,26 +90,104 @@ const BarChart: React.FC = () => {
     }, [data]);
     return <Bar  data={data} options={options} style={{width:"auto",height:"auto"}}/>;
 };
-const Is_telegrame_web_my_card: React.FC <{profile_date:Profile}>= ({profile_date}) => {
-    const [can_claim_pair , set_can_claim_pair]=useState<any>('');
-    const [finish_pair,set_finish_pair]=useState<any>('');
+const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:Data }>= ({profile_date,diffusion_data}) => {
+    const [can_claim_pair , set_can_claim_pair]=useState<any[]>([]);
+    const [user_have_pair, set_user_have_pair]=useState<any[]>([]);
+    const [finish_pair,set_finish_pair]=useState<any[]>([]);
+    const [wrong_pair,set_wrong_pair]=useState<any[]>([]);
+    const [big_cols, setBigCols] = useState<JSX.Element[]>([]);
     const solve_data = () =>{
-
         let pair = [];
         for(let i =0;i<profile_date.data.save_2.length;i++){
             if( profile_date.data.save_2[i].pair.can_bet == true){
                 pair.push(profile_date.data.save_2[i])
             }
         }
-        console.log('finsih pair', pair);
+        //console.log('finsih pair', pair);
         set_finish_pair(pair);
+        find_pair_of_user();
     }
+    const find_pair_of_user =()=>{
+        let have_pair =[];
+        let wrong_pair =[];
+        let right_pair = [];
+        for(let j = 0 ; j<profile_date.data.save_2.length;j++){
+            for (let i=0; i < diffusion_data.save_Pair_result_store.save_pair.length;i++){
+
+                if(profile_date.data.save_2[j].pair.pair_name == diffusion_data.save_Pair_result_store.save_pair[i].pair_name){
+                    //console.log(`profile_date`,profile_date.data.save_2[j].pair.pair_name)
+                   // console.log(`diffusion_data.`,diffusion_data.save_Pair_result_store.save_pair[i].pair_name)
+                    if(profile_date.data.save_2[j].pair.expired_time == diffusion_data.save_Pair_result_store.save_pair[i].expired_time){
+
+                       // console.log( ' diffusion_data.save_Pair_result_store.save_result[3+i*2]',diffusion_data.save_Pair_result_store.save_result[3+i*2])
+                        if(diffusion_data.save_Pair_result_store.save_result[3+i*2] != 9){
+                            if(profile_date.data.save_2[j].which !=  diffusion_data.save_Pair_result_store.save_result[4+i*2] ){
+                                // console.log('4+i*2',3+i*2)
+                                // console.log('4+i*2 data',diffusion_data.save_Pair_result_store.save_result[3+i*2])
+                                wrong_pair.push(profile_date.data.save_2[j])
+                                //console.log( 'wrong_pair',wrong_pair)
+                            }
+                            if(profile_date.data.save_2[j].which =  diffusion_data.save_Pair_result_store.save_result[4+i*2] ){
+                                right_pair.push(profile_date.data.save_2[j])
+                            }
+                        }else{
+                            have_pair.push(diffusion_data.save_Pair_result_store.save_pair[i])
+                        }
+
+                    }
+                }
+            }
+        }
+        // console.log('right pair',right_pair);
+        // console.log('wrong pair',wrong_pair);
+        // console.log('have pair',have_pair);
+        set_wrong_pair(wrong_pair)
+        set_can_claim_pair(right_pair)
+        set_user_have_pair(have_pair)
+        console.log('right pair',can_claim_pair);
+        console.log('wrong pair',wrong_pair);
+        console.log('have pair',user_have_pair);
+        if(have_pair.length !=0){
+            console.log("big_cols.length",big_cols.length)
+            set_pair_for_user()
+            console.log("big_cols",big_cols)
+        }
+    }
+    const set_pair_for_user = () =>{
+        const cols: JSX.Element[] = [];
+        can_claim_pair.forEach((_) => {
+          cols.push(
+                <MyCard_bet status_color={"rgb(5, 240, 40)"}/>
+            );
+        });
+        wrong_pair.forEach((_) => {
+            cols.push(
+                <MyCard_bet  status_color={"rgb(240,5,25)"}/>
+            );
+        });
+        user_have_pair.forEach((_) => {
+            cols.push(
+                <MyCard_bet  status_color={"rgb(224,240,5)"}/>
+            );
+        });
+        setBigCols(cols)
+    }
+
     useEffect(() => {
+        console.log('diffusion_date',diffusion_data);
         console.log('profile_date', profile_date);
-        console.log('profile_date.save_2', profile_date.data.save_2);
+        //console.log('profile_date.save_2', profile_date.data.save_2);
         //console.log(profile_date.save_2)
-        solve_data()
-    }, [profile_date]);
+        solve_data();
+
+    }, [profile_date,diffusion_data]);
+    // useEffect(() => {
+    //     solve_data();
+    //     find_pair_of_user();
+    // }, []);
+    // useEffect(() => {
+    //
+    // }, [can_claim_pair]);
     return (<>
         <Row style={{paddingLeft:0,paddingRight:0,position:"relative",top:-10}}>
             {/*<Col span={24}>*/}
@@ -87,13 +195,14 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile}>= ({profile_dat
             {/*</Col>*/}
             <Col span={10}>
                 <Row gutter={[24,8]} >
-                    <MyCard_bet/>
-                    <Col span={24}  style={{border:"solid 0.5px", backgroundColor:"#bbdcbb",height:"16.3vmax",borderRadius:5}}>
+                    {/*<MyCard_bet status_color={"white"}/>*/}
+                    {/*<Col span={24}  style={{border:"solid 0.5px", backgroundColor:"#bbdcbb",height:"16.3vmax",borderRadius:5}}>*/}
 
-                    </Col>
-                    <Col span={24}  style={{border:"solid 0.5px", backgroundColor:"#bbdcbb",height:"16.3vmax",borderRadius:5}}>
+                    {/*</Col>*/}
+                    {/*<Col span={24}  style={{border:"solid 0.5px", backgroundColor:"#bbdcbb",height:"16.3vmax",borderRadius:5}}>*/}
 
-                    </Col>
+                    {/*</Col>*/}
+                    {big_cols}
                 </Row>
             </Col>
             <Col span={12} offset={2}>
@@ -102,7 +211,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile}>= ({profile_dat
                         <Row gutter={[24,6]}>
 
                             <Col span={24} style={{height: "20vmax"}}>
-                                <BarChart/>
+                                <BarChart data1={{win:profile_date.data.save_5.win as number,lose:profile_date.data.save_5.lose as number}}/>
                                 <div style={{
                                     border: "solid 1px",
                                     borderRadius: 5,
@@ -110,19 +219,98 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile}>= ({profile_dat
                                 }}></div>
                             </Col>
                             <Col span={24}>
-                                <div style={{height:"19.5vmax",width:"auto"}}></div>
-                                <div style={{border:"solid 1px",borderRadius:5,borderColor:"rgb(155,158,155)"}}></div>
+                                <div style={{height:"19.5vmax",width:"auto"}}>
+                                    <Row gutter={[24,5]} style={{position:"relative",top:-25}}>
+                                        <Col span={24} >
+                                            <p style={{textAlign:"center",position:"relative",top:-5}}>Status</p>
+                                        </Col>
+                                        <Col span={24}>
+                                            <div style={{
+                                                backgroundColor: `rgb(5, 240, 40)`,
+                                                width: "3vmax",
+                                                height: "3vmax",
+                                                borderRadius: 20
+                                            }}></div>
+                                            <p style={{textAlign:"center",fontSize:13,position:"inherit",top:"-3vmax"}}>Can Claim</p>
+                                            <div style={{
+                                                border: "solid 0.5px",
+                                                borderRadius: 5,
+                                                borderColor: "rgba(155,158,155,0.59)",
+                                                width:"25vmax",
+                                                position:"relative",
+                                                left:"5vmax",
+                                                top:"-3vmax"
+                                            }}></div>
+                                        </Col>
+                                        <Col span={24}>
+                                            <div style={{
+                                                backgroundColor: `rgb(240, 5, 25)`,
+                                                width: "3vmax",
+                                                height: "3vmax",
+                                                borderRadius: 20
+                                            }}></div>
+                                            <p style={{
+                                                textAlign: "center",
+                                                fontSize: 13,
+                                                position: "inherit",
+                                                top:"-3vmax"
+                                            }}>Wrong</p>
+                                            <div style={{
+                                                border: "solid 0.5px",
+                                                borderRadius: 5,
+                                                borderColor: "rgba(155,158,155,0.59)",
+                                                width: "25vmax",
+                                                position: "relative",
+                                                left: "5vmax",
+                                                top:"-3vmax"
+                                            }}></div>
+                                        </Col>
+                                        <Col span={24}>
+                                            <div style={{
+                                                backgroundColor: `rgb(224, 240, 5)`,
+                                                width: "3vmax",
+                                                height: "3vmax",
+                                                borderRadius: 20
+                                            }}></div>
+                                            <p style={{
+                                                textAlign: "center",
+                                                fontSize: 13,
+                                                position: "inherit",
+                                                top:"-3vmax"
+                                            }}>Pending</p>
+                                            <div style={{
+                                                border: "solid 0.5px",
+                                                borderRadius: 5,
+                                                borderColor: "rgba(155,158,155,0.59)",
+                                                width: "25vmax",
+                                                position: "relative",
+                                                left: "5vmax",
+                                                top:"-3vmax"
+                                            }}></div>
+                                        </Col>
+                                    </Row>
+                                </div>
+                                <div style={{
+                                    border: "solid 1px",
+                                    borderRadius: 5,
+                                    borderColor: "rgb(155,158,155)",
+                                    position: "relative", top: -2
+                                }}></div>
                             </Col>
                             <Col span={24}>
-                                <Row>
+                            <Row>
                                     <Col span={10}>
-                                        <button className={"rainbow"} style={{height:"7vmax",width:"12vmax"}}><ArrowLeftOutlined /></button>
+                                        <button className={"rainbow"} style={{height:"7vmax",width:"11vmax"}}>
+                                            <ArrowLeftOutlined style={{position:"relative",right:"1.3vmax"}}/>
+                                        </button>
                                     </Col>
                                     <Col span={4}>
                                         <p>10/10</p>
                                     </Col>
                                     <Col span={10}>
-                                        <button className={"rainbow"} style={{height:"7vmax",width:"12vmax",textAlign:"center"}}><ArrowRightOutlined style={{position:"relative"}}/></button>
+                                        <button className={"rainbow"} style={{height:"7vmax",width:"11vmax",textAlign:"center",position:"relative",left:"2vmax"}}>
+                                            <ArrowRightOutlined style={{position:"relative",right:"1.3vmax"}}/>
+                                        </button>
                                     </Col>
                                 </Row>
                             </Col>
@@ -142,7 +330,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile}>= ({profile_dat
 
 export default Is_telegrame_web_my_card;
 
-const MyCard_bet: React.FC <{}>=({})=>{
+const MyCard_bet: React.FC <{status_color:string}>=({status_color})=>{
 
     return(
         <>
@@ -154,11 +342,20 @@ const MyCard_bet: React.FC <{}>=({})=>{
                 paddingLeft: 5
             }}>
                 <Row gutter={[24,6]}>
+                    <Col span={24} style={{paddingTop: 5, textAlign: "center"}}>
+                        <div  style={{backgroundColor:`${status_color}` ,width:"3vmax",height:"3vmax",borderRadius:20}}></div>
+                        {/*<div style={{*/}
+                        {/*    backgroundColor: `rgb(5, 240, 40)`,*/}
+                        {/*    width: "3vmax",*/}
+                        {/*    height: "3vmax",*/}
+                        {/*    borderRadius: 20*/}
+                        {/*}}></div>*/}
+                    </Col>
                     <Col span={12}>
 
                     </Col>
                     <Col span-={12}>
-                            <Image src={""} preview={false}></Image>
+                    <Image src={""} preview={false}></Image>
                     </Col>
                 </Row>
 

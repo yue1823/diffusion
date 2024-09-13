@@ -201,12 +201,12 @@ const  Is_telegrame_web_app: React.FC = () => {
         // console.log(`new_pairs :${new_pairs}`)
     }
     const fetchData = async () => {
-        console.log(1);
+        //console.log(1);
         await fetch_data(); // 等待 fetch_data 完成
-        console.log(2);
+        //console.log(2);
         await fetc_pair_from_aptos(); // 等待 fetc_pair_from_aptos 完成
 
-        console.log(3);
+        //console.log(3);
         // 确保所有数据都设置好后再调用 select_pair
         select_pair();
     };
@@ -229,7 +229,7 @@ const  Is_telegrame_web_app: React.FC = () => {
         fetchData();
     }, [account]);
     useEffect(() => {
-        console.log('Before rendering:', user_profile_data);
+        //console.log('Before rendering:', user_profile_data);
     }, [user_profile_data]);
     return (
 
@@ -321,8 +321,8 @@ const  Is_telegrame_web_app: React.FC = () => {
                             </Row>
                             <Col span={24}>
                                 <div style={{border:"solid 1px", backgroundColor:"rgb(223,223,223)",height:"56vmax",borderRadius:10,padding:25}}>
-                                    {user_profile_data &&
-                                        <Is_telegrame_web_my_card profile_date={user_profile_data}/>}
+                                    {all_pair_Data &&
+                                        <Is_telegrame_web_my_card profile_date={user_profile_data} diffusion_data={all_pair_Data}/>}
 
                                 </div>
                             </Col>
