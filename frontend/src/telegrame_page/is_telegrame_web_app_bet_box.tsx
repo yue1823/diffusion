@@ -23,6 +23,7 @@ interface SavePair {
     right2: string;
     right_url: string;
 }
+
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 
@@ -319,7 +320,7 @@ const   Is_telegrame_web_app_bet_box: React.FC <{save_pair:SavePair}> = ({save_p
                                             : {transactiom_data.choose}</p>
                                         <div style={{
                                             border: "solid 1px",
-                                            width: "20vmax",
+                                            width: "28vmax",
                                             height: 1,
                                             position: "relative",
                                             left: "0vmax",
@@ -332,7 +333,7 @@ const   Is_telegrame_web_app_bet_box: React.FC <{save_pair:SavePair}> = ({save_p
                                             : {transactiom_data.amount}</p>
                                         <div style={{
                                             border: "solid 1px",
-                                            width: "20vmax",
+                                            width: "28vmax",
                                             height: 1,
                                             position: "relative",
                                             left: "0vmax",
@@ -344,7 +345,7 @@ const   Is_telegrame_web_app_bet_box: React.FC <{save_pair:SavePair}> = ({save_p
                                         <p style={{textAlign: "left", fontSize: 15}}>Fee (10%) : {(transactiom_data.amount*0.1).toFixed(2)}</p>
                                         <div style={{
                                             border: "solid 1px",
-                                            width: "20vmax",
+                                            width: "28vmax",
                                             height: 1,
                                             position: "relative",
                                             left: "0vmax",
@@ -357,7 +358,7 @@ const   Is_telegrame_web_app_bet_box: React.FC <{save_pair:SavePair}> = ({save_p
                                             `0${save_pair.expired_time.slice(0,1)}/${save_pair.expired_time.slice(1,3)}/${save_pair.expired_time.slice(3,7)}`:`${save_pair.expired_time.slice(0,2)}/${save_pair.expired_time.slice(2,4)}/${save_pair.expired_time.slice(4,8)}`}</p>
                                         <div style={{
                                             border: "solid 1px",
-                                            width: "20vmax",
+                                            width: "28vmax",
                                             height: 1,
                                             position: "relative",
                                             left: "0vmax",

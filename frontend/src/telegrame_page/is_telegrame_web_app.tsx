@@ -53,6 +53,15 @@ interface Data {
     save_badges_list:any,
     save_helper_chance:any
 }
+interface Profile{
+    data: {
+        save_1: any
+        save_2: any,
+        save_3: any,
+        save_4: any,
+        save_5: any
+    }
+}
 const options = {
     method: 'GET',
     headers: {accept: 'application/json', 'X-API-KEY':`${diffusion.x_api_key}`}
@@ -68,6 +77,7 @@ const  Is_telegrame_web_app: React.FC = () => {
     const [user_profile,set_user_profile]=useState({
         name:'User',icon:'https://pot-124.4everland.store/user_badges.png'
     })
+    const [user_profile_data,set_user_profile_data]=useState<Profile>({data:{save_1:'',save_2:"",save_3:'',save_4:'',save_5:""}});
     const [all_pair_Data,set_all_pairdata]=useState<Data>();
     const [which , set_which ]= useState("");
     const [aliveable_pairs,set_aliveable_pairs]=useState<SavePair[]>([]);
@@ -117,14 +127,16 @@ const  Is_telegrame_web_app: React.FC = () => {
             await fetch(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`, options)
                 .then(response => response.json())
                 .then((response) => {
-                    console.log(response)
-                    //console.log(`'profile data ${response}`)
+                   // console.log(response)
+                    //console.log(`'profile data `,response)
                     if(response){
+                        set_user_profile_data(response)
                         set_user_profile({
                             icon:response.data.save_1.icon,
                             name:response.data.save_1.name
                         })
                     }
+                   // console.log(`'user_profile_data `,user_profile_data)
                 }).catch(error =>{
                     console.log(error)
                     setOpen(true)
@@ -174,7 +186,9 @@ const  Is_telegrame_web_app: React.FC = () => {
     const solve_which_pair  =(key:string)=>{
         let new_pairs = [] as SavePair[];
         for(let i = 0 ; i < aliveable_pairs.length ; i++ ){
+            // @ts-ignore
             let [first_part,d] = aliveable_pairs[i].pair_name.split(" vs ");
+            // @ts-ignore
             let [secondPart ,thirdPart]= d.split(" - ");
             // console.log(first_part)
             // console.log(secondPart)
@@ -191,6 +205,7 @@ const  Is_telegrame_web_app: React.FC = () => {
         await fetch_data(); // 等待 fetch_data 完成
         console.log(2);
         await fetc_pair_from_aptos(); // 等待 fetc_pair_from_aptos 完成
+
         console.log(3);
         // 确保所有数据都设置好后再调用 select_pair
         select_pair();
@@ -210,6 +225,12 @@ const  Is_telegrame_web_app: React.FC = () => {
 
         fetchData(); // 执行异步操作
     }, []);
+    useEffect(() => {
+        fetchData();
+    }, [account]);
+    useEffect(() => {
+        console.log('Before rendering:', user_profile_data);
+    }, [user_profile_data]);
     return (
 
         <>
@@ -300,7 +321,9 @@ const  Is_telegrame_web_app: React.FC = () => {
                             </Row>
                             <Col span={24}>
                                 <div style={{border:"solid 1px", backgroundColor:"rgb(223,223,223)",height:"56vmax",borderRadius:10,padding:25}}>
-                                    <Is_telegrame_web_my_card/>
+                                    {user_profile_data &&
+                                        <Is_telegrame_web_my_card profile_date={user_profile_data}/>}
+
                                 </div>
                             </Col>
                         </Row>
@@ -490,8 +513,8 @@ const  Is_telegrame_web_app: React.FC = () => {
                                 </>
                                 :
                                 <>
-                                    {select_pairs.map((pair) => {return (<>
-                                        < Is_telegrame_web_app_bet_box save_pair={pair}/>
+                                    {select_pairs.map((pair,index) => {return (<>
+                                        <Is_telegrame_web_app_bet_box key={index} save_pair={pair}/>
                                     </>)})}
 
                                 </>}
