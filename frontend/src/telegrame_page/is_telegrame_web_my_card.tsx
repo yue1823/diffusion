@@ -14,6 +14,8 @@ import {
 } from 'chart.js';
 import {ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
+import CountdownTimer from '../user/Count_time';
+import Sleepy_cat from './sleepy_cat';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 interface Profile{
     data: {
@@ -107,7 +109,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
                 pair.push(profile_date.data.save_2[i])
             }
         }
-        console.log('finsih pair', pair);
+        //console.log('finsih pair', pair);
         set_finish_pair(pair);
 
     }
@@ -148,13 +150,13 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
         set_wrong_pair(wrong_pair)
         set_can_claim_pair(right_pair)
         set_user_have_pair(have_pair)
-        console.log('right pair',can_claim_pair);
-        console.log('wrong pair',wrong_pair);
-        console.log('have pair',user_have_pair);
+        // console.log('right pair',can_claim_pair);
+        // console.log('wrong pair',wrong_pair);
+        // console.log('have pair',user_have_pair);
         if(have_pair.length !=0){
-            console.log("big_cols.length",big_cols.length)
+            //console.log("big_cols.length",big_cols.length)
             set_pair_for_user()
-            console.log("big_cols",big_cols)
+          //  console.log("big_cols",big_cols)
         }
     }
     const set_pair_for_user = () =>{
@@ -179,7 +181,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
 
 
     useEffect(() => {
-        console.log('profile_date', profile_date.data.save_2);
+        //console.log('profile_date', profile_date.data.save_2);
         solve_data();
         find_pair_of_user();
     }, [profile_date,diffusion_data]);
@@ -370,6 +372,7 @@ const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>
         }
     }, [status_color]);
     useEffect(() => {
+
         const randomIndex = Math.floor(Math.random()*random_url.length);
         const input_to_flip_card = random_url[randomIndex];
         set_input_url(input_to_flip_card);
@@ -419,6 +422,7 @@ const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>
                 true_or_not: true_of_pair
             })
         }
+        console.log(new_date)
     }, [bet_data, true_of_pair]);
 
 
@@ -502,27 +506,57 @@ const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>
                             </div>
                         </Col>
                         <Col span={9} offset={1}>
-                            <div style={{
-                                border: "solid 0.5px",
-                                backgroundColor: "#ebe5df",
-                                height: "65vmax",
-                                width: "29vmax",
-                                borderRadius: 5
-                            }}>
+                            <Row gutter={[24,11]}>
+                                <Col span={24}>
+                                    <div style={{
+                                        border: "solid 0.5px",
+                                        backgroundColor: "#11181c",
+                                        height: "18vmax",
+                                        width: "29vmax",
+                                        borderRadius: 5,
+                                    }}>
+                                        <p style={{textAlign:"center",position:"relative",color:"rgba(235,229,223,0.76)"}}>Left Time :</p>
+                                        <div style={{border:"solid 0.5px",borderColor:"rgba(235,229,223,0.76)",position:"relative",top:"1vmax",width:"25vmax",left:10}}></div>
+                                        <div style={{transform: "scale(0.85)",width:"31vmax",position:"relative",right:"1.2vmax",top:"1vmax"}}> <CountdownTimer expiredDate={bet_data.pair.expired_time} yes_or_not={true} /></div>
+
+                                    </div>
+                                </Col>
+                                <Col span={24}>
+                                    <div style={{
+                                        border: "solid 0.5px",
+                                        backgroundColor: "#11181c",
+                                        height: "33vmax",
+                                        width: "29vmax",
+                                        borderRadius: 5,
+
+                                    }}>
+                                        <Sleepy_cat/>
+                                    </div>
+                                </Col>
+                                <Col span={24}>
+                                    <div style={{
+                                        border: "solid 0.5px",
+                                        // backgroundColor: "#ebe5df",
+                                        height: "10vmax",
+                                        width: "29vmax",
+                                        borderRadius: 5
+                                    }}>
+                                        <button className={"rainbow"} style={{width:"inherit",height:"inherit"}}>Claim</button>
+                                    </div>
+                                </Col>
+                            </Row>
+
+                    </Col>
+                </Row>
 
 
-                            </div>
-                        </Col>
-                    </Row>
+            </Box>
 
-
-                </Box>
-
-            </Modal>
-            <motion.div
-                className={"box"}
-                whileHover={{scale: 1.05}}
-                whileTap={{scale: 0.9}}
+        </Modal>
+    <motion.div
+        className={"box"}
+        whileHover={{scale: 1.05}}
+        whileTap={{scale: 0.9}}
                 transition={{type: "spring", stiffness: 400, damping: 25}}
                 onClick={()=>setOpen(true)}
             >
