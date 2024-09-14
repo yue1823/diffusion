@@ -215,12 +215,7 @@ const  Is_telegrame_web_app: React.FC = () => {
         //console.log(`which : ${which}`)
         solve_which_pair(which)
     }, [which]);
-    useEffect(() => {
 
-        if (all_pair_Data && Object.keys(all_pair_Data).length > 0) {
-            select_pair();
-        }
-    }, [all_pair_Data]);
     useEffect(() => {
 
         fetchData(); // 执行异步操作
@@ -321,7 +316,8 @@ const  Is_telegrame_web_app: React.FC = () => {
                             </Row>
                             <Col span={24}>
                                 <div style={{border:"solid 1px", backgroundColor:"rgb(223,223,223)",height:"56vmax",borderRadius:10,padding:25}}>
-                                    {all_pair_Data &&
+
+                                    {all_pair_Data && user_profile_data.data.save_2.length != 0 &&
                                         <Is_telegrame_web_my_card profile_date={user_profile_data} diffusion_data={all_pair_Data}/>}
 
                                 </div>
