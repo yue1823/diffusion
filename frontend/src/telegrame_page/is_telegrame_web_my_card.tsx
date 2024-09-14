@@ -1,4 +1,4 @@
-import {Col, Row ,Image} from 'antd';
+import {Col, Row ,Image, message} from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import Modal from "@mui/material/Modal";
@@ -16,6 +16,9 @@ import {ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import CountdownTimer from '../user/Count_time';
 import Sleepy_cat from './sleepy_cat';
+import {InputTransactionData, useWallet } from '@aptos-labs/wallet-adapter-react';
+import { diffusion } from '../setting';
+import {Aptos, AptosConfig, Network } from '@aptos-labs/ts-sdk';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 interface Profile{
     data: {
@@ -56,6 +59,8 @@ interface Data {
     save_badges_list:any,
     save_helper_chance:any
 }
+const aptosConfig = new AptosConfig({ network: Network.TESTNET });
+const aptos = new Aptos(aptosConfig);
 const BarChart: React.FC<{data1:{win:number,lose:number}}> = ({data1}) => {
     const data = {
         labels: ['win', 'lose'],
@@ -101,6 +106,22 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
     const [finish_pair,set_finish_pair]=useState<any[]>([]);
     const [wrong_pair,set_wrong_pair]=useState<any[]>([]);
     const [big_cols, setBigCols] = useState<JSX.Element[]>([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const ITEMS_PER_PAGE = 3;
+    const currentItems = big_cols.slice(currentIndex, currentIndex + ITEMS_PER_PAGE);
+
+    const handlePrev = () => {
+        if (currentIndex > 0) {
+            setCurrentIndex(currentIndex - ITEMS_PER_PAGE);
+        }
+    };
+
+        // 处理“后一个”按钮点击
+    const handleNext = () => {
+        if (currentIndex + ITEMS_PER_PAGE < big_cols.length) {
+            setCurrentIndex(currentIndex + ITEMS_PER_PAGE);
+        }
+    };
 
     const solve_data = () =>{
         let pair = [];
@@ -216,7 +237,10 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
                     {/*<Col span={24}  style={{border:"solid 0.5px", backgroundColor:"#bbdcbb",height:"16.3vmax",borderRadius:5}}>*/}
 
                     {/*</Col>*/}
-                    {big_cols}
+                    {/*{big_cols}*/}
+                    {currentItems.map((item, index) => (
+                    <div key={index}>{item}</div>
+                ))}
                 </Row>
             </Col>
             <Col span={12} offset={2}>
@@ -314,15 +338,15 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
                             <Col span={24}>
                             <Row>
                                     <Col span={10}>
-                                        <button className={"rainbow"} style={{height:"7vmax",width:"11vmax"}}>
+                                        <button className={"rainbow"} style={{height:"7vmax",width:"11vmax"}} onClick={handlePrev} disabled={currentIndex === 0}>
                                             <ArrowLeftOutlined style={{position:"relative",right:"1.3vmax"}}/>
                                         </button>
                                     </Col>
                                     <Col span={4}>
-                                        <p>10/10</p>
+                                        <p>{(currentIndex / ITEMS_PER_PAGE) + 1}/{Math.ceil(big_cols.length / ITEMS_PER_PAGE)}</p>
                                     </Col>
                                     <Col span={10}>
-                                        <button className={"rainbow"} style={{height:"7vmax",width:"11vmax",textAlign:"center",position:"relative",left:"2vmax"}}>
+                                        <button className={"rainbow"} style={{height:"7vmax",width:"11vmax",textAlign:"center",position:"relative",left:"2vmax"}} onClick={handleNext} disabled={currentIndex + ITEMS_PER_PAGE >= big_cols.length}>
                                             <ArrowRightOutlined style={{position:"relative",right:"1.3vmax"}}/>
                                         </button>
                                     </Col>
@@ -345,6 +369,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
 export default Is_telegrame_web_my_card;
 
 const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>=({status_color,bet_data,user_name})=>{
+    const { account, signAndSubmitTransaction } = useWallet();
     const handleClose = () => {setOpen(false)};
     const [open, setOpen] = React.useState(false);
     const [whats_pair_need,set_whats_pair_need] =useState({
@@ -362,6 +387,41 @@ const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>
     })
     const [input_url,set_input_url]=useState<string>('');
     const [true_of_pair,set_true_of_pair] =useState('');
+    const claim_reward = async () =>{
+        if (!account) return [];
+        //console.log(status_color)
+        if(status_color == "rgb(224,240,5)"){
+            message.error(`Wait until times up`)
+            return [];}
+        if(status_color == "rgb(240,5,25)"){
+            message.error(`You guess wrong`)
+            return [];}
+        //console.log('submit')
+        const transaction:InputTransactionData = {
+            data: {
+                function:diffusion.function.claim_reward(),
+                typeArguments:[],
+                functionArguments:[bet_data.pair.pair_name as string,bet_data.pair.expired_time as string]
+            }
+        }
+        try {
+            // sign and submit transaction to chain
+            const response = await signAndSubmitTransaction(transaction);
+            // wait for transaction
+            const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+
+
+            message.success(
+                <span>
+                            hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                        </span>
+            )
+
+        } catch (error: any) {
+            message.error(`please try again`)
+        }
+    }
     useEffect(() => {
         if (status_color === "rgb(5, 240, 40)") {
             set_true_of_pair("true");
@@ -531,6 +591,8 @@ const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>
 
                                     }}>
                                         <Sleepy_cat/>
+                                        <div style={{border:"solid 1px",width:"3vmax",height:"3vmax",position:"relative",borderRadius:20,backgroundColor:`${status_color}`,top:"-25.3vmax",left:"23.8vmax",borderColor:"rgba(195,193,193,0.94)"}}></div>
+                                        <p style={{color:"#fff",fontSize:35,top:"-23vmax",position:"relative",right:"1vmax"}}>{(parseFloat(whats_pair_need.win)/100000000).toFixed(2).toString()}</p>
                                     </div>
                                 </Col>
                                 <Col span={24}>
@@ -539,9 +601,10 @@ const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>
                                         // backgroundColor: "#ebe5df",
                                         height: "10vmax",
                                         width: "29vmax",
-                                        borderRadius: 5
+                                        borderRadius: 5,
+
                                     }}>
-                                        <button className={"rainbow"} style={{width:"inherit",height:"inherit"}}>Claim</button>
+                                        <button className={"rainbow"} style={{width:"inherit",height:"inherit"}}  onClick={() =>claim_reward()}>Claim</button>
                                     </div>
                                 </Col>
                             </Row>

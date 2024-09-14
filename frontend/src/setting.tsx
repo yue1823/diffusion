@@ -21,6 +21,7 @@ export const  diffusion = {
         diffusion_store_store: () => `${diffusion.module_address}::helper::Diffusion_store_tree` as `${string}::${string}::${string}`,
         create_helper:() => `${diffusion.module_address}::helper::create_helper` as `${string}::${string}::${string}`,
         apply_to_be_helper: () => `${diffusion.module_address}::helper::apply_to_be_helper` as `${string}::${string}::${string}`,
+        claim_reward:() => `${diffusion.module_address}::helper::claim_reward` as `${string}::${string}::${string}`,
     },
     
 

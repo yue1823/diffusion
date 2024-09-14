@@ -1,17 +1,17 @@
 import React  from  'react';
 
 const Sleepy_cat: React.FC = () => {
-    const containerStyle: React.CSSProperties = {
-        margin: 0,
-        padding: 0,
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontFamily: "'Ubuntu', sans-serif",
-    };
+    // const containerStyle: React.CSSProperties = {
+    //     margin: 0,
+    //     padding: 0,
+    //     width: '100%',
+    //     height: '100%',
+    //     overflow: 'hidden',
+    //     display: 'flex',
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    //     fontFamily: "'Ubuntu', sans-serif",
+    // };
 
     const boxStyle: React.CSSProperties = {
         width: '80%',
