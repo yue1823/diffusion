@@ -164,7 +164,7 @@ const  Is_telegrame_web_app: React.FC = () => {
     }
     const select_pair = () =>{
 
-        //console.log('all_pairdata :', all_pair_Data);
+        console.log('all_pairdata :', all_pair_Data);
         let new_pairs=[]  as  SavePair[];
         if(all_pair_Data != undefined){
             if(all_pair_Data.save_Pair_result_store.save_pair != undefined){
@@ -184,6 +184,7 @@ const  Is_telegrame_web_app: React.FC = () => {
 
     }
     const solve_which_pair  =(key:string)=>{
+
         let new_pairs = [] as SavePair[];
         for(let i = 0 ; i < aliveable_pairs.length ; i++ ){
             // @ts-ignore
@@ -212,20 +213,22 @@ const  Is_telegrame_web_app: React.FC = () => {
     };
 
     useEffect(() => {
-        //console.log(`which : ${which}`)
-        solve_which_pair(which)
-    }, [which,aliveable_pairs]);
-
-    useEffect(() => {
-
         fetchData(); // 执行异步操作
     }, []);
+
     useEffect(() => {
-        fetchData();
-    }, [account]);
-    useEffect(() => {
-        //console.log('Before rendering:', user_profile_data);
+        // 确保数据已经加载后才调用 select_pair
+        if (all_pair_Data) {
+            select_pair();
+        }
     }, [all_pair_Data]);
+
+    useEffect(() => {
+        solve_which_pair(which); // 根据 which 的变化处理
+    }, [which]);
+    // useEffect(() => {
+    //     //console.log('Before rendering:', user_profile_data);
+    // }, [all_pair_Data]);
     
     return (
 

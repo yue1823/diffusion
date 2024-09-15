@@ -218,14 +218,17 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
                     theme: "light",
                     transition: Bounce,
                 });
-                // setinput1("")
-                // setinput2("")
-                // setpair_name("")
-                // settime("")
-                // setpairtype("")
-                // setleft1("")
-                // setmiddle1("")
-                // setright1("")
+                setpair_name('')
+                setleft1('')
+                // setleft2('')
+                setmiddle1('')
+                // setmiddle2('')
+                setright1('')
+                // setright2('')
+                settime('')
+                setpairtype('')
+                setinput1('')
+                setinput2('');
             } catch (error: any) {
                 console.log(error);
                 message.error(`please try again`);
@@ -240,6 +243,20 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
 
         //fetch_pair_resources()
         },[account])
+    useEffect(() => {
+      
+        setpair_name('')
+        setleft1('')
+        setleft2('')
+        setmiddle1('')
+        setmiddle2('')
+        setright1('')
+        setright2('')
+        settime('')
+        setpairtype('')
+        setinput1('')
+        setinput2('');
+    }, []);
     return (
         <>
             <Button title={"Create_pair"} style={{height:70,width:200}} onClick={button_click}>
@@ -250,14 +267,14 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
                 <Row gutter={[8,24]}>
 
                         <Col span={24}>
-                            <Input placeholder="pair_name 'XXX vs XXX - LOL/unexpected/dota2/basketball'" onChange={value => {
+                            <Input value={pair_name} placeholder="'XXX vs XXX - LOL/unexpected/dota2/basketball'" onChange={value => {
                                 setpair_name(value.target.value)
                             }}></Input>
                         </Col>
 
 
                         <Col span={24}>
-                            <Input placeholder="left1" onChange={value => {
+                            <Input value={left1} placeholder="left1" onChange={value => {
                                 setleft1(value.target.value)
                             }}></Input>
                         </Col>
@@ -272,7 +289,7 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
 
 
                         <Col span={24}>
-                            <Input placeholder="middle1" onChange={value => {
+                            <Input value={middle1} placeholder="middle1" onChange={value => {
                                 setmiddle1(value.target.value)
                             }}></Input>
                         </Col>
@@ -286,7 +303,7 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
 
 
                         <Col span={24}>
-                            <Input placeholder="right1" onChange={value => {
+                            <Input  value={right1} placeholder="right1" onChange={value => {
                                 setright1(value.target.value)
                             }}></Input>
                         </Col>
@@ -299,15 +316,14 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
                         </Col>
 
                         <Col span={24}>
-                            <Input placeholder="time (dd/mm/yyyy)" onChange={value => {
+                            <Input  value={time}  placeholder="time (dd/mm/yyyy)" onChange={value => {
                                 settime(value.target.value)
                             }}></Input>
                         </Col>
 
 
                         <Col span={24}>
-                            <Input placeholder="pairtype (unexpected/game/sport)" onChange={value => {
-
+                            <Input value={pairtype} placeholder="pairtype (unexpected/game/sport)" onChange={value => {
                                 setpairtype(value.target.value)
                             }}></Input>
                         </Col>
@@ -316,7 +332,7 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
                         <button onClick={() => {
                             setinput1('')
                         }}><img src={input1} style={{height: 100, width: 100}}></img></button>
-                        <Input placeholder="left url" onChange={value => {
+                        <Input value={input1} placeholder="left url" onChange={value => {
                             setinput1(value.target.value)
                         }}></Input>
                     </Col>
@@ -325,7 +341,7 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
                         <button onClick={() => {
                             setinput2('')
                         }}><img src={input2} style={{height: 100, width: 100}}></img></button>
-                        <Input placeholder="right url" onChange={value => {
+                        <Input value={input2} placeholder="right url" onChange={value => {
                             setinput2(value.target.value)
                         }}></Input>
                     </Col>
