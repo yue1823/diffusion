@@ -100,7 +100,7 @@ const BarChart: React.FC<{data1:{win:number,lose:number}}> = ({data1}) => {
     }, [data]);
     return <Bar  data={data} options={options} style={{width:"auto",height:"auto"}}/>;
 };
-const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:Data }>= ({profile_date,diffusion_data}) => {
+const Mobile_my_card: React.FC <{profile_date:Profile,diffusion_data:Data }>= ({profile_date,diffusion_data}) => {
     const [can_claim_pair , set_can_claim_pair]=useState<any[]>([]);
     const [user_have_pair, set_user_have_pair]=useState<any[]>([]);
     const [finish_pair,set_finish_pair]=useState<any[]>([]);
@@ -116,7 +116,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
         }
     };
 
-        // 处理“后一个”按钮点击
+    // 处理“后一个”按钮点击
     const handleNext = () => {
         if (currentIndex + ITEMS_PER_PAGE < big_cols.length) {
             setCurrentIndex(currentIndex + ITEMS_PER_PAGE);
@@ -143,10 +143,10 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
 
                 if(profile_date.data.save_2[j].pair.pair_name == diffusion_data.save_Pair_result_store.save_pair[i].pair_name){
                     //console.log(`profile_date`,profile_date.data.save_2[j].pair.pair_name)
-                   // console.log(`diffusion_data.`,diffusion_data.save_Pair_result_store.save_pair[i].pair_name)
+                    // console.log(`diffusion_data.`,diffusion_data.save_Pair_result_store.save_pair[i].pair_name)
                     if(profile_date.data.save_2[j].pair.expired_time == diffusion_data.save_Pair_result_store.save_pair[i].expired_time){
 
-                       // console.log( ' diffusion_data.save_Pair_result_store.save_result[3+i*2]',diffusion_data.save_Pair_result_store.save_result[3+i*2])
+                        // console.log( ' diffusion_data.save_Pair_result_store.save_result[3+i*2]',diffusion_data.save_Pair_result_store.save_result[3+i*2])
                         if(diffusion_data.save_Pair_result_store.save_result[3+i*2] != 9){
                             if(profile_date.data.save_2[j].which !=  diffusion_data.save_Pair_result_store.save_result[4+i*2] ){
                                 // console.log('4+i*2',3+i*2)
@@ -177,13 +177,13 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
         if(have_pair.length !=0){
             //console.log("big_cols.length",big_cols.length)
             set_pair_for_user()
-          //  console.log("big_cols",big_cols)
+            //  console.log("big_cols",big_cols)
         }
     }
     const set_pair_for_user = () =>{
         const cols: JSX.Element[] = [];
         can_claim_pair.forEach((data,index) => {
-          cols.push(
+            cols.push(
                 <MyCard_bet key={index} status_color={"rgb(5, 240, 40)"} bet_data={data} user_name={profile_date.data.save_1.name}/>
             );
         });
@@ -239,8 +239,8 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
                     {/*</Col>*/}
                     {/*{big_cols}*/}
                     {currentItems.map((item, index) => (
-                    <div key={index}>{item}</div>
-                ))}
+                        <div key={index}>{item}</div>
+                    ))}
                 </Row>
             </Col>
             <Col span={12} offset={2}>
@@ -336,7 +336,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
                                 }}></div>
                             </Col>
                             <Col span={24}>
-                            <Row>
+                                <Row>
                                     <Col span={10}>
                                         <button className={"rainbow"} style={{height:"7vmax",width:"11vmax"}} onClick={handlePrev} disabled={currentIndex === 0}>
                                             <ArrowLeftOutlined style={{position:"relative",right:"1.3vmax"}}/>
@@ -366,7 +366,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
     </>)
 }
 
-export default Is_telegrame_web_my_card;
+export default Mobile_my_card;
 
 const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>=({status_color,bet_data,user_name})=>{
     const { account, signAndSubmitTransaction } = useWallet();
@@ -512,8 +512,8 @@ const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>
                                 backgroundPosition: "center",  // 让图片居中显示
                                 backgroundRepeat: "no-repeat"  // 防止图片重复
                             }}>
-                                 <div style={{height:"5vmax",width:"15vmax",backgroundColor:"rgba(67,67,67,0.6)",position:"absolute",right:"-1vmax",top:"0vmax",borderRadius:5}}>
-                                        <p style={{textAlign:"center",color:"rgba(214,214,214,0.95)"}}>{user_name}</p>
+                                <div style={{height:"5vmax",width:"15vmax",backgroundColor:"rgba(67,67,67,0.6)",position:"absolute",right:"-1vmax",top:"0vmax",borderRadius:5}}>
+                                    <p style={{textAlign:"center",color:"rgba(214,214,214,0.95)"}}>{user_name}</p>
                                 </div>
                                 <div style={{height:"23vmax",width:"23vmax",backgroundColor:"rgba(67,67,67,0.6)",position:"absolute",left:"8vmax",top:"7vmax",borderRadius:5}}>
                                     {whats_pair_need.which === "1" &&
@@ -538,7 +538,7 @@ const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>
                                                 <span style={{textAlign:"left",color:"rgba(214,214,214,0.95)"}}>Pair:</span>
                                                 <span style={{textAlign:"right",color:"rgba(214,214,214,0.95)"}} >{whats_pair_need.left_name} vs {whats_pair_need.right_name}</span>
                                             </p>
-                                                <div style={{border:"solid 0.5px",borderColor:"rgba(179,178,178,0.89)"}}></div>
+                                            <div style={{border:"solid 0.5px",borderColor:"rgba(179,178,178,0.89)"}}></div>
                                         </Col>
                                         <Col span={24} style={{paddingLeft:20 ,paddingRight:20}}>
                                             <p style={{display: "flex", justifyContent: "space-between"}}>
@@ -609,17 +609,17 @@ const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>
                                 </Col>
                             </Row>
 
-                    </Col>
-                </Row>
+                        </Col>
+                    </Row>
 
 
-            </Box>
+                </Box>
 
-        </Modal>
-    <motion.div
-        className={"box"}
-        whileHover={{scale: 1.05}}
-        whileTap={{scale: 0.9}}
+            </Modal>
+            <motion.div
+                className={"box"}
+                whileHover={{scale: 1.05}}
+                whileTap={{scale: 0.9}}
                 transition={{type: "spring", stiffness: 400, damping: 25}}
                 onClick={()=>setOpen(true)}
             >

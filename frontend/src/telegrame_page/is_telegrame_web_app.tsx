@@ -214,7 +214,7 @@ const  Is_telegrame_web_app: React.FC = () => {
     useEffect(() => {
         //console.log(`which : ${which}`)
         solve_which_pair(which)
-    }, [which]);
+    }, [which,aliveable_pairs]);
 
     useEffect(() => {
 
@@ -225,7 +225,8 @@ const  Is_telegrame_web_app: React.FC = () => {
     }, [account]);
     useEffect(() => {
         //console.log('Before rendering:', user_profile_data);
-    }, [user_profile_data]);
+    }, [all_pair_Data]);
+    
     return (
 
         <>

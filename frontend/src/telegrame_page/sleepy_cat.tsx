@@ -168,7 +168,7 @@ const Sleepy_cat: React.FC = () => {
                 backgroundColor: "#fff"
             }}></div>
             <div style={{border:"solid 0.3px" ,height:"6vmax", borderColor:"rgba(195,193,193,0.94)",position:"relative",top:"-17vmax",width:"0.5vmax",left:"25vmax",backgroundColor:"rgba(195,193,193,0.94)",borderRadius:5}}></div>
-            <p style={{color:"#fff",fontSize:35,top:"-22vmax",position:"relative",right:"1vmax"}}>
+            <p style={{color:"#fff",fontSize:35,top:"-22.5vmax",position:"relative",right:"1vmax"}}>
                 APT
             </p>
         </>

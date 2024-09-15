@@ -20,6 +20,7 @@ import {Box} from "@mui/material";
 
 import {Aptos, AptosConfig, Network } from '@aptos-labs/ts-sdk';
 import { AppstoreOutlined, ArrowLeftOutlined, AuditOutlined, CopyOutlined } from '@ant-design/icons';
+import Mobile_my_card from './mobile_my_card';
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 interface SavePair {
@@ -52,6 +53,15 @@ interface Data {
     save_badges_list:any,
     save_helper_chance:any
 }
+interface Profile{
+    data: {
+        save_1: any
+        save_2: any,
+        save_3: any,
+        save_4: any,
+        save_5: any
+    }
+}
 const options = {
     method: 'GET',
     headers: {accept: 'application/json', 'X-API-KEY':`${diffusion.x_api_key}`}
@@ -67,6 +77,7 @@ const  Tel_create_bet: React.FC = () => {
     const [user_profile,set_user_profile]=useState({
         name:'User',icon:'https://pot-124.4everland.store/user_badges.png'
     })
+    const [user_profile_data,set_user_profile_data]=useState<Profile>({data:{save_1:'',save_2:"",save_3:'',save_4:'',save_5:""}});
     const [all_pair_Data,set_all_pairdata]=useState<Data>();
     const [which , set_which ]= useState("");
     const [aliveable_pairs,set_aliveable_pairs]=useState<SavePair[]>([]);
@@ -117,6 +128,7 @@ const  Tel_create_bet: React.FC = () => {
                     .then(response => response.json())
                     .then((response) => {
                         if(response){
+                            set_user_profile_data(response)
                             set_user_profile({
                                 icon:response.data.save_1.icon,
                                 name:response.data.save_1.name
@@ -171,7 +183,9 @@ const  Tel_create_bet: React.FC = () => {
     const solve_which_pair  =(key:string)=>{
         let new_pairs = [] as SavePair[];
         for(let i = 0 ; i < aliveable_pairs.length ; i++ ){
+            // @ts-ignore
             let [first_part,d] = aliveable_pairs[i].pair_name.split(" vs ");
+            // @ts-ignore
             let [secondPart ,thirdPart]= d.split(" - ");
             // console.log(first_part)
             // console.log(secondPart)
@@ -184,11 +198,11 @@ const  Tel_create_bet: React.FC = () => {
        // console.log(`new_pairs :${new_pairs}`)
     }
     const fetchData = async () => {
-        console.log(1);
+        //console.log(1);
         await fetch_data(); // 等待 fetch_data 完成
-        console.log(2);
+        //console.log(2);
         await fetc_pair_from_aptos(); // 等待 fetc_pair_from_aptos 完成
-        console.log(3);
+      //  console.log(3);
         // 确保所有数据都设置好后再调用 select_pair
         select_pair();
     };
@@ -196,13 +210,17 @@ const  Tel_create_bet: React.FC = () => {
     useEffect(() => {
         //console.log(`which : ${which}`)
         solve_which_pair(which)
-    }, [which]);
+    }, [which,aliveable_pairs]);
     useEffect(() => {
 
         if (all_pair_Data && Object.keys(all_pair_Data).length > 0) {
             select_pair();
         }
     }, [all_pair_Data]);
+    useEffect(() => {
+
+        fetchData(); // 执行异步操作
+    }, [account]);
     useEffect(() => {
 
         fetchData(); // 执行异步操作
@@ -294,7 +312,10 @@ const  Tel_create_bet: React.FC = () => {
                                 </Col>
                             </Row>
                             <Col span={24}>
-                                <div style={{border:"solid 1px", backgroundColor:"rgb(223,223,223)",height:"56vmax",borderRadius:10}}></div>
+                                <div style={{border:"solid 1px", backgroundColor:"rgb(223,223,223)",height:"56vmax",borderRadius:10}}>
+                                    {all_pair_Data && user_profile_data.data.save_2.length != 0 &&
+                                        <Mobile_my_card profile_date={user_profile_data} diffusion_data={all_pair_Data}/>}
+                                </div>
                             </Col>
                         </Row>
 
@@ -364,111 +385,116 @@ const  Tel_create_bet: React.FC = () => {
                                     </div>
                                 </Col>
                                 {which == '' ? <>
-                                        <Col span={12}>
-                                            <motion.div
-                                                className={"box"}
-                                                whileHover={{scale: 1.05}}
-                                                whileTap={{scale: 0.9}}
-                                                transition={{type: "spring", stiffness: 400, damping: 25}}
-                                                onClick={()=>{set_which("LOL")}}
-                                            >
-                                                <div style={{height:"17vmax",width:"100%",backgroundColor:"#e46ebb",borderRadius:5}}>
-                                                    <img src={LOL} alt={"lol"}></img>
-                                                </div>
+                                    <Col span={24}>
+                                        <Row gutter={[24,24]}>
+                                            <Col span={12}>
+                                                <motion.div
+                                                    className={"box"}
+                                                    whileHover={{scale: 1.05}}
+                                                    whileTap={{scale: 0.9}}
+                                                    transition={{type: "spring", stiffness: 400, damping: 25}}
+                                                    onClick={()=>{set_which("LOL")}}
+                                                >
+                                                    <div style={{height:"17vmax",width:"100%",backgroundColor:"#e46ebb",borderRadius:5}}>
+                                                        <img src={LOL} alt={"lol"}></img>
+                                                    </div>
 
-                                            </motion.div>
-                                        </Col>
-                                        <Col span={12}>
-                                            <motion.div
-                                                className={"box"}
-                                                whileHover={{scale: 1.05}}
-                                                whileTap={{scale: 0.9}}
-                                                transition={{type: "spring", stiffness: 400, damping: 25}}
-                                                onClick={()=>{set_which("football")}}
-                                            >
-                                                <div style={{
-                                                    height: "17vmax",
-                                                    width: "100%",
-                                                    backgroundColor: "#e46ebb",
-                                                    borderRadius: 5
-                                                }}>
-                                                    <img src={football} alt={"football"}></img>
-                                                </div>
-                                            </motion.div>
-                                        </Col>
-                                        <Col span={12}>
-                                            <motion.div
-                                                className={"box"}
-                                                whileHover={{scale: 1.05}}
-                                                whileTap={{scale: 0.9}}
-                                                transition={{type: "spring", stiffness: 400, damping: 25}}
-                                                onClick={()=>{set_which("basketball")}}
-                                            >
-                                                <div style={{
-                                                    height: "17vmax",
-                                                    width: "100%",
-                                                    backgroundColor: "#e46ebb",
-                                                    borderRadius: 5
-                                                }}>
-                                                    <img src={nba} alt={"nba"}></img>
-                                                </div>
-                                            </motion.div>
-                                        </Col>
-                                        <Col span={12}>
-                                            <motion.div
-                                                className={"box"}
-                                                whileHover={{scale: 1.05}}
-                                                whileTap={{scale: 0.9}}
-                                                transition={{type: "spring", stiffness: 400, damping: 25}}
-                                                onClick={()=>{set_which("dota2")}}
+                                                </motion.div>
+                                            </Col>
+                                            <Col span={12}>
+                                                <motion.div
+                                                    className={"box"}
+                                                    whileHover={{scale: 1.05}}
+                                                    whileTap={{scale: 0.9}}
+                                                    transition={{type: "spring", stiffness: 400, damping: 25}}
+                                                    onClick={()=>{set_which("football")}}
+                                                >
+                                                    <div style={{
+                                                        height: "17vmax",
+                                                        width: "100%",
+                                                        backgroundColor: "#e46ebb",
+                                                        borderRadius: 5
+                                                    }}>
+                                                        <img src={football} alt={"football"}></img>
+                                                    </div>
+                                                </motion.div>
+                                            </Col>
+                                            <Col span={12}>
+                                                <motion.div
+                                                    className={"box"}
+                                                    whileHover={{scale: 1.05}}
+                                                    whileTap={{scale: 0.9}}
+                                                    transition={{type: "spring", stiffness: 400, damping: 25}}
+                                                    onClick={()=>{set_which("basketball")}}
+                                                >
+                                                    <div style={{
+                                                        height: "17vmax",
+                                                        width: "100%",
+                                                        backgroundColor: "#e46ebb",
+                                                        borderRadius: 5
+                                                    }}>
+                                                        <img src={nba} alt={"nba"}></img>
+                                                    </div>
+                                                </motion.div>
+                                            </Col>
+                                            <Col span={12}>
+                                                <motion.div
+                                                    className={"box"}
+                                                    whileHover={{scale: 1.05}}
+                                                    whileTap={{scale: 0.9}}
+                                                    transition={{type: "spring", stiffness: 400, damping: 25}}
+                                                    onClick={()=>{set_which("dota2")}}
 
-                                            >
-                                                <div style={{
-                                                    height: "17vmax",
-                                                    width: "100%",
-                                                    backgroundColor: "#e46ebb",
-                                                    borderRadius: 5
-                                                }}>
-                                                    <img src={dota2} alt={"dota2"}></img>
-                                                </div>
-                                            </motion.div>
-                                        </Col>
-                                        <Col span={12}>
-                                            <motion.div
-                                                className={"box"}
-                                                whileHover={{scale: 1.05}}
-                                                whileTap={{scale: 0.9}}
-                                                transition={{type: "spring", stiffness: 400, damping: 25}}
-                                                onClick={()=>{set_which("cs")}}
-                                            >
-                                                <div style={{
-                                                    height: "17vmax",
-                                                    width: "100%",
-                                                    backgroundColor: "#e46ebb",
-                                                    borderRadius: 5
-                                                }}>
-                                                    <img src={cs} alt={"cs"}></img>
-                                                </div>
-                                            </motion.div>
-                                        </Col>
-                                        <Col span={12}>
-                                            <motion.div
-                                                className={"box"}
-                                                whileHover={{scale: 1.05}}
-                                                whileTap={{scale: 0.9}}
-                                                transition={{type: "spring", stiffness: 400, damping: 25}}
-                                                onClick={()=>{set_which("unexpected")}}
-                                            >
-                                                <div style={{
-                                                    height: "17vmax",
-                                                    width: "100%",
-                                                    backgroundColor: "#e46ebb",
-                                                    borderRadius: 5
-                                                }}>
-                                                    <img src={diffusion_png} alt={"unexpected"}></img>
-                                                </div>
-                                            </motion.div>
-                                        </Col>
+                                                >
+                                                    <div style={{
+                                                        height: "17vmax",
+                                                        width: "100%",
+                                                        backgroundColor: "#e46ebb",
+                                                        borderRadius: 5
+                                                    }}>
+                                                        <img src={dota2} alt={"dota2"}></img>
+                                                    </div>
+                                                </motion.div>
+                                            </Col>
+                                            <Col span={12}>
+                                                <motion.div
+                                                    className={"box"}
+                                                    whileHover={{scale: 1.05}}
+                                                    whileTap={{scale: 0.9}}
+                                                    transition={{type: "spring", stiffness: 400, damping: 25}}
+                                                    onClick={()=>{set_which("cs")}}
+                                                >
+                                                    <div style={{
+                                                        height: "17vmax",
+                                                        width: "100%",
+                                                        backgroundColor: "#e46ebb",
+                                                        borderRadius: 5
+                                                    }}>
+                                                        <img src={cs} alt={"cs"}></img>
+                                                    </div>
+                                                </motion.div>
+                                            </Col>
+                                            <Col span={12}>
+                                                <motion.div
+                                                    className={"box"}
+                                                    whileHover={{scale: 1.05}}
+                                                    whileTap={{scale: 0.9}}
+                                                    transition={{type: "spring", stiffness: 400, damping: 25}}
+                                                    onClick={()=>{set_which("unexpected")}}
+                                                >
+                                                    <div style={{
+                                                        height: "17vmax",
+                                                        width: "100%",
+                                                        backgroundColor: "#e46ebb",
+                                                        borderRadius: 5
+                                                    }}>
+                                                        <img src={diffusion_png} alt={"unexpected"}></img>
+                                                    </div>
+                                                </motion.div>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+
                                     </>
                                     :
                                     <>
