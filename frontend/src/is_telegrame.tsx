@@ -15,7 +15,7 @@ const TelegramDetection: React.FC <{}>= ({}) => {
     const a = async () => {
         setIsTelegram(await isTMA())
         //console.log(`enter to telegrame `)
-       setIsTelegram(true)
+      // setIsTelegram(true)
     }
 
     const check_is_mobile =async () =>{

@@ -163,7 +163,7 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
     const [input1,setinput1]=useState('');
     const [input2,setinput2]=useState('');
 
-
+    
 
     const submit_transaction = async () => {
         const transaction: InputTransactionData = {
@@ -173,6 +173,12 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
             }
         }
         const datePattern = /^(0[1-9]|[12][0-9]|3[01])(0[1-9]|1[0-2])\d{4}$/;
+        const name_pattern = /^[A-Za-z0-9]{1,8} vs [A-Za-z0-9]{1,8} - (LOL|dota2|football|cs|unexpected|basketball)$/;
+
+        if (!name_pattern.test(pair_name)) {
+            message.error("无效的名字。");
+            throw new Error("名字格式不正确。应为 'XXX vs XXX - LOL/unexpected/dota2/basketball' 格式。");
+        }
         if (!datePattern.test(time)) {
             message.error("无效的日期。");
             throw new Error("日期格式不正确。应为 ddmmyyyy 格式，并且日期必须有效。");
@@ -244,7 +250,7 @@ const  Create_pair_button:React.FC<{ }> = ({}) => {
                 <Row gutter={[8,24]}>
 
                         <Col span={24}>
-                            <Input placeholder="pair_name" onChange={value => {
+                            <Input placeholder="pair_name 'XXX vs XXX - LOL/unexpected/dota2/basketball'" onChange={value => {
                                 setpair_name(value.target.value)
                             }}></Input>
                         </Col>
