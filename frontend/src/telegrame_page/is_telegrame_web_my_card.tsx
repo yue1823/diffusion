@@ -12,7 +12,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import {ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import {ArrowLeftOutlined, ArrowRightOutlined, RedoOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import CountdownTimer from '../user/Count_time';
 import Sleepy_cat from './sleepy_cat';
@@ -23,11 +23,21 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 interface Profile{
     data: {
         save_1: any
-        save_2: any[],
+        save_2: Bet_card_data[],
         save_3: any,
         save_4: any,
         save_5: any
     }
+}
+interface Bet_card_data{
+    a_win:string;
+    b_win:string;
+    c_win:string;
+    bet:string;
+    expired_time:string;
+    pair:SavePair;
+    time:string;
+    which:string;
 }
 interface SavePair {
     can_bet:boolean;
@@ -59,6 +69,10 @@ interface Data {
     save_badges_list:any,
     save_helper_chance:any
 }
+const options = {
+    method: 'GET',
+    headers: {accept: 'application/json', 'X-API-KEY':`${diffusion.x_api_key}`}
+};
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 const BarChart: React.FC<{data1:{win:number,lose:number}}> = ({data1}) => {
@@ -105,11 +119,13 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
     const [user_have_pair, set_user_have_pair]=useState<any[]>([]);
     const [finish_pair,set_finish_pair]=useState<any[]>([]);
     const [wrong_pair,set_wrong_pair]=useState<any[]>([]);
+    const [reload_profile,set_reload_profile]=useState<Profile>();
     const [big_cols, setBigCols] = useState<JSX.Element[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const ITEMS_PER_PAGE = 3;
     const currentItems = big_cols.slice(currentIndex, currentIndex + ITEMS_PER_PAGE);
-
+    const [loading, setLoading] = useState(true);
+    const {account}=useWallet();
     const handlePrev = () => {
         if (currentIndex > 0) {
             setCurrentIndex(currentIndex - ITEMS_PER_PAGE);
@@ -123,6 +139,8 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
         }
     };
 
+
+
     const solve_data = () =>{
         let pair = [];
         for(let i =0;i<profile_date.data.save_2.length;i++){
@@ -134,31 +152,137 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
         set_finish_pair(pair);
 
     }
-    const find_pair_of_user =()=>{
+    const reload_button = async ()=>{
+        if (!account){
+            message.error("please connect wallet")
+            return [];
+        }
+        if (profile_date.data.save_2.length < 1 ){
+            // message.error("")
+            return [];
+        }
+        try{
+
+            console.log("steps",1);
+             const aptos_response=await aptos.account.getAccountResource({accountAddress:account.address,resourceType:diffusion.function.diffusion_account_tree()})
+            //      .then( response => {
+            //     console.log("steps",2);
+            //
+            //         if(response ){
+            //
+            //             console.log("steps",3);
+            //             let new_profile={
+            //                 data:{save_1:response.save_1,
+            //                     save_2:response.save_2,
+            //                     save_3:response.save_3,
+            //                     save_4:response.save_4,
+            //                     save_5:response.save_5,
+            //                 }
+            //
+            //             }
+            //
+            //
+            //             console.log("new_profile",new_profile.data.save_2);
+            //             console.log("reload_profile 1",reload_profile );
+            //             set_reload_profile(new_profile)
+            //             console.log("reload_profile 2",reload_profile);
+            //             console.log("steps",5);
+            //             // if (reload_profile){
+            //             //
+            //             //     console.log("steps",6);
+            //             //     find_pair_of_user(reload_profile);
+            //             //     console.log("steps",7);
+            //             //
+            //             // }
+            //
+            //
+            //         }
+            //
+            //     }
+            // );
+
+            const new_vector:Bet_card_data[] =[];
+             for(let i=0;i<aptos_response.save_2.length;i++){
+                 console.log("aptos respone i",i,aptos_response.save_2[i]);
+                 new_vector.push(aptos_response.save_2[i] as Bet_card_data)
+             }
+            console.log("new_vector",new_vector);
+             if(reload_profile){
+                 set_reload_profile({
+                     data:{
+                         save_1:reload_profile.data.save_1,
+                         save_2:new_vector,
+                         save_3:reload_profile.data.save_3,
+                         save_4:reload_profile.data.save_4,
+                         save_5:reload_profile.data.save_5
+                     }
+                 })
+                 console.log("reload_profile 2",reload_profile);
+             }else{
+                 set_reload_profile({
+                     data:{
+                         save_1:aptos_response.save_1,
+                         save_2:new_vector,
+                         save_3:aptos_response.save_3,
+                         save_4:aptos_response.save_4,
+                         save_5:aptos_response.save_5
+                     }
+                 })
+                 console.log("reload_profile 2",reload_profile);
+             }
+
+            //console.log("aptos respone",response_aptos);
+
+            // await fetch(`https://aptos-testnet.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`, options)
+            //     .then(response => response.json())
+            //     .then((response) => {
+            //         console.log('respone data',response)
+            //         if(response){
+            //
+            //             find_pair_of_user(response);
+            //         }
+            //     }).catch(error =>{
+            //         console.log(error)
+            //     });
+            console.log("steps",5);
+        }catch(e:any){
+            console.log(`profile :${e}`)
+        }
+
+    }
+    useEffect(() => {
+        // 当 reload_profile 更新时调用 find_pair_of_user
+        if (reload_profile) {
+            console.log("reload_profile updated", reload_profile);
+            find_pair_of_user(reload_profile);
+        }
+    }, [reload_profile]);
+    const find_pair_of_user =(profile_date1:Profile)=>{
         let have_pair =[];
         let wrong_pair =[];
         let right_pair = [];
-        for(let j = 0 ; j<profile_date.data.save_2.length;j++){
+        console.log('right pair',profile_date1);
+        for(let j = 0 ; j<profile_date1.data.save_2.length;j++){
             for (let i=0; i < diffusion_data.save_Pair_result_store.save_pair.length;i++){
 
-                if(profile_date.data.save_2[j].pair.pair_name == diffusion_data.save_Pair_result_store.save_pair[i].pair_name){
+                if(profile_date1.data.save_2[j].pair.pair_name == diffusion_data.save_Pair_result_store.save_pair[i].pair_name){
                     //console.log(`profile_date`,profile_date.data.save_2[j].pair.pair_name)
                    // console.log(`diffusion_data.`,diffusion_data.save_Pair_result_store.save_pair[i].pair_name)
-                    if(profile_date.data.save_2[j].pair.expired_time == diffusion_data.save_Pair_result_store.save_pair[i].expired_time){
+                    if(profile_date1.data.save_2[j].pair.expired_time == diffusion_data.save_Pair_result_store.save_pair[i].expired_time){
 
                        // console.log( ' diffusion_data.save_Pair_result_store.save_result[3+i*2]',diffusion_data.save_Pair_result_store.save_result[3+i*2])
                         if(diffusion_data.save_Pair_result_store.save_result[3+i*2] != 9){
-                            if(profile_date.data.save_2[j].which !=  diffusion_data.save_Pair_result_store.save_result[4+i*2] ){
+                            if(profile_date1.data.save_2[j].which !=  diffusion_data.save_Pair_result_store.save_result[4+i*2] ){
                                 // console.log('4+i*2',3+i*2)
                                 // console.log('4+i*2 data',diffusion_data.save_Pair_result_store.save_result[3+i*2])
-                                wrong_pair.push(profile_date.data.save_2[j])
+                                wrong_pair.push(profile_date1.data.save_2[j])
                                 //console.log( 'wrong_pair',wrong_pair)
                             }
-                            if(profile_date.data.save_2[j].which =  diffusion_data.save_Pair_result_store.save_result[4+i*2] ){
-                                right_pair.push(profile_date.data.save_2[j])
+                            if(profile_date1.data.save_2[j].which =  diffusion_data.save_Pair_result_store.save_result[4+i*2] ){
+                                right_pair.push(profile_date1.data.save_2[j])
                             }
                         }else{
-                            have_pair.push(profile_date.data.save_2[j])
+                            have_pair.push(profile_date1.data.save_2[j])
                         }
 
                     }
@@ -183,29 +307,35 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
     const set_pair_for_user = () =>{
         const cols: JSX.Element[] = [];
         can_claim_pair.forEach((data,index) => {
+            //console.log('can_claim' ,data);
           cols.push(
                 <MyCard_bet key={index} status_color={"rgb(5, 240, 40)"} bet_data={data} user_name={profile_date.data.save_1.name}/>
             );
         });
         wrong_pair.forEach((data,index) => {
+            //console.log('wrong' ,data);
             cols.push(
                 <MyCard_bet key={cols.length+index} status_color={"rgb(240,5,25)"} bet_data={data} user_name={profile_date.data.save_1.name}/>
             );
         });
         user_have_pair.forEach((data,index) => {
+            //console.log('have' ,data);
             cols.push(
                 <MyCard_bet key={cols.length+index} status_color={"rgb(224,240,5)"} bet_data={data} user_name={profile_date.data.save_1.name}/>
             );
         });
         setBigCols(cols)
+        setLoading(false);
     }
 
 
     useEffect(() => {
-        //console.log('profile_date', profile_date.data.save_2);
-        solve_data();
-        find_pair_of_user();
-    }, [profile_date,diffusion_data]);
+        if (profile_date && diffusion_data) {
+            solve_data();
+            find_pair_of_user(profile_date);
+        }
+    }, [profile_date, diffusion_data]);
+
     useEffect(() => {
         if (can_claim_pair.length || wrong_pair.length || user_have_pair.length) {
             set_pair_for_user();
@@ -238,9 +368,16 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
 
                     {/*</Col>*/}
                     {/*{big_cols}*/}
-                    {currentItems.map((item, index) => (
-                    <div key={index}>{item}</div>
-                ))}
+                    {loading ? (
+                        <div>Loading...</div>  // 显示加载指示
+                    ) : (
+                        <>
+                            {currentItems.map((item, index) => (
+                                <div key={index}>{item}</div>
+                            ))}
+                        </>
+                    )}
+
                 </Row>
             </Col>
             <Col span={12} offset={2}>
@@ -249,16 +386,28 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
                         <Row gutter={[24,6]}>
 
                             <Col span={24} style={{height: "20vmax"}}>
-                                <BarChart data1={{win:profile_date.data.save_5.win as number,lose:profile_date.data.save_5.lose as number}}/>
-                                <div style={{
-                                    border: "solid 1px",
-                                    borderRadius: 5,
-                                    borderColor: "rgb(155,158,155)"
-                                }}></div>
+                                <motion.div
+                                    className={"box"}
+                                    whileHover={{scale: 1.02}}
+                                    whileTap={{scale: 0.95}}
+                                    transition={{type: "spring", stiffness: 500, damping: 60}}
+                                    onClick={() => reload_button()}
+                                >
+                                    <RedoOutlined style={{position: "absolute", fontSize: 18}}/>
+                                </motion.div>
+                                    <BarChart data1={{
+                                        win: profile_date.data.save_5.win as number,
+                                        lose: profile_date.data.save_5.lose as number
+                                    }}/>
+                                    <div style={{
+                                        border: "solid 1px",
+                                        borderRadius: 5,
+                                        borderColor: "rgb(155,158,155)"
+                                    }}></div>
                             </Col>
                             <Col span={24}>
-                                <div style={{height:"19.5vmax",width:"auto"}}>
-                                    <Row gutter={[24,5]} style={{position:"relative",top:-25}}>
+                                <div style={{height: "19.5vmax", width: "auto"}}>
+                                    <Row gutter={[24, 5]} style={{position: "relative", top: -25}}>
                                         <Col span={24} >
                                             <p style={{textAlign:"center",position:"relative",top:-5}}>Status</p>
                                         </Col>
@@ -482,7 +631,11 @@ const MyCard_bet: React.FC <{status_color:string,bet_data:any,user_name:string}>
                 true_or_not: true_of_pair
             })
         }
-        console.log(new_date)
+       // console.log(new_date)
+        // console.log('bet_data',bet_data)
+        // console.log('bet_data.pair.pairname',bet_data.pair.pair_name)
+        // console.log('bet_data.which',bet_data.which)
+        // console.log('whats_pair_need',whats_pair_need)
     }, [bet_data, true_of_pair]);
 
 

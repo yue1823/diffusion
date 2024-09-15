@@ -77,7 +77,7 @@ const   Is_telegrame_web_app_bet_box: React.FC <{save_pair:SavePair}> = ({save_p
             data: {
                 function:diffusion.function.create_bet_card(),
                 typeArguments:[],
-                functionArguments:[transactiom_data.amount*100000000,`${day}${month}${year}`,key,save_pair.pair_name,save_pair.expired_time]
+                functionArguments:[transactiom_data.amount*100000000,`${day}${month}${year}`,key.toString(),save_pair.pair_name,save_pair.expired_time]
             }
         }
         try {

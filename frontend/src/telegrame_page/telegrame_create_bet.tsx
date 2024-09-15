@@ -313,6 +313,9 @@ const  Tel_create_bet: React.FC = () => {
                             </Row>
                             <Col span={24}>
                                 <div style={{border:"solid 1px", backgroundColor:"rgb(223,223,223)",height:"56vmax",borderRadius:10}}>
+                                    {user_profile_data.data.save_2.length == 0 &&
+                                        <p>Create 1 card to open this page</p>
+                                    }
                                     {all_pair_Data && user_profile_data.data.save_2.length != 0 &&
                                         <Mobile_my_card profile_date={user_profile_data} diffusion_data={all_pair_Data}/>}
                                 </div>
