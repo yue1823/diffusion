@@ -333,9 +333,9 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
     }
     const set_pair_for_user = () =>{
         const cols: JSX.Element[] = [];
-        // console.log('right pair',can_claim_pair);
-        // console.log('wrong pair',wrong_pair);
-        // console.log('have pair',user_have_pair);
+        console.log('right pair',can_claim_pair);
+        console.log('wrong pair',wrong_pair);
+        console.log('have pair',user_have_pair);
         can_claim_pair.forEach((data,index) => {
             //console.log('can_claim' ,data);
           cols.push(
@@ -354,6 +354,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
                 <MyCard_bet key={cols.length+index} status_color={"rgb(224,240,5)"} bet_data={data} user_name={profile_date.data.save_1.name}/>
             );
         });
+        console.log('Col length',cols.length);
         setBigCols(cols)
         setLoading(false);
     }
@@ -362,7 +363,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
     useEffect(() => {
         if (profile_date && diffusion_data) {
             solve_data();
-            console.log('profile_date',profile_date)
+            //console.log('profile_date',profile_date)
             find_pair_of_user(profile_date);
         }
     }, [profile_date, diffusion_data]);
@@ -438,11 +439,11 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
                             </Col>
                             <Col span={24}>
                                 <div style={{height: "19.5vmax", width: "auto"}}>
-                                    <Row gutter={[24, 5]} style={{position: "relative", top: -25}}>
+                                    <Row gutter={[24, 0]} style={{position: "relative", top: -25}}>
                                         <Col span={24} >
-                                            <p style={{textAlign:"center",position:"relative",top:-5}}>Status</p>
+                                            <p style={{textAlign:"center",position:"relative",top:-8}}>Status</p>
                                         </Col>
-                                        <Col span={24}>
+                                        <Col span={24} style={{position:"relative",top:-5}}>
                                             <div style={{
                                                 backgroundColor: `rgb(5, 240, 40)`,
                                                 width: "3vmax",
@@ -460,7 +461,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
                                                 top:"-3vmax"
                                             }}></div>
                                         </Col>
-                                        <Col span={24}>
+                                        <Col span={24} style={{position:"relative",top:-13}}>
                                             <div style={{
                                                 backgroundColor: `rgb(240, 5, 25)`,
                                                 width: "3vmax",
@@ -483,7 +484,30 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
                                                 top:"-3vmax"
                                             }}></div>
                                         </Col>
-                                        <Col span={24}>
+                                        <Col span={24} style={{position:"relative",top:-19}}>
+                                            <div style={{
+                                                backgroundColor: `rgb(224, 240, 5)`,
+                                                width: "3vmax",
+                                                height: "3vmax",
+                                                borderRadius: 20
+                                            }}></div>
+                                            <p style={{
+                                                textAlign: "center",
+                                                fontSize: 13,
+                                                position: "inherit",
+                                                top:"-3vmax"
+                                            }}>Pending</p>
+                                            <div style={{
+                                                border: "solid 0.5px",
+                                                borderRadius: 5,
+                                                borderColor: "rgba(155,158,155,0.59)",
+                                                width: "25vmax",
+                                                position: "relative",
+                                                left: "5vmax",
+                                                top:"-3vmax"
+                                            }}></div>
+                                        </Col>
+                                        <Col span={24} style={{position:"relative",top:-24}}>
                                             <div style={{
                                                 backgroundColor: `rgb(224, 240, 5)`,
                                                 width: "3vmax",
@@ -612,7 +636,8 @@ const MyCard_bet: React.FC <{status_color:string,bet_data:Bet_card_data,user_nam
         }
     }, [status_color]);
     useEffect(() => {
-        console.log('bet card data',bet_data)
+       // console.log('bet card data',bet_data)
+        //console.log('data',new Date())
         const randomIndex = Math.floor(Math.random()*random_url.length);
         const input_to_flip_card = random_url[randomIndex];
         set_input_url(input_to_flip_card);
