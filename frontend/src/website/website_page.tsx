@@ -195,7 +195,7 @@ const Website_page: React.FC = () => {
     };
     return (
 
-        <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}} style={{height:9000}}>
+        <Row gutter={{xs: 16, sm: 24, md: 32, lg: 40}} style={{height:8000}} >
             <Col span={24} >
 
                 {/*<div id="circle" className="circle bg-yellow-500"></div>*/}
@@ -233,33 +233,33 @@ const Website_page: React.FC = () => {
                     {/*<KinetComponent/>*/}
                 </Col>
                 <Scroll_down_moon/>
-                <Row style={{height: 1000, position: 'absolute', zIndex: 2 ,top:"0%"}}>
-                    <Col span={16} offset={16}>
-                        {/*<a className={"button-wrapper"} >*/}
-                        {/*    <div style={{position: "absolute", top: 130,left:400}}>*/}
-                        {/*        <span className="dot dot-1"></span>*/}
-                        {/*        <span className="dot dot-2"></span>*/}
-                        {/*        <span className="dot dot-3"></span>*/}
-                        {/*    </div>*/}
+                {/*<Row style={{height: 1000, position: 'absolute', zIndex: 2 ,top:"0%"}}>*/}
+                {/*    <Col span={16} offset={16}>*/}
+                {/*        /!*<a className={"button-wrapper"} >*!/*/}
+                {/*        /!*    <div style={{position: "absolute", top: 130,left:400}}>*!/*/}
+                {/*        /!*        <span className="dot dot-1"></span>*!/*/}
+                {/*        /!*        <span className="dot dot-2"></span>*!/*/}
+                {/*        /!*        <span className="dot dot-3"></span>*!/*/}
+                {/*        /!*    </div>*!/*/}
 
-                        {/*    <span className="dot dot-4"></span>*/}
-                        {/*    <span className="dot dot-5"></span>*/}
-                        {/*    <span className="dot dot-6"></span>*/}
-                        {/*    <span className="dot dot-7"></span>*/}
-                        {/*    <span className={"card_slid"}>*/}
+                {/*        /!*    <span className="dot dot-4"></span>*!/*/}
+                {/*        /!*    <span className="dot dot-5"></span>*!/*/}
+                {/*        /!*    <span className="dot dot-6"></span>*!/*/}
+                {/*        /!*    <span className="dot dot-7"></span>*!/*/}
+                {/*        /!*    <span className={"card_slid"}>*!/*/}
 
-                        {/*        </span>*/}
-                        {/*</a>*/}
-                    </Col>
-                    <Col span={24} >
+                {/*        /!*        </span>*!/*/}
+                {/*        /!*</a>*!/*/}
+                {/*    </Col>*/}
+                {/*    <Col span={24} >*/}
 
-                    </Col>
-                </Row>
-                <Row style={{ height: 3000, position: 'relative', top: 100, left:100, width: '100%', zIndex: 2 }}>
-                    <Col span={24}>
+                {/*    </Col>*/}
+                {/*</Row>*/}
+                {/*<Row style={{ height: 3000, position: 'relative', top: 100, left:100, width: '100%', zIndex: 2 }}>*/}
+                {/*    <Col span={24}>*/}
 
-                    </Col>
-                </Row>
+                {/*    </Col>*/}
+                {/*</Row>*/}
             </Col>
         </Row>
     );
