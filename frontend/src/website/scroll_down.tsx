@@ -18,6 +18,7 @@ import many_tree from "./website_image/樹木.png";
 import APT_LABS_logo from "../art/aptos_labs_logo.jpeg";
 import Mizu_wallet_logo from "../art/mizu wallet.jpeg";
 import Nodit_logo from "../art/nodit_logo.jpeg";
+import Last_tree_on_website from './last_tree_on_website';
 const Scroll_down_moon: React.FC <{}> = ({}) => {
     const [total_position,set_total_position]=useState(0);
     const [textOpacity, setTextOpacity] = useState(0);
@@ -224,7 +225,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         transform: linePosition <=1700 ?`translateY(345px) translateX(${Math.min(scrollPosition, 365)}px)`:`translateY(-100px) translateX(${Math.min(scrollPosition, 365)}px)`,
         backgroundColor: '#bfbfbf',
         borderColorder:'white',
-        transition: 'height 0.1s ease-out',
+        transition: 'height 0.3s ease-out',
         borderRadius:5,
         
     }
@@ -246,7 +247,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         right: `${1180 + scrollPosition * 0.1+50}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `calc(${topPosition} + 3%)`,
         transform: `translateX(${Math.min(scrollPosition, 600)}px)`,
-        transition: 'transform 0.2s ease-out',
+        transition: 'transform 0.3s ease-out',
         zIndex:6,
         width:1000,
         height:1000,
@@ -259,7 +260,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         right: `${1180 + scrollPosition * 0.1+50}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `calc(${topPosition} + 0.0%)`,
         transform: `translateX(${Math.min(scrollPosition, 600)}px)`,
-        transition: 'transform 0.2s ease-out',
+        transition: 'transform 0.3s ease-out',
         zIndex:6,
         width:1000,
         height:1000,
@@ -271,7 +272,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position: 'fixed' as 'fixed',
         right: `${Math.min(-425 + scrollPosition * 0.68)}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `calc(${topPosition} + 2.2% )`,
-        transition: 'transform 0.2s ease-out',
+        transition: 'transform 0.3s ease-out',
         zIndex:5,
         width:1000,
         height:1000,
@@ -282,7 +283,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         right: `${1205 - scrollPosition * 0.68}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `calc(${topPosition} + -37% )`,
         transform: `translateX(${Math.min(scrollPosition, 390)}px)`,
-        transition: 'transform 0.2s ease-out',
+        transition: 'transform 0.3s ease-out',
         zIndex:4,
         width:"100vmax",
         height:"100vmax",
@@ -293,7 +294,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position: 'fixed' as 'fixed',
         right: `${Math.min(-400 + scrollPosition * 0.63)}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `calc(${topPosition} + 3.5% )`,
-        transition: 'transform 0.2s ease-out',
+        transition: 'transform 0.3s ease-out',
         zIndex:3,
         width:1000,
         height:1000,
@@ -305,7 +306,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         right: `${Math.min(-400 + scrollPosition * 0.55)}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `calc(${topPosition} + 18% )`,
         transform: `rotate(-22deg)`,
-        transition: 'transform 0.2s ease-out',
+        transition: 'transform 0.3s ease-out',
         zIndex:6,
         width:1000,
         height:1000,
@@ -316,7 +317,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position: 'fixed' as 'fixed',
         right: `${Math.min(-400 + scrollPosition * 0.67)}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `calc(${topPosition} + 3.0% )`,
-        transition: 'transform 0.2s ease-out',
+        transition: 'transform 0.3s ease-out',
         zIndex:8,
         width:1000,
         height:1000,
@@ -327,7 +328,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position: 'fixed' as 'fixed',
         right: `${Math.min(-400 + scrollPosition * 0.67)}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `calc(${topPosition} + 2.2% )`,
-        transition: 'transform 0.2s ease-out',
+        transition: 'transform 0.3s ease-out',
         zIndex:9,
         width:1000,
         height:1000,
@@ -338,7 +339,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position: 'fixed' as 'fixed',
         right: `${Math.min(-400 + scrollPosition * 0.66)}px`, // 控制月亮的水平位置，隨著滾動向右移動
         top: `calc(${topPosition} + 3.5% )`,
-        transition: 'transform 0.2s ease-out',
+        transition: 'transform 0.3s ease-out',
         zIndex:7,
         width:1000,
         height:1000,
@@ -691,6 +692,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     Diffusion Information
                 </p>
             </div>
+            <Last_tree_on_website/>
         </>
 
     );
