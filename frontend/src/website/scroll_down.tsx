@@ -31,6 +31,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const [SecobdtopPosition, setSecondTopPosition] = useState('60%');
     const [wood_backgroung_opacity,set_wood_background_opacity]=useState(0.0);
     const [wood_logo ,set_wood_logo]=useState(0.0);
+    const [diffusion_information_position,set_diffusion_information_position]=useState(0);
     const handleScroll = () => {
 
             const position = window.scrollY;
@@ -48,6 +49,16 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                 setTopPosition(`${Math.min(-newTopPosition, 40)}%`);
             }
             set_line_Position(position * 0.5);
+
+            if (position > 7300 && position < 7500) {
+                const opacity = Math.min((position - 7300) / 300, 1);
+                set_diffusion_information_position(opacity);
+            } else if (position > 7500 && position < 7900) {
+                const opacity = Math.min((position + 7300) / 300, 1);
+                set_diffusion_information_position(opacity);
+            } else {
+                set_diffusion_information_position(0);
+            }
 
             if (position > 500 && position < 1000) {
                 const opacity = Math.min((position - 700) / 300, 1);
@@ -663,6 +674,22 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                 <LazyLoadImage
                     src={Nodit_logo}
                     style={{...partner_logo3style}} alt="partner logo 3"/>
+            </div>
+            <div style={{position: 'relative'}}>
+                <p style={{
+
+                    opacity: diffusion_information_position,
+                    transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
+                    position: 'fixed', // 让文字固定在某个位置
+                    top: '50%', // 调整为合适的位置
+                    left: '50%',
+                    zIndex: 27,
+                    transform: 'translate(-50%, -50%)',
+                    fontSize: '24px',
+                    color: 'white',
+                }}>
+                    Diffusion Information
+                </p>
             </div>
         </>
 
