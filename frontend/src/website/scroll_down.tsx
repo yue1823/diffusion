@@ -15,6 +15,9 @@ import  Star  from './star';
 import tree2 from "./website_image/樹2.png";
 import tree3 from "./website_image/樹3.png";
 import many_tree from "./website_image/樹木.png";
+import APT_LABS_logo from "../art/aptos_labs_logo.jpeg";
+import Mizu_wallet_logo from "../art/mizu wallet.jpeg";
+import Nodit_logo from "../art/nodit_logo.jpeg";
 const Scroll_down_moon: React.FC <{}> = ({}) => {
 
     const [textOpacity, setTextOpacity] = useState(0);
@@ -26,6 +29,8 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const [treePosition,set_tree_Position]=useState(0);
     const [topPosition, setTopPosition] = useState('10%');
     const [SecobdtopPosition, setSecondTopPosition] = useState('60%');
+    const [wood_backgroung_opacity,set_wood_background_opacity]=useState(0.0);
+    const [wood_logo ,set_wood_logo]=useState(0.0);
     const handleScroll = () => {
 
             const position = window.scrollY;
@@ -85,6 +90,24 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         } else if (position >= 5100 && position < 7000) {
             set_tree_Position(((position-5000) * 0.1));
         } else( set_tree_Position(0));
+
+
+        if (position >= 5200 && position <= 5850) {
+            const opacityValue = Math.min((position - 5200) / (5850 - 5200), 0.9);
+            set_wood_background_opacity(opacityValue);
+        } else if (position < 5200) {
+            set_wood_background_opacity(0); // 滾動小於起始值時設置透明度為 0
+        } else if (position > 5850) {
+            set_wood_background_opacity(0.9); // 滾動超過結束值時設置透明度為 0.9
+        }
+        if (position >= 5850 && position <= 6500) {
+            const opacityValue = Math.min((position - 5850) / (6500 - 5850), 1);
+            set_wood_logo(opacityValue);
+        } else if (position < 5850) {
+            set_wood_logo(0); // 滾動小於起始值時設置透明度為 0
+        } else if (position >6500) {
+            set_wood_logo(1); // 滾動超過結束值時設置透明度為 0.9
+        }
     };
 
     useEffect(() => {
@@ -314,56 +337,141 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position:  'fixed' as 'fixed',
          // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
-        top:`49.5%`,
-        transform:` rotate(4deg) translateX(${Math.min(-800 + treePosition *6, -315)}px) `,
+        top:`39.5%`,
+        transform:` rotate(4deg) translateX(${Math.min(-1050 + treePosition *6, -615)}px) `,
         zIndex:5,
-        width:700,
-        height:700,
+        width:1000,
+        height:1000,
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
     };
     const tree2style = {
         position:  'fixed' as 'fixed',
         // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
-        top:`-2.5%`,
-        transform:` rotate(4deg) translateX(${Math.min(-800 + treePosition *6, -315)}px) `,
+        top:`-11%`,
+        transform:` rotate(4deg) translateX(${Math.min(-1050 + treePosition *6, -555)}px) `,
         zIndex:5,
-        width:700,
-        height:700,
+        width:1000,
+        height:1000,
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
+    const tree4style = {
+        position: 'fixed' as 'fixed',
+        top: `-8%`,
+        transition: ' transform 0.2s ease-out ',
+        transform:`rotate(-4deg) scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1030)}px)`,
+        zIndex:5,
+        width:1000,
+        height:1000,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+
+    };
+    const tree5style = {
+        position: 'fixed' as 'fixed',
+        top: `42.5%`,
+        transition: ' transform 0.2s ease-out ',
+        transform:`rotate(-4deg) scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1150)}px)`,
+        zIndex:5,
+        width:1000,
+        height:1000,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+
     };
     const tree3style = {
         position:  'fixed' as 'fixed',
         // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
-        top:`-3.5%`,
-        transform:` rotate(1deg) translateX(${Math.min(-800 + treePosition *6, -310)}px) `,
+        top:`-18.5%`,
+        transform:` rotate(5deg) translateX(${Math.min(-800 + treePosition *6, -380)}px) `,
         zIndex:4,
-        width:700,
-        height:700,
+        width:800,
+        height:800,
+        filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
+    const tree6style = {
+        position:  'fixed' as 'fixed',
+        // 控制月亮的水平位置，隨著滾動向右移動
+        transition: 'transform 0.2s ease-out ',
+        top:`-15%`,
+        transform:` scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1090)}px) `,
+        zIndex:4,
+        width:800,
+        height:800,
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
     };
     const manytree1style = {
         position:  'fixed' as 'fixed',
         // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
-        top:`-16.5%`,
-        transform:` rotate(-2deg) translateX(${Math.min(-800 + treePosition *10, 150)}px) `,
+        top:`-20%`,
+        transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 250)}px) `,
         zIndex:2,
-        width:700,
-        height:700,
+        width:"70vmax",
+        height:800,
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
     };
     const manytree2style = {
         position:  'fixed' as 'fixed',
         // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
-        top:`30.5%`,
-        transform:` rotate(-2deg) translateX(${Math.min(-1050 + treePosition *15, 120)}px) `,
-        zIndex:4,
+        top:`28.5%`,
+        transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 200)}px) `,
+        zIndex:2,
         width:"70vmax",
         height:800,
         filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
+    const woodbackgroundstyle = {
+        position:  'fixed' as 'fixed',
+        // 控制月亮的水平位置，隨著滾動向右移動
+        // transition: 'transform 0.2s ease-out ',
+        top:`14%`,
+        left:"0%",
+        // transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 120)}px) `,
+        zIndex:1,
+        width:"100%",
+        height:"50%",
+        opacity:wood_backgroung_opacity
+        // filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
+    const partner_logo1style = {
+        position:  'fixed' as 'fixed',
+        // 控制月亮的水平位置，隨著滾動向右移動
+        // transition: 'transform 0.2s ease-out ',
+        top:`25%`,
+        left:"14%",
+        // transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 120)}px) `,
+        zIndex:2,
+        width:"23%",
+        height:"23%",
+        opacity:wood_logo
+        // filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
+    const partner_logo2style = {
+        position:  'fixed' as 'fixed',
+        // 控制月亮的水平位置，隨著滾動向右移動
+        // transition: 'transform 0.2s ease-out ',
+        top:`25%`,
+        left:"39.5%",
+        // transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 120)}px) `,
+        zIndex:2,
+        width:"23%",
+        height:"23%",
+        opacity:wood_logo
+        // filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+    };
+    const partner_logo3style = {
+        position:  'fixed' as 'fixed',
+        // 控制月亮的水平位置，隨著滾動向右移動
+        // transition: 'transform 0.2s ease-out ',
+        top:`25%`,
+        left:"65%",
+        // transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 120)}px) `,
+        zIndex:2,
+        width:"23%",
+        height:"23%",
+        opacity:wood_logo
+        // filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
     };
     return (
         <>
@@ -520,10 +628,40 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                 <LazyLoadImage src={tree3} style={{...tree3style}} alt="tree3"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage src={tree2} style={{...tree4style}} alt="tree4"/>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage src={tree2} style={{...tree5style}} alt="tree5"/>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage src={tree3} style={{...tree6style}} alt="tree3"/>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
                 <LazyLoadImage src={many_tree} style={{...manytree1style}} alt="manytree1"/>
             </div>
             <div id="moon-container" style={{position: 'relative'}}>
                 <LazyLoadImage src={many_tree} style={{...manytree2style}} alt="manytree2"/>
+            </div>
+
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage
+                    src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSHg8XWSDgcK5KCNsqEIQRRE7zQ7t4IUFs-A&s"}
+                    style={{...woodbackgroundstyle}} alt="wood,backgroung"/>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage
+                    src={APT_LABS_logo}
+                    style={{...partner_logo1style}} alt="partner logo 1"/>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage
+                    src={Mizu_wallet_logo}
+                    style={{...partner_logo2style}} alt="partner logo 2"/>
+            </div>
+            <div id="moon-container" style={{position: 'relative'}}>
+                <LazyLoadImage
+                    src={Nodit_logo}
+                    style={{...partner_logo3style}} alt="partner logo 3"/>
             </div>
         </>
 
