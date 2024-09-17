@@ -19,7 +19,7 @@ import APT_LABS_logo from "../art/aptos_labs_logo.jpeg";
 import Mizu_wallet_logo from "../art/mizu wallet.jpeg";
 import Nodit_logo from "../art/nodit_logo.jpeg";
 const Scroll_down_moon: React.FC <{}> = ({}) => {
-
+    const [total_position,set_total_position]=useState(0);
     const [textOpacity, setTextOpacity] = useState(0);
     const [text2Opacity, setText2Opacity] = useState(0);
     const [text3Opacity, setText3Opacity] = useState(0);
@@ -37,6 +37,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
             // 只更新必要的状态
 
             console.log(position);
+            set_total_position(position)
 
             if (position < 400) {
                 setScrollPosition(-position * 0.5);
@@ -73,7 +74,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
             }
             if(position >= 3300){
                 const newTopPosition = ((position - 3000) / 500) * 50;
-                console.log(`${Math.min(-newTopPosition)}%`)
+                //console.log(`${Math.min(-newTopPosition)}%`)
                 setSecondTopPosition(`${Math.min(-newTopPosition)}%`)
             }
         if (position > 4400 && position < 4700) {
@@ -338,7 +339,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
          // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
         top:`39.5%`,
-        transform:` rotate(4deg) translateX(${Math.min(-1050 + treePosition *6, -615)}px) `,
+        transform:total_position <= 6500 ? ` rotate(4deg) translateX(${Math.min(-1050 + treePosition *6, -615)}px) `:`rotate(4deg) translateX(${Math.min(-1050 + treePosition *6, -615)}px) translateY(-${(total_position -6500 )*1}px)`,
         zIndex:5,
         width:1000,
         height:1000,
@@ -349,7 +350,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
         top:`-11%`,
-        transform:` rotate(4deg) translateX(${Math.min(-1050 + treePosition *6, -555)}px) `,
+        transform:total_position <= 6500 ? ` rotate(4deg) translateX(${Math.min(-1050 + treePosition *6, -555)}px) `:` rotate(4deg) translateX(${Math.min(-1050 + treePosition *6, -555)}px) translateY(-${(total_position -6500 )*1}px)`,
         zIndex:5,
         width:1000,
         height:1000,
@@ -359,7 +360,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position: 'fixed' as 'fixed',
         top: `-8%`,
         transition: ' transform 0.2s ease-out ',
-        transform:`rotate(-4deg) scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1030)}px)`,
+        transform:total_position <= 6500 ?`rotate(-4deg) scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1030)}px)`:`rotate(-4deg) scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1030)}px) translateY(-${(total_position -6500 )*1}px)`,
         zIndex:5,
         width:1000,
         height:1000,
@@ -370,7 +371,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         position: 'fixed' as 'fixed',
         top: `42.5%`,
         transition: ' transform 0.2s ease-out ',
-        transform:`rotate(-4deg) scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1150)}px)`,
+        transform:total_position <= 6500 ?`rotate(-4deg) scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1150)}px)`:`rotate(-4deg) scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1150)}px) translateY(-${(total_position -6500 )*1}px)`,
         zIndex:5,
         width:1000,
         height:1000,
@@ -382,7 +383,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
         top:`-18.5%`,
-        transform:` rotate(5deg) translateX(${Math.min(-800 + treePosition *6, -380)}px) `,
+        transform:total_position <= 6500 ?` rotate(5deg) translateX(${Math.min(-800 + treePosition *6, -380)}px) `:` rotate(5deg) translateX(${Math.min(-800 + treePosition *6, -380)}px) translateY(-${(total_position -6500 )*1}px)`,
         zIndex:4,
         width:800,
         height:800,
@@ -393,7 +394,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
         top:`-15%`,
-        transform:` scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1090)}px) `,
+        transform:total_position <= 6500 ?` scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1090)}px) `:` scaleX(-1) translateX(${Math.min(-1500 + treePosition *6, -1090)}px) translateY(-${(total_position -6500 )*1}px) `,
         zIndex:4,
         width:800,
         height:800,
@@ -404,7 +405,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
         top:`-20%`,
-        transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 250)}px) `,
+        transform:total_position <= 6500 ?` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 250)}px) `:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 250)}px) translateY(-${(total_position -6500 )*1}px) `,
         zIndex:2,
         width:"70vmax",
         height:800,
@@ -415,7 +416,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         // 控制月亮的水平位置，隨著滾動向右移動
         transition: 'transform 0.2s ease-out ',
         top:`28.5%`,
-        transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 200)}px) `,
+        transform:total_position <= 6500 ?` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 200)}px) `:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 200)}px) translateY(-${(total_position -6500 )*1}px) `,
         zIndex:2,
         width:"70vmax",
         height:800,
@@ -424,10 +425,10 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const woodbackgroundstyle = {
         position:  'fixed' as 'fixed',
         // 控制月亮的水平位置，隨著滾動向右移動
-        // transition: 'transform 0.2s ease-out ',
+        transition: 'transform 0.2s ease-out ',
         top:`14%`,
         left:"0%",
-        // transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 120)}px) `,
+        transform:total_position <= 6500 ?` `:`translateY(-${(total_position -6500 )*1}px)`,
         zIndex:1,
         width:"100%",
         height:"50%",
@@ -437,10 +438,10 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const partner_logo1style = {
         position:  'fixed' as 'fixed',
         // 控制月亮的水平位置，隨著滾動向右移動
-        // transition: 'transform 0.2s ease-out ',
+         transition: 'transform 0.2s ease-out ',
         top:`25%`,
         left:"14%",
-        // transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 120)}px) `,
+        transform:total_position <= 6500 ?` `:`translateY(-${(total_position -6500 )*1}px)`,
         zIndex:2,
         width:"23%",
         height:"23%",
@@ -450,10 +451,10 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const partner_logo2style = {
         position:  'fixed' as 'fixed',
         // 控制月亮的水平位置，隨著滾動向右移動
-        // transition: 'transform 0.2s ease-out ',
+        transition: 'transform 0.2s ease-out ',
         top:`25%`,
         left:"39.5%",
-        // transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 120)}px) `,
+        transform:total_position <= 6500 ?` `:`translateY(-${(total_position -6500 )*1}px)`,
         zIndex:2,
         width:"23%",
         height:"23%",
@@ -463,10 +464,10 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const partner_logo3style = {
         position:  'fixed' as 'fixed',
         // 控制月亮的水平位置，隨著滾動向右移動
-        // transition: 'transform 0.2s ease-out ',
+         transition: 'transform 0.2s ease-out ',
         top:`25%`,
         left:"65%",
-        // transform:` rotate(-2deg) translateX(${Math.min(-1060 + treePosition *15, 120)}px) `,
+        transform:total_position <= 6500 ?` `:`translateY(-${(total_position -6500 )*1}px)`,
         zIndex:2,
         width:"23%",
         height:"23%",
