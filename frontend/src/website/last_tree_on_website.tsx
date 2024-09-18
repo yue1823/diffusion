@@ -12,6 +12,7 @@ import Down_tree1  from "./last_tree/down_tree1.png";
 import Down_tree2 from "./last_tree/down_tree2.png";
 import Down_tree3 from "./last_tree/down_tree3.png";
 import Down_tree4 from "./last_tree/down_tree4.png";
+import Down_tree5 from "./last_tree/down_tree5.png";
 import Road_light1 from "./last_tree/road_light1.png";
 import Road_light2 from "./last_tree/road_light2.png";
 import Road_main from "./last_tree/road.png";
@@ -116,7 +117,7 @@ const Last_tree_on_website: React.FC <{}> = ({}) => {
     const down_tree1_position = {
 
         transition: 'opacity 0.5s ease-in-out',
-        top:"93%",
+        top:"93.4%",
         height:"120%",
         width:"auto",
         left:"13%",
@@ -150,13 +151,22 @@ const Last_tree_on_website: React.FC <{}> = ({}) => {
         zIndex: 1,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
+    const down_tree5_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"101.5%",
+        height:"150%",
+        width:"auto",
+        left:"5.3%",
+        zIndex: 2,
+        transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
+    }
     const road_light1_position = {
         transition: 'opacity 0.5s ease-in-out',
         top:"22%",
         height:"150%",
         width:"auto",
         left:"-22.7%",
-        zIndex: 1,
+        zIndex: 3,
         transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((scrollPosition-9500)*3.8,-580)}px) translateY(${Math.max((9200 -scrollPosition)*0.2,-50 )}%)`,
     }
     const road_light2_position = {
@@ -165,18 +175,18 @@ const Last_tree_on_website: React.FC <{}> = ({}) => {
         height:"150%",
         width:"auto",
         left:"48%",
-        zIndex: 1,
+        zIndex: 3,
         transform:scrollPosition <= 9450 ?``:`translateX(${Math.max(-(scrollPosition-9500)*6.25,-850)}px) translateY(${Math.max((9200 -scrollPosition)*0.2,-50 )}%)`,
         //translateY(${Math.max((scrollPosition-9500),-100)}px)
     }
     const road_main_position = {
         transition: 'opacity 0.5s ease-in-out',
-        top:"60%",
+        top:"29%",
         height:"180%",
         width:"auto",
         left:"0%",
-        zIndex: 3,
-        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4}%) translateY(${Math.max((9200 -scrollPosition)*0.1 ),-77.5}%)`,
+        zIndex: 4,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4}%) translateY(${Math.max((9200 -scrollPosition)*0.145 )}%)`,
         //translateY(${Math.max((scrollPosition-9500),-100)}px)
     }
     return (
@@ -227,6 +237,7 @@ const Last_tree_on_website: React.FC <{}> = ({}) => {
                 <LazyLoadImage
                     src={Down_tree4}
                     style={{...down_tree4_position, position: "fixed"}} alt="down tree4 "/>
+
                 <LazyLoadImage
                     src={Road_light1}
                     style={{...road_light1_position, position: "fixed"}} alt="Road_light1 "/>
@@ -236,6 +247,9 @@ const Last_tree_on_website: React.FC <{}> = ({}) => {
                 <LazyLoadImage
                     src={Road_main}
                     style={{...road_main_position, position: "fixed"}} alt="Road_main"/>
+                <LazyLoadImage
+                    src={Down_tree5}
+                    style={{...down_tree5_position, position: "fixed"}} alt="down tree5 "/>
             </div>
 
         </>
