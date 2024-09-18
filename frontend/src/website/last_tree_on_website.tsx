@@ -16,6 +16,13 @@ import Down_tree5 from "./last_tree/down_tree5.png";
 import Road_light1 from "./last_tree/road_light1.png";
 import Road_light2 from "./last_tree/road_light2.png";
 import Road_main from "./last_tree/road.png";
+import Left_rock1 from "./last_tree/left/rock1_left.png";
+import Left_rock2 from "./last_tree/left/rock2_left.png";
+import Left_rock3 from "./last_tree/left/rock3_left.png";
+import Left_rock4 from "./last_tree/left/rock4_left.png";
+import Left_rock5 from "./last_tree/left/rock5_left.png";
+import Left_rock6 from "./last_tree/left/rock6_left.png";
+import Left_rock7 from "./last_tree/left/rock7_left.png";
 const Last_tree_on_website: React.FC <{}> = ({}) => {
     const [scrollPosition, setScrollPosition] = useState(0);
     useEffect(() => {
@@ -152,12 +159,19 @@ const Last_tree_on_website: React.FC <{}> = ({}) => {
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
     const down_tree5_position = {
+        // transition: 'opacity 0.5s ease-in-out',
+        // top:"94%",
+        // height:"150%",
+        // width:"auto",
+        // left:"5.3%",
+        // zIndex: 2,
+        // transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.096 ,-90)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-95)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
         transition: 'opacity 0.5s ease-in-out',
-        top:"101.5%",
-        height:"150%",
+        top:"94%",
+        height:"120%",
         width:"auto",
-        left:"5.3%",
-        zIndex: 2,
+        left:"13.3%",
+        zIndex: 1,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
     const road_light1_position = {
@@ -176,10 +190,80 @@ const Last_tree_on_website: React.FC <{}> = ({}) => {
         width:"auto",
         left:"48%",
         zIndex: 3,
-        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max(-(scrollPosition-9500)*6.25,-850)}px) translateY(${Math.max((9200 -scrollPosition)*0.2,-50 )}%)`,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max(-(scrollPosition-9500)*6.35,-850)}px) translateY(${Math.max((9200 -scrollPosition)*0.2,-50 )}%)`,
         //translateY(${Math.max((scrollPosition-9500),-100)}px)
     }
     const road_main_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"180%",
+        width:"auto",
+        left:"0%",
+        zIndex: 4,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4}%) translateY(${Math.max((9200 -scrollPosition)*0.145 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const left_rock1_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"180%",
+        width:"auto",
+        left:"0%",
+        zIndex: 4,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4}%) translateY(${Math.max((9200 -scrollPosition)*0.145 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const left_rock2_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"180%",
+        width:"auto",
+        left:"0%",
+        zIndex: 4,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4}%) translateY(${Math.max((9200 -scrollPosition)*0.145 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const left_rock3_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"180%",
+        width:"auto",
+        left:"0%",
+        zIndex: 4,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4}%) translateY(${Math.max((9200 -scrollPosition)*0.145 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const left_rock4_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"180%",
+        width:"auto",
+        left:"0%",
+        zIndex: 4,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4}%) translateY(${Math.max((9200 -scrollPosition)*0.145 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const left_rock5_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"180%",
+        width:"auto",
+        left:"0%",
+        zIndex: 4,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4}%) translateY(${Math.max((9200 -scrollPosition)*0.145 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const left_rock6_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"180%",
+        width:"auto",
+        left:"0%",
+        zIndex: 4,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4}%) translateY(${Math.max((9200 -scrollPosition)*0.145 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const left_rock7_position = {
         transition: 'opacity 0.5s ease-in-out',
         top:"29%",
         height:"180%",
@@ -237,7 +321,9 @@ const Last_tree_on_website: React.FC <{}> = ({}) => {
                 <LazyLoadImage
                     src={Down_tree4}
                     style={{...down_tree4_position, position: "fixed"}} alt="down tree4 "/>
-
+                <LazyLoadImage
+                    src={Down_tree5}
+                    style={{...down_tree5_position, position: "fixed"}} alt="down tree5 "/>
                 <LazyLoadImage
                     src={Road_light1}
                     style={{...road_light1_position, position: "fixed"}} alt="Road_light1 "/>
@@ -247,9 +333,30 @@ const Last_tree_on_website: React.FC <{}> = ({}) => {
                 <LazyLoadImage
                     src={Road_main}
                     style={{...road_main_position, position: "fixed"}} alt="Road_main"/>
-                <LazyLoadImage
-                    src={Down_tree5}
-                    style={{...down_tree5_position, position: "fixed"}} alt="down tree5 "/>
+                <div id={"left"}>
+                    <LazyLoadImage
+                        src={Left_rock1}
+                        style={{...left_rock1_position, position: "fixed"}} alt="left_rock1"/>
+                    <LazyLoadImage
+                        src={Left_rock2}
+                        style={{...left_rock2_position, position: "fixed"}} alt="left_rock2"/>
+                    <LazyLoadImage
+                        src={Left_rock3}
+                        style={{...left_rock3_position, position: "fixed"}} alt="left_rock3"/>
+                    <LazyLoadImage
+                        src={Left_rock4}
+                        style={{...left_rock4_position, position: "fixed"}} alt="left_rock4"/>
+                    <LazyLoadImage
+                        src={Left_rock5}
+                        style={{...left_rock5_position, position: "fixed"}} alt="left_rock5"/>
+                    <LazyLoadImage
+                        src={Left_rock6}
+                        style={{...left_rock6_position, position: "fixed"}} alt="left_rock6"/>
+                    <LazyLoadImage
+                        src={Left_rock7}
+                        style={{...left_rock7_position, position: "fixed"}} alt="left_rock7"/>
+                </div>
+
             </div>
 
         </>
