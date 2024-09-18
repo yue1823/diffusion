@@ -23,6 +23,11 @@ import Left_rock4 from "./last_tree/left/rock4_left.png";
 import Left_rock5 from "./last_tree/left/rock5_left.png";
 import Left_rock6 from "./last_tree/left/rock6_left.png";
 import Left_rock7 from "./last_tree/left/rock7_left.png";
+import Right_rock1 from "./last_tree/Right/Right_rock1.png";
+import Right_rock2 from "./last_tree/Right/Right_rock2.png";
+import Right_rock3 from "./last_tree/Right/Right_rock3.png";
+import Right_rock4 from "./last_tree/Right/Right_rock4.png";
+import Right_rock5 from "./last_tree/Right/Right_rock5.png";
 const Last_tree_on_website: React.FC <{}> = ({}) => {
     const [scrollPosition, setScrollPosition] = useState(0);
     useEffect(() => {
@@ -273,6 +278,56 @@ const Last_tree_on_website: React.FC <{}> = ({}) => {
         transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4}%) translateY(${Math.max((9200 -scrollPosition)*0.145 )}%)`,
         //translateY(${Math.max((scrollPosition-9500),-100)}px)
     }
+    const right_rock1_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"210%",
+        width:"120%",
+        left:"-3%",
+        zIndex: 3,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4}%) translateY(${Math.max((9200 -scrollPosition)*0.153 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const right_rock2_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"220%",
+        width:"120%",
+        left:"-3%",
+        zIndex: 5,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),6.6}%) translateY(${Math.max((9200 -scrollPosition)*0.156 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const right_rock3_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"200%",
+        width:"100%",
+        left:"-4%",
+        zIndex: 4,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),4.1}%) translateY(${Math.max((9200 -scrollPosition)*0.151 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const right_rock4_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"230%",
+        width:"120%",
+        left:"-4%",
+        zIndex: 4,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((9200 -scrollPosition)*0.1 ),7.8}%) translateY(${Math.max((9200 -scrollPosition)*0.158)}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const right_rock5_position = {
+        transition: 'opacity 0.5s ease-in-out',
+        top:"29%",
+        height:"220%",
+        width:"140%",
+        left:"-3%",
+        zIndex: 3,
+        transform:scrollPosition <= 9450 ?``:`rotate(-3deg) translateX(${Math.max((9200 -scrollPosition)*0.1 ),8.9}%) translateY(${Math.max((9200 -scrollPosition)*0.157 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
     return (
         <>
             {/*scale(18)*/}
@@ -356,7 +411,23 @@ const Last_tree_on_website: React.FC <{}> = ({}) => {
                         src={Left_rock7}
                         style={{...left_rock7_position, position: "fixed"}} alt="left_rock7"/>
                 </div>
-
+                <div id={"right"}>
+                    <LazyLoadImage
+                        src={Right_rock1}
+                        style={{...right_rock1_position, position: "fixed"}} alt="Right_rock1"/>
+                    <LazyLoadImage
+                        src={Right_rock2}
+                        style={{...right_rock2_position, position: "fixed"}} alt="Right_rock2"/>
+                    <LazyLoadImage
+                        src={Right_rock3}
+                        style={{...right_rock3_position, position: "fixed"}} alt="Right_rock3"/>
+                    <LazyLoadImage
+                        src={Right_rock4}
+                        style={{...right_rock4_position, position: "fixed"}} alt="Right_rock4"/>
+                    <LazyLoadImage
+                        src={Right_rock5}
+                        style={{...right_rock5_position, position: "fixed"}} alt="Right_rock5"/>
+                </div>
             </div>
 
         </>
