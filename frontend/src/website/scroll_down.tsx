@@ -37,8 +37,8 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
 
             const position = window.scrollY;
             // 只更新必要的状态
-
-            console.log(position);
+            //console.log('8500 position ',Math.max((8500 - position)*0.1 ,-70))
+             console.log(position);
             set_total_position(position)
 
             if (position < 400) {
