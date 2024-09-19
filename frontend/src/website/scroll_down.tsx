@@ -19,6 +19,8 @@ import APT_LABS_logo from "../art/aptos_labs_logo.jpeg";
 import Mizu_wallet_logo from "../art/mizu wallet.jpeg";
 import Nodit_logo from "../art/nodit_logo.jpeg";
 import Last_tree_on_website from './last_tree_on_website';
+
+
 const Scroll_down_moon: React.FC <{}> = ({}) => {
     const [total_position,set_total_position]=useState(0);
     const [textOpacity, setTextOpacity] = useState(0);
@@ -692,7 +694,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
                     Diffusion Information
                 </p>
             </div>
-            <Last_tree_on_website/>
+            <Last_tree_on_website scrollPosition={total_position}/>
 
         </>
 
@@ -730,6 +732,6 @@ const LazyLoadImage = ({src, alt, style}: { src: string; alt: string; style: Rea
     }, []);
 
     return (
-        <img ref={imgRef} src={isVisible ? src : undefined} alt={alt} style={style} />
+        <img ref={imgRef} src={isVisible ? src : "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="} alt={alt} style={style} />
     );
 };
