@@ -30,7 +30,13 @@ import Right_rock3 from "./last_tree/Right/Right_rock3.png";
 import Right_rock4 from "./last_tree/Right/Right_rock4.png";
 import Right_rock5 from "./last_tree/Right/Right_rock5.png";
 import Right_light from "./last_tree/Right/Right_light1.png";
+import Left_light from "./last_tree/left/Left_light1.png";
+import "../css_folder/App.css";
+import {Link, Route, Routes} from "react-router-dom";
+import Swap_page from "../swap_page/swap_box.tsx";
+import Main_content from '../content/content';
 const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPosition}) => {
+
     // const [scrollPosition, setScrollPosition] = useState(0);
     // useEffect(() => {
     //
@@ -49,7 +55,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"120%",
         width:"100%",
-        left:"13%",
+        left:"1%",
         zIndex: 7,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-110)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1000))})`
     }
@@ -58,7 +64,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"120%",
         width:"100%",
-        left:"13%",
+        left:"1%",
         zIndex: 10,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -67,7 +73,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"122%",
         width:"100%",
-        left:"12.5%",
+        left:"1%",
         zIndex: 7,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -76,7 +82,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"120%",
         width:"100%",
-        left:"13%",
+        left:"1%",
         zIndex: 10,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -86,7 +92,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"122%",
         width:"100%",
-        left:"13%",
+        left:"1%",
         zIndex: 13,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -96,7 +102,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"122%",
         width:"100%",
-        left:"13.5%",
+        left:"1%",
         zIndex: 14,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -105,7 +111,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"120%",
         width:"100%",
-        left:"13%",
+        left:"1%",
         zIndex: 11,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -114,7 +120,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"120%",
         width:"100%",
-        left:"13.5%",
+        left:"1%",
         zIndex: 11,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -124,7 +130,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"122%",
         width:"100%",
-        left:"13.5%",
+        left:"1%",
         zIndex: 11,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -134,7 +140,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93.4%",
         height:"120%",
         width:"100%",
-        left:"13%",
+        left:"1%",
         zIndex: 8,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -143,7 +149,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"120%",
         width:"100%",
-        left:"13.2%",
+        left:"1%",
         zIndex: 7,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -152,7 +158,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"120%",
         width:"100%",
-        left:"13.3%",
+        left:"1%",
         zIndex: 7,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -161,8 +167,8 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"93%",
         height:"120%",
         width:"100%",
-        left:"13.3%",
-        zIndex: 1,
+        left:"1%",
+        zIndex: 40,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
     const down_tree5_position = {
@@ -177,7 +183,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         top:"94%",
         height:"120%",
         width:"100%",
-        left:"13.3%",
+        left:"1%",
         zIndex: 1,
         transform:scrollPosition <= 9500 ?`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%)`:`translateY(${Math.max((8500 -scrollPosition)*0.1 ,-100)}%) scale(${(Math.max(0.15, 1 - (scrollPosition - 9500) / 1500))})`
     }
@@ -348,14 +354,37 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
         zIndex: 0,
         transform:scrollPosition <= 9450 ?``:`translateX(${Math.max((scrollPosition-9500)*2.9,-480)}px) translateY(${Math.max((9200 -scrollPosition)*0.2,-32 )}%) rotate(-5deg)`,
     }
+    const left_wood_position = {
+        transition: 'opacity 0.2s ease-in-out',
+        top:"54%",
+        height:"150%",
+        width:"100%",
+        left:"97.8%",
+        zIndex: 2,
+        transform:scrollPosition <= 9450 ?``:`translateX(${Math.max(-(scrollPosition-9500)*1.1,-850)}px) translateY(${Math.max((9200 -scrollPosition)*0.2,-50 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+    const left_light1_position = {
+        transition: 'opacity 0.2s ease-in-out',
+        top:"51%",
+        height:"140%",
+        width:"100%",
+        left:"48%",
+        zIndex: 3,
+        transform:scrollPosition <= 9450 ?``:`  rotate(-1deg) translateX(${Math.max(-(scrollPosition-9500)*6,-850)}px) translateY(${Math.max((9200 -scrollPosition)*0.2,-50 )}%)`,
+        //translateY(${Math.max((scrollPosition-9500),-100)}px)
+    }
+
+
     return (
         <>
             {/*scale(18)*/}
-            {scrollPosition >= 8000 && (<>
+            {scrollPosition >= 7000 && (<>
                 <div style={{
                     overflow: "hidden", margin: 0,
                     padding: 0
                 }}>
+
                     <LazyLoadImage
                         src={Tree1}
                         style={{...tree1_position, position: "fixed"}} alt="last tree 1"/>
@@ -393,9 +422,17 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
                     <LazyLoadImage
                         src={Down_tree3}
                         style={{...down_tree3_position, position: "fixed"}} alt="down tree3 "/>
-                    <LazyLoadImage
-                        src={Down_tree4}
-                        style={{...down_tree4_position, position: "fixed"}} alt="down tree4 "/>
+                    <Routes>
+                        {/*<Route  path={"diffusion/swap"} element={<Swap_page/>}/>*/}
+                        <Route  path={"../diffusion/" } element={<Main_content address={''} index_of_address={0}/>}/>
+                    </Routes>
+                    <Link to={"../diffusion/"}>
+                        <img src={Down_tree4}
+                             style={{...down_tree4_position, position: "fixed"}} alt="down tree4 "></img>
+                    </Link>
+                    {/*<LazyLoadImage*/}
+                    {/*    src={Down_tree4}*/}
+                    {/*    style={{...down_tree4_position, position: "fixed"}} alt="down tree4 "/>*/}
                     <LazyLoadImage
                         src={Down_tree5}
                         style={{...down_tree5_position, position: "fixed"}} alt="down tree5 "/>
@@ -430,6 +467,12 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
                         <LazyLoadImage
                             src={Left_rock7}
                             style={{...left_rock7_position, position: "fixed"}} alt="left_rock7"/>
+                        <LazyLoadImage
+                            src={Right_wood}
+                            style={{...left_wood_position, position: "fixed"}} alt="left_wood"/>
+                        <LazyLoadImage
+                            src={Left_light}
+                            style={{...left_light1_position, position: "fixed"}} alt="left_light1"/>
                     </div>
                     <div id={"right"}>
                         <LazyLoadImage
@@ -437,7 +480,7 @@ const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPositio
                             style={{...right_rock1_position, position: 'fixed' as 'fixed'}} alt="Right_rock1"/>
                         <LazyLoadImage
                             src={Right_rock2}
-                            style={{...right_rock2_position, position:'fixed' as 'fixed'}} alt="Right_rock2"/>
+                            style={{...right_rock2_position, position: 'fixed' as 'fixed'}} alt="Right_rock2"/>
                         <LazyLoadImage
                             src={Right_rock3}
                             style={{...right_rock3_position, position: "fixed"}} alt="Right_rock3"/>
@@ -465,6 +508,7 @@ export default Last_tree_on_website;
 
 const LazyLoadImage = ({src, alt, style}: { src: string; alt: string; style: React.CSSProperties }) => {
     const [isVisible, setIsVisible] = useState(false);
+
     const imgRef = useRef<HTMLImageElement>(null);
 
     useEffect(() => {

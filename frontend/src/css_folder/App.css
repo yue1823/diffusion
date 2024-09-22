@@ -10,3 +10,10 @@
     transform: translate(calc(50vw - 50px), calc(50vh - 50px)); /* 终点位置: 居中 (页面中央) */
   }
 }
+
+.animated-element {
+  will-change: transform, opacity;
+}
+.low-fps-animation {
+  animation: example-animation 2s steps(30); /* 每秒更新 30 帧 */
+}

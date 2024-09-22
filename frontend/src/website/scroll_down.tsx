@@ -35,7 +35,20 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const [wood_backgroung_opacity,set_wood_background_opacity]=useState(0.0);
     const [wood_logo ,set_wood_logo]=useState(0.0);
     const [diffusion_information_position,set_diffusion_information_position]=useState(0);
-    const handleScroll = () => {
+    const debounce = <T extends (...args: any[]) => void>(func: T, delay: number): (...args: Parameters<T>) => void => {
+        let timeout: NodeJS.Timeout | null;
+
+        return (...args: Parameters<T>) => {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+
+            timeout = setTimeout(() => {
+                func(...args);
+            }, delay);
+        };
+    };
+    const handleScroll = debounce(() => {
 
             const position = window.scrollY;
             // 只更新必要的状态
@@ -123,7 +136,7 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
         } else if (position >6500) {
             set_wood_logo(1); // 滾動超過結束值時設置透明度為 0.9
         }
-    };
+    },1);
 
     useEffect(() => {
         const handleScrollThrottled = () => {
@@ -478,222 +491,226 @@ const Scroll_down_moon: React.FC <{}> = ({}) => {
     const partner_logo3style = {
         position:  'fixed' as 'fixed',
         // 控制月亮的水平位置，隨著滾動向右移動
-         transition: 'transform 0.2s ease-out ',
-        top:`25%`,
-        left:"65%",
-        transform:total_position <= 6500 ?` `:`translateY(-${(total_position -6500 )*1}px)`,
-        zIndex:2,
-        width:"23%",
-        height:"23%",
-        opacity:wood_logo
-        // filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
-    };
-    return (
-        <>
-            <div id="god-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={god1} style={godStyle} alt="god1"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={moon1} style={moon1Style} alt="Moon1"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={moon2} style={moon2Style} alt="Moon2"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={cloud1} style={cloud1style} alt="cloud1"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={cloud2} style={cloud2style} alt="cloud2"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={cloud3} style={cloud3style} alt="cloud3"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={cloud4} style={cloud4style} alt="cloud4"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={cloud5} style={cloud5style} alt="cloud5"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={cloud6} style={cloud6style} alt="cloud6"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={god2} style={god2style} alt="god2"/>
-            </div>
+             transition: 'transform 0.2s ease-out ',
+            top:`25%`,
+            left:"65%",
+            transform:total_position <= 6500 ?` `:`translateY(-${(total_position -6500 )*1}px)`,
+            zIndex:2,
+            width:"23%",
+            height:"23%",
+            opacity:wood_logo
+            // filter: 'drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7))',
+        };
+        return (
+            <>
+            {total_position <= 8500 && <>
 
-            {scrollPosition <= 590 ? <></> : <>
-                <div style={fishinglink}></div>
+
+                <div id="god-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={god1} style={godStyle} alt="god1"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={moon1} style={moon1Style} alt="Moon1"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={moon2} style={moon2Style} alt="Moon2"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={cloud1} style={cloud1style} alt="cloud1"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={cloud2} style={cloud2style} alt="cloud2"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={cloud3} style={cloud3style} alt="cloud3"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={cloud4} style={cloud4style} alt="cloud4"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={cloud5} style={cloud5style} alt="cloud5"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={cloud6} style={cloud6style} alt="cloud6"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={god2} style={god2style} alt="god2"/>
+                </div>
+
+                {scrollPosition <= 590 ? <></> : <>
+                    <div style={fishinglink}></div>
+                </>}
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={many_cloud1} style={{...many_cloud1_style, left: -1}}
+                                   alt="many_cloud1"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={many_cloud1} style={{...many_cloud2_style, left: -1}}
+                                   alt="many_cloud2"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={many_cloud1} style={{...many_cloud3_style, left: -1}}
+                                   alt="many_cloud3"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={many_cloud1} style={{...many_cloud4_style, left: -1}}
+                                   alt="many_cloud4"/>
+                </div>
+                <div style={{position: 'relative'}}>
+                    <p style={{
+
+                        opacity: textOpacity,
+                        transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
+                        position: 'fixed', // 让文字固定在某个位置
+                        top: '50%', // 调整为合适的位置
+                        left: '50%',
+                        zIndex: 27,
+                        transform: 'translate(-50%, -50%)',
+                        fontSize: '24px',
+                        color: 'white',
+                    }}>
+                        Diffusion Roadmap
+                    </p>
+                </div>
+                {scrollPosition >= 590 ? < >
+                    <Star position1={2200} position2={4500} position3={3400} position4={'50%'}
+                          text={" XueDao  hackthon champion       2024.07.20"} secondtop={SecobdtopPosition}
+                          line_position={linePosition}/>
+
+                </> : <></>}
+                {linePosition >= 1150 ?
+                    <div style={{
+                        width: '50px',      // 设置线条的宽度
+                        height: '5px',       // 设置线条的高度
+                        borderStyle: 'solid', // 设置线条样式
+                        borderWidth: '0 0 1px 0', // 指定下边框的宽度
+                        borderColor: '#f1eff6', // 设置线条颜色
+                        backgroundColor: "white",
+                        zIndex: 28,          // 控制线条的z-index
+                        position: 'fixed',
+                        top: linePosition <= 1700 ? '13%' : `calc(12% + 45.7%)`, // 调整为合适的位置
+                        transform: linePosition <= 1700 ? 'translate(850%,1950%)' : `translateX(850%) translateY(calc(${SecobdtopPosition} * 140))`,
+                    }}></div>
+                    : <></>}
+                {linePosition >= 1300 ? <>
+                    <p style={{
+
+                        opacity: text2Opacity,
+                        transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
+                        position: 'fixed', // 让文字固定在某个位置
+                        top: linePosition <= 1700 ? '50%' : `calc(50% + 36.7%)`, // 调整为合适的位置
+                        left: '58%',
+                        zIndex: 27,
+                        transform: linePosition <= 1700 ? 'translate(-50%, -50%)' : `translateY(calc(${SecobdtopPosition} * 18)) translateX(-50%)`,
+                        fontSize: '30px',
+                        color: '#7B7B7B',
+                    }}>
+                        Aptos code Collision 2024.10.30
+                    </p>
+                </> : <></>}
+                {linePosition >= 1400 ? <>
+
+                    <p style={{
+
+                        opacity: text3Opacity,
+                        transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
+                        position: 'fixed', // 让文字固定在某个位置
+                        top: linePosition <= 1700 ? '75%' : `calc(75% + 36.7%)`, // 调整为合适的位置
+                        left: '57%',
+                        zIndex: 27,
+                        transform: linePosition <= 1700 ? `translateY(-50%) translateX(-50%)` : `translateY(calc(${SecobdtopPosition} * 18)) translateX(-50%)`,
+                        fontSize: '30px',
+                        color: '#7B7B7B',
+                    }}>
+                        Lanuch on Mainnet Q1/2025
+                    </p>
+                </> : <></>}
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={many_cloud1} style={{...many_cloud5_style, left: -1}}
+                                   alt="many_cloud5"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={many_cloud1} style={{...many_cloud6_style, left: -1}}
+                                   alt="many_cloud5"/>
+                </div>
+                <div style={{position: 'relative'}}>
+                    <p style={{
+
+                        opacity: text4Opacity,
+                        transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
+                        position: 'fixed', // 让文字固定在某个位置
+                        top: '50%', // 调整为合适的位置
+                        left: '50%',
+                        zIndex: 27,
+                        transform: 'translate(-50%, -50%)',
+                        fontSize: '24px',
+                        color: 'white',
+                    }}>
+                        Diffusion Partner
+                    </p>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={tree2} style={{...tree1style}} alt="tree1"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={tree2} style={{...tree2style}} alt="tree2"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={tree3} style={{...tree3style}} alt="tree3"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={tree2} style={{...tree4style}} alt="tree4"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={tree2} style={{...tree5style}} alt="tree5"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={tree3} style={{...tree6style}} alt="tree3"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={many_tree} style={{...manytree1style}} alt="manytree1"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage src={many_tree} style={{...manytree2style}} alt="manytree2"/>
+                </div>
+
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage
+                        src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSHg8XWSDgcK5KCNsqEIQRRE7zQ7t4IUFs-A&s"}
+                        style={{...woodbackgroundstyle}} alt="wood,backgroung"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage
+                        src={APT_LABS_logo}
+                        style={{...partner_logo1style}} alt="partner logo 1"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage
+                        src={Mizu_wallet_logo}
+                        style={{...partner_logo2style}} alt="partner logo 2"/>
+                </div>
+                <div id="moon-container" style={{position: 'relative'}}>
+                    <LazyLoadImage
+                        src={Nodit_logo}
+                        style={{...partner_logo3style}} alt="partner logo 3"/>
+                </div>
+                <div style={{position: 'relative'}}>
+                    <p style={{
+
+                        opacity: diffusion_information_position,
+                        transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
+                        position: 'fixed', // 让文字固定在某个位置
+                        top: '50%', // 调整为合适的位置
+                        left: '50%',
+                        zIndex: 27,
+                        transform: 'translate(-50%, -50%)',
+                        fontSize: '24px',
+                        color: 'white',
+                    }}>
+                        Diffusion Information
+                    </p>
+                </div>
             </>}
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={many_cloud1} style={{...many_cloud1_style, left: -1}}
-                               alt="many_cloud1"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={many_cloud1} style={{...many_cloud2_style, left: -1}}
-                               alt="many_cloud2"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={many_cloud1} style={{...many_cloud3_style, left: -1}}
-                               alt="many_cloud3"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={many_cloud1} style={{...many_cloud4_style, left: -1}}
-                               alt="many_cloud4"/>
-            </div>
-            <div style={{position: 'relative'}}>
-                <p style={{
-
-                    opacity: textOpacity,
-                    transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
-                    position: 'fixed', // 让文字固定在某个位置
-                    top: '50%', // 调整为合适的位置
-                    left: '50%',
-                    zIndex: 27,
-                    transform: 'translate(-50%, -50%)',
-                    fontSize: '24px',
-                    color: 'white',
-                }}>
-                    Diffusion Roadmap
-                </p>
-            </div>
-            {scrollPosition >= 590 ? < >
-                <Star position1={2200} position2={4500} position3={3400} position4={'50%'}
-                      text={" XueDao  hackthon champion       2024.07.20"} secondtop={SecobdtopPosition}
-                      line_position={linePosition}/>
-
-            </> : <></>}
-            {linePosition >= 1150 ?
-                <div style={{
-                    width: '50px',      // 设置线条的宽度
-                    height: '5px',       // 设置线条的高度
-                    borderStyle: 'solid', // 设置线条样式
-                    borderWidth: '0 0 1px 0', // 指定下边框的宽度
-                    borderColor: '#f1eff6', // 设置线条颜色
-                    backgroundColor: "white",
-                    zIndex: 28,          // 控制线条的z-index
-                    position: 'fixed',
-                    top: linePosition <= 1700 ? '13%' : `calc(12% + 45.7%)`, // 调整为合适的位置
-                    transform: linePosition <= 1700 ? 'translate(850%,1950%)' : `translateX(850%) translateY(calc(${SecobdtopPosition} * 140))`,
-                }}></div>
-                : <></>}
-            {linePosition >= 1300 ? <>
-                <p style={{
-
-                    opacity: text2Opacity,
-                    transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
-                    position: 'fixed', // 让文字固定在某个位置
-                    top: linePosition <= 1700 ? '50%' : `calc(50% + 36.7%)`, // 调整为合适的位置
-                    left: '58%',
-                    zIndex: 27,
-                    transform: linePosition <= 1700 ? 'translate(-50%, -50%)' : `translateY(calc(${SecobdtopPosition} * 18)) translateX(-50%)`,
-                    fontSize: '30px',
-                    color: '#7B7B7B',
-                }}>
-                    Aptos code Collision 2024.10.30
-                </p>
-            </> : <></>}
-            {linePosition >= 1400 ? <>
-
-                <p style={{
-
-                    opacity: text3Opacity,
-                    transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
-                    position: 'fixed', // 让文字固定在某个位置
-                    top: linePosition <= 1700 ? '75%' : `calc(75% + 36.7%)`, // 调整为合适的位置
-                    left: '57%',
-                    zIndex: 27,
-                    transform: linePosition <= 1700 ? `translateY(-50%) translateX(-50%)` : `translateY(calc(${SecobdtopPosition} * 18)) translateX(-50%)`,
-                    fontSize: '30px',
-                    color: '#7B7B7B',
-                }}>
-                    Lanuch on Mainnet Q1/2025
-                </p>
-            </> : <></>}
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={many_cloud1} style={{...many_cloud5_style, left: -1}}
-                               alt="many_cloud5"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={many_cloud1} style={{...many_cloud6_style, left: -1}}
-                               alt="many_cloud5"/>
-            </div>
-            <div style={{position: 'relative'}}>
-                <p style={{
-
-                    opacity: text4Opacity,
-                    transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
-                    position: 'fixed', // 让文字固定在某个位置
-                    top: '50%', // 调整为合适的位置
-                    left: '50%',
-                    zIndex: 27,
-                    transform: 'translate(-50%, -50%)',
-                    fontSize: '24px',
-                    color: 'white',
-                }}>
-                    Diffusion Partner
-                </p>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={tree2} style={{...tree1style}} alt="tree1"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={tree2} style={{...tree2style}} alt="tree2"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={tree3} style={{...tree3style}} alt="tree3"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={tree2} style={{...tree4style}} alt="tree4"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={tree2} style={{...tree5style}} alt="tree5"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={tree3} style={{...tree6style}} alt="tree3"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={many_tree} style={{...manytree1style}} alt="manytree1"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage src={many_tree} style={{...manytree2style}} alt="manytree2"/>
-            </div>
-
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage
-                    src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSHg8XWSDgcK5KCNsqEIQRRE7zQ7t4IUFs-A&s"}
-                    style={{...woodbackgroundstyle}} alt="wood,backgroung"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage
-                    src={APT_LABS_logo}
-                    style={{...partner_logo1style}} alt="partner logo 1"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage
-                    src={Mizu_wallet_logo}
-                    style={{...partner_logo2style}} alt="partner logo 2"/>
-            </div>
-            <div id="moon-container" style={{position: 'relative'}}>
-                <LazyLoadImage
-                    src={Nodit_logo}
-                    style={{...partner_logo3style}} alt="partner logo 3"/>
-            </div>
-            <div style={{position: 'relative'}}>
-                <p style={{
-
-                    opacity: diffusion_information_position,
-                    transition: 'opacity 0.5s ease-in-out', // 使透明度变化更平滑
-                    position: 'fixed', // 让文字固定在某个位置
-                    top: '50%', // 调整为合适的位置
-                    left: '50%',
-                    zIndex: 27,
-                    transform: 'translate(-50%, -50%)',
-                    fontSize: '24px',
-                    color: 'white',
-                }}>
-                    Diffusion Information
-                </p>
-            </div>
             <Last_tree_on_website scrollPosition={total_position}/>
 
         </>
