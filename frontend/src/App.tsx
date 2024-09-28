@@ -244,7 +244,7 @@ const App: React.FC<{id:string}> = ({}) => {
     const [savePair, setSavePair] = useState<SavePair[]>([]);
     const [balance1,set_balance]=useState<string>('');
     const [helper_data,set_helper_data]=useState<MoveValue[]>();
-    const [user_profile,set_user_profile] = useState<Profile>();
+    const [user_profile,set_user_profile] = useState<Profile>(defaultProfile);
     const [fetch_data,setfetch_data]=useState<Helper_data>();
     const [data_to_user_page,set_data_to_user_page]=useState<Real_Result_Data[]>();
     const [helper_to_helper_point,set_helper_to_helper_point]=useState<Helper>();
@@ -310,8 +310,8 @@ const App: React.FC<{id:string}> = ({}) => {
                     }
                 }
             )
-           // console.log(helper_data);
-            // console.log(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`)
+            console.log(helper_data);
+             console.log(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`)
             set_helper_data(helper_data);
             try{
 
@@ -347,7 +347,7 @@ const App: React.FC<{id:string}> = ({}) => {
                                 }
                             }
                             set_user_profile(new_profile)
-                            // console.log(response);
+                             console.log('profile respone',response);
                         }
                     })
 
@@ -490,11 +490,36 @@ const App: React.FC<{id:string}> = ({}) => {
         fetchList();
     }, [account?.address]);
 
+    useEffect(() => {
+        document.title = "Diffusion aptos";
+        const setFavicon = () => {
+            let link: HTMLLinkElement | null = document.querySelector("link[rel*='icon']");
+            if (!link) {
+                link = document.createElement('link') as HTMLLinkElement;
+                link.type = 'image/x-icon';
+                link.rel = 'shortcut icon';
+                document.getElementsByTagName('head')[0].appendChild(link);
+            }
+        };
+        setFavicon();
+
+        fatch_diffusion_resource_from_aptos()
+        // console.log(`save_pair ： ${savePair}`)
+        fetchList();
+    }, []);
+
+    useEffect(() => {
+        console.log('userProfile ',user_profile);
+    }, [user_profile]);
     return (
         <>
 
 
+            <div style={{
 
+                overflowX: "hidden",
+                overflowY: "hidden",
+            }}>
                 <Row gutter={[{ xs: 16, sm: 24, md: 32, lg: 40 },{ xs: 16, sm: 24, md: 32, lg: 40 }]}>
                     <Layout>
 
@@ -535,7 +560,7 @@ const App: React.FC<{id:string}> = ({}) => {
                                     <Route  path={"diffusion/swap"} element={<Swap_page/>}/>
                                     <Route  path={"diffusion/Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1} fetch_data={fetch_data ? fetch_data:defaultHelperData} profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray}/> } />
                                     <Route  path={"diffusion/admin"} element={<Admin_page helper_num={helper_num}/>}/>
-                                    <Route  path={"diffusion/nft"} element={<NFT_page/>}/>
+                                    <Route  path={"diffusion/nft"} element={<NFT_page badges_vector={user_profile.save_badges.length !=0 ? user_profile.save_badges:defaultProfile.save_badges}/>}/>
                                     <Route  path={"diffusion/Helper"} element={<Helper_page helper_data={helper_data ? helper_data:[]} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>
                                     <Route path={"diffusion/my_page"} element={<User_page profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray} move_data={helper_data ? helper_data:[]} helper_list={helper_to_helper_point ? helper_to_helper_point: default_helper_to_helper_point}/>}></Route>
 
@@ -580,7 +605,7 @@ const App: React.FC<{id:string}> = ({}) => {
 
                     </Layout>
                 </Row>
-
+            </div>
 
             <Drawer title={<> <Row gutter={24}>
                 <Col span={16}>

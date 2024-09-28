@@ -90,6 +90,9 @@ const  Tel_create_bet: React.FC = () => {
     }
     const submit_transaction = async () => {
         if (!account) return [];
+        if(user_profile.icon === '' && user_profile.name ===''){
+            set_user_profile({name:'User',icon: 'https://pot-124.4everland.store/user_badges.png'})
+        }
         if (user_profile.name === '') {
             set_user_profile({name:'User',icon: user_profile.icon})
         }

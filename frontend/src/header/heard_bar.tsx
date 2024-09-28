@@ -162,10 +162,10 @@ const TOP_bar:React.FC<{ user_address:string,index_of_address:number,profile_dat
                 </Link>
 
             </Col>
-            <Col span={18} style={{position:"relative",top:15,left:-20}}>
+            <Col span={16} style={{position:"relative",top:15,left:-20}}>
                 <Menu_click/>
             </Col>
-            <Col span={3} style={{position:"relative",top:15}}>
+            <Col span={2} style={{position:"relative",top:15}}>
 
                     <WalletSelector/>
 
