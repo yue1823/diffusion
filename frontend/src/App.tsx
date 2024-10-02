@@ -560,7 +560,7 @@ const App: React.FC<{id:string}> = ({}) => {
                                     <Route  path={"diffusion/swap"} element={<Swap_page/>}/>
                                     <Route  path={"diffusion/Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1} fetch_data={fetch_data ? fetch_data:defaultHelperData} profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray}/> } />
                                     <Route  path={"diffusion/admin"} element={<Admin_page helper_num={helper_num}/>}/>
-                                    <Route  path={"diffusion/nft"} element={<NFT_page badges_vector={user_profile.save_badges.length !=0 ? user_profile.save_badges:defaultProfile.save_badges}/>}/>
+                                    <Route  path={"diffusion/nft"} element={<NFT_page />}/>
                                     <Route  path={"diffusion/Helper"} element={<Helper_page helper_data={helper_data ? helper_data:[]} fetch_data={fetch_data ? fetch_data:defaultHelperData}/>}/>
                                     <Route path={"diffusion/my_page"} element={<User_page profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray} move_data={helper_data ? helper_data:[]} helper_list={helper_to_helper_point ? helper_to_helper_point: default_helper_to_helper_point}/>}></Route>
 

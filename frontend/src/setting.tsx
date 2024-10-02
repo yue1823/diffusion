@@ -5,6 +5,7 @@ export const  diffusion = {
     Bank_address:"0xf711fef606b3114ee9d6f718d8c6a209eccc362dc8b1af31372d4c73a833e5be",
     Helper_address:"0x5ec0ff7e30c95dc7f6610eb8e414c744df05e1839703475ef8df66ad5c9d8192",
     x_api_key:"bT8aS3ezHOl6T1_PyaM30lkg7odC_42l" as string,
+    indexer_fetch_endpoint:"https://aptos-testnet.nodit.io/bT8aS3ezHOl6T1_PyaM30lkg7odC_42l/v1/graphql" as string,
     function:{
         admin_like:()=>`${diffusion.module_address}::helper::admin_like` as `${string}::${string}::${string}`,
         create_bet_card:() =>`${diffusion.module_address}::helper::create_bet_card` as `${string}::${string}::${string}`,
@@ -22,6 +23,9 @@ export const  diffusion = {
         create_helper:() => `${diffusion.module_address}::helper::create_helper` as `${string}::${string}::${string}`,
         apply_to_be_helper: () => `${diffusion.module_address}::helper::apply_to_be_helper` as `${string}::${string}::${string}`,
         claim_reward:() => `${diffusion.module_address}::helper::claim_reward` as `${string}::${string}::${string}`,
+        user_view_badges : () => `${diffusion.module_address}::helper::return_badges` as `${string}::${string}::${string}`,
+        turn_badges_to_nft : () => `${diffusion.module_address}::helper::turn_badges_to_nft` as `${string}::${string}::${string}`,
+        turn_nft_to_badges :  () => `${diffusion.module_address}::helper::nft_burn_to_badges_v2` as `${string}::${string}::${string}`,
     },
     
 
