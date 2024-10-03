@@ -9,6 +9,7 @@ import {Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { diffusion } from "../setting";
 import Badgex_box from "./badges_box";
 import {ArrowLeftOutlined, ArrowRightOutlined, DoubleRightOutlined } from "@ant-design/icons";
+import {Sleepy_cat_v2} from "../telegrame_page/sleepy_cat";
 
 
 const contentStyle: React.CSSProperties = {
@@ -126,6 +127,9 @@ const NFT_page:React.FC<{}> = ({ }) => {
             )
         } catch (error: any) {
             message.error(`please try again`)
+        }finally {
+            fetchNFTs()
+
         }
     }
     const view_user_bedges = async() =>{
@@ -142,17 +146,9 @@ const NFT_page:React.FC<{}> = ({ }) => {
         }catch (e:any){console.log(e)}
 
     }
-    useEffect(() => {
-        if (user_badges_vector.length > 0) {
-            set_total_page(user_badges_vector[0].length); // 假设每个 badgesArray 的长度都是相同的
-        }
-
-        set_return_element(return_my_badged())
-    }, [user_badges_vector]);
-    useEffect(() =>{
-        const fetchNFTs = async () => {
-            if (!account) return [];
-                    const query = `
+    const fetchNFTs = async () => {
+        if (!account) return [];
+        const query = `
                 query GetAccountNfts {
                   current_token_ownerships_v2(
                     where: {amount: {_gt: "0"}, current_token_data: {collection_id: {_eq: "0xdbad00114d36b9a0ac892dfdb6fd98c683237fce3ffe56d75df2f19f463d6631"}}, owner_address: {_eq: "${account.address}"}}
@@ -174,23 +170,32 @@ const NFT_page:React.FC<{}> = ({ }) => {
                 }
               `;
 
-            try{
-                const response = await fetch(diffusion.indexer_fetch_endpoint, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ query }),
-                });
-                const result: GraphQLResponse = await response.json();
-                setNfts(result.data.current_token_ownerships_v2);
-                //console.log(result.data.current_token_ownerships_v2)
-            }catch (e:any){
-                console.log(e)
-            }finally {
-                set_return_element(return_nft_vector())
-            }
+        try{
+            const response = await fetch(diffusion.indexer_fetch_endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ query }),
+            });
+            const result: GraphQLResponse = await response.json();
+            setNfts(result.data.current_token_ownerships_v2);
+            console.log(result.data.current_token_ownerships_v2)
+        }catch (e:any){
+            console.log(e)
+        }finally {
+            set_return_element(return_nft_vector())
         }
+    }
+    useEffect(() => {
+        if (user_badges_vector.length > 0) {
+            set_total_page(user_badges_vector[0].length); // 假设每个 badgesArray 的长度都是相同的
+        }
+
+        set_return_element(return_my_badged())
+    }, [user_badges_vector]);
+    useEffect(() =>{
+
         const main_fetch = async () => {
             setLoading(true); // 設置 loading 為 true，開始加載
             try {
@@ -205,9 +210,9 @@ const NFT_page:React.FC<{}> = ({ }) => {
         main_fetch()
     },[account])
     useEffect(() => {
-        console.log('selectedBadge outside',selectedBadge)
-        console.log(selectedBadge.Name)
-        console.log(selectedBadge.url)
+        // console.log('selectedBadge outside',selectedBadge)
+        // console.log(selectedBadge.Name)
+        // console.log(selectedBadge.url)
         set_return_element(return_nft_vector())
     }, [selectedBadge]);
 
@@ -241,7 +246,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                <Image
                                    fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"
                                    src={badgesArray[current_page].url}
-                                   style={{height: "40vmax", width: "inherit"}}
+                                   style={{height: "30vmax", width: "inherit"}}
                                >
                                </Image>
                            </h3>
@@ -313,7 +318,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
                             </button>
                         </Col>
                         <Col span={12}></Col>
-                        <Col span={6}>
+                        <Col span={6} style={{left:20}}>
                             <button className={"rainbow"} style={{paddingTop:5}} onClick={() => {
                                 console.log('total page',total_page)
                                 console.log('click right',current_page)
@@ -322,7 +327,19 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                 <ArrowRightOutlined style={{fontSize: 30}}/>
                             </button>
                         </Col>
-                    </> : <></>}
+                    </> : <>
+                        <Col span={24} style={{ height:"93.5%",paddingLeft: 10,left:0,}}>
+                            <Row  style={{backgroundColor:"#ededed",height:"inherit",width:"99%",borderRadius:10,padding:10}}>
+                                <Col span={24}>
+                                    <h1 style={{textAlign:"left",fontSize:20}}>NFT Collision</h1>
+                                    <div style={{border: "solid 1px", borderColor: "#b5b3b3", width: "15%"}}></div>
+                                </Col>
+                                <Col span={24} >
+                                    <Sleepy_cat_v2 key={"sleep cat"} style={{transform: "scale(33)" , left:"821vmax",top:"-23vmax"}}/>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </>}
 
                 </Row>
             </>

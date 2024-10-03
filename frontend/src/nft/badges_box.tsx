@@ -12,7 +12,7 @@ interface BadgexBoxProps {
 }
 const Badgex_box: React.FC<BadgexBoxProps>= ({ badges, onBadgeClick })=>{
     useEffect(() => {
-        console.log('badges click ', badges);
+       // console.log('badges click ', badges);
         //
         // console.log("link",badges.url)
         // console.log("name",badges.Name)

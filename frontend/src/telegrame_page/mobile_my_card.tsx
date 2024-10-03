@@ -15,7 +15,7 @@ import {
 import {ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import CountdownTimer from '../user/Count_time';
-import Sleepy_cat from './sleepy_cat';
+import {Sleepy_cat} from './sleepy_cat';
 import {InputTransactionData, useWallet } from '@aptos-labs/wallet-adapter-react';
 import { diffusion } from '../setting';
 import {Aptos, AptosConfig, Network } from '@aptos-labs/ts-sdk';
