@@ -135,6 +135,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
                     }}>
                         <Image style={{width: "90%", height: "90%", position: "relative", top: -1}} preview={false}
                                fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"
+
                         ></Image>
                         <h1 style={{
                             right: 4,
@@ -175,10 +176,29 @@ const NFT_page:React.FC<{}> = ({ }) => {
         },
         {
             title: 'Last',
-            content: 'Congulateion, you turned it to NFT.',
+            content: <>
+                Congulateion, you turned it to NFT.
+                <br></br>
+                <motion.div className={"box"}
+                            whileHover={{scale: 1.03}}
+                            whileTap={{scale: 0.95}}
+                            transition={{
+                                type: "spring",
+                                stiffness: 400,
+                                damping: 50
+                            }}
+                            onClick={() => {
+                                set_return_element(return_nft_vector())
+                            }}
+                >
+                   <p style={{top: "-220px",right:10,
+                       position: "relative",color:"rgba(5,39,189,0.94)"}}>View</p>
+                </motion.div>
+
+            </>,
         },
     ];
-    const items_steps = steps.map((item) => ({ key: item.title, title: item.title }));
+    const items_steps = steps.map((item) => ({key: item.title, title: item.title}));
     const handleMouseOver = () => {
         console.log(isHovered);
         console.log("Mouse is over the button");
@@ -193,10 +213,10 @@ const NFT_page:React.FC<{}> = ({ }) => {
         setIsHovered(false);
     };
 
-    const on_click_submit_nft_to_badges = async () =>{
-       if(select_nft == undefined) return [];
-       if(!account) return [];
-        const transaction:InputTransactionData = {
+    const on_click_submit_nft_to_badges = async () => {
+        if (select_nft == undefined) return [];
+        if (!account) return [];
+        const transaction: InputTransactionData = {
             data: {
                 function:diffusion.function.turn_nft_to_badges(),
                 typeArguments:[],
@@ -219,9 +239,9 @@ const NFT_page:React.FC<{}> = ({ }) => {
         } catch (error: any) {
             message.error(`please try again`)
         }finally {
-            fetchNFTs()
-            set_return_element(return_my_badged())
-            setCurrent(2)
+            await fetchNFTs().then(() =>{ set_return_element(return_my_badged())
+                setCurrent(2)})
+
         }
     }
 
@@ -251,8 +271,8 @@ const NFT_page:React.FC<{}> = ({ }) => {
         } catch (error: any) {
             message.error(`please try again`)
         }finally {
-            fetchNFTs()
-            set_return_element(return_nft_vector())
+             await view_user_bedges().then(
+                 () =>set_return_element(return_nft_vector()))
         }
     }
     const view_user_bedges = async() =>{
@@ -307,19 +327,22 @@ const NFT_page:React.FC<{}> = ({ }) => {
         }catch (e:any){
             console.log(e)
         }finally {
-
+            set_return_element(return_my_badged())
         }
     }
     useEffect(() => {
         if (user_badges_vector.length > 0) {
             set_total_page(user_badges_vector[0].length); // 假设每个 badgesArray 的长度都是相同的
         }
-
-        set_return_element(return_my_badged())
+        set_return_element(return_nft_vector())
+        // set_return_element(return_my_badged())
     }, [user_badges_vector]);
     useEffect(() => {
         set_return_element(return_my_badged())
     }, [select_nft]);
+    // useEffect(() => {
+    //
+    // }, [return_element]);
     useEffect(() =>{
 
         const main_fetch = async () => {
@@ -364,20 +387,36 @@ const NFT_page:React.FC<{}> = ({ }) => {
                {/*    );*/}
                {/*})*/}
                {/*}*/}
+
+
                {user_badges_vector.map((badgesArray, index) => {
+                    console.log('user_badges_vector map',badgesArray)
                    let total_page = badgesArray.length;
                    set_total_page( total_page);
                    return (
-                       <div key={index}>
-                           <h3 style={contentStyle}>
-                               <Image
-                                   fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"
-                                   src={badgesArray[current_page].url}
-                                   style={{height: "25vmax", width: "inherit"}}
-                               >
-                               </Image>
-                           </h3>
-                       </div>
+                       <>
+                           {(badgesArray.length !=0) && (<div key={index}>
+                               <h3 style={contentStyle}>
+                                   <Image
+                                       fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"
+                                       src={badgesArray[current_page].url}
+                                       style={{height: "25vmax", width: "inherit"}}
+                                   >
+                                   </Image>
+                               </h3>
+                           </div>)
+                           }
+                           {(badgesArray.length ==0) && (<div key={index}>
+                               <h3 style={contentStyle}>
+                                   <Image
+                                       fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"
+                                       style={{height: "25vmax", width: "inherit"}}
+                                   >
+                                   </Image>
+                               </h3>
+                           </div>)
+                           }
+                       </>
                    );
                })}
            </>
@@ -404,6 +443,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
                         <Col span={24} style={{padding: 1, height: "71%", paddingLeft: 10}}>
                             <Carousel autoplay style={{height: "100%", maxWidth: "100%", maxHeight: "100%", zIndex:100}}
                                       draggable={true}>
+
                                 {return_crousel()}
                                 {/*<div>*/}
                                 {/*    <h3 style={contentStyle}>*/}
@@ -444,7 +484,20 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                 <ArrowLeftOutlined  style={{fontSize: 30}}/>
                             </button>
                         </Col>
-                        <Col span={12}></Col>
+                        <Col span={12}>
+                            <h1>{current_page}</h1>
+                            <div style={{
+                                border: "solid 1px",
+                                borderColor: "#706f6f",
+                                width: 1,
+                                height: "50px",
+                                transform: "rotate(40deg)",
+                                position: "relative",
+                                top: "-20px",
+                                left: "200px"
+                            }}></div>
+                            <h1>{total_page}</h1>
+                        </Col>
                         <Col span={6} style={{left:20}}>
                             <button className={"rainbow"} style={{paddingTop:5}} onClick={() => {
                                 // console.log('total page',total_page)
@@ -602,7 +655,9 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                             {current == 1 && select_nft != undefined && (
                                                 <>
                                                     <Image style={{width: "inherit", height: "70px"}} preview={false}
-                                                           fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"></Image>
+                                                           fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"
+                                                           src={select_nft?.current_token_data.token_uri}
+                                                    ></Image>
                                                     <h1 style={{top:-6,position:"relative"}}>{select_nft?.current_token_data.token_name.slice(17,)}</h1>
                                                 </>
                                             )}
@@ -803,7 +858,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
 
 
         if (key == "My Badges") {
-            set_return_element(return_my_badged() )
+            set_return_element(return_my_badged())
         } else if (key == "Mint") {
             set_return_element(return_mint_element)
         } else if (key == "NFT") {
