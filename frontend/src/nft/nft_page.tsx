@@ -1,5 +1,5 @@
 
-import {Col, Row, message, theme} from "antd";
+import {Col, Row, Segmented, message, theme} from "antd";
 import React, { useEffect ,useState} from 'react';
 import { Carousel,Image } from "antd";
 import {Content} from "antd/lib/layout/layout";
@@ -8,15 +8,19 @@ import {InputTransactionData, useWallet } from "@aptos-labs/wallet-adapter-react
 import {Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { diffusion } from "../setting";
 import Badgex_box from "./badges_box";
+import {ArrowLeftOutlined, ArrowRightOutlined, DoubleRightOutlined } from "@ant-design/icons";
 
 
 const contentStyle: React.CSSProperties = {
-    height: '580px',
+    paddingLeft:10,
+    height: '400px',
     color: '#fff',
-    lineHeight: '300px',
+    maxWidth:"98%",
+    maxHeight:"400px",
     textAlign: 'center',
     background: '#dfdfdf',
-    borderRadius:5
+    borderRadius:10,
+    width:"98%"
 };
 
 interface Badges{
@@ -74,9 +78,12 @@ const NFT_page:React.FC<{}> = ({ }) => {
     const [choose_badges ,set_choose_badges] = useState<Badges>(empty_Badges);
     const [selectedBadge, setSelectedBadge] = useState<Badges>(empty_Badges);
     const [loading, setLoading] = useState(true);
+    const [current_page ,set_current_page]=useState(0);
+    const [total_page ,set_total_page]=useState(1);
+    const [choose,set_choose]=useState('My Badges');
     const handleBadgeClick = (badge: Badges) => {
         setSelectedBadge(badge);
-        console.log("Badge clicked outside :", badge);
+        //console.log("Badge clicked outside :", badge);
     };
 
 
@@ -135,6 +142,13 @@ const NFT_page:React.FC<{}> = ({ }) => {
         }catch (e:any){console.log(e)}
 
     }
+    useEffect(() => {
+        if (user_badges_vector.length > 0) {
+            set_total_page(user_badges_vector[0].length); // 假设每个 badgesArray 的长度都是相同的
+        }
+
+        set_return_element(return_my_badged())
+    }, [user_badges_vector]);
     useEffect(() =>{
         const fetchNFTs = async () => {
             if (!account) return [];
@@ -173,6 +187,8 @@ const NFT_page:React.FC<{}> = ({ }) => {
                 //console.log(result.data.current_token_ownerships_v2)
             }catch (e:any){
                 console.log(e)
+            }finally {
+                set_return_element(return_nft_vector())
             }
         }
         const main_fetch = async () => {
@@ -195,8 +211,13 @@ const NFT_page:React.FC<{}> = ({ }) => {
         set_return_element(return_nft_vector())
     }, [selectedBadge]);
 
+    useEffect(() => {
+       // console.log('Updated current page:', current_page);
+        set_return_element(return_my_badged() )
+    }, [current_page]);
     const return_crousel =()=> {
         //console.log('return crousel',user_badges_vector)
+
        return(
            <>
                {/*{user_badges_vector.map((badges,index) => {*/}
@@ -212,28 +233,101 @@ const NFT_page:React.FC<{}> = ({ }) => {
                {/*})*/}
                {/*}*/}
                {user_badges_vector.map((badgesArray, index) => {
-                   return badgesArray.map((badge, badgeIndex) => (
-                       <h3 style={contentStyle} key={index}>
-                                   <Image
-                                       fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"
-                                       src={badge.url} key={badgeIndex}>
-                                   </Image>
-                      </h3>
-                   ));
-
+                   let total_page = badgesArray.length;
+                   set_total_page( total_page);
+                   return (
+                       <div key={index}>
+                           <h3 style={contentStyle}>
+                               <Image
+                                   fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"
+                                   src={badgesArray[current_page].url}
+                                   style={{height: "40vmax", width: "inherit"}}
+                               >
+                               </Image>
+                           </h3>
+                       </div>
+                   );
                })}
            </>
        )
     }
-    const return_my_badged = (
-        <>
-            <Carousel autoplay style={{height: 580}} draggable={true}>
-                <div>
-                    {return_crousel()}
-                </div>
-            </Carousel>
-        </>
-    );
+    useEffect(() => {
+        set_return_element(return_my_badged())
+    }, [choose]);
+    const return_my_badged = () => {
+        return (
+            <>
+                <Row gutter={[24, 10]}
+                     style={{backgroundColor: "#dfdfdf", height: "inherit", borderRadius: 5, padding: 5}}>
+                    <Col span={24} style={{height: "6.5%", paddingTop: 8, paddingLeft: 5}}>
+                        <Segmented options={["My Badges", "Change"]} block style={{width: "99%"}} onChange={(value) => {
+                            console.log(value)
+                            set_choose(value)
+                        }}/>
+                    </Col>
+                    <Col span={24} style={{paddingLeft: 7}}>
+                    <div style={{border: "solid 1px", borderColor: "#ededed", width: "98.5%"}}></div>
+                    </Col>
+                    {choose === "My Badges" ? <>
+                        <Col span={24} style={{padding: 1, height: "71%", paddingLeft: 10}}>
+                            <Carousel autoplay style={{height: "100%", maxWidth: "100%", maxHeight: "100%"}}
+                                      draggable={true}>
+                                {return_crousel()}
+                                {/*<div>*/}
+                                {/*    <h3 style={contentStyle}>*/}
+                                {/*        <Image*/}
+                                {/*            fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"*/}
+                                {/*            src={""}*/}
+                                {/*            style={{height: "400px", width:"100%",objectFit: "cover"}}*/}
+                                {/*        >*/}
+                                {/*            1*/}
+                                {/*        </Image>*/}
+                                {/*    </h3>*/}
+                                {/*</div>*/}
+
+                                {/*<div>*/}
+                                {/*    <h3 style={contentStyle}>*/}
+                                {/*        /!*<Image*!/*/}
+                                {/*        /!*    fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"*!/*/}
+                                {/*        /!*    src={""}*!/*/}
+                                {/*        /!*    style={{height: "400px", width: "100%",objectFit: "cover"}}*!/*/}
+                                {/*        /!*>*!/*/}
+                                {/*        /!*    1*!/*/}
+                                {/*        /!*</Image>*!/*/}
+                                {/*        2*/}
+                                {/*    </h3>*/}
+                                {/*</div>*/}
+                            </Carousel>
+
+                        </Col>
+                        <Col span={24}>
+                            <div style={{border: "solid 1px", borderColor: "#ededed", width: "98.5%"}}></div>
+                        </Col>
+                        <Col span={6}>
+                            <button className={"rainbow"} style={{paddingTop:5}} onClick={() => {
+                                // console.log('total page',total_page)
+                                // console.log('click left',current_page)
+                                set_current_page(prevPage => Math.max(prevPage - 1, 0)); // 保证最小为 0
+                            }}>
+                                <ArrowLeftOutlined  style={{fontSize: 30}}/>
+                            </button>
+                        </Col>
+                        <Col span={12}></Col>
+                        <Col span={6}>
+                            <button className={"rainbow"} style={{paddingTop:5}} onClick={() => {
+                                console.log('total page',total_page)
+                                console.log('click right',current_page)
+                                set_current_page(prevPage => Math.min(prevPage + 1, total_page - 1)); // 保证不超过总页数
+                            }}>
+                                <ArrowRightOutlined style={{fontSize: 30}}/>
+                            </button>
+                        </Col>
+                    </> : <></>}
+
+                </Row>
+            </>
+        )
+    }
 
     const return_mint_element = (
         <>
@@ -308,9 +402,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
             </Row>
         </>
     );
-    // useEffect(() => {
-    //
-    // }, [selectedBadge]);
+
     const return_nft_vector = () =>{
         if (loading) {
             return <p>Loading badges...</p>;
@@ -336,7 +428,11 @@ const NFT_page:React.FC<{}> = ({ }) => {
                        </Row>
                     </Col>
                     <Col span={2}>
-                            b
+                        <DoubleRightOutlined style={{fontSize: 30}}/>
+                        <br/>
+                        <DoubleRightOutlined style={{fontSize: 30}}/>
+                        <br/>
+                        <DoubleRightOutlined style={{fontSize: 30}}/>
                     </Col>
                     <Col span={9}>
                         <Row gutter={[24,10]} style={{height:550,backgroundColor:"#ededed",borderRadius:5,width:"100%",paddingLeft:15,paddingTop:15}}>
@@ -409,7 +505,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
 
 
         if (key == "My Badges") {
-            set_return_element(return_my_badged)
+            set_return_element(return_my_badged() )
         } else if (key == "Mint") {
             set_return_element(return_mint_element)
         } else if (key == "NFT") {
@@ -423,7 +519,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
 
     return (
         <>
-            <Content style={{padding: '15px ', paddingLeft: "3.5%"}}>
+            <Content style={{padding: '15px ', paddingLeft: "3.5%",objectFit: "cover"}}>
                 <Row>
                     <Col span={21}>
                         <div

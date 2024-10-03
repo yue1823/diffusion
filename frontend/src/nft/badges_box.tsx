@@ -1,4 +1,4 @@
-import {Col, Row ,Image} from 'antd';
+import {Col ,Image} from 'antd';
 import { motion } from 'framer-motion';
 import React, { useEffect } from 'react';
 
