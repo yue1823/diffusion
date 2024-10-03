@@ -239,9 +239,9 @@ const NFT_page:React.FC<{}> = ({ }) => {
         } catch (error: any) {
             message.error(`please try again`)
         }finally {
-            await fetchNFTs().then(() =>{ set_return_element(return_my_badged())
-                setCurrent(2)})
-
+            fetchNFTs();
+            set_return_element(return_my_badged())
+            setCurrent(2)
         }
     }
 
@@ -271,8 +271,9 @@ const NFT_page:React.FC<{}> = ({ }) => {
         } catch (error: any) {
             message.error(`please try again`)
         }finally {
-             await view_user_bedges().then(
-                 () =>set_return_element(return_nft_vector()))
+             await view_user_bedges()
+             await fetchNFTs()
+             set_return_element(return_nft_vector())
         }
     }
     const view_user_bedges = async() =>{
@@ -340,9 +341,9 @@ const NFT_page:React.FC<{}> = ({ }) => {
     useEffect(() => {
         set_return_element(return_my_badged())
     }, [select_nft]);
-    // useEffect(() => {
-    //
-    // }, [return_element]);
+    useEffect(() => {
+
+    }, [return_element]);
     useEffect(() =>{
 
         const main_fetch = async () => {
@@ -476,7 +477,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
                             <div style={{border: "solid 1px", borderColor: "#ededed", width: "98.5%"}}></div>
                         </Col>
                         <Col span={6}>
-                            <button className={"rainbow"} style={{paddingTop:5}} onClick={() => {
+                            <button className={"rainbow"} style={{paddingTop:5}} disabled={total_page==0?true:false} onClick={() => {
                                 // console.log('total page',total_page)
                                 // console.log('click left',current_page)
                                 set_current_page(prevPage => Math.max(prevPage - 1, 0)); // 保证最小为 0
@@ -485,7 +486,11 @@ const NFT_page:React.FC<{}> = ({ }) => {
                             </button>
                         </Col>
                         <Col span={12}>
-                            <h1>{current_page}</h1>
+                            <h1 style={{
+                                position: "relative",
+                                top: "4px",
+                                right: "40px"
+                            }}>{current_page+1}</h1>
                             <div style={{
                                 border: "solid 1px",
                                 borderColor: "#706f6f",
@@ -493,13 +498,17 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                 height: "50px",
                                 transform: "rotate(40deg)",
                                 position: "relative",
-                                top: "-20px",
+                                top: "-13px",
                                 left: "200px"
                             }}></div>
-                            <h1>{total_page}</h1>
+                            <h1 style={{
+                                position: "relative",
+                                top: "-30px",
+                                left: "10px"
+                            }}>{total_page}</h1>
                         </Col>
                         <Col span={6} style={{left:20}}>
-                            <button className={"rainbow"} style={{paddingTop:5}} onClick={() => {
+                            <button className={"rainbow"} style={{paddingTop:5}} disabled={total_page==0?true:false} onClick={() => {
                                 // console.log('total page',total_page)
                                 // console.log('click right',current_page)
                                 set_current_page(prevPage => Math.min(prevPage + 1, total_page - 1)); // 保证不超过总页数
@@ -844,7 +853,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
 
                                 </Row>
                                 <br/>
-                                <button className={"rainbow"} style={{width: "21vmax",right:"1vmax"}} onClick={() => submit_badges_to_nft()}>Genarte NFT</button>
+                                <button className={"rainbow"} style={{width: "290px",right:"10px",position:"relative",top:-9}} onClick={() => submit_badges_to_nft()}>Genarte NFT</button>
 
 
                             </Col>
