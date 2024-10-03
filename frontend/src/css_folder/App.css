@@ -17,3 +17,10 @@
 .low-fps-animation {
   animation: example-animation 2s steps(30); /* 每秒更新 30 帧 */
 }
+/*.large-svg-container {*/
+/*  pointer-events: none;  !* 禁止整个 div 响应点击 *!*/
+/*}*/
+/*.large-svg-container {*/
+/*  display: inline-block;  !* 让 div 尺寸根据内容自适应 *!*/
+/*  overflow: hidden;       !* 隐藏超出部分 *!*/
+/*}*/

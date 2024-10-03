@@ -98,7 +98,8 @@ const Sleepy_cat_v2: React.FC<SleepyCatProps>  = ({style}) => {
     return (
         <div style={{...combinedStyle}}>
             <svg style={svgStyle} viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
-                 clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5">
+                 clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" >
+
                 <g id={"window"}>
                     <g clip-path="url(#_clip1)">
                         <path id="window__base" fill="#fff" d="M287.918 401.069h224.164v22.23H287.918z"/>
