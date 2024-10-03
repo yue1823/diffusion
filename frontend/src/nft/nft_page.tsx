@@ -12,44 +12,31 @@ import {ArrowLeftOutlined, ArrowRightOutlined, DoubleRightOutlined, InfoCircleOu
 
 import "../css_folder/App.css"
 import type { MenuProps } from 'antd';
-const steps = [
-    {
-        title: 'First',
-        content: 'First-content',
-    },
-    {
-        title: 'Second',
-        content: 'Second-content',
-    },
-    {
-        title: 'Last',
-        content: 'Last-content',
-    },
-];
+
 const items: MenuProps['items'] = [
     {
         key: '1',
         label: (
             <p>
-                You can turn your  NFT (Diffusino Badges Collision) to diffusion Badges
+                You can turn your NFT (Diffusino Badges Collision) to diffusion Badges
             </p>
         ),
     },]
 const contentStyle: React.CSSProperties = {
-    paddingLeft:10,
+    paddingLeft: 10,
     height: '400px',
     color: '#fff',
-    maxWidth:"98%",
-    maxHeight:"400px",
+    maxWidth: "98%",
+    maxHeight: "400px",
     textAlign: 'center',
     background: '#dfdfdf',
-    borderRadius:10,
-    width:"98%"
+    borderRadius: 10,
+    width: "98%"
 };
 
-interface Badges{
-    Name : string;
-    url : string;
+interface Badges {
+    Name: string;
+    url: string;
 }
 
 interface TokenData {
@@ -69,16 +56,18 @@ interface CurrentTokenOwnership {
     owner_address: string;
     amount: number;
 }
+
 interface GraphQLResponse {
     data: {
         current_token_ownerships_v2: CurrentTokenOwnership[];
     };
 }
-const empty_Badges:Badges = {
-    Name:"",
-    url:""
+
+const empty_Badges: Badges = {
+    Name: "",
+    url: ""
 }
-const aptosConfig = new AptosConfig({ network: Network.TESTNET});
+const aptosConfig = new AptosConfig({network: Network.TESTNET});
 const aptos = new Aptos(aptosConfig);
 const NFT_page:React.FC<{}> = ({ }) => {
     const { account, signAndSubmitTransaction } =useWallet() ;
@@ -101,9 +90,9 @@ const NFT_page:React.FC<{}> = ({ }) => {
     const prev = () => {
         setCurrent(current - 1);
     };
-    const items_steps = steps.map((item) => ({ key: item.title, title: item.title }));
+
     const contentStyle_steps: React.CSSProperties = {
-        lineHeight: '260px',
+        lineHeight: '160px',
         textAlign: 'center',
         color: token.colorTextTertiary,
         backgroundColor: token.colorFillAlter,
@@ -116,7 +105,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
     const [return_element , set_return_element]=useState<JSX.Element>(<></>);
     const [carousel_return,set_carousel_return]=useState<JSX.Element>(<></>);
      const [isHovered, setIsHovered] = useState<boolean>(false);
-     const [user_badges_vector,set_user_badges_vector]=useState<[Badges[]]>([]);
+     const [user_badges_vector,set_user_badges_vector]=useState<[Badges[]]>([[{Name:'',url:''}]]);
     const [nfts, setNfts] = useState<CurrentTokenOwnership[]>([]);
     const [choose_badges ,set_choose_badges] = useState<Badges>(empty_Badges);
     const [selectedBadge, setSelectedBadge] = useState<Badges>(empty_Badges);
@@ -130,7 +119,66 @@ const NFT_page:React.FC<{}> = ({ }) => {
         //console.log("Badge clicked outside :", badge);
     };
 
+    const steps = [
+        {
+            title: 'First',
+            content: <>
+                <div style={{paddingTop:20,paddingLeft:50}}>
+                    <div style={{
+                        width: "100px",
+                        height: "130px",
+                        backgroundColor: "rgba(244,244,244,0.91)",
+                        borderRadius: 5,
+                        paddingTop: 7,
+                        paddingLeft: 7,
 
+                    }}>
+                        <Image style={{width: "90%", height: "90%", position: "relative", top: -1}} preview={false}
+                               fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"
+                        ></Image>
+                        <h1 style={{
+                            right: 4,
+                            top: "-110%",
+                            position: "relative",
+                            color: "black",
+                            fontSize: 20,
+
+                        }}>Badges</h1>
+                    </div>
+                    <p style={{top: "-150px",
+                        position: "relative",}}>Select a Nft</p>
+                    <p style={{top: "-220px",right:10,
+                        position: "relative",}}>(We will turn it to be a badges ,  then save it to your account)</p>
+                </div>
+
+            </>,
+        },
+        {
+            title: 'Second',
+            content: <>
+                Submit Transaction
+                <br></br>
+                <motion.div className={"box"}
+                            whileHover={{scale: 1.03}}
+                            whileTap={{scale: 0.95}}
+                            transition={{
+                                type: "spring",
+                                stiffness: 400,
+                                damping: 50
+                            }}
+                            onClick={() => {on_click_submit_nft_to_badges()}}
+                >
+                    <button className={"rainbow"} style={{position: "relative", top: "-100px", left: 1}}>Submit</button>
+                </motion.div>
+
+            </>,
+        },
+        {
+            title: 'Last',
+            content: 'Congulateion, you turned it to NFT.',
+        },
+    ];
+    const items_steps = steps.map((item) => ({ key: item.title, title: item.title }));
     const handleMouseOver = () => {
         console.log(isHovered);
         console.log("Mouse is over the button");
@@ -148,6 +196,33 @@ const NFT_page:React.FC<{}> = ({ }) => {
     const on_click_submit_nft_to_badges = async () =>{
        if(select_nft == undefined) return [];
        if(!account) return [];
+        const transaction:InputTransactionData = {
+            data: {
+                function:diffusion.function.turn_nft_to_badges(),
+                typeArguments:[],
+                functionArguments:[select_nft.current_token_data.token_data_id]
+            }
+        }
+        try {
+            // sign and submit transaction to chain
+            const response = await signAndSubmitTransaction(transaction);
+            // wait for transaction
+            const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+
+
+            message.success(
+                <span>
+                            hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                        </span>
+            )
+        } catch (error: any) {
+            message.error(`please try again`)
+        }finally {
+            fetchNFTs()
+            set_return_element(return_my_badged())
+            setCurrent(2)
+        }
     }
 
     const submit_badges_to_nft = async() =>{
@@ -177,7 +252,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
             message.error(`please try again`)
         }finally {
             fetchNFTs()
-
+            set_return_element(return_nft_vector())
         }
     }
     const view_user_bedges = async() =>{
@@ -232,7 +307,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
         }catch (e:any){
             console.log(e)
         }finally {
-            set_return_element(return_nft_vector())
+
         }
     }
     useEffect(() => {
@@ -257,6 +332,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
             } finally {
                 setLoading(false); // 所有數據加載完成後，設置 loading 為 false
             }
+            setCurrent(0)
         };
         main_fetch()
     },[account])
@@ -453,6 +529,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                                                             //console.log('select token',token)
                                                                             if (token != undefined){
                                                                                 set_select_nft(token)
+                                                                                setCurrent(1)
                                                                             }
                                                                         }}
                                                                     >
@@ -522,11 +599,13 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                             position: "relative",
                                             borderRadius: 5
                                         }}>
-                                            <Image style={{width: "inherit", height: "70px"}} preview={false}
-                                                   fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"></Image>
-                                            {select_nft != undefined ?
-                                                <h1 style={{top:-6,position:"relative"}}>{select_nft?.current_token_data.token_name.slice(17,)}</h1> :<></>}
-
+                                            {current == 1 && select_nft != undefined && (
+                                                <>
+                                                    <Image style={{width: "inherit", height: "70px"}} preview={false}
+                                                           fallback="https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"></Image>
+                                                    <h1 style={{top:-6,position:"relative"}}>{select_nft?.current_token_data.token_name.slice(17,)}</h1>
+                                                </>
+                                            )}
                                         </div>
                                     </div>
                                 </Col>
@@ -827,4 +906,6 @@ const NFT_page:React.FC<{}> = ({ }) => {
 }
 
 export default NFT_page;
+
+
 
