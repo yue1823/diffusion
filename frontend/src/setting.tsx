@@ -26,6 +26,7 @@ export const  diffusion = {
         user_view_badges : () => `${diffusion.module_address}::helper::return_badges` as `${string}::${string}::${string}`,
         turn_badges_to_nft : () => `${diffusion.module_address}::helper::turn_badges_to_nft` as `${string}::${string}::${string}`,
         turn_nft_to_badges :  () => `${diffusion.module_address}::helper::nft_burn_to_badges_v2` as `${string}::${string}::${string}`,
+        return_mint_badges_list :  () => `${diffusion.module_address}::helper::check_badges_list` as `${string}::${string}::${string}`,
     },
     
 
