@@ -150,7 +150,7 @@ https://ryanmulligan.dev/blog/css-property-new-style/
     &::after {
         animation: --animation 3s,
         --animation calc(3s / 0.4) reverse paused;
-        -webkit-animation-composition: add ;
+       animation-composition: add ;
     }
 
     span::before {

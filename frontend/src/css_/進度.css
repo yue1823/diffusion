@@ -1,0 +1,69 @@
+.shiny-cta {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 50px;
+    background: linear-gradient(to right, #4caf50 0%, #4caf50 0%);
+    color: white;
+    cursor: pointer;
+    border: 2px solid transparent;
+    outline: none;
+    transition: background 0.4s ease;
+    overflow: hidden;
+}
+
+.shiny-cta span {
+    position: relative;
+    z-index: 2; /* 把文字内容放在进度条之上 */
+}
+
+.shiny-cta::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* 初始宽度为0 */
+    background-color: rgba(255, 255, 255, 0.2); /* 进度条颜色 */
+    z-index: -1; /* 放在文字之下 */
+    transition: width 2s ease; /* 控制进度条的动画 */
+}
+
+.shiny-cta.loading::after {
+    width: 100%; /* 当按钮按下时，进度条扩展至100% */
+    /* 强制浏览器重排以确保动画触发 */
+    will-change: width;
+}
+
+/* Checked icon */
+.shiny-cta.checked::after {
+    background-color: lime; /* 完成后的背景颜色 */
+}
+
+.shiny-cta.error::after {
+    background-color: red; /* 错误状态的背景颜色 */
+}
+
+.shiny-cta.checked::before {
+    content: "✔"; /* Checked图案 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: white;
+    z-index: 1; /* 放在文字之上 */
+}
+
+/* Close icon */
+.shiny-cta.error::before {
+    content: "✖"; /* Close图案 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: white;
+    z-index: 1; /* 放在文字之上 */
+}

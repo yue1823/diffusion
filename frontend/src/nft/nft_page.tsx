@@ -9,7 +9,7 @@ import {Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { diffusion } from "../setting";
 import Badgex_box from "./badges_box";
 import {ArrowLeftOutlined, ArrowRightOutlined, DoubleRightOutlined, InfoCircleOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
-import "../css_/cool_button.css";
+import "../css_/進度.css";
 
 import type { MenuProps } from 'antd';
 
@@ -88,6 +88,111 @@ const NFT_page:React.FC<{}> = ({ }) => {
     };
     const { token } = theme.useToken();
     const [current, setCurrent] = useState(0);
+    const [button_loading, set_button_Loading] = useState(false);
+    const [result, setResult] = useState<null | boolean>(null);
+    const [anime_finish_load,set_anime_finish_load] =useState(false);
+    const handleClick =  async () => {
+        if (!account) return [];
+        if (fetch_mint_data[current_mint_page].save_can_mint == undefined) {
+            return;
+        }
+        if (fetch_mint_data[current_mint_page].save_can_mint == false) {
+            message.error("This badges not private mint")
+            return;
+        }
+        // set_return_element(return_mint_element())
+        set_button_Loading(true); // 开始加载动画
+        setResult(null);  // 重置结果
+        const MIN_LOADING_TIME = 1000;
+        const startTime = Date.now();
+        const elapsedTime = Date.now() - startTime;
+        const delay = Math.max(MIN_LOADING_TIME - elapsedTime, 0);
+        // const delayPromise = new Promise((resolve) => setTimeout(resolve, 2000)); // 固定2秒的延迟
+        try {
+            //模拟异步操作，例如sync数据
+            await aptos.view({
+                payload: {
+                    function: diffusion.function.check_is_white_list(),
+                    functionArguments: [account.address, fetch_mint_data[current_mint_page].save_Badges.Name]
+                }
+            }).then(respone => {
+                console.log("white list", respone)
+
+                setTimeout(() => {
+                    setResult(respone[0] as boolean);
+                    set_button_Loading(false);
+                    set_anime_finish_load(true)
+                }, delay);
+            });
+            // setResult(true);
+        } catch (error) {
+            setResult(false); // 错误处理
+        } finally {
+        }
+
+        // 动画完成
+        // set_return_element(return_mint_element())
+    };
+    useEffect(() => {
+        set_return_element(return_mint_element())
+        set_anime_finish_load(false)
+    }, [result]);
+    // const handleClick = () => {
+    //     set_button_Loading(true); // 设置为加载状态
+    //     setResult(null); // 重置结果
+    //
+    //     const MIN_LOADING_TIME = 2000; // 最小加载时间
+    //
+    //     const startTime = Date.now();
+    //     const elapsedTime = Date.now() - startTime;
+    //     const delay = Math.max(MIN_LOADING_TIME - elapsedTime, 0);
+    //
+    //     setTimeout(() => {
+    //         setResult(true);
+    //         set_button_Loading(false); // 加载结束
+    //     }, delay);
+    //
+    // };
+    const mint_badges = async() =>{
+        if (!account)return[];
+        if(fetch_mint_data[current_mint_page].save_Badges.Name == undefined)return;
+        if(fetch_mint_data.length == 0 )return ;
+        if(fetch_mint_data[current_mint_page].save_can_mint == true){
+            let whitelist_ = await aptos.view({payload:{
+                    function:diffusion.function.check_is_white_list(),
+                    functionArguments:[account.address, fetch_mint_data[current_mint_page].save_Badges.Name]
+                }})
+            if(whitelist_[0] === false){
+                message.error("Sorry you are not eligble")
+                return
+            }
+        }
+        const transaction: InputTransactionData = {
+            data: {
+                function:diffusion.function.mint_badges(),
+                typeArguments:[],
+                functionArguments:[fetch_mint_data[current_mint_page].save_Badges.Name]
+            }
+        }
+        try {
+            // sign and submit transaction to chain
+            const response = await signAndSubmitTransaction(transaction);
+            // wait for transaction
+            const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+            const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=testnet`;
+
+            message.success(
+                <span>
+                            hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                        </span>
+            )
+        } catch (error: any) {
+            message.error(`please try again`)
+        }finally {
+            set_return_element(return_mint_element())
+            set_anime_finish_load(false)
+        }
+    }
     const next = () => {
         setCurrent(current + 1);
     };
@@ -133,6 +238,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
     }
     useEffect(() => {
         set_return_element(return_mint_element())
+        setResult(null);  // 重置结果
     }, [current_mint_page]);
     const handleBadgeClick = (badge: Badges) => {
         setSelectedBadge(badge);
@@ -797,7 +903,6 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                                 display: "inherit",
                                                 justifyContent: "inherit",
                                                 alignItems: "inherit",
-                                                border: ""
                                             }}>
                                                 {/*<p style={{fontSize: 40}}>You are not eligble</p>*/}
                                                 {/*<div style={{*/}
@@ -812,9 +917,35 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                                 {/*}}>*/}
 
                                                 {/*</div>*/}
-                                                <button className="shiny-cta" style={{zIndex:50}}>
-                                                    <span>Get unlimited access</span>
-                                                </button>
+                                                <Row>
+                                                    {fetch_mint_data.length !=0 &&  (
+                                                        <>
+                                                            {fetch_mint_data[current_mint_page].save_can_mint == false ? <></>: <>
+                                                                <Col span={24} >
+                                                                    <button
+                                                                        className={`shiny-cta ${button_loading ? 'loading' : ''} ${result === true ? 'checked' : ''} ${result === false ? 'error' : ''}`}
+                                                                        onClick={handleClick}
+                                                                        disabled={button_loading} // 在 loading 时按钮不可点击
+                                                                        style={anime_finish_load == false ?{zIndex: 50}: result === true?{zIndex: 50,left:"125px"}:{zIndex: 50,left:"100px"}}
+                                                                    >
+                                                                        <span>{button_loading ? 'Syncing...' : result === true ? '' : result === false ? '' : 'Check Whitelist'}</span>
+                                                                    </button>
+                                                                </Col>
+                                                                <Col span={24}>
+                                                                    {anime_finish_load === false ? <></> : <>
+                                                                        {result === true ? <><p>Congratulation you are
+                                                                            eligible</p></> : <><p style={{}}>Sorry you are
+                                                                            not eligble</p></>}
+                                                                    </>}
+                                                                </Col>
+                                                            </>}
+                                                        </>
+                                                    )}
+                                                </Row>
+
+                                                {fetch_mint_data.length == 0 && (
+                                                    <p>Loading ....</p>
+                                                )}
                                             </div>
                                         </Col>
                                         <Col span={24} style={{
@@ -822,11 +953,14 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                             justifyContent: "inherit",
                                             alignItems: "inherit",
                                         }}>
-                                            {fetch_mint_data.length !=0 &&  (
+                                        {fetch_mint_data.length !=0 &&  (
                                                 <Image
                                                     style={{width: "270px", height: "270px"}}
                                                     fallback="data:image/png;base64,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"
                                                     src={fetch_mint_data[current_mint_page].save_Badges.url}></Image>
+                                            )}
+                                            {fetch_mint_data.length ==0 &&  (
+                                                <p>Loading ....</p>
                                             )}
 
                                         </Col>
@@ -867,7 +1001,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                         stiffness: 250,
                                         damping: 40
                                     }}
-
+                                    onClick={()=>{mint_badges()}}
                         >
                             <button
                                 style={{marginBottom: "10px", width: "890px"}}
