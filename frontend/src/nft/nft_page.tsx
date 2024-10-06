@@ -1,5 +1,5 @@
 
-import {Col, Dropdown, Row, Segmented, message,Steps, theme} from "antd";
+import {Col, Dropdown, Row, Segmented, message,Steps, theme, Badge} from "antd";
 import React, { useEffect ,useState} from 'react';
 import { Carousel,Image } from "antd";
 import {Content} from "antd/lib/layout/layout";
@@ -8,7 +8,7 @@ import {InputTransactionData, useWallet } from "@aptos-labs/wallet-adapter-react
 import {Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { diffusion } from "../setting";
 import Badgex_box from "./badges_box";
-import {ArrowLeftOutlined, ArrowRightOutlined, DoubleRightOutlined, InfoCircleOutlined } from "@ant-design/icons";
+import {ArrowLeftOutlined, ArrowRightOutlined, DoubleRightOutlined, InfoCircleOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
 
 import "../css_folder/App.css"
 import type { MenuProps } from 'antd';
@@ -704,69 +704,101 @@ const NFT_page:React.FC<{}> = ({ }) => {
     const return_mint_element = (
         <>
             <Row gutter={[24, 6]} style={{padding: 2}} justify="center" align="middle">
-                <Col span={24}>
-                    <div style={{
-                        border: "solid 1px",
-                        borderColor: "#ededed",
-                        width: "98%",
-                        height: "4vmax",
-                        borderRadius: 5,
-                        paddingTop: "0.5%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        background: isHovered
-                            ? "linear-gradient(90deg, rgba(98, 182, 255, 1) 0%, rgba(153, 102, 255, 1) 100%)"
-                            : "linear-gradient(90deg, rgba(255, 153, 102, 1) 0%, rgba(255, 94, 98, 1) 100%)",
-                        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                        transition: "background 0.3s ease",
-                        color: "white"
-                    }}
-                    >
-                        <p>
-                            Now Mint
-                        </p>
-                    </div>
-                </Col>
-                <Col span={24}>
-                    <div style={{display: "flex", justifyContent: "center", alignItems: "center",width:"200px",height:"200px"}}>
-                        <Image
-                            style={{width:"inherit",height:"inherit"}}
-                            fallback="data:image/png;base64,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"
-                                src={""}></Image>
-                    </div>
-                </Col>
-                <Col span={24}>
-                    <div style={{display: "flex", gap: "10px"}}>
-                        {[...Array(4)].map((_, index) => (
-                            <div key={index}
-                                 style={{
-                                     border: "solid 1px",
-                                     borderColor: "#ededed",
-                                     width: "23%",  // To ensure they all fit in one row
-                                     height: "4vmax",
-                                     borderRadius: 5,
-                                     display: "flex",
-                                     justifyContent: "center",
-                                     alignItems: "center",
-                                     background: isHovered
-                                         ? "linear-gradient(90deg, rgba(98, 182, 255, 1) 0%, rgba(153, 102, 255, 1) 100%)"
-                                         : "linear-gradient(90deg, rgba(255, 153, 102, 1) 0%, rgba(255, 94, 98, 1) 100%)",
-                                     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                                     transition: "background 0.3s ease"
-                                 }}
-                            >
-                                Box {index + 1}
-                            </div>
-                        ))}
-                    </div>
-                </Col>
-                <Col>
-                    <button
-                        onMouseOver={handleMouseOver}
-                        onMouseOut={handleMouseOut}
-                        style={{padding: "10px 20px", marginBottom: "10px"}}
+                <Col span={24} style={{}}>
 
+                    <Row>
+                        <div style={{
+                            border: "solid 1px",
+                            borderColor: "#ededed",
+                            width: "100%",
+                            height: "505px",
+                            borderRadius: 5,
+                            paddingTop: "0.5%",
+                            display: "flex",
+                            background: isHovered
+                                ? "linear-gradient(90deg, rgba(98, 182, 255, 1) 0%, rgba(153, 102, 255, 1) 100%)"
+                                : "linear-gradient(90deg, rgba(255, 153, 102, 1) 0%, rgba(255, 94, 98, 1) 100%)",
+                            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                            transition: "background 0.3s ease",
+                            color: "white"
+                        }}
+                        >
+                            <Col span={24} style={{position: "absolute",paddingLeft:20,paddingTop:5}}>
+                                <div style={{position:"absolute",left:"70px",width:"100px",top:"-2px"}}>
+                                    <Badge status="processing" text="Public mint" color="#0ED51AFF" style={{fontSize:20,transform:"scale(2)",color:"white"}} />
+                                </div>
+                                <div style={{
+                                    position:"inherit",
+                                    border: "solid 1px",
+                                    width: "850px",
+                                    display: "inherit",
+                                    height: "1px",
+                                    borderColor: "#dfdfdf",
+                                    top:"40px"
+                                }}></div>
+                            </Col>
+                            <Col span={2} style={{justifyContent: "left", display: "flex", paddingLeft: 10, alignItems: "center",}}>
+                                <motion.div
+                                    animate={{x: [null, 115, 0], y: [null, 115, 0]}}
+                                    whileHover={{scale: [null, 1.2, 1.2], zIndex: 1000, position: 'relative'}}
+                                    transition={{duration: 0.3}}
+                                >
+                                    <motion.div className={"box"}
+                                                whileHover={{scale: 1.3}}
+                                                whileTap={{scale: 0.90}}
+                                                transition={{type: "spring", stiffness: 300, damping: 25}}
+                                    >
+                                        <LeftOutlined style={{fontSize: 50}}/>
+                                    </motion.div>
+                                </motion.div>
+                            </Col>
+                            <Col span={20} style={{display: "flex", justifyContent: "center", alignItems: "center",}}>
+                                <Row style={{display: "inherit", justifyContent: "inherit", alignItems: "inherit",}}>
+                                    <Col span={24} style={{display: "inherit", justifyContent: "inherit", alignItems: "inherit",top:"-20px"}}>
+                                        <div style={{
+                                            display: "inherit",
+                                            justifyContent: "inherit",
+                                            alignItems: "inherit",
+                                            border: ""
+                                        }}>
+                                            <p style={{fontSize: 40}}>You are not eligble</p>
+                                        </div>
+                                    </Col>
+                                    <Col span={24} style={{display: "inherit", justifyContent: "inherit", alignItems: "inherit",}}>
+                                        <Image
+                                            style={{width: "270px", height: "270px"}}
+                                            fallback="data:image/png;base64,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"
+                                            src={"https://github.com/yue1823/diffusion/blob/main/client/src/art/diffusion4.png?raw=true"}></Image>
+                                    </Col>
+                                </Row>
+                            </Col>
+                            <Col span={2} style={{justifyContent: "right", display: "flex", paddingRight: 10, alignItems: "center",}}>
+                                <motion.div
+                                    animate={{x: [null, 115, 0], y: [null, 115, 0]}}
+                                    whileHover={{scale: [null, 1.2, 1.2], zIndex: 1000, position: 'relative'}}
+                                    transition={{duration: 0.3}}
+                                >
+                                    <motion.div className={"box"}
+                                                whileHover={{scale: 1.3}}
+                                                whileTap={{scale: 0.90}}
+                                                transition={{type: "spring", stiffness: 300, damping: 25}}
+                                    >
+                                        <RightOutlined style={{fontSize: 35}}/>
+                                    </motion.div>
+                                </motion.div>
+
+                            </Col>
+                        </div>
+                    </Row>
+
+
+                </Col>
+
+
+                <Col span={24}>
+                    <button
+                        style={{marginBottom: "10px", width: "890px"}}
+                        className={"rainbow"}
                     >
                         {isHovered ? "Hovered!" : "Not hovered"}
                     </button>
@@ -776,29 +808,38 @@ const NFT_page:React.FC<{}> = ({ }) => {
         </>
     );
 
-    const return_nft_vector = () =>{
+    const return_nft_vector = () => {
         if (loading) {
             return <p>Loading badges...</p>;
         }
         //console.log('before map user_badges_vector',user_badges_vector)
         return (
             <>
-                <Row gutter={[24,10]} style={{paddingLeft:20,paddingTop:3,backgroundColor:"#dfdfdf",borderRadius:5,height:580}}>
-                    <Col span={13}>
-                       <Row gutter={[24,6]} style={{height:550,backgroundColor:"#ededed",borderRadius:5,width:"100%",paddingTop:15,paddingRight:45}}>
-                           {/*{user_badges_vector.map((badges, index) => {*/}
-                           {/*    //console.log('Mapped badges: ', badges);*/}
-                           {/*    // @ts-ignore*/}
-                           {/*    return (*/}
-                           {/*        <Badgex_box badges={badges[0]} key={index} onBadgeClick={handleBadgeClick} />*/}
-                           {/*    );*/}
-                           {/*})}*/}
-                           {user_badges_vector.map((badgesArray, index) => {
-                               return badgesArray.map((badge, badgeIndex) => (
-                                   <Badgex_box badges={badge} key={`${index}-${badgeIndex}`} onBadgeClick={handleBadgeClick} />
-                               ));
-                           })}
-                       </Row>
+                <Row gutter={[24, 10]}
+                     style={{paddingLeft: 20, paddingTop: 3, backgroundColor: "#dfdfdf", borderRadius: 5, height: 580}}>
+                <Col span={13}>
+                    <Row gutter={[24, 6]} style={{
+                            height: 550,
+                            backgroundColor: "#ededed",
+                            borderRadius: 5,
+                            width: "100%",
+                            paddingTop: 15,
+                            paddingRight: 45
+                        }}>
+                            {/*{user_badges_vector.map((badges, index) => {*/}
+                            {/*    //console.log('Mapped badges: ', badges);*/}
+                            {/*    // @ts-ignore*/}
+                            {/*    return (*/}
+                            {/*        <Badgex_box badges={badges[0]} key={index} onBadgeClick={handleBadgeClick} />*/}
+                            {/*    );*/}
+                            {/*})}*/}
+                            {user_badges_vector.map((badgesArray, index) => {
+                                return badgesArray.map((badge, badgeIndex) => (
+                                    <Badgex_box badges={badge} key={`${index}-${badgeIndex}`}
+                                                onBadgeClick={handleBadgeClick}/>
+                                ));
+                            })}
+                        </Row>
                     </Col>
                     <Col span={2}>
                         <DoubleRightOutlined style={{fontSize: 30}}/>
@@ -808,7 +849,14 @@ const NFT_page:React.FC<{}> = ({ }) => {
                         <DoubleRightOutlined style={{fontSize: 30}}/>
                     </Col>
                     <Col span={9}>
-                        <Row gutter={[24,10]} style={{height:550,backgroundColor:"#ededed",borderRadius:5,width:"100%",paddingLeft:15,paddingTop:15}}>
+                        <Row gutter={[24, 10]} style={{
+                            height: 550,
+                            backgroundColor: "#ededed",
+                            borderRadius: 5,
+                            width: "100%",
+                            paddingLeft: 15,
+                            paddingTop: 15
+                        }}>
                             <Col span={24}>
                                 <Row gutter={[24, 2]} style={{
                                     width: "104%",
