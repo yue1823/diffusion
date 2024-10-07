@@ -189,3 +189,8 @@ https://codepen.io/jtrancozo/pen/mEoEVw
 ```
 https://codepen.io/jh3y/pen/mdvyWRr
 ```
+
+button _cool
+```
+https://ryanmulligan.dev/blog/css-property-new-style/
+```
