@@ -69,10 +69,10 @@ interface Data {
     save_badges_list:any,
     save_helper_chance:any
 }
-const options = {
-    method: 'GET',
-    headers: {accept: 'application/json', 'X-API-KEY':`${diffusion.x_api_key}`}
-};
+// const options = {
+//     method: 'GET',
+//     headers: {accept: 'application/json', 'X-API-KEY':`${diffusion.x_api_key}`}
+// };
 const aptosConfig = new AptosConfig({ network: Network.TESTNET });
 const aptos = new Aptos(aptosConfig);
 const BarChart: React.FC<{data1:{win:number,lose:number}}> = ({data1}) => {
@@ -117,7 +117,7 @@ const BarChart: React.FC<{data1:{win:number,lose:number}}> = ({data1}) => {
 const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:Data }>= ({profile_date,diffusion_data}) => {
     const [can_claim_pair , set_can_claim_pair]=useState<Bet_card_data[]>([]);
     const [user_have_pair, set_user_have_pair]=useState<Bet_card_data[]>([]);
-    const [finish_pair,set_finish_pair]=useState<Bet_card_data[]>([]);
+   // const [finish_pair,set_finish_pair]=useState<Bet_card_data[]>([]);
     const [wrong_pair,set_wrong_pair]=useState<Bet_card_data[]>([]);
     const [reload_profile,set_reload_profile]=useState<Profile>();
     const [big_cols, setBigCols] = useState<JSX.Element[]>([]);
@@ -149,7 +149,7 @@ const Is_telegrame_web_my_card: React.FC <{profile_date:Profile,diffusion_data:D
             }
         }
         //console.log('finsih pair', pair);
-        set_finish_pair(pair);
+        //set_finish_pair(pair);
 
     }
     const reload_button = async ()=>{

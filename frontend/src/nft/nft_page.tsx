@@ -194,13 +194,6 @@ const NFT_page:React.FC<{}> = ({ }) => {
             set_anime_finish_load(false)
         }
     }
-    const next = () => {
-        setCurrent(current + 1);
-    };
-
-    const prev = () => {
-        setCurrent(current - 1);
-    };
 
     const contentStyle_steps: React.CSSProperties = {
         lineHeight: '160px',
@@ -214,11 +207,9 @@ const NFT_page:React.FC<{}> = ({ }) => {
     };
     const [status ,set_status]=useState<string>('My Badges');
     const [return_element , set_return_element]=useState<JSX.Element>(<></>);
-    const [carousel_return,set_carousel_return]=useState<JSX.Element>(<></>);
-     const [isHovered, setIsHovered] = useState<boolean>(false);
+     //const [isHovered, setIsHovered] = useState<boolean>(false);
      const [user_badges_vector,set_user_badges_vector]=useState<[Badges[]]>([[{Name:'',url:''}]]);
     const [nfts, setNfts] = useState<CurrentTokenOwnership[]>([]);
-    const [choose_badges ,set_choose_badges] = useState<Badges>(empty_Badges);
     const [selectedBadge, setSelectedBadge] = useState<Badges>(empty_Badges);
     const [loading, setLoading] = useState(true);
     const [current_page ,set_current_page]=useState(0);
@@ -340,20 +331,6 @@ const NFT_page:React.FC<{}> = ({ }) => {
         },
     ];
     const items_steps = steps.map((item) => ({key: item.title, title: item.title}));
-    const handleMouseOver = () => {
-        console.log(isHovered);
-        console.log("Mouse is over the button");
-        setIsHovered(true);
-
-    };
-
-
-    const handleMouseOut = () => {
-        console.log(isHovered);
-        console.log("Mouse left the button");
-        setIsHovered(false);
-    };
-
     const on_click_submit_nft_to_badges = async () => {
         if (select_nft == undefined) return [];
         if (!account) return [];
@@ -873,9 +850,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                 borderRadius: 5,
                                 paddingTop: "0.5%",
                                 display: "flex",
-                                background: isHovered
-                                    ? "linear-gradient(90deg, rgba(98, 182, 255, 1) 0%, rgba(153, 102, 255, 1) 100%)"
-                                    : "linear-gradient(90deg, rgba(255, 153, 102, 1) 0%, rgba(255, 94, 98, 1) 100%)",
+                                background: "linear-gradient(90deg, rgba(255, 153, 102, 1) 0%, rgba(255, 94, 98, 1) 100%)",
                                 boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
                                 transition: "background 0.3s ease",
                                 color: "white"

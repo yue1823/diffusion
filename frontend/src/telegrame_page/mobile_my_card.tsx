@@ -103,7 +103,7 @@ const BarChart: React.FC<{data1:{win:number,lose:number}}> = ({data1}) => {
 const Mobile_my_card: React.FC <{profile_date:Profile,diffusion_data:Data }>= ({profile_date,diffusion_data}) => {
     const [can_claim_pair , set_can_claim_pair]=useState<any[]>([]);
     const [user_have_pair, set_user_have_pair]=useState<any[]>([]);
-    const [finish_pair,set_finish_pair]=useState<any[]>([]);
+    //const [finish_pair,set_finish_pair]=useState<any[]>([]);
     const [wrong_pair,set_wrong_pair]=useState<any[]>([]);
     const [big_cols, setBigCols] = useState<JSX.Element[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -131,7 +131,7 @@ const Mobile_my_card: React.FC <{profile_date:Profile,diffusion_data:Data }>= ({
             }
         }
         //console.log('finsih pair', pair);
-        set_finish_pair(pair);
+        //set_finish_pair(pair);
 
     }
     const find_pair_of_user =()=>{

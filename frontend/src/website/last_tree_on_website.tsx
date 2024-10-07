@@ -33,7 +33,7 @@ import Right_light from "./last_tree/Right/Right_light1.png";
 import Left_light from "./last_tree/left/Left_light1.png";
 import "../css_folder/App.css";
 import {Link, Route, Routes} from "react-router-dom";
-import Swap_page from "../swap_page/swap_box.tsx";
+
 import Main_content from '../content/content';
 const Last_tree_on_website: React.FC <{scrollPosition:number}> = ({scrollPosition}) => {
 
