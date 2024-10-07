@@ -8,7 +8,8 @@ import {InputTransactionData, useWallet } from "@aptos-labs/wallet-adapter-react
 import {Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { diffusion } from "../setting";
 import Badgex_box from "./badges_box";
-import {ArrowLeftOutlined, ArrowRightOutlined, DoubleRightOutlined, InfoCircleOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
+import {ArrowLeftOutlined, ArrowRightOutlined, DoubleRightOutlined, InfoCircleOutlined, LeftOutlined,
+    RedoOutlined, RightOutlined } from "@ant-design/icons";
 import "../css_/進度.css";
 
 import type { MenuProps } from 'antd';
@@ -583,6 +584,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
                     </Col>
                     {choose === "My Badges" ? <>
                         <Col span={24} style={{padding: 1, height: "71%", paddingLeft: 10}}>
+
                             <Carousel autoplay style={{height: "100%", maxWidth: "100%", maxHeight: "100%", zIndex:100}}
                                       draggable={true}>
 
@@ -631,7 +633,7 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                 position: "relative",
                                 top: "4px",
                                 right: "40px"
-                            }}>{current_page+1}</h1>
+                            }}>{current_page + 1}</h1>
                             <div style={{
                                 border: "solid 1px",
                                 borderColor: "#706f6f",
@@ -647,9 +649,29 @@ const NFT_page:React.FC<{}> = ({ }) => {
                                 top: "-30px",
                                 left: "10px"
                             }}>{total_page}</h1>
+                            <div style={{position: "absolute", top: "-10px"}}>
+                                <motion.div
+                                    animate={{x: [null, 101, 0], y: [null, 101, 0]}}
+                                    whileHover={{scale: [null, 1, 1], zIndex: 1000, position: 'relative'}}
+                                    transition={{duration: 0.3}}
+                                    onClick={() => {
+                                        view_user_bedges();
+                                        //set_return_element(return_my_badged())
+                                    }}
+                                >
+                                    <motion.div className={"box"}
+                                                whileHover={{scale: 1.03}}
+                                                whileTap={{scale: 0.90}}
+                                                transition={{type: "spring", stiffness: 300, damping: 25}}
+                                    ><RedoOutlined style={{fontSize: 90}}/></motion.div>
+                                </motion.div>
+                            </div>
+
+
                         </Col>
-                        <Col span={6} style={{left:20}}>
-                            <button className={"rainbow"} style={{paddingTop:5}} disabled={total_page==0?true:false} onClick={() => {
+                        <Col span={6} style={{left: 20}}>
+                            <button className={"rainbow"} style={{paddingTop: 5}}
+                                    disabled={total_page == 0 ? true : false} onClick={() => {
                                 // console.log('total page',total_page)
                                 // console.log('click right',current_page)
                                 set_current_page(prevPage => Math.min(prevPage + 1, total_page - 1)); // 保证不超过总页数
@@ -658,8 +680,12 @@ const NFT_page:React.FC<{}> = ({ }) => {
                             </button>
                         </Col>
                     </> : <>
-                        <Col span={24} style={{ height:"93.5%",paddingLeft: 10,left:10,}}>
-                            <Row  gutter={[24,6]} style={{backgroundColor:"#ededed",height:"inherit",width:"99%",borderRadius:10,padding:10,paddingLeft:15}}>
+                        <Col span={24} style={{height: "93.5%", paddingLeft: 10, left: 10,}}>
+                            <Row gutter={[24, 6]} style={{
+                        backgroundColor: "#ededed",
+                        height: "inherit",
+                        width: "99%",
+                        borderRadius:10,padding:10,paddingLeft:15}}>
                                 <Col span={24}  style={{height:"7%"}}>
                                     <h1 style={{textAlign: "left", fontSize: 20}}>NFT Collision</h1>
                                     <div style={{border: "solid 1px", borderColor: "#b5b3b3", width: "15%"}}></div>
