@@ -8,7 +8,8 @@ import {Aptos, AptosConfig, MoveValue, Network} from "@aptos-labs/ts-sdk";
 import Footer_bar from "./Footer/Footer";
 import {InfoCircleOutlined, UserAddOutlined, UserOutlined} from "@ant-design/icons";
 import { Route, Routes, } from "react-router-dom";
-import Swap_page from "./swap_page/swap_box.tsx";
+// import Swap_page from "./swap_page/swap_box.tsx";
+
 // import Apt_logo from "./art/Aptos_mark_BLK.svg";
 // import { Link } from 'react-router-dom';
 // import Bet_page from "./Bet_card/Bet_page";
@@ -23,6 +24,7 @@ import {Bounce, toast, ToastContainer} from "react-toastify";
 import {motion} from "framer-motion";
 import New_Bet_page from "./Bet_card/New_Bet_page";
 import {diffusion} from "./setting";
+import New_swap_page from './swap_page/new_swap_box.tsx';
 // interface Cylinder_Pair{
 //     already_send:string;
 //     coin:string;
@@ -557,7 +559,7 @@ const App: React.FC<{id:string}> = ({}) => {
                                 <Routes>
                                     <Route  path={"diffusion/" } element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
                                     <Route  path={"diffusion/app"} element={<Main_content address={user_address} index_of_address={index_of_to_address}/>}/>
-                                    <Route  path={"diffusion/swap"} element={<Swap_page/>}/>
+                                    <Route  path={"diffusion/swap"} element={<New_swap_page/>}/>
                                     <Route  path={"diffusion/Bet"  } element={<New_Bet_page length={savePair ? savePair.length :0} pair={savePair} balance1={balance1} fetch_data={fetch_data ? fetch_data:defaultHelperData} profile_data={user_profile ? user_profile:defaultProfile} result_data={data_to_user_page ? data_to_user_page : dataArray}/> } />
                                     <Route  path={"diffusion/admin"} element={<Admin_page helper_num={helper_num}/>}/>
                                     <Route  path={"diffusion/nft"} element={<NFT_page />}/>
