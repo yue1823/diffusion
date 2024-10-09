@@ -8,6 +8,7 @@ import Modal from "@mui/material/Modal";
 import {Box} from "@mui/material";
 import { motion } from "framer-motion";
 import Diffusion_logo from "../logo/aptos-apt-logo.svg";
+import Diffusion_logo_2 from "../art/diffusion7.png";
 const aptosConfig = new AptosConfig({ network: Network.TESTNET});
 const aptos = new Aptos(aptosConfig);
 interface Coin_data{
@@ -23,10 +24,12 @@ interface Transaction_data {
     from_coin_symbol:string,
     from_coin_address:string,
     from_coin_decimals:number,
+    from_icon_url:string,
     from_balance:number,
     to_coin_symbol:string,
     to_coin_address:string,
     to_coin_decimals:number,
+    to_icon_url:string,
     to_balance:number,
     from_amount:number,
     to_amount:number,
@@ -45,17 +48,24 @@ const New_swap_page:React.FC<{}>=({})=>{
     const [enter_address,set_enter_address]=useState('');
     const [open_box,set_open_box]=useState(false);
     const [coin_data,set_coin_data]=useState<Coin_data>({name:'test',symbol:'',balacne:0,coin_url:'',decimals:1,stander:"v2",coin_address:""})
-    const [selectedValue, setSelectedValue] = useState<string |undefined >(undefined);
-    const [transaction_data , set_transaction_data]=useState<Transaction_data>({from_coin_symbol:"test",from_coin_decimals:0,from_coin_address:"",from_amount:0,from_balance:0,to_coin_decimals:0,to_amount:0,to_coin_address:"",to_coin_symbol:"test",to_balance:0,slippage:""});
+    const [selectedValue, setSelectedValue] = useState<Show_value>({
+        to_value:undefined,
+        from_value:undefined
+    });
+    const [transaction_data , set_transaction_data]=useState<Transaction_data>({from_coin_symbol:"test",from_coin_decimals:0,from_coin_address:"",from_amount:0,from_balance:0,from_icon_url:'',to_coin_decimals:0,to_amount:0,to_coin_address:"",to_coin_symbol:"test",to_balance:0,to_icon_url:"",slippage:""});
     const [show_value,set_show_value] = useState<Show_value>({
         to_value:undefined,
         from_value:undefined
     })
     useEffect(() => {
-        if (coin_data.name === 'test') {
-            setSelectedValue(undefined); // 显示 placeholder
-        } else {
-            setSelectedValue(coin_data.symbol); // 显示 symbol
+        if (transaction_data.from_coin_symbol === 'test') {
+            setSelectedValue({...selectedValue,from_value:undefined}); // 显示 placeholder
+        }else if(transaction_data.to_coin_symbol === 'test'){
+            setSelectedValue({...selectedValue,to_value:undefined});
+        } else if(coin_data.symbol === transaction_data.from_coin_symbol){
+            setSelectedValue({...selectedValue,from_value:coin_data.symbol}); // 显示 symbol
+        }else if(coin_data.symbol === transaction_data.to_coin_symbol){
+            setSelectedValue({...selectedValue,to_value:coin_data.symbol}); // 显示 symbol
         }
     }, [coin_data]);
     useEffect(() => {
@@ -65,9 +75,25 @@ const New_swap_page:React.FC<{}>=({})=>{
         //     fetch_balance_of_options()
         // }
     }, [transaction_data]);
+    useEffect(() => {
+        console.log("from coin symbol",transaction_data)
+        if (transaction_data.from_coin_address) {
+            fetch_balance_of_options(transaction_data.from_coin_address, "from");
+        }
+    }, [transaction_data.from_coin_address]);
+    useEffect(() => {
+        console.log("to coin symbol",transaction_data)
+        if (transaction_data.to_coin_address) {
+            fetch_balance_of_options(transaction_data.to_coin_address, "to");
+        }
+    }, [transaction_data.to_coin_address]);
     const fetch_balance_of_options = async(key_address:string,to_or_from:string) =>{
         if(!account)return[];
 
+        console.log('key_address',key_address)
+        console.log('test1',regex.test(key_address))
+        console.log('test2',regex2.test(key_address))
+        console.log("fetch balance", transaction_data)
         if(regex.test(key_address)){
             let respone = await aptos.view({payload:{
                     function:option_coin_address.function.view_v2_coin_balance(),
@@ -77,7 +103,7 @@ const New_swap_page:React.FC<{}>=({})=>{
             //console.log("balance ",respone)
             if(to_or_from == "to"){
                 set_transaction_data({...transaction_data,to_balance:respone[0] as number})
-            }else if(to_or_from == "form"){
+            }else if(to_or_from == "from"){
                 set_transaction_data({...transaction_data,from_balance:respone[0] as number})
             }
         }else if(regex2.test(key_address)){
@@ -86,10 +112,10 @@ const New_swap_page:React.FC<{}>=({})=>{
                     typeArguments:[key_address],
                     functionArguments:[account.address]
                 }})
-            //console.log("balance ",respone)
+            console.log("balance ",respone)
             if(to_or_from == "to"){
                 set_transaction_data({...transaction_data,to_balance:respone[0] as number})
-            }else if(to_or_from == "form"){
+            }else if(to_or_from == "from"){
                 set_transaction_data({...transaction_data,from_balance:respone[0] as number})
             }
         }else if(key_address === "0x1::aptos_coin::AptosCoin"){
@@ -100,7 +126,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                 }})
             console.log("balance ",respone[0])
             if(to_or_from == "to"){
-                set_transaction_data({...transaction_data,to_balance:parseFloat(respone[0] as string)})
+                set_transaction_data({...transaction_data,to_balance:respone[0] as number})
             }else if(to_or_from == "from"){
                 set_transaction_data({...transaction_data,from_balance:respone[0] as number})
             }
@@ -181,7 +207,10 @@ const New_swap_page:React.FC<{}>=({})=>{
                             typeArguments:[enter_address],
                             functionArguments:[]
                         }})
-
+                    // console.log('name ',name1)
+                    // console.log('symbol1 ', symbol1)
+                    // console.log('balance1 ', balance1)
+                    // console.log('decimals1 ', decimals1)
                     set_coin_data({
                         name:name1[0] as string,
                         symbol:symbol1[0] as string,
@@ -304,13 +333,14 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                         // console.log("items",items)
                                                         // console.log("select options 1",select_ooption)
                                                         if(select_ooption != undefined){
-                                                            // console.log("select options 2",select_ooption)
-                                                            set_transaction_data({...transaction_data,from_coin_symbol:value,from_coin_address:select_ooption.address,from_coin_decimals:select_ooption.decimals})
-                                                            fetch_balance_of_options(select_ooption.address,"from")
-                                                            //console.log("transaction_data",transaction_data)
+
+                                                                // console.log("select options 2",select_ooption)
+                                                                set_transaction_data({...transaction_data,from_coin_symbol:select_ooption.value,from_coin_address:select_ooption.address,from_coin_decimals:select_ooption.decimals})
+                                                                // fetch_balance_of_options(select_ooption.address,"from")
+                                                                //console.log("transaction_data",transaction_data)
                                                         }
                                                     }}
-                                                    value={selectedValue}
+                                                    value={selectedValue.from_value}
                                                     onSearch={(value) =>{
                                                         //console.log(value)
                                                         option_coin_address.option.map((label,index) =>{
@@ -343,7 +373,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                             if(index == option_coin_address.option.length -1 ){
                                                                                 return(
                                                                                     <>
-                                                                                        {coin_data.name != 'test' && coin_data.name != 'error' ? <>
+                                                                                        {coin_data.name != "test" && coin_data.name != 'error' ? <>
                                                                                             <button
                                                                                                 style={{width:"305px",height:"60px",top:"15px"}}
                                                                                                 className={"rainbow"}
@@ -390,12 +420,23 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                     <Col span={12} style={{}}>
                                                         <Row gutter={[24,3]}>
                                                             <Col span={24}>
-                                                                 <p style={{display:"inline-block",justifySelf:"left"}}>Balacne : </p>
-                                                                 <p style={{display:"inline-block",justifySelf:"right",left:10}}>{(transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals))).toFixed(3)}</p>
+                                                                {transaction_data.from_coin_symbol != 'test' && (
+                                                                    <>
+                                                                        <p style={{display:"inline-block",justifySelf:"left"}}>Balacne : </p>
+                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{(transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals))).toFixed(3)}</p>
+                                                                    </>
+                                                                )}
                                                             </Col>
                                                             <Col span={24}>
-                                                                 <p style={{display:"inline-block",justifySelf:"right"}}>{transaction_data.from_coin_symbol}</p>
-                                                                 {regex2.test(transaction_data.from_coin_address) && (
+                                                                {transaction_data.from_coin_symbol != 'test' && (
+                                                                    <>
+                                                                        <p style={{
+                                                                            display: "inline-block",
+                                                                            justifySelf: "right"
+                                                                        }}>{transaction_data.from_coin_symbol}</p>
+                                                                    </>
+                                                                )}
+                                                                {regex2.test(transaction_data.from_coin_address) && (
                                                                      <p>V1 standard</p>
                                                                  )}
                                                                  {regex.test(transaction_data.from_coin_address) && (
@@ -405,7 +446,25 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                         </Row>
                                                     </Col>
                                                     <Col span={12} style={{height:"80px",justifyContent:"center",alignItems:"center",width:"100%",paddingTop:10,paddingLeft:90}}>
-                                                        {transaction_data.from_coin_symbol === "APT" ? <><Image src={"https://cryptologos.cc/logos/aptos-apt-logo.svg?v=035"} preview={false} fallback={Diffusion_logo} style={{height:"60px",width:"60px",justifyContent:"center",alignItems:"center",display:"inline-block",top:10}}></Image></>:<></>}
+                                                        {transaction_data.from_coin_symbol === "APT" ? <><Image src={"https://cryptologos.cc/logos/aptos-apt-logo.svg?v=035"} preview={false} fallback={Diffusion_logo} style={{height:"60px",width:"60px",justifyContent:"center",alignItems:"center",display:"inline-block",top:10}}></Image></>:<>
+                                                            {regex.test(transaction_data.from_coin_address) && (async () => {
+                                                                    let respone = await aptos.view({payload:{
+                                                                            function:option_coin_address.function.view_v2_coin_icon_url(),
+                                                                            typeArguments:[option_coin_address.coin_meta_date],
+                                                                            functionArguments:[transaction_data.from_coin_address]
+                                                                        }})
+                                                                    if (respone[0] != undefined) {
+                                                                        set_transaction_data({
+                                                                            ...transaction_data,
+                                                                            from_icon_url: respone[0] as string
+                                                                        })
+                                                                    }
+                                                                    return (
+                                                                        <Image src={respone[0] as string} fallback={Diffusion_logo_2}></Image>
+                                                                    )
+                                                                }
+                                                            )}
+                                                        </>}
                                                     </Col>
                                                 </Row>
                                             </div>
@@ -437,12 +496,12 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                         // console.log("select options 1",select_ooption)
                                                         if(select_ooption != undefined){
                                                             // console.log("select options 2",select_ooption)
-                                                            set_transaction_data({...transaction_data,to_coin_symbol:value,to_coin_address:select_ooption.address,to_coin_decimals:select_ooption.decimals})
-                                                            fetch_balance_of_options(select_ooption.address,"to")
+                                                            set_transaction_data({...transaction_data,to_coin_symbol:select_ooption.value,to_coin_address:select_ooption.address,to_coin_decimals:select_ooption.decimals})
+                                                            // fetch_balance_of_options(select_ooption.address,"to")
                                                             //console.log("transaction_data",transaction_data)
                                                         }
                                                     }}
-                                                    value={selectedValue}
+                                                    value={selectedValue.to_value}
                                                     onSearch={(value) =>{
                                                         //console.log(value)
                                                         option_coin_address.option.map((label,index) =>{
