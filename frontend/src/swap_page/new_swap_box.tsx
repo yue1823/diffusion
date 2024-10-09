@@ -1,5 +1,5 @@
 import { DoubleRightOutlined, ExclamationCircleTwoTone, PlusOutlined } from "@ant-design/icons";
-import {Col, Divider, InputNumber, Row, Select, message ,Radio,Image} from "antd";
+import {Col, Divider, InputNumber, Row, Select, message ,Radio,Image, Segmented} from "antd";
 import React, {useEffect, useState } from "react";
 import {option_coin_address} from "./coin_address";
 import {Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
@@ -69,20 +69,20 @@ const New_swap_page:React.FC<{}>=({})=>{
         }
     }, [coin_data]);
     useEffect(() => {
-        console.log("transaction_data",transaction_data)
+        //console.log("transaction_data",transaction_data)
         // if( coin_data.balacne == 0 && coin_data.name != "test"){
         //     if()
         //     fetch_balance_of_options()
         // }
     }, [transaction_data]);
     useEffect(() => {
-        console.log("from coin symbol",transaction_data)
+        //console.log("from coin symbol",transaction_data)
         if (transaction_data.from_coin_address) {
             fetch_balance_of_options(transaction_data.from_coin_address, "from");
         }
     }, [transaction_data.from_coin_address]);
     useEffect(() => {
-        console.log("to coin symbol",transaction_data)
+        //console.log("to coin symbol",transaction_data)
         if (transaction_data.to_coin_address) {
             fetch_balance_of_options(transaction_data.to_coin_address, "to");
         }
@@ -316,7 +316,9 @@ const New_swap_page:React.FC<{}>=({})=>{
                     <div style={{height:"470px",width:"inhereit",justifyContent:"center"}}>
                         <Row gutter={[24,5]} style={{width:"inherit",height:"inherit",backgroundColor:"blue",padding:10,}}>
                             <Col span={24} style={{height:"100px",backgroundColor:"green",display:"inline-block",paddingTop:10,paddingLeft:10}}>
-                               <div style={{justifyContent:"left",alignItems: "center",width:"350px",backgroundColor:"#dfdfdf",height:"80px"}}></div>
+                               <div style={{justifyContent:"left",alignItems: "center",width:"350px",backgroundColor:"#dfdfdf",height:"80px"}}>
+                                   <Segmented options={option_coin_address.segmented_options} style={{height:"80px"}} block/>
+                               </div>
                             </Col>
                             <Col span={24} style={{height:"200px",backgroundColor:"gold",display:"inline-block",padding:10,paddingLeft:15}}>
                                 <Row gutter={[24,6]}>
@@ -404,7 +406,9 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                              controls={false}
                                                              size={"large"}
                                                              addonAfter={<>
-                                                                 <button className={""} style={{zIndex:10,display:"inline-block",width:"50px",height:"20px",backgroundColor:"#797d85",padding:1,color:"white",top:"-10px"}}><p style={{top:"10px",position:"absolute",fontSize:15,right:"20px"}}>max</p></button>
+                                                                 <button onClick={() =>{
+                                                                     set_show_value({...show_value,from_value:(transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals))).toFixed(3)})
+                                                                 }} className={""} style={{zIndex:10,display:"inline-block",width:"50px",height:"20px",backgroundColor:"#797d85",padding:1,color:"white",top:"-10px"}}><p style={{top:"10px",position:"absolute",fontSize:15,right:"20px"}}>max</p></button>
                                                                  {/*<p style={{position:"absolute",fontSize:12,top:"20px",right:"26px"}}>{coin_data.balacne}</p>*/}
                                                              </>}
                                                              onChange={(value) =>{
@@ -413,12 +417,13 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                      // console.log("show value",value);
                                                                      if(regex3.test(value)){
                                                                          set_show_value({...show_value,from_value:value})
+                                                                         // set_transaction_data({...transaction_data,from_amount:parseFloat(value)})
                                                                      }
                                                                  }
                                                 }} style={{width:"319px",backgroundColor:"#bcbbbb"}} prefix={"$"} suffix={""}/>
                                                 <Row gutter={[24,6]} style={{padding:2}}>
                                                     <Col span={12} style={{}}>
-                                                        <Row gutter={[24,3]}>
+                                                        <Row gutter={[24,1]}>
                                                             <Col span={24}>
                                                                 {transaction_data.from_coin_symbol != 'test' && (
                                                                     <>
@@ -436,12 +441,21 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                         }}>{transaction_data.from_coin_symbol}</p>
                                                                     </>
                                                                 )}
+
+                                                            </Col>
+                                                            <Col span={24}>
                                                                 {regex2.test(transaction_data.from_coin_address) && (
-                                                                     <p>V1 standard</p>
-                                                                 )}
-                                                                 {regex.test(transaction_data.from_coin_address) && (
-                                                                    <p>V2 standard</p>
-                                                                 )}
+                                                                    <p style={{
+                                                                        display: "inline-block",
+                                                                        justifySelf: "right"
+                                                                    }}>V1 standard</p>
+                                                                )}
+                                                                {regex.test(transaction_data.from_coin_address) && (
+                                                                    <p style={{
+                                                                        display: "inline-block",
+                                                                        justifySelf: "right"
+                                                                    }}>V2 standard</p>
+                                                                )}
                                                             </Col>
                                                         </Row>
                                                     </Col>
@@ -539,7 +553,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                                                 style={{width:"305px",height:"60px",top:"15px"}}
                                                                                                 className={"rainbow"}
                                                                                                 key={index}
-                                                                                                onClick={() => add_items_form()}><PlusOutlined />
+                                                                                                onClick={() => add_items_to()}><PlusOutlined />
                                                                                             </button>
                                                                                         </> : <>
                                                                                             <p>Please enter correct address</p>
@@ -557,7 +571,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                     style={{width:"316px",height:"38px",backgroundColor:"#bcbbbb"}}
                                                     />
                                             </div>
-                                            <div style={{border:"1.5mm ridge #CED4DA",height:"50px",position:"relative",padding:1,backgroundColor:"#dfdfdf"}}>
+                                            <div style={{border:"1.5mm ridge #CED4DA",height:"130px",position:"relative",padding:1,backgroundColor:"#dfdfdf"}}>
                                                 <InputNumber  value={show_value.to_value} min="0"
                                                               max="3"
                                                               controls={false}
@@ -570,7 +584,66 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                       }
                                                                   }
                                                               }}
-                                                              size={"large"} autoFocus={false} style={{width:"319px",height:"38px",backgroundColor:"#bcbbbb"}} prefix={"$"} disabled={true}/>
+                                                              size={"large"} autoFocus={false} style={{width:"319px",height:"38px",backgroundColor:"#bcbbbb"}} prefix={"$"} />
+                                                <Row gutter={[24,6]} style={{padding:2}}>
+                                                    <Col span={12} style={{}}>
+                                                        <Row gutter={[24,1]}>
+                                                            <Col span={24}>
+                                                                {transaction_data.to_coin_symbol != 'test' && (
+                                                                    <>
+                                                                        <p style={{display:"inline-block",justifySelf:"left"}}>Balacne : </p>
+                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{(transaction_data.to_balance/(Math.pow(10,transaction_data.to_coin_decimals))).toFixed(3)}</p>
+                                                                    </>
+                                                                )}
+                                                            </Col>
+                                                            <Col span={24}>
+                                                                {transaction_data.to_coin_symbol != 'test' && (
+                                                                    <>
+                                                                        <p style={{
+                                                                            display: "inline-block",
+                                                                            justifySelf: "right"
+                                                                        }}>{transaction_data.to_coin_symbol}</p>
+                                                                    </>
+                                                                )}
+                                                            </Col>
+                                                            <Col span={24}>
+                                                                {regex2.test(transaction_data.to_coin_address) && (
+                                                                    <p style={{
+                                                                        display: "inline-block",
+                                                                        justifySelf: "right",
+                                                                    }}>V1 standard</p>
+                                                                )}
+                                                                {regex.test(transaction_data.to_coin_address) && (
+                                                                    <p style={{
+                                                                        display: "inline-block",
+                                                                        justifySelf: "right",
+                                                                    }}>V2 standard</p>
+                                                                )}
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                    <Col span={12} style={{height:"80px",justifyContent:"center",alignItems:"center",width:"100%",paddingTop:10,paddingLeft:90}}>
+                                                        {transaction_data.to_coin_symbol === "APT" ? <><Image src={"https://cryptologos.cc/logos/aptos-apt-logo.svg?v=035"} preview={false} fallback={Diffusion_logo} style={{height:"60px",width:"60px",justifyContent:"center",alignItems:"center",display:"inline-block",top:10}}></Image></>:<>
+                                                            {regex.test(transaction_data.from_coin_address) && (async () => {
+                                                                    let respone = await aptos.view({payload:{
+                                                                            function:option_coin_address.function.view_v2_coin_icon_url(),
+                                                                            typeArguments:[option_coin_address.coin_meta_date],
+                                                                            functionArguments:[transaction_data.to_coin_address]
+                                                                        }})
+                                                                    if (respone[0] != undefined) {
+                                                                        set_transaction_data({
+                                                                            ...transaction_data,
+                                                                            to_icon_url: respone[0] as string
+                                                                        })
+                                                                    }
+                                                                    return (
+                                                                        <Image src={respone[0] as string} fallback={Diffusion_logo_2}></Image>
+                                                                    )
+                                                                }
+                                                            )}
+                                                        </>}
+                                                    </Col>
+                                                </Row>
                                             </div>
                                         </div>
                                     </Col>
