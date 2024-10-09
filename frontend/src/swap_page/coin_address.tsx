@@ -23,7 +23,7 @@ const option_coin_address= {
         view_v1_coin_decimals:() => '0x1::coin::decimals' as `${string}::${string}::${string}`,
         view_v2_coin_symbol:() => '0x1::fungible_asset::symbol' as `${string}::${string}::${string}`,
         view_v2_coin_name:() => '0x1::fungible_asset::name' as `${string}::${string}::${string}`,
-        view_v2_coin_balance:() => '0x1::fungible_asset::balance' as `${string}::${string}::${string}`,
+        view_v2_coin_balance:() => '0x1::primary_fungible_store::balance' as `${string}::${string}::${string}`,
         view_v2_coin_decimals:() => '0x1::fungible_asset::decimals' as `${string}::${string}::${string}`,
         view_v2_coin_icon_url:() => '0x1::fungible_asset::icon_uri' as `${string}::${string}::${string}`,
     }
