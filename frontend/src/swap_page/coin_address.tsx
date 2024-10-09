@@ -5,14 +5,16 @@ const option_coin_address= {
         {
             value:"APT",
             label:"APT",
-            address:"0x1",
-            coin_url:""
+            address: "0x1::aptos_coin::AptosCoin",
+            coin_url:"https://cryptologos.cc/logos/aptos-apt-logo.svg?v=035",
+            decimals:8,
         },
         {
             value:"USDC",
             label:"USDC",
-            address:"0x2",
-            coin_url:""
+            address:"0x625291f4e529c4315830dcdadaae8a78202e326a32d565eb415539d989d8bc4a::GWC::GWC",
+            coin_url:"",
+            decimals:8,
         }
     ],
     coin_meta_date:"0x1::fungible_asset::Metadata",
