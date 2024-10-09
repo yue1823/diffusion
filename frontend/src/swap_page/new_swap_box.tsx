@@ -1,4 +1,4 @@
-import { DoubleRightOutlined, ExclamationCircleTwoTone } from "@ant-design/icons";
+import { DoubleRightOutlined, ExclamationCircleTwoTone, PlusOutlined } from "@ant-design/icons";
 import {Col, Divider, Input, Row, Select, message ,Radio,Image, Skeleton} from "antd";
 import React, {useEffect, useState } from "react";
 import {option_coin_address} from "./coin_address";
@@ -23,8 +23,16 @@ const New_swap_page:React.FC<{}>=({})=>{
     const { account, signAndSubmitTransaction } =useWallet() ;
     const [items, setItems] = useState(option_coin_address.option);
     const [enter_address,set_enter_address]=useState('');
-    const [coin_data,set_coin_data]=useState<Coin_data>({name:'test',symbol:'T',balacne:0,coin_url:'asd',decimals:1,stander:"v2",coin_address:""})
-
+    const [open_box,set_open_box]=useState(false);
+    const [coin_data,set_coin_data]=useState<Coin_data>({name:'test',symbol:'',balacne:0,coin_url:'',decimals:1,stander:"v2",coin_address:""})
+    const [selectedValue, setSelectedValue] = useState<string |undefined >(undefined);
+    useEffect(() => {
+        if (coin_data.name === 'test') {
+            setSelectedValue(undefined); // 显示 placeholder
+        } else {
+            setSelectedValue(coin_data.symbol); // 显示 symbol
+        }
+    }, [coin_data]);
     const add_items = () =>{
         if(enter_address == '')return
         console.log('add item 1')
@@ -38,12 +46,12 @@ const New_swap_page:React.FC<{}>=({})=>{
                     address:enter_address,
                     coin_url:coin_data.coin_url,
                 } ]);
+                set_open_box(true)
             }
         })
-
-
-
     }
+    useEffect(() => {
+    }, [open_box]);
     useEffect(() => {
         const fetch_coin_data = async() =>{
             if(enter_address == '')return
@@ -154,7 +162,18 @@ const New_swap_page:React.FC<{}>=({})=>{
                 }
 
 
-            }catch (e:any){console.log(e)}
+            }catch (e:any){
+                console.log(e)
+                set_coin_data({
+                    name:'error',
+                    symbol:'',
+                    balacne:0,
+                    coin_url:'',
+                    coin_address:enter_address,
+                    stander:'',
+                    decimals:0
+                })
+            }
 
         }
         fetch_coin_data()
@@ -178,12 +197,12 @@ const New_swap_page:React.FC<{}>=({})=>{
                                             <div style={{border:"1.5mm ridge #CED4DA",height:"50px",position:"relative",padding:1,backgroundColor:"#dfdfdf"}}>
                                                 <Select
                                                     showSearch
-                                                    placeholder="Select a person"
+                                                    placeholder="Enter an address"
                                                     optionFilterProp="label"
                                                     onChange={(value) =>{
                                                         console.log(value)
-
                                                     }}
+                                                    value={selectedValue}
                                                     onSearch={(value) =>{
                                                         //console.log(value)
                                                         option_coin_address.option.map((label,index) =>{
@@ -203,6 +222,7 @@ const New_swap_page:React.FC<{}>=({})=>{
 
                                                     }}
                                                     options={items}
+
                                                     dropdownRender={(menu) => (
                                                         <>
                                                             {menu}
@@ -215,7 +235,18 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                             if(label.address == enter_address){return}
                                                                             if(index == option_coin_address.option.length -1 ){
                                                                                 return(
-                                                                                    <button className={"rainbow"} key={index} onClick={() => add_items()}>pluse</button>
+                                                                                    <>
+                                                                                        {coin_data.name != 'test' && coin_data.name != 'error' ? <>
+                                                                                            <button
+                                                                                                style={{width:"305px",height:"60px",top:"15px"}}
+                                                                                                className={"rainbow"}
+                                                                                                key={index}
+                                                                                                onClick={() => add_items()}><PlusOutlined />
+                                                                                            </button>
+                                                                                        </> : <>
+                                                                                            <p>Please enter correct address</p>
+                                                                                        </>}
+                                                                                    </>
                                                                                 )
                                                                             }
                                                                         })
@@ -260,7 +291,12 @@ const New_swap_page:React.FC<{}>=({})=>{
                     </div>
                 </Col>
                 <Col span={6}></Col>
-                <Confirm_box states={true} coin_data={coin_data}/>
+                {open_box && (
+                    <>
+                        <Confirm_box states={open_box} coin_data={coin_data}/>
+                    </>
+                )}
+
             </Row>
         </>
     )
@@ -276,18 +312,22 @@ const Confirm_box : React.FC <{states:boolean,coin_data:Coin_data}> = ({states,c
 
     }
     const close =()=>{
-        set_box_state(false)
+        if(clicked){
+            set_box_state(false)
+        }else{
+            set_box_state(true)
+        }
     }
     useEffect(() => {
-        set_box_state(states)
-    }, [coin_data]);
+        set_box_state(true)
+    }, [states]);
     return(
         <>
             <Modal
                 disableEnforceFocus
                 disableAutoFocus
                 open={box_state}
-                onClose={handle_close}
+                onClose={close}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 classes={""}
@@ -353,7 +393,7 @@ const Confirm_box : React.FC <{states:boolean,coin_data:Coin_data}> = ({states,c
                         </Col>
                         <Col span={24} style={{height:"50px",backgroundColor:"blue",justifyContent:"center",alignItems:"center",display:"inherit"}}>
                             <Radio onChange={(e) => {
-                                console.log("clicked", e.nativeEvent.isTrusted);
+                                //console.log("clicked", e.nativeEvent.isTrusted);
                                 set_clicked(e.nativeEvent.isTrusted)// 输出被点击的值
                             }} style={{transform:"scale(1.5)",fontSize:20}}>Conofirm !</Radio>
                         </Col>

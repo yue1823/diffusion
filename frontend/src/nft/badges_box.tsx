@@ -20,7 +20,6 @@ const Badgex_box: React.FC<BadgexBoxProps>= ({ badges, onBadgeClick })=>{
 
     return(
         <>
-
             <Col span={7} offset={1}
                  style={{}}>
 
