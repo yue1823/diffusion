@@ -6,6 +6,7 @@ import {Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import Modal from "@mui/material/Modal";
 import {Box} from "@mui/material";
+import { motion } from "framer-motion";
 
 const aptosConfig = new AptosConfig({ network: Network.TESTNET});
 const aptos = new Aptos(aptosConfig);
@@ -270,15 +271,22 @@ export default New_swap_page
 
 const Confirm_box : React.FC <{states:boolean,coin_data:Coin_data}> = ({states,coin_data})=>{
     const [clicked,set_clicked]=useState(false);
+    const [box_state,set_box_state]=useState(false);
     const handle_close =() =>{
 
     }
+    const close =()=>{
+        set_box_state(false)
+    }
+    useEffect(() => {
+        set_box_state(states)
+    }, [coin_data]);
     return(
         <>
             <Modal
                 disableEnforceFocus
                 disableAutoFocus
-                open={states}
+                open={box_state}
                 onClose={handle_close}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
@@ -351,8 +359,15 @@ const Confirm_box : React.FC <{states:boolean,coin_data:Coin_data}> = ({states,c
                         </Col>
                         <Col span={24} style={{height:"50px",paddingLeft:20}}>
                             {clicked ? <>
-                                <button className={"rainbow"} style={{width: "500px", height: "inherit"}}>Confirm
-                                </button>
+                                <motion.div className={"box"}
+                                            whileHover={{scale: 1.03}}
+                                            whileTap={{scale: 0.95}}
+                                            transition={{type: "spring", stiffness: 400, damping: 25}}
+                                            onClick={() =>{close()}}
+                                >
+                                    <button className={"rainbow"} style={{width: "500px", height: "inherit"}}>Confirm
+                                    </button>
+                                </motion.div>
                             </> : <>
                                 <button className={""} style={{width: "500px", height: "inherit",backgroundColor:"#b9c3cd"}} disabled={true}>Confirm
                                 </button>
