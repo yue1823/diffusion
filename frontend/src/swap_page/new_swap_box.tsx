@@ -407,7 +407,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                              size={"large"}
                                                              addonAfter={<>
                                                                  <button onClick={() =>{
-                                                                     set_show_value({...show_value,from_value:(transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals))).toFixed(3)})
+                                                                     set_show_value({...show_value,from_value:((transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals)))-0.001).toFixed(3)})
                                                                  }} className={""} style={{zIndex:10,display:"inline-block",width:"50px",height:"20px",backgroundColor:"#797d85",padding:1,color:"white",top:"-10px"}}><p style={{top:"10px",position:"absolute",fontSize:15,right:"20px"}}>max</p></button>
                                                                  {/*<p style={{position:"absolute",fontSize:12,top:"20px",right:"26px"}}>{coin_data.balacne}</p>*/}
                                                              </>}
@@ -428,7 +428,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                 {transaction_data.from_coin_symbol != 'test' && (
                                                                     <>
                                                                         <p style={{display:"inline-block",justifySelf:"left"}}>Balacne : </p>
-                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{(transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals))).toFixed(3)}</p>
+                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{((transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals)))- (transaction_data.from_balance == 0  ? 0 : 0.001 )).toFixed(3)}</p>
                                                                     </>
                                                                 )}
                                                             </Col>
@@ -592,7 +592,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                 {transaction_data.to_coin_symbol != 'test' && (
                                                                     <>
                                                                         <p style={{display:"inline-block",justifySelf:"left"}}>Balacne : </p>
-                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{(transaction_data.to_balance/(Math.pow(10,transaction_data.to_coin_decimals))).toFixed(3)}</p>
+                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{((transaction_data.to_balance/(Math.pow(10,transaction_data.to_coin_decimals)))-(transaction_data.from_balance == 0  ? 0 : 0.001 )).toFixed(3)}</p>
                                                                     </>
                                                                 )}
                                                             </Col>
@@ -624,7 +624,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                     </Col>
                                                     <Col span={12} style={{height:"80px",justifyContent:"center",alignItems:"center",width:"100%",paddingTop:10,paddingLeft:90}}>
                                                         {transaction_data.to_coin_symbol === "APT" ? <><Image src={"https://cryptologos.cc/logos/aptos-apt-logo.svg?v=035"} preview={false} fallback={Diffusion_logo} style={{height:"60px",width:"60px",justifyContent:"center",alignItems:"center",display:"inline-block",top:10}}></Image></>:<>
-                                                            {regex.test(transaction_data.from_coin_address) && (async () => {
+                                                            {regex.test(transaction_data.to_coin_address) && (async () => {
                                                                     let respone = await aptos.view({payload:{
                                                                             function:option_coin_address.function.view_v2_coin_icon_url(),
                                                                             typeArguments:[option_coin_address.coin_meta_date],
@@ -641,6 +641,11 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                     )
                                                                 }
                                                             )}
+                                                            {items.find(items =>{
+                                                                if(items.value == transaction_data.to_coin_symbol && items.coin_url != ''){
+                                                                    <Image src={items.coin_url} fallback={Diffusion_logo_2}></Image>
+                                                                }
+                                                            })}
                                                         </>}
                                                     </Col>
                                                 </Row>
