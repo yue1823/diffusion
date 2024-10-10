@@ -1,5 +1,5 @@
-import { DoubleRightOutlined, ExclamationCircleTwoTone, PlusOutlined, RightOutlined } from "@ant-design/icons";
-import {Col, Divider, InputNumber, Row, Select, message ,Radio,Image, Segmented} from "antd";
+import { DoubleRightOutlined, ExclamationCircleTwoTone, PlusOutlined, RightOutlined, UserOutlined } from "@ant-design/icons";
+import {Col, Divider, InputNumber, Row, Select, message ,Radio,Image, Segmented, Avatar} from "antd";
 import React, {useEffect, useRef, useState } from "react";
 import {option_coin_address} from "./coin_address";
 import {Aptos} from "@aptos-labs/ts-sdk";
@@ -70,6 +70,7 @@ const New_swap_page:React.FC<{}>=({})=>{
         from_value:undefined
     })
     const Pontem_swap_sdk = async() =>{
+        if(transaction_data.from_coin_address === transaction_data.to_coin_address)return
         try{
             const output = await sdk.Swap.calculateRates({
                 fromToken:transaction_data.from_coin_address,
@@ -133,10 +134,10 @@ const New_swap_page:React.FC<{}>=({})=>{
     const fetch_balance_of_options = async(key_address:string,to_or_from:string) =>{
         if(!account)return[];
 
-        console.log('key_address',key_address)
-        console.log('test1',regex.test(key_address))
-        console.log('test2',regex2.test(key_address))
-        console.log("fetch balance", transaction_data)
+        // console.log('key_address',key_address)
+        // console.log('test1',regex.test(key_address))
+        // console.log('test2',regex2.test(key_address))
+        // console.log("fetch balance", transaction_data)
         if(regex.test(key_address)){
             let respone = await aptos.view({payload:{
                     function:option_coin_address.function.view_v2_coin_balance(),
@@ -155,7 +156,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                     typeArguments:[key_address],
                     functionArguments:[account.address]
                 }})
-            console.log("balance ",respone)
+           // console.log("balance ",respone)
             if(to_or_from == "to"){
                 set_transaction_data({...transaction_data,to_balance:respone[0] as number})
             }else if(to_or_from == "from"){
@@ -167,7 +168,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                     typeArguments:[key_address],
                     functionArguments:[account.address]
                 }})
-            console.log("balance ",respone[0])
+            //console.log("balance ",respone[0])
             if(to_or_from == "to"){
                 set_transaction_data({...transaction_data,to_balance:respone[0] as number})
             }else if(to_or_from == "from"){
@@ -183,11 +184,11 @@ const New_swap_page:React.FC<{}>=({})=>{
     }
     const add_items_form = () =>{
         if(enter_address == '')return
-        console.log('add item 1')
+        //console.log('add item 1')
         option_coin_address.option.map((label,index) => {
             if(label.address == enter_address){return}
             if(index == option_coin_address.option.length -1 ){
-                console.log('set item')
+               // console.log('set item')
                 setItems([...items, {
                     value:coin_data.symbol,
                     label:coin_data.symbol,
@@ -202,11 +203,11 @@ const New_swap_page:React.FC<{}>=({})=>{
     }
     const add_items_to = () =>{
         if(enter_address == '')return
-        console.log('add item 1')
+        //console.log('add item 1')
         option_coin_address.option.map((label,index) => {
             if(label.address == enter_address){return}
             if(index == option_coin_address.option.length -1 ){
-                console.log('set item')
+                //console.log('set item')
                 setItems([...items, {
                     value:coin_data.symbol,
                     label:coin_data.symbol,
@@ -358,12 +359,31 @@ const New_swap_page:React.FC<{}>=({})=>{
                 <Col span={12}>
                     <div style={{height:"470px",width:"inhereit",justifyContent:"center"}}>
                         <Row gutter={[24,5]} style={{width:"inherit",height:"inherit",backgroundColor:"#bcbbbb",padding:10,borderRadius:5,border:"1px solid",borderColor:"#a3a2a2"}}>
-                            <Col span={24} style={{height:"100px",backgroundColor:"green",display:"inline-block",paddingTop:10,paddingLeft:15}}>
-                               <div style={{justifyContent:"left",alignItems: "center",width:"350px",backgroundColor:"#dfdfdf",height:"80px"}}>
-                                   <Segmented options={option_coin_address.segmented_options} style={{height:"80px",border:5}} block onChange={(value) =>{
-                                       set_segement_select(value)
-                                   }}/>
-                               </div>
+                            <Col span={24} style={{height:"100px",backgroundColor:"",display:"inline-block",paddingTop:10,paddingLeft:15}}>
+                                   <Row gutter={[24,2]} style={{width:"inherit",height:"inherit"}}>
+                                       <Col span={12} style={{ padding:5,paddingLeft:12}}>
+                                           <div style={{
+                                               justifyContent: "left",
+                                               alignItems: "center",
+                                               width: "350px",
+                                               backgroundColor: "#dfdfdf",
+                                               height: "80px",
+
+                                           }}>
+                                               <Segmented options={option_coin_address.segmented_options}
+                                                          style={{height: "80px", border: 5}} block onChange={(value) => {
+                                                   set_segement_select(value)
+                                               }}/>
+                                           </div>
+                                       </Col>
+                                       <Col span={12} style={{padding:5,paddingLeft:32}}>
+                                           <div style={{border:"1.5mm ridge #CED4DA",padding:1,borderRadius:5,width:"99%",height:"80px",backgroundColor:"#101010",overflow:"hidden"}}>
+                                               <div style={{border:"1.2mm dashed #F3F856FF",position:"relative",top:"-5px"}}></div>
+                                               <p style={{fontSize:50,color:"#dfdfdf",position:"relative",top:"-15px"}}>Mainnet</p>
+                                               <div style={{border:"1.2mm dashed #F3F856FF",position:"relative",top:"-21px"}}></div>
+                                           </div>
+                                       </Col>
+                                   </Row>
                             </Col>
                             <Col span={24} style={{height:"200px",backgroundColor:"",display:"inline-block",padding:10,paddingLeft:15}}>
                                 <Row gutter={[24,6]}>
@@ -452,7 +472,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                              size={"large"}
                                                              addonAfter={<>
                                                                  <button onClick={() =>{
-                                                                     console.log('max button')
+                                                                    // console.log('max button')
                                                                      set_show_value({...show_value,from_value:((transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals)))-0.001).toFixed(3)})
                                                                      set_transaction_data({...transaction_data,from_amount:parseFloat(((transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals)))-0.001).toFixed(3))})
                                                                  }} className={""} style={{zIndex:10,display:"inline-block",width:"50px",height:"20px",backgroundColor:"#797d85",padding:1,color:"white",top:"-10px"}}><p style={{top:"10px",position:"absolute",fontSize:15,right:"20px"}}>max</p></button>
@@ -464,7 +484,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                  }
                                                                  debounceTimeout.current = window.setTimeout(() => {
                                                                      if (value != null && regex3.test(value)) {
-                                                                         console.log('set input value', value);
+                                                                         //console.log('set input value', value);
                                                                          set_show_value({ ...show_value, from_value: value });
                                                                          set_transaction_data({ ...transaction_data, from_amount: parseFloat(value) });
                                                                      }
@@ -520,23 +540,41 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                     </Col>
                                                     <Col span={12} style={{height:"80px",justifyContent:"center",alignItems:"center",width:"100%",paddingTop:10,paddingLeft:90}}>
                                                         {transaction_data.from_coin_symbol === "APT" ? <><Image src={"https://cryptologos.cc/logos/aptos-apt-logo.svg?v=035"} preview={false} fallback={APT_logo} style={{height:"60px",width:"60px",justifyContent:"center",alignItems:"center",display:"inline-block",top:10}}></Image></>:<>
-                                                            {regex.test(transaction_data.from_coin_address) && (async () => {
-                                                                    let respone = await aptos.view({payload:{
-                                                                            function:option_coin_address.function.view_v2_coin_icon_url(),
-                                                                            typeArguments:[option_coin_address.coin_meta_date],
-                                                                            functionArguments:[transaction_data.from_coin_address]
-                                                                        }})
-                                                                    if (respone[0] != undefined) {
-                                                                        set_transaction_data({
-                                                                            ...transaction_data,
-                                                                            from_icon_url: respone[0] as string
-                                                                        })
-                                                                    }
-                                                                    return (
-                                                                        <Image src={respone[0] as string} fallback={Diffusion_logo_2}></Image>
-                                                                    )
+                                                            { items.find((value) => value.address === transaction_data.from_coin_address)?
+                                                                <>
+                                                                {
+                                                                    (()=>{
+                                                                        const find_items = items.find(value=>value.address === transaction_data.from_coin_address)
+                                                                        return(
+                                                                            <>
+                                                                                {find_items != undefined && (
+                                                                                    <Image src={find_items.coin_url} fallback={Diffusion_logo_2} style={{position:"relative",top:"-5px"}}></Image>
+                                                                                )}
+                                                                            </>
+                                                                        )
+                                                                    })()
                                                                 }
-                                                            )}
+                                                                </>:<>
+                                                                    {regex.test(transaction_data.from_coin_address) && (async () => {
+                                                                            let respone = await aptos.view({payload:{
+                                                                                    function:option_coin_address.function.view_v2_coin_icon_url(),
+                                                                                    typeArguments:[option_coin_address.coin_meta_date],
+                                                                                    functionArguments:[transaction_data.from_coin_address]
+                                                                                }})
+                                                                            if (respone[0] != undefined) {
+                                                                                set_transaction_data({
+                                                                                    ...transaction_data,
+                                                                                    from_icon_url: respone[0] as string
+                                                                                })
+                                                                            }
+                                                                            //console.log("i cant find")
+                                                                            return (
+                                                                                <Image src={respone[0] as string} fallback={Diffusion_logo_2}></Image>
+                                                                            )
+                                                                        }
+                                                                    )}
+                                                               </>
+                                                            }
                                                         </>}
                                                     </Col>
                                                 </Row>
@@ -632,7 +670,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                             </div>
                                             <div style={{border:"1.5mm ridge #CED4DA",height:"130px",position:"relative",padding:1,backgroundColor:"#807f7f",borderRadius:5}}>
                                                 <InputNumber  value={show_value.to_value} min="0"
-                                                              max="3"
+
                                                               controls={false}
                                                               onChange={(value) =>{
                                                                   if(value != null){
@@ -644,7 +682,8 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                       }
                                                                   }
                                                               }}
-                                                              size={"large"} autoFocus={false} style={{width:"319px",height:"38px",backgroundColor:"#bcbbbb"}} prefix={"$"} />
+                                                              suffix={transaction_data.to_coin_symbol}
+                                                              size={"large"} autoFocus={false} style={{width:"319px",height:"38px",backgroundColor:"#bcbbbb",color:transaction_data.from_balance < transaction_data.from_amount?"#ff1f1f":""}} prefix={"$"} />
                                                 <Row gutter={[24,6]} style={{padding:2}}>
                                                     <Col span={12} style={{}}>
                                                         <Row gutter={[24,1]}>
@@ -684,23 +723,42 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                     </Col>
                                                     <Col span={12} style={{height:"80px",justifyContent:"center",alignItems:"center",width:"100%",paddingTop:10,paddingLeft:90}}>
                                                         {transaction_data.to_coin_symbol === "APT" ? <><Image src={"https://cryptologos.cc/logos/aptos-apt-logo.svg?v=035"} preview={false} fallback={APT_logo} style={{height:"60px",width:"60px",justifyContent:"center",alignItems:"center",display:"inline-block",top:10}}></Image></>:<>
-                                                            {regex.test(transaction_data.to_coin_address) && (async () => {
-                                                                    let respone = await aptos.view({payload:{
-                                                                            function:option_coin_address.function.view_v2_coin_icon_url(),
-                                                                            typeArguments:[option_coin_address.coin_meta_date],
-                                                                            functionArguments:[transaction_data.to_coin_address]
-                                                                        }})
-                                                                    if (respone[0] != undefined) {
-                                                                        set_transaction_data({
-                                                                            ...transaction_data,
-                                                                            to_icon_url: respone[0] as string
-                                                                        })
-                                                                    }
-                                                                    return (
-                                                                        <Image src={respone[0] as string} fallback={Diffusion_logo_2}></Image>
-                                                                    )
-                                                                }
-                                                            )}
+                                                            {
+                                                                items.find((value) => value.address === transaction_data.to_coin_address)?
+                                                                    <>
+                                                                        {
+                                                                            (()=>{
+                                                                                const find_items = items.find(value=>value.address === transaction_data.to_coin_address)
+                                                                                return(
+                                                                                    <>
+                                                                                        {find_items != undefined && (
+                                                                                            <Image src={find_items.coin_url} fallback={Diffusion_logo_2} style={{position:"relative",top:"-5px"}}></Image>
+                                                                                        )}
+                                                                                    </>
+                                                                                )
+                                                                            })()
+                                                                        }
+                                                                    </>:<>
+                                                                     {
+                                                                         regex.test(transaction_data.to_coin_address) && (async () => {
+                                                                             let respone = await aptos.view({payload:{
+                                                                                     function:option_coin_address.function.view_v2_coin_icon_url(),
+                                                                                     typeArguments:[option_coin_address.coin_meta_date],
+                                                                                     functionArguments:[transaction_data.to_coin_address]
+                                                                                 }})
+                                                                             if (respone[0] != undefined) {
+                                                                                 set_transaction_data({
+                                                                                     ...transaction_data,
+                                                                                     to_icon_url: respone[0] as string
+                                                                                 })
+                                                                             }
+                                                                             return (
+                                                                                 <Image src={respone[0] as string} fallback={Diffusion_logo_2}></Image>
+                                                                             )
+                                                                         })
+                                                                     }
+                                                                    </>
+                                                            }
                                                             {items.find(items =>{
                                                                 if(items.value == transaction_data.to_coin_symbol && items.coin_url != ''){
                                                                     <Image src={items.coin_url} fallback={Diffusion_logo_2}></Image>
@@ -735,7 +793,13 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                     <div style={{border:"5px dashed",width:"100px",height:"10px",borderColor:"rgba(221,221,221,0.94)"}}></div>
                                                     <RightOutlined  style={{justifySelf:"left",alignSelf:"left",fontSize:50,transform:"scale(1.5)"}}/>
                                                 </Col>
-                                                <Col span={5} style={{height:"93px",width:"inherit" ,backgroundColor:"#154cc1",margin:"1% 0.3%",justifyContent:"center",alignItems:"center",display:"flex"}}></Col>
+                                                <Col span={5} style={{height:"93px",width:"inherit" ,backgroundColor:"",margin:"1% 0.3%",justifyContent:"center",alignItems:"center",display:"flex"}}>
+                                                    <Row style={{justifyContent:"center",alignItems:"center"}}>
+                                                        <Col span={24} style={{paddingLeft:20,paddingTop:10}}>
+                                                            <Avatar shape="square" size={60}  style={{justifyContent:"center",alignItems:"center"}} icon={<UserOutlined style={{justifySelf:"center",alignSelf:"center"}}/>} /></Col>
+                                                        <Col span={24}><p>{account?.address.slice(0, 8)}</p></Col>
+                                                    </Row>
+                                                </Col>
                                             </Row>
                                         </div>
                                     </Col>
