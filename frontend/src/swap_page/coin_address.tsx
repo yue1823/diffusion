@@ -1,5 +1,5 @@
-import Pontem_logo from "../logo/Pontem.svg"
 import {Image} from "antd";
+import Pontem_logo from "../logo/Pontem.svg"
 import Thala_logo from "../logo/thala logo.jpeg";
 import Cellea_logo from "../logo/cellana.svg";
 const option_coin_address= {
@@ -15,9 +15,9 @@ const option_coin_address= {
         {
             value:"USDC",
             label:"USDC",
-            address:"0x625291f4e529c4315830dcdadaae8a78202e326a32d565eb415539d989d8bc4a::GWC::GWC",
+            address:"0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa::asset::USDC",
             coin_url:"https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=035",
-            decimals:8,
+            decimals:6,
         }
     ],
     coin_meta_date:"0x1::fungible_asset::Metadata",

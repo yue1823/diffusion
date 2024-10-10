@@ -1,16 +1,26 @@
-import { DoubleRightOutlined, ExclamationCircleTwoTone, PlusOutlined } from "@ant-design/icons";
+import { DoubleRightOutlined, ExclamationCircleTwoTone, PlusOutlined, RightOutlined } from "@ant-design/icons";
 import {Col, Divider, InputNumber, Row, Select, message ,Radio,Image, Segmented} from "antd";
 import React, {useEffect, useState } from "react";
 import {option_coin_address} from "./coin_address";
-import {Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+import {Aptos} from "@aptos-labs/ts-sdk";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import Modal from "@mui/material/Modal";
 import {Box} from "@mui/material";
 import { motion } from "framer-motion";
-import Diffusion_logo from "../logo/aptos-apt-logo.svg";
+import APT_logo from "../logo/aptos-apt-logo.svg";
 import Diffusion_logo_2 from "../art/diffusion7.png";
-const aptosConfig = new AptosConfig({ network: Network.TESTNET});
-const aptos = new Aptos(aptosConfig);
+import Pontem_logo from "../logo/Pontem.svg"
+import Thala_logo from "../logo/thala logo.jpeg";
+import Cellea_logo from "../logo/cellana.svg";
+import { SDK, convertValueToDecimal } from '@pontem/liquidswap-sdk';
+import { diffusion } from "../setting";
+
+const sdk = new SDK({
+    nodeUrl: 'https://fullnode.mainnet.aptoslabs.com/v1',});
+// const aptosConfig = new AptosConfig({ network: Network.TESTNET});
+const aptos = new Aptos(diffusion.aptos_network_setting);
+
+
 interface Coin_data{
     name:string,
     symbol:string,
@@ -48,6 +58,7 @@ const New_swap_page:React.FC<{}>=({})=>{
     const [enter_address,set_enter_address]=useState('');
     const [open_box,set_open_box]=useState(false);
     const [coin_data,set_coin_data]=useState<Coin_data>({name:'test',symbol:'',balacne:0,coin_url:'',decimals:1,stander:"v2",coin_address:""})
+    const [segement_select,set_segement_select]=useState('Pontem');
     const [selectedValue, setSelectedValue] = useState<Show_value>({
         to_value:undefined,
         from_value:undefined
@@ -57,6 +68,30 @@ const New_swap_page:React.FC<{}>=({})=>{
         to_value:undefined,
         from_value:undefined
     })
+    const Pontem_swap_sdk = async() =>{
+        try{
+            const output = await sdk.Swap.calculateRates({
+                fromToken:transaction_data.from_coin_address,
+                toToken:transaction_data.to_coin_address,
+                amount:transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),
+                curveType:"uncorrelated",
+                interactiveToken:"from",
+                version:0
+            })
+            console.log('pontem sdk swap',parseFloat(output)/Math.pow(10,transaction_data.to_coin_decimals))
+            set_show_value({...show_value,to_value:(parseFloat(output)/Math.pow(10,transaction_data.to_coin_decimals)).toFixed(3).toString()})
+        }catch (e:any){}finally {
+
+        }
+
+
+    }
+    useEffect(() => {
+        if(transaction_data.to_coin_symbol != 'test' && transaction_data.to_coin_address != ''){
+            Pontem_swap_sdk()
+        }
+    }, [show_value.from_value]);
+
     useEffect(() => {
         if (transaction_data.from_coin_symbol === 'test') {
             setSelectedValue({...selectedValue,from_value:undefined}); // 显示 placeholder
@@ -79,12 +114,19 @@ const New_swap_page:React.FC<{}>=({})=>{
         //console.log("from coin symbol",transaction_data)
         if (transaction_data.from_coin_address) {
             fetch_balance_of_options(transaction_data.from_coin_address, "from");
+            set_show_value({...show_value,from_value:undefined})
+            set_transaction_data({...transaction_data,to_balance:0})
         }
     }, [transaction_data.from_coin_address]);
     useEffect(() => {
         //console.log("to coin symbol",transaction_data)
         if (transaction_data.to_coin_address) {
             fetch_balance_of_options(transaction_data.to_coin_address, "to");
+            set_show_value({...show_value,to_value:undefined})
+            set_transaction_data({...transaction_data,to_balance:0})
+        }
+        if(transaction_data.to_coin_symbol != 'test' && transaction_data.to_coin_address != ''){
+            Pontem_swap_sdk()
         }
     }, [transaction_data.to_coin_address]);
     const fetch_balance_of_options = async(key_address:string,to_or_from:string) =>{
@@ -402,7 +444,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                 <InputNumber autoFocus={false}
                                                              value={show_value.from_value}
                                                              min="0"
-                                                             max="3"
+                                                             max={transaction_data.from_balance.toString()}
                                                              controls={false}
                                                              size={"large"}
                                                              addonAfter={<>
@@ -416,7 +458,9 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                      // console.log("regex3.test",regex3.test(value));
                                                                      // console.log("show value",value);
                                                                      if(regex3.test(value)){
+                                                                         console.log('set input value',value)
                                                                          set_show_value({...show_value,from_value:value})
+                                                                         set_transaction_data({...transaction_data,from_amount:parseFloat(value)})
                                                                          // set_transaction_data({...transaction_data,from_amount:parseFloat(value)})
                                                                      }
                                                                  }
@@ -428,7 +472,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                 {transaction_data.from_coin_symbol != 'test' && (
                                                                     <>
                                                                         <p style={{display:"inline-block",justifySelf:"left"}}>Balacne : </p>
-                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{((transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals)))- (transaction_data.from_balance == 0  ? 0 : 0.001 )).toFixed(3)}</p>
+                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{((transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals))) - (transaction_data.from_balance == 0  ? 0 : 0.001 )).toFixed(3)}</p>
                                                                     </>
                                                                 )}
                                                             </Col>
@@ -460,7 +504,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                         </Row>
                                                     </Col>
                                                     <Col span={12} style={{height:"80px",justifyContent:"center",alignItems:"center",width:"100%",paddingTop:10,paddingLeft:90}}>
-                                                        {transaction_data.from_coin_symbol === "APT" ? <><Image src={"https://cryptologos.cc/logos/aptos-apt-logo.svg?v=035"} preview={false} fallback={Diffusion_logo} style={{height:"60px",width:"60px",justifyContent:"center",alignItems:"center",display:"inline-block",top:10}}></Image></>:<>
+                                                        {transaction_data.from_coin_symbol === "APT" ? <><Image src={"https://cryptologos.cc/logos/aptos-apt-logo.svg?v=035"} preview={false} fallback={APT_logo} style={{height:"60px",width:"60px",justifyContent:"center",alignItems:"center",display:"inline-block",top:10}}></Image></>:<>
                                                             {regex.test(transaction_data.from_coin_address) && (async () => {
                                                                     let respone = await aptos.view({payload:{
                                                                             function:option_coin_address.function.view_v2_coin_icon_url(),
@@ -581,6 +625,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                       // console.log("show value",value);
                                                                       if(regex3.test(value)){
                                                                           set_show_value({...show_value,to_value:value})
+
                                                                       }
                                                                   }
                                                               }}
@@ -592,7 +637,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                 {transaction_data.to_coin_symbol != 'test' && (
                                                                     <>
                                                                         <p style={{display:"inline-block",justifySelf:"left"}}>Balacne : </p>
-                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{((transaction_data.to_balance/(Math.pow(10,transaction_data.to_coin_decimals)))-(transaction_data.from_balance == 0  ? 0 : 0.001 )).toFixed(3)}</p>
+                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{((transaction_data.to_balance/(Math.pow(10,transaction_data.to_coin_decimals)))-(transaction_data.to_balance== 0  ? 0 : 0.001 )).toFixed(3)}</p>
                                                                     </>
                                                                 )}
                                                             </Col>
@@ -623,7 +668,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                         </Row>
                                                     </Col>
                                                     <Col span={12} style={{height:"80px",justifyContent:"center",alignItems:"center",width:"100%",paddingTop:10,paddingLeft:90}}>
-                                                        {transaction_data.to_coin_symbol === "APT" ? <><Image src={"https://cryptologos.cc/logos/aptos-apt-logo.svg?v=035"} preview={false} fallback={Diffusion_logo} style={{height:"60px",width:"60px",justifyContent:"center",alignItems:"center",display:"inline-block",top:10}}></Image></>:<>
+                                                        {transaction_data.to_coin_symbol === "APT" ? <><Image src={"https://cryptologos.cc/logos/aptos-apt-logo.svg?v=035"} preview={false} fallback={APT_logo} style={{height:"60px",width:"60px",justifyContent:"center",alignItems:"center",display:"inline-block",top:10}}></Image></>:<>
                                                             {regex.test(transaction_data.to_coin_address) && (async () => {
                                                                     let respone = await aptos.view({payload:{
                                                                             function:option_coin_address.function.view_v2_coin_icon_url(),
@@ -655,12 +700,43 @@ const New_swap_page:React.FC<{}>=({})=>{
                                 </Row>
                             </Col>
                             <Col span={24} style={{height:"140px",backgroundColor:"pink",display:"inline-block"}}>
+                                <Row style={{paddingTop:10}}>
+                                    <Col span={16}>
+                                        <div style={{border:"1.5mm ridge #CED4DA",backgroundColor:"#807f7f",width:"inherit",height:"120px",borderRadius:5}}>
+                                            <Row style={{height:"inherit",width:"inherit" ,padding:5}}>
+                                                <Col span={5} style={{height:"93px",width:"inherit" ,backgroundColor:"",margin:"1% 0.3%",justifyContent:"center",alignItems:"center",display:"flex"}}>
+                                                    <><Image src={Diffusion_logo_2} fallback={APT_logo} style={{height:"95%",width:"95%",transform:"scale(1)",borderRadius:10}} preview={false}></Image></>
+                                                </Col>
+                                                <Col span={4} style={{height:"93px",width:"inherit" ,backgroundColor:"",margin:"1% 0.5%",justifyContent:"center",alignItems:"center",display:"flex"}}>
+                                                    <div style={{border:"5px dashed",width:"100px",height:"10px",borderColor:"rgba(221,221,221,0.94)"}}></div>
+                                                    <RightOutlined  style={{justifySelf:"left",alignSelf:"left",fontSize:50,transform:"scale(1.5)"}}/>
+                                                </Col>
+                                                <Col span={5} style={{height:"93px",width:"inherit" ,backgroundColor:"",margin:"1% 0.3%",justifyContent:"center",alignItems:"center",display:"flex"}}>
+                                                    {segement_select == 'Pontem' && (<><Image src={Pontem_logo} fallback={APT_logo} style={{height:"100%",width:"100%",transform:"scale(1.5)"}} preview={false}></Image></>)}
+                                                    {segement_select == 'Thala' && (<><Image src={Thala_logo} fallback={APT_logo} style={{height:"100%",width:"100%",transform:"scale(0.9)",borderRadius:"50%"}} preview={false}></Image></>)}
+                                                    {segement_select == 'Cellea' && (<><Image src={Cellea_logo} fallback={APT_logo} style={{height:"100%",width:"100%",transform:"scale(2.5)",borderRadius:"50%"}} preview={false}></Image></>)}
+                                                </Col>
+                                                <Col span={4} style={{height:"93px",width:"inherit" ,backgroundColor:"",margin:"1% 0.5%",justifyContent:"center",alignItems:"center",display:"flex"}}>
+                                                    <div style={{border:"5px dashed",width:"100px",height:"10px",borderColor:"rgba(221,221,221,0.94)"}}></div>
+                                                    <RightOutlined  style={{justifySelf:"left",alignSelf:"left",fontSize:50,transform:"scale(1.5)"}}/>
+                                                </Col>
+                                                <Col span={5} style={{height:"93px",width:"inherit" ,backgroundColor:"#154cc1",margin:"1% 0.3%",justifyContent:"center",alignItems:"center",display:"flex"}}></Col>
+                                            </Row>
+                                        </div>
+                                    </Col>
+                                    <Col span={7} offset={1}>
+                                        <div style={{border:"1.5mm ridge #CED4DA", backgroundColor: "#57ef2c",width:"inherit",height:"120px",padding:1}}>
 
+                                        </div>
+                                    </Col>
+                                </Row>
                             </Col>
                         </Row>
                     </div>
                 </Col>
-                <Col span={6}></Col>
+                <Col span={6}>
+
+                </Col>
                 {open_box && (
                     <>
                         <Confirm_box states={open_box} coin_data={coin_data}/>

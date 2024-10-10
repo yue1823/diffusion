@@ -1,3 +1,4 @@
+import {AptosConfig, Network } from "@aptos-labs/ts-sdk";
 export const  diffusion = {
     module_address:"0x7776f4ac2f3a13f751b966220b0e68e0b5688682c31e4f93cbf12ce1cea4a7b9",
     resources_address:"0x8e1610bc1fe8556c7e839f6afc1d420db7fa50fd7251adfb0e11aeb8516bae77",
@@ -6,6 +7,7 @@ export const  diffusion = {
     Helper_address:"0x5ec0ff7e30c95dc7f6610eb8e414c744df05e1839703475ef8df66ad5c9d8192",
     x_api_key:"bT8aS3ezHOl6T1_PyaM30lkg7odC_42l" as string,
     indexer_fetch_endpoint:"https://aptos-testnet.nodit.io/bT8aS3ezHOl6T1_PyaM30lkg7odC_42l/v1/graphql" as string,
+    aptos_network_setting: new AptosConfig({ network: Network.TESTNET}),
     function:{
         admin_like:()=>`${diffusion.module_address}::helper::admin_like` as `${string}::${string}::${string}`,
         create_bet_card:() =>`${diffusion.module_address}::helper::create_bet_card` as `${string}::${string}::${string}`,
