@@ -351,22 +351,24 @@ const New_swap_page:React.FC<{}>=({})=>{
     }, [enter_address]);
     return (
         <>
-            <Row gutter={[24,6]} style={{minHeight:"490px",backgroundColor:"#b60d0d",paddingTop:10,}}>
+            <Row gutter={[24,6]} style={{minHeight:"490px",backgroundColor:"#dfdac8",paddingTop:10,}}>
 
                 <Col span={6}></Col>
                 <Col span={12}>
                     <div style={{height:"470px",width:"inhereit",justifyContent:"center"}}>
-                        <Row gutter={[24,5]} style={{width:"inherit",height:"inherit",backgroundColor:"blue",padding:10,}}>
+                        <Row gutter={[24,5]} style={{width:"inherit",height:"inherit",backgroundColor:"#bcbbbb",padding:10,borderRadius:5,border:"1px solid",borderColor:"#a3a2a2"}}>
                             <Col span={24} style={{height:"100px",backgroundColor:"green",display:"inline-block",paddingTop:10,paddingLeft:10}}>
                                <div style={{justifyContent:"left",alignItems: "center",width:"350px",backgroundColor:"#dfdfdf",height:"80px"}}>
-                                   <Segmented options={option_coin_address.segmented_options} style={{height:"80px",border:5}} block/>
+                                   <Segmented options={option_coin_address.segmented_options} style={{height:"80px",border:5}} block onChange={(value) =>{
+                                       set_segement_select(value)
+                                   }}/>
                                </div>
                             </Col>
-                            <Col span={24} style={{height:"200px",backgroundColor:"gold",display:"inline-block",padding:10,paddingLeft:15}}>
+                            <Col span={24} style={{height:"200px",backgroundColor:"",display:"inline-block",padding:10,paddingLeft:15}}>
                                 <Row gutter={[24,6]}>
                                     <Col span={11} style={{height:"180px",display:"inline-block",paddingLeft:15}}>
-                                        <div style={{height:"180px",backgroundColor:"white",display:"inline-block",width:"330px"}}>
-                                            <div style={{border:"1.5mm ridge #CED4DA",height:"50px",position:"relative",padding:1,backgroundColor:"#dfdfdf"}}>
+                                        <div style={{height:"180px",backgroundColor:"",display:"inline-block",width:"330px"}}>
+                                            <div style={{border:"1.5mm ridge #CED4DA",height:"50px",position:"relative",padding:1,backgroundColor:"#dfdfdf",borderRadius:5}}>
                                                 <Select
                                                     showSearch
                                                     placeholder="Enter an address"
@@ -440,7 +442,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                     style={{width:"316px",height:"38px",backgroundColor:"#bcbbbb"}}
                                                     />
                                             </div>
-                                            <div style={{border:"1.5mm ridge #CED4DA",height:"130px",position:"relative",padding:1,backgroundColor:"#dfdfdf"}}>
+                                            <div style={{border:"1.5mm ridge #CED4DA",height:"130px",position:"relative",padding:1,backgroundColor:"#807f7f",borderRadius:5}}>
                                                 <InputNumber autoFocus={false}
                                                              value={show_value.from_value}
                                                              min="0"
@@ -538,11 +540,11 @@ const New_swap_page:React.FC<{}>=({})=>{
                                          style={{height:"180px",display:"inline-block",paddingLeft:10,right:7}}>
                                         <div style={{
                                             height: "180px",
-                                            backgroundColor: "white",
+                                            backgroundColor: "",
                                             display: "inline-block",
                                             width: "330px"
                                         }}>
-                                             <div style={{border:"1.5mm ridge #CED4DA",height:"50px",position:"relative",padding:1,backgroundColor:"#dfdfdf"}}>
+                                             <div style={{border:"1.5mm ridge #CED4DA",height:"50px",position:"relative",padding:1,backgroundColor:"#dfdfdf",borderRadius:5}}>
                                                 <Select
                                                     showSearch
                                                     placeholder="Enter an address"
@@ -615,7 +617,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                     style={{width:"316px",height:"38px",backgroundColor:"#bcbbbb"}}
                                                     />
                                             </div>
-                                            <div style={{border:"1.5mm ridge #CED4DA",height:"130px",position:"relative",padding:1,backgroundColor:"#dfdfdf"}}>
+                                            <div style={{border:"1.5mm ridge #CED4DA",height:"130px",position:"relative",padding:1,backgroundColor:"#807f7f",borderRadius:5}}>
                                                 <InputNumber  value={show_value.to_value} min="0"
                                                               max="3"
                                                               controls={false}
@@ -699,7 +701,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col span={24} style={{height:"140px",backgroundColor:"pink",display:"inline-block"}}>
+                            <Col span={24} style={{height:"140px",backgroundColor:"",display:"inline-block"}}>
                                 <Row style={{paddingTop:10}}>
                                     <Col span={16}>
                                         <div style={{border:"1.5mm ridge #CED4DA",backgroundColor:"#807f7f",width:"inherit",height:"120px",borderRadius:5}}>
@@ -725,8 +727,16 @@ const New_swap_page:React.FC<{}>=({})=>{
                                         </div>
                                     </Col>
                                     <Col span={7} offset={1}>
-                                        <div style={{border:"1.5mm ridge #CED4DA", backgroundColor: "#57ef2c",width:"inherit",height:"120px",padding:1}}>
-
+                                        <div style={{border:"1.5mm ridge #CED4DA",borderRadius:5,backgroundColor: "#807f7f",width:"inherit",height:"120px",padding:1,justifyContent:"center",alignItems:"center",display:"flex",paddingTop:18}}>
+                                            <motion.div className={"box"}
+                                                        whileHover={{scale: 1.03}}
+                                                        whileTap={{scale: 0.95}}
+                                                        transition={{type: "spring", stiffness: 400, damping: 25}}
+                                            >
+                                                <button className={"rainbow"} style={{height: "80px"}}>
+                                                    Swap
+                                                </button>
+                                            </motion.div>
                                         </div>
                                     </Col>
                                 </Row>
