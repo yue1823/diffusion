@@ -317,7 +317,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                         <Row gutter={[24,5]} style={{width:"inherit",height:"inherit",backgroundColor:"blue",padding:10,}}>
                             <Col span={24} style={{height:"100px",backgroundColor:"green",display:"inline-block",paddingTop:10,paddingLeft:10}}>
                                <div style={{justifyContent:"left",alignItems: "center",width:"350px",backgroundColor:"#dfdfdf",height:"80px"}}>
-                                   <Segmented options={option_coin_address.segmented_options} style={{height:"80px"}} block/>
+                                   <Segmented options={option_coin_address.segmented_options} style={{height:"80px",border:5}} block/>
                                </div>
                             </Col>
                             <Col span={24} style={{height:"200px",backgroundColor:"gold",display:"inline-block",padding:10,paddingLeft:15}}>
