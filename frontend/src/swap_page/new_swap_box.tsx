@@ -1,6 +1,6 @@
 import { DoubleRightOutlined, ExclamationCircleTwoTone, PlusOutlined, RightOutlined } from "@ant-design/icons";
 import {Col, Divider, InputNumber, Row, Select, message ,Radio,Image, Segmented} from "antd";
-import React, {useEffect, useState } from "react";
+import React, {useEffect, useRef, useState } from "react";
 import {option_coin_address} from "./coin_address";
 import {Aptos} from "@aptos-labs/ts-sdk";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
@@ -53,6 +53,7 @@ const New_swap_page:React.FC<{}>=({})=>{
     const  regex= /^0x[a-fA-F0-9]{64}$/;
     const regex2=/^0x[a-fA-F0-9]{64}(::[a-zA-Z0-9_]+){1,2}$/;
     const regex3 = /^\d+(\.\d{1,3})?$/;
+    const debounceTimeout = useRef<number | null>(null);
     const { account, signAndSubmitTransaction } =useWallet() ;
     const [items, setItems] = useState(option_coin_address.option);
     const [enter_address,set_enter_address]=useState('');
@@ -83,9 +84,9 @@ const New_swap_page:React.FC<{}>=({})=>{
         }catch (e:any){}finally {
 
         }
-
-
     }
+    useEffect(() => {
+    }, [show_value.to_value]);
     useEffect(() => {
         if(transaction_data.to_coin_symbol != 'test' && transaction_data.to_coin_address != ''){
             Pontem_swap_sdk()
@@ -357,7 +358,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                 <Col span={12}>
                     <div style={{height:"470px",width:"inhereit",justifyContent:"center"}}>
                         <Row gutter={[24,5]} style={{width:"inherit",height:"inherit",backgroundColor:"#bcbbbb",padding:10,borderRadius:5,border:"1px solid",borderColor:"#a3a2a2"}}>
-                            <Col span={24} style={{height:"100px",backgroundColor:"green",display:"inline-block",paddingTop:10,paddingLeft:10}}>
+                            <Col span={24} style={{height:"100px",backgroundColor:"green",display:"inline-block",paddingTop:10,paddingLeft:15}}>
                                <div style={{justifyContent:"left",alignItems: "center",width:"350px",backgroundColor:"#dfdfdf",height:"80px"}}>
                                    <Segmented options={option_coin_address.segmented_options} style={{height:"80px",border:5}} block onChange={(value) =>{
                                        set_segement_select(value)
@@ -451,21 +452,33 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                              size={"large"}
                                                              addonAfter={<>
                                                                  <button onClick={() =>{
+                                                                     console.log('max button')
                                                                      set_show_value({...show_value,from_value:((transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals)))-0.001).toFixed(3)})
+                                                                     set_transaction_data({...transaction_data,from_amount:parseFloat(((transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals)))-0.001).toFixed(3))})
                                                                  }} className={""} style={{zIndex:10,display:"inline-block",width:"50px",height:"20px",backgroundColor:"#797d85",padding:1,color:"white",top:"-10px"}}><p style={{top:"10px",position:"absolute",fontSize:15,right:"20px"}}>max</p></button>
                                                                  {/*<p style={{position:"absolute",fontSize:12,top:"20px",right:"26px"}}>{coin_data.balacne}</p>*/}
                                                              </>}
                                                              onChange={(value) =>{
-                                                                 if(value != null){
-                                                                     // console.log("regex3.test",regex3.test(value));
-                                                                     // console.log("show value",value);
-                                                                     if(regex3.test(value)){
-                                                                         console.log('set input value',value)
-                                                                         set_show_value({...show_value,from_value:value})
-                                                                         set_transaction_data({...transaction_data,from_amount:parseFloat(value)})
-                                                                         // set_transaction_data({...transaction_data,from_amount:parseFloat(value)})
-                                                                     }
+                                                                 if (debounceTimeout.current) {
+                                                                     clearTimeout(debounceTimeout.current); // 清除之前的 timeout
                                                                  }
+                                                                 debounceTimeout.current = window.setTimeout(() => {
+                                                                     if (value != null && regex3.test(value)) {
+                                                                         console.log('set input value', value);
+                                                                         set_show_value({ ...show_value, from_value: value });
+                                                                         set_transaction_data({ ...transaction_data, from_amount: parseFloat(value) });
+                                                                     }
+                                                                 }, 300);
+                                                                 // if(value != null){
+                                                                 //     // console.log("regex3.test",regex3.test(value));
+                                                                 //     // console.log("show value",value);
+                                                                 //     if(regex3.test(value)){
+                                                                 //         console.log('set input value',value)
+                                                                 //         set_show_value({...show_value,from_value:value})
+                                                                 //         set_transaction_data({...transaction_data,from_amount:parseFloat(value)})
+                                                                 //         // set_transaction_data({...transaction_data,from_amount:parseFloat(value)})
+                                                                 //     }
+                                                                 // }
                                                 }} style={{width:"319px",backgroundColor:"#bcbbbb"}} prefix={"$"} suffix={""}/>
                                                 <Row gutter={[24,6]} style={{padding:2}}>
                                                     <Col span={12} style={{}}>
@@ -473,8 +486,8 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                             <Col span={24}>
                                                                 {transaction_data.from_coin_symbol != 'test' && (
                                                                     <>
-                                                                        <p style={{display:"inline-block",justifySelf:"left"}}>Balacne : </p>
-                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{((transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals))) - (transaction_data.from_balance == 0  ? 0 : 0.001 )).toFixed(3)}</p>
+                                                                        <p style={{display:"inline-block",justifySelf:"left",color:"#f4f4f4"}}>Balacne : </p>
+                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10,color:"#f4f4f4"}}>{((transaction_data.from_balance/(Math.pow(10,transaction_data.from_coin_decimals))) - (transaction_data.from_balance == 0  ? 0 : 0.001 )).toFixed(3)}</p>
                                                                     </>
                                                                 )}
                                                             </Col>
@@ -483,7 +496,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                     <>
                                                                         <p style={{
                                                                             display: "inline-block",
-                                                                            justifySelf: "right"
+                                                                            justifySelf: "right",color:"#f4f4f4"
                                                                         }}>{transaction_data.from_coin_symbol}</p>
                                                                     </>
                                                                 )}
@@ -493,13 +506,13 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                 {regex2.test(transaction_data.from_coin_address) && (
                                                                     <p style={{
                                                                         display: "inline-block",
-                                                                        justifySelf: "right"
+                                                                        justifySelf: "right",color:"#f4f4f4",top:"-4px",position:"relative"
                                                                     }}>V1 standard</p>
                                                                 )}
                                                                 {regex.test(transaction_data.from_coin_address) && (
                                                                     <p style={{
                                                                         display: "inline-block",
-                                                                        justifySelf: "right"
+                                                                        justifySelf: "right",color:"#f4f4f4",top:"-4px",position:"relative"
                                                                     }}>V2 standard</p>
                                                                 )}
                                                             </Col>
@@ -638,8 +651,8 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                             <Col span={24}>
                                                                 {transaction_data.to_coin_symbol != 'test' && (
                                                                     <>
-                                                                        <p style={{display:"inline-block",justifySelf:"left"}}>Balacne : </p>
-                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10}}>{((transaction_data.to_balance/(Math.pow(10,transaction_data.to_coin_decimals)))-(transaction_data.to_balance== 0  ? 0 : 0.001 )).toFixed(3)}</p>
+                                                                        <p style={{display:"inline-block",justifySelf:"left",color:"#f4f4f4"}}>Balacne : </p>
+                                                                        <p style={{display:"inline-block",justifySelf:"right",left:10,color:"#f4f4f4"}}>{((transaction_data.to_balance/(Math.pow(10,transaction_data.to_coin_decimals)))-(transaction_data.to_balance== 0  ? 0 : 0.001 )).toFixed(3)}</p>
                                                                     </>
                                                                 )}
                                                             </Col>
@@ -648,7 +661,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                     <>
                                                                         <p style={{
                                                                             display: "inline-block",
-                                                                            justifySelf: "right"
+                                                                            justifySelf: "right",color:"#f4f4f4"
                                                                         }}>{transaction_data.to_coin_symbol}</p>
                                                                     </>
                                                                 )}
@@ -657,13 +670,13 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                 {regex2.test(transaction_data.to_coin_address) && (
                                                                     <p style={{
                                                                         display: "inline-block",
-                                                                        justifySelf: "right",
+                                                                        justifySelf: "right",color:"#f4f4f4",top:"-4px",position:"relative"
                                                                     }}>V1 standard</p>
                                                                 )}
                                                                 {regex.test(transaction_data.to_coin_address) && (
                                                                     <p style={{
                                                                         display: "inline-block",
-                                                                        justifySelf: "right",
+                                                                        justifySelf: "right",color:"#f4f4f4",top:"-4px",position:"relative"
                                                                     }}>V2 standard</p>
                                                                 )}
                                                             </Col>
