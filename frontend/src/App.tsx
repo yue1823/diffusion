@@ -312,8 +312,8 @@ const App: React.FC<{id:string}> = ({}) => {
                     }
                 }
             )
-            console.log(helper_data);
-             console.log(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`)
+           // console.log(helper_data);
+           //  console.log(`https://aptos-${NOW_Network}.nodit.io/v1/accounts/${account.address}/resource/${diffusion.function.diffusion_account_tree()}`)
             set_helper_data(helper_data);
             try{
 
@@ -349,7 +349,7 @@ const App: React.FC<{id:string}> = ({}) => {
                                 }
                             }
                             set_user_profile(new_profile)
-                             console.log('profile respone',response);
+                             //console.log('profile respone',response);
                         }
                     })
 
@@ -511,7 +511,7 @@ const App: React.FC<{id:string}> = ({}) => {
     }, []);
 
     useEffect(() => {
-        console.log('userProfile ',user_profile);
+        //console.log('userProfile ',user_profile);
     }, [user_profile]);
     return (
         <>

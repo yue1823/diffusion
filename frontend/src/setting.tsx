@@ -31,6 +31,13 @@ export const  diffusion = {
         return_mint_badges_list :  () => `${diffusion.module_address}::helper::check_badges_list` as `${string}::${string}::${string}`,
         check_is_white_list :  () => `${diffusion.module_address}::helper::check_address_whitelist` as `${string}::${string}::${string}`,
         mint_badges :  () => `${diffusion.module_address}::helper::mint_badges` as `${string}::${string}::${string}`,
+        pontem_swap_v2 : () => `0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12::scripts_v2::swap` as `${string}::${string}::${string}`,
+        pontem_router_swap_v2 : () => `0x80273859084bc47f92a6c2d3e9257ebb2349668a1b0fb3db1d759a04c7628855::router::swap_exact_coin_for_coin_x1` as `${string}::${string}::${string}`,
+        pontem_swap_curve_Uncorrelated : () => `0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12::curves::Uncorrelated` as `${string}::${string}::${string}`,
+        pontem_swap_curve_Uncorrelated_v2: () => `0x163df34fccbf003ce219d3f1d9e70d140b60622cb9dd47599c25fb2f797ba6e::curves::Uncorrelated` as `${string}::${string}::${string}`,
+        pontem_router_view_pair_exists :() =>`0x80273859084bc47f92a6c2d3e9257ebb2349668a1b0fb3db1d759a04c7628855::views::is_swap_exists` as `${string}::${string}::${string}`,
+        pontem_router_get_amount_out :() =>`0x80273859084bc47f92a6c2d3e9257ebb2349668a1b0fb3db1d759a04c7628855::views::get_amount_out` as `${string}::${string}::${string}`,
+        pontem_router_BNstep :() =>`0x80273859084bc47f92a6c2d3e9257ebb2349668a1b0fb3db1d759a04c7628855::router::BinStepV0V05` as `${string}::${string}::${string}`,
 
     },
     

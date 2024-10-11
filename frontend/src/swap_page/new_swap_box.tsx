@@ -2,8 +2,8 @@ import { DoubleRightOutlined, ExclamationCircleTwoTone, PlusOutlined, RightOutli
 import {Col, Divider, InputNumber, Row, Select, message ,Radio,Image, Segmented, Avatar} from "antd";
 import React, {useEffect, useRef, useState } from "react";
 import {option_coin_address} from "./coin_address";
-import {Aptos} from "@aptos-labs/ts-sdk";
-import { useWallet } from "@aptos-labs/wallet-adapter-react";
+import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
+import {InputTransactionData, useWallet } from "@aptos-labs/wallet-adapter-react";
 import Modal from "@mui/material/Modal";
 import {Box} from "@mui/material";
 import { motion } from "framer-motion";
@@ -12,13 +12,13 @@ import Diffusion_logo_2 from "../art/diffusion7.png";
 import Pontem_logo from "../logo/Pontem.svg"
 import Thala_logo from "../logo/thala logo.jpeg";
 import Cellea_logo from "../logo/cellana.svg";
-import { SDK, convertValueToDecimal } from '@pontem/liquidswap-sdk';
+import { SDK} from '@pontem/liquidswap-sdk';
 import { diffusion } from "../setting";
 
 const sdk = new SDK({
     nodeUrl: 'https://fullnode.mainnet.aptoslabs.com/v1',});
-// const aptosConfig = new AptosConfig({ network: Network.TESTNET});
-const aptos = new Aptos(diffusion.aptos_network_setting);
+const aptosConfig = new AptosConfig({ network: Network.MAINNET});
+const aptos = new Aptos(aptosConfig);
 
 
 interface Coin_data{
@@ -43,7 +43,9 @@ interface Transaction_data {
     to_balance:number,
     from_amount:number,
     to_amount:number,
-    slippage:string
+    slippage:string,
+    pontem_cure:string,
+    pontem_version:number
 }
 interface Show_value{
     from_value: string | undefined,
@@ -64,11 +66,61 @@ const New_swap_page:React.FC<{}>=({})=>{
         to_value:undefined,
         from_value:undefined
     });
-    const [transaction_data , set_transaction_data]=useState<Transaction_data>({from_coin_symbol:"test",from_coin_decimals:0,from_coin_address:"",from_amount:0,from_balance:0,from_icon_url:'',to_coin_decimals:0,to_amount:0,to_coin_address:"",to_coin_symbol:"test",to_balance:0,to_icon_url:"",slippage:""});
+    const [transaction_data , set_transaction_data]=useState<Transaction_data>({from_coin_symbol:"test",from_coin_decimals:0,from_coin_address:"",from_amount:0,from_balance:0,from_icon_url:'',to_coin_decimals:0,to_amount:0,to_coin_address:"",to_coin_symbol:"test",to_balance:0,to_icon_url:"",slippage:"",pontem_cure:diffusion.function.pontem_swap_curve_Uncorrelated(),pontem_version:0});
     const [show_value,set_show_value] = useState<Show_value>({
         to_value:undefined,
         from_value:undefined
     })
+    const Submit_transaction = async() =>{
+        if(!account)return;
+        if(transaction_data.from_coin_address == transaction_data.to_coin_address)return
+        if(transaction_data.from_amount == 0){
+            message.error("please enter amount")
+            return
+        }
+        if(transaction_data.from_coin_address == 'test' || transaction_data.to_coin_address == 'test' )return
+        if(segement_select === 'Pontem'){
+            //console.log("before pontem payload : ",transaction_data.to_amount)
+            // const transaction_payload_pontem = sdk.Swap.createSwapTransactionPayload({
+            //     fromToken:transaction_data.from_coin_address,
+            //     toToken:transaction_data.to_coin_address,
+            //     fromAmount:transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),
+            //     toAmount:transaction_data.to_amount,
+            //     interactiveToken: 'from',
+            //     slippage:parseFloat(transaction_data.slippage),
+            //     stableSwapType: 'high',
+            //     curveType: 'uncorrelated',
+            //     version: 0
+            // })
+           // console.log('usdc :',parseInt((0.008*Math.pow(10,transaction_data.to_coin_decimals)).toFixed(0)))
+            const transaction_payload : InputTransactionData = {
+                data: {
+                    function:transaction_data.pontem_cure ==diffusion.function.pontem_swap_curve_Uncorrelated()? diffusion.function.pontem_swap_v2():diffusion.function.pontem_router_swap_v2(),
+                    typeArguments:transaction_data.pontem_cure ==diffusion.function.pontem_swap_curve_Uncorrelated()?[transaction_data.from_coin_address,transaction_data.to_coin_address,diffusion.function.pontem_swap_curve_Uncorrelated()]:[transaction_data.from_coin_address,transaction_data.to_coin_address,transaction_data.pontem_cure,diffusion.function.pontem_router_BNstep()],
+                    functionArguments:transaction_data.pontem_cure ==diffusion.function.pontem_swap_curve_Uncorrelated()?[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),transaction_data.to_amount]:[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),[transaction_data.to_amount],[transaction_data.pontem_version],[true]]
+                }
+            }
+            // transaction_data.to_amount
+            // sign and submit transaction to chain
+            try{
+                const response = await signAndSubmitTransaction(transaction_payload);
+                // wait for transaction
+                const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+                const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=mainnet`;
+                message.success(
+                    <span>
+                            hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                        </span>
+                )
+            }catch(e:any){console.log(e)}
+
+            //console.log("own payload : ",transaction_payload )
+        }else if(segement_select === 'Thala'){
+
+        }else if(segement_select === 'Cellea'){
+
+        }
+    }
     const Pontem_swap_sdk = async() =>{
         if(transaction_data.from_coin_address === transaction_data.to_coin_address)return
         try{
@@ -82,10 +134,62 @@ const New_swap_page:React.FC<{}>=({})=>{
             })
             console.log('pontem sdk swap',parseFloat(output)/Math.pow(10,transaction_data.to_coin_decimals))
             set_show_value({...show_value,to_value:(parseFloat(output)/Math.pow(10,transaction_data.to_coin_decimals)).toFixed(3).toString()})
-        }catch (e:any){}finally {
+            set_transaction_data({...transaction_data,to_amount:parseInt(output)})
+        }catch (e:any){
+            //console.log(e)
+            try{
+                const repsone1 =await aptos.view({
+                    payload:{
+                        function:diffusion.function.pontem_router_view_pair_exists(),
+                        typeArguments:[transaction_data.from_coin_address,transaction_data.to_coin_address,diffusion.function.pontem_swap_curve_Uncorrelated_v2()],
+                        functionArguments:[0]
+                    }
+                })
+                const repsone2 =await aptos.view({
+                    payload:{
+                        function:diffusion.function.pontem_router_view_pair_exists(),
+                        typeArguments:[transaction_data.from_coin_address,transaction_data.to_coin_address,diffusion.function.pontem_swap_curve_Uncorrelated_v2()],
+                        functionArguments:[5]
+                    }
+                })
+                // console.log('view respone',repsone1[0],repsone2[0])
+                // console.log('from coin',transaction_data.from_coin_address)
+                // console.log('to coin',transaction_data.to_coin_address)
+                if(repsone1[0]){
+                    const output = await aptos.view({
+                        payload:{
+                            function:diffusion.function.pontem_router_get_amount_out(),
+                            typeArguments:[transaction_data.from_coin_address,transaction_data.to_coin_address,diffusion.function.pontem_swap_curve_Uncorrelated_v2()],
+                            functionArguments:[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),0]
+                        }
+                    })
+                   // console.log('pontem sdk swap 1',parseFloat(output[0] as string)/Math.pow(10,transaction_data.to_coin_decimals))
+                    set_show_value({...show_value,to_value:(parseFloat(output[0] as string)/Math.pow(10,transaction_data.to_coin_decimals)).toFixed(3).toString()})
+                    set_transaction_data({...transaction_data,to_amount:parseInt(output[0] as string),pontem_cure:diffusion.function.pontem_swap_curve_Uncorrelated_v2()})
+                }else if(repsone2[0]){
+                    const output = await aptos.view({
+                        payload:{
+                            function:diffusion.function.pontem_router_get_amount_out(),
+                            typeArguments:[transaction_data.from_coin_address,transaction_data.to_coin_address,diffusion.function.pontem_swap_curve_Uncorrelated_v2()],
+                            functionArguments:[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),5]
+                        }
+                    })
+                    //console.log('pontem sdk swap 2',output[0])
+                    set_show_value({...show_value,to_value:(parseFloat(output[0] as string)/Math.pow(10,transaction_data.to_coin_decimals)).toFixed(3).toString()})
+                    set_transaction_data({...transaction_data,to_amount:parseInt(output[0] as string),pontem_cure:diffusion.function.pontem_swap_curve_Uncorrelated_v2(),pontem_version:5})
+                }
+            }catch (e:any){
+
+            }
+
+
+        }finally {
 
         }
     }
+    useEffect(() => {
+        setSelectedValue({...selectedValue,to_value:transaction_data.to_coin_symbol});
+    }, [transaction_data.to_coin_symbol]);
     useEffect(() => {
     }, [show_value.to_value]);
     useEffect(() => {
@@ -198,6 +302,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                 } ]);
                 set_open_box(true)
                 set_transaction_data({...transaction_data, from_coin_symbol:coin_data.symbol,from_coin_address:coin_data.coin_address,from_coin_decimals:coin_data.decimals})
+                setSelectedValue({...selectedValue,from_value:coin_data.symbol})
             }
         })
     }
@@ -217,6 +322,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                 } ]);
                 set_open_box(true)
                 set_transaction_data({...transaction_data, to_coin_symbol:coin_data.symbol,to_coin_address:coin_data.coin_address,to_coin_decimals:coin_data.decimals})
+                setSelectedValue({...selectedValue,to_value:coin_data.symbol})
             }
         })
     }
@@ -548,7 +654,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                         return(
                                                                             <>
                                                                                 {find_items != undefined && (
-                                                                                    <Image src={find_items.coin_url} fallback={Diffusion_logo_2} style={{position:"relative",top:"-5px"}}></Image>
+                                                                                    <Image src={find_items.coin_url} fallback={Diffusion_logo_2} style={{position:"relative",top:"-5px"}} preview={false}></Image>
                                                                                 )}
                                                                             </>
                                                                         )
@@ -569,7 +675,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                             }
                                                                             //console.log("i cant find")
                                                                             return (
-                                                                                <Image src={respone[0] as string} fallback={Diffusion_logo_2}></Image>
+                                                                                <Image src={respone[0] as string} fallback={Diffusion_logo_2} preview={false}></Image>
                                                                             )
                                                                         }
                                                                     )}
@@ -732,7 +838,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                                 return(
                                                                                     <>
                                                                                         {find_items != undefined && (
-                                                                                            <Image src={find_items.coin_url} fallback={Diffusion_logo_2} style={{position:"relative",top:"-5px"}}></Image>
+                                                                                            <Image src={find_items.coin_url} fallback={Diffusion_logo_2} style={{position:"relative",top:"-5px"}} preview={false}></Image>
                                                                                         )}
                                                                                     </>
                                                                                 )
@@ -753,7 +859,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                                  })
                                                                              }
                                                                              return (
-                                                                                 <Image src={respone[0] as string} fallback={Diffusion_logo_2}></Image>
+                                                                                 <Image src={respone[0] as string} fallback={Diffusion_logo_2} preview={false}></Image>
                                                                              )
                                                                          })
                                                                      }
@@ -761,7 +867,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                             }
                                                             {items.find(items =>{
                                                                 if(items.value == transaction_data.to_coin_symbol && items.coin_url != ''){
-                                                                    <Image src={items.coin_url} fallback={Diffusion_logo_2}></Image>
+                                                                    <Image src={items.coin_url} fallback={Diffusion_logo_2} preview={false}></Image>
                                                                 }
                                                             })}
                                                         </>}
@@ -797,7 +903,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                     <Row style={{justifyContent:"center",alignItems:"center"}}>
                                                         <Col span={24} style={{paddingLeft:20,paddingTop:10}}>
                                                             <Avatar shape="square" size={60}  style={{justifyContent:"center",alignItems:"center"}} icon={<UserOutlined style={{justifySelf:"center",alignSelf:"center"}}/>} /></Col>
-                                                        <Col span={24}><p>{account?.address.slice(0, 8)}</p></Col>
+                                                        <Col span={24}><p>{account ?account.address.slice(0, 8):"User"}</p></Col>
                                                     </Row>
                                                 </Col>
                                             </Row>
@@ -809,6 +915,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                         whileHover={{scale: 1.03}}
                                                         whileTap={{scale: 0.95}}
                                                         transition={{type: "spring", stiffness: 400, damping: 25}}
+                                                        onClick={()=>Submit_transaction()}
                                             >
                                                 <button className={"rainbow"} style={{height: "80px"}}>
                                                     Swap
