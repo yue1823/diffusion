@@ -2,7 +2,7 @@ import { DoubleRightOutlined, ExclamationCircleTwoTone, PlusOutlined, RightOutli
 import {Col, Divider, InputNumber, Row, Select, message ,Radio,Image, Segmented, Avatar} from "antd";
 import React, {useEffect, useRef, useState } from "react";
 import {option_coin_address} from "./coin_address";
-import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
+import {Account, Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 import {InputTransactionData, useWallet } from "@aptos-labs/wallet-adapter-react";
 import Modal from "@mui/material/Modal";
 import {Box} from "@mui/material";
@@ -16,6 +16,7 @@ import { SDK} from '@pontem/liquidswap-sdk';
 import { diffusion } from "../setting";
 import {ThalaswapRouter} from "@thalalabs/router-sdk";
 import { createSurfClient } from "@thalalabs/surf";
+import { Submit_wait_box } from "./submit_wait_box";
 
 const sdk = new SDK({
     nodeUrl: 'https://fullnode.mainnet.aptoslabs.com/v1',});
@@ -76,6 +77,7 @@ const New_swap_page:React.FC<{}>=({})=>{
     const [open_box,set_open_box]=useState(false);
     const [coin_data,set_coin_data]=useState<Coin_data>({name:'test',symbol:'',balacne:0,coin_url:'',decimals:1,stander:"v2",coin_address:""})
     const [segement_select,set_segement_select]=useState('Pontem');
+    const [submit_wait_box,set_submit_wait_box]=useState({state1:false,state2:false});
     const [selectedValue, setSelectedValue] = useState<Show_value>({
         to_value:undefined,
         from_value:undefined
@@ -135,16 +137,18 @@ const New_swap_page:React.FC<{}>=({})=>{
             if(output != null){
                 await thala_client.submitTransaction({
                     payload: store_output,
-                    signer:account,
+                    signer: account as unknown as Account,
                 });
+                account
             }
+
         }else if(segement_select === 'Cellea'){
 
         }
     }
     const Thala_swap_sdk = async() =>{
         if(transaction_data.from_coin_address === transaction_data.to_coin_address)return
-        if(transaction_data.from_amount ==0)return
+        if(transaction_data.from_amount ==0 || transaction_data.to_coin_symbol == 'test' || transaction_data.from_coin_symbol == 'test')return
         try{
             const output = await thala.getRouteGivenExactInput(transaction_data.from_coin_address,transaction_data.to_coin_address,transaction_data.from_amount);
 
@@ -224,6 +228,16 @@ const New_swap_page:React.FC<{}>=({})=>{
 
         }
     }
+    useEffect(() => {
+        if(transaction_data.to_coin_symbol != 'test' && transaction_data.to_coin_address != ''){
+            if(segement_select == "Pontem"){
+                Pontem_swap_sdk()
+            }else if(segement_select == "Thala"){
+                Thala_swap_sdk()
+            }
+
+        }
+    }, [segement_select]);
     useEffect(() => {
         setSelectedValue({...selectedValue,to_value:transaction_data.to_coin_symbol});
     }, [transaction_data.to_coin_symbol]);
@@ -513,7 +527,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                         <Row gutter={[24,5]} style={{width:"inherit",height:"inherit",backgroundColor:"#bcbbbb",padding:10,borderRadius:5,border:"1px solid",borderColor:"#a3a2a2"}}>
                             <Col span={24} style={{height:"100px",backgroundColor:"",display:"inline-block",paddingTop:10,paddingLeft:15}}>
                                    <Row gutter={[24,2]} style={{width:"inherit",height:"inherit"}}>
-                                       <Col span={12} style={{ padding:5,paddingLeft:12}}>
+                                       <Col span={12} style={{ padding:5,paddingLeft:13}}>
                                            <div style={{
                                                justifyContent: "left",
                                                alignItems: "center",
@@ -982,7 +996,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                         <Confirm_box states={open_box} coin_data={coin_data}/>
                     </>
                 )}
-
+                <Submit_wait_box box_state1={true} box_state2={false}/>
             </Row>
         </>
     )
@@ -1017,12 +1031,12 @@ const Confirm_box : React.FC <{states:boolean,coin_data:Coin_data}> = ({states,c
                 classes={""}
                 sx={{borderRadius: 60,paddingTop:3,paddingRight:3,paddingLeft:3,border:"white",'&:fouvu':{outline:'none'},justifyContent:"center",alignItems:"center",display:"flex"}}
             >
-                <Box sx={{width:"600px",height:"600px",backgroundColor:"#dfdfdf",borderRadius:5,padding:5,paddingTop:3}}>
+                <Box sx={{width:"620px",height:"650px",backgroundColor:"#dfdfdf",borderRadius:5,padding:5,paddingTop:3,border:"3mm ridge #CED4DA"}}>
                     <Row gutter={[24,6]} style={{}}>
-                        <Col span={24} style={{display:"flex",justifyContent:"center",alignItems:"center",height:"150px",background:"#7e1414",fontSize:190}}>
+                        <Col span={24} style={{display:"flex",justifyContent:"center",alignItems:"center",height:"150px",background:"",fontSize:190}}>
                             <ExclamationCircleTwoTone style={{transform:"scale(4)"}} />
                         </Col>
-                        <Col span={24} style={{height:"190px",backgroundColor:"blue",border:"0.5px solid"}}>
+                        <Col span={24} style={{height:"200px",backgroundColor:"",border:"3mm inset"}}>
                             <Row gutter={[24,6]} style={{}}>
                                 <Col span={24}>
                                     <p style={{fontSize:25}}>Coin Details</p>
@@ -1069,13 +1083,13 @@ const Confirm_box : React.FC <{states:boolean,coin_data:Coin_data}> = ({states,c
                             </Row>
 
                         </Col>
-                        <Col span={24} style={{height:"45px",backgroundColor:"blue"}}>
+                        <Col span={24} style={{height:"45px",backgroundColor:""}}>
                              <p style={{fontSize:30}}>You are importing an not verify coin</p>
                         </Col>
-                        <Col span={24} style={{height:"50px",backgroundColor:"blue"}}>
+                        <Col span={24} style={{height:"50px",backgroundColor:"",width:"115%"}}>
                             <p style={{fontSize:30}}>Please make sure you understand Risk!</p>
                         </Col>
-                        <Col span={24} style={{height:"50px",backgroundColor:"blue",justifyContent:"center",alignItems:"center",display:"inherit"}}>
+                        <Col span={24} style={{height:"50px",backgroundColor:"",justifyContent:"center",alignItems:"center",display:"inherit"}}>
                             <Radio onChange={(e) => {
                                 //console.log("clicked", e.nativeEvent.isTrusted);
                                 set_clicked(e.nativeEvent.isTrusted)// 输出被点击的值
