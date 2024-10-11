@@ -14,12 +14,26 @@ import Thala_logo from "../logo/thala logo.jpeg";
 import Cellea_logo from "../logo/cellana.svg";
 import { SDK} from '@pontem/liquidswap-sdk';
 import { diffusion } from "../setting";
+import {ThalaswapRouter} from "@thalalabs/router-sdk";
+import { createSurfClient } from "@thalalabs/surf";
 
 const sdk = new SDK({
     nodeUrl: 'https://fullnode.mainnet.aptoslabs.com/v1',});
+const thala = new ThalaswapRouter(
+    Network.MAINNET,
+    "https://fullnode.mainnet.aptoslabs.com/v1",
+    "0x48271d39d0b05bd6efca2278f22277d6fcc375504f9839fd73f74ace240861af",
+    "0x60955b957956d79bc80b096d3e41bad525dd400d8ce957cdeb05719ed1e4fc26",
+);
 const aptosConfig = new AptosConfig({ network: Network.MAINNET});
 const aptos = new Aptos(aptosConfig);
-
+const thala_client = createSurfClient(
+    new Aptos(
+        new AptosConfig({
+            network: Network.TESTNET,
+        }),
+    ),
+);
 
 interface Coin_data{
     name:string,
@@ -116,9 +130,32 @@ const New_swap_page:React.FC<{}>=({})=>{
 
             //console.log("own payload : ",transaction_payload )
         }else if(segement_select === 'Thala'){
-
+            const output = await thala.getRouteGivenExactInput(transaction_data.from_coin_address,transaction_data.to_coin_address,transaction_data.from_amount);
+            const store_output = thala.encodeRoute(output!, 0.5);
+            if(output != null){
+                await thala_client.submitTransaction({
+                    payload: store_output,
+                    signer:account,
+                });
+            }
         }else if(segement_select === 'Cellea'){
 
+        }
+    }
+    const Thala_swap_sdk = async() =>{
+        if(transaction_data.from_coin_address === transaction_data.to_coin_address)return
+        if(transaction_data.from_amount ==0)return
+        try{
+            const output = await thala.getRouteGivenExactInput(transaction_data.from_coin_address,transaction_data.to_coin_address,transaction_data.from_amount);
+
+            console.log('thala output',output)
+            console.log("Entry function payload with 0.5% slippage:", thala.encodeRoute(output!, 0.5));
+            if(output != null){
+                set_show_value({...show_value,to_value:(output.amountOut).toFixed(3).toString()})
+                set_transaction_data({...transaction_data,to_amount:output.amountOut})
+            }
+        }catch(e:any){
+            console.log("thala swap",e)
         }
     }
     const Pontem_swap_sdk = async() =>{
@@ -194,7 +231,12 @@ const New_swap_page:React.FC<{}>=({})=>{
     }, [show_value.to_value]);
     useEffect(() => {
         if(transaction_data.to_coin_symbol != 'test' && transaction_data.to_coin_address != ''){
-            Pontem_swap_sdk()
+            if(segement_select == "Pontem"){
+                Pontem_swap_sdk()
+            }else if(segement_select == "Thala"){
+                Thala_swap_sdk()
+            }
+
         }
     }, [show_value.from_value]);
 
@@ -232,7 +274,11 @@ const New_swap_page:React.FC<{}>=({})=>{
             set_transaction_data({...transaction_data,to_balance:0})
         }
         if(transaction_data.to_coin_symbol != 'test' && transaction_data.to_coin_address != ''){
-            Pontem_swap_sdk()
+            if(segement_select == "Pontem"){
+                Pontem_swap_sdk()
+            }else if(segement_select == "Thala"){
+                Thala_swap_sdk()
+            }
         }
     }, [transaction_data.to_coin_address]);
     const fetch_balance_of_options = async(key_address:string,to_or_from:string) =>{
@@ -594,7 +640,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                          set_show_value({ ...show_value, from_value: value });
                                                                          set_transaction_data({ ...transaction_data, from_amount: parseFloat(value) });
                                                                      }
-                                                                 }, 300);
+                                                                 }, 800);
                                                                  // if(value != null){
                                                                  //     // console.log("regex3.test",regex3.test(value));
                                                                  //     // console.log("show value",value);
