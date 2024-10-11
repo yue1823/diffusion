@@ -47,6 +47,7 @@
     "framer-motion": "^11.3.30",
     "gsap": "^3.12.5",
     "kinet": "^2.2.1",
+    "lottie-web": "^5.12.2",
     "lucide-react": "^0.383.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",

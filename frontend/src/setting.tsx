@@ -38,8 +38,12 @@ export const  diffusion = {
         pontem_router_view_pair_exists :() =>`0x80273859084bc47f92a6c2d3e9257ebb2349668a1b0fb3db1d759a04c7628855::views::is_swap_exists` as `${string}::${string}::${string}`,
         pontem_router_get_amount_out :() =>`0x80273859084bc47f92a6c2d3e9257ebb2349668a1b0fb3db1d759a04c7628855::views::get_amount_out` as `${string}::${string}::${string}`,
         pontem_router_BNstep :() =>`0x80273859084bc47f92a6c2d3e9257ebb2349668a1b0fb3db1d759a04c7628855::router::BinStepV0V05` as `${string}::${string}::${string}`,
-
+        thala_swap:()=>`0x48271d39d0b05bd6efca2278f22277d6fcc375504f9839fd73f74ace240861af::weighted_pool_scripts::swap_exact_in` as `${string}::${string}::${string}`
     },
+    thala_type:{
+        base_pool:"0x48271d39d0b05bd6efca2278f22277d6fcc375504f9839fd73f74ace240861af::base_pool::Null",
+        weight_50:"0x48271d39d0b05bd6efca2278f22277d6fcc375504f9839fd73f74ace240861af::weighted_pool::Weight_50",
+        }
     
 
 }

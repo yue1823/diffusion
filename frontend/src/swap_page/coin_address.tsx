@@ -50,6 +50,7 @@ const option_coin_address= {
                 </div>
             ),
             value: 'Thala',
+            disabled: true
         },
         {
             label: (
@@ -61,7 +62,8 @@ const option_coin_address= {
             value: 'Cellea',
             disabled: true
         },
-    ]
+    ],
+
 }
 
 export {option_coin_address}

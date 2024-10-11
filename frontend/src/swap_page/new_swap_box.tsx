@@ -2,7 +2,7 @@ import { DoubleRightOutlined, ExclamationCircleTwoTone, PlusOutlined, RightOutli
 import {Col, Divider, InputNumber, Row, Select, message ,Radio,Image, Segmented, Avatar} from "antd";
 import React, {useEffect, useRef, useState } from "react";
 import {option_coin_address} from "./coin_address";
-import {Account, Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
+import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
 import {InputTransactionData, useWallet } from "@aptos-labs/wallet-adapter-react";
 import Modal from "@mui/material/Modal";
 import {Box} from "@mui/material";
@@ -15,7 +15,7 @@ import Cellea_logo from "../logo/cellana.svg";
 import { SDK} from '@pontem/liquidswap-sdk';
 import { diffusion } from "../setting";
 import {ThalaswapRouter} from "@thalalabs/router-sdk";
-import { createSurfClient } from "@thalalabs/surf";
+// import { createSurfClient } from "@thalalabs/surf";
 import { Submit_wait_box } from "./submit_wait_box";
 
 const sdk = new SDK({
@@ -28,13 +28,13 @@ const thala = new ThalaswapRouter(
 );
 const aptosConfig = new AptosConfig({ network: Network.MAINNET});
 const aptos = new Aptos(aptosConfig);
-const thala_client = createSurfClient(
-    new Aptos(
-        new AptosConfig({
-            network: Network.TESTNET,
-        }),
-    ),
-);
+// const thala_client = createSurfClient(
+//     new Aptos(
+//         new AptosConfig({
+//             network: Network.MAINNET,
+//         }),
+//     ),
+// );
 
 interface Coin_data{
     name:string,
@@ -95,6 +95,7 @@ const New_swap_page:React.FC<{}>=({})=>{
             return
         }
         if(transaction_data.from_coin_address == 'test' || transaction_data.to_coin_address == 'test' )return
+        set_submit_wait_box({...submit_wait_box,state1:true})
         if(segement_select === 'Pontem'){
             //console.log("before pontem payload : ",transaction_data.to_amount)
             // const transaction_payload_pontem = sdk.Swap.createSwapTransactionPayload({
@@ -111,11 +112,13 @@ const New_swap_page:React.FC<{}>=({})=>{
            // console.log('usdc :',parseInt((0.008*Math.pow(10,transaction_data.to_coin_decimals)).toFixed(0)))
             const transaction_payload : InputTransactionData = {
                 data: {
-                    function:transaction_data.pontem_cure ==diffusion.function.pontem_swap_curve_Uncorrelated()? diffusion.function.pontem_swap_v2():diffusion.function.pontem_router_swap_v2(),
+                    function:transaction_data.pontem_cure == diffusion.function.pontem_swap_curve_Uncorrelated()? diffusion.function.pontem_swap_v2():diffusion.function.pontem_router_swap_v2(),
                     typeArguments:transaction_data.pontem_cure ==diffusion.function.pontem_swap_curve_Uncorrelated()?[transaction_data.from_coin_address,transaction_data.to_coin_address,diffusion.function.pontem_swap_curve_Uncorrelated()]:[transaction_data.from_coin_address,transaction_data.to_coin_address,transaction_data.pontem_cure,diffusion.function.pontem_router_BNstep()],
                     functionArguments:transaction_data.pontem_cure ==diffusion.function.pontem_swap_curve_Uncorrelated()?[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),transaction_data.to_amount]:[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),[transaction_data.to_amount],[transaction_data.pontem_version],[true]]
                 }
             }
+            console.log('transaction data',transaction_data)
+            console.log('pontem transaction',transaction_payload)
             // transaction_data.to_amount
             // sign and submit transaction to chain
             try{
@@ -128,20 +131,22 @@ const New_swap_page:React.FC<{}>=({})=>{
                             hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
                         </span>
                 )
-            }catch(e:any){console.log(e)}
+                set_submit_wait_box({...submit_wait_box,state2:true})
+            }catch(e:any){console.log(e)}finally {
+                //set_submit_wait_box({...submit_wait_box,state1:false,state2: false})
+            }
 
             //console.log("own payload : ",transaction_payload )
         }else if(segement_select === 'Thala'){
-            const output = await thala.getRouteGivenExactInput(transaction_data.from_coin_address,transaction_data.to_coin_address,transaction_data.from_amount);
-            const store_output = thala.encodeRoute(output!, 0.5);
-            if(output != null){
-                await thala_client.submitTransaction({
-                    payload: store_output,
-                    signer: account as unknown as Account,
-                });
-                account
+            const transaction_payload : InputTransactionData = {
+                data: {
+                    function:diffusion.function.thala_swap(),
+                    typeArguments:[],
+                    functionArguments:[],
+                }
             }
-
+            console.log(transaction_payload)
+            set_submit_wait_box({...submit_wait_box,state2:true})
         }else if(segement_select === 'Cellea'){
 
         }
@@ -151,19 +156,21 @@ const New_swap_page:React.FC<{}>=({})=>{
         if(transaction_data.from_amount ==0 || transaction_data.to_coin_symbol == 'test' || transaction_data.from_coin_symbol == 'test')return
         try{
             const output = await thala.getRouteGivenExactInput(transaction_data.from_coin_address,transaction_data.to_coin_address,transaction_data.from_amount);
-
-            console.log('thala output',output)
-            console.log("Entry function payload with 0.5% slippage:", thala.encodeRoute(output!, 0.5));
+            const store_output = thala.encodeRoute(output!, 0.5);
+            //console.log('thala output',output)
+            //console.log("Entry function payload with 0.5% slippage:", thala.encodeRoute(output!, 0.5));
             if(output != null){
                 set_show_value({...show_value,to_value:(output.amountOut).toFixed(3).toString()})
-                set_transaction_data({...transaction_data,to_amount:output.amountOut})
+                set_transaction_data({...transaction_data,to_amount:parseFloat(store_output.functionArguments[1] as string)})
             }
         }catch(e:any){
             console.log("thala swap",e)
+
         }
     }
     const Pontem_swap_sdk = async() =>{
         if(transaction_data.from_coin_address === transaction_data.to_coin_address)return
+        if(transaction_data.from_amount == 0 || transaction_data.to_coin_symbol == 'test' || transaction_data.from_coin_symbol == 'test')return
         try{
             const output = await sdk.Swap.calculateRates({
                 fromToken:transaction_data.from_coin_address,
@@ -173,9 +180,9 @@ const New_swap_page:React.FC<{}>=({})=>{
                 interactiveToken:"from",
                 version:0
             })
-            console.log('pontem sdk swap',parseFloat(output)/Math.pow(10,transaction_data.to_coin_decimals))
-            set_show_value({...show_value,to_value:(parseFloat(output)/Math.pow(10,transaction_data.to_coin_decimals)).toFixed(3).toString()})
-            set_transaction_data({...transaction_data,to_amount:parseInt(output)})
+            console.log('pontem sdk swap',(parseFloat(output)/Math.pow(10,transaction_data.to_coin_decimals)))
+            set_show_value({...show_value,to_value:((parseFloat(output)/Math.pow(10,transaction_data.to_coin_decimals))*95/100).toFixed(3).toString()})
+            set_transaction_data({...transaction_data,to_amount:parseInt((parseInt(output)*95/100).toFixed(0))})
         }catch (e:any){
             //console.log(e)
             try{
@@ -204,7 +211,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                             functionArguments:[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),0]
                         }
                     })
-                   // console.log('pontem sdk swap 1',parseFloat(output[0] as string)/Math.pow(10,transaction_data.to_coin_decimals))
+                    console.log('pontem sdk swap 1',parseFloat(output[0] as string)/Math.pow(10,transaction_data.to_coin_decimals))
                     set_show_value({...show_value,to_value:(parseFloat(output[0] as string)/Math.pow(10,transaction_data.to_coin_decimals)).toFixed(3).toString()})
                     set_transaction_data({...transaction_data,to_amount:parseInt(output[0] as string),pontem_cure:diffusion.function.pontem_swap_curve_Uncorrelated_v2()})
                 }else if(repsone2[0]){
@@ -215,7 +222,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                             functionArguments:[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),5]
                         }
                     })
-                    //console.log('pontem sdk swap 2',output[0])
+                    console.log('pontem sdk swap 2',output[0])
                     set_show_value({...show_value,to_value:(parseFloat(output[0] as string)/Math.pow(10,transaction_data.to_coin_decimals)).toFixed(3).toString()})
                     set_transaction_data({...transaction_data,to_amount:parseInt(output[0] as string),pontem_cure:diffusion.function.pontem_swap_curve_Uncorrelated_v2(),pontem_version:5})
                 }
@@ -266,7 +273,7 @@ const New_swap_page:React.FC<{}>=({})=>{
         }
     }, [coin_data]);
     useEffect(() => {
-        //console.log("transaction_data",transaction_data)
+        console.log("transaction_data",transaction_data)
         // if( coin_data.balacne == 0 && coin_data.name != "test"){
         //     if()
         //     fetch_balance_of_options()
@@ -519,7 +526,7 @@ const New_swap_page:React.FC<{}>=({})=>{
     }, [enter_address]);
     return (
         <>
-            <Row gutter={[24,6]} style={{minHeight:"490px",backgroundColor:"#dfdac8",paddingTop:10,}}>
+            <Row gutter={[24,6]} style={{minHeight:"490px",backgroundColor:"#F4F4F1",paddingTop:10,}}>
 
                 <Col span={6}></Col>
                 <Col span={12}>
@@ -996,7 +1003,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                         <Confirm_box states={open_box} coin_data={coin_data}/>
                     </>
                 )}
-                <Submit_wait_box box_state1={true} box_state2={false}/>
+                <Submit_wait_box box_state1={submit_wait_box.state1} box_state2={submit_wait_box.state2}/>
             </Row>
         </>
     )
