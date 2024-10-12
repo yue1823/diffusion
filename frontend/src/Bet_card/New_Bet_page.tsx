@@ -325,7 +325,7 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
                                         }}
                                     />
                                 </span>} style={{height: 500, backgroundColor: "#f4f4f1"}}>
-                                            <Row gutter={[24, 16]}>
+                                            <Row gutter={[24, 16]} style={{margin:""}}>
 
                                                 <Deal_with_data_bet fetch_data={fetch_data} balance1={balance1} which1={which} currentPage={currentPage}/>
 
@@ -342,7 +342,7 @@ const New_Bet_page:React.FC<{ length:number,pair:SavePair[],balance1:string,fetc
                                         }}
                                     />
                                 </span>} style={{height: 500, backgroundColor: "#f4f4f1"}}>
-                                            <Row gutter={[24, 16]}>
+                                            <Row gutter={[24, 16]} style={{}}>
                                                 <How_many_claim_card which1={which} profile_data={profile_data} result_data={data_go_claim_card?data_go_claim_card:have_card_data}/>
                                             </Row> </Card>
 

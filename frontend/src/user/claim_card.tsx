@@ -128,7 +128,7 @@ const Claim_card_user_page:React.FC<{result_data:Result_Data,profile_data:Profil
     },[profile_data,result_data])
     return(
         <>
-            <Col span={4}>
+            <Col span={4} style={{margin:"0% 2.5%"}}>
                 <motion.div
                     animate={{x: [null, 0, 0], y: [null, 0, 0]}}
                     whileHover={{scale: [null, 1, 1], zIndex: 1000, position: 'relative' ,originX: 0.5,originY: 0.7,scaleX:4,scaleY:5}}
