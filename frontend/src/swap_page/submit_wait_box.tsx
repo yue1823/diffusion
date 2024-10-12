@@ -9,9 +9,7 @@ const Submit_wait_box:React.FC<{box_state1:boolean,box_state2:boolean}>=({box_st
     const [real_state ,set_real_state]=useState(false);
     const [animation,set_animation]=useState(false);
     const close =()=>{
-        if(box_state2){
-            set_real_state(false)
-        }
+        set_real_state(false)
     }
     useEffect(() => {
         set_real_state(box_state1)

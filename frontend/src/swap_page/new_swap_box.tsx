@@ -1,5 +1,5 @@
 import { DoubleRightOutlined, ExclamationCircleTwoTone, PlusOutlined, RightOutlined, UserOutlined } from "@ant-design/icons";
-import {Col, Divider, InputNumber, Row, Select, message ,Radio,Image, Segmented, Avatar} from "antd";
+import {Col, Divider, InputNumber, Row, Select, message ,Radio,Image, Segmented, Avatar, Space} from "antd";
 import React, {useEffect, useRef, useState } from "react";
 import {option_coin_address} from "./coin_address";
 import {Aptos, AptosConfig, Network} from "@aptos-labs/ts-sdk";
@@ -109,16 +109,17 @@ const New_swap_page:React.FC<{}>=({})=>{
             //     curveType: 'uncorrelated',
             //     version: 0
             // })
-           // console.log('usdc :',parseInt((0.008*Math.pow(10,transaction_data.to_coin_decimals)).toFixed(0)))
+            //console.log('usdc :',parseInt((0.008*Math.pow(10,transaction_data.to_coin_decimals)).toFixed(0)))
             const transaction_payload : InputTransactionData = {
                 data: {
                     function:transaction_data.pontem_cure == diffusion.function.pontem_swap_curve_Uncorrelated()? diffusion.function.pontem_swap_v2():diffusion.function.pontem_router_swap_v2(),
-                    typeArguments:transaction_data.pontem_cure ==diffusion.function.pontem_swap_curve_Uncorrelated()?[transaction_data.from_coin_address,transaction_data.to_coin_address,diffusion.function.pontem_swap_curve_Uncorrelated()]:[transaction_data.from_coin_address,transaction_data.to_coin_address,transaction_data.pontem_cure,diffusion.function.pontem_router_BNstep()],
-                    functionArguments:transaction_data.pontem_cure ==diffusion.function.pontem_swap_curve_Uncorrelated()?[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),transaction_data.to_amount]:[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),[transaction_data.to_amount],[transaction_data.pontem_version],[true]]
+                    typeArguments:transaction_data.pontem_cure == diffusion.function.pontem_swap_curve_Uncorrelated()?[transaction_data.from_coin_address,transaction_data.to_coin_address,diffusion.function.pontem_swap_curve_Uncorrelated()]:[transaction_data.from_coin_address,transaction_data.to_coin_address,transaction_data.pontem_cure,diffusion.function.pontem_router_BNstep()],
+                    functionArguments:transaction_data.pontem_cure == diffusion.function.pontem_swap_curve_Uncorrelated()?[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),transaction_data.to_amount]:[transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals),[transaction_data.to_amount],[transaction_data.pontem_version],[false]]
                 }
             }
-            console.log('transaction data',transaction_data)
-            console.log('pontem transaction',transaction_payload)
+            console.log('transaction_payload',transaction_payload)
+            // console.log('pontem transaction',transaction_payload_pontem)
+
             // transaction_data.to_amount
             // sign and submit transaction to chain
             try{
@@ -138,15 +139,36 @@ const New_swap_page:React.FC<{}>=({})=>{
 
             //console.log("own payload : ",transaction_payload )
         }else if(segement_select === 'Thala'){
+
+            const output = await thala.getRouteGivenExactInput(
+                transaction_data.from_coin_address,
+                transaction_data.to_coin_address,
+                transaction_data.from_amount,
+            );
+            const entryPayload = thala.encodeRoute(output!, 0.5);
             const transaction_payload : InputTransactionData = {
                 data: {
-                    function:diffusion.function.thala_swap(),
-                    typeArguments:[],
-                    functionArguments:[],
+                    function:entryPayload.function,
+                    typeArguments:entryPayload.typeArguments,
+                    functionArguments:entryPayload.functionArguments,
                 }
             }
-            console.log(transaction_payload)
-            set_submit_wait_box({...submit_wait_box,state2:true})
+            console.log('output',entryPayload)
+            console.log('transaction data',transaction_payload)
+            try{
+                const response = await signAndSubmitTransaction(transaction_payload);
+                // wait for transaction
+                const transaction_1 = await aptos.waitForTransaction({transactionHash: response.hash});
+                const link = `https://explorer.aptoslabs.com/txn/${transaction_1.hash}?network=mainnet`;
+                message.success(
+                    <span>
+                            hash: <a href={link} target="_blank" rel="noopener noreferrer">{transaction_1.hash}</a>
+                        </span>
+                )
+                set_submit_wait_box({...submit_wait_box,state2:true})
+            }catch(e:any){console.log(e)}finally {
+                //set_submit_wait_box({...submit_wait_box,state1:false,state2: false})
+            }
         }else if(segement_select === 'Cellea'){
 
         }
@@ -168,10 +190,14 @@ const New_swap_page:React.FC<{}>=({})=>{
 
         }
     }
+    useEffect(() => {
+
+    }, [transaction_data.pontem_cure]);
     const Pontem_swap_sdk = async() =>{
         if(transaction_data.from_coin_address === transaction_data.to_coin_address)return
         if(transaction_data.from_amount == 0 || transaction_data.to_coin_symbol == 'test' || transaction_data.from_coin_symbol == 'test')return
         try{
+
             const output = await sdk.Swap.calculateRates({
                 fromToken:transaction_data.from_coin_address,
                 toToken:transaction_data.to_coin_address,
@@ -182,7 +208,7 @@ const New_swap_page:React.FC<{}>=({})=>{
             })
             console.log('pontem sdk swap',(parseFloat(output)/Math.pow(10,transaction_data.to_coin_decimals)))
             set_show_value({...show_value,to_value:((parseFloat(output)/Math.pow(10,transaction_data.to_coin_decimals))*95/100).toFixed(3).toString()})
-            set_transaction_data({...transaction_data,to_amount:parseInt((parseInt(output)*95/100).toFixed(0))})
+            set_transaction_data({...transaction_data,to_amount:parseInt((parseInt(output)*95/100).toFixed(0)),pontem_cure:diffusion.function.pontem_swap_curve_Uncorrelated()})
         }catch (e:any){
             //console.log(e)
             try{
@@ -284,7 +310,8 @@ const New_swap_page:React.FC<{}>=({})=>{
         if (transaction_data.from_coin_address) {
             fetch_balance_of_options(transaction_data.from_coin_address, "from");
             set_show_value({...show_value,from_value:undefined})
-            set_transaction_data({...transaction_data,to_balance:0})
+            let addres_1 =diffusion.function.pontem_swap_curve_Uncorrelated();
+            set_transaction_data({...transaction_data,to_balance:0,pontem_cure:addres_1})
         }
     }, [transaction_data.from_coin_address]);
     useEffect(() => {
@@ -292,7 +319,8 @@ const New_swap_page:React.FC<{}>=({})=>{
         if (transaction_data.to_coin_address) {
             fetch_balance_of_options(transaction_data.to_coin_address, "to");
             set_show_value({...show_value,to_value:undefined})
-            set_transaction_data({...transaction_data,to_balance:0})
+            let addres_1 =diffusion.function.pontem_swap_curve_Uncorrelated();
+            set_transaction_data({...transaction_data,to_balance:0,pontem_cure:addres_1})
         }
         if(transaction_data.to_coin_symbol != 'test' && transaction_data.to_coin_address != ''){
             if(segement_select == "Pontem"){
@@ -600,6 +628,14 @@ const New_swap_page:React.FC<{}>=({})=>{
 
                                                     }}
                                                     options={items}
+                                                    optionRender={(option) => (
+                                                        <Space>
+                                                            <span role="img" aria-label={option.data.label}>
+                                                                <Image src={option.data.coin_url} style={{height:"20px",width:"20px",alignSelf:"center"}}></Image>
+                                                            </span>
+                                                            {option.data.label}
+                                                        </Space>
+                                                    )}
                                                     dropdownRender={(menu) => (
                                                         <>
                                                             {menu}
@@ -640,7 +676,7 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                 <InputNumber autoFocus={false}
                                                              value={show_value.from_value}
                                                              min="0"
-                                                             max={transaction_data.from_balance.toString()}
+
                                                              controls={false}
                                                              size={"large"}
                                                              addonAfter={<>
@@ -655,13 +691,17 @@ const New_swap_page:React.FC<{}>=({})=>{
                                                                  if (debounceTimeout.current) {
                                                                      clearTimeout(debounceTimeout.current); // 清除之前的 timeout
                                                                  }
-                                                                 debounceTimeout.current = window.setTimeout(() => {
-                                                                     if (value != null && regex3.test(value)) {
-                                                                         //console.log('set input value', value);
+                                                                 if (value === null || value === '') {
+                                                                     // 當輸入為空時，設置為 undefined
+                                                                     set_show_value({...show_value, from_value: undefined});
+                                                                 } else if (value != null && regex3.test(value)) {
+                                                                     debounceTimeout.current = window.setTimeout(() => {
+
+//console.log('set input value', value);
                                                                          set_show_value({ ...show_value, from_value: value });
                                                                          set_transaction_data({ ...transaction_data, from_amount: parseFloat(value) });
-                                                                     }
-                                                                 }, 800);
+                                                                     }, 800);
+                                                                 }
                                                                  // if(value != null){
                                                                  //     // console.log("regex3.test",regex3.test(value));
                                                                  //     // console.log("show value",value);
@@ -805,6 +845,14 @@ const New_swap_page:React.FC<{}>=({})=>{
 
                                                     }}
                                                     options={items}
+                                                    optionRender={(option) => (
+                                                        <Space>
+                                                            <span role="img" aria-label={option.data.label}>
+                                                                <Image src={option.data.coin_url} style={{height:"20px",width:"20px",alignSelf:"center"}}></Image>
+                                                            </span>
+                                                            {option.data.label}
+                                                        </Space>
+                                                    )}
                                                     dropdownRender={(menu) => (
                                                         <>
                                                             {menu}
@@ -846,14 +894,18 @@ const New_swap_page:React.FC<{}>=({})=>{
 
                                                               controls={false}
                                                               onChange={(value) =>{
-                                                                  if(value != null){
-                                                                      // console.log("regex3.test",regex3.test(value));
-                                                                      // console.log("show value",value);
-                                                                      if(regex3.test(value)){
-                                                                          set_show_value({...show_value,to_value:value})
-
-                                                                      }
+                                                                  if (debounceTimeout.current) {
+                                                                      clearTimeout(debounceTimeout.current); // 清除之前的 timeout
                                                                   }
+                                                                  debounceTimeout.current = window.setTimeout(() => {
+                                                                      if (value === null || value === '') {
+                                                                          // 當輸入為空時，設置為 undefined
+                                                                          set_show_value({...show_value, to_value: undefined});
+                                                                      } else if (regex3.test(value)) {
+                                                                          // 只有當值匹配正則時才更新狀態
+                                                                          set_show_value({...show_value, to_value: value});
+                                                                      }
+                                                                  }, 500);
                                                               }}
                                                               suffix={transaction_data.to_coin_symbol}
                                                               size={"large"} autoFocus={false} style={{width:"319px",height:"38px",backgroundColor:"#bcbbbb",color:transaction_data.from_balance < transaction_data.from_amount?"#ff1f1f":""}} prefix={"$"} />
@@ -978,16 +1030,22 @@ const New_swap_page:React.FC<{}>=({})=>{
                                     </Col>
                                     <Col span={7} offset={1}>
                                         <div style={{border:"1.5mm ridge #CED4DA",borderRadius:5,backgroundColor: "#807f7f",width:"inherit",height:"120px",padding:1,justifyContent:"center",alignItems:"center",display:"flex",paddingTop:18}}>
-                                            <motion.div className={"box"}
-                                                        whileHover={{scale: 1.03}}
-                                                        whileTap={{scale: 0.95}}
-                                                        transition={{type: "spring", stiffness: 400, damping: 25}}
-                                                        onClick={()=>Submit_transaction()}
-                                            >
-                                                <button className={"rainbow"} style={{height: "80px"}}>
-                                                    Swap
-                                                </button>
-                                            </motion.div>
+                                            {transaction_data.from_amount*Math.pow(10,transaction_data.from_coin_decimals) > transaction_data.from_balance ? <>
+                                                <div style={{height: "80px",width:"150px",backgroundColor:"#cccccc",color:"#191919",bottom:"10px",position:"relative",justifyContent:"center",alignItems:"center",display:"inline-box",paddingTop:12,borderRadius:5}}>
+                                                    <p>Not Enought Balance</p>
+                                                </div>
+                                            </>: <>
+                                                <motion.div className={"box"}
+                                                            whileHover={{scale: 1.03}}
+                                                            whileTap={{scale: 0.95}}
+                                                            transition={{type: "spring", stiffness: 400, damping: 25}}
+                                                            onClick={() => Submit_transaction()}
+                                                >
+                                                    <button className={"rainbow"} style={{height: "80px"}}>
+                                                        Swap
+                                                    </button>
+                                                </motion.div>
+                                            </>}
                                         </div>
                                     </Col>
                                 </Row>
@@ -1012,7 +1070,7 @@ const New_swap_page:React.FC<{}>=({})=>{
 
 export default New_swap_page
 
-const Confirm_box : React.FC <{states:boolean,coin_data:Coin_data}> = ({states,coin_data})=>{
+const Confirm_box: React.FC <{states:boolean,coin_data:Coin_data}> = ({states,coin_data})=>{
     const [clicked,set_clicked]=useState(false);
     const [box_state,set_box_state]=useState(false);
 
@@ -1124,3 +1182,5 @@ const Confirm_box : React.FC <{states:boolean,coin_data:Coin_data}> = ({states,c
         </>
     )
 }
+
+
