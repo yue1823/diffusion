@@ -311,7 +311,7 @@ const New_swap_page:React.FC<{}>=({})=>{
             fetch_balance_of_options(transaction_data.from_coin_address, "from");
             set_show_value({...show_value,from_value:undefined})
             let addres_1 =diffusion.function.pontem_swap_curve_Uncorrelated();
-            set_transaction_data({...transaction_data,to_balance:0,pontem_cure:addres_1})
+            set_transaction_data({...transaction_data,from_balance:0,pontem_cure:addres_1})
         }
     }, [transaction_data.from_coin_address]);
     useEffect(() => {
