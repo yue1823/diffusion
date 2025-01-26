@@ -4,10 +4,11 @@ version = "1.0.0"
 authors = ["yue"]
 
 [addresses]
-dapp="0x7776f4ac2f3a13f751b966220b0e68e0b5688682c31e4f93cbf12ce1cea4a7b9"
 
-admin1="0x"
-admin2="0x"
+all_or_nothing = "0x09f848d04bcbb31b8397dde37a0018a9e90ab825d43af924b56a1c349619bced"
+admin = "0x296e53ce1956ebdef5d969f3189a00b0ca29f2d377b311e30872202d4072b19b"
+admin1 = "0x09f848d04bcbb31b8397dde37a0018a9e90ab825d43af924b56a1c349619bced"
+
 [dev-addresses]
 
 [dependencies.AptosFramework]
