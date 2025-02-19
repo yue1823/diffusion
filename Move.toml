@@ -5,7 +5,7 @@ authors = ["yue"]
 
 [addresses]
 
-all_or_nothing = "0x09f848d04bcbb31b8397dde37a0018a9e90ab825d43af924b56a1c349619bced"
+all_or_nothing = "0x09f"
 admin = "0x296e53ce1956ebdef5d969f3189a00b0ca29f2d377b311e30872202d4072b19b"
 admin1 = "0x09f848d04bcbb31b8397dde37a0018a9e90ab825d43af924b56a1c349619bced"
 
